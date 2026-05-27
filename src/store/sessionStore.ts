@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { MOCK_RECIPES } from "@/constants/mockRecipes";
 import {
   MatchResult,
   Recipe,
@@ -11,9 +10,10 @@ import {
 import { computeMatch } from "@/features/ai/matchEngine";
 import { useAuthStore } from "@/store/authStore";
 import { usePantryStore } from "@/store/pantryStore";
+import { useRecipesStore } from "@/store/recipesStore";
 import { sessionService } from "@/features/session/sessionService";
 import { pushService } from "@/features/notifications/pushService";
-import { uid } from "@/utils/id";
+import { uuidV4 } from "@/utils/id";
 
 interface SessionState {
   session: SwipeSession | null;
@@ -46,11 +46,10 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     // Tear down any prior subscription.
     get().unsubscribe?.();
 
-    const candidates = [...MOCK_RECIPES]
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 8);
+    const pool = useRecipesStore.getState().getOrFallback();
+    const candidates = [...pool].sort(() => Math.random() - 0.5).slice(0, 8);
     const session: SwipeSession = {
-      id: uid("session"),
+      id: uuidV4(),
       householdId,
       createdBy: userId,
       sessionType: "dinner",
@@ -86,7 +85,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     const { session, votes } = get();
     if (!session) return;
     const v: Vote = {
-      id: uid("vote"),
+      id: uuidV4(),
       sessionId: session.id,
       userId,
       recipeId,

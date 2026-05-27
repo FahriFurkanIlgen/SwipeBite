@@ -1,29 +1,55 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { Alert, StyleSheet, View } from "react-native";
 import { router } from "expo-router";
 
 import { Button, Input, Screen, Text } from "@/components/ui";
+import { AnimatedHero } from "@/components/ui/AnimatedHero";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
-import { uid } from "@/utils/id";
+import { authService } from "@/features/auth/authService";
+import { uuidV4 } from "@/utils/id";
 
 export default function HouseholdScreen() {
   const user = useAuthStore((s) => s.user);
+  const existing = useAuthStore((s) => s.household);
   const setHousehold = useAuthStore((s) => s.setHousehold);
-  const [name, setName] = React.useState("Bizim Ev");
+  const [name, setName] = React.useState(existing?.name ?? "Bizim Ev");
+  const [saving, setSaving] = React.useState(false);
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (!user) return;
-    setHousehold({
-      id: uid("hh"),
-      name: name.trim() || "Bizim Ev",
-      createdBy: user.id,
-      memberIds: [user.id],
-      createdAt: new Date().toISOString(),
-    });
-    router.push("/(onboarding)/invite");
+    if (existing) {
+      router.push("/(onboarding)/invite");
+      return;
+    }
+    const trimmed = name.trim() || "Bizim Ev";
+    setSaving(true);
+    try {
+      if (authService.isConfigured()) {
+        const h = await authService.createHousehold(trimmed, user.id);
+        if (h) {
+          setHousehold(h);
+          router.push("/(onboarding)/invite");
+          return;
+        }
+      }
+      // Fallback: local-only household with a real UUID.
+      setHousehold({
+        id: uuidV4(),
+        name: trimmed,
+        createdBy: user.id,
+        memberIds: [user.id],
+        createdAt: new Date().toISOString(),
+      });
+      router.push("/(onboarding)/invite");
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Hane oluşturulamadı.";
+      Alert.alert("Hata", msg);
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -36,6 +62,7 @@ export default function HouseholdScreen() {
       </View>
 
       <View style={styles.body}>
+        <AnimatedHero emoji="🏠" tagline="EVİNİ TANIT" />
         <Text variant="h1" weight="700">
           {t.onboarding.householdTitle}
         </Text>
@@ -58,7 +85,12 @@ export default function HouseholdScreen() {
       </View>
 
       <View style={styles.footer}>
-        <Button title={t.common.continue} fullWidth onPress={handleNext} />
+        <Button
+          title={saving ? t.common.loading : t.common.continue}
+          fullWidth
+          onPress={handleNext}
+          disabled={saving}
+        />
       </View>
     </Screen>
   );

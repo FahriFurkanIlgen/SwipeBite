@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { Household, Profile, SpiceLevel, User } from "@/types/domain";
 import { uid } from "@/utils/id";
 import { authService } from "@/features/auth/authService";
+import { supabase } from "@/lib/supabase";
 
 interface AuthState {
   user: User | null;
@@ -13,6 +14,7 @@ interface AuthState {
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string, name: string) => Promise<void>;
   hydrateFromSession: () => Promise<void>;
+  subscribeAuthChanges: () => () => void;
   signOut: () => Promise<void>;
   setProfile: (patch: Partial<Profile>) => void;
   setHousehold: (h: Household | null) => void;
@@ -86,6 +88,17 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       household,
       isOnboarded: !!profile,
     });
+  },
+  subscribeAuthChanges: () => {
+    if (!supabase) return () => undefined;
+    const { data } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_OUT") {
+        set({ user: null, profile: null, household: null, isOnboarded: false });
+      } else if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED") {
+        void get().hydrateFromSession();
+      }
+    });
+    return () => data.subscription.unsubscribe();
   },
   signOut: async () => {
     await authService.signOut();

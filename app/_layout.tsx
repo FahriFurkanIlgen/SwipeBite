@@ -11,6 +11,7 @@ import { StatusBar } from "expo-status-bar";
 import "../global.css";
 
 import { useAuthStore } from "@/store/authStore";
+import { useRecipesStore } from "@/store/recipesStore";
 import { pushService } from "@/features/notifications/pushService";
 
 const queryClient = new QueryClient({
@@ -56,10 +57,15 @@ function useProtectedRoute() {
 function RootLayoutNav() {
   useProtectedRoute();
   const hydrate = useAuthStore((s) => s.hydrateFromSession);
+  const subscribeAuthChanges = useAuthStore((s) => s.subscribeAuthChanges);
+  const hydrateRecipes = useRecipesStore((s) => s.hydrate);
   const user = useAuthStore((s) => s.user);
   React.useEffect(() => {
     void hydrate();
-  }, [hydrate]);
+    void hydrateRecipes();
+    const unsub = subscribeAuthChanges();
+    return unsub;
+  }, [hydrate, hydrateRecipes, subscribeAuthChanges]);
   React.useEffect(() => {
     if (!user) return;
     // Best-effort: ask for permission and schedule the daily dinner nudge.

@@ -10,7 +10,7 @@ import { useAuthStore } from "@/store/authStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { parsePantryText } from "@/features/ai/pantryParser";
 import { findCookableRecipes } from "@/features/pantry/pantryMatcher";
-import { MOCK_RECIPES } from "@/constants/mockRecipes";
+import { useRecipesStore } from "@/store/recipesStore";
 import { router } from "expo-router";
 import { useSessionStore } from "@/store/sessionStore";
 
@@ -21,6 +21,7 @@ export default function PantryScreen() {
   const addMany = usePantryStore((s) => s.addMany);
   const remove = usePantryStore((s) => s.remove);
   const startSession = useSessionStore((s) => s.startSession);
+  const recipes = useRecipesStore((s) => s.items);
 
   const [text, setText] = React.useState("");
   const [loading, setLoading] = React.useState(false);
@@ -49,9 +50,8 @@ export default function PantryScreen() {
   };
 
   const cookable = React.useMemo(
-    () =>
-      findCookableRecipes(items, MOCK_RECIPES, { minCoverage: 40, limit: 6 }),
-    [items],
+    () => findCookableRecipes(items, recipes, { minCoverage: 40, limit: 6 }),
+    [items, recipes],
   );
 
   return (
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
   scroll: {
     padding: spacing["2xl"],
     gap: spacing.lg,
-    paddingBottom: spacing["4xl"],
+    paddingBottom: 120,
   },
   rowBetween: {
     flexDirection: "row",

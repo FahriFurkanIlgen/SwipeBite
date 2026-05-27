@@ -1,5 +1,6 @@
 import React from "react";
 import { Pressable, StyleSheet, View } from "react-native";
+import * as Haptics from "expo-haptics";
 import { colors, radii, spacing } from "@/constants/theme";
 import { Text } from "./Text";
 
@@ -22,13 +23,31 @@ export const Pill: React.FC<PillProps> = ({
       ? colors.canvas
       : colors.cloud;
   const fg = selected ? colors.snow : colors.ink;
-  const Wrap = onPress ? Pressable : View;
+  if (!onPress) {
+    return (
+      <View style={[styles.pill, { backgroundColor: bg }]}>
+        <Text variant="small" weight="600" color={fg}>
+          {label}
+        </Text>
+      </View>
+    );
+  }
   return (
-    <Wrap onPress={onPress} style={[styles.pill, { backgroundColor: bg }]}>
+    <Pressable
+      onPress={() => {
+        Haptics.selectionAsync().catch(() => undefined);
+        onPress();
+      }}
+      style={({ pressed }) => [
+        styles.pill,
+        { backgroundColor: bg },
+        pressed && styles.pressed,
+      ]}
+    >
       <Text variant="small" weight="600" color={fg}>
         {label}
       </Text>
-    </Wrap>
+    </Pressable>
   );
 };
 
@@ -38,4 +57,5 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
     borderRadius: radii.pill,
   },
+  pressed: { opacity: 0.85, transform: [{ scale: 0.96 }] },
 });

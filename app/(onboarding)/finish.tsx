@@ -4,6 +4,8 @@ import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
 import { Button, Screen, Text } from "@/components/ui";
+import { AnimatedHero } from "@/components/ui/AnimatedHero";
+import { Confetti } from "@/components/ui/Confetti";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
@@ -27,9 +29,8 @@ export default function FinishScreen() {
       </View>
 
       <View style={styles.body}>
-        <View style={styles.iconWrap}>
-          <Ionicons name="sparkles" size={36} color={colors.ink} />
-        </View>
+        <Confetti count={40} />
+        <AnimatedHero emoji="✨" />
         <Text variant="display" weight="700" align="center">
           {t.onboarding.firstSessionTitle}
         </Text>

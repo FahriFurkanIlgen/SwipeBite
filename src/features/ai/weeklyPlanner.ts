@@ -1,18 +1,14 @@
-import { MOCK_RECIPES } from "@/constants/mockRecipes";
-import { WeeklyMode, WeeklyPlan } from "@/types/domain";
+import { Recipe, WeeklyMode, WeeklyPlan } from "@/types/domain";
 import { addDays, formatDayKey, startOfWeek } from "@/utils/format";
 import { uid } from "@/utils/id";
 
 /**
  * Weekly Planner.
- * Picks 7 days x 1 dinner (and optional lunch) from the recipe pool,
+ * Picks 7 days x 1 dinner (and optional lunch) from the supplied recipe pool,
  * weighted by the chosen mode.
  */
 
-const MODE_WEIGHTS: Record<
-  WeeklyMode,
-  (r: (typeof MOCK_RECIPES)[number]) => number
-> = {
+const MODE_WEIGHTS: Record<WeeklyMode, (r: Recipe) => number> = {
   busy: (r) =>
     r.prepTimeMinutes <= 25 ? 3 : r.prepTimeMinutes <= 40 ? 1 : 0.2,
   healthy: (r) =>
@@ -40,9 +36,10 @@ const MODE_WEIGHTS: Record<
 export function generateWeeklyPlan(
   householdId: string,
   mode: WeeklyMode,
+  recipes: Recipe[],
 ): WeeklyPlan {
   const weights = MODE_WEIGHTS[mode];
-  const pool = [...MOCK_RECIPES].sort((a, b) => weights(b) - weights(a));
+  const pool = [...recipes].sort((a, b) => weights(b) - weights(a));
 
   const weekStart = startOfWeek();
   const used = new Set<string>();
@@ -58,7 +55,7 @@ export function generateWeeklyPlan(
     };
   });
 
-  const groceryList = buildGroceryList(days);
+  const groceryList = buildGroceryList(days, recipes);
 
   return {
     id: uid("plan"),
@@ -71,12 +68,16 @@ export function generateWeeklyPlan(
   };
 }
 
-export function regenerateDay(plan: WeeklyPlan, dayIndex: number): WeeklyPlan {
+export function regenerateDay(
+  plan: WeeklyPlan,
+  dayIndex: number,
+  recipes: Recipe[],
+): WeeklyPlan {
   const weights = MODE_WEIGHTS[plan.mode];
   const used = new Set(
     plan.days.flatMap((d) => d.meals.map((m) => m.recipeId)),
   );
-  const pool = [...MOCK_RECIPES].sort((a, b) => weights(b) - weights(a));
+  const pool = [...recipes].sort((a, b) => weights(b) - weights(a));
   const next = pickNext(pool, used);
 
   const days = plan.days.map((d) =>
@@ -84,19 +85,22 @@ export function regenerateDay(plan: WeeklyPlan, dayIndex: number): WeeklyPlan {
       ? { ...d, meals: [{ type: "dinner" as const, recipeId: next.id }] }
       : d,
   );
-  return { ...plan, days, groceryList: buildGroceryList(days) };
+  return { ...plan, days, groceryList: buildGroceryList(days, recipes) };
 }
 
-function pickNext(pool: typeof MOCK_RECIPES, used: Set<string>) {
+function pickNext(pool: Recipe[], used: Set<string>) {
   const next = pool.find((r) => !used.has(r.id));
   return next ?? pool[Math.floor(Math.random() * pool.length)]!;
 }
 
-function buildGroceryList(days: WeeklyPlan["days"]): string[] {
+function buildGroceryList(
+  days: WeeklyPlan["days"],
+  recipes: Recipe[],
+): string[] {
   const ingredients = new Set<string>();
   for (const d of days) {
     for (const m of d.meals) {
-      const r = MOCK_RECIPES.find((x) => x.id === m.recipeId);
+      const r = recipes.find((x) => x.id === m.recipeId);
       r?.ingredients.forEach((i) => ingredients.add(i.name));
     }
   }

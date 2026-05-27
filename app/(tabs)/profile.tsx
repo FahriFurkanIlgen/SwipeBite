@@ -12,7 +12,7 @@ import {
   favoriteRecipeId,
   useStatsStore,
 } from "@/store/statsStore";
-import { findRecipe, MOCK_RECIPES } from "@/constants/mockRecipes";
+import { useRecipesStore } from "@/store/recipesStore";
 
 export default function ProfileScreen() {
   const user = useAuthStore((s) => s.user);
@@ -22,18 +22,20 @@ export default function ProfileScreen() {
   const cookDates = useStatsStore((s) => s.cookDates);
   const cookCounts = useStatsStore((s) => s.cookCounts);
   const favorites = useStatsStore((s) => s.favorites);
+  const recipes = useRecipesStore((s) => s.items);
+  const findById = useRecipesStore((s) => s.findById);
 
   const streak = React.useMemo(() => computeStreak(cookDates), [cookDates]);
   const topRecipe = React.useMemo(() => {
     const id = favoriteRecipeId(cookCounts);
-    return id ? findRecipe(id) : null;
-  }, [cookCounts]);
+    return id ? findById(id) : null;
+  }, [cookCounts, findById]);
   const favoriteRecipes = React.useMemo(
     () =>
       favorites
-        .map((id) => MOCK_RECIPES.find((r) => r.id === id))
+        .map((id) => recipes.find((r) => r.id === id))
         .filter((r): r is NonNullable<typeof r> => !!r),
-    [favorites],
+    [favorites, recipes],
   );
 
   return (
@@ -245,7 +247,7 @@ const styles = StyleSheet.create({
   scroll: {
     padding: spacing["2xl"],
     gap: spacing.lg,
-    paddingBottom: spacing["4xl"],
+    paddingBottom: 120,
   },
   userCard: { flexDirection: "row", alignItems: "center", gap: spacing.md },
   avatar: {

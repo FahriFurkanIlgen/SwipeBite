@@ -11,7 +11,7 @@ import { useAuthStore } from "@/store/authStore";
 import { usePlannerStore } from "@/store/plannerStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { splitGroceryList } from "@/features/planner/groceryList";
-import { findRecipe } from "@/constants/mockRecipes";
+import { useRecipesStore } from "@/store/recipesStore";
 import { WeeklyMode } from "@/types/domain";
 
 const MODES: {
@@ -34,6 +34,11 @@ export default function PlannerScreen() {
   const generate = usePlannerStore((s) => s.generate);
   const regenerate = usePlannerStore((s) => s.regenerate);
   const pantry = usePantryStore((s) => s.items);
+  const recipes = useRecipesStore((s) => s.items);
+  const findRecipe = React.useCallback(
+    (id: string) => recipes.find((r) => r.id === id),
+    [recipes],
+  );
 
   const grocery = React.useMemo(
     () => (plan ? splitGroceryList(plan.groceryList, pantry) : null),
@@ -219,7 +224,7 @@ const styles = StyleSheet.create({
   scroll: {
     padding: spacing["2xl"],
     gap: spacing.lg,
-    paddingBottom: spacing["4xl"],
+    paddingBottom: 120,
   },
   pillRow: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm },
   dayCard: { flexDirection: "row", alignItems: "center", gap: spacing.md },

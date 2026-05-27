@@ -8,7 +8,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Button, Card, Pill, Screen, Text } from "@/components/ui";
 import { colors, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
-import { findRecipe } from "@/constants/mockRecipes";
+import { useRecipesStore } from "@/store/recipesStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { useAuthStore } from "@/store/authStore";
 import { useStatsStore } from "@/store/statsStore";
@@ -16,7 +16,9 @@ import { adaptRecipe, AdaptedRecipe } from "@/features/ai/recipeAdapter";
 
 export default function RecipeScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const recipe = findRecipe(id ?? "");
+  const recipe = useRecipesStore((s) =>
+    s.items.find((r) => r.id === (id ?? "")),
+  );
   const pantry = usePantryStore((s) => s.items);
   const profile = useAuthStore((s) => s.profile);
   const isFavorite = useStatsStore((s) =>

@@ -4,18 +4,66 @@ import { router } from "expo-router";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
+import Animated, {
+  Easing,
+  useAnimatedStyle,
+  useSharedValue,
+  withDelay,
+  withSequence,
+  withSpring,
+  withTiming,
+} from "react-native-reanimated";
+import * as Haptics from "expo-haptics";
 
 import { Button, Card, Screen, Text } from "@/components/ui";
+import { Confetti } from "@/components/ui/Confetti";
 import { colors, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useSessionStore } from "@/store/sessionStore";
-import { findRecipe } from "@/constants/mockRecipes";
+import { useRecipesStore } from "@/store/recipesStore";
 import { useAuthStore } from "@/store/authStore";
 
 export default function MatchScreen() {
   const match = useSessionStore((s) => s.match);
   const reset = useSessionStore((s) => s.reset);
   const user = useAuthStore((s) => s.user);
+
+  const titleScale = useSharedValue(0.7);
+  const titleOpacity = useSharedValue(0);
+  const heroScale = useSharedValue(1.2);
+
+  React.useEffect(() => {
+    if (!match) return;
+    heroScale.value = withTiming(1, {
+      duration: 700,
+      easing: Easing.out(Easing.cubic),
+    });
+    titleOpacity.value = withDelay(180, withTiming(1, { duration: 400 }));
+    titleScale.value = withDelay(
+      180,
+      withSequence(
+        withSpring(1.08, { damping: 8, stiffness: 200 }),
+        withSpring(1, { damping: 14, stiffness: 220 }),
+      ),
+    );
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(
+      () => undefined,
+    );
+  }, [match, heroScale, titleOpacity, titleScale]);
+
+  const titleStyle = useAnimatedStyle(() => ({
+    opacity: titleOpacity.value,
+    transform: [{ scale: titleScale.value }],
+  }));
+  const heroStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: heroScale.value }],
+  }));
+
+  const recipes = useRecipesStore((s) => s.items);
+  const findRecipe = React.useCallback(
+    (id: string) => recipes.find((r) => r.id === id),
+    [recipes],
+  );
 
   if (!match) {
     return (
@@ -46,15 +94,18 @@ export default function MatchScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.hero}>
-          <Image
-            source={{ uri: recipe.imageUrl }}
-            style={StyleSheet.absoluteFillObject}
-            contentFit="cover"
-          />
+          <Animated.View style={[StyleSheet.absoluteFillObject, heroStyle]}>
+            <Image
+              source={{ uri: recipe.imageUrl }}
+              style={StyleSheet.absoluteFillObject}
+              contentFit="cover"
+            />
+          </Animated.View>
           <LinearGradient
             colors={["transparent", "rgba(0,0,0,0.7)"]}
             style={StyleSheet.absoluteFillObject}
           />
+          <Confetti count={70} />
           <View style={styles.heroTop}>
             <Pressable
               onPress={() => router.replace("/(tabs)")}
@@ -72,14 +123,14 @@ export default function MatchScreen() {
             <View style={{ width: 40 }} />
           </View>
 
-          <View style={styles.heroBody}>
+          <Animated.View style={[styles.heroBody, titleStyle]}>
             <Text
               variant="caption"
-              weight="600"
+              weight="700"
               color={colors.snow}
-              style={{ opacity: 0.85 }}
+              style={{ opacity: 0.85, letterSpacing: 1 }}
             >
-              {t.match.subtitle}
+              {t.match.subtitle.toUpperCase()}
             </Text>
             <Text variant="display" weight="700" color={colors.snow}>
               {recipe.title}
@@ -95,7 +146,7 @@ export default function MatchScreen() {
               />
               <Pill icon="trending-up-outline" label={`Skor ${match.score}`} />
             </View>
-          </View>
+          </Animated.View>
         </View>
 
         <View style={{ padding: spacing["2xl"], gap: spacing.lg }}>

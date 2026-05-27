@@ -43,39 +43,61 @@ export const radii = {
 export const shadows = {
   sm: {
     shadowColor: "#202020",
-    shadowOpacity: 0.12,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.08,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 2 },
     elevation: 2,
   },
   md: {
     shadowColor: "#202020",
-    shadowOpacity: 0.16,
-    shadowRadius: 16,
-    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.12,
+    shadowRadius: 20,
+    shadowOffset: { width: 0, height: 6 },
     elevation: 6,
+  },
+  lg: {
+    shadowColor: "#202020",
+    shadowOpacity: 0.18,
+    shadowRadius: 32,
+    shadowOffset: { width: 0, height: 12 },
+    elevation: 12,
   },
 } as const;
 
 export const typography = {
   display: {
-    fontSize: 40,
-    lineHeight: 44,
-    fontWeight: "700" as const,
-    letterSpacing: -0.5,
+    fontSize: 44,
+    lineHeight: 48,
+    fontWeight: "800" as const,
+    letterSpacing: -0.8,
   },
   h1: {
     fontSize: 32,
     lineHeight: 38,
+    fontWeight: "800" as const,
+    letterSpacing: -0.5,
+  },
+  h2: {
+    fontSize: 24,
+    lineHeight: 30,
     fontWeight: "700" as const,
     letterSpacing: -0.3,
   },
-  h2: { fontSize: 24, lineHeight: 30, fontWeight: "700" as const },
-  h3: { fontSize: 20, lineHeight: 26, fontWeight: "600" as const },
-  body: { fontSize: 16, lineHeight: 22, fontWeight: "400" as const },
-  bodyMedium: { fontSize: 16, lineHeight: 22, fontWeight: "500" as const },
+  h3: {
+    fontSize: 20,
+    lineHeight: 26,
+    fontWeight: "700" as const,
+    letterSpacing: -0.2,
+  },
+  body: { fontSize: 16, lineHeight: 24, fontWeight: "400" as const },
+  bodyMedium: { fontSize: 16, lineHeight: 24, fontWeight: "600" as const },
   small: { fontSize: 14, lineHeight: 20, fontWeight: "400" as const },
-  caption: { fontSize: 12, lineHeight: 16, fontWeight: "500" as const },
+  caption: {
+    fontSize: 12,
+    lineHeight: 16,
+    fontWeight: "700" as const,
+    letterSpacing: 0.6,
+  },
 } as const;
 
 export const theme = { colors, spacing, radii, shadows, typography };

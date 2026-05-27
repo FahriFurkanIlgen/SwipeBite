@@ -4,6 +4,7 @@ import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
 import { Button, Card, Screen, Text } from "@/components/ui";
+import { AnimatedHero } from "@/components/ui/AnimatedHero";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
@@ -22,6 +23,7 @@ export default function InviteScreen() {
       </View>
 
       <View style={styles.body}>
+        <AnimatedHero emoji="💌" tagline="EŞİNİ DAVET ET" />
         <Text variant="h1" weight="700">
           {t.onboarding.invitePartnerTitle}
         </Text>

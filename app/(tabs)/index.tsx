@@ -11,7 +11,7 @@ import { useAuthStore } from "@/store/authStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { usePlannerStore } from "@/store/plannerStore";
-import { MOCK_RECIPES } from "@/constants/mockRecipes";
+import { useRecipesStore } from "@/store/recipesStore";
 import { buildHomeSuggestions } from "@/features/ai/suggestionFeed";
 
 const greet = () => {
@@ -28,17 +28,18 @@ export default function HomeScreen() {
   const startSession = useSessionStore((s) => s.startSession);
   const pantry = usePantryStore((s) => s.items);
   const plan = usePlannerStore((s) => s.plan);
+  const recipes = useRecipesStore((s) => s.items);
 
   const suggestions = React.useMemo(
     () =>
       buildHomeSuggestions({
         pantry,
-        recipes: MOCK_RECIPES,
+        recipes,
         plan,
         recentCookedRecipeIds: [],
         recentSessionDates: session ? [session.createdAt] : [],
       }),
-    [pantry, plan, session],
+    [pantry, plan, session, recipes],
   );
 
   const handleStart = () => {
@@ -204,7 +205,7 @@ const styles = StyleSheet.create({
   scroll: {
     padding: spacing["2xl"],
     gap: spacing["2xl"],
-    paddingBottom: spacing["4xl"],
+    paddingBottom: 120,
   },
   header: {
     flexDirection: "row",

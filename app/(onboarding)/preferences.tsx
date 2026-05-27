@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import { router } from "expo-router";
 
 import { Button, Pill, Screen, Text } from "@/components/ui";
+import { AnimatedHero } from "@/components/ui/AnimatedHero";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
@@ -64,6 +65,7 @@ export default function PreferencesScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
+        <AnimatedHero emoji="🥕" tagline="DAMAĞINI TANIYALIM" />
         <Section
           title={t.onboarding.allergiesTitle}
           subtitle={t.onboarding.allergiesSubtitle}

@@ -12,7 +12,7 @@ import * as Haptics from "expo-haptics";
 
 import { Button, Card, Screen, Text } from "@/components/ui";
 import { colors, radii, spacing } from "@/constants/theme";
-import { findRecipe } from "@/constants/mockRecipes";
+import { useRecipesStore } from "@/store/recipesStore";
 import { useStatsStore } from "@/store/statsStore";
 
 /**
@@ -21,7 +21,9 @@ import { useStatsStore } from "@/store/statsStore";
  */
 export default function CookScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const recipe = findRecipe(id ?? "");
+  const recipe = useRecipesStore((s) =>
+    s.items.find((r) => r.id === (id ?? "")),
+  );
 
   const [stepIndex, setStepIndex] = React.useState(0);
   const [timerSecondsLeft, setTimerSecondsLeft] = React.useState<number | null>(

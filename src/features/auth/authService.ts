@@ -136,6 +136,21 @@ export const authService = {
     userId: string,
   ): Promise<Household | null> {
     if (!supabase) return null;
+    // Defensive: make sure the public.users mirror row exists. Without it
+    // households.created_by FK would fail.
+    const { data: authData } = await supabase.auth.getUser();
+    const authed = authData.user;
+    if (authed) {
+      const { error: userErr } = await supabase.from("users").upsert({
+        id: authed.id,
+        name:
+          (authed.user_metadata?.name as string | undefined) ??
+          authed.email?.split("@")[0] ??
+          "Sen",
+        email: authed.email,
+      });
+      if (userErr) throw userErr;
+    }
     const inviteCode = Math.random().toString(36).slice(2, 8).toUpperCase();
     const { data: h, error } = await supabase
       .from("households")
@@ -143,9 +158,10 @@ export const authService = {
       .select()
       .single();
     if (error) throw error;
-    await supabase
+    const { error: memberErr } = await supabase
       .from("household_members")
       .insert({ household_id: h.id, user_id: userId, role: "owner" });
+    if (memberErr) throw memberErr;
     return {
       id: h.id,
       name: h.name,
