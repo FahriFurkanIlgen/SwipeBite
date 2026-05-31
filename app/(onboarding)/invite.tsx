@@ -1,86 +1,64 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import { router } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { Clock, QrCode, Share2 } from "lucide-react-native";
+import Animated, { FadeInDown } from "react-native-reanimated";
 
-import { Button, Card, Screen, Text } from "@/components/ui";
-import { AnimatedHero } from "@/components/ui/AnimatedHero";
+import { Screen } from "@/components/ui/Screen";
+import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
-import { colors, spacing } from "@/constants/theme";
+import { colors, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
 
-export default function InviteScreen() {
+export default function InviteOnboardingScreen() {
   const household = useAuthStore((s) => s.household);
+  const code = household?.id.slice(0, 6).toUpperCase() ?? "ABC123";
 
   return (
-    <Screen background="snow">
+    <Screen background="bg">
       <View style={styles.header}>
         <ProgressDots total={4} index={2} />
-        <Text variant="caption" color={colors.slate}>
+        <Text variant="caption" color={colors.dim}>
           {t.onboarding.step(3, 4)}
         </Text>
       </View>
 
-      <View style={styles.body}>
-        <AnimatedHero emoji="💌" tagline="EŞİNİ DAVET ET" />
-        <Text variant="h1" weight="700">
-          {t.onboarding.invitePartnerTitle}
-        </Text>
+      <Animated.View entering={FadeInDown.delay(80).duration(500)}>
+        <Text variant="h1">{t.onboarding.invitePartnerTitle}</Text>
         <Text
           variant="body"
           color={colors.slate}
           style={{ marginTop: spacing.sm }}
         >
-          {t.onboarding.invitePartnerSubtitle}
+          Ev halkınızı davet edin. Onlar da kendi tercihlerini ekleyebilir ve
+          birlikte eşleşebilirsiniz.
         </Text>
+      </Animated.View>
 
-        <Card
-          variant="amber"
-          style={{
-            marginTop: spacing["2xl"],
-            alignItems: "center",
-            gap: spacing.lg,
-          }}
-        >
-          <View style={styles.qr}>
-            <Ionicons name="qr-code" size={80} color={colors.ink} />
-          </View>
-          <Text variant="bodyMedium" weight="600">
-            {household?.name ?? "Bizim Ev"}
-          </Text>
-          <Text variant="caption" color={colors.graphite} align="center">
-            Eşin uygulamayı açıp bu kodu tarasın veya bağlantıyı kullansın.
-          </Text>
-        </Card>
-
-        <View style={{ gap: spacing.md, marginTop: spacing["2xl"] }}>
-          <Button
-            title={t.onboarding.inviteViaLink}
-            variant="secondary"
-            fullWidth
-            leftSlot={
-              <Ionicons name="link-outline" size={18} color={colors.ink} />
-            }
-            onPress={() => router.push("/(onboarding)/finish")}
-          />
-          <Button
-            title={t.onboarding.inviteViaQr}
-            variant="secondary"
-            fullWidth
-            leftSlot={
-              <Ionicons name="qr-code-outline" size={18} color={colors.ink} />
-            }
-            onPress={() => router.push("/(onboarding)/finish")}
-          />
-        </View>
-      </View>
-
-      <View style={styles.footer}>
-        <Button
+      <View style={{ flex: 1, gap: spacing.md, paddingTop: spacing["2xl"] }}>
+        <InviteRow
+          icon={Share2}
+          iconBg={colors.primary}
+          iconColor={colors.ink}
+          title={t.onboarding.inviteViaLink}
+          subtitle={`swipebite.app/join/${code}`}
+          onPress={() => router.push("/(onboarding)/finish")}
+        />
+        <InviteRow
+          icon={QrCode}
+          iconBg={colors.muted}
+          iconColor={colors.slate}
+          title={t.onboarding.inviteViaQr}
+          subtitle="Yanındakileri hemen davet et"
+          onPress={() => router.push("/invite")}
+        />
+        <InviteRow
+          icon={Clock}
+          iconBg={colors.muted}
+          iconColor={colors.slate}
           title={t.onboarding.inviteLater}
-          variant="ghost"
-          fullWidth
+          subtitle="Şimdilik tek başına kullan"
           onPress={() => router.push("/(onboarding)/finish")}
         />
       </View>
@@ -88,21 +66,64 @@ export default function InviteScreen() {
   );
 }
 
+interface InviteRowProps {
+  icon: React.ComponentType<{
+    size?: number;
+    color?: string;
+    strokeWidth?: number;
+  }>;
+  iconBg: string;
+  iconColor: string;
+  title: string;
+  subtitle: string;
+  onPress: () => void;
+}
+
+const InviteRow: React.FC<InviteRowProps> = ({
+  icon: Icon,
+  iconBg,
+  iconColor,
+  title,
+  subtitle,
+  onPress,
+}) => (
+  <Pressable onPress={onPress} style={styles.row}>
+    <View style={[styles.iconBox, { backgroundColor: iconBg }]}>
+      <Icon size={18} color={iconColor} strokeWidth={1.5} />
+    </View>
+    <View style={{ flex: 1 }}>
+      <Text variant="smallMedium" weight="600">
+        {title}
+      </Text>
+      <Text variant="caption" color={colors.slate} style={{ marginTop: 2 }}>
+        {subtitle}
+      </Text>
+    </View>
+  </Pressable>
+);
+
 const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: spacing.md,
+    paddingVertical: spacing.lg,
   },
-  body: { flex: 1, paddingTop: spacing.xl },
-  qr: {
-    width: 120,
-    height: 120,
-    borderRadius: 16,
-    backgroundColor: colors.snow,
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.lg,
+    borderRadius: radii.lg,
+    backgroundColor: colors.cream,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  iconBox: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",
   },
-  footer: { paddingVertical: spacing.lg },
 });

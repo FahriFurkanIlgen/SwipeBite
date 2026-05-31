@@ -14,6 +14,8 @@ interface RecipeRow {
   steps: string[] | null;
   tags: string[] | null;
   cuisine: string | null;
+  source_url?: string | null;
+  video_url?: string | null;
 }
 
 function rowToRecipe(r: RecipeRow): Recipe {
@@ -29,6 +31,8 @@ function rowToRecipe(r: RecipeRow): Recipe {
     steps: r.steps ?? [],
     tags: r.tags ?? [],
     cuisine: r.cuisine ?? "",
+    ...(r.source_url ? { sourceUrl: r.source_url } : {}),
+    ...(r.video_url ? { videoUrl: r.video_url } : {}),
   };
 }
 
@@ -70,6 +74,33 @@ export const recipeService = {
   async get(id: string): Promise<Recipe | null> {
     const all = await this.list();
     return all.find((r) => r.id === id) ?? null;
+  },
+
+  async create(
+    input: Omit<Recipe, "id"> & { id?: string },
+  ): Promise<Recipe | null> {
+    if (!supabase) return null;
+    const { data, error } = await supabase
+      .from("recipes")
+      .insert({
+        title: input.title,
+        description: input.description || null,
+        image_url: input.imageUrl || null,
+        prep_time_minutes: input.prepTimeMinutes,
+        difficulty: input.difficulty,
+        servings: input.servings,
+        ingredients: input.ingredients,
+        steps: input.steps,
+        tags: input.tags,
+        cuisine: input.cuisine || null,
+        source_url: input.sourceUrl || null,
+        video_url: input.videoUrl || null,
+      })
+      .select()
+      .single();
+    if (error || !data) return null;
+    this.invalidate();
+    return rowToRecipe(data as RecipeRow);
   },
 
   invalidate() {

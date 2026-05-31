@@ -1,22 +1,46 @@
 /**
- * SwipeBite design tokens — derived from the Bumble reference system.
- * Warm, confident, premium. Yellow canvas + charcoal ink.
+ * SwipeBite design tokens — Cream Canvas system.
+ * Warm, editorial, sophisticated. Cream backdrop + mustard accent + terracotta highlight.
+ * Serif (Fraunces) for display/headings, sans (Inter) for body/UI.
  */
 export const colors = {
-  canvas: "#FFDB5B",
-  amber: "#FFF386",
-  ink: "#202020",
-  graphite: "#3B3B3B",
-  slate: "#575656",
-  stone: "#343333",
-  snow: "#FFFFFF",
-  cloud: "#F3F3F3",
-  success: "#2BB673",
-  danger: "#E5484D",
-  like: "#2BB673",
-  nope: "#E5484D",
+  // Surfaces
+  bg: "#FAF7F2",
+  card: "#FFFFFF",
+  cream: "#F0EBE3",
+  muted: "#EDE8E1",
+  border: "#E8E3DC",
+
+  // Ink scale
+  ink: "#1A1714",
+  graphite: "#3D3530",
+  slate: "#6B6560",
+  dim: "#9E9890",
+  hairline: "#C8C0B8",
+
+  // Brand & accents
+  primary: "#F0B429",
+  primaryDeep: "#D4A017",
+  primarySoft: "#FFF8E7",
+  accent: "#E07A5F",
+  accentSoft: "#FBE6DE",
+  forest: "#4A7A50",
+  forestSoft: "#EEF4EE",
+
+  // Semantic / swipe
+  success: "#4A7A50",
+  danger: "#DC2626",
+  like: "#4A7A50",
+  nope: "#DC2626",
   superlike: "#3B82F6",
   superdislike: "#7C3AED",
+
+  // Aliases kept for legacy code paths
+  snow: "#FFFFFF",
+  cloud: "#F0EBE3",
+  canvas: "#FAF7F2",
+  amber: "#F0B429",
+  stone: "#3D3530",
 } as const;
 
 export const spacing = {
@@ -29,76 +53,119 @@ export const spacing = {
   "3xl": 32,
   "4xl": 40,
   "5xl": 48,
+  "6xl": 64,
 } as const;
 
 export const radii = {
-  sm: 8,
-  md: 12,
+  sm: 10,
+  md: 14,
   lg: 16,
-  xl: 20,
-  card: 24,
+  xl: 18,
+  "2xl": 20,
+  card: 22,
+  hero: 24,
   pill: 999,
 } as const;
 
 export const shadows = {
   sm: {
-    shadowColor: "#202020",
-    shadowOpacity: 0.08,
-    shadowRadius: 10,
+    shadowColor: "#1A1714",
+    shadowOpacity: 0.06,
+    shadowRadius: 12,
     shadowOffset: { width: 0, height: 2 },
     elevation: 2,
   },
   md: {
-    shadowColor: "#202020",
+    shadowColor: "#1A1714",
     shadowOpacity: 0.12,
-    shadowRadius: 20,
+    shadowRadius: 24,
     shadowOffset: { width: 0, height: 6 },
     elevation: 6,
   },
   lg: {
-    shadowColor: "#202020",
-    shadowOpacity: 0.18,
-    shadowRadius: 32,
-    shadowOffset: { width: 0, height: 12 },
-    elevation: 12,
+    shadowColor: "#1A1714",
+    shadowOpacity: 0.2,
+    shadowRadius: 40,
+    shadowOffset: { width: 0, height: 16 },
+    elevation: 14,
   },
+} as const;
+
+export const fonts = {
+  serif: "Fraunces_700Bold",
+  serifItalic: "Fraunces_300Light_Italic",
+  sans: "Inter_400Regular",
+  sansMedium: "Inter_500Medium",
+  sansSemibold: "Inter_600SemiBold",
+  sansBold: "Inter_700Bold",
 } as const;
 
 export const typography = {
   display: {
-    fontSize: 44,
-    lineHeight: 48,
-    fontWeight: "800" as const,
-    letterSpacing: -0.8,
+    fontFamily: fonts.serif,
+    fontSize: 56,
+    lineHeight: 60,
+    letterSpacing: -1.5,
   },
   h1: {
+    fontFamily: fonts.serif,
     fontSize: 32,
     lineHeight: 38,
-    fontWeight: "800" as const,
-    letterSpacing: -0.5,
+    letterSpacing: -0.7,
   },
   h2: {
-    fontSize: 24,
-    lineHeight: 30,
-    fontWeight: "700" as const,
-    letterSpacing: -0.3,
+    fontFamily: fonts.serif,
+    fontSize: 26,
+    lineHeight: 32,
+    letterSpacing: -0.5,
   },
   h3: {
-    fontSize: 20,
-    lineHeight: 26,
-    fontWeight: "700" as const,
-    letterSpacing: -0.2,
+    fontFamily: fonts.serif,
+    fontSize: 22,
+    lineHeight: 28,
+    letterSpacing: -0.3,
   },
-  body: { fontSize: 16, lineHeight: 24, fontWeight: "400" as const },
-  bodyMedium: { fontSize: 16, lineHeight: 24, fontWeight: "600" as const },
-  small: { fontSize: 14, lineHeight: 20, fontWeight: "400" as const },
+  serifItalic: {
+    fontFamily: fonts.serifItalic,
+    fontSize: 22,
+    lineHeight: 28,
+    letterSpacing: -0.2,
+    fontStyle: "italic" as const,
+  },
+  body: {
+    fontFamily: fonts.sans,
+    fontSize: 15,
+    lineHeight: 22,
+  },
+  bodyMedium: {
+    fontFamily: fonts.sansSemibold,
+    fontSize: 15,
+    lineHeight: 22,
+  },
+  small: {
+    fontFamily: fonts.sans,
+    fontSize: 13,
+    lineHeight: 18,
+  },
+  smallMedium: {
+    fontFamily: fonts.sansSemibold,
+    fontSize: 13,
+    lineHeight: 18,
+  },
   caption: {
-    fontSize: 12,
-    lineHeight: 16,
-    fontWeight: "700" as const,
-    letterSpacing: 0.6,
+    fontFamily: fonts.sansSemibold,
+    fontSize: 11,
+    lineHeight: 14,
+    letterSpacing: 0.4,
+  },
+  overline: {
+    fontFamily: fonts.sansSemibold,
+    fontSize: 11,
+    lineHeight: 14,
+    letterSpacing: 1.4,
+    textTransform: "uppercase" as const,
   },
 } as const;
 
-export const theme = { colors, spacing, radii, shadows, typography };
+export const theme = { colors, spacing, radii, shadows, typography, fonts };
 export type Theme = typeof theme;

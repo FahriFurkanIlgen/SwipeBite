@@ -1,8 +1,14 @@
 import React from "react";
 import { Pressable, StyleSheet, View } from "react-native";
-import { BlurView } from "expo-blur";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
+import {
+  Home as HomeIcon,
+  Layers,
+  CalendarDays,
+  Package,
+  User,
+  type LucideIcon,
+} from "lucide-react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -12,22 +18,19 @@ import * as Haptics from "expo-haptics";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Text } from "@/components/ui/Text";
-import { colors, radii, shadows, spacing } from "@/constants/theme";
+import { colors, fonts, radii, shadows, spacing } from "@/constants/theme";
 
-const ICONS: Record<string, keyof typeof Ionicons.glyphMap> = {
-  index: "home",
-  swipe: "flame",
-  planner: "calendar",
-  pantry: "basket",
-  profile: "person",
+const ICONS: Record<string, LucideIcon> = {
+  index: HomeIcon,
+  swipe: Layers,
+  planner: CalendarDays,
+  pantry: Package,
+  profile: User,
 };
 
-const INACTIVE = "#9A9A9A";
-
 /**
- * Premium floating tab bar with blur background and an animated
- * "pill" that slides under the active route. Lives a few pixels
- * off the bottom edge for that polished, premium feel.
+ * Cream floating tab bar with an animated inner pill on the active tab.
+ * White surface, soft warm shadow, mustard icon on active.
  */
 export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
   state,
@@ -41,8 +44,8 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
   React.useEffect(() => {
     if (tabWidth === 0) return;
     x.value = withSpring(state.index * tabWidth, {
-      damping: 16,
-      stiffness: 180,
+      damping: 22,
+      stiffness: 220,
     });
   }, [state.index, tabWidth, x]);
 
@@ -55,16 +58,11 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
     <View
       style={[
         styles.wrap,
-        { paddingBottom: Math.max(insets.bottom, spacing.md) },
+        { paddingBottom: Math.max(insets.bottom, spacing.sm) },
       ]}
       pointerEvents="box-none"
     >
       <View style={styles.barShell}>
-        <BlurView
-          intensity={60}
-          tint="light"
-          style={StyleSheet.absoluteFillObject}
-        />
         <View
           style={styles.row}
           onLayout={(e) => {
@@ -81,7 +79,7 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
             const isFocused = state.index === idx;
             const opts = descriptors[route.key]?.options;
             const label = (opts?.title ?? route.name) as string;
-            const iconName = ICONS[route.name] ?? "ellipse";
+            const Icon = ICONS[route.name] ?? HomeIcon;
 
             const onPress = () => {
               const event = navigation.emit({
@@ -104,16 +102,19 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
                 accessibilityState={isFocused ? { selected: true } : {}}
                 accessibilityLabel={label}
               >
-                <Ionicons
-                  name={iconName}
+                <Icon
                   size={20}
-                  color={isFocused ? colors.ink : INACTIVE}
+                  strokeWidth={isFocused ? 2 : 1.5}
+                  color={isFocused ? colors.primary : colors.dim}
                 />
                 <Text
-                  variant="caption"
-                  weight={isFocused ? "700" : "600"}
-                  color={isFocused ? colors.ink : INACTIVE}
-                  style={{ letterSpacing: 0.3 }}
+                  style={{
+                    fontSize: 10,
+                    lineHeight: 10,
+                    fontFamily: fonts.sansMedium,
+                    color: isFocused ? colors.ink : colors.dim,
+                    letterSpacing: 0.2,
+                  }}
                 >
                   {label}
                 </Text>
@@ -126,8 +127,8 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
   );
 };
 
-const BAR_HEIGHT = 68;
-const SIDE_INSET = spacing.lg;
+const BAR_HEIGHT = 64;
+const SIDE_INSET = spacing.md;
 
 const styles = StyleSheet.create({
   wrap: {
@@ -139,11 +140,12 @@ const styles = StyleSheet.create({
   },
   barShell: {
     height: BAR_HEIGHT,
-    borderRadius: radii.pill,
-    overflow: "hidden",
-    backgroundColor: "rgba(255,255,255,0.7)",
+    borderRadius: radii.card,
+    backgroundColor: colors.card,
     borderWidth: 1,
-    borderColor: "rgba(0,0,0,0.06)",
+    borderColor: colors.border,
+    paddingHorizontal: 8,
+    paddingVertical: 8,
     ...shadows.md,
   },
   row: { flex: 1, flexDirection: "row" },
@@ -155,15 +157,17 @@ const styles = StyleSheet.create({
   },
   indicator: {
     position: "absolute",
-    top: 8,
-    bottom: 8,
+    top: 0,
+    bottom: 0,
     alignItems: "center",
     justifyContent: "center",
   },
   indicatorInner: {
-    width: "70%",
+    width: "100%",
     height: "100%",
-    borderRadius: radii.pill,
-    backgroundColor: colors.amber,
+    borderRadius: radii.md,
+    backgroundColor: colors.bg,
+    borderWidth: 1,
+    borderColor: colors.border,
   },
 });

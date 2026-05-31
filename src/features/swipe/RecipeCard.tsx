@@ -2,26 +2,26 @@ import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Ionicons } from "@expo/vector-icons";
+import { Clock, Heart, Package, Users, X } from "lucide-react-native";
 import Animated, {
+  Easing,
+  Extrapolation,
   interpolate,
+  runOnJS,
   useAnimatedStyle,
   useSharedValue,
   withSpring,
   withTiming,
-  runOnJS,
-  Extrapolation,
 } from "react-native-reanimated";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import * as Haptics from "expo-haptics";
 
-import { colors, radii, shadows, spacing } from "@/constants/theme";
+import { colors, fonts, radii, shadows, spacing } from "@/constants/theme";
 import { Recipe, VoteType } from "@/types/domain";
 import { Text } from "@/components/ui/Text";
-import { t } from "@/constants/copy";
 
 const { width: SCREEN_W } = Dimensions.get("window");
-const CARD_W = Math.min(SCREEN_W - spacing["2xl"] * 2, 380);
+const CARD_W = Math.min(SCREEN_W - spacing.xl * 2, 380);
 const CARD_H = CARD_W * 1.5;
 const SWIPE_THRESHOLD = 110;
 const SUPER_THRESHOLD = 140;
@@ -32,14 +32,14 @@ export interface RecipeCardProps {
   pantryMatchPercent?: number;
   householdCompatibilityPercent?: number;
   aiNote?: string;
-  /** Stack ordering: 0 = top, 1 = behind, etc. */
   stackOffset?: number;
-  /** Whether this card responds to gestures (only the top card). */
   interactive?: boolean;
   onVote?: (type: VoteType) => void;
 }
 
-const SPRING_SOFT = { damping: 16, stiffness: 160, mass: 0.7 } as const;
+const SPRING_SOFT = { damping: 18, stiffness: 220, mass: 0.6 } as const;
+const SPRING_STACK = { damping: 20, stiffness: 180, mass: 0.7 } as const;
+const EXIT_EASING = Easing.bezier(0.2, 0.6, 0.2, 1);
 
 export const RecipeCard: React.FC<RecipeCardProps> = ({
   recipe,
@@ -54,6 +54,12 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
   const ty = useSharedValue(0);
   const rot = useSharedValue(0);
   const hapticArmed = useSharedValue(true);
+  // Animates between stack positions so newly-promoted cards glide forward
+  // instead of snapping when the deck index advances.
+  const offset = useSharedValue(stackOffset);
+  React.useEffect(() => {
+    offset.value = withSpring(stackOffset, SPRING_STACK);
+  }, [stackOffset, offset]);
 
   const triggerVote = (type: VoteType) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(
@@ -67,10 +73,12 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
   };
 
   const animateOut = (type: VoteType, x: number, y: number) => {
-    tx.value = withTiming(x, { duration: 240 });
-    ty.value = withTiming(y, { duration: 240 });
-    rot.value = withTiming(x / 18, { duration: 240 }, () => {
-      runOnJS(triggerVote)(type);
+    const duration = 260;
+    const config = { duration, easing: EXIT_EASING };
+    tx.value = withTiming(x, config);
+    ty.value = withTiming(y, config);
+    rot.value = withTiming(x / 18, config, (finished) => {
+      if (finished) runOnJS(triggerVote)(type);
     });
   };
 
@@ -92,16 +100,27 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
       }
     })
     .onEnd((e) => {
-      const { translationX: x, translationY: y, velocityX: vx } = e;
+      const {
+        translationX: x,
+        translationY: y,
+        velocityX: vx,
+        velocityY: vy,
+      } = e;
       hapticArmed.value = true;
+      // Fly the card out in the direction of motion so the exit feels
+      // continuous with the gesture instead of teleporting to a fixed point.
+      const exitX = (sign: number) =>
+        sign * Math.max(SCREEN_W * 1.4, Math.abs(vx) * 0.25 + 600);
+      const exitY = (sign: number) =>
+        sign * Math.max(SCREEN_W * 1.4, Math.abs(vy) * 0.25 + 600);
       if (y < -SUPER_THRESHOLD && Math.abs(x) < SUPER_THRESHOLD) {
-        runOnJS(animateOut)("superlike", 0, -800);
+        runOnJS(animateOut)("superlike", x, exitY(-1));
       } else if (y > SUPER_THRESHOLD && Math.abs(x) < SUPER_THRESHOLD) {
-        runOnJS(animateOut)("superdislike", 0, 800);
+        runOnJS(animateOut)("superdislike", x, exitY(1));
       } else if (x > SWIPE_THRESHOLD || vx > 800) {
-        runOnJS(animateOut)("like", 800, y);
+        runOnJS(animateOut)("like", exitX(1), y + vy * 0.15);
       } else if (x < -SWIPE_THRESHOLD || vx < -800) {
-        runOnJS(animateOut)("dislike", -800, y);
+        runOnJS(animateOut)("dislike", exitX(-1), y + vy * 0.15);
       } else {
         tx.value = withSpring(0, SPRING_SOFT);
         ty.value = withSpring(0, SPRING_SOFT);
@@ -109,22 +128,29 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
       }
     });
 
-  // Stack progression: as top card moves, back cards inch forward.
   const cardStyle = useAnimatedStyle(() => {
     const dragMagnitude = Math.min(
       1,
       Math.max(Math.abs(tx.value), Math.abs(ty.value)) / SWIPE_THRESHOLD,
     );
-    const baseScale = 1 - stackOffset * 0.05;
-    const scale = stackOffset === 0 ? 1 : baseScale + dragMagnitude * 0.05;
-    const baseY = stackOffset * 14;
-    const adjY = stackOffset === 0 ? ty.value : baseY - dragMagnitude * 14;
-    const opacity = stackOffset === 0 ? 1 : 0.55 + dragMagnitude * 0.45;
+    // Use the springy `offset` (not the raw prop) so promotions glide.
+    const o = offset.value;
+    const baseScale = 1 - o * 0.04;
+    const scale = baseScale + dragMagnitude * 0.04 * Math.min(o, 1);
+    const baseY = o * 14;
+    const adjY = baseY + ty.value * (1 - Math.min(o, 1));
+    const adjX = tx.value * (1 - Math.min(o, 1));
+    const opacity = interpolate(
+      o,
+      [0, 1, 2],
+      [1, 0.85, 0.55],
+      Extrapolation.CLAMP,
+    );
 
     return {
       opacity,
       transform: [
-        { translateX: tx.value },
+        { translateX: adjX },
         { translateY: adjY },
         { rotateZ: `${rot.value}deg` },
         { scale },
@@ -138,6 +164,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
       {
         scale: interpolate(tx.value, [40, 140], [0.7, 1], Extrapolation.CLAMP),
       },
+      { rotate: "-10deg" },
     ],
   }));
   const nopeStyle = useAnimatedStyle(() => ({
@@ -151,6 +178,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
           Extrapolation.CLAMP,
         ),
       },
+      { rotate: "10deg" },
     ],
   }));
   const superStyle = useAnimatedStyle(() => ({
@@ -177,7 +205,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
           transition={250}
         />
         <LinearGradient
-          colors={["transparent", "rgba(0,0,0,0.92)"]}
+          colors={["rgba(26,23,20,0.05)", "rgba(26,23,20,0.8)"]}
           locations={[0.4, 1]}
           style={styles.gradient}
           pointerEvents="none"
@@ -187,8 +215,8 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
           style={[styles.badge, styles.badgeLike, likeStyle]}
           pointerEvents="none"
         >
-          <Ionicons name="heart" size={16} color={colors.snow} />
-          <Text variant="bodyMedium" weight="700" color={colors.snow}>
+          <Heart size={14} color={colors.bg} strokeWidth={2.5} />
+          <Text variant="caption" weight="700" color={colors.bg}>
             BEĞENDİM
           </Text>
         </Animated.View>
@@ -196,57 +224,79 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
           style={[styles.badge, styles.badgeNope, nopeStyle]}
           pointerEvents="none"
         >
-          <Ionicons name="close" size={18} color={colors.snow} />
-          <Text variant="bodyMedium" weight="700" color={colors.snow}>
-            GEÇ
+          <X size={14} color={colors.bg} strokeWidth={2.5} />
+          <Text variant="caption" weight="700" color={colors.bg}>
+            HAYIR
           </Text>
         </Animated.View>
         <Animated.View
           style={[styles.badge, styles.badgeSuper, superStyle]}
           pointerEvents="none"
         >
-          <Ionicons name="star" size={16} color={colors.snow} />
-          <Text variant="bodyMedium" weight="700" color={colors.snow}>
-            SÜPER
+          <Text variant="caption" weight="700" color={colors.ink}>
+            ★ SÜPER
           </Text>
         </Animated.View>
 
-        <View style={styles.content}>
-          <View style={styles.metaRow}>
-            <Meta
-              icon="time-outline"
-              label={t.swipe.prepTime(recipe.prepTimeMinutes)}
-            />
-            <Meta
-              icon="people-outline"
-              label={`%${householdCompatibilityPercent}`}
-            />
-            <Meta icon="basket-outline" label={`%${pantryMatchPercent}`} />
-          </View>
-          <Text variant="h1" color={colors.snow} weight="700">
-            {recipe.title}
-          </Text>
-          {aiNote ? (
-            <View style={styles.aiRow}>
-              <Ionicons name="sparkles" size={14} color={colors.canvas} />
-              <Text variant="small" color={colors.snow} style={styles.aiText}>
-                {aiNote}
-              </Text>
+        {interactive ? (
+          <View style={styles.content}>
+            <View style={styles.tagsRow}>
+              {recipe.tags.slice(0, 3).map((tag) => (
+                <View key={tag} style={styles.tagPill}>
+                  <Text variant="caption" weight="600" color={colors.bg}>
+                    {tag.toUpperCase()}
+                  </Text>
+                </View>
+              ))}
             </View>
-          ) : null}
-        </View>
+
+            <Text style={styles.title} numberOfLines={2}>
+              {recipe.title}
+            </Text>
+            <Text variant="small" color="rgba(250,247,242,0.7)">
+              {recipe.cuisine}
+            </Text>
+
+            <View style={styles.metaRow}>
+              <Meta icon={Clock} label={`${recipe.prepTimeMinutes} dk`} />
+              <Meta
+                icon={Users}
+                label={`%${householdCompatibilityPercent} ev`}
+              />
+              <View style={[styles.meta, styles.metaAccent]}>
+                <Package size={11} color={colors.ink} strokeWidth={1.5} />
+                <Text variant="caption" weight="700" color={colors.ink}>
+                  %{pantryMatchPercent} kiler
+                </Text>
+              </View>
+            </View>
+
+            {aiNote ? (
+              <View style={styles.aiBox}>
+                <Text variant="small" color="rgba(250,247,242,0.75)">
+                  ✦ {aiNote}
+                </Text>
+              </View>
+            ) : null}
+          </View>
+        ) : null}
       </Animated.View>
     </GestureDetector>
   );
 };
 
-const Meta: React.FC<{
-  icon: keyof typeof Ionicons.glyphMap;
+interface MetaProps {
+  icon: React.ComponentType<{
+    size?: number;
+    color?: string;
+    strokeWidth?: number;
+  }>;
   label: string;
-}> = ({ icon, label }) => (
+}
+const Meta: React.FC<MetaProps> = ({ icon: Icon, label }) => (
   <View style={styles.meta}>
-    <Ionicons name={icon} size={14} color={colors.snow} />
-    <Text variant="caption" color={colors.snow} weight="700">
+    <Icon size={11} color="rgba(250,247,242,0.8)" strokeWidth={1.5} />
+    <Text variant="caption" weight="500" color="rgba(250,247,242,0.85)">
       {label}
     </Text>
   </View>
@@ -256,7 +306,7 @@ const styles = StyleSheet.create({
   card: {
     width: CARD_W,
     height: CARD_H,
-    borderRadius: radii.card,
+    borderRadius: 28,
     backgroundColor: colors.ink,
     overflow: "hidden",
     alignSelf: "center",
@@ -269,59 +319,95 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    height: "60%",
+    top: 0,
   },
   content: {
     position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
-    padding: spacing["2xl"],
+    padding: spacing.xl,
     gap: spacing.sm,
   },
-  metaRow: { flexDirection: "row", gap: spacing.sm, flexWrap: "wrap" },
+  tagsRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 6,
+    marginBottom: 2,
+  },
+  tagPill: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: radii.pill,
+    backgroundColor: "rgba(250,247,242,0.18)",
+    borderWidth: 1,
+    borderColor: "rgba(250,247,242,0.25)",
+  },
+  title: {
+    fontFamily: fonts.serif,
+    fontSize: 32,
+    lineHeight: 35,
+    color: colors.bg,
+    letterSpacing: -0.64,
+  },
+  metaRow: {
+    flexDirection: "row",
+    gap: 6,
+    flexWrap: "wrap",
+    marginTop: 4,
+  },
   meta: {
     flexDirection: "row",
     alignItems: "center",
     gap: 6,
-    backgroundColor: "rgba(255,255,255,0.18)",
-    paddingHorizontal: 10,
+    paddingHorizontal: 12,
     paddingVertical: 6,
-    borderRadius: 999,
+    borderRadius: radii.pill,
+    backgroundColor: "rgba(26,23,20,0.55)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
   },
-  aiRow: {
-    flexDirection: "row",
-    gap: 6,
-    alignItems: "flex-start",
-    marginTop: 4,
+  metaAccent: {
+    backgroundColor: "rgba(240,180,41,0.85)",
+    borderColor: "transparent",
   },
-  aiText: { flex: 1, opacity: 0.95 },
+  aiBox: {
+    marginTop: spacing.sm,
+    padding: 14,
+    borderRadius: 12,
+    backgroundColor: "rgba(26,23,20,0.55)",
+    borderWidth: 1,
+    borderColor: "rgba(250,247,242,0.1)",
+  },
   badge: {
     position: "absolute",
     flexDirection: "row",
     alignItems: "center",
     gap: 6,
-    borderRadius: radii.pill,
-    paddingHorizontal: 14,
-    paddingVertical: 8,
-    ...shadows.md,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
   },
   badgeLike: {
-    top: spacing["2xl"],
-    right: spacing["2xl"],
-    backgroundColor: colors.like,
-    transform: [{ rotate: "-10deg" }],
+    top: spacing.xl,
+    left: spacing.xl,
+    backgroundColor: "#22C55E",
+    borderWidth: 2.5,
+    borderColor: "#16A34A",
   },
   badgeNope: {
-    top: spacing["2xl"],
-    left: spacing["2xl"],
-    backgroundColor: colors.nope,
-    transform: [{ rotate: "10deg" }],
+    top: spacing.xl,
+    right: spacing.xl,
+    backgroundColor: "#EF4444",
+    borderWidth: 2.5,
+    borderColor: "#DC2626",
   },
   badgeSuper: {
     alignSelf: "center",
     top: 80,
-    backgroundColor: colors.superlike,
+    backgroundColor: colors.primary,
+    borderWidth: 2,
+    borderColor: colors.primaryDeep,
   },
 });
 

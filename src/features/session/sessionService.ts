@@ -1,6 +1,15 @@
 import { supabase } from "@/lib/supabase";
 import { Vote, VoteType } from "@/types/domain";
 
+export interface RemoteSessionRow {
+  id: string;
+  householdId: string;
+  createdBy: string;
+  participantIds: string[];
+  recipeIds: string[];
+  status: string;
+}
+
 /**
  * Realtime + persistence layer for swipe sessions.
  *
@@ -9,6 +18,73 @@ import { Vote, VoteType } from "@/types/domain";
  */
 export const sessionService = {
   isConfigured: () => !!supabase,
+
+  /** Fetch a session by id and return it in normalised form. */
+  async getSession(id: string): Promise<RemoteSessionRow | null> {
+    if (!supabase) return null;
+    const { data, error } = await supabase
+      .from("swipe_sessions")
+      .select("*")
+      .eq("id", id)
+      .maybeSingle();
+    if (error || !data) return null;
+    const row = data as {
+      id: string;
+      household_id: string;
+      created_by: string;
+      participant_ids: string[] | null;
+      recipe_ids: string[] | null;
+      status: string;
+    };
+    return {
+      id: row.id,
+      householdId: row.household_id,
+      createdBy: row.created_by,
+      participantIds: row.participant_ids ?? [],
+      recipeIds: row.recipe_ids ?? [],
+      status: row.status,
+    };
+  },
+
+  /** Add a user to the session's participant list (idempotent). */
+  async joinSession(sessionId: string, userId: string): Promise<void> {
+    if (!supabase) return;
+    const current = await this.getSession(sessionId);
+    if (!current) return;
+    if (current.participantIds.includes(userId)) return;
+    const next = [...current.participantIds, userId];
+    await supabase
+      .from("swipe_sessions")
+      .update({ participant_ids: next })
+      .eq("id", sessionId);
+  },
+
+  /** Fetch all votes for a session (used when joining mid-flight). */
+  async listVotes(sessionId: string): Promise<Vote[]> {
+    if (!supabase) return [];
+    const { data, error } = await supabase
+      .from("votes")
+      .select("*")
+      .eq("session_id", sessionId);
+    if (error || !data) return [];
+    return (
+      data as {
+        id: string;
+        session_id: string;
+        user_id: string;
+        recipe_id: string;
+        vote_type: VoteType;
+        created_at: string;
+      }[]
+    ).map((r) => ({
+      id: r.id,
+      sessionId: r.session_id,
+      userId: r.user_id,
+      recipeId: r.recipe_id,
+      voteType: r.vote_type,
+      createdAt: r.created_at,
+    }));
+  },
 
   async insertVote(vote: {
     sessionId: string;
@@ -52,6 +128,25 @@ export const sessionService = {
       .from("swipe_sessions")
       .update({ status: "completed", completed_at: new Date().toISOString() })
       .eq("id", id);
+  },
+
+  async insertMatch(input: {
+    sessionId: string;
+    recipeId: string;
+    score: number;
+    reasons: string[];
+    likedByUserIds: string[];
+    missingIngredients: string[];
+  }): Promise<void> {
+    if (!supabase) return;
+    await supabase.from("matches").insert({
+      session_id: input.sessionId,
+      recipe_id: input.recipeId,
+      score: input.score,
+      reasons: input.reasons,
+      liked_by_user_ids: input.likedByUserIds,
+      missing_ingredients: input.missingIngredients,
+    });
   },
 
   /**

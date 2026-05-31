@@ -5,6 +5,7 @@ export { Confetti } from "./Confetti";
 export { EmptyState } from "./EmptyState";
 export { Input } from "./Input";
 export { Pill } from "./Pill";
+export { ProgressDots } from "./ProgressDots";
 export { Screen } from "./Screen";
 export { Skeleton } from "./Skeleton";
 export { Text } from "./Text";

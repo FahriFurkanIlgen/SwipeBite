@@ -1,36 +1,42 @@
 import React from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { router } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { Image } from "expo-image";
+import {
+  Bell,
+  ChevronRight,
+  Edit3,
+  HelpCircle,
+  LogOut,
+  Settings2,
+  Shield,
+  type LucideIcon,
+} from "lucide-react-native";
 
-import { Button, Card, Pill, Screen, Text } from "@/components/ui";
-import { colors, radii, spacing } from "@/constants/theme";
+import { Screen } from "@/components/ui/Screen";
+import { Text } from "@/components/ui/Text";
+import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
-import {
-  computeStreak,
-  favoriteRecipeId,
-  useStatsStore,
-} from "@/store/statsStore";
 import { useRecipesStore } from "@/store/recipesStore";
+import { usePantryStore } from "@/store/pantryStore";
+import { useSessionStore } from "@/store/sessionStore";
+import { useStatsStore } from "@/store/statsStore";
 
 export default function ProfileScreen() {
   const user = useAuthStore((s) => s.user);
   const profile = useAuthStore((s) => s.profile);
   const household = useAuthStore((s) => s.household);
   const signOut = useAuthStore((s) => s.signOut);
-  const cookDates = useStatsStore((s) => s.cookDates);
   const cookCounts = useStatsStore((s) => s.cookCounts);
   const favorites = useStatsStore((s) => s.favorites);
   const recipes = useRecipesStore((s) => s.items);
-  const findById = useRecipesStore((s) => s.findById);
+  const pantryItems = usePantryStore((s) => s.items);
+  const session = useSessionStore((s) => s.session);
 
-  const streak = React.useMemo(() => computeStreak(cookDates), [cookDates]);
-  const topRecipe = React.useMemo(() => {
-    const id = favoriteRecipeId(cookCounts);
-    return id ? findById(id) : null;
-  }, [cookCounts, findById]);
-  const favoriteRecipes = React.useMemo(
+  const totalCooked = Object.values(cookCounts).reduce((a, b) => a + b, 0);
+  const sessionsRun = session ? 1 : 0;
+  const savedRecipes = React.useMemo(
     () =>
       favorites
         .map((id) => recipes.find((r) => r.id === id))
@@ -39,238 +45,443 @@ export default function ProfileScreen() {
   );
 
   return (
-    <Screen background="snow">
+    <Screen background="bg" padded={false}>
       <ScrollView
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}
       >
-        <View>
-          <Text variant="h1" weight="700">
-            {t.profile.title}
-          </Text>
-        </View>
-
-        <Card variant="amber" padding="lg" style={styles.userCard}>
-          <View style={styles.avatar}>
-            <Ionicons name="person" size={24} color={colors.ink} />
+        {/* Header */}
+        <View style={styles.header}>
+          <View style={styles.avatarWrap}>
+            <View style={styles.avatar}>
+              <Text
+                style={{
+                  fontFamily: fonts.serif,
+                  fontSize: 24,
+                  color: colors.ink,
+                }}
+              >
+                {(user?.name ?? "S").charAt(0).toUpperCase()}
+              </Text>
+            </View>
+            <View style={styles.avatarEdit}>
+              <Edit3 size={11} color={colors.ink} strokeWidth={2} />
+            </View>
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="bodyMedium" weight="700">
-              {user?.name}
+            <Text variant="h3">{user?.name ?? "Misafir"}</Text>
+            <Text variant="small" color={colors.dim} style={{ marginTop: 2 }}>
+              {user?.email ?? "—"}
             </Text>
-            <Text variant="small" color={colors.graphite}>
-              {user?.email}
-            </Text>
-          </View>
-        </Card>
-
-        <View style={styles.statsRow}>
-          <Card padding="lg" style={styles.statCard}>
-            <Ionicons name="flame" size={22} color={colors.ink} />
-            <Text variant="display" weight="700">
-              {streak}
-            </Text>
-            <Text variant="caption" color={colors.graphite}>
-              günlük seri
-            </Text>
-          </Card>
-          <Card padding="lg" style={styles.statCard}>
-            <Ionicons name="restaurant" size={22} color={colors.ink} />
-            <Text variant="display" weight="700">
-              {Object.values(cookCounts).reduce((a, b) => a + b, 0)}
-            </Text>
-            <Text variant="caption" color={colors.graphite}>
-              pişirilen tarif
-            </Text>
-          </Card>
-          <Card padding="lg" style={styles.statCard}>
-            <Ionicons name="heart" size={22} color={colors.ink} />
-            <Text variant="display" weight="700">
-              {favorites.length}
-            </Text>
-            <Text variant="caption" color={colors.graphite}>
-              favori
-            </Text>
-          </Card>
-        </View>
-
-        {topRecipe ? (
-          <Pressable
-            onPress={() => router.push(`/recipe/${topRecipe.id}` as never)}
-          >
-            <Card variant="amber" padding="lg" style={styles.topRecipeCard}>
-              <View style={{ flex: 1 }}>
-                <Text variant="caption" weight="700" color={colors.graphite}>
-                  EN SEVDİĞİN
-                </Text>
-                <Text variant="bodyMedium" weight="700">
-                  {topRecipe.title}
-                </Text>
-                <Text variant="small" color={colors.graphite}>
-                  {cookCounts[topRecipe.id]} kez yapıldı
+            {household ? (
+              <View style={styles.householdBadge}>
+                <View style={styles.dot} />
+                <Text variant="caption" weight="600" color={colors.slate}>
+                  {household.name}
                 </Text>
               </View>
-              <Ionicons name="chevron-forward" size={20} color={colors.ink} />
-            </Card>
-          </Pressable>
-        ) : null}
+            ) : null}
+          </View>
+        </View>
 
-        {favoriteRecipes.length > 0 ? (
-          <Section icon="heart-outline" title="Favorilerim">
-            <View style={{ gap: spacing.sm }}>
-              {favoriteRecipes.map((r) => (
-                <Pressable
-                  key={r.id}
-                  onPress={() => router.push(`/recipe/${r.id}` as never)}
-                  style={styles.favRow}
+        {/* Household */}
+        {household ? (
+          <View style={styles.card}>
+            <View style={styles.cardHeader}>
+              <Text variant="overline" color={colors.dim}>
+                Ev Halkı
+              </Text>
+              <Pressable onPress={() => router.push("/invite")}>
+                <Text
+                  variant="smallMedium"
+                  weight="600"
+                  color={colors.primaryDeep}
                 >
-                  <View style={{ flex: 1 }}>
-                    <Text variant="bodyMedium" weight="600">
-                      {r.title}
-                    </Text>
-                    <Text variant="caption" color={colors.graphite}>
-                      {r.prepTimeMinutes} dk · {r.difficulty}
+                  + Davet et
+                </Text>
+              </Pressable>
+            </View>
+            <View style={styles.householdRow}>
+              <View style={styles.memberItem}>
+                <View style={styles.memberAvatarWrap}>
+                  <View style={styles.memberAvatar}>
+                    <Text
+                      style={{
+                        fontFamily: fonts.sans,
+                        fontWeight: "700",
+                        color: colors.ink,
+                      }}
+                    >
+                      {(user?.name ?? "S").charAt(0).toUpperCase()}
                     </Text>
                   </View>
-                  <Ionicons
-                    name="chevron-forward"
-                    size={18}
-                    color={colors.graphite}
+                  <View style={styles.onlineDot} />
+                </View>
+                <Text variant="caption" weight="500">
+                  {user?.name ?? "Sen"}
+                </Text>
+                <View style={[styles.rolePill, styles.rolePillMe]}>
+                  <Text
+                    variant="caption"
+                    weight="600"
+                    color={colors.primaryDeep}
+                  >
+                    Sen
+                  </Text>
+                </View>
+              </View>
+              {household.memberIds.slice(1).map((id) => (
+                <View key={id} style={styles.memberItem}>
+                  <View style={styles.memberAvatarWrap}>
+                    <View
+                      style={[
+                        styles.memberAvatar,
+                        { backgroundColor: colors.cream },
+                      ]}
+                    >
+                      <Text
+                        style={{
+                          fontFamily: fonts.sans,
+                          fontWeight: "700",
+                          color: colors.slate,
+                        }}
+                      >
+                        {id.charAt(0).toUpperCase()}
+                      </Text>
+                    </View>
+                    <View style={styles.onlineDot} />
+                  </View>
+                  <Text variant="caption" weight="500">
+                    {id.slice(0, 4)}
+                  </Text>
+                  <View style={[styles.rolePill, styles.rolePillOther]}>
+                    <Text variant="caption" weight="600" color={colors.dim}>
+                      Eş
+                    </Text>
+                  </View>
+                </View>
+              ))}
+            </View>
+          </View>
+        ) : null}
+
+        {/* Preferences */}
+        <View>
+          <View style={styles.sectionHeader}>
+            <Text variant="overline" color={colors.dim}>
+              Tercihlerim
+            </Text>
+            <Pressable onPress={() => router.push("/(onboarding)/preferences")}>
+              <Text
+                variant="smallMedium"
+                weight="600"
+                color={colors.primaryDeep}
+              >
+                Düzenle
+              </Text>
+            </Pressable>
+          </View>
+          <View style={styles.chipWrap}>
+            {(profile?.favoriteCuisines ?? []).map((c) => (
+              <View key={c} style={styles.prefChip}>
+                <Text variant="smallMedium" color={colors.ink}>
+                  {c}
+                </Text>
+              </View>
+            ))}
+            {(profile?.allergies ?? []).map((a) => (
+              <View key={a} style={[styles.prefChip, styles.prefChipMute]}>
+                <Text
+                  variant="smallMedium"
+                  color={colors.hairline}
+                  style={{ textDecorationLine: "line-through" }}
+                >
+                  {a}
+                </Text>
+              </View>
+            ))}
+          </View>
+        </View>
+
+        {/* Saved */}
+        {savedRecipes.length > 0 ? (
+          <View>
+            <View style={styles.sectionHeader}>
+              <Text variant="overline" color={colors.dim}>
+                Kaydedilenler
+              </Text>
+              <Text
+                variant="smallMedium"
+                weight="600"
+                color={colors.primaryDeep}
+              >
+                {savedRecipes.length} tarif
+              </Text>
+            </View>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ gap: 8 }}
+            >
+              {savedRecipes.map((r) => (
+                <Pressable
+                  key={r.id}
+                  onPress={() => router.push(`/recipe/${r.id}`)}
+                  style={styles.savedItem}
+                >
+                  <Image
+                    source={{ uri: r.imageUrl }}
+                    style={StyleSheet.absoluteFillObject}
+                    contentFit="cover"
                   />
                 </Pressable>
               ))}
-            </View>
-          </Section>
+            </ScrollView>
+          </View>
         ) : null}
 
-        <Section icon="home" title={t.profile.household}>
-          <Text variant="bodyMedium" weight="600">
-            {household?.name ?? "—"}
-          </Text>
-          <Text variant="caption" color={colors.slate}>
-            {household?.memberIds.length ?? 1} üye
-          </Text>
-          <Button
-            title={t.profile.invite}
-            variant="secondary"
-            size="sm"
-            onPress={() => router.push("/invite")}
-            style={{ marginTop: spacing.sm, alignSelf: "flex-start" }}
-            leftSlot={
-              <Ionicons
-                name="person-add-outline"
-                size={14}
-                color={colors.ink}
-              />
-            }
+        {/* Settings */}
+        <View style={styles.settingsCard}>
+          <SettingsRow
+            icon={Settings2}
+            label="Aile Tercihleri"
+            sub="Haftalık plan için detaylı ayarlar"
+            onPress={() => router.push("/settings/preferences")}
           />
-        </Section>
-
-        <Section icon="alert-circle" title={t.profile.allergies}>
-          <PillList
-            items={profile?.allergies ?? []}
-            fallback="Tanımlı alerji yok."
+          <SettingsRow
+            icon={Bell}
+            label="Bildirimler"
+            sub="Eşleşme bildirimleri"
+            border
+            onPress={() => router.push("/settings/notifications")}
           />
-        </Section>
-
-        <Section icon="close-circle" title={t.profile.dislikes}>
-          <PillList
-            items={profile?.hardDislikes ?? []}
-            fallback="Sevmediğin malzeme eklenmemiş."
+          <SettingsRow
+            icon={Shield}
+            label="Gizlilik"
+            sub="Verileriniz"
+            border
+            onPress={() => router.push("/settings/privacy")}
           />
-        </Section>
-
-        <Section icon="flame-outline" title={t.profile.spice}>
-          <Text variant="bodyMedium" weight="600">
-            {profile?.spiceTolerance ?? "mild"}
-          </Text>
-        </Section>
-
-        <Section icon="restaurant-outline" title={t.profile.cuisines}>
-          <PillList
-            items={profile?.favoriteCuisines ?? []}
-            fallback="Henüz tercih eklemedin."
+          <SettingsRow
+            icon={HelpCircle}
+            label="Yardım"
+            sub="SSS ve destek"
+            border
+            onPress={() => router.push("/settings/help")}
           />
-        </Section>
+          <Pressable
+            onPress={signOut}
+            style={[
+              styles.settingsRow,
+              { borderTopWidth: 1, borderTopColor: colors.cream },
+            ]}
+          >
+            <View
+              style={[
+                styles.settingsIcon,
+                { backgroundColor: colors.accentSoft },
+              ]}
+            >
+              <LogOut size={14} color={colors.accent} strokeWidth={1.5} />
+            </View>
+            <Text variant="smallMedium" weight="500" color={colors.accent}>
+              {t.profile.signOut}
+            </Text>
+          </Pressable>
+        </View>
 
-        <Button
-          title={t.profile.signOut}
-          variant="ghost"
-          fullWidth
-          onPress={signOut}
-          style={{ marginTop: spacing.lg }}
-        />
+        <View style={{ height: 100 }} />
       </ScrollView>
     </Screen>
   );
 }
 
-const Section: React.FC<{
-  icon: keyof typeof Ionicons.glyphMap;
-  title: string;
-  children: React.ReactNode;
-}> = ({ icon, title, children }) => (
-  <Card padding="lg" style={{ gap: spacing.sm }}>
-    <View
-      style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}
-    >
-      <Ionicons name={icon} size={18} color={colors.ink} />
-      <Text variant="bodyMedium" weight="700">
-        {title}
+interface SettingsRowProps {
+  icon: LucideIcon;
+  label: string;
+  sub: string;
+  border?: boolean;
+  onPress?: () => void;
+}
+const SettingsRow: React.FC<SettingsRowProps> = ({
+  icon: Icon,
+  label,
+  sub,
+  border,
+  onPress,
+}) => (
+  <Pressable
+    onPress={onPress}
+    style={[
+      styles.settingsRow,
+      border && { borderTopWidth: 1, borderTopColor: colors.cream },
+    ]}
+  >
+    <View style={styles.settingsIcon}>
+      <Icon size={14} color={colors.slate} strokeWidth={1.5} />
+    </View>
+    <View style={{ flex: 1 }}>
+      <Text variant="smallMedium" weight="500">
+        {label}
+      </Text>
+      <Text variant="caption" color={colors.dim} style={{ marginTop: 2 }}>
+        {sub}
       </Text>
     </View>
-    {children}
-  </Card>
+    <ChevronRight size={14} color={colors.hairline} strokeWidth={1.5} />
+  </Pressable>
 );
-
-const PillList: React.FC<{ items: string[]; fallback: string }> = ({
-  items,
-  fallback,
-}) => {
-  if (!items.length) {
-    return (
-      <Text variant="small" color={colors.slate}>
-        {fallback}
-      </Text>
-    );
-  }
-  return (
-    <View style={styles.pillRow}>
-      {items.map((i) => (
-        <Pill key={i} label={i} />
-      ))}
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   scroll: {
-    padding: spacing["2xl"],
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing["3xl"],
     gap: spacing.lg,
-    paddingBottom: 120,
   },
-  userCard: { flexDirection: "row", alignItems: "center", gap: spacing.md },
+  header: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.md,
+  },
+  avatarWrap: { position: "relative" },
   avatar: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    backgroundColor: colors.snow,
+    width: 64,
+    height: 64,
+    borderRadius: 18,
+    backgroundColor: colors.primarySoft,
     alignItems: "center",
     justifyContent: "center",
   },
-  pillRow: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm },
-  statsRow: { flexDirection: "row", gap: spacing.sm },
-  statCard: { flex: 1, alignItems: "center", gap: 4 },
-  topRecipeCard: {
+  avatarEdit: {
+    position: "absolute",
+    right: -6,
+    bottom: -6,
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: colors.primary,
+    borderWidth: 2,
+    borderColor: colors.bg,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  householdBadge: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginTop: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: radii.pill,
+    backgroundColor: colors.cream,
+  },
+  dot: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    backgroundColor: colors.primary,
+  },
+  statsGrid: {
+    flexDirection: "row",
+    gap: 10,
+  },
+  statCard: {
+    flex: 1,
+    padding: 12,
+    borderRadius: radii.lg,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    alignItems: "center",
+    gap: 4,
+  },
+  card: {
+    padding: spacing.lg,
+    borderRadius: 20,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    gap: spacing.md,
+  },
+  cardHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  householdRow: { flexDirection: "row", gap: spacing.md },
+  memberItem: { alignItems: "center", gap: 4 },
+  memberAvatarWrap: { position: "relative" },
+  memberAvatar: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: colors.primary,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  onlineDot: {
+    position: "absolute",
+    right: -2,
+    bottom: -2,
+    width: 14,
+    height: 14,
+    borderRadius: 7,
+    backgroundColor: colors.forest,
+    borderWidth: 2,
+    borderColor: colors.bg,
+  },
+  rolePill: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: radii.pill,
+    marginTop: 2,
+  },
+  rolePillMe: { backgroundColor: colors.primarySoft },
+  rolePillOther: { backgroundColor: colors.cream },
+  sectionHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: spacing.sm,
+  },
+  chipWrap: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  prefChip: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: radii.pill,
+    backgroundColor: colors.cream,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  prefChipMute: { backgroundColor: colors.card },
+  savedGrid: { flexDirection: "row", gap: 8 },
+  savedItem: {
+    width: 92,
+    height: 92,
+    borderRadius: 12,
+    overflow: "hidden",
+  },
+  settingsCard: {
+    borderRadius: 20,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    overflow: "hidden",
+  },
+  settingsRow: {
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: 14,
   },
-  favRow: {
-    flexDirection: "row",
+  settingsIcon: {
+    width: 32,
+    height: 32,
+    borderRadius: 10,
+    backgroundColor: colors.cream,
     alignItems: "center",
-    gap: spacing.sm,
-    paddingVertical: spacing.xs,
-    borderRadius: radii.md,
+    justifyContent: "center",
   },
 });

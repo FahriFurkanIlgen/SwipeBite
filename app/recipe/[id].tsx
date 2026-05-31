@@ -1,12 +1,27 @@
 import React from "react";
-import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+import { Linking, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Ionicons } from "@expo/vector-icons";
+import {
+  ArrowLeft,
+  Check,
+  ChevronRight,
+  Clock,
+  ExternalLink,
+  Flame,
+  Heart,
+  Package,
+  Play,
+  Sparkles,
+  Users,
+} from "lucide-react-native";
+import Animated, { FadeInDown } from "react-native-reanimated";
+import Svg, { Circle } from "react-native-svg";
 
-import { Button, Card, Pill, Screen, Text } from "@/components/ui";
-import { colors, radii, spacing } from "@/constants/theme";
+import { Screen } from "@/components/ui/Screen";
+import { Text } from "@/components/ui/Text";
+import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useRecipesStore } from "@/store/recipesStore";
 import { usePantryStore } from "@/store/pantryStore";
@@ -31,21 +46,41 @@ export default function RecipeScreen() {
 
   if (!recipe) {
     return (
-      <Screen background="snow">
+      <Screen background="bg">
         <View style={styles.empty}>
-          <Text variant="h2" weight="700">
-            Tarif bulunamadı
-          </Text>
-          <Button title={t.common.back} onPress={() => router.back()} />
+          <Text variant="h2">Tarif bulunamadı</Text>
+          <Pressable onPress={() => router.back()} style={styles.cta}>
+            <Text variant="bodyMedium" weight="700" color={colors.ink}>
+              {t.common.back}
+            </Text>
+          </Pressable>
         </View>
       </Screen>
     );
   }
 
-  const pantryNames = pantry.map((p) => p.name);
-  const missing = recipe.ingredients
-    .map((i) => i.name)
-    .filter((n) => !pantryNames.some((p) => n.includes(p) || p.includes(n)));
+  const pantryNames = pantry.map((p) => p.name.toLowerCase());
+  const ingredientsWithPantry = recipe.ingredients.map((ing) => ({
+    ...ing,
+    inPantry: pantryNames.some(
+      (p) =>
+        ing.name.toLowerCase().includes(p) ||
+        p.includes(ing.name.toLowerCase()),
+    ),
+  }));
+  const pantryMatchPct = Math.round(
+    (ingredientsWithPantry.filter((i) => i.inPantry).length /
+      Math.max(1, recipe.ingredients.length)) *
+      100,
+  );
+  const missingCount = ingredientsWithPantry.filter((i) => !i.inPantry).length;
+
+  const difficultyColor =
+    recipe.difficulty === "kolay"
+      ? colors.forest
+      : recipe.difficulty === "orta"
+        ? colors.primaryDeep
+        : colors.accent;
 
   const handleAdapt = async () => {
     setAdapting(true);
@@ -62,7 +97,7 @@ export default function RecipeScreen() {
   };
 
   return (
-    <Screen background="snow" padded={false}>
+    <Screen background="bg" padded={false}>
       <ScrollView
         contentContainerStyle={{ paddingBottom: spacing["4xl"] }}
         showsVerticalScrollIndicator={false}
@@ -74,7 +109,8 @@ export default function RecipeScreen() {
             contentFit="cover"
           />
           <LinearGradient
-            colors={["transparent", "rgba(0,0,0,0.75)"]}
+            colors={["rgba(26,23,20,0.1)", "rgba(26,23,20,0.75)"]}
+            locations={[0.5, 1]}
             style={StyleSheet.absoluteFillObject}
           />
           <View style={styles.heroTop}>
@@ -83,162 +119,331 @@ export default function RecipeScreen() {
               hitSlop={12}
               style={styles.iconBtn}
             >
-              <Ionicons name="chevron-back" size={22} color={colors.snow} />
+              <ArrowLeft size={16} color={colors.bg} strokeWidth={2} />
             </Pressable>
             <Pressable
               hitSlop={12}
-              style={styles.iconBtn}
               onPress={() => toggleFavorite(recipe.id)}
-              accessibilityLabel={
-                isFavorite ? "Favoriden çıkar" : "Favorilere ekle"
-              }
+              style={styles.iconBtn}
             >
-              <Ionicons
-                name={isFavorite ? "heart" : "heart-outline"}
-                size={20}
-                color={isFavorite ? "#FF4D6D" : colors.snow}
+              <Heart
+                size={16}
+                color={isFavorite ? colors.accent : colors.bg}
+                fill={isFavorite ? colors.accent : "transparent"}
+                strokeWidth={2}
               />
             </Pressable>
           </View>
           <View style={styles.heroBody}>
-            <Text variant="h1" weight="700" color={colors.snow}>
-              {recipe.title}
-            </Text>
-            <View style={{ flexDirection: "row", gap: spacing.sm }}>
-              <Meta
-                icon="time-outline"
-                label={`${recipe.prepTimeMinutes} dk`}
-              />
-              <Meta icon="flame-outline" label={recipe.difficulty} />
-              <Meta
-                icon="people-outline"
-                label={`${recipe.servings} kişilik`}
-              />
+            <View style={styles.tagsRow}>
+              {recipe.tags.slice(0, 3).map((tag) => (
+                <View key={tag} style={styles.tagPill}>
+                  <Text variant="caption" weight="600" color={colors.bg}>
+                    {tag.toUpperCase()}
+                  </Text>
+                </View>
+              ))}
             </View>
+            <Text style={styles.heroTitle}>{recipe.title}</Text>
+            <Text
+              variant="small"
+              color="rgba(250,247,242,0.7)"
+              style={{ marginTop: 2 }}
+            >
+              {recipe.cuisine}
+            </Text>
           </View>
         </View>
 
-        <View style={{ padding: spacing["2xl"], gap: spacing.lg }}>
-          <View style={styles.pillRow}>
-            {recipe.tags.map((tag) => (
-              <Pill key={tag} label={tag} variant="accent" />
-            ))}
+        <View style={styles.content}>
+          <View style={styles.metaGrid}>
+            <MetaCard
+              icon={Clock}
+              value={`${recipe.prepTimeMinutes}dk`}
+              label="Süre"
+            />
+            <MetaCard
+              icon={Users}
+              value={`${recipe.servings} kişi`}
+              label="Kişi"
+            />
+            <MetaCard
+              icon={Flame}
+              value={recipe.difficulty}
+              label="Zorluk"
+              color={difficultyColor}
+            />
+            <MetaCard
+              icon={Sparkles}
+              value={`%${pantryMatchPct}`}
+              label="Kiler"
+            />
           </View>
 
-          <Text variant="body" color={colors.graphite}>
-            {recipe.description}
-          </Text>
+          <View style={styles.pantryBanner}>
+            <View style={styles.pantryIcon}>
+              <Package size={18} color={colors.ink} strokeWidth={1.5} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text variant="smallMedium" weight="600">
+                %{pantryMatchPct} Kiler Uyumu
+              </Text>
+              <Text variant="caption" color="#8A6800" style={{ marginTop: 2 }}>
+                {missingCount} malzeme eksik
+              </Text>
+            </View>
+            <View style={styles.pantryRing}>
+              <Svg width={44} height={44} viewBox="0 0 44 44">
+                <Circle
+                  cx={22}
+                  cy={22}
+                  r={18}
+                  stroke={colors.border}
+                  strokeWidth={4}
+                  fill="none"
+                />
+                <Circle
+                  cx={22}
+                  cy={22}
+                  r={18}
+                  stroke={colors.primary}
+                  strokeWidth={4}
+                  strokeLinecap="round"
+                  fill="none"
+                  strokeDasharray={`${2 * Math.PI * 18}`}
+                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - pantryMatchPct / 100)}`}
+                  transform="rotate(-90 22 22)"
+                />
+              </Svg>
+              <Text
+                style={{
+                  position: "absolute",
+                  fontFamily: fonts.sansBold,
+                  fontSize: 10,
+                  color: colors.ink,
+                }}
+              >
+                {pantryMatchPct}%
+              </Text>
+            </View>
+          </View>
 
-          {missing.length > 0 ? (
-            <Card variant="amber" padding="lg" style={{ gap: 4 }}>
-              <Text variant="caption" weight="700" color={colors.stone}>
-                {t.match.missingIngredients.toUpperCase()}
-              </Text>
-              <Text variant="small" color={colors.graphite}>
-                {missing.slice(0, 6).join(", ")}
-              </Text>
-            </Card>
+          {recipe.description ? (
+            <Text variant="body" color={colors.graphite}>
+              {recipe.description}
+            </Text>
           ) : null}
 
-          <Section title={t.recipe.ingredients}>
-            {recipe.ingredients.map((i) => (
-              <View key={i.name} style={styles.ingRow}>
-                <View style={styles.dot} />
-                <Text variant="body" style={{ flex: 1 }}>
-                  {i.name}
-                </Text>
-                {i.quantity ? (
-                  <Text variant="small" color={colors.slate}>
-                    {i.quantity}
+          <View>
+            <Text
+              variant="overline"
+              color={colors.dim}
+              style={{ marginBottom: spacing.md }}
+            >
+              Malzemeler — {recipe.servings} kişilik
+            </Text>
+            <View style={{ gap: spacing.sm }}>
+              {ingredientsWithPantry.map((ing, i) => (
+                <Animated.View
+                  key={i}
+                  entering={FadeInDown.delay(i * 40).duration(400)}
+                  style={[styles.ingRow, ing.inPantry && styles.ingRowActive]}
+                >
+                  <View
+                    style={[
+                      styles.ingDot,
+                      {
+                        backgroundColor: ing.inPantry
+                          ? colors.forest
+                          : colors.border,
+                      },
+                    ]}
+                  >
+                    {ing.inPantry ? (
+                      <Check size={11} color={colors.bg} strokeWidth={2.5} />
+                    ) : (
+                      <View style={styles.ingDotInner} />
+                    )}
+                  </View>
+                  <Text variant="smallMedium" weight="500" style={{ flex: 1 }}>
+                    {ing.name}
                   </Text>
-                ) : null}
-              </View>
-            ))}
-          </Section>
+                  {ing.quantity ? (
+                    <Text variant="small" color={colors.dim}>
+                      {ing.quantity}
+                    </Text>
+                  ) : null}
+                </Animated.View>
+              ))}
+            </View>
+          </View>
 
-          <Section title={t.recipe.steps}>
-            {recipe.steps.map((s, i) => (
-              <View key={i} style={styles.stepRow}>
-                <View style={styles.stepNum}>
-                  <Text variant="caption" weight="700" color={colors.snow}>
-                    {i + 1}
-                  </Text>
+          <View>
+            <Text
+              variant="overline"
+              color={colors.dim}
+              style={{ marginBottom: spacing.md }}
+            >
+              Hazırlanış — {recipe.steps.length} adım
+            </Text>
+            <View style={{ gap: spacing.md }}>
+              {recipe.steps.map((step, i) => (
+                <View key={i} style={styles.stepRow}>
+                  <View style={styles.stepNum}>
+                    <Text
+                      style={{
+                        fontFamily: fonts.serif,
+                        fontSize: 12,
+                        color: colors.slate,
+                      }}
+                    >
+                      {i + 1}
+                    </Text>
+                  </View>
+                  <View
+                    style={[
+                      styles.stepBody,
+                      i < recipe.steps.length - 1 && styles.stepBorder,
+                    ]}
+                  >
+                    <Text variant="smallMedium" color={colors.graphite}>
+                      {step}
+                    </Text>
+                  </View>
                 </View>
-                <Text variant="body" style={{ flex: 1 }}>
-                  {s}
-                </Text>
-              </View>
-            ))}
-          </Section>
+              ))}
+            </View>
+          </View>
+
+          <Pressable
+            onPress={handleAdapt}
+            disabled={adapting}
+            style={styles.adaptCard}
+          >
+            <View style={styles.adaptIcon}>
+              <Sparkles size={16} color={colors.primary} strokeWidth={1.5} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text variant="smallMedium" weight="600">
+                {adapting ? t.common.loading : t.recipe.explainCta}
+              </Text>
+              <Text variant="caption" color={colors.slate}>
+                Alerji, kiler ve tercihlerinize göre
+              </Text>
+            </View>
+            <ChevronRight size={16} color={colors.dim} strokeWidth={1.5} />
+          </Pressable>
 
           {adapted ? (
-            <Card variant="cloud" padding="lg" style={{ gap: 6 }}>
-              <Text variant="bodyMedium" weight="700">
+            <View style={styles.adaptedCard}>
+              <Text variant="smallMedium" weight="700">
                 AI uyarlaması
               </Text>
               {adapted.notes.map((n, i) => (
-                <Text key={i} variant="small" color={colors.graphite}>
+                <Text key={`n${i}`} variant="small" color={colors.graphite}>
                   • {n}
                 </Text>
               ))}
               {adapted.substitutions.map((s, i) => (
-                <Text key={i} variant="small" color={colors.graphite}>
+                <Text key={`s${i}`} variant="small" color={colors.graphite}>
                   {s.from} → {s.to}
                 </Text>
               ))}
-            </Card>
+            </View>
           ) : null}
 
-          <View style={{ gap: spacing.md }}>
-            <Button
-              title={t.recipe.cookCta}
-              fullWidth
-              onPress={() => router.push(`/cook/${recipe.id}` as never)}
-              rightSlot={<Ionicons name="play" size={16} color={colors.snow} />}
-            />
-            <Button
-              title={adapting ? t.common.loading : t.recipe.explainCta}
-              variant="secondary"
-              fullWidth
-              onPress={handleAdapt}
-              loading={adapting}
-              leftSlot={
-                <Ionicons name="sparkles" size={16} color={colors.ink} />
-              }
-            />
-          </View>
+          <Pressable
+            onPress={() => router.push(`/cook/${recipe.id}`)}
+            style={styles.cookCta}
+          >
+            <Text variant="bodyMedium" weight="700" color={colors.ink}>
+              {t.recipe.cookCta}
+            </Text>
+            <ChevronRight size={18} color={colors.ink} strokeWidth={2.5} />
+          </Pressable>
+
+          {recipe.videoUrl || recipe.sourceUrl ? (
+            <View style={styles.sourceWrap}>
+              {recipe.videoUrl ? (
+                <Pressable
+                  onPress={() =>
+                    Linking.openURL(recipe.videoUrl!).catch(() => undefined)
+                  }
+                  style={[styles.sourceBtn, styles.sourceBtnPrimary]}
+                >
+                  <Play
+                    size={14}
+                    color={colors.bg}
+                    fill={colors.bg}
+                    strokeWidth={2}
+                  />
+                  <Text variant="smallMedium" weight="700" color={colors.bg}>
+                    Videoyu izle
+                  </Text>
+                </Pressable>
+              ) : null}
+              {recipe.sourceUrl ? (
+                <Pressable
+                  onPress={() =>
+                    Linking.openURL(recipe.sourceUrl!).catch(() => undefined)
+                  }
+                  style={styles.sourceBtn}
+                >
+                  <ExternalLink size={14} color={colors.ink} strokeWidth={2} />
+                  <Text variant="smallMedium" weight="700" color={colors.ink}>
+                    {recipe.sourceUrl.includes("yemek.com")
+                      ? "yemek.com’da aç"
+                      : "Kaynak sayfası"}
+                  </Text>
+                </Pressable>
+              ) : null}
+              {recipe.sourceUrl?.includes("yemek.com") ? (
+                <Text
+                  variant="caption"
+                  color={colors.dim}
+                  style={{ marginTop: 4 }}
+                >
+                  Tarif kaynağı: yemek.com
+                </Text>
+              ) : null}
+            </View>
+          ) : null}
         </View>
       </ScrollView>
     </Screen>
   );
 }
 
-const Section: React.FC<{ title: string; children: React.ReactNode }> = ({
-  title,
-  children,
-}) => (
-  <View style={{ gap: spacing.sm }}>
-    <Text variant="h3" weight="700">
-      {title}
-    </Text>
-    <View style={{ gap: spacing.sm }}>{children}</View>
-  </View>
-);
-
-const Meta: React.FC<{
-  icon: keyof typeof Ionicons.glyphMap;
+interface MetaCardProps {
+  icon: React.ComponentType<{
+    size?: number;
+    color?: string;
+    strokeWidth?: number;
+  }>;
+  value: string;
   label: string;
-}> = ({ icon, label }) => (
-  <View style={styles.metaPill}>
-    <Ionicons name={icon} size={12} color={colors.snow} />
-    <Text variant="caption" weight="600" color={colors.snow}>
+  color?: string;
+}
+
+const MetaCard: React.FC<MetaCardProps> = ({
+  icon: Icon,
+  value,
+  label,
+  color,
+}) => (
+  <View style={styles.metaCard}>
+    <Icon size={14} color={color ?? colors.dim} strokeWidth={1.5} />
+    <Text variant="smallMedium" weight="700" color={color ?? colors.ink}>
+      {value}
+    </Text>
+    <Text variant="overline" color={colors.dim}>
       {label}
     </Text>
   </View>
 );
 
 const styles = StyleSheet.create({
-  hero: { height: 360, justifyContent: "space-between" },
+  hero: { height: 280 },
   heroTop: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -246,35 +451,178 @@ const styles = StyleSheet.create({
     paddingTop: spacing["3xl"],
   },
   iconBtn: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: "rgba(0,0,0,0.45)",
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: "rgba(26,23,20,0.4)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.15)",
     alignItems: "center",
     justifyContent: "center",
   },
-  heroBody: { padding: spacing["2xl"], gap: spacing.sm },
-  metaPill: {
-    flexDirection: "row",
+  heroBody: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: spacing.xl,
     gap: 4,
-    alignItems: "center",
-    backgroundColor: "rgba(0,0,0,0.45)",
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    borderRadius: 999,
   },
-  pillRow: { flexDirection: "row", gap: spacing.sm, flexWrap: "wrap" },
-  ingRow: { flexDirection: "row", alignItems: "center", gap: spacing.sm },
-  dot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.ink },
-  stepRow: { flexDirection: "row", alignItems: "flex-start", gap: spacing.md },
+  tagsRow: { flexDirection: "row", gap: 6, flexWrap: "wrap", marginBottom: 6 },
+  tagPill: {
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    borderRadius: radii.pill,
+    backgroundColor: "rgba(250,247,242,0.15)",
+    borderWidth: 1,
+    borderColor: "rgba(250,247,242,0.2)",
+  },
+  heroTitle: {
+    fontFamily: fonts.serif,
+    fontSize: 34,
+    lineHeight: 37,
+    color: colors.bg,
+    letterSpacing: -0.85,
+  },
+  content: { padding: spacing.xl, gap: spacing.lg },
+  metaGrid: { flexDirection: "row", gap: spacing.sm },
+  metaCard: {
+    flex: 1,
+    padding: spacing.md,
+    borderRadius: radii.md,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    alignItems: "center",
+    gap: 4,
+  },
+  pantryBanner: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.lg,
+    borderRadius: 18,
+    backgroundColor: colors.primarySoft,
+    borderWidth: 1,
+    borderColor: "rgba(240,180,41,0.3)",
+  },
+  pantryIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: colors.primary,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  pantryRing: {
+    width: 44,
+    height: 44,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  ingRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: 12,
+    borderRadius: radii.md,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  ingRowActive: {
+    backgroundColor: "#F5FDF5",
+    borderColor: "rgba(107,143,113,0.25)",
+  },
+  ingDot: {
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  ingDotInner: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: colors.dim,
+  },
+  stepRow: { flexDirection: "row", gap: spacing.md },
   stepNum: {
-    width: 26,
-    height: 26,
-    borderRadius: 13,
-    backgroundColor: colors.ink,
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: colors.cream,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 2,
+  },
+  stepBody: {
+    flex: 1,
+    paddingBottom: spacing.md,
+  },
+  stepBorder: {
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
+  },
+  adaptCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.lg,
+    borderRadius: 18,
+    backgroundColor: colors.cream,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  adaptIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: colors.ink,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  adaptedCard: {
+    padding: spacing.lg,
+    borderRadius: radii.lg,
+    backgroundColor: colors.cream,
+    gap: 4,
+  },
+  cookCta: {
+    height: 56,
+    borderRadius: 18,
+    backgroundColor: colors.primary,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    marginTop: spacing.sm,
+  },
+  sourceWrap: {
+    marginTop: spacing.md,
+    gap: spacing.sm,
+  },
+  sourceBtn: {
+    height: 44,
+    borderRadius: 14,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.card,
+  },
+  sourceBtnPrimary: {
+    backgroundColor: colors.ink,
+    borderColor: colors.ink,
+  },
+  cta: {
+    paddingHorizontal: spacing.xl,
+    paddingVertical: spacing.md,
+    borderRadius: radii.md,
+    backgroundColor: colors.primary,
   },
   empty: {
     flex: 1,

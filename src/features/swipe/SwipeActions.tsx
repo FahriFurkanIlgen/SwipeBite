@@ -1,7 +1,8 @@
 import React from "react";
 import { Pressable, StyleSheet, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { ChevronsLeft, Heart, Star, X } from "lucide-react-native";
 import * as Haptics from "expo-haptics";
+
 import { colors, shadows } from "@/constants/theme";
 import { VoteType } from "@/types/domain";
 
@@ -18,46 +19,77 @@ export const SwipeActions: React.FC<SwipeActionsProps> = ({ onVote }) => {
   };
   return (
     <View style={styles.row}>
-      <Action
-        color={colors.superdislike}
-        icon="arrow-down"
-        small
+      {/* Super-dislike — terracotta */}
+      <Pressable
         onPress={() => press("superdislike")}
-      />
-      <Action
-        color={colors.nope}
-        icon="close"
+        style={[
+          styles.btn,
+          styles.btnSmall,
+          {
+            backgroundColor: colors.accentSoft,
+            borderWidth: 1.5,
+            borderColor: colors.accent,
+          },
+        ]}
+      >
+        <ChevronsLeft size={18} color={colors.accent} strokeWidth={2} />
+      </Pressable>
+
+      {/* Dislike — white with red icon */}
+      <Pressable
         onPress={() => press("dislike")}
-      />
-      <Action
-        color={colors.superlike}
-        icon="star"
+        style={[
+          styles.btn,
+          {
+            backgroundColor: colors.card,
+            borderWidth: 1.5,
+            borderColor: colors.border,
+          },
+          shadows.sm,
+        ]}
+      >
+        <X size={24} color="#EF4444" strokeWidth={2} />
+      </Pressable>
+
+      {/* Like — white with green heart */}
+      <Pressable
+        onPress={() => press("like")}
+        style={[
+          styles.btn,
+          {
+            backgroundColor: colors.card,
+            borderWidth: 1.5,
+            borderColor: colors.border,
+          },
+          shadows.sm,
+        ]}
+      >
+        <Heart size={22} color="#22C55E" fill="#22C55E" strokeWidth={2} />
+      </Pressable>
+
+      {/* Super-like — soft yellow with mustard star */}
+      <Pressable
         onPress={() => press("superlike")}
-      />
-      <Action color={colors.like} icon="heart" onPress={() => press("like")} />
+        style={[
+          styles.btn,
+          styles.btnSmall,
+          {
+            backgroundColor: colors.primarySoft,
+            borderWidth: 1.5,
+            borderColor: colors.primary,
+          },
+        ]}
+      >
+        <Star
+          size={18}
+          color={colors.primary}
+          fill={colors.primary}
+          strokeWidth={2}
+        />
+      </Pressable>
     </View>
   );
 };
-
-const Action: React.FC<{
-  color: string;
-  icon: keyof typeof Ionicons.glyphMap;
-  onPress: () => void;
-  small?: boolean;
-}> = ({ color, icon, onPress, small }) => (
-  <Pressable
-    onPress={onPress}
-    style={({ pressed }) => [
-      styles.btn,
-      small && styles.btnSmall,
-      { borderColor: color },
-      pressed && { transform: [{ scale: 0.94 }] },
-      shadows.sm,
-    ]}
-  >
-    <Ionicons name={icon} size={small ? 22 : 28} color={color} />
-  </Pressable>
-);
 
 const styles = StyleSheet.create({
   row: {
@@ -70,8 +102,6 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 32,
-    backgroundColor: colors.snow,
-    borderWidth: 2,
     alignItems: "center",
     justifyContent: "center",
   },

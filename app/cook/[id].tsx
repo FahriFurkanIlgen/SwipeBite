@@ -1,180 +1,38 @@
 import React from "react";
-import {
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  View,
-  Vibration,
-} from "react-native";
+import { Pressable, StyleSheet, Vibration, View } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { Image } from "expo-image";
+import { LinearGradient } from "expo-linear-gradient";
+import {
+  ArrowLeft,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Timer,
+  Volume2,
+} from "lucide-react-native";
+import Animated, {
+  FadeIn,
+  ZoomIn,
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+} from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
 
-import { Button, Card, Screen, Text } from "@/components/ui";
-import { colors, radii, spacing } from "@/constants/theme";
+import { Screen } from "@/components/ui/Screen";
+import { Text } from "@/components/ui/Text";
+import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { useRecipesStore } from "@/store/recipesStore";
 import { useStatsStore } from "@/store/statsStore";
 
-/**
- * Full-screen step-by-step cooking mode.
- * One step at a time, with progress + optional per-step timer.
- */
-export default function CookScreen() {
-  const { id } = useLocalSearchParams<{ id: string }>();
-  const recipe = useRecipesStore((s) =>
-    s.items.find((r) => r.id === (id ?? "")),
-  );
-
-  const [stepIndex, setStepIndex] = React.useState(0);
-  const [timerSecondsLeft, setTimerSecondsLeft] = React.useState<number | null>(
-    null,
-  );
-  const markCooked = useStatsStore((s) => s.markCooked);
-
-  React.useEffect(() => {
-    if (timerSecondsLeft === null) return;
-    if (timerSecondsLeft <= 0) {
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      Vibration.vibrate([0, 250, 200, 250]);
-      setTimerSecondsLeft(null);
-      return;
-    }
-    const t = setTimeout(() => setTimerSecondsLeft((s) => (s ?? 0) - 1), 1000);
-    return () => clearTimeout(t);
-  }, [timerSecondsLeft]);
-
-  if (!recipe) {
-    return (
-      <Screen background="snow">
-        <View style={styles.center}>
-          <Text variant="h2" weight="700">
-            Tarif bulunamadı
-          </Text>
-          <Button title="Geri" onPress={() => router.back()} />
-        </View>
-      </Screen>
-    );
-  }
-
-  const total = recipe.steps.length;
-  const step = recipe.steps[stepIndex] ?? "";
-  const isLast = stepIndex >= total - 1;
-  const isFirst = stepIndex === 0;
-  const progress = total > 0 ? (stepIndex + 1) / total : 0;
-  const suggestedMinutes = extractMinutesFromText(step);
-
-  const goNext = () => {
-    if (isLast) {
-      markCooked(recipe.id);
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      router.back();
-      return;
-    }
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    setStepIndex((i) => Math.min(i + 1, total - 1));
-    setTimerSecondsLeft(null);
-  };
-
-  const goPrev = () => {
-    if (isFirst) return;
-    Haptics.selectionAsync();
-    setStepIndex((i) => Math.max(0, i - 1));
-    setTimerSecondsLeft(null);
-  };
-
-  const startTimer = (minutes: number) => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    setTimerSecondsLeft(minutes * 60);
-  };
-
-  return (
-    <Screen background="canvas">
-      <View style={styles.header}>
-        <Pressable onPress={() => router.back()} hitSlop={12}>
-          <Ionicons name="close" size={26} color={colors.ink} />
-        </Pressable>
-        <View style={{ alignItems: "center" }}>
-          <Text variant="caption" weight="700" color={colors.graphite}>
-            PİŞİRME MODU
-          </Text>
-          <Text variant="bodyMedium" weight="700">
-            {stepIndex + 1} / {total}
-          </Text>
-        </View>
-        <View style={{ width: 26 }} />
-      </View>
-
-      <View style={styles.progressTrack}>
-        <View style={[styles.progressFill, { width: `${progress * 100}%` }]} />
-      </View>
-
-      <ScrollView
-        contentContainerStyle={styles.body}
-        showsVerticalScrollIndicator={false}
-      >
-        <Text variant="caption" weight="700" color={colors.graphite}>
-          {recipe.title.toUpperCase()}
-        </Text>
-        <Text variant="display" weight="700" style={{ lineHeight: 44 }}>
-          {step}
-        </Text>
-
-        {suggestedMinutes ? (
-          <Card padding="lg" style={{ gap: spacing.sm }}>
-            <View style={styles.timerRow}>
-              <Ionicons name="alarm" size={20} color={colors.ink} />
-              <Text variant="bodyMedium" weight="700">
-                {timerSecondsLeft !== null
-                  ? formatTimer(timerSecondsLeft)
-                  : `${suggestedMinutes} dakikalık zamanlayıcı`}
-              </Text>
-            </View>
-            {timerSecondsLeft === null ? (
-              <Button
-                title="Zamanlayıcıyı başlat"
-                onPress={() => startTimer(suggestedMinutes)}
-                leftSlot={
-                  <Ionicons name="play" size={14} color={colors.snow} />
-                }
-              />
-            ) : (
-              <Button
-                title="Durdur"
-                variant="secondary"
-                onPress={() => setTimerSecondsLeft(null)}
-              />
-            )}
-          </Card>
-        ) : null}
-      </ScrollView>
-
-      <View style={styles.footer}>
-        <Pressable
-          onPress={goPrev}
-          disabled={isFirst}
-          style={[styles.navBtn, isFirst && { opacity: 0.3 }]}
-        >
-          <Ionicons name="chevron-back" size={24} color={colors.ink} />
-        </Pressable>
-        <Button
-          title={isLast ? "Bitir" : "Sıradaki adım"}
-          onPress={goNext}
-          style={{ flex: 1 }}
-          rightSlot={
-            isLast ? (
-              <Ionicons name="checkmark" size={18} color={colors.snow} />
-            ) : (
-              <Ionicons name="chevron-forward" size={18} color={colors.snow} />
-            )
-          }
-        />
-      </View>
-    </Screen>
-  );
+function formatTime(seconds: number) {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-function extractMinutesFromText(text: string): number | null {
-  // Match Turkish patterns: "10 dk", "15 dakika", "5-10 dakika"
+function extractMinutes(text: string): number | null {
   const m = text.match(/(\d{1,3})\s*(?:dk|dakika)/i);
   if (m && m[1]) {
     const n = parseInt(m[1], 10);
@@ -183,59 +41,387 @@ function extractMinutesFromText(text: string): number | null {
   return null;
 }
 
-function formatTimer(totalSeconds: number): string {
-  const m = Math.floor(totalSeconds / 60);
-  const s = totalSeconds % 60;
-  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+export default function CookScreen() {
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const recipe = useRecipesStore((s) =>
+    s.items.find((r) => r.id === (id ?? "")),
+  );
+  const markCooked = useStatsStore((s) => s.markCooked);
+
+  const [stepIndex, setStepIndex] = React.useState(0);
+  const [timerSeconds, setTimerSeconds] = React.useState(0);
+  const [timerRunning, setTimerRunning] = React.useState(false);
+  const [completed, setCompleted] = React.useState(false);
+
+  const currentStep = recipe?.steps[stepIndex] ?? "";
+  const stepMinutes = extractMinutes(currentStep);
+  const total = recipe?.steps.length ?? 0;
+  const progress = total > 0 ? (stepIndex + 1) / total : 0;
+
+  const progressValue = useSharedValue(0);
+  React.useEffect(() => {
+    progressValue.value = withSpring(progress, { stiffness: 200, damping: 30 });
+  }, [progress, progressValue]);
+  const progressStyle = useAnimatedStyle(() => ({
+    width: `${progressValue.value * 100}%`,
+  }));
+
+  React.useEffect(() => {
+    if (stepMinutes) {
+      setTimerSeconds(stepMinutes * 60);
+    } else {
+      setTimerSeconds(0);
+    }
+    setTimerRunning(false);
+  }, [stepIndex, stepMinutes]);
+
+  React.useEffect(() => {
+    if (!timerRunning || timerSeconds <= 0) return;
+    const interval = setInterval(() => {
+      setTimerSeconds((s) => {
+        if (s <= 1) {
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+          Vibration.vibrate([0, 250, 200, 250]);
+          setTimerRunning(false);
+          return 0;
+        }
+        return s - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [timerRunning, timerSeconds]);
+
+  if (!recipe) {
+    return (
+      <Screen background="bg">
+        <View style={styles.empty}>
+          <Text variant="h2">Tarif bulunamadı</Text>
+          <Pressable onPress={() => router.back()} style={styles.cta}>
+            <Text variant="bodyMedium" weight="700" color={colors.ink}>
+              Geri
+            </Text>
+          </Pressable>
+        </View>
+      </Screen>
+    );
+  }
+
+  const nextStep = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    if (stepIndex < total - 1) {
+      setStepIndex(stepIndex + 1);
+    } else {
+      markCooked(recipe.id);
+      setCompleted(true);
+    }
+  };
+
+  const prevStep = () => {
+    if (stepIndex === 0) return;
+    Haptics.selectionAsync();
+    setStepIndex(stepIndex - 1);
+  };
+
+  if (completed) {
+    return (
+      <Screen background="bg">
+        <View style={styles.completeBody}>
+          <Animated.Text
+            entering={ZoomIn.duration(400)}
+            style={{ fontSize: 56, marginBottom: spacing.lg }}
+          >
+            🍽️
+          </Animated.Text>
+          <Animated.View entering={FadeIn.delay(200).duration(400)}>
+            <Text variant="h1" align="center">
+              Afiyet olsun!
+            </Text>
+            <Text
+              variant="body"
+              color={colors.slate}
+              align="center"
+              style={{ marginTop: spacing.sm }}
+            >
+              {recipe.title} hazır. Servis edin!
+            </Text>
+          </Animated.View>
+          <Pressable
+            onPress={() => router.replace("/(tabs)")}
+            style={styles.completeCta}
+          >
+            <Text variant="bodyMedium" weight="700" color={colors.ink}>
+              Ana Sayfaya Dön
+            </Text>
+          </Pressable>
+        </View>
+      </Screen>
+    );
+  }
+
+  return (
+    <View style={styles.root}>
+      <View style={styles.hero}>
+        <Image
+          source={{ uri: recipe.imageUrl }}
+          style={[StyleSheet.absoluteFillObject, { opacity: 0.6 }]}
+          contentFit="cover"
+        />
+        <LinearGradient
+          colors={["rgba(26,23,20,0.3)", "rgba(26,23,20,0.9)"]}
+          style={StyleSheet.absoluteFillObject}
+        />
+
+        <View style={styles.heroHeader}>
+          <Pressable
+            onPress={() => router.back()}
+            style={styles.heroIcon}
+            hitSlop={12}
+          >
+            <ArrowLeft size={16} color={colors.bg} strokeWidth={2} />
+          </Pressable>
+          <Text
+            style={{
+              fontFamily: fonts.serifItalic,
+              fontSize: 15,
+              color: "rgba(250,247,242,0.8)",
+            }}
+            numberOfLines={1}
+          >
+            {recipe.title}
+          </Text>
+          <Pressable style={styles.heroIcon}>
+            <Volume2 size={15} color={colors.bg} strokeWidth={1.5} />
+          </Pressable>
+        </View>
+
+        <View style={styles.heroBottom}>
+          <Text variant="caption" color="rgba(250,247,242,0.65)">
+            Adım {stepIndex + 1} / {total}
+          </Text>
+        </View>
+
+        <View style={styles.progressTrack}>
+          <Animated.View style={[styles.progressFill, progressStyle]} />
+        </View>
+      </View>
+
+      <View style={styles.body}>
+        <Animated.View
+          key={stepIndex}
+          entering={FadeIn.duration(220)}
+          style={{ flex: 1 }}
+        >
+          <View style={styles.stepNum}>
+            <Text
+              style={{
+                fontFamily: fonts.serif,
+                fontSize: 14,
+                color: colors.ink,
+              }}
+            >
+              {stepIndex + 1}
+            </Text>
+          </View>
+          <Text
+            style={{
+              fontFamily: fonts.sans,
+              fontSize: 17,
+              lineHeight: 28,
+              color: colors.ink,
+            }}
+          >
+            {currentStep}
+          </Text>
+        </Animated.View>
+
+        {stepMinutes ? (
+          <View style={styles.timerCard}>
+            <Pressable
+              onPress={() => {
+                Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                setTimerRunning(!timerRunning);
+              }}
+              style={[
+                styles.timerBtn,
+                {
+                  backgroundColor: timerRunning
+                    ? colors.accent
+                    : colors.primary,
+                },
+              ]}
+            >
+              <Timer size={20} color={colors.ink} strokeWidth={1.5} />
+            </Pressable>
+            <View style={{ flex: 1 }}>
+              <Text
+                style={{
+                  fontFamily: fonts.serif,
+                  fontSize: 28,
+                  lineHeight: 36,
+                  letterSpacing: -0.5,
+                  color: timerSeconds === 0 ? colors.forest : colors.ink,
+                  includeFontPadding: false,
+                  textAlignVertical: "center",
+                }}
+              >
+                {timerSeconds === 0 ? "✓ Hazır" : formatTime(timerSeconds)}
+              </Text>
+              <Text variant="caption" color={colors.dim}>
+                {timerRunning
+                  ? "Sayıyor…"
+                  : timerSeconds > 0
+                    ? "Başlatmak için dokunun"
+                    : "Süre doldu!"}
+              </Text>
+            </View>
+          </View>
+        ) : null}
+
+        <View style={styles.navRow}>
+          <Pressable
+            onPress={prevStep}
+            disabled={stepIndex === 0}
+            style={[styles.navBtn, stepIndex === 0 && { opacity: 0.3 }]}
+          >
+            <ChevronLeft size={20} color={colors.slate} strokeWidth={2} />
+          </Pressable>
+          <Pressable onPress={nextStep} style={styles.nextBtn}>
+            {stepIndex < total - 1 ? (
+              <>
+                <Text variant="bodyMedium" weight="700" color={colors.bg}>
+                  Sonraki Adım
+                </Text>
+                <ChevronRight size={16} color={colors.bg} strokeWidth={2} />
+              </>
+            ) : (
+              <>
+                <Check size={16} color={colors.primary} strokeWidth={2.5} />
+                <Text variant="bodyMedium" weight="700" color={colors.bg}>
+                  Tamamlandı
+                </Text>
+              </>
+            )}
+          </Pressable>
+        </View>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-  header: {
+  root: { flex: 1, backgroundColor: colors.ink },
+  hero: { height: "40%", position: "relative" },
+  heroHeader: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing["3xl"],
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingTop: spacing.md,
-    paddingHorizontal: spacing.lg,
+  },
+  heroIcon: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: "rgba(250,247,242,0.12)",
+    borderWidth: 1,
+    borderColor: "rgba(250,247,242,0.15)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  heroBottom: {
+    position: "absolute",
+    bottom: spacing.md,
+    left: spacing.lg,
   },
   progressTrack: {
-    height: 6,
-    backgroundColor: "rgba(0,0,0,0.08)",
-    borderRadius: 3,
-    marginHorizontal: spacing.lg,
-    marginTop: spacing.md,
-    overflow: "hidden",
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: 4,
+    backgroundColor: "rgba(250,247,242,0.1)",
   },
-  progressFill: {
-    height: "100%",
-    backgroundColor: colors.ink,
-    borderRadius: 3,
-  },
+  progressFill: { height: "100%", backgroundColor: colors.primary },
   body: {
-    padding: spacing["2xl"],
-    gap: spacing.lg,
-    flexGrow: 1,
+    flex: 1,
+    backgroundColor: colors.bg,
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing["2xl"],
+    paddingBottom: spacing.xl,
   },
-  timerRow: {
-    flexDirection: "row",
+  stepNum: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: colors.primary,
     alignItems: "center",
-    gap: spacing.sm,
+    justifyContent: "center",
+    marginBottom: spacing.md,
   },
-  footer: {
+  timerCard: {
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.md,
     padding: spacing.lg,
-    paddingBottom: spacing["2xl"],
+    borderRadius: 20,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    marginBottom: spacing.lg,
   },
-  navBtn: {
-    width: 52,
-    height: 52,
-    borderRadius: 26,
-    backgroundColor: colors.snow,
+  timerBtn: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
     alignItems: "center",
     justifyContent: "center",
   },
-  center: {
+  navRow: { flexDirection: "row", gap: spacing.sm },
+  navBtn: {
+    width: 48,
+    height: 48,
+    borderRadius: radii.md,
+    backgroundColor: colors.cream,
+    borderWidth: 1,
+    borderColor: colors.border,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  nextBtn: {
+    flex: 1,
+    height: 48,
+    borderRadius: radii.md,
+    backgroundColor: colors.ink,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+  },
+  completeBody: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: spacing["2xl"],
+    gap: spacing["2xl"],
+  },
+  completeCta: {
+    paddingHorizontal: spacing["2xl"],
+    paddingVertical: spacing.md,
+    borderRadius: 16,
+    backgroundColor: colors.primary,
+    marginTop: spacing.md,
+  },
+  cta: {
+    paddingHorizontal: spacing.xl,
+    paddingVertical: spacing.md,
+    borderRadius: radii.md,
+    backgroundColor: colors.primary,
+  },
+  empty: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",

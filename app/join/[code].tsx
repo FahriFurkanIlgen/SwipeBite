@@ -1,17 +1,14 @@
 import React from "react";
+import { Pressable, StyleSheet, View } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
-import { View } from "react-native";
+import Animated, { FadeInDown, ZoomIn } from "react-native-reanimated";
 
-import { Button, Card, Screen, Text } from "@/components/ui";
-import { colors, spacing } from "@/constants/theme";
+import { Screen } from "@/components/ui/Screen";
+import { Text } from "@/components/ui/Text";
+import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { useAuthStore } from "@/store/authStore";
 import { authService } from "@/features/auth/authService";
 
-/**
- * Deep-link target: swipebite://join/CODE
- * If the user is signed in, join immediately and bounce to home.
- * Otherwise stash the code and send them to welcome.
- */
 export default function JoinScreen() {
   const { code } = useLocalSearchParams<{ code: string }>();
   const user = useAuthStore((s) => s.user);
@@ -47,7 +44,7 @@ export default function JoinScreen() {
               createdAt: new Date().toISOString(),
             });
             setState("ok");
-            setTimeout(() => router.replace("/(tabs)"), 600);
+            setTimeout(() => router.replace("/(tabs)"), 700);
             return;
           }
           setState("error");
@@ -56,7 +53,7 @@ export default function JoinScreen() {
         }
         setHousehold(h);
         setState("ok");
-        setTimeout(() => router.replace("/(tabs)"), 600);
+        setTimeout(() => router.replace("/(tabs)"), 700);
       } catch {
         if (!cancelled) {
           setState("error");
@@ -70,53 +67,108 @@ export default function JoinScreen() {
   }, [code, user, setHousehold]);
 
   return (
-    <Screen background="snow">
-      <View
-        style={{ flex: 1, padding: spacing["2xl"], justifyContent: "center" }}
-      >
-        <Card variant="amber" padding="lg" style={{ gap: spacing.md }}>
+    <Screen background="bg">
+      <View style={styles.center}>
+        <Animated.View entering={FadeInDown.duration(400)} style={styles.card}>
           {state === "loading" ? (
             <>
-              <Text variant="h2" weight="700">
-                Haneye katılınıyor…
-              </Text>
-              <Text variant="small" color={colors.graphite}>
+              <View style={styles.spinner} />
+              <Text style={styles.title}>Haneye katılınıyor…</Text>
+              <Text variant="small" color={colors.dim}>
                 Kod: {code}
               </Text>
             </>
           ) : state === "ok" ? (
-            <Text variant="h2" weight="700">
-              Hoş geldin! 🎉
-            </Text>
+            <Animated.View
+              entering={ZoomIn.duration(400)}
+              style={{ alignItems: "center", gap: spacing.md }}
+            >
+              <View style={styles.checkCircle}>
+                <Text style={{ fontSize: 32 }}>🎉</Text>
+              </View>
+              <Text style={styles.title}>Hoş geldin!</Text>
+              <Text variant="small" color={colors.dim} align="center">
+                Yönlendiriliyorsun…
+              </Text>
+            </Animated.View>
           ) : state === "needsAuth" ? (
             <>
-              <Text variant="h2" weight="700">
-                Önce giriş yap
-              </Text>
-              <Text variant="small" color={colors.graphite}>
+              <Text style={styles.title}>Önce giriş yap</Text>
+              <Text variant="small" color={colors.dim} align="center">
                 {code} kodlu haneye katılmak için hesabını oluştur.
               </Text>
-              <Button
-                title="Devam et"
+              <Pressable
                 onPress={() => router.replace("/(auth)/welcome")}
-              />
+                style={styles.cta}
+              >
+                <Text variant="smallMedium" weight="700" color={colors.ink}>
+                  Devam et
+                </Text>
+              </Pressable>
             </>
           ) : (
             <>
-              <Text variant="h2" weight="700">
-                Katılım başarısız
-              </Text>
-              <Text variant="small" color={colors.graphite}>
+              <Text style={styles.title}>Katılım başarısız</Text>
+              <Text variant="small" color={colors.dim} align="center">
                 {error}
               </Text>
-              <Button
-                title="Ana sayfa"
+              <Pressable
                 onPress={() => router.replace("/(tabs)")}
-              />
+                style={styles.cta}
+              >
+                <Text variant="smallMedium" weight="700" color={colors.ink}>
+                  Ana sayfa
+                </Text>
+              </Pressable>
             </>
           )}
-        </Card>
+        </Animated.View>
       </View>
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  center: { flex: 1, justifyContent: "center", padding: spacing["2xl"] },
+  card: {
+    padding: spacing["2xl"],
+    borderRadius: radii.xl,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    alignItems: "center",
+    gap: spacing.md,
+  },
+  spinner: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    borderWidth: 3,
+    borderColor: colors.border,
+    borderTopColor: colors.primary,
+  },
+  checkCircle: {
+    width: 72,
+    height: 72,
+    borderRadius: 36,
+    backgroundColor: colors.primarySoft,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  title: {
+    fontFamily: fonts.serif,
+    fontSize: 24,
+    color: colors.ink,
+    letterSpacing: -0.4,
+    textAlign: "center",
+  },
+  cta: {
+    marginTop: spacing.sm,
+    height: 48,
+    paddingHorizontal: spacing.xl,
+    borderRadius: radii.md,
+    backgroundColor: colors.primary,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

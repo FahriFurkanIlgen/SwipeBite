@@ -1,33 +1,38 @@
 import React from "react";
 import { StyleSheet, TextInput, TextInputProps, View } from "react-native";
-import { colors, radii, spacing } from "@/constants/theme";
+import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { Text } from "./Text";
 
 export interface InputProps extends TextInputProps {
   label?: string;
   helper?: string;
   error?: string;
+  surface?: "card" | "cream";
 }
 
 export const Input: React.FC<InputProps> = ({
   label,
   helper,
   error,
+  surface = "cream",
   style,
   ...rest
 }) => {
   return (
     <View style={styles.wrap}>
       {label ? (
-        <Text variant="small" weight="600" color={colors.graphite}>
+        <Text variant="smallMedium" weight="600" color={colors.graphite}>
           {label}
         </Text>
       ) : null}
       <TextInput
-        placeholderTextColor={colors.slate}
+        placeholderTextColor={colors.dim}
         style={[
           styles.input,
-          error ? { borderColor: colors.danger } : null,
+          {
+            backgroundColor: surface === "card" ? colors.card : colors.cream,
+          },
+          error ? { borderColor: colors.danger, borderWidth: 1 } : null,
           style,
         ]}
         {...rest}
@@ -48,13 +53,11 @@ export const Input: React.FC<InputProps> = ({
 const styles = StyleSheet.create({
   wrap: { gap: spacing.xs },
   input: {
-    borderWidth: 1,
-    borderColor: colors.cloud,
-    backgroundColor: colors.snow,
-    borderRadius: radii.lg,
+    borderRadius: radii.md,
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md + 2,
-    fontSize: 16,
+    fontSize: 15,
+    fontFamily: fonts.sans,
     color: colors.ink,
   },
 });

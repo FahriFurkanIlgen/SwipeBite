@@ -17,6 +17,12 @@ export const startOfWeek = (d = new Date()): Date => {
   return date;
 };
 
+export const startOfDay = (d = new Date()): Date => {
+  const r = new Date(d);
+  r.setHours(0, 0, 0, 0);
+  return r;
+};
+
 export const addDays = (d: Date, days: number): Date => {
   const r = new Date(d);
   r.setDate(r.getDate() + days);

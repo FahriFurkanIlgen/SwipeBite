@@ -1,10 +1,20 @@
 import { Recipe } from "@/types/domain";
+import { THEMEALDB_RECIPES } from "./themealdbRecipes";
+import { AI_GENERATED_RECIPES } from "./aiGeneratedRecipes";
+import { YEMEKCOM_RECIPES } from "./yemekcomRecipes";
 
 /**
- * Realistic Turkish household recipes — the meals families actually cook.
- * Imagery uses Unsplash placeholders for the MVP scaffold.
+ * Curated Turkish household recipes — hand-written, the meals families
+ * actually cook. Used as the "base" catalogue.
+ *
+ * Additional recipes come from:
+ *  - YEMEKCOM_RECIPES: scripts/scrape-yemekcom.ts (Türkçe, görselli, geniş)
+ *  - AI_GENERATED_RECIPES: scripts/generate-recipes-ai.ts (Turkish, AI-made)
+ *  - THEMEALDB_RECIPES: disabled (pork-heavy)
+ *
+ * `MOCK_RECIPES` is the merged catalogue exposed to the app.
  */
-export const MOCK_RECIPES: Recipe[] = [
+export const CURATED_RECIPES: Recipe[] = [
   {
     id: "r-mercimek",
     title: "Mercimek Çorbası",
@@ -530,7 +540,619 @@ export const MOCK_RECIPES: Recipe[] = [
     tags: ["tatlı", "kek", "muzlu", "comfort_food"],
     cuisine: "Dünya",
   },
+
+  // -------- Meze --------
+  {
+    id: "r-humus",
+    title: "Humus",
+    description: "Tahinli, limonlu, sarımsaklı klasik nohut mezesi.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1571197119282-7c4e2b5b1b65?w=1200",
+    prepTimeMinutes: 20,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "haşlanmış nohut", quantity: "2 su bardağı" },
+      { name: "tahin", quantity: "3 yk" },
+      { name: "limon suyu", quantity: "1 adet" },
+      { name: "sarımsak", quantity: "2 diş" },
+      { name: "zeytinyağı", quantity: "3 yk" },
+      { name: "kimyon", quantity: "1 tk" },
+    ],
+    steps: [
+      "Tüm malzemeleri robota al.",
+      "Pürüzsüz olana dek çek.",
+      "Tabağa yayıp zeytinyağı ve toz biber gez.",
+    ],
+    tags: ["meze", "vejetaryen", "vegan", "pratik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-haydari",
+    title: "Haydari",
+    description: "Süzme yoğurtlu, sarımsaklı, naneli klasik meyhane mezesi.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1604908554007-b0db4cce6dba?w=1200",
+    prepTimeMinutes: 10,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "süzme yoğurt", quantity: "500 gr" },
+      { name: "sarımsak", quantity: "2 diş" },
+      { name: "kuru nane", quantity: "1 tk" },
+      { name: "zeytinyağı", quantity: "2 yk" },
+      { name: "tuz", quantity: "tadında" },
+    ],
+    steps: [
+      "Süzme yoğurdu kaba al.",
+      "Ezilmiş sarımsak, nane, zeytinyağı ve tuz ekle.",
+      "İyice karıştır, üzerine bir tutam nane serp.",
+    ],
+    tags: ["meze", "vejetaryen", "yoğurt", "pratik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-babagannus",
+    title: "Babagannuş",
+    description:
+      "Közlenmiş patlıcanın tahin ve limonla buluştuğu Levant mezesi.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1601000938259-9e92002320b4?w=1200",
+    prepTimeMinutes: 35,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "patlıcan", quantity: "3 adet" },
+      { name: "tahin", quantity: "2 yk" },
+      { name: "limon suyu", quantity: "1 adet" },
+      { name: "sarımsak", quantity: "1 diş" },
+      { name: "zeytinyağı", quantity: "2 yk" },
+    ],
+    steps: [
+      "Patlıcanları közle.",
+      "Kabuklarını soyup içini ezip süz.",
+      "Tahin, limon, sarımsak ve zeytinyağı ekle.",
+      "Tabağa al, üzerine nar taneleri ile süsle.",
+    ],
+    tags: ["meze", "vejetaryen", "közleme", "akdeniz"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-acili-ezme",
+    title: "Acılı Ezme",
+    description: "Domates, biber ve nar ekşili ev usulü acılı ezme.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1604908812984-c2bb4f73a9ae?w=1200",
+    prepTimeMinutes: 15,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "domates", quantity: "3 adet" },
+      { name: "sivri biber", quantity: "2 adet" },
+      { name: "soğan", quantity: "1 adet" },
+      { name: "maydanoz", quantity: "yarım demet" },
+      { name: "nar ekşisi", quantity: "2 yk" },
+      { name: "pul biber", quantity: "1 tk" },
+    ],
+    steps: [
+      "Sebzeleri ince ince doğra.",
+      "Tuz, pul biber ve nar ekşisi ile karıştır.",
+      "Buzdolabında 30 dk dinlendir.",
+    ],
+    tags: ["meze", "vegan", "acılı", "pratik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-fava",
+    title: "Fava",
+    description:
+      "Bakla püresi üzerine dereotu ve zeytinyağı — soğuk meze klasiği.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1601315379744-7d6d0e8d2b46?w=1200",
+    prepTimeMinutes: 45,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "kuru bakla içi", quantity: "1 su bardağı" },
+      { name: "soğan", quantity: "1 adet" },
+      { name: "toz şeker", quantity: "1 tk" },
+      { name: "limon", quantity: "1 adet" },
+      { name: "dereotu", quantity: "yarım demet" },
+      { name: "zeytinyağı", quantity: "3 yk" },
+    ],
+    steps: [
+      "Baklayı bir gece ıslat.",
+      "Soğan ve şekerle pişir.",
+      "Püre haline getir, kalıba al.",
+      "Soğutup zeytinyağı, limon ve dereotu ile servis et.",
+    ],
+    tags: ["meze", "vegan", "ege", "zeytinyağlı"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-piyaz",
+    title: "Piyaz",
+    description:
+      "Beyaz fasulye, soğan ve sirkeli sosla klasik kuru fasulye mezesi.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1604908554007-b0db4cce6dba?w=1200",
+    prepTimeMinutes: 20,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "haşlanmış beyaz fasulye", quantity: "2 su bardağı" },
+      { name: "kırmızı soğan", quantity: "1 adet" },
+      { name: "maydanoz", quantity: "yarım demet" },
+      { name: "yumurta", quantity: "2 adet (haşlanmış)" },
+      { name: "sirke", quantity: "2 yk" },
+      { name: "zeytinyağı", quantity: "3 yk" },
+    ],
+    steps: [
+      "Fasulyeyi soğuk suyla bir kez çalkala.",
+      "Soğan ve maydanozu ekle.",
+      "Sirke, zeytinyağı, tuz ile harmanla.",
+      "Üzerine yumurta dilimleri yerleştir.",
+    ],
+    tags: ["meze", "vejetaryen", "antalya", "pratik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-cacik",
+    title: "Cacık",
+    description: "Yoğurt, salatalık ve nane ile ferahlatıcı yaz mezesi.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1623428454614-abaf00244e52?w=1200",
+    prepTimeMinutes: 10,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "yoğurt", quantity: "500 gr" },
+      { name: "salatalık", quantity: "2 adet" },
+      { name: "sarımsak", quantity: "1 diş" },
+      { name: "kuru nane", quantity: "1 tk" },
+      { name: "su", quantity: "1 su bardağı" },
+    ],
+    steps: [
+      "Salatalığı rendele, suyunu hafif sık.",
+      "Yoğurt, sarımsak ve su ile karıştır.",
+      "Üzerine nane ve zeytinyağı gez.",
+    ],
+    tags: ["meze", "vejetaryen", "yaz", "pratik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-girit-ezmesi",
+    title: "Girit Ezmesi",
+    description:
+      "Beyaz peynir, ceviz ve dereotuyla Ege kahvaltısının baş tacı.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1604908554007-b0db4cce6dba?w=1200",
+    prepTimeMinutes: 10,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "beyaz peynir", quantity: "200 gr" },
+      { name: "ceviz içi", quantity: "yarım su bardağı" },
+      { name: "dereotu", quantity: "yarım demet" },
+      { name: "zeytinyağı", quantity: "3 yk" },
+      { name: "limon suyu", quantity: "1 yk" },
+    ],
+    steps: [
+      "Peyniri çatalla ez.",
+      "Cevizi iri kıy.",
+      "Dereotu, zeytinyağı ve limon ile karıştır.",
+    ],
+    tags: ["meze", "vejetaryen", "ege", "pratik"],
+    cuisine: "Türk",
+  },
+
+  // -------- Tatlı --------
+  {
+    id: "r-sutlac",
+    title: "Sütlaç",
+    description: "Fırında üzeri kızarmış geleneksel pirinçli süt tatlısı.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1200",
+    prepTimeMinutes: 60,
+    difficulty: "orta",
+    servings: 6,
+    ingredients: [
+      { name: "süt", quantity: "1.5 lt" },
+      { name: "pirinç", quantity: "yarım su bardağı" },
+      { name: "toz şeker", quantity: "1 su bardağı" },
+      { name: "nişasta", quantity: "2 yk" },
+      { name: "vanilya", quantity: "1 paket" },
+    ],
+    steps: [
+      "Pirinci az suda haşla.",
+      "Sütü ekleyip pişir, şekeri kat.",
+      "Nişastayı sütle açıp ekle, koyulaşana kadar karıştır.",
+      "Kaselere alıp üstü kızarana dek fırınla.",
+    ],
+    tags: ["tatlı", "sütlü", "klasik", "vejetaryen"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-kazandibi",
+    title: "Kazandibi",
+    description: "Altı karamelize sütlü tatlı — kahvenin yanına birebir.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1200",
+    prepTimeMinutes: 50,
+    difficulty: "orta",
+    servings: 6,
+    ingredients: [
+      { name: "süt", quantity: "1 lt" },
+      { name: "toz şeker", quantity: "1 su bardağı" },
+      { name: "nişasta", quantity: "4 yk" },
+      { name: "un", quantity: "2 yk" },
+      { name: "vanilya", quantity: "1 paket" },
+    ],
+    steps: [
+      "Tepsiye şeker serpip karamelize et.",
+      "Süt, şeker, nişasta ve unu karıştırıp pişir.",
+      "Tepsiye dök, soğut, dilimle.",
+    ],
+    tags: ["tatlı", "sütlü", "klasik", "vejetaryen"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-revani",
+    title: "Revani",
+    description:
+      "İrmikli, şerbetli, hafif tatlı — bayram sofralarının vazgeçilmezi.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1605478030918-3ed01c9b9a09?w=1200",
+    prepTimeMinutes: 50,
+    difficulty: "kolay",
+    servings: 8,
+    ingredients: [
+      { name: "yumurta", quantity: "4 adet" },
+      { name: "toz şeker", quantity: "1 su bardağı" },
+      { name: "irmik", quantity: "1.5 su bardağı" },
+      { name: "un", quantity: "1 su bardağı" },
+      { name: "yoğurt", quantity: "1 su bardağı" },
+      { name: "kabartma tozu", quantity: "1 paket" },
+    ],
+    steps: [
+      "Yumurta ve şekeri çırp.",
+      "Yoğurt, irmik, un ve kabartmayı ekle.",
+      "Yağlı tepsiye dök, fırınla.",
+      "Soğumaya yakın sıcak şerbet gez.",
+    ],
+    tags: ["tatlı", "şerbetli", "irmik", "vejetaryen"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-lokma",
+    title: "Lokma Tatlısı",
+    description: "Mayalı hamurdan kızartılıp şerbete batırılan minik lokmalar.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1606755456206-b25206cde27e?w=1200",
+    prepTimeMinutes: 90,
+    difficulty: "orta",
+    servings: 8,
+    ingredients: [
+      { name: "un", quantity: "3 su bardağı" },
+      { name: "ılık su", quantity: "2 su bardağı" },
+      { name: "yaş maya", quantity: "1 paket" },
+      { name: "toz şeker", quantity: "2 yk" },
+      { name: "tuz", quantity: "1 tk" },
+      { name: "kızartma yağı", quantity: "yeteri kadar" },
+    ],
+    steps: [
+      "Maya, şeker ve ılık suyu karıştır.",
+      "Unu ve tuzu ekle, akışkan bir hamur yap.",
+      "1 saat mayalandır.",
+      "Kızgın yağda kaşıkla porsiyonla, kızart.",
+      "Soğuk şerbete bandır.",
+    ],
+    tags: ["tatlı", "şerbetli", "kızartma", "vejetaryen"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-irmik-helvasi",
+    title: "İrmik Helvası",
+    description:
+      "Tereyağında kavrulmuş irmik ve sütlü şerbetle yapılan klasik helva.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1606755962774-31a7ff85ee9b?w=1200",
+    prepTimeMinutes: 40,
+    difficulty: "kolay",
+    servings: 6,
+    ingredients: [
+      { name: "irmik", quantity: "2 su bardağı" },
+      { name: "tereyağı", quantity: "100 gr" },
+      { name: "süt", quantity: "2 su bardağı" },
+      { name: "su", quantity: "1 su bardağı" },
+      { name: "toz şeker", quantity: "1.5 su bardağı" },
+      { name: "çam fıstığı", quantity: "2 yk" },
+    ],
+    steps: [
+      "Tereyağında çam fıstığı ve irmiği kavur.",
+      "Süt + su + şeker karışımını ısıt.",
+      "Sıcak şerbeti kavrulmuş irmiğin üstüne ekle.",
+      "Karıştırıp kapağını kapat, demlendir, kase kalıbıyla servis et.",
+    ],
+    tags: ["tatlı", "helva", "vejetaryen", "klasik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-trilece",
+    title: "Trileçe",
+    description:
+      "3 sütle ıslatılmış kek üzerine karamel — ev tipi modern klasik.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1602253057119-44d745d9b860?w=1200",
+    prepTimeMinutes: 80,
+    difficulty: "orta",
+    servings: 10,
+    ingredients: [
+      { name: "yumurta", quantity: "4 adet" },
+      { name: "toz şeker", quantity: "1 su bardağı" },
+      { name: "un", quantity: "1 su bardağı" },
+      { name: "süt", quantity: "2 su bardağı" },
+      { name: "krema", quantity: "1 su bardağı" },
+      { name: "yoğunlaştırılmış süt", quantity: "1 kutu" },
+    ],
+    steps: [
+      "Pandispanya kekini pişir.",
+      "3 sütü karıştır, ılık keke gezdir.",
+      "Toz şekeri tavada karamelize edip üstüne dök.",
+      "Buzdolabında 4 saat dinlendir.",
+    ],
+    tags: ["tatlı", "sütlü", "karamel", "vejetaryen"],
+    cuisine: "Türk",
+  },
+
+  // -------- Ana Yemek --------
+  {
+    id: "r-karniyarik",
+    title: "Karnıyarık",
+    description: "Kıymalı patlıcan dolması — fırında pişen klasik ev yemeği.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1625944525533-473d1c47f9cd?w=1200",
+    prepTimeMinutes: 70,
+    difficulty: "orta",
+    servings: 4,
+    ingredients: [
+      { name: "patlıcan", quantity: "6 adet" },
+      { name: "kıyma", quantity: "300 gr" },
+      { name: "soğan", quantity: "1 adet" },
+      { name: "domates", quantity: "2 adet" },
+      { name: "sivri biber", quantity: "4 adet" },
+      { name: "salça", quantity: "1 yk" },
+    ],
+    steps: [
+      "Patlıcanları soyup kızart.",
+      "Soğan ve kıymayı kavur, salça ve baharatla pişir.",
+      "Patlıcanların ortasını yarıp harç doldur.",
+      "Domates ve biberle süsleyip fırınla.",
+    ],
+    tags: ["ana yemek", "kıymalı", "fırın", "klasik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-tas-kebabi",
+    title: "Tas Kebabı",
+    description: "Sebzeli yavaş pişmiş et yemeği — pilavla servis edilir.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1625944525533-473d1c47f9cd?w=1200",
+    prepTimeMinutes: 90,
+    difficulty: "orta",
+    servings: 4,
+    ingredients: [
+      { name: "kuşbaşı dana eti", quantity: "600 gr" },
+      { name: "soğan", quantity: "2 adet" },
+      { name: "patates", quantity: "2 adet" },
+      { name: "havuç", quantity: "2 adet" },
+      { name: "domates", quantity: "2 adet" },
+      { name: "salça", quantity: "1 yk" },
+    ],
+    steps: [
+      "Eti yağda mühürle.",
+      "Soğanı ekle, kavur.",
+      "Sebzeleri ve salçayı ekle.",
+      "Sıcak su ekleyip kısık ateşte 1 saat pişir.",
+    ],
+    tags: ["ana yemek", "etli", "yavaş pişen", "klasik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-firin-tavuk-but",
+    title: "Fırında Patatesli Tavuk But",
+    description:
+      "Marine edilmiş tavuk butları, patatesle birlikte tek tepside.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1604908554007-b0db4cce6dba?w=1200",
+    prepTimeMinutes: 60,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "tavuk but", quantity: "4 adet" },
+      { name: "patates", quantity: "4 adet" },
+      { name: "zeytinyağı", quantity: "4 yk" },
+      { name: "salça", quantity: "1 yk" },
+      { name: "yoğurt", quantity: "2 yk" },
+      { name: "sarımsak", quantity: "3 diş" },
+    ],
+    steps: [
+      "Tavukları yoğurt, zeytinyağı, salça ve sarımsakla marine et.",
+      "Patatesleri dilimle, tepsiye yerleştir.",
+      "Tavukları üzerine diz.",
+      "200°C fırında 45 dk pişir.",
+    ],
+    tags: ["ana yemek", "tavuk", "fırın", "pratik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-mantarli-risotto",
+    title: "Mantarlı Risotto",
+    description: "Kremamsı, parmesanlı, mantarlı klasik İtalyan ana yemeği.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=1200",
+    prepTimeMinutes: 40,
+    difficulty: "orta",
+    servings: 3,
+    ingredients: [
+      { name: "arborio pirinci", quantity: "1.5 su bardağı" },
+      { name: "mantar", quantity: "250 gr" },
+      { name: "soğan", quantity: "1 adet" },
+      { name: "tereyağı", quantity: "60 gr" },
+      { name: "parmesan", quantity: "yarım su bardağı" },
+      { name: "tavuk suyu", quantity: "1 lt" },
+    ],
+    steps: [
+      "Mantarları yağda sote et, kenara al.",
+      "Soğanı tereyağında kavur, pirinci ekleyip mühürle.",
+      "Sıcak suyu kepçe kepçe ekleyerek karıştırarak pişir.",
+      "Mantar, parmesan ve tereyağı ekleyip karıştır.",
+    ],
+    tags: ["ana yemek", "vejetaryen", "italyan", "kremalı"],
+    cuisine: "İtalyan",
+  },
+
+  // -------- Çorba --------
+  {
+    id: "r-ezogelin",
+    title: "Ezogelin Çorbası",
+    description:
+      "Kırmızı mercimek + bulgur + pirinç — naneli baharatlı sıcacık çorba.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1547592180-85f173990554?w=1200",
+    prepTimeMinutes: 35,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "kırmızı mercimek", quantity: "1 su bardağı" },
+      { name: "ince bulgur", quantity: "2 yk" },
+      { name: "pirinç", quantity: "2 yk" },
+      { name: "soğan", quantity: "1 adet" },
+      { name: "salça", quantity: "1 yk" },
+      { name: "kuru nane", quantity: "1 tk" },
+    ],
+    steps: [
+      "Soğanı yağda kavur, salçayı ekle.",
+      "Mercimek, bulgur, pirinç ve sıcak suyu ekle.",
+      "30 dk pişir.",
+      "Üzerine naneli yağ gez.",
+    ],
+    tags: ["çorba", "vejetaryen", "klasik", "pratik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-tarhana",
+    title: "Tarhana Çorbası",
+    description: "Ev tarhanasıyla hazırlanan ekşimsi, baharatlı kış çorbası.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1547592180-85f173990554?w=1200",
+    prepTimeMinutes: 25,
+    difficulty: "kolay",
+    servings: 4,
+    ingredients: [
+      { name: "tarhana", quantity: "yarım su bardağı" },
+      { name: "salça", quantity: "1 yk" },
+      { name: "tereyağı", quantity: "1 yk" },
+      { name: "su", quantity: "1.2 lt" },
+      { name: "pul biber", quantity: "1 tk" },
+    ],
+    steps: [
+      "Tarhanayı 1 saat suda bekleştir.",
+      "Tencerede tereyağı ve salçayı kavur.",
+      "Tarhana karışımını ve suyu ekle.",
+      "20 dk karıştırarak pişir.",
+    ],
+    tags: ["çorba", "vejetaryen", "kış", "geleneksel"],
+    cuisine: "Türk",
+  },
+
+  // -------- Kahvaltı --------
+  {
+    id: "r-cilbir",
+    title: "Çılbır",
+    description:
+      "Sarımsaklı yoğurt üstünde poşe yumurta + tereyağlı pul biber sosu.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=1200",
+    prepTimeMinutes: 15,
+    difficulty: "kolay",
+    servings: 2,
+    ingredients: [
+      { name: "yumurta", quantity: "4 adet" },
+      { name: "süzme yoğurt", quantity: "300 gr" },
+      { name: "sarımsak", quantity: "1 diş" },
+      { name: "tereyağı", quantity: "40 gr" },
+      { name: "pul biber", quantity: "1 tk" },
+      { name: "sirke", quantity: "1 yk" },
+    ],
+    steps: [
+      "Yoğurdu sarımsakla karıştır, tabağa yay.",
+      "Sirkeli suda yumurtaları poşe et.",
+      "Yumurtaları yoğurdun üstüne yerleştir.",
+      "Tereyağını eritip pul biber ekle, üzerine gez.",
+    ],
+    tags: ["kahvaltı", "vejetaryen", "yoğurt", "pratik"],
+    cuisine: "Türk",
+  },
+  {
+    id: "r-pogaca",
+    title: "Pofuduk Poğaça",
+    description: "Yumuşacık, peynirli klasik kahvaltı poğaçası.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1568051243851-f9b136146e97?w=1200",
+    prepTimeMinutes: 90,
+    difficulty: "orta",
+    servings: 12,
+    ingredients: [
+      { name: "un", quantity: "4 su bardağı" },
+      { name: "süt", quantity: "1 su bardağı" },
+      { name: "sıvı yağ", quantity: "1 su bardağı" },
+      { name: "yoğurt", quantity: "yarım su bardağı" },
+      { name: "yaş maya", quantity: "1 paket" },
+      { name: "beyaz peynir", quantity: "200 gr" },
+    ],
+    steps: [
+      "Mayayı ılık sütle aktive et.",
+      "Tüm malzemelerle yumuşak hamur yoğur.",
+      "1 saat mayalandır.",
+      "Bezelere ayır, peyniri yerleştirip kapat.",
+      "Yumurta sarısı sür, susam serp, fırınla.",
+    ],
+    tags: ["kahvaltı", "hamur işi", "vejetaryen", "klasik"],
+    cuisine: "Türk",
+  },
 ];
+
+/**
+ * Merged catalogue: curated + TheMealDB import + AI-generated.
+ * Deduped by id; first occurrence wins (curated takes priority).
+ */
+function mergeUnique(...sources: Recipe[][]): Recipe[] {
+  const seen = new Set<string>();
+  const out: Recipe[] = [];
+  for (const src of sources) {
+    for (const r of src) {
+      if (seen.has(r.id)) continue;
+      seen.add(r.id);
+      // Back-fill sourceUrl for yemek.com recipes scraped before the field
+      // was added (id is `yc-${slug}` → URL is /tarif/${slug}/).
+      if (!r.sourceUrl && r.id.startsWith("yc-")) {
+        const slug = r.id.slice(3);
+        out.push({ ...r, sourceUrl: `https://yemek.com/tarif/${slug}/` });
+      } else {
+        out.push(r);
+      }
+    }
+  }
+  return out;
+}
+
+export const MOCK_RECIPES: Recipe[] = mergeUnique(
+  CURATED_RECIPES,
+  YEMEKCOM_RECIPES,
+  AI_GENERATED_RECIPES,
+  THEMEALDB_RECIPES,
+);
 
 export const findRecipe = (id: string): Recipe | undefined =>
   MOCK_RECIPES.find((r) => r.id === id);

@@ -7,22 +7,27 @@ export const ProgressDots: React.FC<{ total: number; index: number }> = ({
   index,
 }) => (
   <View style={styles.row}>
-    {Array.from({ length: total }).map((_, i) => (
-      <View
-        key={i}
-        style={[
-          styles.dot,
-          {
-            backgroundColor: i <= index ? colors.ink : colors.cloud,
-            width: i === index ? 28 : 8,
-          },
-        ]}
-      />
-    ))}
+    {Array.from({ length: total }).map((_, i) => {
+      const isCurrent = i === index;
+      const isPast = i < index;
+      return (
+        <View
+          key={i}
+          style={[
+            styles.dot,
+            {
+              backgroundColor: isCurrent ? colors.primary : colors.ink,
+              opacity: isCurrent || isPast ? 1 : 0.25,
+              width: isCurrent ? 24 : 6,
+            },
+          ]}
+        />
+      );
+    })}
   </View>
 );
 
 const styles = StyleSheet.create({
   row: { flexDirection: "row", gap: 6, alignItems: "center" },
-  dot: { height: 8, borderRadius: 4 },
+  dot: { height: 6, borderRadius: 3 },
 });

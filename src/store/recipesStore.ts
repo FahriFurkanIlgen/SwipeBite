@@ -12,6 +12,8 @@ interface RecipesState {
   /** Synchronous accessor with mock fallback so legacy code can keep working. */
   getOrFallback: () => Recipe[];
   findById: (id: string) => Recipe | undefined;
+  /** Add a locally-imported recipe to the top of the catalogue (mock mode). */
+  addLocal: (recipe: Recipe) => void;
 }
 
 export const useRecipesStore = create<RecipesState>((set, get) => ({
@@ -48,5 +50,10 @@ export const useRecipesStore = create<RecipesState>((set, get) => ({
   findById: (id) => {
     const list = get().items.length > 0 ? get().items : MOCK_RECIPES;
     return list.find((r) => r.id === id);
+  },
+  addLocal: (recipe) => {
+    const { items } = get();
+    if (items.some((r) => r.id === recipe.id)) return;
+    set({ items: [recipe, ...items] });
   },
 }));

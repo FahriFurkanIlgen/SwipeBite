@@ -11,7 +11,13 @@ import * as Haptics from "expo-haptics";
 import { colors, radii, spacing } from "@/constants/theme";
 import { Text } from "./Text";
 
-type Variant = "primary" | "secondary" | "ghost" | "danger";
+type Variant =
+  | "primary"
+  | "dark"
+  | "outline"
+  | "ghost"
+  | "danger"
+  | "secondary";
 type Size = "sm" | "md" | "lg";
 
 export interface ButtonProps extends Omit<PressableProps, "style"> {
@@ -24,6 +30,22 @@ export interface ButtonProps extends Omit<PressableProps, "style"> {
   rightSlot?: React.ReactNode;
   style?: ViewStyle;
 }
+
+const VARIANTS: Record<Variant, { bg: string; fg: string; border: string }> = {
+  primary: { bg: colors.primary, fg: colors.ink, border: colors.primary },
+  dark: { bg: colors.ink, fg: colors.bg, border: colors.ink },
+  outline: { bg: "transparent", fg: colors.ink, border: colors.border },
+  ghost: { bg: "transparent", fg: colors.ink, border: "transparent" },
+  danger: { bg: colors.danger, fg: colors.card, border: colors.danger },
+  // Legacy alias — maps to outline visually.
+  secondary: { bg: colors.card, fg: colors.ink, border: colors.border },
+};
+
+const SIZES: Record<Size, { h: number; px: number }> = {
+  sm: { h: 38, px: 14 },
+  md: { h: 48, px: 20 },
+  lg: { h: 56, px: 24 },
+};
 
 export const Button: React.FC<ButtonProps> = ({
   title,
@@ -49,7 +71,7 @@ export const Button: React.FC<ButtonProps> = ({
         Haptics.selectionAsync().catch(() => undefined);
         onPress?.(e);
       }}
-      style={({ pressed }) => [
+      style={[
         styles.base,
         {
           backgroundColor: v.bg,
@@ -58,7 +80,6 @@ export const Button: React.FC<ButtonProps> = ({
           paddingHorizontal: s.px,
         },
         fullWidth && styles.full,
-        pressed && styles.pressed,
         disabled && styles.disabled,
         style,
       ]}
@@ -69,11 +90,7 @@ export const Button: React.FC<ButtonProps> = ({
       ) : (
         <View style={styles.row}>
           {leftSlot}
-          <Text
-            variant={size === "lg" ? "h3" : "bodyMedium"}
-            color={v.fg}
-            weight="600"
-          >
+          <Text variant="bodyMedium" color={v.fg} weight="600">
             {title}
           </Text>
           {rightSlot}
@@ -83,28 +100,15 @@ export const Button: React.FC<ButtonProps> = ({
   );
 };
 
-const VARIANTS: Record<Variant, { bg: string; fg: string; border: string }> = {
-  primary: { bg: colors.ink, fg: colors.snow, border: colors.ink },
-  secondary: { bg: colors.snow, fg: colors.ink, border: colors.ink },
-  ghost: { bg: "transparent", fg: colors.ink, border: "transparent" },
-  danger: { bg: colors.danger, fg: colors.snow, border: colors.danger },
-};
-
-const SIZES: Record<Size, { h: number; px: number }> = {
-  sm: { h: 40, px: 16 },
-  md: { h: 52, px: 22 },
-  lg: { h: 60, px: 28 },
-};
-
 const styles = StyleSheet.create({
   base: {
-    borderRadius: radii.lg,
+    borderRadius: radii.md,
     borderWidth: 1,
     alignItems: "center",
     justifyContent: "center",
   },
   row: { flexDirection: "row", alignItems: "center", gap: spacing.sm },
   full: { alignSelf: "stretch" },
-  pressed: { opacity: 0.85, transform: [{ scale: 0.98 }] },
+  pressed: { opacity: 0.88, transform: [{ scale: 0.98 }] },
   disabled: { opacity: 0.5 },
 });

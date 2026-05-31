@@ -1,6 +1,18 @@
 import { openAIJson } from "@/lib/openai";
-import { MatchResult, PantryItem, Profile, Recipe, Vote } from "@/types/domain";
+import {
+  MatchResult,
+  MealPlan,
+  PantryItem,
+  Profile,
+  Recipe,
+  Vote,
+} from "@/types/domain";
 import { uid } from "@/utils/id";
+import {
+  classifyCourse,
+  COURSE_LABEL,
+  Course,
+} from "@/features/recipes/recipeClassifier";
 import { scoreRecipes } from "./recommendationEngine";
 
 /**
@@ -29,6 +41,8 @@ export interface MatchInputs {
   recentRecipeIds?: string[];
   /** Optional time budget in minutes. */
   timeBudgetMinutes?: number;
+  /** When set, builds course companions for multi-course menus. */
+  mealPlan?: MealPlan;
 }
 
 interface RecipeAggregate {
@@ -51,6 +65,7 @@ export function computeMatch(inputs: MatchInputs): MatchResult | null {
     pantry = [],
     recentRecipeIds = [],
     timeBudgetMinutes,
+    mealPlan,
   } = inputs;
   if (candidates.length === 0) return null;
 
@@ -91,10 +106,18 @@ export function computeMatch(inputs: MatchInputs): MatchResult | null {
   }
 
   // Hard reject any recipe that received a superdislike — never serve it.
-  const survivors = [...aggregates.values()].filter(
+  let survivors = [...aggregates.values()].filter(
     (a) => a.rejectedBy.size === 0,
   );
   if (survivors.length === 0) return null;
+
+  // Multi-user majority: when 2+ participants, a recipe must be liked by at
+  // least ceil(N/2) of them. Falls back to "any positive vote" for solo runs.
+  if (participantIds.length >= 2) {
+    const minLikes = Math.ceil(participantIds.length / 2);
+    const intersect = survivors.filter((a) => a.likedBy.size >= minLikes);
+    if (intersect.length > 0) survivors = intersect;
+  }
 
   // Total score = household votes (heavy) + recommendation score (light tie-break).
   const ranked = survivors
@@ -111,6 +134,36 @@ export function computeMatch(inputs: MatchInputs): MatchResult | null {
   );
 
   const missingIngredients = diffMissingIngredients(best.recipe, pantry);
+
+  // Multi-course companions for akşam plan: best liked çorba + tatlı.
+  let courseCompanions: MatchResult["courseCompanions"];
+  if (mealPlan === "aksam") {
+    const primaryCourse = classifyCourse(best.recipe);
+    const wanted: Course[] = ["corba", "ana", "tatli"].filter(
+      (c) => c !== primaryCourse,
+    ) as Course[];
+    const usedIds = new Set<string>([best.recipe.id]);
+    courseCompanions = [];
+    for (const course of wanted) {
+      const pick = ranked
+        .map((x) => x.agg)
+        .filter(
+          (a) =>
+            !usedIds.has(a.recipe.id) &&
+            classifyCourse(a.recipe) === course &&
+            a.voteScore > 0,
+        )[0];
+      if (pick) {
+        courseCompanions.push({
+          course,
+          label: COURSE_LABEL[course],
+          recipeId: pick.recipe.id,
+        });
+        usedIds.add(pick.recipe.id);
+      }
+    }
+    if (courseCompanions.length === 0) courseCompanions = undefined;
+  }
 
   const reasons = buildReasons({
     recipe: best.recipe,
@@ -130,6 +183,7 @@ export function computeMatch(inputs: MatchInputs): MatchResult | null {
     alternatives,
     missingIngredients,
     createdAt: new Date().toISOString(),
+    courseCompanions,
   };
 }
 
