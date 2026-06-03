@@ -51,6 +51,8 @@ export interface Recipe {
   sourceUrl?: string;
   /** Direct video URL (mp4 / embed). When present the recipe screen shows a Watch CTA. */
   videoUrl?: string;
+  /** Approximate calories per serving (estimated, e.g. via OpenAI). Display with "~" prefix. */
+  caloriesPerServing?: number;
 }
 
 export type VoteType = "like" | "dislike" | "superlike" | "superdislike";
@@ -272,3 +274,56 @@ export const DEFAULT_PREFERENCES: HouseholdPreferences = {
   },
   language: "tr",
 };
+
+// ===========================================================
+// Cici Boğaz — group fast food voting
+// ===========================================================
+
+export interface FastFoodItem {
+  id: string;
+  name: string;
+  imageUrl: string;
+}
+
+export type CiciStatus = "lobby" | "voting" | "completed";
+
+export interface CiciMember {
+  userId: UUID;
+  name: string;
+  avatarUrl?: string;
+  joinedAt: string;
+  /** When the member finished voting on every item. */
+  finishedAt?: string;
+}
+
+export interface CiciVote {
+  userId: UUID;
+  round: number;
+  /** The item the user picked in that round (left or right). */
+  itemId: string;
+  createdAt: string;
+}
+
+export interface CiciSession {
+  id: UUID;
+  code: string; // 6-char share code
+  createdBy: UUID;
+  status: CiciStatus;
+  itemIds: string[]; // deck for this session
+  members: CiciMember[];
+  votes: CiciVote[];
+  /** Timer length per round, seconds. */
+  roundSeconds: number;
+  /** 0 before first round; ≥1 once voting has started. */
+  currentRound: number;
+  roundLeftId?: string;
+  roundRightId?: string;
+  /** ISO timestamp when the current round started. */
+  roundStartedAt?: string;
+  /** Carries forward between rounds; equals winner_item_id once completed. */
+  currentWinnerId?: string;
+  /** Index in itemIds for the next challenger. */
+  deckIndex: number;
+  winnerItemId?: string;
+  createdAt: string;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import {
   ActivityIndicator,
   Alert,
@@ -22,6 +22,7 @@ import Animated, {
 
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
+import { CoachMark } from "@/components/ui/CoachMark";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
@@ -30,365 +31,18 @@ import { useRecipesStore } from "@/store/recipesStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { parsePantryText } from "@/features/ai/pantryParser";
 import { findCookableRecipes } from "@/features/pantry/pantryMatcher";
+import {
+  PANTRY_CATEGORY_INDEX,
+  PANTRY_DROPPED_NAMES,
+  PANTRY_QUICK_CATALOG,
+} from "@/constants/pantryCatalog";
 import { uid } from "@/utils/id";
 import type { PantryItem } from "@/types/domain";
 
 const QUICK_PAGE_SIZE = 12;
 
-// Keyword rules used to assign a category to any ingredient (seed list +
-// names harvested from the recipe catalogue). First match wins; order matters.
-const CATEGORY_RULES: { category: string; keywords: string[] }[] = [
-  {
-    category: "Sebze",
-    keywords: [
-      "domates",
-      "soğan",
-      "sarımsak",
-      "biber",
-      "patates",
-      "salatalık",
-      "marul",
-      "havuç",
-      "kabak",
-      "patlıcan",
-      "ıspanak",
-      "brokoli",
-      "karnıbahar",
-      "pırasa",
-      "bezelye",
-      "mantar",
-      "taze fasulye",
-      "barbunya",
-      "tere",
-      "ruğula",
-      "maydanoz",
-      "dereotu",
-      "nane yaprağı",
-      "taze soğan",
-      "köür",
-      "pancar",
-      "turp",
-      "bamya",
-      "enginar",
-      "lâhana",
-      "lahana",
-      "mısır",
-      "zeytin",
-      "avokado",
-    ],
-  },
-  {
-    category: "Meyve",
-    keywords: [
-      "elma",
-      "muz",
-      "limon",
-      "portakal",
-      "çilek",
-      "üzüm",
-      "armut",
-      "karpuz",
-      "kavun",
-      "şef tali",
-      "şeftali",
-      "kayısı",
-      "kiraz",
-      "vişne",
-      "erik",
-      "nar",
-      "incir",
-      "ananas",
-      "mango",
-      "ahududu",
-      "yaban mersini",
-      "hurma",
-    ],
-  },
-  {
-    category: "Protein",
-    keywords: [
-      "tavuk",
-      "kıyma",
-      "balık",
-      "yumurta",
-      "kuru fasulye",
-      "mercimek",
-      "nohut",
-      "hindi",
-      "sucuk",
-      "sosis",
-      "pastirma",
-      "pastırma",
-      "dana",
-      "kuzu",
-      "köfte",
-      "jambon",
-      "salam",
-      "ton balığı",
-      "somon",
-      "hamsi",
-      "karides",
-      "levrek",
-      "çipura",
-      "barbun",
-      "kalkan",
-      "tofu",
-      "seitan",
-    ],
-  },
-  {
-    category: "Süt",
-    keywords: [
-      "süt",
-      "yoğurt",
-      "peynir",
-      "tereyağı",
-      "ayran",
-      "krema",
-      "labne",
-      "kaymak",
-      "lör",
-      "çökelek",
-      "mozzarella",
-      "parmesan",
-      "çedar",
-      "beyaz peynir",
-      "kaşar",
-      "feta",
-      "ricotta",
-    ],
-  },
-  {
-    category: "Tahıl",
-    keywords: [
-      "makarna",
-      "pirinç",
-      "bulgur",
-      "ekmek",
-      "un",
-      "yulaf",
-      "kuskus",
-      "şehriye",
-      "erista",
-      "erışte",
-      "yufka",
-      "baz lama",
-      "bazlama",
-      "lavaş",
-      "pide",
-      "simit",
-      "kınik buğday",
-      "karabuğday",
-      "kinoa",
-      "galeta unu",
-      "nişasta",
-      "irmik",
-      "mısır unu",
-      "tortilla",
-    ],
-  },
-  {
-    category: "Baharat",
-    keywords: [
-      "tuz",
-      "karabiber",
-      "pul biber",
-      "kekik",
-      "nane",
-      "kimyon",
-      "kırmızı biber",
-      "kırmızı toz biber",
-      "sumak",
-      "tarcin",
-      "tarçın",
-      "karanfil",
-      "hindistan cevizi",
-      "zerdeçal",
-      "köri",
-      "defne",
-      "reyhan",
-      "fısık",
-      "fısık yaprağı",
-      "safran",
-      "vanilya",
-      "toz şeker",
-      "şeker",
-      "karbonat",
-      "kabartma tozu",
-      "maya",
-    ],
-  },
-  {
-    category: "Yağ & Sos",
-    keywords: [
-      "zeytinyağı",
-      "salça",
-      "sirke",
-      "ketçap",
-      "mayonez",
-      "soya sosu",
-      "ayçiçek yağı",
-      "tereyağ",
-      "susam yağı",
-      "fındık yağı",
-      "hardal",
-      "nar ekşisi",
-      "bal",
-      "pekmez",
-      "tahin",
-      "reyhan sos",
-    ],
-  },
-  {
-    category: "Kuruyemiş",
-    keywords: [
-      "ceviz",
-      "badem",
-      "fındık",
-      "fıstık",
-      "antep fıstığı",
-      "susam",
-      "çam fıstığı",
-      "chia",
-      "ay çekirdeği",
-      "kabak çekirdeği",
-    ],
-  },
-];
-
-const SEED_QUICK_CATALOG: { category: string; items: string[] }[] = [
-  {
-    category: "Sebze",
-    items: [
-      "domates",
-      "soğan",
-      "sarımsak",
-      "biber",
-      "patates",
-      "salatalık",
-      "marul",
-      "havuç",
-      "kabak",
-      "patlıcan",
-      "ıspanak",
-      "brokoli",
-    ],
-  },
-  {
-    category: "Meyve",
-    items: ["elma", "muz", "limon", "portakal", "çilek", "üzüm", "armut"],
-  },
-  {
-    category: "Protein",
-    items: [
-      "tavuk",
-      "kıyma",
-      "balık",
-      "yumurta",
-      "kuru fasulye",
-      "mercimek",
-      "nohut",
-      "hindi",
-      "sucuk",
-    ],
-  },
-  {
-    category: "Süt",
-    items: ["süt", "yoğurt", "peynir", "tereyağı", "ayran", "krema", "labne"],
-  },
-  {
-    category: "Tahıl",
-    items: ["makarna", "pirinç", "bulgur", "ekmek", "un", "yulaf", "kuskus"],
-  },
-  {
-    category: "Baharat",
-    items: [
-      "tuz",
-      "karabiber",
-      "pul biber",
-      "kekik",
-      "nane",
-      "kimyon",
-      "kırmızı biber",
-    ],
-  },
-  {
-    category: "Yağ & Sos",
-    items: ["zeytinyağı", "salça", "sirke", "ketçap", "mayonez", "soya sosu"],
-  },
-];
-
-const CATEGORY_INDEX: Record<string, string> = (() => {
-  const m: Record<string, string> = {};
-  for (const { category, items } of SEED_QUICK_CATALOG) {
-    for (const it of items) m[it] = category;
-  }
-  for (const { category, keywords } of CATEGORY_RULES) {
-    for (const k of keywords) if (!m[k]) m[k] = category;
-  }
-  return m;
-})();
-
-function categorize(name: string): string {
-  const lower = name.toLocaleLowerCase("tr-TR");
-  if (CATEGORY_INDEX[lower]) return CATEGORY_INDEX[lower];
-  // Substring fallback: "kırmızı biber salatası" → Sebze via "biber".
-  for (const { category, keywords } of CATEGORY_RULES) {
-    if (keywords.some((k) => lower.includes(k))) return category;
-  }
-  return "Diğer";
-}
-
-/** Normalise an ingredient name: lowercase, strip quantities/parantheses. */
-function normalizeIngredient(raw: string): string {
-  // Order matters: kill the leading "1/2 yemek kaşığı" chunk first, then any
-  // free-standing unit/adjective words, then non-letters. All regexes use the
-  // /u flag so \p{L} and \b correctly handle Turkish letters (ı, ğ, ş, ç, ü, ö).
-  // IMPORTANT: list longest unit forms first so "gram" doesn't get matched as
-  // "gr" + leftover "am". Also assert a non-letter after the unit so we don't
-  // chew into the ingredient name (e.g. "gr" must not match inside "gram").
-  const UNITS =
-    "(?:gram|kg|mg|gr|g|ml|lt|l|adet|tane|" +
-    "su\\s*bardağı|çay\\s*bardağı|çay\\s*kaşığı|tatlı\\s*kaşığı|yemek\\s*kaşığı|" +
-    "bardağı|bardak|kaşığı|kaşık|fincan|paket|kutu|şişe|kavanoz|kâse|kase|" +
-    "diş|dilim|demet|dal|tutam|baş|avuç|yk|tk|çk|sb)";
-
-  let s = raw
-    .toLocaleLowerCase("tr-TR")
-    .replace(/\([^)]*\)/g, " ")
-    // Quantity + optional unit (e.g. "2 yemek kaşığı", "1/2 su bardağı", "200 gr")
-    .replace(
-      new RegExp(
-        `(?:\\d+(?:[.,/]\\d+)?|[½¼¾⅓⅔⅛⅜⅝⅞])\\s*(?:${UNITS}(?![\\p{L}]))?`,
-        "giu",
-      ),
-      " ",
-    )
-    // Free-standing unit words ("yemek kaşığı tuz", "bir tutam kekik")
-    .replace(new RegExp(`(?<![\\p{L}])${UNITS}(?![\\p{L}])`, "giu"), " ")
-    // Common adjectives / prep words
-    .replace(
-      /(?<![\p{L}])(?:taze|kuru|az|biraz|opsiyonel|tadında|tatında|bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|yarım|çeyrek|tam yağlı|yağsız|ince|iri|büyük|küçük|orta|boy|doğranmış|rendelenmiş|kıyılmış|haşlanmış|kavrulmuş|kabuğu soyulmuş|file|toz|tane)(?![\p{L}])/giu,
-      " ",
-    )
-    .replace(/[^\p{L}\s]/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  if (s.length < 2) return "";
-  // Drop entries that are still just a unit word (defence in depth).
-  if (
-    /^(kaşığı|kaşık|bardağı|bardak|fincan|paket|kutu|şişe|kavanoz|diş|dilim|demet|dal|tutam|baş|avuç|adet|tane|gram|kg|gr|ml|lt|am)$/iu.test(
-      s,
-    )
-  )
-    return "";
-  return s;
-}
-
-/** Canonical dedup key — strips common Turkish possessive/plural suffixes so
- *  "süt", "sütü", "sütler" all collapse to one entry. Display name is kept
- *  separately so we still show a friendly label. */
+/** Strip common Turkish possessive/plural suffixes for a fallback lookup
+ *  (e.g. "sütü" → "süt"). */
 function canonicalKey(name: string): string {
   return name
     .replace(
@@ -398,6 +52,16 @@ function canonicalKey(name: string): string {
     .trim();
 }
 
+function categorize(name: string): string {
+  const lower = name.toLocaleLowerCase("tr-TR").trim();
+  return (
+    PANTRY_CATEGORY_INDEX[lower] ??
+    PANTRY_CATEGORY_INDEX[canonicalKey(lower)] ??
+    "Diğer"
+  );
+}
+
+
 export default function PantryScreen() {
   const household = useAuthStore((s) => s.household);
   const user = useAuthStore((s) => s.user);
@@ -405,7 +69,6 @@ export default function PantryScreen() {
   const addMany = usePantryStore((s) => s.addMany);
   const remove = usePantryStore((s) => s.remove);
   const startSession = useSessionStore((s) => s.startSession);
-  const recipes = useRecipesStore((s) => s.items);
 
   const inputRef = React.useRef<TextInput>(null);
   const [text, setText] = React.useState("");
@@ -414,56 +77,9 @@ export default function PantryScreen() {
   const [pickSaving, setPickSaving] = React.useState<string | null>(null);
   const [activeCategory, setActiveCategory] = React.useState<string>("Tümü");
 
-  // Enrich the seed catalogue with ingredients pulled from every recipe in the
-  // catalogue, sorted by frequency so the most common items show first.
-  const QUICK_CATALOG = React.useMemo(() => {
-    // Aggregate by canonical key so "süt", "sütü", "sütler" don't all appear.
-    const agg = new Map<string, { display: string; count: number }>();
-    for (const r of recipes) {
-      for (const ing of r.ingredients ?? []) {
-        const n = normalizeIngredient(ing.name);
-        if (!n || n.length < 2 || n.length > 28) continue;
-        // Skip lone units / junk that slipped past the regex.
-        if (
-          /^(am|ml|gr|kg|adet|tane|paket|kutu|dilim|demet|tutam|baş|diş)$/i.test(
-            n,
-          )
-        )
-          continue;
-        const key = canonicalKey(n);
-        const cur = agg.get(key);
-        if (cur) {
-          cur.count += 1;
-          // Prefer the shortest display form (less likely to carry suffixes).
-          if (n.length < cur.display.length) cur.display = n;
-        } else {
-          agg.set(key, { display: n, count: 1 });
-        }
-      }
-    }
-    // Bucket by category, preserve seed order at the front.
-    const byCat = new Map<string, string[]>();
-    const seenKey = new Set<string>();
-    for (const { category, items } of SEED_QUICK_CATALOG) {
-      byCat.set(category, [...items]);
-      for (const it of items) seenKey.add(canonicalKey(it));
-    }
-    const sorted = Array.from(agg.values()).sort((a, b) => b.count - a.count);
-    for (const { display } of sorted) {
-      const key = canonicalKey(display);
-      if (seenKey.has(key)) continue;
-      const cat = categorize(display);
-      if (cat === "Diğer") continue;
-      const list = byCat.get(cat) ?? [];
-      list.push(display);
-      byCat.set(cat, list);
-      seenKey.add(key);
-    }
-    return Array.from(byCat.entries()).map(([category, items]) => ({
-      category,
-      items,
-    }));
-  }, [recipes]);
+  // Quick-add catalogue is now hand-curated in src/constants/pantryCatalog.ts
+  // (sourced from güncel.xlsx). Already sorted by usage within each category.
+  const QUICK_CATALOG = PANTRY_QUICK_CATALOG;
 
   const [quickCat, setQuickCat] = React.useState<string>(
     QUICK_CATALOG[0]?.category ?? "Sebze",
@@ -955,6 +571,11 @@ export default function PantryScreen() {
 
         <View style={{ height: 100 }} />
       </ScrollView>
+      <CoachMark
+        storageKey="pantryCoach"
+        title="Kilerini ekle, AI önersin"
+        description="Evdeki malzemeleri buraya ekle. AI sadece elindekilerden yapılabilecek tarifleri öne çıkarır — alışverişe gitmeden bugün ne yapacağını bul."
+      />
     </Screen>
   );
 }

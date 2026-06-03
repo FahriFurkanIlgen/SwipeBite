@@ -168,15 +168,19 @@ export default function RecipeScreen() {
               label="Kişi"
             />
             <MetaCard
-              icon={Flame}
+              icon={Sparkles}
               value={recipe.difficulty}
               label="Zorluk"
               color={difficultyColor}
             />
             <MetaCard
-              icon={Sparkles}
-              value={`%${pantryMatchPct}`}
-              label="Kiler"
+              icon={Flame}
+              value={
+                typeof recipe.caloriesPerServing === "number"
+                  ? `~${recipe.caloriesPerServing}`
+                  : "—"
+              }
+              label="kcal / porsiyon"
             />
           </View>
 
@@ -485,9 +489,10 @@ const styles = StyleSheet.create({
     letterSpacing: -0.85,
   },
   content: { padding: spacing.xl, gap: spacing.lg },
-  metaGrid: { flexDirection: "row", gap: spacing.sm },
+  metaGrid: { flexDirection: "row", gap: spacing.sm, flexWrap: "wrap" },
   metaCard: {
-    flex: 1,
+    flexBasis: "47%",
+    flexGrow: 1,
     padding: spacing.md,
     borderRadius: radii.md,
     backgroundColor: colors.card,

@@ -32,7 +32,9 @@ import { usePantryStore } from "@/store/pantryStore";
 import { usePlannerStore } from "@/store/plannerStore";
 import { usePreferencesStore } from "@/store/preferencesStore";
 import { useStatsStore } from "@/store/statsStore";
+import { useTutorialStore } from "@/store/tutorialStore";
 import { pushService } from "@/features/notifications/pushService";
+import { configureGoogleSignIn } from "@/lib/googleAuth";
 import { colors } from "@/constants/theme";
 
 SplashScreen.preventAutoHideAsync().catch(() => undefined);
@@ -85,14 +87,17 @@ function RootLayoutNav() {
   const hydratePlanner = usePlannerStore((s) => s.hydrate);
   const hydratePrefs = usePreferencesStore((s) => s.hydrate);
   const hydrateStats = useStatsStore((s) => s.hydrate);
+  const hydrateTutorial = useTutorialStore((s) => s.hydrate);
   const user = useAuthStore((s) => s.user);
   const household = useAuthStore((s) => s.household);
   React.useEffect(() => {
     void hydrate();
     void hydrateRecipes();
+    void hydrateTutorial();
+    configureGoogleSignIn();
     const unsub = subscribeAuthChanges();
     return unsub;
-  }, [hydrate, hydrateRecipes, subscribeAuthChanges]);
+  }, [hydrate, hydrateRecipes, hydrateTutorial, subscribeAuthChanges]);
   React.useEffect(() => {
     if (household) {
       void hydratePantry(household.id);
@@ -180,6 +185,14 @@ function RootLayoutNav() {
       <Stack.Screen name="cook-with" options={{ presentation: "modal" }} />
       <Stack.Screen name="invite" options={{ presentation: "modal" }} />
       <Stack.Screen name="join/[code]" options={{ animation: "fade" }} />
+      <Stack.Screen
+        name="cici/index"
+        options={{ presentation: "modal", animation: "slide_from_bottom" }}
+      />
+      <Stack.Screen
+        name="cici/[id]"
+        options={{ animation: "slide_from_right" }}
+      />
     </Stack>
   );
 }

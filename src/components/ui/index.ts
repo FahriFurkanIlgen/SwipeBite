@@ -1,6 +1,7 @@
 export { AnimatedHero } from "./AnimatedHero";
 export { Button } from "./Button";
 export { Card } from "./Card";
+export { CoachMark } from "./CoachMark";
 export { Confetti } from "./Confetti";
 export { EmptyState } from "./EmptyState";
 export { Input } from "./Input";

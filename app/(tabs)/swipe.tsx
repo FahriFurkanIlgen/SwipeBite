@@ -8,6 +8,7 @@ import { Clock, Play, RefreshCw, Users } from "lucide-react-native";
 
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
+import { CoachMark } from "@/components/ui/CoachMark";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { useAuthStore } from "@/store/authStore";
 import { useSessionStore } from "@/store/sessionStore";
@@ -332,6 +333,11 @@ export default function SwipeTab() {
 
         <View style={{ height: spacing["4xl"] }} />
       </ScrollView>
+      <CoachMark
+        storageKey="swipeCoach"
+        title="Eşleşmeyi başlat"
+        description="Önce bir öğün seç (kahvaltı / öğle / akşam), sonra 'Eşleşme başlat' diyerek kart tarama oturumunu açarsın. Kartları sağa kaydır beğen, sola kaydır geç."
+      />
     </Screen>
   );
 }

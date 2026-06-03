@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable, StyleSheet, View } from "react-native";
+import { Alert, Pressable, StyleSheet, View } from "react-native";
 import { router } from "expo-router";
 import { Check, ChevronRight } from "lucide-react-native";
 import Animated, { FadeInDown, ZoomIn } from "react-native-reanimated";
@@ -11,13 +11,34 @@ import { Confetti } from "@/components/ui/Confetti";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
+import { useTutorialStore } from "@/store/tutorialStore";
 
 export default function FinishScreen() {
   const setOnboarded = useAuthStore((s) => s.setOnboarded);
+  const skipAllTutorials = useTutorialStore((s) => s.skipAll);
 
   const handleStart = () => {
     setOnboarded(true);
-    router.replace("/(tabs)");
+    Alert.alert(
+      "Uygulama turu",
+      "Sana SwipeBite'ı tanıtan kısa bir tur yapalım mı? (4 sayfa + ekran içi ipuçları)",
+      [
+        {
+          text: "Hayır, atla",
+          style: "cancel",
+          onPress: () => {
+            skipAllTutorials();
+            router.replace("/(tabs)");
+          },
+        },
+        {
+          text: "Evet, göster",
+          style: "default",
+          onPress: () => router.replace("/(onboarding)/tutorial"),
+        },
+      ],
+      { cancelable: false },
+    );
   };
 
   return (

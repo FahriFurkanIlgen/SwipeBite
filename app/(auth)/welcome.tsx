@@ -23,8 +23,6 @@ import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
 import { authService } from "@/features/auth/authService";
 
-type Mode = "signin" | "signup";
-
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1647772809798-f34d785c981c?w=900&h=1400&fit=crop&auto=format";
 
@@ -64,18 +62,19 @@ function AppleMark() {
 
 export default function Welcome() {
   const signInMock = useAuthStore((s) => s.signInMock);
-  const signIn = useAuthStore((s) => s.signIn);
-  const signUp = useAuthStore((s) => s.signUp);
+  const requestEmailOtp = useAuthStore((s) => s.requestEmailOtp);
+  const verifyEmailOtp = useAuthStore((s) => s.verifyEmailOtp);
+  const signInWithGoogle = useAuthStore((s) => s.signInWithGoogle);
+  const signInWithApple = useAuthStore((s) => s.signInWithApple);
   const authLoading = useAuthStore((s) => s.authLoading);
   const user = useAuthStore((s) => s.user);
   const isOnboarded = useAuthStore((s) => s.isOnboarded);
   const isLive = authService.isConfigured();
 
   const [emailMode, setEmailMode] = React.useState(false);
-  const [mode, setMode] = React.useState<Mode>("signin");
+  const [otpStep, setOtpStep] = React.useState<"email" | "code">("email");
   const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [name, setName] = React.useState("");
+  const [code, setCode] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
   // Landing always shows for 3 seconds. After that, either auto-redirect a
   // signed-in user into the app or reveal the login buttons sliding up.
@@ -93,25 +92,25 @@ export default function Welcome() {
     router.replace(isOnboarded ? "/(tabs)" : "/(onboarding)/preferences");
   }, [revealed, user, isOnboarded]);
 
-  const submit = async () => {
+  const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  const handleSendCode = async () => {
     if (!isLive) {
-      signInMock(name || email.split("@")[0] || "Sen");
+      signInMock(email.split("@")[0] || "Sen");
       return;
     }
-    if (!email.trim() || !password) {
-      Alert.alert("Eksik bilgi", "E-posta ve şifre gerekli.");
-      return;
-    }
-    if (mode === "signup" && !name.trim()) {
-      Alert.alert("Eksik bilgi", "Adını gir.");
+    const trimmed = email.trim();
+    if (!isValidEmail(trimmed)) {
+      Alert.alert("Hata", t.auth.invalidEmail);
       return;
     }
     setSubmitting(true);
     try {
-      if (mode === "signin") {
-        await signIn(email.trim(), password);
-      } else {
-        await signUp(email.trim(), password, name.trim());
+      const ok = await requestEmailOtp(trimmed);
+      if (ok) {
+        setEmail(trimmed);
+        setCode("");
+        setOtpStep("code");
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : "İşlem başarısız oldu.";
@@ -121,11 +120,81 @@ export default function Welcome() {
     }
   };
 
+  const handleVerifyCode = async () => {
+    const trimmed = code.trim();
+    if (trimmed.length !== 6 || !/^\d{6}$/.test(trimmed)) {
+      Alert.alert("Hata", t.auth.invalidCode);
+      return;
+    }
+    setSubmitting(true);
+    try {
+      await verifyEmailOtp(email, trimmed);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : t.auth.invalidCode;
+      Alert.alert("Hata", msg);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleResend = async () => {
+    setCode("");
+    try {
+      await requestEmailOtp(email);
+      Alert.alert("Tamam", t.auth.codeSent);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "İşlem başarısız oldu.";
+      Alert.alert("Hata", msg);
+    }
+  };
+
   const handleSocialMock = () => {
     if (isLive) {
       setEmailMode(true);
+      setOtpStep("email");
     } else {
       signInMock();
+    }
+  };
+
+  const handleGoogle = async () => {
+    if (!isLive) {
+      signInMock();
+      return;
+    }
+    setSubmitting(true);
+    try {
+      await signInWithGoogle();
+    } catch (err) {
+      const msg =
+        err instanceof Error ? err.message : "Google girişi başarısız oldu.";
+      // Cancellation is not a real error; ignore silently.
+      if (!/cancel/i.test(msg) && !/SIGN_IN_CANCELLED/.test(msg)) {
+        Alert.alert("Hata", msg);
+      }
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleApple = async () => {
+    if (!isLive) {
+      signInMock();
+      return;
+    }
+    setSubmitting(true);
+    try {
+      await signInWithApple();
+    } catch (err) {
+      const msg =
+        err instanceof Error ? err.message : "Apple girişi başarısız oldu.";
+      // ERR_REQUEST_CANCELED is what expo-apple-authentication throws when
+      // the user dismisses the sheet — treat it as a no-op.
+      if (!/cancel/i.test(msg) && !/ERR_REQUEST_CANCELED/.test(msg)) {
+        Alert.alert("Hata", msg);
+      }
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -199,34 +268,42 @@ export default function Welcome() {
                       android_ripple={{ color: "rgba(0,0,0,0.06)" }}
                     >
                       <View style={styles.btnInner}>
+                        <GoogleMark />
                         <Text
                           variant="bodyMedium"
                           weight="600"
                           color={colors.ink}
                           style={styles.btnLabel}
                         >
-                          Hemen başla
+                          {t.auth.continueWithGoogle}
                         </Text>
-                        <ChevronRight
-                          size={16}
-                          strokeWidth={2}
-                          color={colors.ink}
-                        />
                       </View>
                     </Pressable>
-                    <Text
-                      variant="caption"
-                      align="center"
-                      color="rgba(250,247,242,0.45)"
+
+                    <Pressable
+                      onPress={() => signInMock()}
+                      style={styles.socialDark}
+                      android_ripple={{ color: "rgba(255,255,255,0.08)" }}
                     >
-                      Hesap oluşturmadan deneyebilirsin.
-                    </Text>
+                      <View style={styles.btnInner}>
+                        <AppleMark />
+                        <Text
+                          variant="bodyMedium"
+                          weight="600"
+                          color={colors.bg}
+                          style={styles.btnLabel}
+                        >
+                          {t.auth.continueWithApple}
+                        </Text>
+                      </View>
+                    </Pressable>
                   </View>
                 ) : !emailMode ? (
                   <View style={{ gap: spacing.md, width: "100%" }}>
                     <Pressable
-                      onPress={handleSocialMock}
-                      style={styles.socialLight}
+                      onPress={handleGoogle}
+                      disabled={busy}
+                      style={[styles.socialLight, busy && styles.pressed]}
                       android_ripple={{ color: "rgba(0,0,0,0.06)" }}
                     >
                       <View style={styles.btnInner}>
@@ -243,8 +320,9 @@ export default function Welcome() {
                     </Pressable>
 
                     <Pressable
-                      onPress={handleSocialMock}
-                      style={styles.socialDark}
+                      onPress={handleApple}
+                      disabled={busy}
+                      style={[styles.socialDark, busy && styles.pressed]}
                       android_ripple={{ color: "rgba(255,255,255,0.08)" }}
                     >
                       <View style={styles.btnInner}>
@@ -294,7 +372,14 @@ export default function Welcome() {
                 ) : (
                   <View style={{ gap: spacing.md, width: "100%" }}>
                     <Pressable
-                      onPress={() => setEmailMode(false)}
+                      onPress={() => {
+                        if (otpStep === "code") {
+                          setOtpStep("email");
+                          setCode("");
+                        } else {
+                          setEmailMode(false);
+                        }
+                      }}
                       style={styles.backRow}
                       accessibilityLabel={t.common.back}
                     >
@@ -308,79 +393,112 @@ export default function Welcome() {
                       </Text>
                     </Pressable>
 
-                    {mode === "signup" ? (
-                      <TextInput
-                        placeholder={t.auth.namePlaceholder}
-                        placeholderTextColor="rgba(250,247,242,0.4)"
-                        value={name}
-                        onChangeText={setName}
-                        autoCapitalize="words"
-                        style={styles.darkInput}
-                      />
-                    ) : null}
-
-                    <TextInput
-                      placeholder={t.auth.emailPlaceholder}
-                      placeholderTextColor="rgba(250,247,242,0.4)"
-                      value={email}
-                      onChangeText={setEmail}
-                      autoCapitalize="none"
-                      keyboardType="email-address"
-                      style={styles.darkInput}
-                    />
-
-                    <TextInput
-                      placeholder="Şifre"
-                      placeholderTextColor="rgba(250,247,242,0.4)"
-                      value={password}
-                      onChangeText={setPassword}
-                      secureTextEntry
-                      autoCapitalize="none"
-                      style={styles.darkInput}
-                    />
-
-                    <Pressable
-                      onPress={submit}
-                      disabled={busy}
-                      style={[styles.primaryCta, busy && styles.pressed]}
-                    >
-                      <View style={styles.btnInner}>
-                        <Text
-                          variant="bodyMedium"
-                          weight="600"
-                          color={colors.ink}
-                          style={styles.btnLabel}
-                        >
-                          {busy
-                            ? t.common.loading
-                            : mode === "signin"
-                              ? "Devam et"
-                              : "Hesap oluştur"}
-                        </Text>
-                        <ChevronRight
-                          size={16}
-                          strokeWidth={2}
-                          color={colors.ink}
+                    {otpStep === "email" ? (
+                      <>
+                        <TextInput
+                          placeholder={t.auth.emailPlaceholder}
+                          placeholderTextColor="rgba(250,247,242,0.4)"
+                          value={email}
+                          onChangeText={setEmail}
+                          autoCapitalize="none"
+                          autoComplete="email"
+                          keyboardType="email-address"
+                          style={styles.darkInput}
+                          editable={!busy}
+                          onSubmitEditing={handleSendCode}
+                          returnKeyType="send"
                         />
-                      </View>
-                    </Pressable>
 
-                    <Pressable
-                      onPress={() =>
-                        setMode((m) => (m === "signin" ? "signup" : "signin"))
-                      }
-                      style={styles.toggleRow}
-                    >
-                      <Text
-                        variant="small"
-                        color="rgba(250,247,242,0.6)"
-                        align="center"
-                      >
-                        {mode === "signin"
-                          ? "Hesabın yok mu? Kayıt ol"
-                          : "Hesabın var mı? Giriş yap"}
-                      </Text>
-                    </Pressable>
+                        <Pressable
+                          onPress={handleSendCode}
+                          disabled={busy}
+                          style={[styles.primaryCta, busy && styles.pressed]}
+                        >
+                          <View style={styles.btnInner}>
+                            <Text
+                              variant="bodyMedium"
+                              weight="600"
+                              color={colors.ink}
+                              style={styles.btnLabel}
+                            >
+                              {busy ? t.common.loading : t.auth.sendCode}
+                            </Text>
+                            <ChevronRight
+                              size={16}
+                              strokeWidth={2}
+                              color={colors.ink}
+                            />
+                          </View>
+                        </Pressable>
+                      </>
+                    ) : (
+                      <>
+                        <Text
+                          variant="caption"
+                          color="rgba(250,247,242,0.7)"
+                          align="center"
+                        >
+                          {t.auth.otpSubtitle(email)}
+                        </Text>
+
+                        <TextInput
+                          placeholder={t.auth.otpPlaceholder}
+                          placeholderTextColor="rgba(250,247,242,0.4)"
+                          value={code}
+                          onChangeText={(v) =>
+                            setCode(v.replace(/\D/g, "").slice(0, 6))
+                          }
+                          keyboardType="number-pad"
+                          autoComplete="one-time-code"
+                          textContentType="oneTimeCode"
+                          maxLength={6}
+                          style={[styles.darkInput, styles.otpInput]}
+                          editable={!busy}
+                          onSubmitEditing={handleVerifyCode}
+                          returnKeyType="done"
+                          autoFocus
+                        />
+
+                        <Pressable
+                          onPress={handleVerifyCode}
+                          disabled={busy || code.length !== 6}
+                          style={[
+                            styles.primaryCta,
+                            (busy || code.length !== 6) && styles.pressed,
+                          ]}
+                        >
+                          <View style={styles.btnInner}>
+                            <Text
+                              variant="bodyMedium"
+                              weight="600"
+                              color={colors.ink}
+                              style={styles.btnLabel}
+                            >
+                              {busy ? t.common.loading : t.auth.verifyCode}
+                            </Text>
+                            <ChevronRight
+                              size={16}
+                              strokeWidth={2}
+                              color={colors.ink}
+                            />
+                          </View>
+                        </Pressable>
+
+                        <Pressable
+                          onPress={handleResend}
+                          disabled={busy}
+                          style={styles.toggleRow}
+                        >
+                          <Text
+                            variant="small"
+                            color="rgba(250,247,242,0.6)"
+                            align="center"
+                          >
+                            {t.auth.resendCode}
+                          </Text>
+                        </Pressable>
+                      </>
+                    )}
                   </View>
                 )}
 
@@ -510,6 +628,12 @@ const styles = StyleSheet.create({
     color: colors.bg,
     fontFamily: fonts.sans,
     fontSize: 15,
+  },
+  otpInput: {
+    textAlign: "center",
+    fontSize: 22,
+    letterSpacing: 8,
+    fontWeight: "600",
   },
   primaryCta: {
     width: "100%",

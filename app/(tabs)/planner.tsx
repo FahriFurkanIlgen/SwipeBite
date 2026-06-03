@@ -26,6 +26,7 @@ import Animated, { FadeInDown } from "react-native-reanimated";
 
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
+import { CoachMark } from "@/components/ui/CoachMark";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
@@ -742,6 +743,11 @@ export default function PlannerScreen() {
 
         <View style={{ height: 100 }} />
       </ScrollView>
+      <CoachMark
+        storageKey="plannerCoach"
+        title="Haftalık planın burada"
+        description="Eşleştiğin tariflerden haftalık yemek programı oluştur. Her gün için bir tarif seç, market listesini otomatik çıkartalım."
+      />
     </Screen>
   );
 }

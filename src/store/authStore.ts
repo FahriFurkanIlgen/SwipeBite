@@ -1,8 +1,11 @@
 import { create } from "zustand";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Household, Profile, SpiceLevel, User } from "@/types/domain";
 import { uid } from "@/utils/id";
 import { authService } from "@/features/auth/authService";
 import { supabase } from "@/lib/supabase";
+
+const ONBOARDED_KEY = "@swipebite/onboarded";
 
 interface AuthState {
   user: User | null;
@@ -13,6 +16,10 @@ interface AuthState {
   signInMock: (name?: string) => void;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string, name: string) => Promise<void>;
+  requestEmailOtp: (email: string) => Promise<boolean>;
+  verifyEmailOtp: (email: string, code: string) => Promise<void>;
+  signInWithGoogle: () => Promise<void>;
+  signInWithApple: () => Promise<void>;
   hydrateFromSession: () => Promise<void>;
   subscribeAuthChanges: () => () => void;
   signOut: () => Promise<void>;
@@ -75,18 +82,77 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       set({ authLoading: false });
     }
   },
+  requestEmailOtp: async (email) => {
+    set({ authLoading: true });
+    try {
+      const ok = await authService.sendEmailOtp(email);
+      if (!ok) {
+        // Backend not configured — drop straight into mock mode so dev can continue.
+        get().signInMock(email.split("@")[0] ?? "Sen");
+        return false;
+      }
+      return true;
+    } finally {
+      set({ authLoading: false });
+    }
+  },
+  verifyEmailOtp: async (email, code) => {
+    set({ authLoading: true });
+    try {
+      const result = await authService.verifyEmailOtp(email, code);
+      if (!result) {
+        get().signInMock(email.split("@")[0] ?? "Sen");
+        return;
+      }
+      await get().hydrateFromSession();
+    } finally {
+      set({ authLoading: false });
+    }
+  },
+  signInWithGoogle: async () => {
+    set({ authLoading: true });
+    try {
+      const result = await authService.signInWithGoogle();
+      if (!result) {
+        // Supabase or Google client IDs not configured — fall back to mock.
+        get().signInMock();
+        return;
+      }
+      await get().hydrateFromSession();
+    } finally {
+      set({ authLoading: false });
+    }
+  },
+  signInWithApple: async () => {
+    set({ authLoading: true });
+    try {
+      const result = await authService.signInWithApple();
+      if (!result) {
+        // Apple Sign-In unavailable (non-iOS, Expo Go without entitlement,
+        // or Supabase not configured) — fall back to mock so dev keeps moving.
+        get().signInMock();
+        return;
+      }
+      await get().hydrateFromSession();
+    } finally {
+      set({ authLoading: false });
+    }
+  },
   hydrateFromSession: async () => {
     const user = await authService.getCurrentUser();
     if (!user) return;
-    const [profile, household] = await Promise.all([
+    const [profile, household, persistedOnboarded] = await Promise.all([
       authService.getProfile(user.id),
       authService.getPrimaryHousehold(user.id),
+      AsyncStorage.getItem(ONBOARDED_KEY).catch(() => null),
     ]);
     set({
       user,
       profile: profile ?? emptyProfile(user.id),
       household,
-      isOnboarded: !!profile,
+      // Treat the user as onboarded if they have a profile OR a household,
+      // OR they previously completed onboarding on this device.
+      isOnboarded: !!profile || !!household || persistedOnboarded === "1",
     });
   },
   subscribeAuthChanges: () => {
@@ -113,5 +179,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     void authService.upsertProfile(next);
   },
   setHousehold: (h) => set({ household: h }),
-  setOnboarded: (v) => set({ isOnboarded: v }),
+  setOnboarded: (v) => {
+    set({ isOnboarded: v });
+    AsyncStorage.setItem(ONBOARDED_KEY, v ? "1" : "0").catch(() => undefined);
+  },
 }));

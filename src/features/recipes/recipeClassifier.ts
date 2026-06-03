@@ -1,4 +1,5 @@
 import { MealPlan, Recipe } from "@/types/domain";
+import { RECIPE_CATEGORY_OVERRIDES } from "@/constants/recipeCategories";
 
 /**
  * High-level course classification for a recipe.
@@ -346,8 +347,13 @@ function isStandaloneDrink(recipe: Recipe): boolean {
 /**
  * Best-effort course classifier. Falls back to "ana" when nothing matches.
  * Order of COURSE_KEYWORDS matters — kahvaltı checked before çorba, etc.
+ *
+ * Manual overrides from `recipes_kategorize.xlsx` win over heuristics so
+ * editorial decisions stick even when titles are ambiguous.
  */
 export function classifyCourse(recipe: Recipe): Course {
+  const override = RECIPE_CATEGORY_OVERRIDES[recipe.id];
+  if (override) return override;
   if (isStandaloneSauce(recipe)) return "sos";
   if (isStandaloneDrink(recipe)) return "icecek";
   const haystack = [

@@ -13,6 +13,7 @@ import {
   Download,
   Flame,
   Package,
+  UtensilsCrossed,
   type LucideIcon,
 } from "lucide-react-native";
 
@@ -190,6 +191,30 @@ export default function HomeScreen() {
                 <ChevronRight size={14} strokeWidth={2.5} color={colors.ink} />
               </View>
             </View>
+          </Pressable>
+        </Animated.View>
+
+        {/* Cici Boğaz CTA */}
+        <Animated.View entering={FadeInDown.delay(120).duration(500)}>
+          <Pressable
+            onPress={() => router.push("/cici")}
+            style={styles.ciciCard}
+          >
+            <View style={styles.ciciIcon}>
+              <UtensilsCrossed size={22} color={colors.primaryDeep} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text variant="overline" color={colors.primaryDeep}>
+                Cici Boğaz
+              </Text>
+              <Text variant="bodyMedium" weight="700" style={{ marginTop: 2 }}>
+                Bugün dışarıdan ne söyleyelim?
+              </Text>
+              <Text variant="caption" color={colors.dim} style={{ marginTop: 2 }}>
+                Grup kur • Herkes oy versin • Kazanan belirlensin
+              </Text>
+            </View>
+            <ChevronRight size={18} color={colors.hairline} strokeWidth={1.5} />
           </Pressable>
         </Animated.View>
 
@@ -470,6 +495,24 @@ const styles = StyleSheet.create({
     backgroundColor: colors.card,
     borderWidth: 1,
     borderColor: colors.border,
+  },
+  ciciCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.lg,
+    borderRadius: 20,
+    backgroundColor: colors.primarySoft,
+    borderWidth: 1,
+    borderColor: colors.primary,
+  },
+  ciciIcon: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: colors.bg,
+    alignItems: "center",
+    justifyContent: "center",
   },
   activeThumbWrap: { position: "relative" },
   activeThumb: {

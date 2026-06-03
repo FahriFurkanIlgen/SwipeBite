@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SwipeBite — Kaydır, Eşleş, Ye!</title>
+    <meta
+      name="description"
+      content="SwipeBite — Yemek seçmek artık eğlenceli. Kaydır, eşleş, ye!"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%95%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Inter:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./fun.css" />
+  </head>
+  <body class="fun">
+    <!-- Floating food background -->
+    <div class="food-rain" aria-hidden="true">
+      <span style="--x: 8%; --d: 0s; --r: -12deg; --s: 1.1">🍕</span>
+      <span style="--x: 22%; --d: 1.4s; --r: 18deg; --s: 0.9">🍔</span>
+      <span style="--x: 38%; --d: 2.8s; --r: -8deg; --s: 1.2">🍣</span>
+      <span style="--x: 54%; --d: 0.6s; --r: 22deg; --s: 1">🌮</span>
+      <span style="--x: 68%; --d: 3.4s; --r: -16deg; --s: 1.15">🍝</span>
+      <span style="--x: 82%; --d: 1.9s; --r: 14deg; --s: 0.95">🍜</span>
+      <span style="--x: 92%; --d: 4.2s; --r: -22deg; --s: 1.05">🥗</span>
+      <span style="--x: 14%; --d: 5s; --r: 10deg; --s: 1">🍩</span>
+      <span style="--x: 46%; --d: 6.2s; --r: -18deg; --s: 1.1">🥑</span>
+      <span style="--x: 74%; --d: 7.1s; --r: 6deg; --s: 0.9">🍓</span>
+    </div>
+
+    <header class="topbar">
+      <a href="#" class="brandfun">
+        <span class="brandfun__emoji">🍳</span>
+        <span class="brandfun__name">SwipeBite</span>
+      </a>
+      <nav class="topbar__links">
+        <a href="#play">Oyna</a>
+        <a href="#how">Nasıl?</a>
+        <a href="#menu">Menü</a>
+        <a href="#join">Katıl</a>
+      </nav>
+      <a href="#join" class="bigbtn bigbtn--sm">
+        <span>Hadi başla</span>
+        <em>👋</em>
+      </a>
+    </header>
+
+    <section class="hero-fun" id="play">
+      <div class="hero-fun__copy">
+        <span class="ribbon">
+          <span class="ribbon__emoji">🎉</span>
+          Bugün ne yesek? <b>Kaydırmaya başla!</b>
+        </span>
+
+        <h1 class="big-title">
+          <span class="word word--1">Kaydır.</span>
+          <span class="word word--2">Eşleş.</span>
+          <span class="word word--3">
+            Ye!
+            <svg class="underline" viewBox="0 0 220 20" aria-hidden="true">
+              <path
+                d="M2 14 Q 55 -2 110 10 T 218 8"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+        </h1>
+
+        <p class="lead-fun">
+          Tarif aramayı bırak. Tarif <em>sana</em> gelsin. Sağa kaydır beğen,
+          sola at — eşin de beğenince akşam yemeği hazır. 🍝
+        </p>
+
+        <div class="hero-fun__actions">
+          <a href="#join" class="bigbtn">
+            <span>Ücretsiz dene</span>
+            <em>🚀</em>
+          </a>
+          <a href="#how" class="textlink">
+            Nasıl çalışıyor? <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="proof">
+          <div class="avatars" aria-hidden="true">
+            <span>🧑‍🍳</span><span>👩‍🍳</span><span>🧑</span><span>👩</span
+            ><span>+</span>
+          </div>
+          <p><b>12.000+</b> hane bu akşam ne yiyeceğine kararını verdi</p>
+        </div>
+      </div>
+
+      <div class="deck-wrap">
+        <div class="deck" id="deck"></div>
+
+        <div class="deck__hint">
+          <span class="key key--no">←</span>
+          <span>Kaydır</span>
+          <span class="key key--yes">→</span>
+        </div>
+
+        <div class="deck__buttons">
+          <button class="circle circle--no" data-action="no" aria-label="Geç">
+            <span>✕</span>
+          </button>
+          <button
+            class="circle circle--meh"
+            data-action="info"
+            aria-label="Bilgi"
+          >
+            <span>ℹ</span>
+          </button>
+          <button
+            class="circle circle--yes"
+            data-action="yes"
+            aria-label="Beğen"
+          >
+            <span>♥</span>
+          </button>
+        </div>
+
+        <div class="counter">
+          <span class="counter__yes">♥ <b id="cntYes">0</b></span>
+          <span class="counter__no">✕ <b id="cntNo">0</b></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>🍕 Pizza</span><span>🍔 Burger</span><span>🍣 Sushi</span>
+        <span>🌮 Taco</span><span>🍝 Pasta</span><span>🥗 Salata</span>
+        <span>🍩 Tatlı</span><span>🍜 Ramen</span><span>🥑 Avokado</span>
+        <span>🍳 Kahvaltı</span><span>🥞 Pancake</span><span>🍕 Pizza</span>
+        <span>🍔 Burger</span><span>🍣 Sushi</span><span>🌮 Taco</span>
+        <span>🍝 Pasta</span><span>🥗 Salata</span><span>🍩 Tatlı</span>
+        <span>🍜 Ramen</span><span>🥑 Avokado</span><span>🍳 Kahvaltı</span>
+        <span>🥞 Pancake</span>
+      </div>
+    </div>
+
+    <section class="steps-fun" id="how">
+      <div class="steps-fun__head">
+        <span class="ribbon ribbon--yellow">
+          <span class="ribbon__emoji">⚡</span> Süper kolay
+        </span>
+        <h2 class="big-title big-title--md">3 saniyede anlaşılır.</h2>
+      </div>
+
+      <div class="steps-fun__grid">
+        <div class="bubble bubble--pink">
+          <div class="bubble__num">1</div>
+          <div class="bubble__emoji">👆</div>
+          <h3>Kart geliyor</h3>
+          <p>
+            Akıllı AI sana <b>kileri</b> ve damak tadına uygun tarifler yollar.
+          </p>
+        </div>
+        <div class="bubble bubble--mint">
+          <div class="bubble__num">2</div>
+          <div class="bubble__emoji">💚</div>
+          <h3>Kaydır gitsin</h3>
+          <p>Beğeniyorsan sağa, "yok ya" diyorsan sola. Tartışma yok.</p>
+        </div>
+        <div class="bubble bubble--peach">
+          <div class="bubble__num">3</div>
+          <div class="bubble__emoji">🎯</div>
+          <h3>Eşleştiniz!</h3>
+          <p>Sen ve eşin aynı tarifi seçince bom — akşam yemeği hazır.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="menu__head">
+        <span class="ribbon ribbon--violet">
+          <span class="ribbon__emoji">🍽️</span> Menü dolu
+        </span>
+        <h2 class="big-title big-title--md">10.000+ tarif. Sıkılma yok.</h2>
+        <p class="lead-fun lead-fun--center">
+          Hızlıdan gurmeye, vegandan etoburuna — uygulamada herkese bir şeyler
+          var.
+        </p>
+      </div>
+
+      <div class="chips">
+        <button class="chip chip--active">Hepsi</button>
+        <button class="chip">🍳 Kahvaltı</button>
+        <button class="chip">🥗 Sağlıklı</button>
+        <button class="chip">🍕 Hızlı</button>
+        <button class="chip">🌶️ Acılı</button>
+        <button class="chip">🥦 Vegan</button>
+        <button class="chip">🍰 Tatlı</button>
+        <button class="chip">👶 Çocuk dostu</button>
+      </div>
+
+      <div class="dishes">
+        <article class="dish dish--pink">
+          <div class="dish__emoji">🍕</div>
+          <div class="dish__tag">25 dk</div>
+          <h4>Ev yapımı pizza</h4>
+          <p>Mozzarella · domates · fesleğen</p>
+          <div class="dish__rating">★ 4.9</div>
+        </article>
+        <article class="dish dish--mint">
+          <div class="dish__emoji">🥗</div>
+          <div class="dish__tag">10 dk</div>
+          <h4>Akdeniz salatası</h4>
+          <p>Domates · zeytin · feta</p>
+          <div class="dish__rating">★ 4.7</div>
+        </article>
+        <article class="dish dish--peach">
+          <div class="dish__emoji">🍝</div>
+          <div class="dish__tag">20 dk</div>
+          <h4>Limonlu tavuklu makarna</h4>
+          <p>Tavuk · krema · limon</p>
+          <div class="dish__rating">★ 4.8</div>
+        </article>
+        <article class="dish dish--yellow">
+          <div class="dish__emoji">🥞</div>
+          <div class="dish__tag">15 dk</div>
+          <h4>Bal &amp; muzlu pancake</h4>
+          <p>Yumurta · süt · muz</p>
+          <div class="dish__rating">★ 4.9</div>
+        </article>
+        <article class="dish dish--violet">
+          <div class="dish__emoji">🍣</div>
+          <div class="dish__tag">35 dk</div>
+          <h4>Ev sushi rolü</h4>
+          <p>Pirinç · somon · avokado</p>
+          <div class="dish__rating">★ 4.6</div>
+        </article>
+        <article class="dish dish--blue">
+          <div class="dish__emoji">🍜</div>
+          <div class="dish__tag">30 dk</div>
+          <h4>Acılı tavuk ramen</h4>
+          <p>Erişte · tavuk · pul biber</p>
+          <div class="dish__rating">★ 4.8</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="chats">
+      <div class="chats__head">
+        <span class="ribbon ribbon--mint">
+          <span class="ribbon__emoji">💬</span> Kullanıcılar
+        </span>
+        <h2 class="big-title big-title--md">"Akşam tartışmaları bitti."</h2>
+      </div>
+      <div class="chat-grid">
+        <div class="chat chat--left">
+          <div class="chat__avatar">🧑</div>
+          <div class="chat__bubble">
+            <p>Eşim 20 dk düşünüyordu, ben de aynı. Şimdi 2 dk!</p>
+            <span class="chat__name">— Mert</span>
+          </div>
+        </div>
+        <div class="chat chat--right">
+          <div class="chat__bubble chat__bubble--peach">
+            <p>Çocukları da dahil ettik, oyun gibi! 🎮🍝</p>
+            <span class="chat__name">— Ayşe</span>
+          </div>
+          <div class="chat__avatar">👩</div>
+        </div>
+        <div class="chat chat--left">
+          <div class="chat__avatar">🧑‍🍳</div>
+          <div class="chat__bubble chat__bubble--mint">
+            <p>Kilerimde ne varsa yazıyorum, tarif fışkırıyor. 😂</p>
+            <span class="chat__name">— Can</span>
+          </div>
+        </div>
+        <div class="chat chat--right">
+          <div class="chat__bubble chat__bubble--violet">
+            <p>Instagram'da kaydettiğim reels'ler nihayet işe yaradı!</p>
+            <span class="chat__name">— Elif</span>
+          </div>
+          <div class="chat__avatar">👩‍🍳</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="join" id="join">
+      <div class="join__card">
+        <div class="join__emojis" aria-hidden="true">
+          <span>🍕</span><span>🥗</span><span>🍣</span><span>🍩</span
+          ><span>🌮</span>
+        </div>
+        <h2 class="big-title big-title--md">
+          Bu akşam <span class="hl">tartışma yok</span>.
+        </h2>
+        <p class="lead-fun">Ücretsiz indir. Eşinle kaydır. Ye.</p>
+        <div class="join__buttons">
+          <a href="#" class="bigbtn bigbtn--ios">
+            <span>📱</span>
+            <em>App Store</em>
+          </a>
+          <a href="#" class="bigbtn bigbtn--play">
+            <span>🤖</span>
+            <em>Google Play</em>
+          </a>
+        </div>
+        <p class="join__fine">veya e-postanı bırak, biz haber verelim ✉️</p>
+        <form
+          class="join__form"
+          onsubmit="
+            event.preventDefault();
+            this.querySelector('button').textContent = 'Yumm! ✓';
+          "
+        >
+          <input
+            type="email"
+            required
+            placeholder="ornek@eposta.com"
+            aria-label="E-posta"
+          />
+          <button>Listeye gir</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot__brand">
+        <span>🍳 SwipeBite</span>
+        <small>© 2026 · İstanbul'da sevgiyle pişirildi</small>
+      </div>
+      <div class="foot__links">
+        <a href="./classic.html">Klasik sayfa</a>
+        <a href="#">Gizlilik</a>
+        <a href="#">İletişim</a>
+      </div>
+    </footer>
+
+    <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="./fun.js" defer></script>
+  </body>
+</html>

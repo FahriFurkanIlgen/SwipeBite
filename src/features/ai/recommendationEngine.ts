@@ -6,6 +6,7 @@ import {
   Vote,
 } from "@/types/domain";
 import { clamp } from "@/utils/format";
+import { expandCuisineSelection } from "@/features/recipes/cuisineClassifier";
 
 /**
  * Recommendation Engine.
@@ -31,7 +32,10 @@ const SCORE = {
   PANTRY_MATCH: 2,
   NOT_RECENTLY_EATEN: 1,
   TIME_MATCH: 1,
-  CUISINE_LOVE: 1.5,
+  // Cuisine preference is a *soft* nudge — pantry, votes and dislikes carry
+  // most of the weight. Onboarding cuisines are a coarse choice, so we don't
+  // want them to dominate ranking.
+  CUISINE_LOVE: 0.6,
 } as const;
 
 export function scoreRecipes(inputs: ScoringInputs): AIRecommendation[] {
@@ -100,7 +104,10 @@ export function scoreRecipes(inputs: ScoringInputs): AIRecommendation[] {
     let dislikeHits = 0;
     let cuisineHits = 0;
     for (const profile of profiles) {
-      if (profile.favoriteCuisines.includes(recipe.cuisine)) {
+      // Expand onboarding buckets (Akdeniz → İtalyan/Yunan/…) so the soft
+      // boost actually fires for grouped selections.
+      const allowed = expandCuisineSelection(profile.favoriteCuisines);
+      if (allowed.has(recipe.cuisine)) {
         score += SCORE.CUISINE_LOVE;
         cuisineHits++;
       }

@@ -18,7 +18,20 @@ interface RecipeRow {
   video_url?: string | null;
 }
 
+// Calories aren't stored in Supabase yet — look them up from the bundled
+// catalogue by id so the recipe detail can still display kcal.
+const CALORIES_BY_ID: Record<string, number> = (() => {
+  const m: Record<string, number> = {};
+  for (const r of MOCK_RECIPES) {
+    if (typeof r.caloriesPerServing === "number") {
+      m[r.id] = r.caloriesPerServing;
+    }
+  }
+  return m;
+})();
+
 function rowToRecipe(r: RecipeRow): Recipe {
+  const cal = CALORIES_BY_ID[r.id];
   return {
     id: r.id,
     title: r.title,
@@ -31,6 +44,7 @@ function rowToRecipe(r: RecipeRow): Recipe {
     steps: r.steps ?? [],
     tags: r.tags ?? [],
     cuisine: r.cuisine ?? "",
+    ...(typeof cal === "number" ? { caloriesPerServing: cal } : {}),
     ...(r.source_url ? { sourceUrl: r.source_url } : {}),
     ...(r.video_url ? { videoUrl: r.video_url } : {}),
   };

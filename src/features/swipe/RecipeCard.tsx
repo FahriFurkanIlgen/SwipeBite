@@ -2,7 +2,7 @@ import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Clock, Heart, Package, Users, X } from "lucide-react-native";
+import { Clock, Flame, Heart, Package, Users, X } from "lucide-react-native";
 import Animated, {
   Easing,
   Extrapolation,
@@ -259,6 +259,12 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
 
             <View style={styles.metaRow}>
               <Meta icon={Clock} label={`${recipe.prepTimeMinutes} dk`} />
+              {typeof recipe.caloriesPerServing === "number" ? (
+                <Meta
+                  icon={Flame}
+                  label={`~${recipe.caloriesPerServing} kcal`}
+                />
+              ) : null}
               <Meta
                 icon={Users}
                 label={`%${householdCompatibilityPercent} ev`}

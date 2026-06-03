@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SwipeBite — Bugün Ne Yesek? Sorusuna Son</title>
+    <meta
+      name="description"
+      content="SwipeBite, çiftler ve haneler için akıllı yemek karar asistanı. Kaydır, eşleş, pişir. Yapay zekâ destekli haftalık planlama, kiler bilinci ve Instagram tarif aktarımı."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B3%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav">
+      <div class="container nav__inner">
+        <a href="#" class="logo" aria-label="SwipeBite ana sayfa">
+          <span class="logo__mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M5 8c0-2 2-4 5-4s5 2 5 4-2 3-5 3-5-1-5 1 2 4 5 4 5-2 5-4"
+              />
+              <circle
+                cx="18"
+                cy="6"
+                r="1.5"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </span>
+          <span class="logo__text">SwipeBite</span>
+        </a>
+        <nav class="nav__links" aria-label="Birincil">
+          <a href="#features">Özellikler</a>
+          <a href="#how">Nasıl çalışır</a>
+          <a href="#planner">Haftalık plan</a>
+          <a href="#faq">SSS</a>
+          <a href="./index.html">Eğlenceli ↗</a>
+        </nav>
+        <a href="#cta" class="btn btn--header">Erken erişim</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <span class="eyebrow">
+            <span class="dot"></span> Çiftler &amp; haneler için yemek karar
+            asistanı
+          </span>
+          <h1 class="display-xl">
+            "Bugün ne yesek?"<br />sorusuna<span class="hero__accent">
+              son.</span
+            >
+          </h1>
+          <p class="lead">
+            SwipeBite, evdeki herkesi tek bir akışta buluşturur. Kaydır, eşleş,
+            pişir. Yapay zekâ; tercihleri, kileri ve haftanı senin için optimize
+            eder.
+          </p>
+          <div class="hero__actions">
+            <a href="#cta" class="btn btn--primary">Ücretsiz başla</a>
+            <a href="#how" class="btn btn--ghost">
+              Nasıl çalıştığını gör
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <ul class="hero__meta" role="list">
+            <li>★ 4.9 erken kullanıcı puanı</li>
+            <li>iOS &amp; Android</li>
+            <li>2 dakikada karar</li>
+          </ul>
+
+          <!-- Decorative phone / cards mock -->
+          <div class="hero__art" aria-hidden="true">
+            <div class="blob blob--blue"></div>
+            <div class="blob blob--violet"></div>
+            <div class="blob blob--mint"></div>
+
+            <div class="card-stack">
+              <div class="rcard rcard--back">
+                <div class="rcard__img rcard__img--violet"></div>
+                <div class="rcard__body">
+                  <span class="tag tag--violet">30 dk</span>
+                  <h4>Kremalı Mantar Risotto</h4>
+                </div>
+              </div>
+              <div class="rcard rcard--mid">
+                <div class="rcard__img rcard__img--orange"></div>
+                <div class="rcard__body">
+                  <span class="tag tag--orange">Acılı</span>
+                  <h4>Tavuklu Tantuni</h4>
+                </div>
+              </div>
+              <div class="rcard rcard--front">
+                <div class="rcard__img rcard__img--mint"></div>
+                <div class="rcard__body">
+                  <span class="tag tag--mint">Kilerden</span>
+                  <h4>Limonlu Tavuk Makarna</h4>
+                  <p>Eşinin sevdiği · Bu hafta tavuk yemedin</p>
+                </div>
+                <div class="swipe-hints">
+                  <span class="swipe swipe--no">✕</span>
+                  <span class="swipe swipe--yes">♥</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-bubble">
+              <span class="floating-bubble__avatar">AI</span>
+              <div>
+                <strong>Eşleşme bulundu</strong>
+                <p>Limonlu Tavuk Makarna · 2 oy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOGOS / SOCIAL -->
+      <section class="social">
+        <div class="container">
+          <p class="social__label">Modern haneler için tasarlandı</p>
+          <div class="social__row">
+            <span>Çiftler</span>
+            <span class="dotline"></span>
+            <span>Aileler</span>
+            <span class="dotline"></span>
+            <span>Ev arkadaşları</span>
+            <span class="dotline"></span>
+            <span>Yeni ebeveynler</span>
+            <span class="dotline"></span>
+            <span>Yoğun profesyoneller</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section__head">
+            <span class="eyebrow eyebrow--center">Özellikler</span>
+            <h2 class="display">Karar vermeyi bir oyuna çevirdik.</h2>
+            <p class="lead lead--center">
+              Tarif blogu değil, kalori takibi hiç değil. SwipeBite, her gün
+              tekrar eden o tartışmayı bitirmek için kuruldu.
+            </p>
+          </div>
+
+          <div class="grid grid--3">
+            <article class="feature-card">
+              <div class="feature-card__icon icon--blue">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 12l4-4 4 4 6-6 4 4" />
+                  <path d="M3 19h18" />
+                </svg>
+              </div>
+              <h3>Kaydır &amp; eşleş</h3>
+              <p>
+                Tarifleri Tinder hızında değerlendirin. Sağa kaydır beğen,
+                yukarı süper beğeni. Hane üyelerinin oyları otomatik birleşir.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-card__icon icon--violet">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </div>
+              <h3>Yapay zekâ önerisi</h3>
+              <p>
+                Tercihleri, alerjileri, son yedikleriniz ve kileri okuyan motor
+                size <em>neden</em> bu tarifi önerdiğini her zaman açıklar.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-card__icon icon--mint">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 7h16M4 12h16M4 17h10" />
+                </svg>
+              </div>
+              <h3>Haftalık planlayıcı</h3>
+              <p>
+                Dengeli, bütçe dostu veya yoğun hafta modlarında 7 günlük yemek
+                planı oluşturun. Malzeme tekrar kullanımı otomatik optimize
+                edilir.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-card__icon icon--orange">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 7l9-4 9 4-9 4-9-4z" />
+                  <path d="M3 7v10l9 4 9-4V7" />
+                </svg>
+              </div>
+              <h3>Kiler zekâsı</h3>
+              <p>
+                "tavuk yoğurt patates yumurta" yazın, gerisini AI yapsın.
+                Elinizdekilerle pişirilebilecek tarifler anında listelenir.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-card__icon icon--yellow">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                </svg>
+              </div>
+              <h3>Instagram'dan içe aktar</h3>
+              <p>
+                Reels veya post bağlantısını yapıştırın; başlık, malzeme ve
+                adımlar saniyeler içinde kaydırılabilir karta dönüşsün.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-card__icon icon--blue">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3>Hane modu</h3>
+              <p>
+                Eşinizi ve çocuklarınızı tek hesapta toplayın. Herkesin damak
+                tadı korunur, çocuklar için sade oylama akışı kullanılır.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how" class="section section--alt">
+        <div class="container">
+          <div class="section__head">
+            <span class="eyebrow eyebrow--center">Nasıl çalışır</span>
+            <h2 class="display">3 adımda akşam yemeği kararı.</h2>
+          </div>
+
+          <ol class="steps" role="list">
+            <li class="step">
+              <span class="step__num">01</span>
+              <h3>Tercihleri kur</h3>
+              <p>
+                Alerjiler, sevmediklerin ve baharat toleransı. 60 saniye süren
+                kısa bir kurulum.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step__num">02</span>
+              <h3>Birlikte kaydır</h3>
+              <p>
+                AI tarafından kişiselleştirilen kartları hane üyeleriyle aynı
+                anda oylayın.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step__num">03</span>
+              <h3>Eşleşmeyi pişir</h3>
+              <p>
+                İlk eşleşmede tarif, alışveriş listesi ve adım adım pişirme modu
+                hazır.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- PLANNER SHOWCASE -->
+      <section id="planner" class="section">
+        <div class="container split">
+          <div class="split__copy">
+            <span class="eyebrow">Haftalık plan</span>
+            <h2 class="display">Pazar günü 5 dakikada tüm hafta hazır.</h2>
+            <p class="lead">
+              Dengeli, bütçe dostu, sağlıklı ya da rahatlatıcı modlardan birini
+              seçin. SwipeBite; malzeme tekrarını, hazırlık süresini ve haneye
+              uygunluğu birlikte optimize eder.
+            </p>
+            <ul class="checklist" role="list">
+              <li>Otomatik alışveriş listesi</li>
+              <li>Artan malzemeleri değerlendirme</li>
+              <li>Yoğun günler için 20 dk altı tarifler</li>
+              <li>Haftalık çeşitlilik puanı</li>
+            </ul>
+            <a href="#cta" class="btn btn--primary">Planımı oluştur</a>
+          </div>
+
+          <div class="split__visual" aria-hidden="true">
+            <div class="planner">
+              <div class="planner__head">
+                <strong>Bu hafta</strong>
+                <span class="pill">Dengeli mod</span>
+              </div>
+              <div class="planner__row">
+                <span>Pzt</span><b>Mercimek Çorba</b
+                ><i class="dot dot--mint"></i>
+              </div>
+              <div class="planner__row">
+                <span>Sal</span><b>Fırın Somon</b><i class="dot dot--blue"></i>
+              </div>
+              <div class="planner__row">
+                <span>Çar</span><b>Tavuklu Wrap</b
+                ><i class="dot dot--orange"></i>
+              </div>
+              <div class="planner__row">
+                <span>Per</span><b>Sebzeli Makarna</b
+                ><i class="dot dot--violet"></i>
+              </div>
+              <div class="planner__row planner__row--match">
+                <span>Cum</span><b>Eşleşme bekleniyor…</b
+                ><i class="dot dot--yellow"></i>
+              </div>
+              <div class="planner__row">
+                <span>Cmt</span><b>Ev Yapımı Pizza</b
+                ><i class="dot dot--orange"></i>
+              </div>
+              <div class="planner__row">
+                <span>Paz</span><b>Kahvaltı Tabağı</b
+                ><i class="dot dot--mint"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section section--alt">
+        <div class="container">
+          <div class="section__head">
+            <span class="eyebrow eyebrow--center">Erken kullanıcılar</span>
+            <h2 class="display">Akşam tartışmaları bitti.</h2>
+          </div>
+          <div class="grid grid--3">
+            <figure class="testimonial">
+              <blockquote>
+                "Eşimle her akşam 20 dakika 'ne yesek' diye tartışıyorduk.
+                SwipeBite'ta artık 2 dakika sürüyor — üstelik daha eğlenceli."
+              </blockquote>
+              <figcaption>
+                <strong>Elif &amp; Mert</strong
+                ><span>İstanbul · 1 yıllık evli</span>
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                "Kilerimde ne olduğunu yazıyorum, çocuklara da uygun tarifleri
+                süzüyor. Salı akşamlarımı kurtardı."
+              </blockquote>
+              <figcaption>
+                <strong>Ayşe</strong><span>İki çocuk annesi</span>
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                "Instagram'da kaydettiğim onlarca reels nihayet işe yaradı. Link
+                yapıştır, kart hazır."
+              </blockquote>
+              <figcaption>
+                <strong>Can</strong><span>Yazılım geliştirici</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section">
+        <div class="container faq">
+          <div class="section__head section__head--left">
+            <span class="eyebrow">SSS</span>
+            <h2 class="display">Sıkça sorulanlar.</h2>
+          </div>
+          <div class="faq__list">
+            <details>
+              <summary>SwipeBite ücretsiz mi?</summary>
+              <p>
+                Temel kaydırma, eşleşme ve hane özellikleri ücretsizdir.
+                Sınırsız AI haftalık plan ve gelişmiş öneriler için isteğe bağlı
+                Pro planı sunulur.
+              </p>
+            </details>
+            <details>
+              <summary>Verilerim nerede saklanıyor?</summary>
+              <p>
+                Tüm hane verileri Supabase üzerinde, Avrupa bölgesinde şifreli
+                olarak saklanır. Tariflerinizi istediğiniz zaman silebilirsiniz.
+              </p>
+            </details>
+            <details>
+              <summary>Çocuklar için uygun mu?</summary>
+              <p>
+                Evet. Çocuklar için sadeleştirilmiş oylama akışı ve ebeveyn
+                yönetimli profiller sunulur.
+              </p>
+            </details>
+            <details>
+              <summary>Hangi dilleri destekliyor?</summary>
+              <p>Şu anda Türkçe ve İngilizce. Daha fazla dil yolda.</p>
+            </details>
+            <details>
+              <summary>Instagram tarifleri nasıl içe aktarılıyor?</summary>
+              <p>
+                Reels veya post bağlantısını yapıştırırsınız; AI başlığı,
+                malzemeleri ve adımları çıkarır, hazırlık süresini tahmin eder.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="cta" class="cta">
+        <div class="container cta__inner">
+          <div class="cta__shape cta__shape--violet"></div>
+          <div class="cta__shape cta__shape--blue"></div>
+          <h2 class="display">Bu akşam ne pişeceğine birlikte karar verin.</h2>
+          <p class="lead lead--center">
+            Erken erişim listesine katılın; lansmanda 3 ay Pro hediyemiz olsun.
+          </p>
+          <form
+            class="cta__form"
+            onsubmit="
+              event.preventDefault();
+              this.querySelector('button').textContent = 'Listedesin ✓';
+            "
+          >
+            <input
+              type="email"
+              required
+              placeholder="ornek@eposta.com"
+              aria-label="E-posta adresi"
+            />
+            <button type="submit" class="btn btn--primary">
+              Erken erişim al
+            </button>
+          </form>
+          <p class="cta__fine">Spam yok. İstediğin zaman çıkabilirsin.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <a href="#" class="logo">
+            <span class="logo__mark logo__mark--sm" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M5 8c0-2 2-4 5-4s5 2 5 4-2 3-5 3-5-1-5 1 2 4 5 4 5-2 5-4"
+                />
+                <circle
+                  cx="18"
+                  cy="6"
+                  r="1.5"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+            </span>
+            <span class="logo__text">SwipeBite</span>
+          </a>
+          <p>Hane meal karar asistanı. Kaydır. Eşleş. Pişir.</p>
+        </div>
+        <div class="footer__cols">
+          <div>
+            <h5>Ürün</h5>
+            <a href="#features">Özellikler</a>
+            <a href="#planner">Haftalık plan</a>
+            <a href="#cta">Erken erişim</a>
+          </div>
+          <div>
+            <h5>Şirket</h5>
+            <a href="#">Hakkımızda</a>
+            <a href="#">Blog</a>
+            <a href="#">İletişim</a>
+          </div>
+          <div>
+            <h5>Yasal</h5>
+            <a href="#">Gizlilik</a>
+            <a href="#">Şartlar</a>
+            <a href="#">KVKK</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer__base">
+        <span>© 2026 SwipeBite</span>
+        <span>Made with care · İstanbul</span>
+      </div>
+    </footer>
+    <script src="./script.js" defer></script>
+  </body>
+</html>

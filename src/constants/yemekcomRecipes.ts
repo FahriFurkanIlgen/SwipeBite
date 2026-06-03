@@ -79,7 +79,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "acı-tatlı",
       "niko"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-acili-kremali-karides",
@@ -141,7 +142,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "karides"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-acik-tost",
@@ -194,7 +196,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tost",
       "açık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-acma",
@@ -248,7 +251,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "açma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-namli-gurme-ada-otu-salatasi",
@@ -300,7 +304,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "otu",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-piraye-restaurant-adali",
@@ -357,7 +362,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "adalı",
       "mezesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-aeropress-kahve-tarifi",
@@ -390,7 +396,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "aeropress",
       "kahve"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 5
   },
   {
     "id": "yc-buyuk-budapeste-oteli-mendls-pastasi",
@@ -459,7 +466,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mendl’s",
       "pastası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-agua-de-horchata",
@@ -512,7 +520,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(meksika",
       "salebi)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-aglayan-kek",
@@ -570,7 +579,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ağlayan",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-aglayan-pasta",
@@ -644,7 +654,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "ağlayan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-agzi-acik",
@@ -716,7 +727,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ağzı",
       "açık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ahtapot-carpaccio",
@@ -782,7 +794,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ahtapot",
       "carpaccio"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-ahtapot-izgara",
@@ -831,7 +844,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ahtapot",
       "izgara"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ahtapot-koftesi",
@@ -891,7 +905,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ahtapot",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-tuti-restaurant-ahtapot-salatasi-ve-tarhana-ezmesi",
@@ -1002,7 +1017,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tarhana",
       "ezme"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ajvar",
@@ -1055,7 +1071,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kış hazırlıkları",
       "ajvar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-read-cafe-akcaagac-suruplu-pancake",
@@ -1119,7 +1136,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şuruplu",
       "pancake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-susamli-bar",
@@ -1169,7 +1187,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "susamlı",
       "bar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-akhisar-katmeri",
@@ -1231,7 +1250,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "akhisar",
       "katmeri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-alabalik",
@@ -1281,7 +1301,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "alabalık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-alabas-corbasi",
@@ -1339,7 +1360,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(kohlrabi)",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-ali-nazik",
@@ -1411,7 +1433,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ali",
       "nazik"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-alinazik-kebabi",
@@ -1493,7 +1516,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "alinazik",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 750
   },
   {
     "id": "yc-alman-pastasi",
@@ -1567,7 +1591,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "alman",
       "pastası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-amatriciana-soslu-spagetti",
@@ -1624,7 +1649,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "spagetti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-ananas-soslu-cheesecake",
@@ -1713,7 +1739,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-ananasli-baharatli-smoothie",
@@ -1758,7 +1785,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "baharatlı",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-ananasli-puding",
@@ -1803,7 +1831,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ananaslı",
       "puding"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-ananasli-kek",
@@ -1864,7 +1893,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ters",
       "yüz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tapasuma-restaurant-anasonlu-balik-citirlari",
@@ -1969,7 +1999,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "anasonlu",
       "çıtırları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ankara-tava",
@@ -2037,7 +2068,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ankara",
       "tava"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-anne-koftesi",
@@ -2100,7 +2132,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "anne",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-tereyagli-antep-fistikli-kurabiye",
@@ -2146,7 +2179,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bayram",
       "kurabiyesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-antep-fistikli-nutellali-kek",
@@ -2204,7 +2238,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nutellalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-apple-crumble",
@@ -2266,7 +2301,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kırıntı",
       "turta)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-barnies-coffee-kitchen-apple-pie",
@@ -2347,7 +2383,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(elmalı",
       "tart)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-deraliye-restaurant-arefe-koftesi",
@@ -2405,7 +2442,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "arefe",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-armut-tatlisi",
@@ -2469,7 +2507,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "armut",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-toms-kitchen-armut-bogurtlenli-crumble",
@@ -2574,7 +2613,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "böğürtlenli",
       "crumble"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-armutlu-kek",
@@ -2640,7 +2680,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "armutlu",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-armutlu-turta",
@@ -2707,7 +2748,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "armutlu",
       "turta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-arnavut-boregi",
@@ -2765,7 +2807,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "arnavut",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-sehriye-salatasi",
@@ -2831,7 +2874,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şehriye",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-barnies-coffee-kitchen-asya-somon",
@@ -2911,7 +2955,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "asya",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ates-dusurucu-cay",
@@ -2947,7 +2992,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "düşürücü",
       "çay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 10
   },
   {
     "id": "yc-atom-icecek",
@@ -2982,7 +3028,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇çecek",
       "atom"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-avci-boregi",
@@ -3051,7 +3098,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avcı",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-avci-usulu-tavuk",
@@ -3126,7 +3174,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avcı",
       "usulü"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-limonata-teras-tavuk-carpaccio",
@@ -3214,7 +3263,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "humuslu",
       "carpaccio"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-avokadolu-karides",
@@ -3270,7 +3320,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "püreli",
       "karides"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-avokado-pureli-somon-fumeli-kanepe",
@@ -3318,7 +3369,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fümeli",
       "kanepe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-avokado-rulolari",
@@ -3361,7 +3413,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokado",
       "ruloları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-avokado-salatasi",
@@ -3418,7 +3471,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokado",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-avokadolu-cubuk-dondurma",
@@ -3457,7 +3511,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokadolu",
       "çubuk"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-avokadolu-dip-sos",
@@ -3502,7 +3557,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokadolu",
       "dip"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-avokadolu-enginar-dolmasi",
@@ -3562,7 +3618,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enginar",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-toms-kitchen-avokado-greyfurt-salatasi",
@@ -3626,7 +3683,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "greyfurt",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-avokadolu-hindi-burger",
@@ -3694,7 +3752,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hindi",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-avokadolu-puding",
@@ -3735,7 +3794,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokadolu",
       "puding"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-avokadolu-smoothie",
@@ -3776,7 +3836,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokadolu",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-yada-sushi-avokado-tofu-salatasi",
@@ -3816,7 +3877,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tofu",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ay-coregi",
@@ -3889,7 +3951,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ay",
       "çöreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-ayva-dolmasi",
@@ -3952,7 +4015,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ayva",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ayva-kompostosu",
@@ -3992,7 +4056,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ayva",
       "kompostosu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-ayva-marmelati",
@@ -4035,7 +4100,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ayva",
       "marmelatı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-ayvali-bulgur-pilavi",
@@ -4090,7 +4156,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bulgur",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-ayvali-crumble",
@@ -4149,7 +4216,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ayvalı",
       "crumble"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-ayvali-et-sote",
@@ -4207,7 +4275,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ayvalı",
       "sote"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ayvali-kereviz-salatasi",
@@ -4257,7 +4326,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kereviz",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-babagannus",
@@ -4305,7 +4375,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meze",
       "babagannuş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-back-to-the-future-pizza",
@@ -4375,7 +4446,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "future",
       "pizzası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-deraliye-restaurant-badem-corbasi",
@@ -4428,7 +4500,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "badem",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-badem-ezmesi",
@@ -4464,7 +4537,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "badem",
       "ezmesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-badem-sutu",
@@ -4494,7 +4568,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "badem",
       "sütü"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-bademli-brokoli-corbasi",
@@ -4544,7 +4619,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "brokoli",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-naif-istanbul-bademli-cipura-patates-salatasi",
@@ -4615,7 +4691,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-bademli-kaymakli-tavuk-yahnisi",
@@ -4680,7 +4757,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kaymaklı",
       "yahnisi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-vacilando-bademli-krokan-tart",
@@ -4741,7 +4819,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "krokan",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-bademli-kurabiye",
@@ -4789,7 +4868,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bademli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-deraliye-restaurant-bademli-levrek",
@@ -4859,7 +4939,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bademli",
       "levrek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-bademli-pilav",
@@ -4907,7 +4988,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilav",
       "bademli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-bademli-sam-tatlisi",
@@ -4959,7 +5041,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şam",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-bagel",
@@ -5028,7 +5111,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "bagel"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-baget",
@@ -5080,7 +5164,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "baget"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-bagisiklik-sistemi-guclendiren-cay",
@@ -5133,7 +5218,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "güçlendiren",
       "çay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-bagisiklik-sistemini-guclendiren-macun-karisimi",
@@ -5177,7 +5263,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "macun",
       "karışımı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-baharatli-balli-kavrulmus-yer-fistigi",
@@ -5219,7 +5306,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yer",
       "fıstığı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-baharatli-domates-receli",
@@ -5271,7 +5359,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domates",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-baharatli-kabak",
@@ -5330,7 +5419,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "baharatlı",
       "kabak"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-baharatli-kruton",
@@ -5374,7 +5464,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "baharatlı",
       "kruton"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-baharatli-patates-corbasi",
@@ -5420,7 +5511,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-baharatli-peynir-toplari",
@@ -5474,7 +5566,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynir",
       "topları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-baklali-enginar",
@@ -5592,7 +5685,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "baklavalık",
       "yufkadan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-bal-kabagi-helvasi",
@@ -5643,7 +5737,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabağı",
       "helvası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-bal-kabagi-receli",
@@ -5677,7 +5772,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabağı",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-bal-kabagi-tatlisi",
@@ -5713,7 +5809,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabağı",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-bal-kabakli-cheesecake",
@@ -5777,7 +5874,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabaklı",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-bal-kabakli-cupcake",
@@ -5837,7 +5935,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabaklı",
       "cupcake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-bal-kabakli-corek",
@@ -5893,7 +5992,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bal",
       "kabaklı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-bal-kabakli-humus",
@@ -5965,7 +6065,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabaklı",
       "humus"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-bal-kabakli-makarna",
@@ -6022,7 +6123,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bal",
       "kabaklı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-bal-kabakli-muffin",
@@ -6082,7 +6184,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabaklı",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-bal-kabakli-muhallebi",
@@ -6127,7 +6230,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabaklı",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-balkabakli-paccheri",
@@ -6189,7 +6293,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabaklı",
       "paccheri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-bal-kabakli-pancake",
@@ -6249,7 +6354,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabaklı",
       "pancake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-bal-kabakli-pide",
@@ -6289,7 +6395,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bal",
       "kabaklı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-bal-kabakli-yogurtlu-kek",
@@ -6360,7 +6467,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yoğurtlu",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-bal-kabakli-baharatli-smoothie",
@@ -6403,7 +6511,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "baharatlı",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-balik-koftesi",
@@ -6467,7 +6576,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-balik-mantisi",
@@ -6517,7 +6627,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "mantısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-balik-merzane",
@@ -6584,7 +6695,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "merzane"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-raika-balikci-salatasi",
@@ -6662,7 +6774,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balıkçı",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-balli-bonfile",
@@ -6728,7 +6841,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ballı",
       "bonfile"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-doors-akademi-hindi-but",
@@ -6816,7 +6930,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hindi",
       "but"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-izaka-restaurant-balli-mahmudiye",
@@ -6895,7 +7010,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ballı",
       "mahmudiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-balli-patlamis-misir",
@@ -6944,7 +7060,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlamış",
       "mısır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-balli-tavuk",
@@ -7004,7 +7121,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "ballı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-balli-tarcinli-tereyagi",
@@ -7041,7 +7159,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tarçınlı",
       "tereyağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-dem-karakoy-buzlu-cay",
@@ -7086,7 +7205,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buzlu",
       "çay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-chef-mezze-balsamik-soslu-kisnisli-uskumru-marin",
@@ -7142,7 +7262,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "uskumru",
       "marin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-banana-split",
@@ -7192,7 +7313,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "banana",
       "split"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-barbeku-sos",
@@ -7247,7 +7369,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sos",
       "barbekü"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-barbun",
@@ -7281,7 +7404,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "barbun"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-lacivert-restaurant-barbun",
@@ -7334,7 +7458,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "barbun"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-bardakta-cilekli-pasta",
@@ -7427,7 +7552,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bardakta",
       "çilekli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-bardakta-kek",
@@ -7476,7 +7602,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bardakta",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-bardakta-tiramisu",
@@ -7525,7 +7652,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bardakta",
       "tiramisu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-barros-luco-sandvic",
@@ -7560,7 +7688,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "barros",
       "luco"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-sofra-london-baslangic-tabagi",
@@ -7798,7 +7927,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "başlangıç",
       "tabağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-bayat-ekmek-tatlisi",
@@ -7857,7 +7987,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-bayatlamayan-pogaca",
@@ -7923,7 +8054,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "bayatlamayan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kavurma",
@@ -7961,7 +8093,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bayram",
       "kavurması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-beef-satay",
@@ -8032,7 +8165,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "beef",
       "satay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-beef-stroganoff",
@@ -8128,7 +8262,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "beef",
       "stroganoff"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-beef-stroganoff-salatasi",
@@ -8180,7 +8315,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "stroganoff",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-beef-wellington",
@@ -8258,7 +8394,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "beef",
       "wellington"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-begendili-kofte",
@@ -8326,7 +8463,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "beğendili"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-begendili-tavuk",
@@ -8409,7 +8547,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "beğendili"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-benmari-kek",
@@ -8468,7 +8607,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kek",
       "benmari"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-berliner",
@@ -8521,7 +8661,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(alman",
       "çöreği)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-beurre-blanc-soslu-somon",
@@ -8584,7 +8725,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-cikolata-kasesinde-beyaz-cikolata-soslu-dondurmali-profiterol",
@@ -8629,7 +8771,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dondurmalı",
       "profiterol"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-beyaz-cikolatali-brownie",
@@ -8679,7 +8822,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "brownie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-beyaz-cikolatali-makaron",
@@ -8728,7 +8872,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "makaron"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-beyaz-cikolatali-mousse",
@@ -8769,7 +8914,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "mousse"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tapasuma-restaurant-beyaz-cikolatali-mus",
@@ -8834,7 +8980,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "mus"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-beyaz-peynirli-firinda-makarna",
@@ -8891,7 +9038,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "fırında"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-beze",
@@ -8923,7 +9071,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "beze"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-bezelye-corbasi",
@@ -8970,7 +9119,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bezelye",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-bezelyeli-muffin",
@@ -9027,7 +9177,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bezelyeli",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-bezelyeli-pilav",
@@ -9068,7 +9219,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilav",
       "bezelyeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-bicak-tatlisi",
@@ -9118,7 +9270,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bıçak",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-biyik-kek",
@@ -9173,7 +9326,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bıyık",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-biber-dolmasi",
@@ -9240,7 +9394,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "biber",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-biber-salcasi",
@@ -9274,7 +9429,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "biber",
       "salçası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-biberiyeli-krakerler",
@@ -9326,7 +9482,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "biberiyeli",
       "krakerler"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-biberiyeli-sarimsakli-firin-patates",
@@ -9369,7 +9526,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırın",
       "patates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-biftek-sarma",
@@ -9440,7 +9598,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "biftek",
       "sarma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-bir-dakikada-pisen-et",
@@ -9558,7 +9717,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(minute",
       "steak)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-da-mario-biscotta-ricotta",
@@ -9656,7 +9816,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "bisküvi)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-biscotti",
@@ -9718,7 +9879,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı kurabiye",
       "biscotti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-biskuvili-pasta",
@@ -9771,7 +9933,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "bisküvili"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-biskuvili-puding",
@@ -9806,7 +9969,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bisküvili",
       "puding"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-bitter-cikolatali-cilekli-pizza",
@@ -9872,7 +10036,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "çilekli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-sofra-london-black-cod-baligi",
@@ -9913,7 +10078,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "morina)",
       "balığı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-bol-cikolatali-brownie",
@@ -9968,7 +10134,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "brownie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-bol-cikolatali-kurabiye",
@@ -10027,7 +10194,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-bol-lifli-pancake",
@@ -10094,7 +10262,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lifli",
       "pancake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-bolonez-sos",
@@ -10151,7 +10320,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sos",
       "bolonez"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-bolonez-soslu-penne-makarna",
@@ -10227,7 +10397,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "penne"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-eataly-istanbul-bonet-dessert",
@@ -10275,7 +10446,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bonet",
       "dessert"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-parle-bonfile-izgara",
@@ -10320,7 +10492,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bonfile",
       "izgara"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-bonfileli-manti",
@@ -10388,7 +10561,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantı",
       "bonfileli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-bonibonlu-cupcake",
@@ -10458,7 +10632,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bonibonlu",
       "cupcake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-bonibonlu-kurabiye",
@@ -10514,7 +10689,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "bonibonlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-bosnak-boregi",
@@ -10573,7 +10749,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "boşnak",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-bosnak-mantisi",
@@ -10641,7 +10818,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "boşnak",
       "mantısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mosyo-sokola-bogurtlen-marsmelovlu-pasta",
@@ -10699,7 +10877,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "böğürtlen",
       "marşmelovlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-bogurtlen-receli",
@@ -10735,7 +10914,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "böğürtlen",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 1200
   },
   {
     "id": "yc-bogurtlen-soslu-panna-cotta",
@@ -10792,7 +10972,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "panna",
       "cotta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-borulce-salatasi",
@@ -10844,7 +11025,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börülce",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-breaking-bad-mavi-kristal",
@@ -10887,7 +11069,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mavi",
       "kristal"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-limonata-teras-brezilya-usulu-dana-sis",
@@ -10960,7 +11143,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "şiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-brie-peynirli-patates-graten",
@@ -11005,7 +11189,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "graten"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-brigadeiro",
@@ -11045,7 +11230,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı tatlı",
       "brigadeiro"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-brioche",
@@ -11104,7 +11290,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "brioche"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-brokoli",
@@ -11158,7 +11345,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sebze",
       "brokoli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-brokoli-wrap",
@@ -11219,7 +11407,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "brokoli",
       "wrap"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-brownie",
@@ -11268,7 +11457,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı kek",
       "brownie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cookzone-brownie",
@@ -11321,7 +11511,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı kek",
       "brownie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-brownie-cheesecake",
@@ -11388,7 +11579,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "brownie",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-brownie-tart",
@@ -11441,7 +11633,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "brownie",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-bugday-corbasi",
@@ -11494,7 +11687,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buğday",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-bugday-salatasi",
@@ -11550,7 +11744,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buğday",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-bugdayli-lorlu-pazi-sarmasi",
@@ -11624,7 +11819,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pazı",
       "sarması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-buhara-pilavi",
@@ -11684,7 +11880,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buhara",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-kaserol-buharda-bambu-sepeti",
@@ -11759,7 +11956,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bambu",
       "sepeti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kitchenette-buharda-somon",
@@ -11838,7 +12036,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buharda",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-bulgur-salatasi",
@@ -11891,7 +12090,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bulgur",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-bukme",
@@ -11955,7 +12155,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "bükme"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-bulbul-yuvasi",
@@ -12020,7 +12221,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bülbül",
       "yuvası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-cacik",
@@ -12061,7 +12263,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meze",
       "cacık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-yada-sushi-california-roll",
@@ -12116,7 +12319,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "roll",
       "sushi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-cannoli",
@@ -12172,7 +12376,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dünya mutfakları",
       "cannoli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-caprese-salatasi",
@@ -12212,7 +12417,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "caprese",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-eataly-istanbul-carpaccio-tabagi",
@@ -12258,7 +12464,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "carpaccio",
       "tabağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-lagos-bugulama",
@@ -12321,7 +12528,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(lagos",
       "buğulama)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ceviz-receli",
@@ -12369,7 +12577,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ceviz",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-ceviz-soslu-semizotu-salatasi",
@@ -12432,7 +12641,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "semizotu",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cevizli-havuclu-kek",
@@ -12489,7 +12699,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "havuçlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cevizli-kek",
@@ -12543,7 +12754,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cevizli-kurabiye",
@@ -12600,7 +12812,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-cevizli-misir-ekmegi",
@@ -12665,7 +12878,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mısır",
       "ekmeği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-cevizli-portakalli-kek",
@@ -12713,7 +12927,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "portakallı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-cezayir-restaurant-cezayir-boregi",
@@ -12756,7 +12971,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cezayir",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-cezayir-restaurant-cezayir-kebap",
@@ -12845,7 +13061,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cezayir",
       "kebap"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-cezerye",
@@ -12897,7 +13114,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı atıştırmalık",
       "cezerye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-chacarero-sandvic",
@@ -12961,7 +13179,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "atıştırmalık",
       "chacarero"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-cheesecake",
@@ -13020,7 +13239,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cheesecake tarifleri",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-chia-tohumlu-cilekli-yogurt",
@@ -13060,7 +13280,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "yoğurt"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-chili-con-carne",
@@ -13144,7 +13365,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "con",
       "carne"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-chili-thai-sos",
@@ -13194,7 +13416,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "chili",
       "thai"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-chivito-sandvic",
@@ -13257,7 +13480,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sandviç",
       "chivito"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-choripan-sandvic",
@@ -13316,7 +13540,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sandviç",
       "choripan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-cizbiz-bonfile",
@@ -13367,7 +13592,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cızbız",
       "bonfile"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-ciger-sis",
@@ -13407,7 +13633,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ciğer",
       "şiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-club-sandwich",
@@ -13473,7 +13700,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(kulüp",
       "sandviç)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-damitilmis-soguk-kahve-cold-brew",
@@ -13510,7 +13738,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cold",
       "brew"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-cold-brew-tower-kahve-tarifi",
@@ -13547,7 +13776,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tower",
       "kahve"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 30
   },
   {
     "id": "yc-coleslaw",
@@ -13597,7 +13827,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(lahana",
       "salatası)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-cordon-bleu",
@@ -13649,7 +13880,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cordon",
       "bleu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-misir-gevrekli-tavuk",
@@ -13706,7 +13938,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(mısır",
       "gevrekli)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-croque-madame",
@@ -13756,7 +13989,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "croque",
       "madame"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-croque-monsieur",
@@ -13807,7 +14041,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "croque",
       "monsieur"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-meyveli-tart",
@@ -13861,7 +14096,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(meyveli",
       "tart)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-beyaz-cikolata-dolgulu-cupcake",
@@ -13939,7 +14175,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kek",
       "cupcake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-carsaf-boregi",
@@ -14005,7 +14242,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çarşaf",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-catal",
@@ -14064,7 +14302,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tuzlu kurabiye",
       "çatal"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-catlak-kurabiye",
@@ -14117,7 +14356,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çatlak",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-cavdar-ekmegi",
@@ -14159,7 +14399,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çavdar",
       "ekmeği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-cavdarli-peynirli-acma",
@@ -14214,7 +14455,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "açma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-cayli-kek",
@@ -14269,7 +14511,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çaylı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-naif-istanbul-cemen-baharatli-dana-bonfile",
@@ -14340,7 +14583,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "bonfile"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-mihri-restoran-centik-kebabi",
@@ -14400,7 +14644,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çentik",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-cesnili-yumurta-dolmasi",
@@ -14449,7 +14694,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yumurta",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-cilbir",
@@ -14503,7 +14749,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahvaltılık",
       "çılbır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-cirpilmis-yumurta",
@@ -14545,7 +14792,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çırpılmış",
       "yumurta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-citir-borek",
@@ -14603,7 +14851,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "çıtır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-citir-tavuk-lokmalari",
@@ -14655,7 +14904,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çıtır",
       "lokmaları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cig-borek",
@@ -14714,7 +14964,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(çiğ",
       "börek)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cikolata",
@@ -14759,7 +15010,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "çikolata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-cikolata-dolgulu-makaron",
@@ -14815,7 +15067,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dolgulu",
       "makaron"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-cikolata-soslu-kek",
@@ -14883,7 +15136,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cikolata-soslu-muhallebi",
@@ -14931,7 +15185,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-cikolata-soslu-parfe",
@@ -14989,7 +15244,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "parfe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-cikolata-sosu",
@@ -15028,7 +15284,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolata",
       "sosu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cikolata-toplari",
@@ -15074,7 +15331,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolata",
       "topları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-mixo-restaurant-cikolatali-acili-tart",
@@ -15126,7 +15384,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "acılı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-34-restaurant-cikolatali-ask-bombasi",
@@ -15208,7 +15467,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "aşk",
       "bombası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 1200
   },
   {
     "id": "yc-cikolatali-bonibonlu-kurabiye",
@@ -15260,7 +15520,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bonibonlu",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cikolatali-krep",
@@ -15308,7 +15569,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-cikolatali-corek",
@@ -15366,7 +15628,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çörek",
       "çikolatalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cikolatali-dondurma",
@@ -15411,7 +15674,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dondurma",
       "çikolatalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-cikolatali-kahve-surubu",
@@ -15450,7 +15714,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahve",
       "şurubu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-cikolatali-krep-pasta",
@@ -15530,7 +15795,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-cikolatali-kurabiye",
@@ -15574,7 +15840,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-cikolatali-lav-kek-lava-cake",
@@ -15628,7 +15895,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(lava",
       "cake)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-cikolatali-muffin",
@@ -15689,7 +15957,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-cikolatali-muhallebi",
@@ -15737,7 +16006,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-cikolatali-muzlu-krep",
@@ -15791,7 +16061,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muzlu",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cikolatali-pankek",
@@ -15836,7 +16107,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "pancake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cikolatali-pasta",
@@ -15926,7 +16198,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "çikolatalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-cikolatali-puding",
@@ -15971,7 +16244,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "puding"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-cikolatali-puflar",
@@ -16014,7 +16288,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "puflar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ajia-cikolatali-tart",
@@ -16063,7 +16338,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-cikolatali-waffle",
@@ -16118,7 +16394,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "waffle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-sutlu-cikolatali-kirazli-tart",
@@ -16188,7 +16465,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kirazlı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-ma-jolie-cikolatali-visneli-pasta",
@@ -16261,7 +16539,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "vişneli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-cilek-joleli-tatli",
@@ -16321,7 +16600,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilek",
       "jöleli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-cilek-kompostosu",
@@ -16357,7 +16637,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilek",
       "kompostosu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-cilek-kremasi",
@@ -16399,7 +16680,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilek",
       "kreması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mas-fasulyeli-kinoa-salatasi",
@@ -16458,7 +16740,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kinoa",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-cilek-soslu-meyve-salatasi",
@@ -16504,7 +16787,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyve",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-panna-cotta",
@@ -16556,7 +16840,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "panna",
       "cotta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cilek-soslu-semifreddo",
@@ -16619,7 +16904,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "alle",
       "fragole)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-read-cafe-cilekli-brownie",
@@ -16677,7 +16963,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "brownie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-cilekli-buz",
@@ -16717,7 +17004,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "buz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 80
   },
   {
     "id": "yc-cilekli-buzlu-cay",
@@ -16765,7 +17053,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buzlu",
       "çay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-ma-jolie-cilekli-charlotte-pasta",
@@ -16867,7 +17156,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "charlotte"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-cilekli-cheesecake",
@@ -16929,7 +17219,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cilekli-crumble",
@@ -16980,7 +17271,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "crumble"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-crepe-fondue-cilekli-cikolatali-krep",
@@ -17041,7 +17333,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-cilekli-kek",
@@ -17100,7 +17393,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-cilekli-kolay-pasta",
@@ -17185,7 +17479,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "kolay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cilekli-limonata",
@@ -17223,7 +17518,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "limonata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-cilekli-maden-suyu-kokteyli",
@@ -17263,7 +17559,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "suyu",
       "kokteyli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-cilekli-makaron",
@@ -17332,7 +17629,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "makaron"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cilekli-muhallebi",
@@ -17391,7 +17689,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-cilekli-pasta",
@@ -17491,7 +17790,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "çilekli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cilekli-profiterol",
@@ -17573,7 +17873,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "profiterol"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-cilekli-sorbe",
@@ -17611,7 +17912,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "sorbe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-cilekli-tart",
@@ -17687,7 +17989,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilekli",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-cilekli-yogurtlu-marshmallow-milkshake",
@@ -17730,7 +18033,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "marshmallow",
       "milkshake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-cin-boregi",
@@ -17790,7 +18094,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(spring",
       "rolls)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-coban-kavurma",
@@ -17861,7 +18166,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çoban",
       "kavurma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-coban-salatasi",
@@ -17911,7 +18217,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çoban",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-dalyan-kofte",
@@ -17986,7 +18293,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "dalyan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-damla-cikolatali-kakaolu-kek",
@@ -18047,7 +18355,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kakaolu",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-meze-meze-teras-damla-sakizli-ahtapot",
@@ -18100,7 +18409,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sakızlı",
       "ahtapot"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-damla-sakizli-kurabiye",
@@ -18146,7 +18456,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sakızlı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-damla-sakizli-muhallebi",
@@ -18188,7 +18499,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sakızlı",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-damlama-kahve",
@@ -18238,7 +18550,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "damlama",
       "kahve"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-cipriani-dana-carpaccio",
@@ -18288,7 +18601,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "carpaccio"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-dana-carpaccio",
@@ -18349,7 +18663,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "carpaccio"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mixo-restaurant-dana-kaburga",
@@ -18406,7 +18721,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "kaburga"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-izaka-restaurant-dana-pirzola",
@@ -18471,7 +18787,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "pirzola"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-dana-rosto",
@@ -18532,7 +18849,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "rosto"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-dana-yahni",
@@ -18645,7 +18963,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "de",
       "veau)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-dana-yanagi",
@@ -18704,7 +19023,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "yanağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 850
   },
   {
     "id": "yc-darth-vader-cikolatali-sundae",
@@ -18745,7 +19065,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "sundae"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ajia-deniz-levregi",
@@ -18811,7 +19132,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "deniz",
       "levreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-parle-deniz-mahsulleri-salatasi",
@@ -18867,7 +19189,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mahsulleri",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-the-dish-restaurant-deniz-mahsullu-kokorec",
@@ -18945,7 +19268,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mahsullü",
       "kokoreç"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-deniz-taragi",
@@ -19010,7 +19334,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "deniz",
       "tarağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-deniz-urunleri-yahnisi",
@@ -19080,7 +19405,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ürünleri",
       "yahnisi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-mixo-restaurant-detoks-salata",
@@ -19144,7 +19470,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "salata",
       "detoks"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-dizmana",
@@ -19205,7 +19532,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamur i̇şi",
       "dızmana"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-dil-baligi",
@@ -19249,7 +19577,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dil",
       "balığı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-diyet-corba",
@@ -19306,7 +19635,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çorba",
       "diyet"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-diyet-patlican-rulolari",
@@ -19359,7 +19689,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "ruloları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-diyet-tavuk-sis",
@@ -19442,7 +19773,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "diyet",
       "şiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-dogum-gunu-pastasi",
@@ -19536,7 +19868,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "günü",
       "pastası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-bebeklere-ozel-domates-corbasi",
@@ -19579,7 +19912,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domates",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-domates-pureli-burrata-peyniri",
@@ -19647,7 +19981,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "al",
       "pomodoro)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-domates-soslu-hamburger",
@@ -19721,7 +20056,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domates",
       "soslu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-domates-soslu-pirzola",
@@ -19788,7 +20124,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "pirzola"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 750
   },
   {
     "id": "yc-domates-soslu-sosis",
@@ -19850,7 +20187,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "sosis"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-domates-soslu-spaghetti",
@@ -19904,7 +20242,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "spaghetti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-domates-sosu",
@@ -19960,7 +20299,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domates",
       "sosu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-yesil-domates-tursusu",
@@ -19996,7 +20336,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domates",
       "turşusu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 80
   },
   {
     "id": "yc-domatesli-burgu-makarna",
@@ -20058,7 +20399,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domatesli",
       "burgu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-domatesli-kis",
@@ -20119,7 +20461,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domatesli",
       "kiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-domatesli-peynirli-galette",
@@ -20184,7 +20527,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "galette"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-domatesli-misirli-tart",
@@ -20256,7 +20600,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mısırlı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-domatesli-pastirmali-sandvic",
@@ -20309,7 +20654,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domatesli",
       "pastırmalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-dondurma",
@@ -20357,7 +20703,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
     "tags": [
       "dondurma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-kosebasi-dondurmali-irmik-helvasi",
@@ -20413,7 +20760,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇rmik",
       "helvası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-dondurmali-kizarmis-ananas",
@@ -20445,7 +20793,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kızarmış",
       "ananas"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-donut",
@@ -20531,7 +20880,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamur i̇şi",
       "donut"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-namli-gurme-dort-peynirli-tortellini-salatasi",
@@ -20585,7 +20935,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tortellini",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-dovme-pilavi",
@@ -20637,7 +20988,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dövme",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-the-globe-restaurant-dragon-susi",
@@ -20698,7 +21050,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dragon",
       "suşi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-duses-patates",
@@ -20736,7 +21089,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "düşes",
       "patates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-dusuk-kalorili-corba",
@@ -20786,7 +21140,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "düşük",
       "kalorili"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-ebruli-kek",
@@ -20832,7 +21187,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ebruli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-otlu-kabak-cicegi-kizartmasi",
@@ -20892,7 +21248,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çiçeği",
       "kızartması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-ege-salatasi",
@@ -20961,7 +21318,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ege",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-eggs-benedict",
@@ -21025,7 +21383,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "eggs",
       "benedict"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-eggs-florentine",
@@ -21101,7 +21460,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "eggs",
       "florentine"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 720
   },
   {
     "id": "yc-ekmek-canaginda-yumurta",
@@ -21160,7 +21520,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çanağında",
       "yumurta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-ekmek-pizza",
@@ -21227,7 +21588,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "ekmek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 850
   },
   {
     "id": "yc-ekmek-tatlisi",
@@ -21298,7 +21660,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-eksi-kremali-kek",
@@ -21355,7 +21718,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-elma-halkalari",
@@ -21410,7 +21774,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elma",
       "halkaları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-elma-tatlisi",
@@ -21463,7 +21828,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elma",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-elmali-avokado-salatasi",
@@ -21518,7 +21884,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokado",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-elmali-fincan-kek",
@@ -21580,7 +21947,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "fincan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-elmali-galette",
@@ -21646,7 +22014,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "galette"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-elmali-kek",
@@ -21699,7 +22068,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-elmali-kup",
@@ -21745,7 +22115,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "kup"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-elmali-lezzet-toplari",
@@ -21791,7 +22162,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lezzet",
       "topları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-elmali-milfoy",
@@ -21842,7 +22214,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "milföy"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-elmali-muhallebi",
@@ -21901,7 +22274,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-elmali-pasta",
@@ -21960,7 +22334,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "elmalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 900
   },
   {
     "id": "yc-elmali-smoothie",
@@ -22001,7 +22376,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-elmali-strudel",
@@ -22078,7 +22454,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "strudel"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-elmali-sufle",
@@ -22135,7 +22512,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "sufle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-elmali-tart",
@@ -22187,7 +22565,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-ma-jolie-elmali-tart",
@@ -22257,7 +22636,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 520
   },
   {
     "id": "yc-elmali-tatli-patates-corbasi",
@@ -22302,7 +22682,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-elmali-ters-yuz-kek",
@@ -22364,7 +22745,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ters",
       "yüz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-elmali-ahududu-soslu-muhallebi",
@@ -22425,7 +22807,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-cezayir-restaurant-elmasiye",
@@ -22479,7 +22862,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "elmasiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-empanadas",
@@ -22553,7 +22937,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "empanadas"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-enchilada",
@@ -22646,7 +23031,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "enchilada"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-enginar-corbasi",
@@ -22700,7 +23086,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enginar",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-ispanakli-enginar-dolmasi",
@@ -22755,7 +23142,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enginar",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-enginar-ezmesi",
@@ -22799,7 +23187,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enginar",
       "ezmesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-enginar-kalbi-salatasi",
@@ -22844,7 +23233,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kalbi",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-bugdayli-enginar-kalbi-salatasi",
@@ -22902,7 +23292,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kalbi",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-enginarli-bruschetta",
@@ -22965,7 +23356,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enginarlı",
       "bruschetta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-enginarli-dip-sos",
@@ -23024,7 +23416,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enginarlı",
       "dip"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-enginarli-makarna",
@@ -23080,7 +23473,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makarna",
       "enginarlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-enginarli-risotto",
@@ -23144,7 +23538,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enginarlı",
       "risotto"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kiva-erik-tava",
@@ -23190,7 +23585,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "erik",
       "tava"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-erikli-crumble",
@@ -23259,7 +23655,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "erikli",
       "crumble"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-erikli-kek",
@@ -23323,7 +23720,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "erikli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-seftali-receli",
@@ -23363,7 +23761,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şeftali",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-eriste",
@@ -23404,7 +23803,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makarna",
       "erişte"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 520
   },
   {
     "id": "yc-crepe-fondue-et-fondu",
@@ -23478,7 +23878,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "et",
       "fondü"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-etli-ekmek",
@@ -23547,7 +23948,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "etli",
       "ekmek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-etli-fajita-durum",
@@ -23600,7 +24002,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fajita",
       "dürüm"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-etli-havuclu-pilav",
@@ -23647,7 +24050,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "etli",
       "havuçlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-etli-noodle",
@@ -23705,7 +24109,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "etli",
       "noodle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 650
   },
   {
     "id": "yc-etli-patlican-bohcasi",
@@ -23771,7 +24176,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "bohçası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-etli-quesadilla",
@@ -23849,7 +24255,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "etli",
       "quesadilla"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 750
   },
   {
     "id": "yc-etli-safranli-pilav",
@@ -23902,7 +24309,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "etli",
       "safranlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-etli-ve-peynirli-ispanak-salatasi",
@@ -23963,7 +24371,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanak",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ev-baklavasi",
@@ -24029,7 +24438,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ev",
       "baklavası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 1200
   },
   {
     "id": "yc-ev-yapimi-cikolata",
@@ -24075,7 +24485,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yapımı",
       "çikolata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ev-yapimi-cikolatali-donut",
@@ -24147,7 +24558,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "donut"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ev-yapimi-fettucini-alfredo",
@@ -24193,7 +24605,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fettucini",
       "alfredo"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ev-yapimi-granola-bar",
@@ -24280,7 +24693,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "granola",
       "bar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-karamel",
@@ -24316,7 +24730,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yapımı",
       "karamel"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-ev-yapimi-kolay-baklava",
@@ -24372,7 +24787,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kolay",
       "baklava"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 900
   },
   {
     "id": "yc-lolipop",
@@ -24423,7 +24839,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yapımı",
       "lolipop"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-ev-yapimi-manti",
@@ -24470,7 +24887,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ev",
       "yapımı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-ev-yapimi-musli",
@@ -24509,7 +24927,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yapımı",
       "müsli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ev-yapimi-nutella-tarifi",
@@ -24559,7 +24978,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yapımı",
       "nutella"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ev-yapimi-pici-makarna",
@@ -24609,7 +25029,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yapımı",
       "pici"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-krema",
@@ -24655,7 +25076,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sade",
       "krema"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tarhana",
@@ -24711,7 +25133,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yapımı",
       "tarhana"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-ev-yapimi-tavuk-burger",
@@ -24841,7 +25264,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-yagsiz-pasta",
@@ -24924,7 +25348,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yapımı",
       "yağsız"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-pesto-soslu-tost",
@@ -24982,7 +25407,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "füme",
       "etli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-falafel-durum",
@@ -25037,7 +25463,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "falafel",
       "dürüm"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-falls-in-galata-falls-burger",
@@ -25110,7 +25537,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "falls",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-fasulyeli-fit-kek",
@@ -25169,7 +25597,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fit",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-fellah-koftesi",
@@ -25232,7 +25661,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fellah",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-findik-ezmeli-kakaolu-kek",
@@ -25296,7 +25726,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ezmeli",
       "kakaolu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-findik-ezmesi",
@@ -25332,7 +25763,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fındık",
       "ezmesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-findikli-kek",
@@ -25386,7 +25818,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fındıklı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-findikli-kibris-tatlisi",
@@ -25459,7 +25892,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kıbrıs",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-findikli-kinoa-bar",
@@ -25515,7 +25949,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kinoa",
       "bar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-findikli-kurabiye",
@@ -25557,7 +25992,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fındıklı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-findikli-sekerpare",
@@ -25609,7 +26045,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fındıklı",
       "şekerpare"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-firinda-baharatli-patates",
@@ -25673,7 +26110,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "baharatlı",
       "patates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-firinda-bal-kabagi-mucveri",
@@ -25729,7 +26167,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabağı",
       "mücveri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-firinda-beyaz-peynir",
@@ -25781,7 +26220,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "beyaz",
       "peynir"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-firinda-butun-tavuk",
@@ -25840,7 +26280,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "bütün"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-grissini-restaurant-firinda-dana-incik",
@@ -25891,7 +26332,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "i̇ncik"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 850
   },
   {
     "id": "yc-firinda-ekmek-dilimleri",
@@ -25947,7 +26389,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "dilimleri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-firinda-etli-lahana",
@@ -26016,7 +26459,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "etli",
       "lahana"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-firinda-hamsili-pilav",
@@ -26081,7 +26525,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "hamsili"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 520
   },
   {
     "id": "yc-firinda-ispanak",
@@ -26142,7 +26587,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "ispanak"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-firinda-kabak-tatlisi",
@@ -26184,7 +26630,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-firinda-karnabahar-mucveri",
@@ -26244,7 +26691,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karnabahar",
       "mücveri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-firinda-kestane",
@@ -26273,7 +26721,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "kestane"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-firinda-kiymali-kabak",
@@ -26349,7 +26798,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kıymalı",
       "kabak"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-firinda-kiymali-makarna",
@@ -26421,7 +26871,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "kıymalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-firinda-kremali-elma",
@@ -26480,7 +26931,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "elma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-firinda-kremali-patates",
@@ -26534,7 +26986,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "patates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-firinda-levrek",
@@ -26599,7 +27052,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "levrek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mihri-restoran-firinda-manti",
@@ -26662,7 +27116,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "mantı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-firinda-omlet",
@@ -26720,7 +27175,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "omlet"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-firinda-pancar-cipsi",
@@ -26761,7 +27217,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pancar",
       "cipsi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-firinda-patates",
@@ -26800,7 +27257,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "patates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-firinda-patates-kabuklari",
@@ -26856,7 +27314,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "kabukları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-firinda-patlican",
@@ -26914,7 +27373,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "patlıcan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-firinda-peynirli-sebze-kroket",
@@ -26960,7 +27420,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sebze",
       "kroket"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-cookzone-firinda-salamura-tavuk",
@@ -27034,7 +27495,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "salamura",
       "tavuk"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 650
   },
   {
     "id": "yc-firinda-sardalya",
@@ -27091,7 +27553,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "sardalya"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-firinda-sebzeli-tavuk",
@@ -27167,7 +27630,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırında",
       "sebzeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-firinda-tavuklu-patlican",
@@ -27236,7 +27700,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuklu",
       "patlıcan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-firinda-zeytinli-tavuk-baget",
@@ -27303,7 +27768,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "zeytinli",
       "baget"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-firinlanmis-baharatli-kaju",
@@ -27342,7 +27808,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "baharatlı",
       "kaju"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-frankie-kaburga",
@@ -27421,7 +27888,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırınlanmış",
       "kaburga"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-read-cafe-kremali-patates-ve-izgara-bonfile",
@@ -27496,7 +27964,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "izgara",
       "bonfile"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-firinlanmis-peynir-helvasi",
@@ -27542,7 +28011,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynir",
       "helvası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-cipriani-firinlanmis-tagliolini",
@@ -27603,7 +28073,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tagliolini",
       "makarna"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-fistik-ezmeli-kurabiye",
@@ -27638,7 +28109,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fıstık",
       "ezmeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-fistik-ezmesi",
@@ -27671,7 +28143,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fıstık",
       "ezmesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-raika-fistikli-domates-salatasi",
@@ -27714,7 +28187,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domates",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-galata-muhallebicisi-subyeli-fistikli-muhallebi",
@@ -27755,7 +28229,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fıstıklı",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-fistikli-revani",
@@ -27823,7 +28298,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fıstıklı",
       "revani"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-fistikli-sis-kofte",
@@ -27876,7 +28352,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şiş",
       "köfte"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-izgara-dana-bonfile",
@@ -27929,7 +28406,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "bonfile)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-firik-pilavli-bonfile",
@@ -27992,7 +28470,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilavlı",
       "bonfile"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-toms-kitchen-fish-and-chips",
@@ -28040,7 +28519,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "chips",
       "karışımı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 650
   },
   {
     "id": "yc-flambe-karides",
@@ -28110,7 +28590,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "flambe",
       "karides"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-fondan",
@@ -28155,7 +28636,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "au",
       "chocolate)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-frambuazli-brownie",
@@ -28226,7 +28708,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "frambuazlı",
       "brownie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ma-jolie-frambuazli-tart",
@@ -28297,7 +28780,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "frambuazlı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 420
   },
   {
     "id": "yc-frappe",
@@ -28335,7 +28819,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇çecek",
       "frappe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-french-press-kahve-tarifi",
@@ -28370,7 +28855,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "press",
       "kahve"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 5
   },
   {
     "id": "yc-frittata",
@@ -28431,7 +28917,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(i̇talyan",
       "omleti)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-fudge",
@@ -28484,7 +28971,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "fudge"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kitchenette-fume-antrikot",
@@ -28544,7 +29032,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "füme",
       "antrikot"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-fume-pastirmali-cheeseburger",
@@ -28616,7 +29105,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pastırmalı",
       "cheeseburger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-tuti-restaurant-fume-pizza",
@@ -28691,7 +29181,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "füme"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-grissini-restaurant-fume-somon-salatasi",
@@ -28738,7 +29229,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "somon",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-fume-somonlu-sandvic",
@@ -28787,7 +29279,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "füme",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-galeta-pizzasi",
@@ -28843,7 +29336,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "galeta",
       "pizzası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-galeta-unlu-patatesli-pogaca",
@@ -28909,7 +29403,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "unlu",
       "patatesli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-game-of-thrones-limonlu-kek",
@@ -28972,7 +29467,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "limonlu",
       "keki"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-gavurdagi",
@@ -29022,7 +29518,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "gavurdağı",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-general-tso-karnabahar",
@@ -29113,7 +29610,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tso",
       "karnabahar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-su-boregi",
@@ -29172,7 +29670,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "su",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-deraliye-restaurant-gerdaniye",
@@ -29238,7 +29737,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "et",
       "gerdaniye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 720
   },
   {
     "id": "yc-cezayir-restaurant-girit-ezme",
@@ -29291,7 +29791,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "girit",
       "ezme"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-girit-ezme",
@@ -29337,7 +29838,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "girit",
       "ezme"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-falls-in-galata-girit-mantisi",
@@ -29396,7 +29898,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "girit",
       "mantısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-glutensiz-ekmek",
@@ -29445,7 +29948,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "glutensiz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-glutensiz-kek",
@@ -29492,7 +29996,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "glutensiz",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-glutensiz-yaban-mersinli-muffin",
@@ -29543,7 +30048,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mersinli",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-mixo-restaurant-gnocchi",
@@ -29613,7 +30119,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamur i̇şi",
       "gnocchi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-granola-bar",
@@ -29667,7 +30174,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "granola",
       "bar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-gremolata",
@@ -29721,7 +30229,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sos",
       "gremolata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-greyfurtlu-avokado-salatasi",
@@ -29782,7 +30291,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokado",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-greyfurtlu-kek",
@@ -29832,7 +30342,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "greyfurtlu",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-greyfurtlu-smoothie",
@@ -29871,7 +30382,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "greyfurtlu",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-grilled-cheese",
@@ -29905,7 +30417,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "grilled",
       "cheese"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-gul-boregi",
@@ -29973,7 +30486,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "gül",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-gul-suyu-limonatasi",
@@ -30014,7 +30528,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "suyu",
       "limonatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-gul-tatlisi",
@@ -30075,7 +30590,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "gül",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-guvecte-kofte",
@@ -30157,7 +30673,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "güveçte"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-guvecte-kuru-fasulye",
@@ -30201,7 +30718,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuru",
       "fasulye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-balik-osman-guvecte-levrek-kavurma",
@@ -30265,7 +30783,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "levrek",
       "kavurma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-hafif-burger",
@@ -30327,7 +30846,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hafif",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-hafif-kremali-seftali",
@@ -30370,7 +30890,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "şeftali"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-halka-tatlisi",
@@ -30436,7 +30957,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "halka",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-halley-biskuvili-pasta",
@@ -30478,7 +31000,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "halley",
       "bisküvili"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-ozgur-sef-steakhouse-hamburger",
@@ -30535,7 +31058,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
     "tags": [
       "hamburger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 850
   },
   {
     "id": "yc-hamburger-ekmegi",
@@ -30594,7 +31118,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamburger",
       "ekmeği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-hamur-kizartmasi",
@@ -30640,7 +31165,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamur",
       "kızartması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-chef-mezze-hardal-soslu-avokadolu-karides",
@@ -30711,7 +31237,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokadolu",
       "karides"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-hardal-soslu-salata",
@@ -30773,7 +31300,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "endivyen"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-hardalli-tereyagi",
@@ -30805,7 +31333,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hardallı",
       "tereyağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 1800
   },
   {
     "id": "yc-harput-koftesi",
@@ -30866,7 +31395,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "harput",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-hasanpasa-koftesi",
@@ -30948,7 +31478,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hasanpaşa",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-hashasli-borek",
@@ -30989,7 +31520,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "haşhaşlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-hashasli-corek",
@@ -31045,7 +31577,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çörek",
       "haşhaşlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-hashasli-kek",
@@ -31099,7 +31632,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kek",
       "haşhaşlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-hashasli-kurabiye",
@@ -31154,7 +31688,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "haşhaşlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-hashasli-limonlu-muffin",
@@ -31221,7 +31756,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "limonlu",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-hashasli-tatli",
@@ -31292,7 +31828,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "haşhaşlı",
       "tatlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-hatay-kombesi",
@@ -31340,7 +31877,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hatay",
       "kömbesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-hateful-eight-kreole-corbasi",
@@ -31387,7 +31925,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kreole",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-hateful-eight-minnie-yahni",
@@ -31443,7 +31982,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "minnie’nin",
       "yahnisi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-hateful-eight-peksimeti",
@@ -31481,7 +32021,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "eight",
       "peksimeti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-hateful-eight-tessie-kurabiyeleri",
@@ -31536,7 +32077,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tessie’nin",
       "kurabiyeleri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-hateful-eight-yankee-puding",
@@ -31597,7 +32139,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yankee",
       "puding"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-havuc-corbasi",
@@ -31658,7 +32201,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "havuç",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-havuclu-burger",
@@ -31728,7 +32272,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "havuçlu",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-havuclu-cheesecake",
@@ -31795,7 +32340,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "havuçlu",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-havuclu-cig-kek",
@@ -31844,7 +32390,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çiğ",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-havuclu-tarcinli-kek",
@@ -31904,7 +32451,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-hawaii-burger",
@@ -31984,7 +32532,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hawaii",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-hawaii-tost",
@@ -32026,7 +32575,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tost",
       "hawaii"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-hellim-peynirli-kabak-koftesi",
@@ -32083,7 +32633,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-helvali-cikolatali-kek",
@@ -32132,7 +32683,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-hibes",
@@ -32191,7 +32743,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meze",
       "hibeş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-hindi-dolma",
@@ -32256,7 +32809,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hindi",
       "dolma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-hindistan-cevizli-kek",
@@ -32310,7 +32864,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-hindistan-cevizli-kurabiye",
@@ -32369,7 +32924,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-hindistan-cevizli-muhallebi",
@@ -32420,7 +32976,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-hindistan-cevizli-top",
@@ -32456,7 +33013,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "top"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-hingel",
@@ -32515,7 +33073,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantı",
       "hingel"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-hollandez-sos",
@@ -32557,7 +33116,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sos",
       "hollandez"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 720
   },
   {
     "id": "yc-kuskonmaz",
@@ -32613,7 +33173,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "kuşkonmaz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 640
   },
   {
     "id": "yc-how-i-met-your-mother-kurabiyesi",
@@ -32669,7 +33230,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mother",
       "kurabiyesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-hurma-tatlisi",
@@ -32727,7 +33289,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hurma",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-hurmali-biscotti",
@@ -32773,7 +33336,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hurmalı",
       "biscotti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-hurmali-incir-tatlisi",
@@ -32836,7 +33400,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ncir",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-hurmali-kek",
@@ -32888,7 +33453,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hurmalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kaserol-hunkar-begendi",
@@ -32975,7 +33541,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hünkar",
       "beğendi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 750
   },
   {
     "id": "yc-hunkar-begendi",
@@ -33049,7 +33616,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hünkar",
       "beğendi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-lacivert-restaurant-ilik-armut-tatlisi",
@@ -33110,7 +33678,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "armut",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-read-cafe-ilik-keci-peynirli-roka-salata",
@@ -33185,7 +33754,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "roka",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kiva-isirgan-otu-corbasi",
@@ -33227,7 +33797,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "otu",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-islak-hamburger",
@@ -33298,7 +33869,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamburger",
       "islak"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ispanak-salatasi",
@@ -33345,7 +33917,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanak",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-ispanak-toplari",
@@ -33397,7 +33970,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanak",
       "topları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-ispanakli-akitma",
@@ -33453,7 +34027,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanaklı",
       "akıtma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-ispanakli-borek",
@@ -33506,7 +34081,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "ispanaklı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ispanakli-bugday-corbasi",
@@ -33559,7 +34135,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buğday",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ispanakli-milfoy",
@@ -33609,7 +34186,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanaklı",
       "milföy"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ispanakli-pancake",
@@ -33667,7 +34245,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanaklı",
       "pancake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-ispanakli-pasta",
@@ -33733,7 +34312,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "ispanaklı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-deraliye-restaurant-ispanakli-piruhi",
@@ -33808,7 +34388,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanaklı",
       "piruhi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-ispanakli-pizza",
@@ -33888,7 +34469,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "ispanaklı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ispanakli-rulo",
@@ -33948,7 +34530,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanaklı",
       "rulo"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-ispanakli-tart",
@@ -34020,7 +34603,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanaklı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ispanakli-ve-bademli-cilek-salatasi",
@@ -34072,7 +34656,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çilek",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-ispanakli-peynirli-strata",
@@ -34137,7 +34722,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "strata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-isin-kilici-cubuklari",
@@ -34177,7 +34763,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kılıcı",
       "çubukları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-izgara-ahtapot",
@@ -34233,7 +34820,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "alla",
       "griglia)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-grissini-restaurant-izgara-dana-bonfile",
@@ -34288,7 +34876,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dana",
       "bonfile"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-balik-osman-izgara-jumbo-karides",
@@ -34322,7 +34911,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "jumbo",
       "karides"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-izgara-kabakli-yogurt-soslu-tavuk-burger",
@@ -34405,7 +34995,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-balik-osman-izgara-kalamar-dolma",
@@ -34475,7 +35066,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kalamar",
       "dolma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-namli-gurme-izgara-kasap-kofte",
@@ -34529,7 +35121,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "izgara",
       "kasap"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-izgara-kaya-levregi",
@@ -34617,7 +35210,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kaya",
       "levreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-raika-izgara-kuzu-pirzola",
@@ -34673,7 +35267,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "pirzola"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-lacivert-restaurant-izgara-kuzu-pirzola",
@@ -34739,7 +35334,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "pirzola"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-izgara-sardalya",
@@ -34780,7 +35376,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "izgara",
       "sardalya"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-izgara-sebze",
@@ -34841,7 +35438,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sebze",
       "izgara"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-izgara-sebze-sandvic",
@@ -34917,7 +35515,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "izgara",
       "sebze"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-izgara-sebzeli-marine-biftek",
@@ -34984,7 +35583,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "marine",
       "biftek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 720
   },
   {
     "id": "yc-izgara-sebzeli-pizza",
@@ -35062,7 +35662,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "izgara",
       "sebzeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 640
   },
   {
     "id": "yc-da-mario-izgara-somon-salatasi",
@@ -35117,7 +35718,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "somon",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-balik-osman-izgara-takoz-palamut",
@@ -35163,7 +35765,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "takoz",
       "palamut"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-ic-baklali-yaz-salatasi",
@@ -35216,7 +35819,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yaz",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ic-pilavli-enginar-dolmasi",
@@ -35285,7 +35889,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enginar",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ic-pilavli-tavuk-dolma",
@@ -35345,7 +35950,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilavlı",
       "dolma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ekmek-dolgulu-tavuk",
@@ -35416,7 +36022,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "dolgulu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-surplus-restaurant-icli-kofte",
@@ -35490,7 +36097,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "i̇çli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-kofteli-spagetti",
@@ -35545,7 +36153,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfteli",
       "spagetti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 750
   },
   {
     "id": "yc-iki-malzemeli-cikolatali-kek",
@@ -35583,7 +36192,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "malzemeli",
       "çikolatalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-iki-malzemeli-kek",
@@ -35615,7 +36225,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "malzemeli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-iki-malzemeli-kurabiye",
@@ -35646,7 +36257,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "malzemeli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-iki-malzemeli-pancake",
@@ -35679,7 +36291,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "malzemeli",
       "pancake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-iki-renkli-kurabiye",
@@ -35727,7 +36340,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ki",
       "renkli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-imam-sarigi",
@@ -35812,7 +36426,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇mam",
       "sarığı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-incelten-corba",
@@ -35877,7 +36492,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çorba",
       "i̇ncelten"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-incir-receli",
@@ -35914,7 +36530,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ncir",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-incir-tatlisi",
@@ -35955,7 +36572,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ncir",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-incir-ve-keci-peyniri-salatasi",
@@ -36002,7 +36620,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peyniri",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-incirli-kek",
@@ -36058,7 +36677,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ncirli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-incirli-kurabiye",
@@ -36118,7 +36738,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ncirli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-incirli-tart",
@@ -36173,7 +36794,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ncirli",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-incirli-top",
@@ -36214,7 +36836,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ncirli",
       "top"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-ingiliz-muffin",
@@ -36261,7 +36884,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ngiliz",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-irmikli-kek",
@@ -36320,7 +36944,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kek",
       "i̇rmikli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-irmikli-lokum",
@@ -36366,7 +36991,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇rmikli",
       "lokum"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-irmikli-peynir-toplari",
@@ -36430,7 +37056,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynir",
       "topları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 90
   },
   {
     "id": "yc-iskoc-biskuvisi",
@@ -36476,7 +37103,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇skoç",
       "bisküvisi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 210
   },
   {
     "id": "yc-isli-sekerpare",
@@ -36578,7 +37206,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇sli",
       "şekerpare"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-ispanyol-omleti-tortilla",
@@ -36626,7 +37255,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "omleti",
       "tortilla"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-istavrit",
@@ -36662,7 +37292,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "i̇stavrit"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-balik-osman-istavrit-tava",
@@ -36706,7 +37337,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇stavrit",
       "tava"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-boyoz",
@@ -36748,7 +37380,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇zmir",
       "boyozu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-izmir-kofte",
@@ -36836,7 +37469,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "i̇zmir"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-jambonlu-ekmek-dilimleri",
@@ -36882,7 +37516,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "dilimleri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-joleli-meyve-salatasi",
@@ -36937,7 +37572,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyve",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-joleli-muhallebi",
@@ -36988,7 +37624,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "jöleli",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kabak-cipsi",
@@ -37028,7 +37665,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "cipsi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kabak-crostini",
@@ -37081,7 +37719,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "crostini"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-kabak-flan",
@@ -37124,7 +37763,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "flan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-kabak-kavurma",
@@ -37184,7 +37824,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "kavurma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kabak-oturtma",
@@ -37237,7 +37878,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "oturtma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kabak-spagetti",
@@ -37285,7 +37927,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "spagetti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ispanakli-dondurma",
@@ -37334,7 +37977,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ve",
       "ispanaklı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-kabakli-frittata",
@@ -37387,7 +38031,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabaklı",
       "frittata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kabakli-keci-peynirli-kek",
@@ -37441,7 +38086,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-kabakli-misir-unu-keki",
@@ -37506,7 +38152,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "unu",
       "keki"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kabak-pirasali-kis",
@@ -37585,7 +38232,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pırasalı",
       "kiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kabakli-havuclu-misir-ekmegi",
@@ -37645,7 +38293,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mısır",
       "ekmeği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-galata-muhallebicisi-kabakli-izgara-tavuk-sis-salata",
@@ -37695,7 +38344,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "şiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kabuklu-ilik-mercimek-salatasi",
@@ -37772,7 +38422,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mercimek",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ozgur-sef-steakhouse-kaburga",
@@ -37804,7 +38455,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "et",
       "kaburga"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-kadayif-dolmasi",
@@ -37853,7 +38505,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kadayıf",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-cezayir-restaurant-kadayifli-muhallebi",
@@ -37915,7 +38568,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kadayıflı",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-antiochia-kagit-kebabi",
@@ -37964,7 +38618,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kağıt",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-mixo-restaurant-kagitta-kalamar",
@@ -38034,7 +38689,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kağıtta",
       "kalamar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-mixo-restaurant-kagitta-levrek",
@@ -38090,7 +38746,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kağıtta",
       "levrek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kagitta-levrek",
@@ -38133,7 +38790,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kağıtta",
       "levrek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cemen",
@@ -38192,7 +38850,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahvaltılık",
       "çemen"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-kahveli-cupcake",
@@ -38266,7 +38925,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahveli",
       "cupcake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-kahveli-kurabiye",
@@ -38326,7 +38986,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahveli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kahveli-milkshake",
@@ -38374,7 +39035,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahveli",
       "milkshake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kahveli-parfe",
@@ -38416,7 +39078,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahveli",
       "parfe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kahveli-mus",
@@ -38462,7 +39125,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "mus"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kakao-kapli-truf-cikolata",
@@ -38505,7 +39169,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "trüf",
       "çikolata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kakaolu-biscotti",
@@ -38563,7 +39228,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kakaolu",
       "biscotti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kakaolu-kurabiye",
@@ -38618,7 +39284,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kakaolu",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 230
   },
   {
     "id": "yc-kakaolu-pancake",
@@ -38671,7 +39338,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kakaolu",
       "pancake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 290
   },
   {
     "id": "yc-kakaolu-pasta",
@@ -38735,7 +39403,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "kakaolu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kalamar-dolmasi",
@@ -38804,7 +39473,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kalamar",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-balik-osman-kalamar-tava-ve-tarator-sos",
@@ -38879,7 +39549,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tarator",
       "sos"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kalp-kurabiye",
@@ -38922,7 +39593,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "kalp"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kalp-yumurta",
@@ -38963,7 +39635,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kalp",
       "yumurta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kalpli-bruschetta",
@@ -39019,7 +39692,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kalpli",
       "bruschetta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-celenk-ekmek",
@@ -39102,7 +39776,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kamamberli",
       "çelenk"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kandil-simidi",
@@ -39179,7 +39854,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kandil",
       "simidi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kapuska",
@@ -39229,7 +39905,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sulu yemek",
       "kapuska"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-karabugday-tabanli-cheesecake",
@@ -39294,7 +39971,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tabanlı",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-karabugdayli-mercimek-corbasi",
@@ -39350,7 +40028,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mercimek",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-karadut-receli",
@@ -39386,7 +40065,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karadut",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-karalahanali-bulgur-kavurmasi",
@@ -39445,7 +40125,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bulgur",
       "kavurması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-karamel-soslu-cheesecake",
@@ -39517,7 +40198,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-karamelize-elmali-fransiz-tostu",
@@ -39578,7 +40260,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fransız",
       "tostu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-doors-akademi-karisik-salata",
@@ -39651,7 +40334,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "karışık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-karamelize-soganli-dip-sos",
@@ -39716,7 +40400,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soğanlı",
       "dip"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-karamelize-soganli-tavuk",
@@ -39777,7 +40462,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karamelize",
       "soğanlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-karamelize-soganli-portobello-izgara-burger",
@@ -39840,7 +40526,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "izgara",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-karamelli-patlamis-misir",
@@ -39884,7 +40571,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlamış",
       "mısır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-karamelli-trilece",
@@ -39956,7 +40644,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karamelli",
       "trileçe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-grissini-restaurant-karaorman-meyveli-mus",
@@ -40014,7 +40703,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyveli",
       "mus"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-eataly-istanbul-karisik-deniz-urunleri-kizartmasi",
@@ -40069,7 +40759,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "di",
       "pesce)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-surplus-karisik-kebap",
@@ -40117,7 +40808,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karışık",
       "kebap"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-cikolata-kasesinde-karisik-meyve-salatasi",
@@ -40178,7 +40870,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyve",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-karisik-sebzeli-mantar-dolmasi",
@@ -40228,7 +40921,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantar",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-karides-tava",
@@ -40292,7 +40986,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karides",
       "tava"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-da-mario-karides-ve-kalamarli-tagliolini",
@@ -40354,7 +41049,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kalamarlı",
       "tagliolini"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-barnies-coffee-kitchen-karidesli-krep",
@@ -40423,7 +41119,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karidesli",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-deraliye-restaurant-kariye-pilaki",
@@ -40495,7 +41192,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kariye",
       "pilaki"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-karnabahar",
@@ -40561,7 +41259,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sebze",
       "karnabahar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-karnabahar-corbasi",
@@ -40613,7 +41312,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karnabahar",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-karnabahar-graten",
@@ -40679,7 +41379,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karnabahar",
       "graten"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-karnabahar-pane",
@@ -40740,7 +41441,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karnabahar",
       "pane"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-karnabahar-salatasi",
@@ -40784,7 +41486,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karnabahar",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-karnabahar-pizza",
@@ -40847,7 +41550,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karnabahar",
       "tabanlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-karpuz-pasta",
@@ -40892,7 +41596,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "karpuz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-karpuz-pizza",
@@ -40931,7 +41636,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karpuz",
       "pizza"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-karpuz-pureli-buzlu-cay",
@@ -40980,7 +41686,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buzlu",
       "çay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 80
   },
   {
     "id": "yc-karpuz-sufle",
@@ -41038,7 +41745,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karpuz",
       "sufle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-karpuzlu-buz",
@@ -41077,7 +41785,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karpuzlu",
       "buz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 60
   },
   {
     "id": "yc-karpuzlu-cheesecake",
@@ -41131,7 +41840,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karpuzlu",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-karpuzlu-domates-salatasi",
@@ -41186,7 +41896,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domates",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-karpuzlu-limonata",
@@ -41222,7 +41933,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karpuzlu",
       "limonata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 90
   },
   {
     "id": "yc-kasap-kofte",
@@ -41285,7 +41997,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "kasap"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kasarli-firin-kofte",
@@ -41335,7 +42048,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kaşarlı",
       "fırın"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-kasarli-kofte",
@@ -41394,7 +42108,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "kaşarlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kasarli-tavuklu-quesadilla",
@@ -41465,7 +42180,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuklu",
       "quesadilla"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-tortilla-pizza",
@@ -41528,7 +42244,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kat",
       "tortilla"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-antiochia-katikli-ekmek",
@@ -41587,7 +42304,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "katıklı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ozgur-sef-steakhouse-katmer",
@@ -41638,7 +42356,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "katmer"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-katmer-pogaca",
@@ -41698,7 +42417,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "katmer"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-kavun-serbeti",
@@ -41738,7 +42458,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kavun",
       "şerbeti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kavunlu-smoothie",
@@ -41775,7 +42496,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kavunlu",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-kavurmali-pilav",
@@ -41833,7 +42555,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilav",
       "kavurmalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kavurmali-tost",
@@ -41871,7 +42594,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tost",
       "kavurmalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kayisili-vegan-bar",
@@ -41914,7 +42638,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vegan",
       "bar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kaymacina",
@@ -41951,7 +42676,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "kaymaçina"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-la-torre-kaymakli-kayisi-dolmasi",
@@ -42062,7 +42788,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kayısı",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-kaytaz-boregi",
@@ -42127,7 +42854,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kaytaz",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ar-ruha-restaurant-kazan-kebabi",
@@ -42183,7 +42911,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kazan",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-keci-loru",
@@ -42216,7 +42945,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "keçi",
       "loru"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 80
   },
   {
     "id": "yc-keci-peynirli-kinoa-salatasi",
@@ -42262,7 +42992,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kinoa",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-keci-peynirli-otlu-omlet",
@@ -42314,7 +43045,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "otlu",
       "omlet"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kedi-dili-biskuvi",
@@ -42349,7 +43081,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kedidili",
       "bisküvi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-cilekli-kedi-dili-biskuvili-pasta",
@@ -42411,7 +43144,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kedidili",
       "bisküvili"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kemiksiz-tavuk-kanatlari",
@@ -42468,7 +43202,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kemiksiz",
       "kanatları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kepekli-pogaca",
@@ -42522,7 +43257,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "kepekli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kerebic",
@@ -42574,7 +43310,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "kerebiç"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kereviz-corbasi",
@@ -42628,7 +43365,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kereviz",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-kereviz-sapi-salatasi",
@@ -42676,7 +43414,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sapı",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-kesme-makarna",
@@ -42717,7 +43456,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makarna",
       "kesme"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kestane-asi",
@@ -42769,7 +43509,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kestane",
       "aşı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-mums-cafe-kestane-mantarli-keci-peynirli-sandvic",
@@ -42827,7 +43568,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "keçi",
       "peynirli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kestane-puresi",
@@ -42870,7 +43612,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kestane",
       "püresi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kestaneli-hindi",
@@ -42941,7 +43684,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kestaneli",
       "hindi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-kestaneli-kek",
@@ -42994,7 +43738,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kek",
       "kestaneli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kestaneli-koz-patlican",
@@ -43052,7 +43797,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köz",
       "patlıcan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kestaneli-rulo-pasta",
@@ -43114,7 +43860,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kestaneli",
       "rulo"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-kestaneli-sufle",
@@ -43162,7 +43909,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kestaneli",
       "sufle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kestaneli-tart",
@@ -43217,7 +43965,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kestaneli",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kestaneli-truf",
@@ -43263,7 +44012,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kestaneli",
       "trüf"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-mihri-restoran-keskekli-kuzu-tandir",
@@ -43343,7 +44093,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "tandır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-kete",
@@ -43415,7 +44166,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamur i̇şi",
       "kete"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-keten-tohumlu-protein-bar",
@@ -43489,7 +44241,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "protein",
       "bar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-keten-tohumlu-smoothie",
@@ -43531,7 +44284,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tohumlu",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kibris-koftesi",
@@ -43590,7 +44344,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kıbrıs",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kirmizi-biberli-ve-ancuezli-piyaz",
@@ -43661,7 +44416,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ançüezli",
       "piyaz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kirmizi-kadife-kurabiye",
@@ -43725,7 +44481,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kadife",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kirmizi-koz-biber-kizartmasi",
@@ -43782,7 +44539,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "biber",
       "kızartması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kirmizi-lahana-salatasi",
@@ -43829,7 +44587,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lahana",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-kirmizi-mercimek-corbasi",
@@ -43886,7 +44645,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mercimek",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kirmizi-sogan-tursusu",
@@ -43930,7 +44690,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soğan",
       "turşusu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 80
   },
   {
     "id": "yc-kirpik-borek",
@@ -43983,7 +44744,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "kırpık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kis-guveci",
@@ -44040,7 +44802,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kış",
       "güveci"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kiymali-borek",
@@ -44123,7 +44886,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "kıymalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-go-meso-kiymali-dumpling",
@@ -44190,7 +44954,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dumpling",
       "(mantı)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kiymali-kapali-pide",
@@ -44265,7 +45030,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kıymalı",
       "kapalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kiymali-karniyarik-borek",
@@ -44326,7 +45092,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kıymalı",
       "karnıyarık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kiymali-milfoy-rulo",
@@ -44378,7 +45145,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "milföy",
       "ruloları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-kiymali-pogaca",
@@ -44449,7 +45217,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "kıymalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kizarmis-dondurma",
@@ -44500,7 +45269,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dondurma",
       "kızarmış"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-mixo-restaurant-kizarmis-manti",
@@ -44583,7 +45353,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kızarmış",
       "mantı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kizarmis-ordek",
@@ -44637,7 +45408,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kızarmış",
       "ördek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-kizarmis-ravioli",
@@ -44739,7 +45511,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kızarmış",
       "ravioli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kizarmis-tavuk-budu",
@@ -44779,7 +45552,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kızarmış",
       "budu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kizartilmis-yesil-domates",
@@ -44829,7 +45603,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yeşil",
       "domates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-kizilcik-receli",
@@ -44866,7 +45641,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kızılcık",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kizilcik-serbeti",
@@ -44904,7 +45680,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kızılcık",
       "şerbeti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kizilcikli-kusburnu-aromali-buzlu-cay",
@@ -44952,7 +45729,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buzlu",
       "çay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-kilis-tava",
@@ -45020,7 +45798,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kilis",
       "tava"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kimyonlu-ahtapot-yahni",
@@ -45065,7 +45844,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ahtapot",
       "yahni"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 680
   },
   {
     "id": "yc-kitchenette-kinoa-salatasi",
@@ -45160,7 +45940,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kinoa",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-lacivert-restaurant-kinoa-salatasi",
@@ -45218,7 +45999,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kinoa",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kinoali-cikolatali-kurabiye",
@@ -45269,7 +46051,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 210
   },
   {
     "id": "yc-kinoali-girit-kabagi-dolmasi",
@@ -45349,7 +46132,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "girit",
       "kabağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kinoali-sebze-koftesi",
@@ -45421,7 +46205,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kinoalı",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kinoali-tavuk-koftesi",
@@ -45478,7 +46263,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kirazli-buzlu-cay",
@@ -45520,7 +46306,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buzlu",
       "çay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-piraye-restaurant-midilli-kofte",
@@ -45604,7 +46391,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kiremitte",
       "midilli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-piraye-restaurant-yaprak-ciger",
@@ -45656,7 +46444,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yaprak",
       "ciğer"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-kivili-smoothie",
@@ -45693,7 +46482,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kivili",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-klasik-pizza",
@@ -45756,7 +46546,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "klasik"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-koko-kurabiye",
@@ -45791,7 +46582,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "koko"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-limonata-teras-kokorec-pizza",
@@ -45871,7 +46663,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "kokoreç"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-kol-boregi",
@@ -45911,7 +46704,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kol",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kolay-dondurma",
@@ -45959,7 +46753,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dondurma",
       "kolay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kolay-katmer",
@@ -45999,7 +46794,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kolay",
       "katmer"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kolay-manti",
@@ -46063,7 +46859,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kolay",
       "mantı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kolay-pizza",
@@ -46137,7 +46934,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "kolay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-salep",
@@ -46177,7 +46975,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kolay",
       "salep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-kolay-spagetti-carbonara",
@@ -46226,7 +47025,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "spagetti",
       "carbonara"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 720
   },
   {
     "id": "yc-kolay-tiramisu",
@@ -46285,7 +47085,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kolay",
       "tiramisu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-korova-kurabiyesi",
@@ -46338,7 +47139,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "korova",
       "kurabiyesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kozalak-pasta",
@@ -46381,7 +47183,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "kozalak"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kofte-sis",
@@ -46452,7 +47255,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "şiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kofteli-corba",
@@ -46509,7 +47313,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çorba",
       "köfteli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kofteli-milfoy",
@@ -46570,7 +47375,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfteli",
       "milföy"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kombe",
@@ -46628,7 +47434,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çörek",
       "kömbe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kori-soslu-karnabahar",
@@ -46693,7 +47500,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "karnabahar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-korili-borulce",
@@ -46737,7 +47545,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "körili",
       "börülce"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kotebe",
@@ -46796,7 +47605,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamur i̇şi",
       "kötebe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-koz-patlicanli-bruschetta",
@@ -46852,7 +47662,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcanlı",
       "bruschetta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-kozlenmis-patlicanli-ve-tavuklu-pogaca",
@@ -46922,7 +47733,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ve",
       "tavuklu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-vacilando-krem-peynir-soslu-havuclu-kek",
@@ -46999,7 +47811,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "havuçlu",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-krem-santili-pogaca",
@@ -47049,7 +47862,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "krem",
       "şantili"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-krem-sokola",
@@ -47101,7 +47915,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "krem",
       "şokola"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-krema-dolgulu-hamur-kizartmasi",
@@ -47185,7 +48000,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamur",
       "kızartması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kremali-ispanak-corbasi",
@@ -47239,7 +48055,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanak",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-crepe-fondue-kremali-ispanakli-krep",
@@ -47302,7 +48119,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanaklı",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kremali-kek",
@@ -47374,7 +48192,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kremali-mantarli-firin-makarna",
@@ -47435,7 +48254,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırın",
       "makarna"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kremali-patates-salatasi",
@@ -47500,7 +48320,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kremali-top-kurabiye",
@@ -47540,7 +48361,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "top"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kremali-volovan-hamurlari",
@@ -47606,7 +48428,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "volovan",
       "hamurları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kremali-sebzeli-tavuk-rulolari",
@@ -47676,7 +48499,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sebzeli",
       "ruloları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-tatli-tuzlu-krep",
@@ -47714,7 +48538,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahvaltılık",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kanepe",
@@ -47779,7 +48604,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "krep",
       "kanepe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-krokan",
@@ -47813,7 +48639,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı atıştırmalık",
       "krokan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kule-kofte",
@@ -47895,7 +48722,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "kule"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kulebyaka",
@@ -47998,7 +48826,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "kulebyaka"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-kurabiye-burger",
@@ -48044,7 +48873,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kurabiyeli-sandvic-dondurma",
@@ -48097,7 +48927,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiyeli",
       "sandviç"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-kursun-gecirmez-kahve",
@@ -48134,7 +48965,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "geçirmez",
       "kahve"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kuru-armut-fistikli-kurabiye",
@@ -48184,7 +49016,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fıstıklı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-kuru-borulceli-enginar-dolmasi",
@@ -48254,7 +49087,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enginar",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kuru-domatesli-tuzlu-kek",
@@ -48315,7 +49149,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tuzlu",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kuru-etli-humus",
@@ -48388,7 +49223,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "etli",
       "humus"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kuru-kayisi-kompostosu",
@@ -48427,7 +49263,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kayısı",
       "kompostosu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-kuru-meyveli-kek",
@@ -48477,7 +49314,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyveli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kuru-meyveli-kurabiye",
@@ -48529,7 +49367,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuru",
       "meyveli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kuru-meyveli-muffin",
@@ -48585,7 +49424,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyveli",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kuru-meyveli-bar",
@@ -48651,7 +49491,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pekmezli",
       "bar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-dem-karakoy-tatli-krep",
@@ -48716,7 +49557,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kuru-patlican-dolmasi",
@@ -48784,7 +49626,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-kuru-uzumlu-ekmek-pudingi",
@@ -48847,7 +49690,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "pudingi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kuru-uzumlu-havuc-salatasi",
@@ -48900,7 +49744,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "havuç",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-kuru-uzumlu-kurabiye",
@@ -48947,7 +49792,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "üzümlü",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-kuru-yemisli-baharatli-kraker",
@@ -48991,7 +49837,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "baharatlı",
       "kraker"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-kuru-yemisli-citir-tavuk",
@@ -49041,7 +49888,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yemişli",
       "çıtır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kuru-yemisli-ispanak-salatasi",
@@ -49108,7 +49956,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanak",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-kurutulmus-domates-ve-keci-peynirli-pide",
@@ -49179,7 +50028,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "keçi",
       "peynirli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kurutulmus-domatesli-ekmek",
@@ -49227,7 +50077,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurutulmuş",
       "domatesli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kurutulmus-domatesli-muffin",
@@ -49286,7 +50137,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domatesli",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-kurutulmus-domatesli-risotto",
@@ -49345,7 +50197,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domatesli",
       "risotto"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-cookzone-kurutulmus-domatesli-ve-zeytinli-omlet",
@@ -49400,7 +50253,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "zeytinli",
       "omlet"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-kurutulmus-domatesli-peynirli-milfoy",
@@ -49456,7 +50310,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "milföy"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-kuskus-salatasi",
@@ -49509,7 +50364,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuskus",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-galata-muhallebicisi-kusbasili-pide",
@@ -49554,7 +50410,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pide",
       "kuşbaşılı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kuskonmaz-corbasi",
@@ -49602,7 +50459,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuşkonmaz",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-namli-gurme-kuskonmaz-salatasi",
@@ -49651,7 +50509,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuşkonmaz",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 160
   },
   {
     "id": "yc-kuskonmazli-firin-somon",
@@ -49707,7 +50566,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırın",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kuskonmazli-karnabahar-pizza",
@@ -49770,7 +50630,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuşkonmazlı",
       "karnabahar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kuskonmazli-tart",
@@ -49825,7 +50686,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuşkonmazlı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kuskonmazli-ve-cheddar-peynirli-pizza",
@@ -49891,7 +50753,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cheddar",
       "peynirli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-kuzu-gerdan-haslama",
@@ -49953,7 +50816,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "gerdan",
       "haşlama"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-barnies-coffee-kitchen-kuzu-incik",
@@ -50029,7 +50893,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "i̇ncik"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-da-mario-kuzu-incik",
@@ -50101,7 +50966,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "i̇ncik"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 750
   },
   {
     "id": "yc-soya-soslu-kuzu-incik",
@@ -50155,7 +51021,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "i̇ncik"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-tapasuma-restaurant-kuzu-kulbasti",
@@ -50230,7 +51097,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "külbastı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 650
   },
   {
     "id": "yc-the-dish-restaurant-kuzu-lokum",
@@ -50296,7 +51164,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "lokum"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kuzu-navarin",
@@ -50376,7 +51245,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "navarin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-the-dish-restaurant-kuzu-pirzola",
@@ -50439,7 +51309,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "pirzola"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-kuzu-pirzola",
@@ -50514,7 +51385,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "pirzola"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 720
   },
   {
     "id": "yc-kuzu-uclemesi",
@@ -50611,7 +51483,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "üçlemesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-kulah-pasta",
@@ -50664,7 +51537,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "külah"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-antiochia-kunefe",
@@ -50715,7 +51589,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şerbetli tatlı",
       "künefe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-kurt-boregi",
@@ -50763,7 +51638,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kürt",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-labada-salatasi",
@@ -50813,7 +51689,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "labada",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-labne-peynirli-brownie",
@@ -50892,7 +51769,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "brownie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-lagos-baligi",
@@ -50957,7 +51835,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lagos",
       "balığı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-yada-sushi-lagos-corbasi",
@@ -51003,7 +51882,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balığı",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-lagos-fileto",
@@ -51067,7 +51947,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fregola",
       "sarda)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-lahana-corbasi",
@@ -51110,7 +51991,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lahana",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-lahana-sarmasi",
@@ -51184,7 +52066,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lahana",
       "sarması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-surplus-restoran-lahmacun",
@@ -51248,7 +52131,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamur i̇şi",
       "lahmacun"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-lavantali-kek",
@@ -51318,7 +52202,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lavantalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-lavantali-kurabiye",
@@ -51369,7 +52254,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lavantalı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-lavantali-muhallebi",
@@ -51412,7 +52298,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lavantalı",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-lavas-tost",
@@ -51456,7 +52343,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tost",
       "lavaş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-pratik-pizza",
@@ -51513,7 +52401,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lavaştan",
       "pratik"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-lazanya-rulolari",
@@ -51602,7 +52491,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lazanya",
       "ruloları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-levrek",
@@ -51652,7 +52542,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "levrek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-deraliye-restaurant-levzine",
@@ -51702,7 +52593,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "levzine"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-lime-dilimli-buzlu-yesil-cay",
@@ -51751,7 +52643,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yeşil",
       "çay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-limon-kremasi",
@@ -51788,7 +52681,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "limon",
       "kreması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-eataly-istanbul-limon-soslu-tavuk",
@@ -51846,7 +52740,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "al",
       "limone)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-the-dish-restaurant-limon-tart",
@@ -51903,7 +52798,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "limon",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-limonlu-zeytinli-tavuk",
@@ -51981,7 +52877,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(moroccan",
       "chicken)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-limonata",
@@ -52024,7 +52921,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇çecek",
       "limonata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-mums-cafe-limonlu-cheesecake",
@@ -52076,7 +52974,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "limonlu",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-limonlu-kurabiye",
@@ -52132,7 +53031,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "limonlu",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-limonlu-tart",
@@ -52191,7 +53091,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "limonlu",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-limonlu-fileto-tavuk-gogus",
@@ -52248,7 +53149,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fileto",
       "göğüs"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-limonlu-risotto",
@@ -52333,7 +53235,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "e",
       "zucchine)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-linguine-makarna",
@@ -52391,7 +53294,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "di",
       "grano)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-lokma-tatlisi",
@@ -52442,7 +53346,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lokma",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-enerji-bar",
@@ -52486,7 +53391,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "enerji",
       "barları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-lokumlu-kurabiye",
@@ -52533,7 +53439,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "lokumlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-lor-peynirli-pancar-ravioli",
@@ -52630,7 +53537,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pancar",
       "ravioli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-lor-tatlisi",
@@ -52686,7 +53594,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lor",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-tuti-restaurant-lumaconi-rigati-makarna",
@@ -52804,7 +53713,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lumaconi",
       "rigati"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-mac-and-cheese",
@@ -52867,7 +53777,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "and",
       "cheese"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-madam-rosmerta-balkabagi-suyu-tarifi",
@@ -52916,7 +53827,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "suyu",
       "tarifi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-mafis",
@@ -52974,7 +53886,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şerbetli tatlı",
       "mafiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-mahlepli-kurabiye",
@@ -53030,7 +53943,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mahlepli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 160
   },
   {
     "id": "yc-mahlepli-pogaca",
@@ -53087,7 +54001,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "mahlepli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-mahluta-corbasi",
@@ -53140,7 +54055,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mahluta",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-makarna-boregi",
@@ -53202,7 +54118,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makarna",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-makarna-cipsi",
@@ -53246,7 +54163,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makarna",
       "cipsi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-makaron",
@@ -53300,7 +54218,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "makaron"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-maklube",
@@ -53357,7 +54276,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "et",
       "maklube"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 720
   },
   {
     "id": "yc-galata-muhallebicisi-kazandibi",
@@ -53399,7 +54319,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sütlü",
       "kazandibi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-mandalina-receli",
@@ -53444,7 +54365,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mandalina",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-mandalina-tatlisi",
@@ -53484,7 +54406,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mandalina",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-mandalinali-kek",
@@ -53534,7 +54457,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mandalinalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-mandalinali-panna-cotta",
@@ -53592,7 +54516,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "panna",
       "cotta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mangolu-kinoa",
@@ -53631,7 +54556,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mangolu",
       "kinoa"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-mangolu-portakalli-smoothie",
@@ -53669,7 +54595,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "portakallı",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-manisa-bohca-kebabi",
@@ -53772,7 +54699,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bohça",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 650
   },
   {
     "id": "yc-mantar-corbasi",
@@ -53832,7 +54760,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantar",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-mantar-dolgulu-tavuk-sarma",
@@ -53902,7 +54831,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dolgulu",
       "sarma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mantar-graten",
@@ -53952,7 +54882,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantar",
       "graten"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-ar-ruha-restaurant-mantar-kavurmasi",
@@ -53992,7 +54923,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantar",
       "kavurması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-mantar-kurabiye",
@@ -54041,7 +54973,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantar",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-mantar-pureli-levrek",
@@ -54117,7 +55050,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "püreli",
       "levrek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-mantar-salatasi",
@@ -54182,7 +55116,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantar",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-galata-muhallebicisi-mantar-soslu-cokertme-kebabi",
@@ -54228,7 +55163,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çökertme",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-namli-gurme-mantar-sote",
@@ -54280,7 +55216,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantar",
       "sote"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-la-brise-mantarli-bonfile",
@@ -54338,7 +55275,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantarlı",
       "bonfile"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-mantarli-bulgur-pilavi",
@@ -54390,7 +55328,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bulgur",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-karabugday-pilavi",
@@ -54440,7 +55379,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karabuğday",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-mantarli-karides-guvec",
@@ -54501,7 +55441,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "karides",
       "güveç"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-mantarli-lazanya",
@@ -54591,7 +55532,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantarlı",
       "lazanya"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-mantarli-nohut-yemegi",
@@ -54643,7 +55585,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nohut",
       "yemeği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-mantarli-pide",
@@ -54713,7 +55656,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pide",
       "mantarlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mantarli-quesadilla",
@@ -54778,7 +55722,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantarlı",
       "quesadilla"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-mantarli-yesil-soganli-tartolet",
@@ -54849,7 +55794,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soğanlı",
       "tartöletler"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-manti-corbasi",
@@ -54931,7 +55877,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantı",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-34-restaurant-marine-deniz-levregi",
@@ -55008,7 +55955,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "deniz",
       "levreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-marmelatli-kurabiye",
@@ -55066,7 +56014,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "marmelatlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-marshmallow",
@@ -55110,7 +56059,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "marshmallow"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-marshmallowlu-pirinc-patlagi",
@@ -55144,7 +56094,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pirinç",
       "patlağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-marshmallowlu-sicak-cikolata",
@@ -55195,7 +56146,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sıcak",
       "çikolata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-masala-cayi",
@@ -55248,7 +56200,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "masala",
       "çayı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-parle-mascarpone-cheesecake",
@@ -55291,7 +56244,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mascarpone",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-mas-fasulyesi-corbasi",
@@ -55345,7 +56299,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fasulyesi",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-matcha-cayli-kek",
@@ -55415,7 +56370,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(matcha",
       "cake)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mayali-hamur-kizartmasi-lokma",
@@ -55470,7 +56426,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kızartması",
       "lokma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-mayali-pizza",
@@ -55543,7 +56500,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "mayalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-mayasiz-ekmek",
@@ -55578,7 +56536,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "mayasız"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-naif-istanbul-maydanoz-pestolu-avokadolu-yesil-salata",
@@ -55646,7 +56605,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "avokadolu",
       "yeşil"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-meksika-salatasi",
@@ -55696,7 +56656,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meksika",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-menemenli-ekmek",
@@ -55750,7 +56711,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "menemenli",
       "ekmek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-mercimek-favasi",
@@ -55803,7 +56765,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mercimek",
       "favası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-mercimek-salatasi",
@@ -55869,7 +56832,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mercimek",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-mercimekli-bulgur-pilavi",
@@ -55922,7 +56886,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bulgur",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-mercimekli-ispanak-salatasi",
@@ -55971,7 +56936,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanak",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-merengli-tart",
@@ -56049,7 +57015,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "merengli",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mermer-kek",
@@ -56104,7 +57071,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mermer",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-meyve-salatasi",
@@ -56144,7 +57112,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyve",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-meyveli-dondurmali-cheesecake",
@@ -56199,7 +57168,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dondurmalı",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-meyveli-milfoy-pasta",
@@ -56249,7 +57219,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyveli",
       "milföy"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cikolata-kasesinde-meyveli-yogurtlu-dondurma",
@@ -56303,7 +57274,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yoğurtlu",
       "dondurma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-mezgit",
@@ -56352,7 +57324,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "mezgit"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mihlama",
@@ -56388,7 +57361,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahvaltılık",
       "mıhlama"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-misir-gevrekli-kurabiye",
@@ -56451,7 +57425,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "gevrekli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-misir-gevrekli-pasta",
@@ -56494,7 +57469,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mısır",
       "gevrekli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-misir-unlu-kek",
@@ -56543,7 +57519,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "unlu",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-misir-unlu-muffin",
@@ -56601,7 +57578,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "unlu",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-misir-unlu-pogaca",
@@ -56654,7 +57632,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mısır",
       "unlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-misirli-peynirli-kroket",
@@ -56740,7 +57719,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "kroket"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-go-meso-midyat-lavasi",
@@ -56807,7 +57787,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "midyat",
       "lavaşı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-midye-borek",
@@ -56854,7 +57835,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "midye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-midye-dolma",
@@ -56934,7 +57916,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "midye",
       "dolma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-tuti-restaurant-midye-dolma-ve-borulce-salatasi",
@@ -57027,7 +58010,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börülce",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-midyeli-pilav",
@@ -57111,7 +58095,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilav",
       "midyeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-mihri-restoran-mihrimah-revani",
@@ -57165,7 +58150,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mihrimah",
       "revani"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-domatesli-kolay-tart",
@@ -57215,7 +58201,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kolay",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-milfoy-pasta",
@@ -57270,7 +58257,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "milföy"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-milfoy-pizza",
@@ -57316,7 +58304,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "milföy"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-milfoyde-yumurta",
@@ -57353,7 +58342,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "milföyde",
       "yumurta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-milfoylu-pasta",
@@ -57404,7 +58394,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "milföylü"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-frankie-minekop-ceviche",
@@ -57469,7 +58460,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "minekop",
       "ceviche"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-minestrone-corbasi",
@@ -57546,7 +58538,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "minestrone",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-mini-pizza",
@@ -57613,7 +58606,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "mini"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-misket-kofte",
@@ -57664,7 +58658,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "misket"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-moka-pot-kahve-tarifi",
@@ -57703,7 +58698,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pot",
       "kahve"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-mozaik-kek",
@@ -57753,7 +58749,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mozaik",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-mozzarella-sticks",
@@ -57816,7 +58813,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mozzarella",
       "sticks"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tatli-muffin",
@@ -57863,7 +58861,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı kek",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-muffin-borek",
@@ -57923,7 +58922,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-muffin-makarna",
@@ -57990,7 +58990,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muffin",
       "makarna"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 650
   },
   {
     "id": "yc-fincan-kek",
@@ -58049,7 +59050,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(fincan",
       "kek)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-muhallebili-irmik-toplari",
@@ -58097,7 +59099,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇rmik",
       "topları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-muhallebili-kemalpasa-tatlisi",
@@ -58157,7 +59160,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kemalpaşa",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-muhammara",
@@ -58217,7 +59221,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahvaltılık",
       "muhammara"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-mus-kremali-pasta",
@@ -58281,7 +59286,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mus",
       "kremalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-muska-boregi",
@@ -58326,7 +59332,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muska",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-muz-kizartmasi",
@@ -58377,7 +59384,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muz",
       "kızartması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-muzlu-baton-kek",
@@ -58433,7 +59441,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "baton",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-muzlu-biskuvili-puding",
@@ -58488,7 +59497,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bisküvili",
       "puding"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-muzlu-cikolatali-fransiz-tostu",
@@ -58542,7 +59552,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fransız",
       "tostu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-muzlu-cikolatali-mousse",
@@ -58590,7 +59601,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı",
       "mousse"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-muzlu-ekmek",
@@ -58649,7 +59661,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muzlu",
       "ekmek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-muzlu-glutensiz-kek",
@@ -58706,7 +59719,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muzlu",
       "glutensiz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-muzlu-hurmali-smoothie",
@@ -58745,7 +59759,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hurmalı",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-muzlu-kek",
@@ -58798,7 +59813,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(banana",
       "bread)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-muzlu-kolay-pasta",
@@ -58848,7 +59864,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muzlu",
       "kolay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-muzlu-kurabiye",
@@ -58905,7 +59922,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muzlu",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-muzlu-puding",
@@ -58961,7 +59979,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muzlu",
       "puding"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-muzlu-rulo-krep",
@@ -59016,7 +60035,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "rulo",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-muzlu-ters-yuz-tart",
@@ -59072,7 +60092,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yüz",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-muzlu-cikolatali-tost",
@@ -59111,7 +60132,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "muzlu",
       "çikolatalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mucver-burger",
@@ -59170,7 +60192,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mücver",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-mucver-kek",
@@ -59238,7 +60261,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mücver",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-murdum-erigi-receli",
@@ -59289,7 +60313,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "eriği",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-murdum-erikli-pizza",
@@ -59354,7 +60379,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mürdüm",
       "erikli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-izaka-restaurant-risotto-al-nero-di-seppia",
@@ -59429,7 +60455,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "di",
       "seppia)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-raika-nar-eksili-izgara-sebze",
@@ -59470,7 +60497,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekşili",
       "izgara"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-nar-eksili-mercimek-koftesi",
@@ -59537,7 +60565,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mercimek",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-hindi",
@@ -59652,7 +60681,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kızaran",
       "hindi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 1200
   },
   {
     "id": "yc-nar-receli",
@@ -59688,7 +60718,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nar",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-narli-chia-pudingi",
@@ -59727,7 +60758,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "chia",
       "pudingi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-narli-muhallebi",
@@ -59780,7 +60812,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "narlı",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-narli-turta",
@@ -59839,7 +60872,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "narlı",
       "turta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-narli-zerde",
@@ -59887,7 +60921,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "narlı",
       "zerde"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-nicoise-salatasi",
@@ -59947,7 +60982,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "niçoise",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-nisastali-kurabiye",
@@ -60001,7 +61037,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "nişastalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-nohut",
@@ -60055,7 +61092,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bakliyat",
       "nohut"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-nohut-salatasi",
@@ -60109,7 +61147,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nohut",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-nohut-unu-kurabiyesi",
@@ -60156,7 +61195,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "unu",
       "kurabiyesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 520
   },
   {
     "id": "yc-nohut-tonbalikli-pita-sandvic",
@@ -60239,7 +61279,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balıklı",
       "pita"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-nohutlu-dip-sos",
@@ -60286,7 +61327,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nohutlu",
       "dip"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-mums-cafe-nohutlu-kinoa-salatasi",
@@ -60351,7 +61393,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kinoa",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-nohutlu-pirasa",
@@ -60401,7 +61444,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nohutlu",
       "pırasa"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-nohutlu-pilav",
@@ -60442,7 +61486,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilav",
       "nohutlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-nohutlu-romanesco-salatasi",
@@ -60500,7 +61545,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "romanesco",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-tuti-restaurant-nougat-parfesi",
@@ -60549,7 +61595,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nougat",
       "parfesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-nugget",
@@ -60616,7 +61663,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tuzlu atıştırmalık",
       "nugget"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-nuraniye",
@@ -60691,7 +61739,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meze",
       "nuraniye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-nutellali-creme-brulee",
@@ -60740,7 +61789,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "creme",
       "brulee"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-nutellali-kek",
@@ -60805,7 +61855,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nutellalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-nutellali-kurabiye",
@@ -60853,7 +61904,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nutellalı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-nutellali-muhallebi",
@@ -60906,7 +61958,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nutellalı",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-nutellali-pizza",
@@ -60960,7 +62013,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "nutellalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-nutellali-sicak-cikolata",
@@ -61002,7 +62056,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sıcak",
       "çikolata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-oreo-cheesecake",
@@ -61064,7 +62119,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "oreo",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-oreo-cupcake",
@@ -61139,7 +62195,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "oreo",
       "cupcake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-oreo-milkshake",
@@ -61177,7 +62234,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "oreo",
       "milkshake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-oreolu-brownie",
@@ -61250,7 +62308,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "oreolu",
       "brownie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kaserol-orman-meyveli-pasta",
@@ -61318,7 +62377,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "orman",
       "meyveli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-mosyo-sokola-orman-meyveli-pavlova",
@@ -61373,7 +62433,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyveli",
       "pavlova"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-orman-meyveli-smoothie",
@@ -61419,7 +62480,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyveli",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-orman-meyveli-tart",
@@ -61496,7 +62558,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyveli",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-orta-dunya-elmali-bruschetta",
@@ -61535,7 +62598,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elmalı",
       "bruschetta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-orta-dunya-lembas",
@@ -61582,7 +62646,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dünya'dan",
       "lembas"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-orta-dunya-miruvor",
@@ -61627,7 +62692,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dünya'dan",
       "miruvor"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-orta-dunya-orman-meyveli-mini-tart",
@@ -61686,7 +62752,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mini",
       "tartlar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-oruk-kebabi",
@@ -61736,7 +62803,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "oruk",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-otlu-borek",
@@ -61810,7 +62878,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "otlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-otlu-fransiz-omleti",
@@ -61861,7 +62930,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fransız",
       "omleti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-otlu-muffin",
@@ -61942,7 +63012,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "otlu",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-otlu-tereyagi",
@@ -61988,7 +63059,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "otlu",
       "tereyağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 1500
   },
   {
     "id": "yc-ajia-ordek-etli-arancini",
@@ -62078,7 +63150,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "etli",
       "arancini"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-orgulu-macar-ekmegi",
@@ -62130,7 +63203,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "macar",
       "ekmeği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ozbek-pilavi",
@@ -62183,7 +63257,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "özbek",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-paccheri-makarna-ve-barbun-yahnisi",
@@ -62249,7 +63324,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balığı",
       "yahnisi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-palamut-bugulama",
@@ -62317,7 +63393,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "palamut",
       "buğulama"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-pamuk-pogaca",
@@ -62381,7 +63458,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "pamuk"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-pan-bagnat",
@@ -62442,7 +63520,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pan",
       "bagnat"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-pancar-corbasi",
@@ -62488,7 +63567,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pancar",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-chef-mezze-pancar-mutabbal",
@@ -62530,7 +63610,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pancar",
       "mutabbal"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-pancar-salatasi",
@@ -62583,7 +63664,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pancar",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-pancarli-dip-sos",
@@ -62635,7 +63717,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pancarlı",
       "dip"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-pancarli-smoothie",
@@ -62677,7 +63760,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pancarlı",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-somon-gravlaks",
@@ -62721,7 +63805,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "somon",
       "gravlaks"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-panettone",
@@ -62823,7 +63908,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "panettone"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-panzanella",
@@ -62880,7 +63966,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "salata",
       "panzanella"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-piraye-restaurant-papagannis",
@@ -62922,7 +64009,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "papagannis",
       "mezesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-parfe",
@@ -62979,7 +64067,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyveli tatlı",
       "parfe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-la-brise-paris-brest-sandvic-pasta",
@@ -63036,7 +64125,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(sandviç",
       "pasta)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-barnies-coffee-kitchen-parmesan-soslu-tavuk",
@@ -63092,7 +64182,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "parmesan",
       "soslu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-parmesanli-kabak-cubuklari-zucchini",
@@ -63171,7 +64262,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "çubukları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-parmesanli-kuskonmaz-corbasi",
@@ -63226,7 +64318,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuşkonmaz",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-parmesanli-tavuk",
@@ -63281,7 +64374,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "parmesanlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-paskalya-coregi",
@@ -63331,7 +64425,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "paskalya",
       "çöreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-surplus-pastirmali-humus",
@@ -63384,7 +64479,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pastırmalı",
       "humus"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-pastirmali-kuru-fasulye",
@@ -63437,7 +64533,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuru",
       "fasulye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-patates-cipsi",
@@ -63475,7 +64572,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "cipsi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-patates-kofteli-cilbir",
@@ -63550,7 +64648,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfteli",
       "çılbır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-patates-kroket",
@@ -63610,7 +64709,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "kroket"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 620
   },
   {
     "id": "yc-patates-muffin",
@@ -63671,7 +64771,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-patates-pancake",
@@ -63718,7 +64819,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "pancake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-falls-in-galata-patates-pureli-limonlu-tavuk",
@@ -63788,7 +64890,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "püreli",
       "limonlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-patates-salatasi",
@@ -63839,7 +64942,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-patates-sufle",
@@ -63898,7 +65002,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "sufle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-patates-tabanli-pizza",
@@ -63960,7 +65065,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "tabanlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-patates-toplari",
@@ -64015,7 +65121,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "topları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-patates-waffle",
@@ -64072,7 +65179,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "waffle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-patates-yemegi",
@@ -64117,7 +65225,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "yemeği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-patatesli-balik-koftesi",
@@ -64184,7 +65293,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patatesli",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-patatesli-borek",
@@ -64244,7 +65354,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "patatesli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-patatesli-kolay-gozleme",
@@ -64288,7 +65399,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kolay",
       "gözleme"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-patatesli-mantar-sote",
@@ -64347,7 +65459,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantar",
       "sote"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-patatesli-omlet",
@@ -64390,7 +65503,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patatesli",
       "omlet"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-patatesli-otlu-gozleme",
@@ -64451,7 +65565,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "otlu",
       "gözleme"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-patatesli-rulo-borek",
@@ -64499,7 +65614,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patatesli",
       "rulo"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-patlican-ezme",
@@ -64546,7 +65662,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "ezme"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-patlican-kebabi",
@@ -64605,7 +65722,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-patlican-kuleleri",
@@ -64667,7 +65785,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "kuleleri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-patlican-musakka",
@@ -64730,7 +65849,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "musakka"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-patlican-oturtma",
@@ -64785,7 +65905,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "oturtma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-patlican-tabanli-pizza",
@@ -64858,7 +65979,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tabanlı",
       "pizza"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-patlicanli-bulgur-pilavi",
@@ -64921,7 +66043,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bulgur",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kosebasi-patlicanli-kebap",
@@ -64974,7 +66097,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcanlı",
       "kebap"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-patlicanli-kofte",
@@ -65046,7 +66170,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "patlıcanlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kosebasi-patlicanli-pide",
@@ -65094,7 +66219,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pide",
       "patlıcanlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-patlicanli-pilav",
@@ -65156,7 +66282,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilav",
       "patlıcanlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-cezayir-restaurant-patlicanli-ravioli",
@@ -65235,7 +66362,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcanlı",
       "ravioli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-yemekyolculugu-pattison-kabagi-dolmasi",
@@ -65296,7 +66424,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabağı",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-pavlova",
@@ -65360,7 +66489,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "pavlova"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-barnies-coffee-kitchen-pazi-yapragina-sarilmis-izgara-hellim",
@@ -65399,7 +66529,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "izgara",
       "hellim"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-frankie-pazili-enginar",
@@ -65472,7 +66603,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "doldurulmuş",
       "enginar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-kiva-pehli-pilavi",
@@ -65555,7 +66687,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yaprak",
       "sarma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-deraliye-restaurant-pekmezli-ayva-dolmasi",
@@ -65625,7 +66758,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ayva",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-pekmezli-kurabiye",
@@ -65682,7 +66816,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "pekmezli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-patlicanli-penne-makarna",
@@ -65729,7 +66864,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(patlıcanlı",
       "makarna)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-pesto-soslu-kabak-dilimleri",
@@ -65789,7 +66925,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "dilimleri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-eataly-istanbul-pesto-soslu-makarna",
@@ -65842,7 +66979,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "al",
       "a)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-pesto-soslu-tavuk-salatasi",
@@ -65907,7 +67045,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-pesmelba",
@@ -65954,7 +67093,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "peşmelba"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-peynir-dolgulu-kabak-cicegi-kizartmasi",
@@ -66031,7 +67171,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çiçeği",
       "kızartması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-peynir-dolgulu-kirmizi-biberler",
@@ -66068,7 +67209,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kırmızı",
       "biberler"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-izgara-meyve",
@@ -66106,7 +67248,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "izgara",
       "meyve"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-crepe-fondue-peynir-fondu",
@@ -66159,7 +67302,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynir",
       "fondü"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-peynir-soslu-misir",
@@ -66210,7 +67354,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "mısır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ozgur-sef-steakhouse-peynir-soslu-saslik",
@@ -66257,7 +67402,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "şaşlık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-peynir-soslu-yer-elmasi",
@@ -66322,7 +67468,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yer",
       "elması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-peynir-tatlisi",
@@ -66369,7 +67516,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynir",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-peynirli-bulgur-koftesi",
@@ -66433,7 +67581,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bulgur",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-peynirli-corek",
@@ -66494,7 +67643,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çörek",
       "peynirli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-peynirli-izgara-kabak-rulolari",
@@ -66554,7 +67704,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "ruloları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-peynirli-kek",
@@ -66602,7 +67753,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-peynirli-mantarli-galette",
@@ -66693,7 +67845,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "milföy",
       "çubukları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-peynirli-patlican-rulolari",
@@ -66779,7 +67932,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "ruloları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-peynirli-pizza",
@@ -66856,7 +68010,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "peynirli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-peynirli-pogaca",
@@ -66919,7 +68074,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "peynirli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-peynirli-sandal-kabak",
@@ -66966,7 +68122,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sandal",
       "kabak"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-peynirli-sufle",
@@ -67035,7 +68192,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "sufle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-peynirli-tart",
@@ -67095,7 +68253,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-peynirli-tatli-krep",
@@ -67151,7 +68310,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 420
   },
   {
     "id": "yc-peynirli-tereyagi",
@@ -67184,7 +68344,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "tereyağı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 900
   },
   {
     "id": "yc-peynirli-yufka-canaklari",
@@ -67233,7 +68394,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yufka",
       "çanakları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-pirasa-corbasi",
@@ -67327,7 +68489,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pırasa",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-pirasali-kis",
@@ -67407,7 +68570,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pırasalı",
       "kiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-pirasali-omlet",
@@ -67453,7 +68617,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(+12",
       "ay)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-pide-pizza",
@@ -67517,7 +68682,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pide",
       "pizza"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-pideli-kofte",
@@ -67582,7 +68748,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "pideli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-piramit-pasta",
@@ -67628,7 +68795,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "piramit"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-pirinc-corbasi",
@@ -67684,7 +68852,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pirinç",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-pirinc-salatasi",
@@ -67745,7 +68914,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pirinç",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-pirincli-balkabagi-corbasi",
@@ -67776,7 +68946,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabağı",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-pirzola",
@@ -67815,7 +68986,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "et",
       "pirzola"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-pismeyen-cheesecake",
@@ -67865,7 +69037,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pişmeyen",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-pismeyen-kek",
@@ -67912,7 +69085,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pişmeyen",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-34-restaurant-seftali-ve-bademli-tart-kavun-sorbe",
@@ -67994,7 +69168,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kavun",
       "sorbe"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-piyano-kek",
@@ -68071,7 +69246,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "piyano",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-grissini-restaurant-pizza-bianca",
@@ -68113,7 +69289,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "bianca"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-pizza-bufala",
@@ -68156,7 +69333,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "bufala"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-kitchenette-pizza-club-sandwich",
@@ -68224,7 +69402,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "club",
       "sandwich"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 720
   },
   {
     "id": "yc-pizza-margarita",
@@ -68285,7 +69464,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "margherita"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-pizza-pasta",
@@ -68357,7 +69537,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "pasta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-pizza-sosu",
@@ -68415,7 +69596,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "sosu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-polenta",
@@ -68452,7 +69634,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meze",
       "polenta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ponicka",
@@ -68508,7 +69691,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahvaltılık",
       "poniçka"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-porcini-mantarli-ekmek",
@@ -68564,7 +69748,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "porçini",
       "mantarlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-portakal-kremasi",
@@ -68601,7 +69786,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "portakal",
       "kreması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 900
   },
   {
     "id": "yc-portakal-receli",
@@ -68639,7 +69825,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "portakal",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-portakal-recelli-muffin",
@@ -68697,7 +69884,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "reçelli",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-portakalli-cheesecake",
@@ -69287,7 +70475,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "portakallı",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-portakalli-truf",
@@ -69336,7 +70525,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "portakallı",
       "trüf"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-pose-armut-tatlisi",
@@ -69396,7 +70586,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "armut",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-pose-somon",
@@ -69433,7 +70624,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poşe",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-the-globe-restaurant-pose-seftali-ve-sampanyali-granita",
@@ -69503,7 +70695,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şampanyalı",
       "granita"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-pose-yumurtali-kinoa-mucveri",
@@ -69594,7 +70787,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kinoa",
       "mücveri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-prenses-leia-tarcinli-rulo",
@@ -69657,7 +70851,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tarçınlı",
       "ruloları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-pudingli-kek",
@@ -69704,7 +70899,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pudingli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-pudingli-kurabiye",
@@ -69746,7 +70942,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pudingli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-puf-boregi",
@@ -69793,7 +70990,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "puf",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-gokkusagi-kek",
@@ -69878,7 +71076,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "rainbow",
       "(gökkuşağı)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-ramazan-gullaci",
@@ -69923,7 +71122,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ramazan",
       "güllacı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ramazan-serbeti",
@@ -69971,7 +71171,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ramazan",
       "şerbeti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-recelli-kurabiye",
@@ -70023,7 +71224,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "reçelli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-recelli-kuru-pasta",
@@ -70075,7 +71277,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuru",
       "pasta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-recelli-milfoy",
@@ -70111,7 +71314,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "reçelli",
       "milföy"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-rize-usulu-mihlama",
@@ -70156,7 +71360,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "usulü",
       "mıhlama"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-rokfor-soslu-mantarli-tagliatelle",
@@ -70211,7 +71416,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantarlı",
       "tagliatelle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-rokoko",
@@ -70268,7 +71474,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "rokoko"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-rozbif",
@@ -70319,7 +71526,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "et",
       "rozbif"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-rulo-elmali-kurabiye",
@@ -70386,7 +71594,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "rulo",
       "elmalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-rulo-kofte",
@@ -70454,7 +71663,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "rulo"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-rulo-pasta",
@@ -70536,7 +71746,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "rulo"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-rulo-pogaca",
@@ -70604,7 +71815,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "rulo"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-runeberg-keki",
@@ -70671,7 +71883,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "runeberg",
       "keki"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-sade-corek",
@@ -70728,7 +71941,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çörek",
       "sade"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-saganaki",
@@ -70785,7 +71999,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahvaltılık",
       "saganaki"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-lorlu-incir-tatlisi",
@@ -70834,7 +72049,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇ncir",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-salcali-kofte",
@@ -70902,7 +72118,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "salçalı",
       "köfte"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-yada-sushi-salep-soslu-incir",
@@ -70950,7 +72167,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "i̇ncir"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-salepli-muhallebi",
@@ -70996,7 +72214,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "salepli",
       "muhallebi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-salsa-soslu-tavuk",
@@ -71053,7 +72272,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "salsa",
       "soslu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-pastirmali-tavuk",
@@ -71107,7 +72327,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(pastırmalı",
       "tavuk)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-sandvic-ekmegi",
@@ -71156,7 +72377,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sandviç",
       "ekmeği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-sandvic-kurabiye",
@@ -71216,7 +72438,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sandviç",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-sangria",
@@ -71264,7 +72487,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇çecek",
       "sangria"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-saray-helva",
@@ -71306,7 +72530,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "helva",
       "saray"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-sari-mercimek-corbasi",
@@ -71360,7 +72585,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mercimek",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-sarimsak-cayi",
@@ -71402,7 +72628,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sarımsak",
       "çayı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-sarimsakli-kofte",
@@ -71461,7 +72688,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sarımsaklı",
       "köfte"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-sarimsakli-kremali-kofte",
@@ -71522,7 +72750,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sarımsaklı",
       "kremalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-satay-soslu-tavuk",
@@ -71610,7 +72839,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "satay",
       "soslu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-sauerkraut",
@@ -71640,7 +72870,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "turşu",
       "sauerkraut"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-scotch-eggs",
@@ -71748,7 +72979,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(i̇skoç",
       "yumurtası)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-scrambled-egg",
@@ -71786,7 +73018,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "scrambled",
       "egg"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-sebzeli-lazanya",
@@ -71880,7 +73113,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sebzeli",
       "lazanya"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-sebzeli-lo-mein",
@@ -71963,7 +73197,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lo",
       "mein"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-sebzeli-makarna",
@@ -72033,7 +73268,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makarna",
       "sebzeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-sebzeli-nohut-koftesi",
@@ -72103,7 +73339,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nohut",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-sebzeli-omlet",
@@ -72165,7 +73402,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sebzeli",
       "omlet"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-yada-sushi-sebzeli-pilav",
@@ -72213,7 +73451,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilav",
       "sebzeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ozgur-sef-steakhouse-sebzeli-saslik",
@@ -72273,7 +73512,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "şaşlık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-sebzeli-sulu-borek",
@@ -72334,7 +73574,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sebzeli",
       "sulu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-seinfeld-buyuk-salata",
@@ -72390,7 +73631,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "seinfeld'den",
       "büyük"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-seinfeld-calzone",
@@ -72446,7 +73688,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "seinfeld'den",
       "calzone"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-seinfeld-meyve-salatasi",
@@ -72495,7 +73738,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meyve",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-seinfeld-meyveli-corn-flakes",
@@ -72530,7 +73774,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "corn",
       "flakes"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-selanik-gevregi",
@@ -72586,7 +73831,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "selanik",
       "gevreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-sezar-soslu-bruksel-lahanasi",
@@ -72654,7 +73900,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "brüksel",
       "lahanası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-sherlock-holmes-kiymali-tatli-turta",
@@ -72759,7 +74006,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "turta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-doors-akademi-sicak-cikolatali-kek",
@@ -72815,7 +74063,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sıcak",
       "çikolatalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 650
   },
   {
     "id": "yc-sifon-syphon-kahve-tarifi",
@@ -72853,7 +74102,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(syphon)",
       "kahve"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-simit",
@@ -72907,7 +74157,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahvaltılık",
       "simit"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-simit-sandvic",
@@ -72970,7 +74221,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sandviç",
       "simit"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-sirloin-steak",
@@ -73036,7 +74288,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sirloin",
       "steak"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-siyah-cin-pilavi",
@@ -73101,7 +74354,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çin",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-34-restaurant-truf-mantarli-kereviz-pureli-kuzu-kafesi",
@@ -73163,7 +74417,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "kafesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-siyez-bulguru-pilavi",
@@ -73215,7 +74470,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "bulguru",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-snickers-pasta",
@@ -73315,7 +74571,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "snickers"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-sodali-pogaca",
@@ -73372,7 +74629,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "sodalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-soguk-corba",
@@ -73427,7 +74685,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çorba",
       "soğuk"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-somon",
@@ -73470,7 +74729,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-somon-burger",
@@ -73538,7 +74798,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "somon",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-somon-ceviche",
@@ -73589,7 +74850,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "somon",
       "ceviche"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-meze-meze-teras-somon-marin",
@@ -73649,7 +74911,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "somon",
       "marin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-somon-tartar",
@@ -73721,7 +74984,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "somon",
       "tartar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-mums-cafe-somonlu-kuskonmazli-kis",
@@ -73791,7 +75055,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuşkonmazlı",
       "kiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-sosisli-makarna",
@@ -73833,7 +75098,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makarna",
       "sosisli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-soslu-kanat",
@@ -73898,7 +75164,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "kanat"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-soslu-karnabahar",
@@ -73954,7 +75221,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "karnabahar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-soslu-misir",
@@ -73994,7 +75262,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "mısır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-soslu-salatalik",
@@ -74035,7 +75304,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "salatalık"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-soslu-somon",
@@ -74099,7 +75369,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-soslu-tavuk-kanatlari",
@@ -74158,7 +75429,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "kanatları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-read-cafe-sote-ispanak-ve-patates-pureli-tavada-somon",
@@ -74216,7 +75488,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavada",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-sote-sebzeli-kofte",
@@ -74286,7 +75559,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sote",
       "sebzeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ajia-sous-vide-antrikot",
@@ -74352,7 +75626,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pişen)",
       "antrikot"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-soya-soslu-balik-boregi",
@@ -74404,7 +75679,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-soya-sosu-ile-kizarmis-susamli-tofu",
@@ -74457,7 +75733,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "susamlı",
       "tofu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-italyan-makarna",
@@ -74507,7 +75784,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "alla",
       "chitarra"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-sofra-london-su-muhallebisi",
@@ -74562,7 +75840,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "su",
       "muhallebisi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-su-muhallebisi",
@@ -74604,7 +75883,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "su",
       "muhallebisi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-sucuklu-pizza",
@@ -74666,7 +75946,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "sucuklu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-sucuklu-yumurta",
@@ -74701,7 +75982,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sucuklu",
       "yumurta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-sucuklu-ispanakli-kis",
@@ -74778,7 +76060,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ispanaklı",
       "kiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-sufle",
@@ -74841,7 +76124,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolatalı tatlı",
       "sufle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-sumakli-limonata",
@@ -74884,7 +76168,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sumaklı",
       "limonata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-susam-helvasi",
@@ -74925,7 +76210,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "susam",
       "helvası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-susamli-kurabiye",
@@ -74980,7 +76266,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "susamlı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-susamli-pogaca",
@@ -75029,7 +76316,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "susamlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-susamli-simit",
@@ -75082,7 +76370,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "susamlı",
       "simit"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 520
   },
   {
     "id": "yc-sunger-kek",
@@ -75135,7 +76424,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kek",
       "sünger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-sut-burger",
@@ -75217,7 +76507,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "süt",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-sut-receli",
@@ -75250,7 +76541,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "süt",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 1200
   },
   {
     "id": "yc-sutlu-brokoli-corbasi",
@@ -75296,7 +76588,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "brokoli",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-sutlu-irmik-tatlisi",
@@ -75340,7 +76633,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇rmik",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kitchenette-sutlu-kabak-tatlisi",
@@ -75389,7 +76683,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-sutlu-nuriye",
@@ -75445,7 +76740,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sütlü",
       "nuriye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-sutlu-ekmek",
@@ -75488,7 +76784,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sütlü",
       "yuvarlak"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-naif-istanbul-suzme-yogurt-soslu-kadayifa-sarili-citir-mucver",
@@ -75564,7 +76861,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çıtır",
       "mücver"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-saksuka",
@@ -75618,7 +76916,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "meze",
       "şakşuka"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-salgamli-kisir",
@@ -75678,7 +76977,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şalgamlı",
       "kısır"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-sarap-soslu-midye",
@@ -75729,7 +77029,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "midye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-sarlot-pasta",
@@ -75807,7 +77108,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pasta",
       "şarlot"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kosebasi-saslik-kebabi",
@@ -75853,7 +77155,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şaşlık",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-seftali-kompostosu",
@@ -75891,7 +77194,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şeftali",
       "kompostosu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-seftali-kurabiye",
@@ -75953,7 +77257,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kurabiye",
       "şeftali"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-seftali-tatlisi",
@@ -76036,7 +77341,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şeftali",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-seftalili-kek",
@@ -76087,7 +77393,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şeftalili",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-seftalili-rustik-pay",
@@ -76154,7 +77461,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "rustik",
       "pay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-seftalili-tart",
@@ -76220,7 +77528,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şeftalili",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 650
   },
   {
     "id": "yc-seftalili-yaz-keki",
@@ -76275,7 +77584,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yaz",
       "keki"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-sehriye-pilavi",
@@ -76316,7 +77626,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "şehriye",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 210
   },
   {
     "id": "yc-sehriyeli-tavuk-salatasi",
@@ -76387,7 +77698,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-seker-hamurlu-kurabiye",
@@ -76452,7 +77764,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamurlu",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-sekersiz-dondurma",
@@ -76489,7 +77802,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dondurma",
       "şekersiz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-sekersiz-turk-kahveli-kurabiye",
@@ -76546,7 +77860,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kahveli",
       "kurabiyeler"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-sekersiz-unsuz-kek",
@@ -76603,7 +77918,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "unsuz",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-sekersiz-unsuz-kurabiye",
@@ -76641,7 +77957,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "unsuz",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-sekersiz-yulafli-kurabiye",
@@ -76694,7 +78011,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yulaflı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-serbetli-irmik-tatlisi",
@@ -76759,7 +78077,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "i̇rmik",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ar-ruha-restaurant-sillik-tatlisi",
@@ -76815,7 +78134,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(şıllıki)",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-sis-kebap",
@@ -76863,7 +78183,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kebap",
       "şiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-sis-kofte",
@@ -76903,7 +78224,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "köfte",
       "şiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-suba-salatasi",
@@ -76956,7 +78278,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "salata",
       "şuba"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tabbule-salatasi",
@@ -77010,7 +78333,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tabbule",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-tahilli-ekmek",
@@ -77056,7 +78380,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "tahıllı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-tahilsiz-muffin",
@@ -77107,7 +78432,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tahılsız",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-tahin-kremali-kek",
@@ -77191,7 +78517,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tahin-kremali-profiterol",
@@ -77255,7 +78582,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kremalı",
       "profiterol"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tahin-pekmezli-kurabiye",
@@ -77309,7 +78637,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pekmezli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 520
   },
   {
     "id": "yc-tahin-soslu-karnabahar",
@@ -77358,7 +78687,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "karnabahar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-tahin-soslu-levrek",
@@ -77408,7 +78738,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "levrek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-the-globe-restaurant-tahin-soslu-cikolata-tup",
@@ -77493,7 +78824,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çikolata",
       "tüp"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-izaka-restaurant-tahinli-akitma",
@@ -77552,7 +78884,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tahinli",
       "akıtma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tahinli-cevizli-kurabiye",
@@ -77599,7 +78932,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-tahinli-corek",
@@ -77659,7 +78993,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çörek",
       "tahinli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-tahinli-fudge-biskuvi",
@@ -77704,7 +79039,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fudge",
       "bisküvi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tahinli-kek",
@@ -77758,7 +79094,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tahinli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-tahinli-kurabiye",
@@ -77806,7 +79143,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tahinli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 650
   },
   {
     "id": "yc-tuti-restaurant-topik-ve-sogan-dolmasi",
@@ -77911,7 +79249,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soğan",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-talas-boregi",
@@ -77969,7 +79308,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "talaş",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-tam-tahilli-pancake",
@@ -78016,7 +79356,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tahıllı",
       "pancake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-go-meso-tandoori-tavuk-tikka",
@@ -78090,7 +79431,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(tandırda)",
       "tikka"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tantuni",
@@ -78138,7 +79480,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "et",
       "tantuni"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-tarcinli-elma-toplari",
@@ -78180,7 +79523,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elma",
       "topları"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-tarcinli-kek",
@@ -78240,7 +79584,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kek",
       "tarçınlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-tarcinli-kurabiye",
@@ -78294,7 +79639,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tarçınlı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-tarcinli-zebra-puding",
@@ -78348,7 +79694,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "zebra",
       "puding"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-tart",
@@ -78408,7 +79755,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hamur i̇şi",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tartar-sos",
@@ -78454,7 +79802,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sos",
       "tartar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-tartar-soslu-tavuklu-kereviz-salatasi",
@@ -78506,7 +79855,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kereviz",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-tarte-tatin",
@@ -78559,7 +79909,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tarte",
       "tatin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-patatesli-nohut-salatasi",
@@ -78626,7 +79977,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nohut",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-tava-boregi",
@@ -78700,7 +80052,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tava",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-cookzone-tavada-antrikot-ve-ispanakli-patates-puresi",
@@ -78784,7 +80137,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "püresi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tavada-pizza",
@@ -78856,7 +80210,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "tavada"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-tavuk-baget",
@@ -78923,7 +80278,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "baget"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-tavuk-cigeri",
@@ -78974,7 +80330,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "ciğeri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-tavuk-fajita",
@@ -79034,7 +80391,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "fajita"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tavuk-gogsu-tatlisi",
@@ -79077,7 +80435,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "göğsü",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-tavuk-kievski",
@@ -79138,7 +80497,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "kievski"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tavuk-koftesi",
@@ -79195,7 +80555,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-tavuk-musuken",
@@ -79245,7 +80606,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "musuken"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-tavuk-piccata",
@@ -79304,7 +80666,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "piccata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tavuk-salatasi",
@@ -79354,7 +80717,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-tavuk-sis",
@@ -79402,7 +80766,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "şiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-tavuklu-borek",
@@ -79468,7 +80833,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "börek",
       "tavuklu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-tavuklu-eriste",
@@ -79529,7 +80895,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuklu",
       "erişte"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-tavuklu-krep",
@@ -79612,7 +80979,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuklu",
       "krep"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-tavuklu-kuskus-salatasi",
@@ -79679,7 +81047,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuskus",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 620
   },
   {
     "id": "yc-tavuklu-makarna",
@@ -79741,7 +81110,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makarna",
       "tavuklu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 540
   },
   {
     "id": "yc-tavuklu-manti",
@@ -79792,7 +81162,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantı",
       "tavuklu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-tavuklu-misir-corbasi",
@@ -79843,7 +81214,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mısır",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-tavuklu-quesadilla",
@@ -79905,7 +81277,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuklu",
       "quesadilla"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-tavuklu-taco",
@@ -79972,7 +81345,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuklu",
       "taco"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-tavuklu-tam-bugday-unlu-makarna",
@@ -80023,7 +81397,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "buğday",
       "unlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-tavuklu-volovan",
@@ -80095,7 +81470,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuklu",
       "volovan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tavuklu-arpa-sehriyeli-corba",
@@ -80166,7 +81542,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "arpa",
       "şehriyeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 290
   },
   {
     "id": "yc-tepsi-kebabi",
@@ -80243,7 +81620,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tepsi",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-tepside-icli-kofte",
@@ -80327,7 +81705,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tepside",
       "i̇çli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 750
   },
   {
     "id": "yc-tuti-restaurant-terbiyeli-karides-ve-levrek-tursusu",
@@ -80426,7 +81805,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "levrek",
       "turşusu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-terbiyeli-eksili-kofte",
@@ -80553,7 +81933,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "şiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-terbiyeli-sebze-corbasi",
@@ -80625,7 +82006,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sebze",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-yogurt-corbasi",
@@ -80679,7 +82061,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yoğurt",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-tereyagli-kurabiye",
@@ -80723,7 +82106,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tereyağlı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-tuti-restaurant-teriyaki-soslu-somon",
@@ -80815,7 +82199,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "soslu",
       "somon"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-testi-kebabi",
@@ -80880,7 +82265,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "testi",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-the-martian-feslegenli-firin-patates",
@@ -80927,7 +82313,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fırın",
       "patates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-tirtil-kurabiye",
@@ -80979,7 +82366,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tırtıl",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tiramisu",
@@ -81034,7 +82422,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "tiramisu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-mascarpone-kremali-tiramisu",
@@ -81081,7 +82470,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "tiramisu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-tiramisu-cupcake",
@@ -81155,7 +82545,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tiramisu",
       "cupcake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-mille-crepe-cake",
@@ -81227,7 +82618,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "crepe",
       "cake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 480
   },
   {
     "id": "yc-tirit",
@@ -81268,7 +82660,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "et",
       "tirit"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-ton-balikli-dev-yumurtalar",
@@ -81317,7 +82710,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "dev",
       "yumurtalar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-ton-balikli-kinoa-salatasi",
@@ -81374,7 +82768,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kinoa",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-ton-balikli-makarna-salatasi",
@@ -81426,7 +82821,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makarna",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-ton-balikli-patates",
@@ -81490,7 +82886,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balıklı",
       "patates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-ton-balikli-wrap",
@@ -81539,7 +82936,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balıklı",
       "wrap"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-yada-sushi-tornado-crab-roll",
@@ -81595,7 +82993,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "roll",
       "sushi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-kosebasi-toros-salatasi",
@@ -81641,7 +83040,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "toros",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-the-globe-restaurant-truf-mantarli-risotto",
@@ -81694,7 +83094,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mantarlı",
       "risotto"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tulum-peynirli-kabak-boregi",
@@ -81751,7 +83152,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabak",
       "böreği"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-tulumba-tatlisi",
@@ -81815,7 +83217,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tulumba",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-turp-salatasi",
@@ -81849,7 +83252,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "turp",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-turplu-yaz-salatasi",
@@ -81895,7 +83299,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yaz",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-tursu",
@@ -81966,7 +83371,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
     "tags": [
       "turşu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-tutmac-corbasi",
@@ -82022,7 +83428,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tutmaç",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-tuzda-balik",
@@ -82062,7 +83469,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "tuzda"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-tuti-restaurant-tuzda-levrek",
@@ -82153,7 +83561,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabuğunda",
       "levrek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 850
   },
   {
     "id": "yc-tuzlu-zeytinli-kek",
@@ -82227,7 +83636,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kek",
       "tuzlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-tuzlu-kurabiye",
@@ -82286,7 +83696,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tuzlu",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-tuzlu-muffin",
@@ -82349,7 +83760,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tuzlu",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-tuzlu-pasta",
@@ -82404,7 +83816,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tuzlu",
       "pasta"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-tukuruk-koftesi",
@@ -82457,7 +83870,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tükürük",
       "köftesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-frankie-tutsulenmis-barlam-baligi",
@@ -82530,7 +83944,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "barlam",
       "balığı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-kiva-un-helvasi",
@@ -82567,7 +83982,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "un",
       "helvası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-un-kurabiyesi",
@@ -82623,7 +84039,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "un",
       "kurabiyesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-unsuz-patates-keki",
@@ -82681,7 +84098,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patates",
       "keki"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-unsuz-sufle",
@@ -82741,7 +84159,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "unsuz",
       "sufle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-tapasuma-restaurant-centik-kebabi",
@@ -82843,7 +84262,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çentik",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-uc-katmanli-kek",
@@ -82898,7 +84318,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "üç",
       "katmanlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-uc-malzemeli-cheesecake",
@@ -82940,7 +84361,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "malzemeli",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-uc-malzemeli-fistik-ezmeli-kurabiye",
@@ -82977,7 +84399,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ezmeli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-uc-malzemeli-hindistan-cevizli-kurabiye",
@@ -83015,7 +84438,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "cevizli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-uc-malzemeli-kurabiye",
@@ -83049,7 +84473,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "malzemeli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-uc-malzemeli-misir-gevrekli-kurabiye",
@@ -83083,7 +84508,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mısır",
       "gevrekli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-uc-malzemeli-nutellali-kurabiye",
@@ -83118,7 +84544,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "nutellalı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-uc-peynirli-ekmek",
@@ -83181,7 +84608,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "peynirli",
       "ekmek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 720
   },
   {
     "id": "yc-sofra-london-uclu-baklava",
@@ -83234,7 +84662,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "üçlü",
       "baklava"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-uzum-receli",
@@ -83274,7 +84703,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "üzüm",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-vacilando-uzumlu-rustik-tart",
@@ -83341,7 +84771,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "rustik",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-cipriani-vanilyali-merengli-pasta",
@@ -83429,7 +84860,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "merengli",
       "pasta)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-vanilya-ozutu",
@@ -83458,7 +84890,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vanilya",
       "özütü"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-vanilyali-buzlu-yesil-cay",
@@ -83510,7 +84943,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yeşil",
       "çay"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-vegan-brownie",
@@ -83565,7 +84999,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vegan",
       "brownie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-vegan-burger",
@@ -83674,7 +85109,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vegan",
       "burger"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-vegan-waffle",
@@ -83729,7 +85165,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vegan",
       "waffle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-vejetaryen-pizza",
@@ -83805,7 +85242,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pizza",
       "vejetaryen"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-balik-corbasi",
@@ -83896,7 +85334,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "balık",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-go-meso-vietnamese-noodle",
@@ -83956,7 +85395,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vietnamese",
       "noodle"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-vinaigrette-sos",
@@ -83989,7 +85429,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "sos",
       "vinaigrette"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-visne-dolgulu-limonlu-muffin",
@@ -84060,7 +85501,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "limonlu",
       "muffin"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 280
   },
   {
     "id": "yc-visne-kompostosu",
@@ -84098,7 +85540,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vişne",
       "kompostosu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-visne-receli",
@@ -84136,7 +85579,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vişne",
       "reçeli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-visneli-kek",
@@ -84184,7 +85628,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vişneli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-visneli-kup",
@@ -84240,7 +85685,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "vişneli",
       "kup"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-raika-visneli-ekmek-kadayifi",
@@ -84285,7 +85731,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "kadayıfı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-the-dish-restaurant-volcano-kek",
@@ -84333,7 +85780,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "volcano",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-waitress-meyveli-chicago-tatlisi",
@@ -84403,7 +85851,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "chicago",
       "turtası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-wookie-kurabiyesi",
@@ -84460,7 +85909,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "wookie",
       "cookie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-dem-karakoy-yaban-mantarli-truflu-kis",
@@ -84557,7 +86007,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "trüflü",
       "kiş"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-yaban-mersinli-cheesecake",
@@ -84622,7 +86073,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mersinli",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-limonata-teras-yaban-mersinli-cheesecake",
@@ -84684,7 +86136,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mersinli",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-yaban-mersinli-kek",
@@ -84742,7 +86195,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mersinli",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-yaban-mersinli-kolay-tart",
@@ -84804,7 +86258,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kolay",
       "tart"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-yaban-mersinli-scone",
@@ -84867,7 +86322,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mersinli",
       "scone"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-yaban-mersinli-tavuk",
@@ -84934,7 +86390,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yaban",
       "mersinli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-yaban-mersinli-kakaolu-cheesecake",
@@ -84997,7 +86454,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kakaolu",
       "cheesecake"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-yabani-mantarli-makarna",
@@ -85051,7 +86509,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yabani",
       "mantarlı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-yagsiz-unsuz-makaron-kurabiye",
@@ -85084,7 +86543,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "makaron",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 100
   },
   {
     "id": "yc-yakisoba-pan-sandvic",
@@ -85148,7 +86608,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yakisoba",
       "pan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-yalanci-cezerye",
@@ -85204,7 +86665,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yalancı",
       "cezerye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 80
   },
   {
     "id": "yc-go-meso-yapis-yapis-cikolata",
@@ -85265,7 +86727,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yapış",
       "çikolata"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-yaprak-patates",
@@ -85330,7 +86793,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yaprak",
       "patates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-kiva-yenidunya-kebabi",
@@ -85380,7 +86844,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yenidünya",
       "kebabı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-yer-elmali-yogurt-corbasi",
@@ -85437,7 +86902,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(+8",
       "ay)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-yer-elmasi-corbasi",
@@ -85487,7 +86953,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elması",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-yer-elmasi-kizartmasi",
@@ -85533,7 +87000,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elması",
       "kızartması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-parle-yer-elmasi-salatasi",
@@ -85572,7 +87040,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elması",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-yer-fistigi-ezmeli-kurabiye",
@@ -85611,7 +87080,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ezmeli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-yer-fistikli-krokan",
@@ -85646,7 +87116,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "fıstıklı",
       "krokan"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-yer-fistikli-patlican-salatasi",
@@ -85699,7 +87170,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "patlıcan",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-yesil-cayli-bogurtlenli-smoothie",
@@ -85746,7 +87218,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "böğürtlenli",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-vacilando-istanbul-yesil-cayli-yaseminli-mus",
@@ -85790,7 +87263,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yaseminli",
       "mus"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-yesil-elma-mousse",
@@ -85843,7 +87317,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "elma",
       "mousse"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 1200
   },
   {
     "id": "yc-yesil-elmali-kereviz-salatasi",
@@ -85892,7 +87367,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kereviz",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-yesil-elmali-maydanoz-suyu",
@@ -85931,7 +87407,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "maydanoz",
       "suyu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 80
   },
   {
     "id": "yc-yesil-elmali-lahana-salatasi",
@@ -85979,7 +87456,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "lahana",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-yesil-elmali-tavuk-salatasi",
@@ -86053,7 +87531,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tavuk",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-yesil-mercimek-salatasi",
@@ -86113,7 +87592,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mercimek",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-yesil-mercimekli-borek",
@@ -86190,7 +87670,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yeşil",
       "mercimekli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-yesil-smoothie",
@@ -86234,7 +87715,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yeşil",
       "smoothie"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-cin-gozlemesi",
@@ -86286,7 +87768,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çin",
       "gözlemesi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-yilbasi-hindisi",
@@ -86366,7 +87849,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yılbaşı",
       "hindisi"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-yildiz-anasonlu-hurmali-bar",
@@ -86420,7 +87904,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "hurmalı",
       "bar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-yoda-soda",
@@ -86475,7 +87960,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yoda",
       "soda"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-ar-ruha-restaurant-yogurt-corbasi",
@@ -86523,7 +88009,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yoğurt",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-yogurt-tatlisi",
@@ -86584,7 +88071,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yoğurt",
       "tatlısı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-yogurtlu-mahlepli-kurabiye",
@@ -86652,7 +88140,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "mahlepli",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-yogurtlu-musli",
@@ -86704,7 +88193,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yoğurtlu",
       "müsli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   },
   {
     "id": "yc-semizotu-salatasi",
@@ -86748,7 +88238,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "semizotu",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-yoruk-sutlaci",
@@ -86800,7 +88291,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yörük",
       "sütlacı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-yufkali-pilav",
@@ -86872,7 +88364,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pilav",
       "yufkalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-yufkali-sut-turtasi",
@@ -86925,7 +88418,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "süt",
       "turtası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 550
   },
   {
     "id": "yc-yulafli-kurabiye",
@@ -86986,7 +88480,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yulaflı",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-yulafli-mms-kurabiye",
@@ -87041,7 +88536,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "m&m’s",
       "kurabiye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-yumurta-dolmasi",
@@ -87088,7 +88584,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yumurta",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-cin-pilavi",
@@ -87138,7 +88635,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "çin",
       "pilavı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-yumurtali-domates-dolmasi",
@@ -87189,7 +88687,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "domates",
       "dolması"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-yumurtali-otlu-pide",
@@ -87265,7 +88764,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yumurtalı",
       "otlu"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-yumurtali-pesto-soslu-ekmek-dilimleri",
@@ -87337,7 +88837,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "dilimleri"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-yumurtali-pide",
@@ -87388,7 +88889,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pide",
       "yumurtalı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 700
   },
   {
     "id": "yc-kuzu-kapama",
@@ -87466,7 +88968,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kuzu",
       "kapama"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 800
   },
   {
     "id": "yc-orta-dunya-athelas-cayi",
@@ -87509,7 +89012,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "athelas",
       "çayı"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 50
   },
   {
     "id": "yc-zahterli-ekmek",
@@ -87586,7 +89090,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "zahterli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-kaserol-zarzuella",
@@ -87668,7 +89173,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(i̇spanyol",
       "kavurması)"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 500
   },
   {
     "id": "yc-zebra-kek",
@@ -87717,7 +89223,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "zebra",
       "kek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-zencefilli-bal-kabagi-corbasi",
@@ -87784,7 +89291,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "kabağı",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-zencefilli-gazoz",
@@ -87841,7 +89349,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "zencefilli",
       "gazoz"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 120
   },
   {
     "id": "yc-geraldine-cooks-zencefilli-havuc-corbasi",
@@ -87892,7 +89401,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "havuç",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 150
   },
   {
     "id": "yc-zencefilli-humus",
@@ -87951,7 +89461,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "zencefilli",
       "humus"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 320
   },
   {
     "id": "yc-zencefilli-levrek",
@@ -88006,7 +89517,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "zencefilli",
       "levrek"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-zencefilli-pirinc-salatasi",
@@ -88068,7 +89580,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "pirinç",
       "salatası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-zencefilli-tavuk-ve-pilav",
@@ -88132,7 +89645,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ve",
       "pilav"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 600
   },
   {
     "id": "yc-zerde",
@@ -88178,7 +89692,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "tatlı",
       "zerde"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 200
   },
   {
     "id": "yc-zerdecalli-spagetti",
@@ -88237,7 +89752,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "zerdeçallı",
       "spagetti"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 450
   },
   {
     "id": "yc-zeytinli-acma",
@@ -88297,7 +89813,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "zeytinli",
       "açma"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 300
   },
   {
     "id": "yc-zeytinli-ekmek",
@@ -88344,7 +89861,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "ekmek",
       "zeytinli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 400
   },
   {
     "id": "yc-zeytinli-pogaca",
@@ -88396,7 +89914,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "poğaça",
       "zeytinli"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 250
   },
   {
     "id": "yc-zeytinyagli-erikli-enginar",
@@ -88450,7 +89969,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "erikli",
       "enginar"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 180
   },
   {
     "id": "yc-namli-gurme-zeytinyagli-taze-fasulye",
@@ -88500,7 +90020,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "taze",
       "fasulye"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 220
   },
   {
     "id": "yc-yemekyolculugundan-zeytinyagli-yesil-domates",
@@ -88550,7 +90071,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "yeşil",
       "domates"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 190
   },
   {
     "id": "yc-zurek-corbasi",
@@ -88628,7 +90150,8 @@ export const YEMEKCOM_RECIPES: Recipe[] = [
       "(jurek)",
       "çorbası"
     ],
-    "cuisine": "Türk"
+    "cuisine": "Türk",
+    "caloriesPerServing": 350
   }
 ];
 

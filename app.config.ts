@@ -1,5 +1,7 @@
 import { ExpoConfig } from "expo/config";
 
+const googleIosUrlScheme = process.env.EXPO_PUBLIC_GOOGLE_IOS_URL_SCHEME;
+
 const config: ExpoConfig = {
   name: "SwipeBite",
   slug: "swipebite",
@@ -7,12 +9,31 @@ const config: ExpoConfig = {
   version: "0.1.0",
   orientation: "portrait",
   userInterfaceStyle: "light",
+  icon: "./assets/icon.png",
+  splash: {
+    image: "./assets/splash-icon.png",
+    resizeMode: "contain",
+    backgroundColor: "#FAF7F2",
+  },
+  runtimeVersion: { policy: "appVersion" },
+  updates: {
+    url: "https://u.expo.dev/e0ff18b9-1a5a-4ca1-8876-978212ef5d62",
+  },
   ios: {
     supportsTablet: false,
     bundleIdentifier: "app.swipebite",
+    appleTeamId: "23CWBG7W63",
+    usesAppleSignIn: true,
+    infoPlist: {
+      ITSAppUsesNonExemptEncryption: false,
+    },
   },
   android: {
     package: "app.swipebite",
+    adaptiveIcon: {
+      foregroundImage: "./assets/adaptive-icon.png",
+      backgroundColor: "#FAF7F2",
+    },
     // Note: expo-share-intent plugin auto-injects the SEND/text intent-filter.
     // The `scheme: "swipebite"` at the root also auto-generates the VIEW filter
     // for deep links, so no manual intentFilters block is needed here.
@@ -20,6 +41,7 @@ const config: ExpoConfig = {
   plugins: [
     "expo-router",
     "expo-font",
+    "expo-apple-authentication",
     [
       "expo-share-intent",
       {
@@ -30,12 +52,28 @@ const config: ExpoConfig = {
         androidIntentFilters: ["text/*"],
       },
     ],
+    // Only include the Google Sign-In plugin when its iOS URL scheme is
+    // configured. EAS CLI runs `expo config` with EXPO_NO_DOTENV=1 which
+    // would otherwise leave the scheme blank and fail plugin validation.
+    ...(googleIosUrlScheme
+      ? [
+          [
+            "@react-native-google-signin/google-signin",
+            { iosUrlScheme: googleIosUrlScheme },
+          ] as [string, { iosUrlScheme: string }],
+        ]
+      : []),
   ],
   extra: {
     supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,
     supabaseAnonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
     openaiApiKey: process.env.EXPO_PUBLIC_OPENAI_API_KEY,
+    googleWebClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
+    googleIosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
     useMockData: process.env.EXPO_PUBLIC_USE_MOCK_DATA ?? "true",
+    eas: {
+      projectId: "e0ff18b9-1a5a-4ca1-8876-978212ef5d62",
+    },
   },
 };
 

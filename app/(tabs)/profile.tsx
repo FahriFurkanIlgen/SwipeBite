@@ -7,6 +7,7 @@ import {
   ChevronRight,
   Edit3,
   HelpCircle,
+  Lightbulb,
   LogOut,
   Settings2,
   Shield,
@@ -15,6 +16,7 @@ import {
 
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
+import { CoachMark } from "@/components/ui/CoachMark";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
@@ -22,6 +24,7 @@ import { useRecipesStore } from "@/store/recipesStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { useStatsStore } from "@/store/statsStore";
+import { useTutorialStore } from "@/store/tutorialStore";
 
 export default function ProfileScreen() {
   const user = useAuthStore((s) => s.user);
@@ -33,6 +36,12 @@ export default function ProfileScreen() {
   const recipes = useRecipesStore((s) => s.items);
   const pantryItems = usePantryStore((s) => s.items);
   const session = useSessionStore((s) => s.session);
+
+  const resetTutorials = useTutorialStore((s) => s.resetAll);
+  const handleResetTutorial = React.useCallback(() => {
+    void resetTutorials();
+    router.push("/(onboarding)/tutorial");
+  }, [resetTutorials]);
 
   const totalCooked = Object.values(cookCounts).reduce((a, b) => a + b, 0);
   const sessionsRun = session ? 1 : 0;
@@ -269,6 +278,13 @@ export default function ProfileScreen() {
             border
             onPress={() => router.push("/settings/help")}
           />
+          <SettingsRow
+            icon={Lightbulb}
+            label="Tanıtımı tekrar göster"
+            sub="Uygulama turunu yeniden başlat"
+            border
+            onPress={handleResetTutorial}
+          />
           <Pressable
             onPress={signOut}
             style={[
@@ -292,6 +308,11 @@ export default function ProfileScreen() {
 
         <View style={{ height: 100 }} />
       </ScrollView>
+      <CoachMark
+        storageKey="inviteCoach"
+        title="Aile üyesini davet et"
+        description="Profilinden 'Eve davet et' diyerek bir bağlantı paylaş. Eşin/ailen aynı ev hesabına katıldığında birlikte kaydırıp eşleşebilirsiniz."
+      />
     </Screen>
   );
 }

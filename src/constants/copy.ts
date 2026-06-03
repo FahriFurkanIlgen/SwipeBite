@@ -29,6 +29,16 @@ export const t = {
       "Devam ederek Kullanım Koşulları ve Gizlilik Politikası’nı kabul edersiniz.",
     emailPlaceholder: "E-posta adresin",
     namePlaceholder: "Adın",
+    otpTitle: "Doğrulama kodu",
+    otpSubtitle: (email: string) =>
+      `${email} adresine 6 haneli bir kod gönderdik.`,
+    otpPlaceholder: "6 haneli kod",
+    sendCode: "Kod gönder",
+    verifyCode: "Doğrula",
+    resendCode: "Kodu tekrar gönder",
+    codeSent: "Kod gönderildi. Gelen kutunu kontrol et.",
+    invalidCode: "Kod hatalı veya süresi dolmuş.",
+    invalidEmail: "Geçerli bir e-posta gir.",
   },
   onboarding: {
     step: (i: number, n: number) => `Adım ${i} / ${n}`,
