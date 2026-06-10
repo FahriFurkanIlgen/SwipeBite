@@ -108,18 +108,50 @@ export const pushService = {
     });
   },
 
-  /** Daily 18:00 "what's for dinner" nudge — scheduled as a delay from now. */
-  async scheduleDinnerNudge(): Promise<void> {
+  /** Cancel any pending notifications matching a given `data.kind`. */
+  async cancelByKind(kind: string): Promise<void> {
+    try {
+      const scheduled = await Notifications.getAllScheduledNotificationsAsync();
+      await Promise.all(
+        scheduled
+          .filter(
+            (n) => (n.content.data as { kind?: string } | null)?.kind === kind,
+          )
+          .map((n) =>
+            Notifications.cancelScheduledNotificationAsync(n.identifier),
+          ),
+      );
+    } catch {
+      // ignore
+    }
+  },
+
+  /** Daily 17:00 pantry-based meal suggestion nudge — scheduled as a delay
+   *  from now. Lists a few recipes the household can cook right now with the
+   *  ingredients already in their pantry (no swiping required).
+   *  Idempotent: cancels any previously scheduled dinner nudge first so
+   *  repeated calls (e.g. on every auth/hydrate cycle) don't stack up. */
+  async scheduleDinnerNudge(recipeTitles: string[] = []): Promise<void> {
+    // Drop existing dinner nudges before scheduling a fresh one.
+    await this.cancelByKind("dinner_nudge");
     const now = new Date();
     const target = new Date();
-    target.setHours(18, 0, 0, 0);
+    target.setHours(17, 0, 0, 0);
     if (target.getTime() <= now.getTime()) {
       target.setDate(target.getDate() + 1);
     }
     const seconds = Math.floor((target.getTime() - now.getTime()) / 1000);
+    const list = recipeTitles
+      .map((t) => t.trim())
+      .filter(Boolean)
+      .slice(0, 3);
+    const body =
+      list.length > 0
+        ? `Bugün kilerindeki malzemelerle şunları yapabilirsin: ${list.join(", ")}.`
+        : "Kilerindeki malzemelere bir göz at — bugün ne pişirebileceğini görelim.";
     await this.scheduleAt({
-      title: "Bugün ne yesek?",
-      body: "Birkaç kart kaydır, 2 dakikada karar verelim.",
+      title: "Kilerinle bugün ne yapsak?",
+      body,
       triggerSeconds: seconds,
       data: { kind: "dinner_nudge" },
     });

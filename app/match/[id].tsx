@@ -1,7 +1,7 @@
 import React from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { router } from "expo-router";
-import { Image } from "expo-image";
+import { RecipeImage } from "@/components/ui/RecipeImage";
 import { LinearGradient } from "expo-linear-gradient";
 import {
   ArrowLeft,
@@ -35,6 +35,7 @@ import { useSessionStore } from "@/store/sessionStore";
 import { useRecipesStore } from "@/store/recipesStore";
 import { useAuthStore } from "@/store/authStore";
 import { usePantryStore } from "@/store/pantryStore";
+import { getRecipeImageSource } from "@/features/recipes/recipeImage";
 
 interface ReasonRow {
   icon: LucideIcon;
@@ -47,6 +48,8 @@ export default function MatchScreen() {
   const match = useSessionStore((s) => s.match);
   const reset = useSessionStore((s) => s.reset);
   const recipes = useRecipesStore((s) => s.items);
+  const customPool = useSessionStore((s) => s.customPool);
+  const candidates = useSessionStore((s) => s.candidates);
   const pantry = usePantryStore((s) => s.items);
   const user = useAuthStore((s) => s.user);
   const household = useAuthStore((s) => s.household);
@@ -82,9 +85,21 @@ export default function MatchScreen() {
     transform: [{ scale: badgeScale.value }],
   }));
 
+  // Influencer / custom-pool sessions deal recipes that don't live in the
+  // global recipes store. Include the session's custom pool and the dealt
+  // candidates so the match (and its runner-ups) can always be resolved —
+  // otherwise the screen returned null and left a blank white page.
+  const recipeLookup = React.useMemo(() => {
+    const map = new Map<string, (typeof recipes)[number]>();
+    for (const r of recipes) map.set(r.id, r);
+    if (customPool) for (const r of customPool) map.set(r.id, r);
+    for (const r of candidates) map.set(r.id, r);
+    return map;
+  }, [recipes, customPool, candidates]);
+
   const findRecipe = React.useCallback(
-    (id: string) => recipes.find((r) => r.id === id),
-    [recipes],
+    (id: string) => recipeLookup.get(id),
+    [recipeLookup],
   );
 
   if (!match) {
@@ -111,7 +126,33 @@ export default function MatchScreen() {
   }
 
   const recipe = findRecipe(match.recipeId);
-  if (!recipe) return null;
+  if (!recipe) {
+    // Defensive: the matched recipe couldn't be resolved from any pool.
+    // Show the empty state instead of returning null (blank white screen).
+    return (
+      <Screen background="bg">
+        <View style={styles.empty}>
+          <Text variant="h2" weight="700">
+            Eşleşme yüklenemedi
+          </Text>
+          <Text variant="body" color={colors.slate} align="center">
+            Eşleşen tarif bulunamadı. Ana sayfadan tekrar deneyebilirsin.
+          </Text>
+          <Pressable
+            onPress={() => {
+              reset();
+              router.replace("/(tabs)");
+            }}
+            style={styles.emptyBtn}
+          >
+            <Text variant="bodyMedium" weight="700" color={colors.ink}>
+              Ana sayfaya dön
+            </Text>
+          </Pressable>
+        </View>
+      </Screen>
+    );
+  }
 
   const pantryNames = pantry.map((p) => p.name.toLowerCase());
   const pantryHits = recipe.ingredients.filter((ing) =>
@@ -177,9 +218,10 @@ export default function MatchScreen() {
         {/* Hero */}
         <View style={styles.hero}>
           <Animated.View style={[StyleSheet.absoluteFillObject, heroStyle]}>
-            <Image
-              source={{ uri: recipe.imageUrl }}
+            <RecipeImage
+              source={getRecipeImageSource(recipe)}
               style={StyleSheet.absoluteFillObject}
+              containerStyle={StyleSheet.absoluteFill}
               contentFit="cover"
             />
           </Animated.View>
@@ -352,9 +394,11 @@ export default function MatchScreen() {
                       onPress={() => router.push(`/recipe/${r.id}`)}
                       style={styles.altRow}
                     >
-                      <Image
-                        source={{ uri: r.imageUrl }}
+                      <RecipeImage
+                        source={getRecipeImageSource(r)}
                         style={styles.altImg}
+                        containerStyle={styles.altImg}
+                        placeholderRadius={10}
                         contentFit="cover"
                       />
                       <View style={{ flex: 1 }}>
@@ -408,9 +452,11 @@ export default function MatchScreen() {
                       onPress={() => router.push(`/recipe/${r.id}`)}
                       style={styles.altRow}
                     >
-                      <Image
-                        source={{ uri: r.imageUrl }}
+                      <RecipeImage
+                        source={getRecipeImageSource(r)}
                         style={styles.altImg}
+                        containerStyle={styles.altImg}
+                        placeholderRadius={10}
                         contentFit="cover"
                       />
                       <View style={{ flex: 1 }}>

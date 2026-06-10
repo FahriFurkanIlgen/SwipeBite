@@ -12,6 +12,7 @@ import { computeMatch } from "@/features/ai/matchEngine";
 import {
   buildDeckForMealPlan,
   Course,
+  pantryMatchFraction,
   recommendMealPlanForNow,
 } from "@/features/recipes/recipeClassifier";
 import { useAuthStore } from "@/store/authStore";
@@ -19,6 +20,12 @@ import { usePantryStore } from "@/store/pantryStore";
 import { useRecipesStore } from "@/store/recipesStore";
 import { useStatsStore } from "@/store/statsStore";
 import { sessionService } from "@/features/session/sessionService";
+import {
+  getRemoteMatch,
+  subscribeToPresence,
+  type PresenceHandle,
+  type PresenceMember,
+} from "@/features/session/sessionService";
 import { pushService } from "@/features/notifications/pushService";
 import { uuidV4 } from "@/utils/id";
 
@@ -29,6 +36,21 @@ interface SessionState {
   votes: Vote[];
   match: MatchResult | null;
   unsubscribe: (() => void) | null;
+  /**
+   * Optional fixed recipe pool. When set, the deck is built solely from
+   * these recipes (e.g. “Fenomen Tarifler”) instead of the global catalogue,
+   * and the session stays local (no Supabase writes / realtime sync).
+   */
+  customPool: Recipe[] | null;
+  /**
+   * True when this is a multi-person session synced over Supabase Realtime
+   * (lobby ready-up + end-of-deck waiting room apply). False for solo/mock.
+   */
+  isLive: boolean;
+  /** Live lobby/waiting roster from Realtime presence. */
+  lobby: PresenceMember[];
+  /** Presence channel handle for the active live session (null otherwise). */
+  presence: PresenceHandle | null;
   startSession: (
     householdId: string,
     userId: string,
@@ -36,6 +58,13 @@ interface SessionState {
     seedRecipeIds?: string[],
     mealPlan?: MealPlan,
     includeCourses?: Course[],
+    recipePool?: Recipe[],
+    /**
+     * Deck ordering strategy. "smart" biases cards toward recipes the household
+     * can mostly cook with the current pantry; "random" keeps the classic
+     * shuffled deck. Defaults to "random".
+     */
+    deckMode?: "smart" | "random",
   ) => void;
   /**
    * Join a session by id (deep link / invite). Loads server row, rebuilds
@@ -56,6 +85,16 @@ interface SessionState {
   finalize: () => MatchResult | null;
   reset: () => void;
   setStatus: (status: SessionStatus) => void;
+  /** Mark this user ready in the lobby (live sessions). */
+  markReady: () => void;
+  /** Mark this user finished swiping (live waiting room). */
+  markFinished: () => void;
+  /** True once every participant has marked ready in the lobby. */
+  allReady: () => boolean;
+  /** True once every participant has finished their deck. */
+  allFinished: () => boolean;
+  /** Pull the host-computed match into local state (non-host members). */
+  loadMatchFromRemote: (sessionId: string) => Promise<MatchResult | null>;
 }
 
 export const useSessionStore = create<SessionState>((set, get) => ({
@@ -65,6 +104,10 @@ export const useSessionStore = create<SessionState>((set, get) => ({
   votes: [],
   match: null,
   unsubscribe: null,
+  customPool: null,
+  isLive: false,
+  lobby: [],
+  presence: null,
   startSession: (
     householdId,
     userId,
@@ -72,27 +115,58 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     seedRecipeIds,
     mealPlan,
     includeCourses,
+    recipePool,
+    deckMode = "random",
   ) => {
     // Tear down any prior subscription.
     get().unsubscribe?.();
 
     const recipesState = useRecipesStore.getState();
-    const pool = recipesState.getOrFallback();
+    const usingCustomPool = !!recipePool && recipePool.length > 0;
+    const pool = usingCustomPool ? recipePool! : recipesState.getOrFallback();
     const plan: MealPlan = mealPlan ?? recommendMealPlanForNow();
+    // Pantry names (lower-cased) drive the "smart" deck ordering.
+    const pantryNames =
+      deckMode === "smart"
+        ? usePantryStore
+            .getState()
+            .items.map((p) => p.name.toLocaleLowerCase("tr-TR"))
+        : undefined;
     let candidates: Recipe[];
-    if (seedRecipeIds && seedRecipeIds.length > 0) {
+    if (usingCustomPool) {
+      // Custom pool (e.g. influencer recipes): use the whole list. In smart
+      // mode, order by pantry match; otherwise shuffle.
+      if (pantryNames && pantryNames.length > 0) {
+        candidates = [...pool].sort((a, b) => {
+          const diff =
+            pantryMatchFraction(b, pantryNames) -
+            pantryMatchFraction(a, pantryNames);
+          return diff !== 0 ? diff : Math.random() - 0.5;
+        });
+      } else {
+        candidates = [...pool].sort(() => Math.random() - 0.5);
+      }
+    } else if (seedRecipeIds && seedRecipeIds.length > 0) {
       const byId = new Map(pool.map((r) => [r.id, r]));
       const seeded = seedRecipeIds
         .map((id) => byId.get(id))
         .filter((r): r is Recipe => !!r);
       // Fill up to 8 with meal-plan-appropriate recipes (variety + course mix).
       const used = new Set(seeded.map((r) => r.id));
-      const deck = buildDeckForMealPlan(plan, pool, includeCourses).filter(
-        (r) => !used.has(r.id),
-      );
+      const deck = buildDeckForMealPlan(
+        plan,
+        pool,
+        includeCourses,
+        pantryNames,
+      ).filter((r) => !used.has(r.id));
       candidates = [...seeded, ...deck].slice(0, 8);
     } else {
-      candidates = buildDeckForMealPlan(plan, pool, includeCourses);
+      candidates = buildDeckForMealPlan(
+        plan,
+        pool,
+        includeCourses,
+        pantryNames,
+      );
     }
     const sessionTypeFor: Record<MealPlan, SwipeSession["sessionType"]> = {
       kahvalti: "breakfast",
@@ -117,8 +191,11 @@ export const useSessionStore = create<SessionState>((set, get) => ({
 
     // Only persist to backend when recipes came from Supabase (UUID ids).
     // With mock catalog the slug ids would violate the uuid FK constraints.
+    // Custom pools (influencer list etc.) always stay local.
     const live =
-      sessionService.isConfigured() && recipesState.source === "live";
+      !usingCustomPool &&
+      sessionService.isConfigured() &&
+      recipesState.source === "live";
     let unsub: (() => void) | null = null;
     if (live) {
       void sessionService.createSessionRow({
@@ -133,6 +210,16 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       });
     }
 
+    // Multi-person live session → join the presence channel for the lobby
+    // ready-up and end-of-deck waiting room. Solo / mock sessions skip this.
+    get().presence?.unsubscribe();
+    const multiLive = live && participantIds.length >= 2;
+    const presence: PresenceHandle | null = multiLive
+      ? subscribeToPresence(session.id, userId, (members) =>
+          set({ lobby: members }),
+        )
+      : null;
+
     set({
       session,
       candidates,
@@ -140,6 +227,10 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       votes: [],
       match: null,
       unsubscribe: unsub,
+      customPool: usingCustomPool ? recipePool! : null,
+      isLive: multiLive,
+      lobby: [],
+      presence,
     });
   },
   loadSession: async (sessionId, userId) => {
@@ -184,6 +275,16 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       if (v.userId !== userId) get().applyRemoteVote(v);
     });
 
+    // Joining member: a loaded remote session with 2+ participants is always
+    // live → join presence for the lobby / waiting room.
+    get().presence?.unsubscribe();
+    const multiLive = participantIds.length >= 2;
+    const presence: PresenceHandle | null = multiLive
+      ? subscribeToPresence(sessionId, userId, (members) =>
+          set({ lobby: members }),
+        )
+      : null;
+
     set({
       session,
       candidates,
@@ -191,6 +292,9 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       votes: remoteVotes,
       match: null,
       unsubscribe: unsub,
+      isLive: multiLive,
+      lobby: [],
+      presence,
     });
     return true;
   },
@@ -242,12 +346,25 @@ export const useSessionStore = create<SessionState>((set, get) => ({
   next: () =>
     set((s) => ({ index: Math.min(s.index + 1, s.candidates.length) })),
   extendDeck: () => {
-    const { session, candidates } = get();
+    const { session, candidates, customPool } = get();
     if (!session) return 0;
-    const pool = useRecipesStore.getState().getOrFallback();
+    const pool = customPool ?? useRecipesStore.getState().getOrFallback();
     const seen = new Set(candidates.map((r) => r.id));
     const plan: MealPlan = session.mealPlan ?? recommendMealPlanForNow();
     const includeCourses = session.includeCourses as Course[] | undefined;
+    // Custom pool: just append any remaining unseen, shuffled. No meal plan.
+    if (customPool) {
+      const remaining = pool
+        .filter((r) => !seen.has(r.id))
+        .sort(() => Math.random() - 0.5);
+      if (remaining.length === 0) return 0;
+      const nextCandidates = [...candidates, ...remaining];
+      set({
+        candidates: nextCandidates,
+        session: { ...session, recipeIds: nextCandidates.map((r) => r.id) },
+      });
+      return remaining.length;
+    }
     // First try a course-aware refill from the meal plan.
     const planFresh = buildDeckForMealPlan(plan, pool, includeCourses).filter(
       (r) => !seen.has(r.id),
@@ -270,8 +387,13 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     return fresh.length;
   },
   finalize: () => {
-    const { session, candidates, votes } = get();
+    const { session, candidates, votes, match: existingMatch } = get();
     if (!session) return null;
+    // Guard against double-finalize: if we've already completed this session
+    // (e.g. animateOut callback firing twice, or user navigating back into
+    // the deck), return the cached match without re-firing the match
+    // notification or re-writing remote state.
+    if (session.status === "completed") return existingMatch ?? null;
     const auth = useAuthStore.getState();
     const pantry = usePantryStore.getState().items;
     const profiles = auth.profile ? [auth.profile] : [];
@@ -312,6 +434,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
   },
   reset: () => {
     get().unsubscribe?.();
+    get().presence?.unsubscribe();
     set({
       session: null,
       candidates: [],
@@ -319,11 +442,58 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       votes: [],
       match: null,
       unsubscribe: null,
+      customPool: null,
+      isLive: false,
+      lobby: [],
+      presence: null,
     });
   },
   setStatus: (status) => {
     const s = get().session;
     if (!s) return;
     set({ session: { ...s, status } });
+  },
+  markReady: () => {
+    get().presence?.update({ ready: true });
+  },
+  markFinished: () => {
+    get().presence?.update({ finished: true });
+  },
+  allReady: () => {
+    const { session, lobby } = get();
+    if (!session) return false;
+    const need = session.participantIds.length;
+    // Every participant must be present in the lobby AND ready.
+    const readyCount = lobby.filter((m) => m.ready).length;
+    return lobby.length >= need && readyCount >= need;
+  },
+  allFinished: () => {
+    const { session, lobby } = get();
+    if (!session) return false;
+    const need = session.participantIds.length;
+    const finishedCount = lobby.filter((m) => m.finished).length;
+    return lobby.length >= need && finishedCount >= need;
+  },
+  loadMatchFromRemote: async (sessionId) => {
+    const { candidates, session } = get();
+    const remote = await getRemoteMatch(sessionId);
+    if (!remote) return null;
+    const m: MatchResult = {
+      id: uuidV4(),
+      sessionId,
+      recipeId: remote.recipeId,
+      score: remote.score,
+      reasons: remote.reasons,
+      likedByUserIds: remote.likedByUserIds,
+      alternatives: [],
+      missingIngredients: remote.missingIngredients,
+      createdAt: new Date().toISOString(),
+    };
+    set({
+      match: m,
+      session: session ? { ...session, status: "completed" } : session,
+    });
+    void candidates; // candidates already loaded for the match screen
+    return m;
   },
 }));

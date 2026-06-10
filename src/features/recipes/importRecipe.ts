@@ -1,5 +1,5 @@
 import { openAIJson } from "@/lib/openai";
-import { hasOpenAI } from "@/lib/env";
+import { hasAI } from "@/lib/env";
 
 export interface ImportedRecipePreview {
   title: string;
@@ -294,7 +294,7 @@ export async function importRecipePreview(
   ].filter(Boolean);
   const aiText = aiContextParts.join("\n\n");
 
-  if (!hasOpenAI) {
+  if (!hasAI) {
     // Without AI we can still salvage a preview from og meta.
     if (pageMeta?.title) {
       return {

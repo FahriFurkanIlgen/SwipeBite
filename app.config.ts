@@ -6,7 +6,7 @@ const config: ExpoConfig = {
   name: "SwipeBite",
   slug: "swipebite",
   scheme: "swipebite",
-  version: "0.1.0",
+  version: "1.0.0",
   orientation: "portrait",
   userInterfaceStyle: "light",
   icon: "./assets/icon.png",
@@ -32,7 +32,7 @@ const config: ExpoConfig = {
     package: "app.swipebite",
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
-      backgroundColor: "#FAF7F2",
+      backgroundColor: "#F3801F",
     },
     // Note: expo-share-intent plugin auto-injects the SEND/text intent-filter.
     // The `scheme: "swipebite"` at the root also auto-generates the VIEW filter
@@ -42,6 +42,15 @@ const config: ExpoConfig = {
     "expo-router",
     "expo-font",
     "expo-apple-authentication",
+    [
+      "expo-image-picker",
+      {
+        photosPermission:
+          "Fişten ve kiler fotoğrafından malzeme eklemek için fotoğraflarına erişim gerekiyor.",
+        cameraPermission:
+          "Fiş fotoğrafı çekip malzemeleri otomatik eklemek için kamera erişimi gerekiyor.",
+      },
+    ],
     [
       "expo-share-intent",
       {
@@ -68,8 +77,12 @@ const config: ExpoConfig = {
     supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,
     supabaseAnonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
     openaiApiKey: process.env.EXPO_PUBLIC_OPENAI_API_KEY,
+    aiProxyEnabled: process.env.EXPO_PUBLIC_AI_PROXY_ENABLED ?? "false",
     googleWebClientId: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
     googleIosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
+    revenueCatIosKey: process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY,
+    revenueCatAndroidKey: process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY,
+    revenueCatTestKey: process.env.EXPO_PUBLIC_REVENUECAT_TEST_KEY,
     useMockData: process.env.EXPO_PUBLIC_USE_MOCK_DATA ?? "true",
     eas: {
       projectId: "e0ff18b9-1a5a-4ca1-8876-978212ef5d62",

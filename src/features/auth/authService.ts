@@ -122,25 +122,15 @@ export const authService = {
     if (!supabase || !isGoogleSignInAvailable) return null;
     configureGoogleSignIn();
 
-    // Native Google Sign-In follows the OIDC spec: the nonce we pass is
-    // returned verbatim in the id_token's `nonce` claim (NOT hashed by
-    // Google). Supabase, on the other hand, SHA-256-hashes the nonce we
-    // supply and compares against that claim. So we must:
-    //   - send the HASHED nonce to Google (claim = hashed)
-    //   - send the RAW nonce to Supabase (Supabase hashes it → matches)
-    // This mirrors the Apple Sign-In flow.
-    const rawNonce = Crypto.randomUUID();
-    const hashedNonce = await Crypto.digestStringAsync(
-      Crypto.CryptoDigestAlgorithm.SHA256,
-      rawNonce,
-    );
-
+    // NOTE: The "Original" GoogleSignin.signIn() API only accepts
+    // `SignInParams = { loginHint?: string }` — it does NOT support a custom
+    // `nonce`. Any nonce we pass is silently ignored, so the returned id_token
+    // has no `nonce` claim. Supabase only enforces the nonce when we pass one
+    // to signInWithIdToken, so we must NOT pass a nonce here (passing one would
+    // make Supabase hash it and compare against the absent claim → "nonces
+    // mismatch"). A nonce would require the Universal/One-Tap sign-in API.
     await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
-    const result = await (
-      GoogleSignin.signIn as unknown as (params?: {
-        nonce?: string;
-      }) => Promise<unknown>
-    )({ nonce: hashedNonce });
+    const result = await GoogleSignin.signIn();
     // google-signin v13+ returns { type: "success" | "cancelled", data }
     // older versions return the user object directly.
     const idToken =
@@ -155,7 +145,6 @@ export const authService = {
     const { data, error } = await supabase.auth.signInWithIdToken({
       provider: "google",
       token: idToken,
-      nonce: rawNonce,
     });
     if (error) throw error;
     if (!data.user) return null;
@@ -273,6 +262,7 @@ export const authService = {
       hardDislikes: data.hard_dislikes ?? [],
       favoriteCuisines: data.favorite_cuisines ?? [],
       spiceTolerance: data.spice_tolerance ?? "mild",
+      alcoholContentEnabled: data.alcohol_content_enabled ?? undefined,
     };
   },
 
@@ -284,23 +274,47 @@ export const authService = {
       hard_dislikes: profile.hardDislikes,
       favorite_cuisines: profile.favoriteCuisines,
       spice_tolerance: profile.spiceTolerance,
+      alcohol_content_enabled: profile.alcoholContentEnabled ?? null,
       updated_at: new Date().toISOString(),
     });
   },
 
-  async getPrimaryHousehold(userId: string): Promise<Household | null> {
+  async getPrimaryHousehold(
+    userId: string,
+    preferredHouseholdId?: string | null,
+  ): Promise<Household | null> {
     if (!supabase) return null;
-    const { data: mem } = await supabase
-      .from("household_members")
-      .select("household_id")
-      .eq("user_id", userId)
-      .limit(1)
-      .maybeSingle();
-    if (!mem) return null;
+    let householdId: string | null = null;
+    // Prefer an explicitly chosen household (e.g. one the user joined via an
+    // invite code) so the pairing sticks across restarts instead of randomly
+    // resolving back to a self-created household. Only honour it while the
+    // user is actually still a member of it.
+    if (preferredHouseholdId) {
+      const { data: pref } = await supabase
+        .from("household_members")
+        .select("household_id")
+        .eq("user_id", userId)
+        .eq("household_id", preferredHouseholdId)
+        .maybeSingle();
+      if (pref) householdId = pref.household_id;
+    }
+    if (!householdId) {
+      // Fall back to the most recently joined household (a freshly joined
+      // partner household should win over an older self-created one).
+      const { data: mem } = await supabase
+        .from("household_members")
+        .select("household_id")
+        .eq("user_id", userId)
+        .order("joined_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (!mem) return null;
+      householdId = mem.household_id;
+    }
     const { data: h } = await supabase
       .from("households")
       .select("*")
-      .eq("id", mem.household_id)
+      .eq("id", householdId)
       .maybeSingle();
     if (!h) return null;
     const { data: members } = await supabase
@@ -313,6 +327,7 @@ export const authService = {
       createdBy: h.created_by,
       memberIds: (members ?? []).map((m) => m.user_id),
       createdAt: h.created_at,
+      inviteCode: h.invite_code ?? undefined,
     };
   },
 
@@ -353,6 +368,7 @@ export const authService = {
       createdBy: userId,
       memberIds: [userId],
       createdAt: h.created_at,
+      inviteCode: h.invite_code ?? inviteCode,
     };
   },
 
@@ -361,25 +377,30 @@ export const authService = {
     userId: string,
   ): Promise<Household | null> {
     if (!supabase) return null;
-    const { data: h } = await supabase
-      .from("households")
-      .select("*")
-      .eq("invite_code", inviteCode.toUpperCase())
-      .maybeSingle();
-    if (!h) return null;
-    await supabase
-      .from("household_members")
-      .upsert({ household_id: h.id, user_id: userId, role: "member" });
+    // Use a SECURITY DEFINER RPC: the joining user is not yet a member, so a
+    // direct SELECT on `households` is filtered out by RLS. The RPC looks up
+    // the household by code, adds the caller as a member, and returns the row.
+    const { data: h, error } = await supabase.rpc(
+      "join_household_by_invite_code",
+      { p_code: inviteCode.toUpperCase() },
+    );
+    if (error || !h) return null;
+    const household = Array.isArray(h) ? h[0] : h;
+    if (!household) return null;
     const { data: members } = await supabase
       .from("household_members")
       .select("user_id")
-      .eq("household_id", h.id);
+      .eq("household_id", household.id);
     return {
-      id: h.id,
-      name: h.name,
-      createdBy: h.created_by,
-      memberIds: (members ?? []).map((m) => m.user_id),
-      createdAt: h.created_at,
+      id: household.id,
+      name: household.name,
+      createdBy: household.created_by,
+      memberIds:
+        (members ?? []).length > 0
+          ? (members ?? []).map((m) => m.user_id)
+          : [userId],
+      createdAt: household.created_at,
+      inviteCode: household.invite_code ?? undefined,
     };
   },
 };

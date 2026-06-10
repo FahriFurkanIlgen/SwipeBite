@@ -9,18 +9,24 @@ import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { featureFlags } from "@/constants/featureFlags";
 import { useAuthStore } from "@/store/authStore";
 
 export default function InviteOnboardingScreen() {
   const household = useAuthStore((s) => s.household);
   const code = household?.id.slice(0, 6).toUpperCase() ?? "ABC123";
+  // When the bar feature is disabled for launch, skip the bar age-gate
+  // onboarding step and go straight to the finish screen.
+  const nextStep = featureFlags.bar
+    ? "/(onboarding)/bar"
+    : "/(onboarding)/finish";
 
   return (
     <Screen background="bg">
       <View style={styles.header}>
-        <ProgressDots total={4} index={2} />
+        <ProgressDots total={5} index={2} />
         <Text variant="caption" color={colors.dim}>
-          {t.onboarding.step(3, 4)}
+          {t.onboarding.step(3, 5)}
         </Text>
       </View>
 
@@ -43,7 +49,7 @@ export default function InviteOnboardingScreen() {
           iconColor={colors.ink}
           title={t.onboarding.inviteViaLink}
           subtitle={`swipebite.app/join/${code}`}
-          onPress={() => router.push("/(onboarding)/finish")}
+          onPress={() => router.push(nextStep)}
         />
         <InviteRow
           icon={QrCode}
@@ -59,7 +65,7 @@ export default function InviteOnboardingScreen() {
           iconColor={colors.slate}
           title={t.onboarding.inviteLater}
           subtitle="Şimdilik tek başına kullan"
-          onPress={() => router.push("/(onboarding)/finish")}
+          onPress={() => router.push(nextStep)}
         />
       </View>
     </Screen>

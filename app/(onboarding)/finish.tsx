@@ -44,9 +44,9 @@ export default function FinishScreen() {
   return (
     <Screen background="bg">
       <View style={styles.header}>
-        <ProgressDots total={4} index={3} />
+        <ProgressDots total={5} index={4} />
         <Text variant="caption" color={colors.dim}>
-          {t.onboarding.step(4, 4)}
+          {t.onboarding.step(5, 5)}
         </Text>
       </View>
 

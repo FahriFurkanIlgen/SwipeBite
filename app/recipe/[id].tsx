@@ -1,7 +1,7 @@
 import React from "react";
 import { Linking, Pressable, ScrollView, StyleSheet, View } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
-import { Image } from "expo-image";
+import { RecipeImage } from "@/components/ui/RecipeImage";
 import { LinearGradient } from "expo-linear-gradient";
 import {
   ArrowLeft,
@@ -23,17 +23,34 @@ import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { getRecipeImageSource } from "@/features/recipes/recipeImage";
 import { useRecipesStore } from "@/store/recipesStore";
+import { useSessionStore } from "@/store/sessionStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { useAuthStore } from "@/store/authStore";
 import { useStatsStore } from "@/store/statsStore";
 import { adaptRecipe, AdaptedRecipe } from "@/features/ai/recipeAdapter";
+import { useEntitlementsStore } from "@/store/entitlementsStore";
+import { useUpsellStore } from "@/store/upsellStore";
 
 export default function RecipeScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const recipe = useRecipesStore((s) =>
+  const storeRecipe = useRecipesStore((s) =>
     s.items.find((r) => r.id === (id ?? "")),
   );
+  // Influencer / custom-pool recipes don't live in the global recipes store.
+  // Fall back to the active session's custom pool and dealt candidates so the
+  // "Tarifi Gör" CTA from the match screen always resolves the recipe.
+  const customPool = useSessionStore((s) => s.customPool);
+  const candidates = useSessionStore((s) => s.candidates);
+  const recipe = React.useMemo(() => {
+    if (storeRecipe) return storeRecipe;
+    const rid = id ?? "";
+    return (
+      customPool?.find((r) => r.id === rid) ??
+      candidates.find((r) => r.id === rid)
+    );
+  }, [storeRecipe, customPool, candidates, id]);
   const pantry = usePantryStore((s) => s.items);
   const profile = useAuthStore((s) => s.profile);
   const isFavorite = useStatsStore((s) =>
@@ -43,6 +60,36 @@ export default function RecipeScreen() {
 
   const [adapted, setAdapted] = React.useState<AdaptedRecipe | null>(null);
   const [adapting, setAdapting] = React.useState(false);
+
+  // Derived pantry coverage. Memoized so it doesn't recompute the O(n×m)
+  // ingredient/pantry comparison on every unrelated re-render (favorite
+  // toggles, adapt state, etc.). Null-safe so the hook order stays stable
+  // even before the early "recipe not found" return below.
+  const recipeIngredients = recipe?.ingredients;
+  const { ingredientsWithPantry, pantryMatchPct, missingCount } =
+    React.useMemo(() => {
+      const ingredients = recipeIngredients ?? [];
+      const pantryNames = pantry.map((p) => p.name.toLowerCase());
+      const withPantry = ingredients.map((ing) => ({
+        ...ing,
+        inPantry: pantryNames.some(
+          (p) =>
+            ing.name.toLowerCase().includes(p) ||
+            p.includes(ing.name.toLowerCase()),
+        ),
+      }));
+      const matchPct = Math.round(
+        (withPantry.filter((i) => i.inPantry).length /
+          Math.max(1, ingredients.length)) *
+          100,
+      );
+      const missing = withPantry.filter((i) => !i.inPantry).length;
+      return {
+        ingredientsWithPantry: withPantry,
+        pantryMatchPct: matchPct,
+        missingCount: missing,
+      };
+    }, [recipeIngredients, pantry]);
 
   if (!recipe) {
     return (
@@ -59,22 +106,6 @@ export default function RecipeScreen() {
     );
   }
 
-  const pantryNames = pantry.map((p) => p.name.toLowerCase());
-  const ingredientsWithPantry = recipe.ingredients.map((ing) => ({
-    ...ing,
-    inPantry: pantryNames.some(
-      (p) =>
-        ing.name.toLowerCase().includes(p) ||
-        p.includes(ing.name.toLowerCase()),
-    ),
-  }));
-  const pantryMatchPct = Math.round(
-    (ingredientsWithPantry.filter((i) => i.inPantry).length /
-      Math.max(1, recipe.ingredients.length)) *
-      100,
-  );
-  const missingCount = ingredientsWithPantry.filter((i) => !i.inPantry).length;
-
   const difficultyColor =
     recipe.difficulty === "kolay"
       ? colors.forest
@@ -83,12 +114,17 @@ export default function RecipeScreen() {
         : colors.accent;
 
   const handleAdapt = async () => {
+    const ok = await useEntitlementsStore.getState().consume("recipe_adapt");
+    if (!ok) {
+      useUpsellStore.getState().show("recipe_adapt");
+      return;
+    }
     setAdapting(true);
     try {
       const result = await adaptRecipe({
         recipe,
         profiles: profile ? [profile] : [],
-        pantryNames,
+        pantryNames: pantry.map((p) => p.name),
       });
       setAdapted(result);
     } finally {
@@ -103,9 +139,10 @@ export default function RecipeScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.hero}>
-          <Image
-            source={{ uri: recipe.imageUrl }}
+          <RecipeImage
+            source={getRecipeImageSource(recipe)}
             style={StyleSheet.absoluteFillObject}
+            containerStyle={StyleSheet.absoluteFill}
             contentFit="cover"
           />
           <LinearGradient

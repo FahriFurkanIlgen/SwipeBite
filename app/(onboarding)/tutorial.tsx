@@ -14,7 +14,7 @@ import {
   ChevronRight,
   Flame,
   Heart,
-  Users,
+  Package,
   UtensilsCrossed,
 } from "lucide-react-native";
 
@@ -27,7 +27,11 @@ import { useTutorialStore } from "@/store/tutorialStore";
 const { width: SCREEN_W } = Dimensions.get("window");
 
 type Slide = {
-  icon: React.ComponentType<{ size: number; color: string; strokeWidth: number }>;
+  icon: React.ComponentType<{
+    size: number;
+    color: string;
+    strokeWidth: number;
+  }>;
   iconBg: string;
   title: string;
   desc: string;
@@ -37,26 +41,26 @@ const SLIDES: Slide[] = [
   {
     icon: Flame,
     iconBg: colors.primary,
-    title: "Tinder gibi, ama yemek için",
-    desc: "Kartları kaydır: sağa beğen, sola geç. AI senin damak tadını öğrenir, daha iyi öneriler getirir.",
+    title: "Kaydır, beğen, keşfet",
+    desc: "Kartları kaydır: sağa beğen, sola geç. SwipeBite damak tadını öğrenir ve her seferinde daha isabetli öneriler getirir.",
+  },
+  {
+    icon: Package,
+    iconBg: colors.primaryDeep,
+    title: "Kilerindekiyle pişir",
+    desc: "Evdeki malzemeleri ekle; sana yalnızca şu an yapabileceğin yemekleri önerelim. Markete gitmeden, israf etmeden.",
   },
   {
     icon: Heart,
     iconBg: colors.accent,
-    title: "Aileyle eşleşin",
-    desc: "Ev halkını davet et. Aynı tarifi beğendiğinizde otomatik eşleşme — bugünün yemeği belli.",
+    title: "Ev halkıyla eşleş",
+    desc: "Davet kodunu paylaş. Aynı tarifi beğendiğinizde otomatik eşleşme olur — 'bugün ne yesek?' tartışması biter.",
   },
   {
     icon: UtensilsCrossed,
-    iconBg: colors.primaryDeep,
-    title: "Birlikte pişirin",
-    desc: "Adım adım rehberli pişirme modu. Mutfakta tek tablet, tüm aile aynı sayfada.",
-  },
-  {
-    icon: Users,
-    iconBg: colors.accent,
+    iconBg: colors.primary,
     title: "Hadi başlayalım",
-    desc: "Önce birkaç kart kaydır, sonra eşini davet et. 'Bugün ne yesek?' artık tartışma değil.",
+    desc: "Önce birkaç kart kaydır, kilerini doldur ve eşini davet et. Mutfak artık çok daha kolay.",
   },
 ];
 
@@ -73,7 +77,10 @@ export default function TutorialScreen() {
 
   const handleNext = () => {
     if (index < SLIDES.length - 1) {
-      scrollRef.current?.scrollTo({ x: (index + 1) * SCREEN_W, animated: true });
+      scrollRef.current?.scrollTo({
+        x: (index + 1) * SCREEN_W,
+        animated: true,
+      });
     } else {
       handleFinish();
     }

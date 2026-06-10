@@ -12,7 +12,7 @@ import {
 import { useRecipesStore } from "@/store/recipesStore";
 import { usePreferencesStore } from "@/store/preferencesStore";
 import { plannerService } from "@/features/planner/plannerService";
-import { hasOpenAI } from "@/lib/env";
+import { hasAI } from "@/lib/env";
 
 interface PlannerState {
   plan: WeeklyPlan | null;
@@ -140,7 +140,7 @@ export const usePlannerStore = create<PlannerState>((set, get) => ({
     });
   },
 
-  generateFromPreferences: async (householdId, { useAI = hasOpenAI } = {}) => {
+  generateFromPreferences: async (householdId, { useAI = hasAI } = {}) => {
     set({ loading: true });
     try {
       const recipes = useRecipesStore.getState().getOrFallback();

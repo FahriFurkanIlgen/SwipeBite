@@ -48,9 +48,9 @@ export default function PreferencesScreen() {
   return (
     <Screen background="bg">
       <View style={styles.header}>
-        <ProgressDots total={4} index={0} />
+        <ProgressDots total={5} index={0} />
         <Text variant="caption" color={colors.dim}>
-          {t.onboarding.step(1, 4)}
+          {t.onboarding.step(1, 5)}
         </Text>
       </View>
 

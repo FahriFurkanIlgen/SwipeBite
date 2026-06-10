@@ -3,9 +3,21 @@ import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { featureFlags } from "@/constants/featureFlags";
 import { FloatingTabBar } from "@/components/ui/FloatingTabBar";
+import { useAuthStore } from "@/store/authStore";
 
 export default function TabsLayout() {
+  // Bar tab is hidden when the user has explicitly declined alcoholic
+  // content (`false`). It stays visible (and pops the age-gate modal on
+  // first tap) when the flag is `undefined` or `true`.
+  const alcoholDeclined = useAuthStore(
+    (s) => s.profile?.alcoholContentEnabled === false,
+  );
+  // For the food-only launch the entire bar tab is hidden via the feature
+  // flag, regardless of the per-user alcohol preference.
+  const barHidden = !featureFlags.bar || alcoholDeclined;
+
   return (
     <Tabs
       tabBar={(props) => <FloatingTabBar {...props} />}
@@ -48,6 +60,18 @@ export default function TabsLayout() {
           title: t.tabs.pantry,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="basket" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="bar"
+        options={{
+          title: t.tabs.bar,
+          // `href: null` removes the tab from the bar entirely while keeping
+          // the route mounted in the navigator (so deep links still resolve).
+          href: barHidden ? null : undefined,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="wine" size={size} color={color} />
           ),
         }}
       />

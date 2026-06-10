@@ -36,6 +36,7 @@ export async function adaptRecipe(input: AdaptInput): Promise<AdaptedRecipe> {
       pantry: pantryNames,
     }),
     temperature: 0.3,
+    feature: "recipe_adapt",
   });
 
   if (ai) return ai;

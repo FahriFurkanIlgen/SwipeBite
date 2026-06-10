@@ -1,6 +1,21 @@
 import { supabase } from "@/lib/supabase";
 import { Vote, VoteType } from "@/types/domain";
 
+/** Ephemeral lobby/waiting state for one participant, shared via Realtime presence. */
+export interface PresenceMember {
+  userId: string;
+  ready: boolean;
+  finished: boolean;
+}
+
+/** Handle returned by {@link sessionService.subscribeToPresence}. */
+export interface PresenceHandle {
+  /** Update this user's lobby state (merges with current). */
+  update: (patch: Partial<Omit<PresenceMember, "userId">>) => void;
+  /** Leave the channel and stop syncing. */
+  unsubscribe: () => void;
+}
+
 export interface RemoteSessionRow {
   id: string;
   householdId: string;
@@ -225,3 +240,91 @@ export const sessionService = {
     };
   },
 };
+
+/**
+ * Read the most recent match row for a session (used by non-host members to
+ * pick up the result computed by the host). Returns null if none/Supabase off.
+ */
+export async function getRemoteMatch(sessionId: string): Promise<{
+  recipeId: string;
+  score: number;
+  reasons: string[];
+  likedByUserIds: string[];
+  missingIngredients: string[];
+} | null> {
+  if (!supabase) return null;
+  const { data, error } = await supabase
+    .from("matches")
+    .select("*")
+    .eq("session_id", sessionId)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error || !data) return null;
+  const row = data as {
+    recipe_id: string;
+    score: number | null;
+    reasons: string[] | null;
+    liked_by_user_ids: string[] | null;
+    missing_ingredients: string[] | null;
+  };
+  return {
+    recipeId: row.recipe_id,
+    score: row.score ?? 0,
+    reasons: row.reasons ?? [],
+    likedByUserIds: row.liked_by_user_ids ?? [],
+    missingIngredients: row.missing_ingredients ?? [],
+  };
+}
+
+/**
+ * Join a session's Realtime presence channel to share lobby/waiting state
+ * (ready before the deck, finished at the end). `onSync` fires with the full
+ * member list whenever anyone joins, leaves or updates. No-op when Supabase
+ * is not configured (solo/mock sessions skip the lobby entirely).
+ */
+export function subscribeToPresence(
+  sessionId: string,
+  userId: string,
+  onSync: (members: PresenceMember[]) => void,
+): PresenceHandle {
+  const client = supabase;
+  if (!client) {
+    return { update: () => undefined, unsubscribe: () => undefined };
+  }
+  let current: PresenceMember = { userId, ready: false, finished: false };
+  const channel = client.channel(`session:${sessionId}:presence`, {
+    config: { presence: { key: userId } },
+  });
+  channel.on("presence", { event: "sync" }, () => {
+    const state = channel.presenceState() as Record<
+      string,
+      { userId?: string; ready?: boolean; finished?: boolean }[]
+    >;
+    const members: PresenceMember[] = Object.entries(state).map(
+      ([key, metas]) => {
+        const meta = metas[metas.length - 1] ?? {};
+        return {
+          userId: meta.userId ?? key,
+          ready: !!meta.ready,
+          finished: !!meta.finished,
+        };
+      },
+    );
+    onSync(members);
+  });
+  void channel.subscribe((status) => {
+    if (status === "SUBSCRIBED") {
+      void channel.track(current);
+    }
+  });
+  return {
+    update: (patch) => {
+      current = { ...current, ...patch };
+      void channel.track(current);
+    },
+    unsubscribe: () => {
+      void client.removeChannel(channel);
+    },
+  };
+}

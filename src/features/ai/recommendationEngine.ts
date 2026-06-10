@@ -51,6 +51,10 @@ export function scoreRecipes(inputs: ScoringInputs): AIRecommendation[] {
   const pantrySet = new Set(
     pantry.map((p) => p.name.toLocaleLowerCase("tr-TR")),
   );
+  // Materialise once — the inner loop below checks every recipe ingredient
+  // against this list, and re-spreading the Set per ingredient was needless
+  // allocation on the session-load hot path.
+  const pantryNames = [...pantrySet];
   const recentSet = new Set(recentRecipeIds);
 
   const recipeVotes = groupVotesByRecipe(votes);
@@ -75,7 +79,7 @@ export function scoreRecipes(inputs: ScoringInputs): AIRecommendation[] {
 
     // Pantry match
     const matchedIngredients = recipe.ingredients.filter((i) =>
-      [...pantrySet].some((p) => i.name.includes(p) || p.includes(i.name)),
+      pantryNames.some((p) => i.name.includes(p) || p.includes(i.name)),
     );
     const pantryMatch =
       matchedIngredients.length / Math.max(1, recipe.ingredients.length);

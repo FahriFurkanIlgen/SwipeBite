@@ -1,7 +1,7 @@
 import React from "react";
 import { Pressable, StyleSheet, Vibration, View } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
-import { Image } from "expo-image";
+import { RecipeImage } from "@/components/ui/RecipeImage";
 import { LinearGradient } from "expo-linear-gradient";
 import {
   ArrowLeft,
@@ -23,7 +23,9 @@ import * as Haptics from "expo-haptics";
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
+import { getRecipeImageSource } from "@/features/recipes/recipeImage";
 import { useRecipesStore } from "@/store/recipesStore";
+import { useSessionStore } from "@/store/sessionStore";
 import { useStatsStore } from "@/store/statsStore";
 
 function formatTime(seconds: number) {
@@ -43,9 +45,21 @@ function extractMinutes(text: string): number | null {
 
 export default function CookScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const recipe = useRecipesStore((s) =>
+  const storeRecipe = useRecipesStore((s) =>
     s.items.find((r) => r.id === (id ?? "")),
   );
+  // Influencer / custom-pool recipes aren't in the global recipes store, so
+  // fall back to the active session's pool/candidates (same as recipe screen).
+  const customPool = useSessionStore((s) => s.customPool);
+  const candidates = useSessionStore((s) => s.candidates);
+  const recipe = React.useMemo(() => {
+    if (storeRecipe) return storeRecipe;
+    const rid = id ?? "";
+    return (
+      customPool?.find((r) => r.id === rid) ??
+      candidates.find((r) => r.id === rid)
+    );
+  }, [storeRecipe, customPool, candidates, id]);
   const markCooked = useStatsStore((s) => s.markCooked);
 
   const [stepIndex, setStepIndex] = React.useState(0);
@@ -161,9 +175,10 @@ export default function CookScreen() {
   return (
     <View style={styles.root}>
       <View style={styles.hero}>
-        <Image
-          source={{ uri: recipe.imageUrl }}
+        <RecipeImage
+          source={getRecipeImageSource(recipe)}
           style={[StyleSheet.absoluteFillObject, { opacity: 0.6 }]}
+          containerStyle={StyleSheet.absoluteFill}
           contentFit="cover"
         />
         <LinearGradient

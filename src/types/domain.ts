@@ -18,6 +18,37 @@ export interface Profile {
   hardDislikes: string[];
   favoriteCuisines: string[];
   spiceTolerance: SpiceLevel;
+  /**
+   * Whether the user has confirmed they are 18+ and wants to see alcoholic
+   * cocktail content (Bar mode).
+   *
+   * - `undefined` → not asked yet (show age gate modal on first Bar tab tap)
+   * - `true`      → confirmed 18+, Bar tab visible and unlocked
+   * - `false`     → user actively declined; Bar tab is hidden everywhere
+   */
+  alcoholContentEnabled?: boolean;
+}
+
+/**
+ * A promotional / sponsored content slot driven by the `app_promos` Supabase
+ * table. Managed from the dashboard so banners can be added, scheduled and
+ * removed without shipping an app update.
+ */
+export type PromoActionType = "route" | "url" | "none";
+
+export interface HomePromo {
+  id: UUID;
+  placement: string;
+  overline?: string;
+  title: string;
+  subtitle?: string;
+  imageUrl?: string;
+  ctaLabel?: string;
+  actionType: PromoActionType;
+  actionTarget?: string;
+  bgColor?: string;
+  textColor?: string;
+  priority: number;
 }
 
 export interface Household {
@@ -26,6 +57,7 @@ export interface Household {
   createdBy: UUID;
   memberIds: UUID[];
   createdAt: string;
+  inviteCode?: string;
 }
 
 export type Difficulty = "kolay" | "orta" | "zor";

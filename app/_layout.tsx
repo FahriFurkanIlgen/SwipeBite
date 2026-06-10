@@ -33,8 +33,12 @@ import { usePlannerStore } from "@/store/plannerStore";
 import { usePreferencesStore } from "@/store/preferencesStore";
 import { useStatsStore } from "@/store/statsStore";
 import { useTutorialStore } from "@/store/tutorialStore";
+import { useEntitlementsStore } from "@/store/entitlementsStore";
 import { pushService } from "@/features/notifications/pushService";
+import { findCookableRecipes } from "@/features/pantry/pantryMatcher";
 import { configureGoogleSignIn } from "@/lib/googleAuth";
+import { billingService } from "@/features/billing/billingService";
+import { UpsellSheet } from "@/features/billing/UpsellSheet";
 import { colors } from "@/constants/theme";
 
 SplashScreen.preventAutoHideAsync().catch(() => undefined);
@@ -88,12 +92,16 @@ function RootLayoutNav() {
   const hydratePrefs = usePreferencesStore((s) => s.hydrate);
   const hydrateStats = useStatsStore((s) => s.hydrate);
   const hydrateTutorial = useTutorialStore((s) => s.hydrate);
+  const hydrateEntitlements = useEntitlementsStore((s) => s.hydrate);
   const user = useAuthStore((s) => s.user);
   const household = useAuthStore((s) => s.household);
+  const pantryItems = usePantryStore((s) => s.items);
+  const recipes = useRecipesStore((s) => s.items);
   React.useEffect(() => {
     void hydrate();
     void hydrateRecipes();
     void hydrateTutorial();
+    void hydrateEntitlements();
     configureGoogleSignIn();
     const unsub = subscribeAuthChanges();
     return unsub;
@@ -109,10 +117,29 @@ function RootLayoutNav() {
     if (user) void hydrateStats(user.id);
   }, [user, hydrateStats]);
   React.useEffect(() => {
-    if (!user) return;
-    // Best-effort: ask for permission and schedule the daily dinner nudge.
-    void pushService.scheduleDinnerNudge();
+    void billingService.init(user?.id ?? null);
   }, [user]);
+  const dinnerNudgeScheduledRef = React.useRef<string | null>(null);
+  React.useEffect(() => {
+    if (!user) {
+      dinnerNudgeScheduledRef.current = null;
+      return;
+    }
+    // Best-effort: ask for permission and schedule the daily 17:00 pantry
+    // suggestion nudge. We list a few recipes the household can cook right now
+    // with what's already in their pantry.
+    const titles = findCookableRecipes(pantryItems, recipes, {
+      minCoverage: 50,
+      limit: 3,
+    }).map((c) => c.recipe.title);
+    // Reschedule only when the user or the suggestion set actually changes, so
+    // re-hydrates/profile refreshes don't stack up duplicate notifications but
+    // fresh pantry edits still refresh the message.
+    const key = `${user.id}:${titles.join("|")}`;
+    if (dinnerNudgeScheduledRef.current === key) return;
+    dinnerNudgeScheduledRef.current = key;
+    void pushService.scheduleDinnerNudge(titles);
+  }, [user, pantryItems, recipes]);
 
   // Handle incoming share-sheet content. expo-share-intent surfaces text/url
   // shared from Instagram/Twitter/Safari etc. (works on both iOS share extension
@@ -184,6 +211,10 @@ function RootLayoutNav() {
       <Stack.Screen name="import" options={{ presentation: "modal" }} />
       <Stack.Screen name="cook-with" options={{ presentation: "modal" }} />
       <Stack.Screen name="invite" options={{ presentation: "modal" }} />
+      <Stack.Screen
+        name="paywall"
+        options={{ presentation: "modal", animation: "slide_from_bottom" }}
+      />
       <Stack.Screen name="join/[code]" options={{ animation: "fade" }} />
       <Stack.Screen
         name="cici/index"
@@ -191,6 +222,19 @@ function RootLayoutNav() {
       />
       <Stack.Screen
         name="cici/[id]"
+        options={{ animation: "slide_from_right" }}
+      />
+      <Stack.Screen
+        name="bar/cabinet"
+        options={{ animation: "slide_from_right" }}
+      />
+      <Stack.Screen
+        name="bar/session"
+        options={{ presentation: "card", animation: "slide_from_bottom" }}
+      />
+      <Stack.Screen name="bar/match/[id]" options={{ animation: "fade" }} />
+      <Stack.Screen
+        name="bar/[id]"
         options={{ animation: "slide_from_right" }}
       />
     </Stack>
@@ -223,6 +267,7 @@ export default function RootLayout() {
       <QueryClientProvider client={queryClient}>
         <StatusBar style="dark" />
         <RootLayoutNav />
+        <UpsellSheet />
       </QueryClientProvider>
     </GestureHandlerRootView>
   );

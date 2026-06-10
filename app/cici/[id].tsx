@@ -260,9 +260,21 @@ const VotingView: React.FC<{
     string | null
   >(null);
 
-  const votedCount = session.votes.filter(
-    (vote) => vote.round === round,
-  ).length;
+  // The countdown timer below re-renders this component ~4×/sec. Memoize the
+  // vote tallies so each tick doesn't re-scan session.votes three times
+  // (overall count + left card + right card).
+  const { votedCount, leftCount, rightCount } = React.useMemo(() => {
+    let voted = 0;
+    let leftC = 0;
+    let rightC = 0;
+    for (const vote of session.votes) {
+      if (vote.round !== round) continue;
+      voted += 1;
+      if (vote.itemId === leftId) leftC += 1;
+      else if (vote.itemId === rightId) rightC += 1;
+    }
+    return { votedCount: voted, leftCount: leftC, rightCount: rightC };
+  }, [session.votes, round, leftId, rightId]);
   const totalMembers = session.members.length;
   const everyoneVoted = totalMembers > 0 && votedCount >= totalMembers;
 
@@ -320,13 +332,25 @@ const VotingView: React.FC<{
     }
   }, [myVote?.itemId]);
 
-  const choose = async (itemId: string) => {
-    if (picking || ranOut) return;
-    setPendingSelectionId(itemId);
-    setPicking(true);
-    await onVote(itemId);
-    setPicking(false);
-  };
+  const choose = React.useCallback(
+    async (itemId: string) => {
+      if (picking || ranOut) return;
+      setPendingSelectionId(itemId);
+      setPicking(true);
+      await onVote(itemId);
+      setPicking(false);
+    },
+    [picking, ranOut, onVote],
+  );
+
+  const chooseLeft = React.useCallback(
+    () => leftId && choose(leftId),
+    [leftId, choose],
+  );
+  const chooseRight = React.useCallback(
+    () => rightId && choose(rightId),
+    [rightId, choose],
+  );
 
   if (!leftId || !rightId) {
     return (
@@ -419,15 +443,11 @@ const VotingView: React.FC<{
               item={left}
               width={cardWidth}
               height={cardHeight}
-              onPick={() => choose(left.id)}
+              onPick={chooseLeft}
               selected={
                 myVote?.itemId === left.id || pendingSelectionId === left.id
               }
-              voteCount={
-                session.votes.filter(
-                  (vote) => vote.round === round && vote.itemId === left.id,
-                ).length
-              }
+              voteCount={leftCount}
               showCounts={ranOut}
               disabled={ranOut}
             />
@@ -454,15 +474,11 @@ const VotingView: React.FC<{
               item={right}
               width={cardWidth}
               height={cardHeight}
-              onPick={() => choose(right.id)}
+              onPick={chooseRight}
               selected={
                 myVote?.itemId === right.id || pendingSelectionId === right.id
               }
-              voteCount={
-                session.votes.filter(
-                  (vote) => vote.round === round && vote.itemId === right.id,
-                ).length
-              }
+              voteCount={rightCount}
               showCounts={ranOut}
               disabled={ranOut}
             />
@@ -486,81 +502,84 @@ const VersusCard: React.FC<{
   voteCount?: number;
   showCounts?: boolean;
   disabled?: boolean;
-}> = ({
-  item,
-  width,
-  height,
-  onPick,
-  selected,
-  voteCount = 0,
-  showCounts,
-  disabled,
-}) => {
-  const [imageFailed, setImageFailed] = React.useState(false);
-  const imageHeight = height;
+}> = React.memo(
+  ({
+    item,
+    width,
+    height,
+    onPick,
+    selected,
+    voteCount = 0,
+    showCounts,
+    disabled,
+  }) => {
+    const [imageFailed, setImageFailed] = React.useState(false);
+    const imageHeight = height;
 
-  return (
-    <Pressable
-      onPress={onPick}
-      disabled={disabled}
-      style={({ pressed }) => [
-        styles.card,
-        { width, height, minHeight: height, maxHeight: height },
-        selected && styles.cardSelected,
-        pressed && { transform: [{ scale: 0.98 }] },
-      ]}
-    >
-      <View style={[styles.cardHero, { height: imageHeight }]}>
-        <LinearGradient
-          colors={["#F4C95D", "#E07A5F", "#6B6560"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={StyleSheet.absoluteFillObject}
-        />
-        {!imageFailed ? (
-          <RNImage
-            source={{ uri: item.imageUrl }}
-            style={[styles.cardHeroImage, { height: imageHeight }]}
-            resizeMode="cover"
-            onError={() => setImageFailed(true)}
+    return (
+      <Pressable
+        onPress={onPick}
+        disabled={disabled}
+        style={({ pressed }) => [
+          styles.card,
+          { width, height, minHeight: height, maxHeight: height },
+          selected && styles.cardSelected,
+          pressed && { transform: [{ scale: 0.98 }] },
+        ]}
+      >
+        <View style={[styles.cardHero, { height: imageHeight }]}>
+          <LinearGradient
+            colors={["#F4C95D", "#E07A5F", "#6B6560"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={StyleSheet.absoluteFillObject}
           />
-        ) : null}
-        <View style={styles.cardShade} />
-      </View>
-
-      <View style={styles.cardContentOverlayCompact}>
-        <View style={styles.cardHeaderRow}>
-          {selected ? (
-            <View style={styles.selectedPill}>
-              <Check size={14} color={colors.bg} strokeWidth={3} />
-              <Text
-                variant="caption"
-                weight="700"
-                color={colors.bg}
-                style={{ marginLeft: 4 }}
-              >
-                Senin oyun
-              </Text>
-            </View>
-          ) : (
-            <View />
-          )}
-          {showCounts ? (
-            <Animated.View entering={FadeIn} style={styles.votePillOverlay}>
-              <Text variant="caption" weight="700" color={colors.ink}>
-                {voteCount} oy
-              </Text>
-            </Animated.View>
+          {!imageFailed ? (
+            <RNImage
+              source={{ uri: item.imageUrl }}
+              style={[styles.cardHeroImage, { height: imageHeight }]}
+              resizeMode="cover"
+              onError={() => setImageFailed(true)}
+            />
           ) : null}
+          <View style={styles.cardShade} />
         </View>
 
-        <Text style={styles.cardTitle} numberOfLines={2}>
-          {item.name}
-        </Text>
-      </View>
-    </Pressable>
-  );
-};
+        <View style={styles.cardContentOverlayCompact}>
+          <View style={styles.cardHeaderRow}>
+            {selected ? (
+              <View style={styles.selectedPill}>
+                <Check size={14} color={colors.bg} strokeWidth={3} />
+                <Text
+                  variant="caption"
+                  weight="700"
+                  color={colors.bg}
+                  style={{ marginLeft: 4 }}
+                >
+                  Senin oyun
+                </Text>
+              </View>
+            ) : (
+              <View />
+            )}
+            {showCounts ? (
+              <Animated.View entering={FadeIn} style={styles.votePillOverlay}>
+                <Text variant="caption" weight="700" color={colors.ink}>
+                  {voteCount} oy
+                </Text>
+              </Animated.View>
+            ) : null}
+          </View>
+
+          <Text style={styles.cardTitle} numberOfLines={2}>
+            {item.name}
+          </Text>
+        </View>
+      </Pressable>
+    );
+  },
+);
+VersusCard.displayName = "VersusCard";
 
 const WinnerView: React.FC<{
   winnerId?: string;

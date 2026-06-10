@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable, StyleSheet, View } from "react-native";
+import { ActivityIndicator, Pressable, StyleSheet, View } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import { ArrowLeft } from "lucide-react-native";
 import Animated, {
@@ -17,6 +17,7 @@ import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { usePantryStore } from "@/store/pantryStore";
+import { sessionService } from "@/features/session/sessionService";
 import { scoreRecipes } from "@/features/ai/recommendationEngine";
 import {
   classifyCourse,
@@ -39,7 +40,13 @@ export default function SessionScreen() {
   const extendDeck = useSessionStore((s) => s.extendDeck);
   const loadSession = useSessionStore((s) => s.loadSession);
   const pantry = usePantryStore((s) => s.items);
+  const isLive = useSessionStore((s) => s.isLive);
+  const lobby = useSessionStore((s) => s.lobby);
+  const markFinished = useSessionStore((s) => s.markFinished);
+  const allFinished = useSessionStore((s) => s.allFinished);
+  const loadMatchFromRemote = useSessionStore((s) => s.loadMatchFromRemote);
 
+  const [waiting, setWaiting] = React.useState(false);
   // If the route id doesn't match the in-memory session, try to load it from
   // the backend (deep link / cross-device invite flow).
   React.useEffect(() => {
@@ -47,6 +54,30 @@ export default function SessionScreen() {
     if (session?.id === routeId) return;
     void loadSession(routeId, user.id);
   }, [routeId, user, session?.id, loadSession]);
+
+  // Waiting room coordination. Host computes the match once everyone has
+  // finished; other members wait for the session row to flip to "completed"
+  // and then pull the host-computed result.
+  const isHost = session?.createdBy === user?.id;
+  React.useEffect(() => {
+    if (!waiting || !isLive || !session) return;
+    if (isHost && allFinished()) {
+      const m = finalize();
+      if (m) router.replace(`/match/${m.id}`);
+    }
+  }, [waiting, isLive, session, isHost, lobby, allFinished, finalize]);
+
+  React.useEffect(() => {
+    if (!waiting || !isLive || !session || isHost) return;
+    const unsub = sessionService.subscribeToSession(session.id, (status) => {
+      if (status === "completed") {
+        void loadMatchFromRemote(session.id).then((m) => {
+          if (m) router.replace(`/match/${m.id}`);
+        });
+      }
+    });
+    return unsub;
+  }, [waiting, isLive, session, isHost, loadMatchFromRemote]);
 
   const totalCount = candidates.length || 1;
   const progress = Math.min(index / totalCount, 1);
@@ -77,6 +108,11 @@ export default function SessionScreen() {
     return candidates.map((c) => byId.get(c.id));
   }, [candidates, recommendations]);
 
+  const stack = React.useMemo(
+    () => enriched.slice(index, index + 3).map((rec, i) => ({ rec, i })),
+    [enriched, index],
+  );
+
   // Guards against double-fire when a swipe gesture's animateOut callback
   // overlaps with a tap on the SwipeActions buttons (or any second invocation
   // dispatched before React re-renders with the advanced index).
@@ -104,6 +140,14 @@ export default function SessionScreen() {
       next();
       const newIndex = liveIndex + 1;
       if (newIndex >= liveCandidates.length) {
+        const fresh2 = useSessionStore.getState();
+        // Live session: finishing the deck drops you into the waiting room
+        // until everyone else is done — the host then computes the match.
+        if (fresh2.isLive) {
+          fresh2.markFinished();
+          setWaiting(true);
+          return;
+        }
         // Refill the deck if the user hasn't liked anything yet — keep
         // suggesting rather than dead-ending on "no match".
         const after = useSessionStore.getState();
@@ -128,6 +172,35 @@ export default function SessionScreen() {
   };
 
   const memberIds = session?.participantIds ?? household?.memberIds ?? [];
+
+  if (waiting) {
+    const finishedCount = lobby.filter((m) => m.finished).length;
+    const total = session?.participantIds.length ?? 1;
+    return (
+      <Screen background="bg">
+        <View style={styles.empty}>
+          <ActivityIndicator color={colors.primary} size="large" />
+          <Text variant="h2" weight="700" align="center">
+            Oylarını tamamladın
+          </Text>
+          <Text
+            variant="body"
+            color={colors.slate}
+            align="center"
+            style={{ maxWidth: 300 }}
+          >
+            Sonuçlar bekleniyor — diğerleri seçimlerini bitirince eşleşmeyi
+            birlikte göreceksiniz.
+          </Text>
+          <View style={styles.waitCountPill}>
+            <Text variant="smallMedium" weight="700" color={colors.ink}>
+              {finishedCount}/{total} kişi bitirdi
+            </Text>
+          </View>
+        </View>
+      </Screen>
+    );
+  }
 
   if (!candidates.length) {
     return (
@@ -154,7 +227,6 @@ export default function SessionScreen() {
     );
   }
 
-  const stack = enriched.slice(index, index + 3).map((rec, i) => ({ rec, i }));
   const currentRecipe = candidates[index];
   const currentCourse = currentRecipe ? classifyCourse(currentRecipe) : null;
   const showCoursePill = session?.mealPlan === "aksam" && currentCourse;
@@ -350,5 +422,12 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.md,
     borderRadius: radii.md,
     backgroundColor: colors.primary,
+  },
+  waitCountPill: {
+    marginTop: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+    borderRadius: radii.pill,
+    backgroundColor: colors.cream,
   },
 });

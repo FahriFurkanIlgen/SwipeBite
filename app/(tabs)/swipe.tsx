@@ -1,6 +1,6 @@
 import React from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
-import { Image } from "expo-image";
+import { RecipeImage } from "@/components/ui/RecipeImage";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
 import Animated, { FadeInDown } from "react-native-reanimated";
@@ -23,6 +23,7 @@ import {
   type Course,
 } from "@/features/recipes/recipeClassifier";
 import { MealPlan } from "@/types/domain";
+import { getRecipeImageSource } from "@/features/recipes/recipeImage";
 
 const MEAL_PLANS: MealPlan[] = [
   "kahvalti",
@@ -45,6 +46,12 @@ export default function SwipeTab() {
   const [selected, setSelected] = React.useState<MealPlan>(() =>
     recommendMealPlanForNow(),
   );
+  // Deck ordering: "smart" prioritises recipes that match the pantry,
+  // "random" keeps the classic shuffled deck.
+  const [deckMode, setDeckMode] = React.useState<"smart" | "random">("smart");
+  // Session company: "solo" = decide alone (local), "live" = swipe together
+  // with the household in real time.
+  const [company, setCompany] = React.useState<"solo" | "live">("solo");
   // Per-plan whitelist of courses to deal.
   // Default: only "ana" is preselected for multi-course plans (öğle / akşam);
   // single-course plans keep their full composition.
@@ -54,8 +61,10 @@ export default function SwipeTab() {
     const map = {} as Record<MealPlan, Course[]>;
     (Object.keys(MEAL_PLAN_COMPOSITION) as MealPlan[]).forEach((p) => {
       const all = MEAL_PLAN_COMPOSITION[p].map((s) => s.course);
+      // Single-select: default to "ana" when available, otherwise the first
+      // course. Single-course plans keep their only course.
       const hasAna = all.includes("ana");
-      map[p] = all.length > 1 && hasAna ? ["ana"] : all;
+      map[p] = all.length > 1 ? [hasAna ? "ana" : all[0]] : all;
     });
     return map;
   });
@@ -63,31 +72,34 @@ export default function SwipeTab() {
   const showCourseToggles = planCourses.length > 1;
   const includeCourses = includeByPlan[selected];
   const toggleCourse = (course: Course) => {
-    setIncludeByPlan((prev) => {
-      const current = prev[selected];
-      const has = current.includes(course);
-      // Don't allow zero-course selection — require at least one.
-      const next = has
-        ? current.length > 1
-          ? current.filter((c) => c !== course)
-          : current
-        : [...current, course];
-      return { ...prev, [selected]: next };
-    });
+    // Single-select: tapping a course makes it the only included course.
+    setIncludeByPlan((prev) => ({ ...prev, [selected]: [course] }));
   };
 
   const handleStart = () => {
     if (!user || !household) return;
+    // Solo: only the current user is a participant (no live vote badge, local
+    // tally). Live: the whole household swipes together via realtime sync.
+    const participants = company === "live" ? household.memberIds : [user.id];
     startSession(
       household.id,
       user.id,
-      household.memberIds,
+      participants,
       undefined,
       selected,
       includeCourses,
+      undefined,
+      deckMode,
     );
     const id = useSessionStore.getState().session?.id;
-    if (id) router.push(`/session/${id}`);
+    if (!id) return;
+    // Live: send the host to the invite screen first so they can call their
+    // partner before swiping. Solo: jump straight into the deck.
+    if (company === "live") {
+      router.push("/invite");
+    } else {
+      router.push(`/session/${id}`);
+    }
   };
 
   const activeSession = session?.status === "active" ? session : null;
@@ -132,9 +144,10 @@ export default function SwipeTab() {
           >
             <View style={styles.activeHero}>
               {activeRecipe ? (
-                <Image
-                  source={{ uri: activeRecipe.imageUrl }}
+                <RecipeImage
+                  source={getRecipeImageSource(activeRecipe)}
                   style={StyleSheet.absoluteFillObject}
+                  containerStyle={StyleSheet.absoluteFill}
                   contentFit="cover"
                 />
               ) : (
@@ -272,7 +285,7 @@ export default function SwipeTab() {
                 color={colors.dim}
                 style={{ marginBottom: 8 }}
               >
-                Hangi çeşitleri dahil edelim?
+                Hangi çeşidi dahil edelim?
               </Text>
               <View style={styles.courseChips}>
                 {planCourses.map((slot) => {
@@ -302,6 +315,102 @@ export default function SwipeTab() {
               </View>
             </View>
           ) : null}
+
+          <View style={styles.modeRow}>
+            <Text
+              variant="caption"
+              color={colors.dim}
+              style={{ marginBottom: 8 }}
+            >
+              Kiminle?
+            </Text>
+            <View style={styles.modeSegment}>
+              {(
+                [
+                  { key: "solo", label: "Tek başıma" },
+                  { key: "live", label: "Birlikte (canlı)" },
+                ] as const
+              ).map((opt) => {
+                const on = company === opt.key;
+                return (
+                  <Pressable
+                    key={opt.key}
+                    onPress={() => setCompany(opt.key)}
+                    style={[
+                      styles.modeOption,
+                      { backgroundColor: on ? colors.ink : "transparent" },
+                    ]}
+                  >
+                    <Text
+                      variant="caption"
+                      weight="700"
+                      color={on ? colors.bg : colors.slate}
+                    >
+                      {opt.label}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+            {company === "live" ? (
+              <Text
+                variant="caption"
+                color={colors.dim}
+                style={{ marginTop: 8 }}
+              >
+                Eşin oyları anlık olarak buraya düşer. Başladıktan sonra "Eşini
+                Davet Et" ile çağırabilirsin.
+              </Text>
+            ) : null}
+          </View>
+
+          <View style={styles.modeRow}>
+            <Text
+              variant="caption"
+              color={colors.dim}
+              style={{ marginBottom: 8 }}
+            >
+              Kartlar nasıl gelsin?
+            </Text>
+            <View style={styles.modeSegment}>
+              {(
+                [
+                  { key: "smart", label: "Kilere uyumlu" },
+                  { key: "random", label: "Rastgele" },
+                ] as const
+              ).map((opt) => {
+                const on = deckMode === opt.key;
+                return (
+                  <Pressable
+                    key={opt.key}
+                    onPress={() => setDeckMode(opt.key)}
+                    style={[
+                      styles.modeOption,
+                      { backgroundColor: on ? colors.ink : "transparent" },
+                    ]}
+                  >
+                    <Text
+                      variant="caption"
+                      weight="700"
+                      color={on ? colors.bg : colors.slate}
+                    >
+                      {opt.label}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+            {deckMode === "smart" ? (
+              <Text
+                variant="caption"
+                color={colors.dim}
+                style={{ marginTop: 8 }}
+              >
+                Kilerindeki malzemelerle uyumlu yeterli tarif bulamazsak
+                rastgele tarifler önereceğiz.
+              </Text>
+            ) : null}
+          </View>
 
           <Pressable onPress={handleStart} style={styles.startBtn}>
             <Play size={16} color={colors.primary} fill={colors.primary} />
@@ -464,6 +573,24 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: radii.pill,
     borderWidth: 1.5,
+  },
+  modeRow: {
+    marginBottom: spacing.xl,
+  },
+  modeSegment: {
+    flexDirection: "row",
+    backgroundColor: colors.cream,
+    borderRadius: radii.pill,
+    padding: 4,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  modeOption: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 10,
+    borderRadius: radii.pill,
   },
   startBtn: {
     height: 56,

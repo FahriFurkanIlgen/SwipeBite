@@ -313,6 +313,7 @@ export async function explainMatch(
       `Tarif: ${recipe.title}. Sebepler: ${baseReasons.join(" ")}. ` +
       "Tek cümle, 18 kelimeyi geçmeyen, samimi bir açıklama yaz.",
     temperature: 0.6,
+    feature: "match_explain",
   });
   return ai?.explanation ?? baseReasons.join(" ");
 }

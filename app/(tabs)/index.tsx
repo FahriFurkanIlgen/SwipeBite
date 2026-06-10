@@ -1,5 +1,12 @@
 import React from "react";
-import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+import {
+  Alert,
+  Linking,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
@@ -10,9 +17,9 @@ import {
   ChefHat,
   ChevronRight,
   Clock,
-  Download,
   Flame,
   Package,
+  Sparkles,
   UtensilsCrossed,
   type LucideIcon,
 } from "lucide-react-native";
@@ -22,13 +29,24 @@ import { Text } from "@/components/ui/Text";
 import { AISuggestionBubble } from "@/components/ai/AISuggestionBubble";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { featureFlags } from "@/constants/featureFlags";
 import { useAuthStore } from "@/store/authStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { usePlannerStore } from "@/store/plannerStore";
 import { useRecipesStore } from "@/store/recipesStore";
 import { useStatsStore } from "@/store/statsStore";
+import { usePromoStore } from "@/store/promoStore";
 import { buildHomeSuggestions } from "@/features/ai/suggestionFeed";
+import { findCookableRecipes } from "@/features/pantry/pantryMatcher";
+import { INFLUENCER_RECIPES } from "@/constants/influencerRecipes";
+import {
+  countByCategory,
+  INFLUENCER_CATEGORY_LABEL,
+  InfluencerCategory,
+  pickInfluencerRecipes,
+} from "@/features/recipes/influencerCategories";
+import { InfluencerCategoryPicker } from "@/features/recipes/InfluencerCategoryPicker";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1580069491658-8220b0e8722d?w=900&h=500&fit=crop&auto=format";
@@ -71,6 +89,30 @@ export default function HomeScreen() {
   const plan = usePlannerStore((s) => s.plan);
   const recipes = useRecipesStore((s) => s.items);
   const favorites = useStatsStore((s) => s.favorites);
+  const promos = usePromoStore((s) => s.items);
+  const hydratePromos = usePromoStore((s) => s.hydrate);
+
+  // Pull the latest promos/sponsored banners from Supabase on mount. Managed
+  // from the dashboard, so new campaigns appear without an app update.
+  React.useEffect(() => {
+    void hydratePromos("home_banner");
+  }, [hydratePromos]);
+
+  const homePromos = React.useMemo(
+    () => promos.filter((p) => p.placement === "home_banner"),
+    [promos],
+  );
+
+  const handlePromoPress = React.useCallback(
+    (promo: (typeof promos)[number]) => {
+      if (promo.actionType === "route" && promo.actionTarget) {
+        router.push(promo.actionTarget as never);
+      } else if (promo.actionType === "url" && promo.actionTarget) {
+        void Linking.openURL(promo.actionTarget).catch(() => undefined);
+      }
+    },
+    [],
+  );
 
   const suggestions = React.useMemo(
     () =>
@@ -95,6 +137,38 @@ export default function HomeScreen() {
     return undefined;
   };
 
+  const [influencerPickerOpen, setInfluencerPickerOpen] = React.useState(false);
+  const influencerCounts = React.useMemo(
+    () => countByCategory(INFLUENCER_RECIPES),
+    [],
+  );
+
+  const startInfluencerSession = (category: InfluencerCategory) => {
+    if (!user || !household) return;
+    setInfluencerPickerOpen(false);
+    const deck = pickInfluencerRecipes(INFLUENCER_RECIPES, pantry, category, {
+      limit: 12,
+    });
+    if (deck.length === 0) {
+      Alert.alert(
+        INFLUENCER_CATEGORY_LABEL[category],
+        "Bu kategoride henüz tarif yok.",
+      );
+      return;
+    }
+    startSession(
+      household.id,
+      user.id,
+      household.memberIds,
+      undefined,
+      undefined,
+      undefined,
+      deck,
+    );
+    const id = useSessionStore.getState().session?.id;
+    if (id) router.push(`/session/${id}`);
+  };
+
   const featured = React.useMemo(() => {
     const byId = new Map(recipes.map((r) => [r.id, r]));
     return favorites
@@ -102,6 +176,25 @@ export default function HomeScreen() {
       .filter((r): r is NonNullable<typeof r> => !!r)
       .slice(0, 8);
   }, [favorites, recipes]);
+
+  // Recipes the household can mostly cook with what's already in the pantry.
+  // Falls back to a few catalogue examples when the pantry is empty so the
+  // slider always shows something to tap into.
+  const pantryPicks = React.useMemo(() => {
+    if (pantry.length > 0) {
+      const cookable = findCookableRecipes(pantry, recipes, {
+        minCoverage: 40,
+        limit: 8,
+      });
+      if (cookable.length > 0) {
+        return cookable.map((c) => ({
+          recipe: c.recipe,
+          percent: c.coveragePercent,
+        }));
+      }
+    }
+    return recipes.slice(0, 5).map((r) => ({ recipe: r, percent: 0 }));
+  }, [pantry, recipes]);
   const dateLabel = DATE_FMT.format(new Date());
 
   return (
@@ -195,28 +288,132 @@ export default function HomeScreen() {
         </Animated.View>
 
         {/* Cici Boğaz CTA */}
-        <Animated.View entering={FadeInDown.delay(120).duration(500)}>
-          <Pressable
-            onPress={() => router.push("/cici")}
-            style={styles.ciciCard}
-          >
-            <View style={styles.ciciIcon}>
-              <UtensilsCrossed size={22} color={colors.primaryDeep} />
-            </View>
-            <View style={{ flex: 1 }}>
-              <Text variant="overline" color={colors.primaryDeep}>
-                Cici Boğaz
-              </Text>
-              <Text variant="bodyMedium" weight="700" style={{ marginTop: 2 }}>
-                Bugün dışarıdan ne söyleyelim?
-              </Text>
-              <Text variant="caption" color={colors.dim} style={{ marginTop: 2 }}>
-                Grup kur • Herkes oy versin • Kazanan belirlensin
-              </Text>
-            </View>
-            <ChevronRight size={18} color={colors.hairline} strokeWidth={1.5} />
-          </Pressable>
-        </Animated.View>
+        {featureFlags.cici ? (
+          <Animated.View entering={FadeInDown.delay(120).duration(500)}>
+            <Pressable
+              onPress={() => router.push("/cici")}
+              style={styles.ciciCard}
+            >
+              <View style={styles.ciciIcon}>
+                <UtensilsCrossed size={22} color={colors.primaryDeep} />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text variant="overline" color={colors.primaryDeep}>
+                  Cici Boğaz
+                </Text>
+                <Text
+                  variant="bodyMedium"
+                  weight="700"
+                  style={{ marginTop: 2 }}
+                >
+                  Bugün dışarıdan ne söyleyelim?
+                </Text>
+                <Text
+                  variant="caption"
+                  color={colors.dim}
+                  style={{ marginTop: 2 }}
+                >
+                  Grup kur • Herkes oy versin • Kazanan belirlensin
+                </Text>
+              </View>
+              <ChevronRight
+                size={18}
+                color={colors.hairline}
+                strokeWidth={1.5}
+              />
+            </Pressable>
+          </Animated.View>
+        ) : null}
+
+        {/* Promo / sponsored banners — managed from the Supabase dashboard */}
+        {homePromos.map((promo, i) => {
+          const tappable = promo.actionType !== "none";
+          return (
+            <Animated.View
+              key={promo.id}
+              entering={FadeInDown.delay(140 + i * 40).duration(500)}
+            >
+              <Pressable
+                onPress={tappable ? () => handlePromoPress(promo) : undefined}
+                disabled={!tappable}
+                style={[
+                  styles.promoCard,
+                  promo.bgColor ? { backgroundColor: promo.bgColor } : null,
+                ]}
+              >
+                {promo.imageUrl ? (
+                  <Image
+                    source={{ uri: promo.imageUrl }}
+                    style={StyleSheet.absoluteFillObject}
+                    contentFit="cover"
+                  />
+                ) : null}
+                {promo.imageUrl ? (
+                  <LinearGradient
+                    colors={["rgba(26,23,20,0.05)", "rgba(26,23,20,0.78)"]}
+                    locations={[0, 1]}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 0, y: 1 }}
+                    style={StyleSheet.absoluteFillObject}
+                  />
+                ) : null}
+                <View style={styles.promoContent}>
+                  {promo.overline ? (
+                    <Text
+                      variant="overline"
+                      color={
+                        promo.imageUrl
+                          ? colors.bg
+                          : (promo.textColor ?? colors.primaryDeep)
+                      }
+                    >
+                      {promo.overline}
+                    </Text>
+                  ) : null}
+                  <Text
+                    variant="bodyMedium"
+                    weight="700"
+                    color={
+                      promo.imageUrl
+                        ? colors.bg
+                        : (promo.textColor ?? colors.ink)
+                    }
+                    style={{ marginTop: 2 }}
+                  >
+                    {promo.title}
+                  </Text>
+                  {promo.subtitle ? (
+                    <Text
+                      variant="caption"
+                      color={
+                        promo.imageUrl ? "rgba(250,247,242,0.85)" : colors.dim
+                      }
+                      style={{ marginTop: 2 }}
+                    >
+                      {promo.subtitle}
+                    </Text>
+                  ) : null}
+                  {tappable && promo.ctaLabel ? (
+                    <View style={styles.promoCtaRow}>
+                      <Text
+                        variant="smallMedium"
+                        weight="700"
+                        color={promo.imageUrl ? colors.bg : colors.primaryDeep}
+                      >
+                        {promo.ctaLabel}
+                      </Text>
+                      <ChevronRight
+                        size={14}
+                        strokeWidth={2.5}
+                        color={promo.imageUrl ? colors.bg : colors.primaryDeep}
+                      />
+                    </View>
+                  ) : null}
+                </View>
+              </Pressable>
+            </Animated.View>
+          );
+        })}
 
         {/* Active session */}
         {session?.status === "active" ? (
@@ -300,14 +497,6 @@ export default function HomeScreen() {
               onPress={() => router.push("/cook-with")}
             />
             <QuickAction
-              icon={Download}
-              label={t.home.quickImport}
-              sub="Instagram, web…"
-              tint={colors.cream}
-              accent={colors.slate}
-              onPress={() => router.push("/import")}
-            />
-            <QuickAction
               icon={BookmarkCheck}
               label={t.home.quickSaved}
               sub="Kaydedilenler"
@@ -315,8 +504,128 @@ export default function HomeScreen() {
               accent={colors.forest}
               onPress={() => router.push("/(tabs)/profile")}
             />
+            <QuickAction
+              icon={Sparkles}
+              label={t.home.quickInfluencer}
+              sub={
+                INFLUENCER_RECIPES.length > 0
+                  ? `${INFLUENCER_RECIPES.length} tarif • kategoriye göre`
+                  : "Yakında"
+              }
+              tint={colors.primarySoft}
+              accent={colors.primaryDeep}
+              onPress={() => {
+                if (!user || !household) return;
+                if (INFLUENCER_RECIPES.length === 0) {
+                  Alert.alert(
+                    "Yakında",
+                    "Fenomen tarifler hazırlanıyor. Birkaç gün içinde burada olacak.",
+                  );
+                  return;
+                }
+                setInfluencerPickerOpen(true);
+              }}
+            />
           </View>
         </View>
+
+        {/* Pantry-based meal suggestions slider */}
+        {pantryPicks.length > 0 ? (
+          <View style={{ gap: spacing.md }}>
+            <View style={styles.sectionHeader}>
+              <View style={{ flex: 1 }}>
+                <Text variant="overline" color={colors.dim}>
+                  Kilerdekilerle Yapabileceğin Yemekler
+                </Text>
+                <Text
+                  variant="caption"
+                  color={colors.dim}
+                  style={{ marginTop: 2 }}
+                >
+                  {pantry.length > 0
+                    ? "Elindeki malzemelere göre öneriler"
+                    : "Örnek tarifler — kilerini doldurunca kişiselleşir"}
+                </Text>
+              </View>
+              <Pressable onPress={() => router.push("/cook-with")}>
+                <Text variant="smallMedium" color={colors.primaryDeep}>
+                  Tümünü gör
+                </Text>
+              </Pressable>
+            </View>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ gap: spacing.md }}
+            >
+              {pantryPicks.map(({ recipe, percent }, i) => (
+                <Animated.View
+                  key={recipe.id}
+                  entering={FadeInDown.delay(160 + i * 60).duration(450)}
+                >
+                  <Pressable
+                    onPress={() => router.push(`/recipe/${recipe.id}`)}
+                    style={styles.pantryCard}
+                  >
+                    <View style={styles.pantryImgWrap}>
+                      <Image
+                        source={{ uri: recipe.imageUrl }}
+                        style={styles.pantryImg}
+                        contentFit="cover"
+                      />
+                      {percent > 0 ? (
+                        <View style={styles.pantryBadge}>
+                          <Package
+                            size={10}
+                            color={colors.ink}
+                            strokeWidth={2}
+                          />
+                          <Text
+                            variant="caption"
+                            weight="700"
+                            style={{ fontSize: 10 }}
+                          >
+                            %{percent}
+                          </Text>
+                        </View>
+                      ) : null}
+                    </View>
+                    <Text
+                      variant="smallMedium"
+                      weight="600"
+                      numberOfLines={2}
+                      style={{ fontSize: 13, lineHeight: 16 }}
+                    >
+                      {recipe.title}
+                    </Text>
+                    <View style={styles.pantryCardFooter}>
+                      <View style={styles.featuredMeta}>
+                        <Clock size={10} color={colors.dim} strokeWidth={1.5} />
+                        <Text variant="caption" color={colors.dim}>
+                          {recipe.prepTimeMinutes} dk
+                        </Text>
+                      </View>
+                      <View style={styles.pantryDetail}>
+                        <Text
+                          variant="caption"
+                          weight="700"
+                          color={colors.primaryDeep}
+                        >
+                          Detay
+                        </Text>
+                        <ChevronRight
+                          size={12}
+                          color={colors.primaryDeep}
+                          strokeWidth={2.5}
+                        />
+                      </View>
+                    </View>
+                  </Pressable>
+                </Animated.View>
+              ))}
+            </ScrollView>
+          </View>
+        ) : null}
 
         {/* AI suggestions */}
         <View style={{ gap: spacing.md }}>
@@ -399,6 +708,14 @@ export default function HomeScreen() {
 
         <View style={{ height: spacing["4xl"] }} />
       </ScrollView>
+
+      <InfluencerCategoryPicker
+        visible={influencerPickerOpen}
+        counts={influencerCounts}
+        pantryAware={pantry.length >= 3}
+        onSelect={startInfluencerSession}
+        onClose={() => setInfluencerPickerOpen(false)}
+      />
     </Screen>
   );
 }
@@ -514,6 +831,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  promoCard: {
+    position: "relative",
+    overflow: "hidden",
+    minHeight: 96,
+    borderRadius: 20,
+    backgroundColor: colors.primarySoft,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  promoContent: {
+    padding: spacing.lg,
+    justifyContent: "center",
+    minHeight: 96,
+  },
+  promoCtaRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginTop: spacing.sm,
+  },
   activeThumbWrap: { position: "relative" },
   activeThumb: {
     width: 56,
@@ -572,5 +909,45 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 4,
+  },
+  pantryCard: {
+    width: 160,
+    gap: 8,
+    padding: spacing.sm,
+    borderRadius: radii.xl,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  pantryImgWrap: {
+    position: "relative",
+  },
+  pantryImg: {
+    width: "100%",
+    height: 104,
+    borderRadius: radii.md,
+    backgroundColor: colors.cream,
+  },
+  pantryBadge: {
+    position: "absolute",
+    top: 8,
+    left: 8,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 3,
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+    borderRadius: radii.pill,
+    backgroundColor: colors.primary,
+  },
+  pantryCardFooter: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  pantryDetail: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 2,
   },
 });

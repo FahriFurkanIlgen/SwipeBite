@@ -8,7 +8,7 @@ import {
   View,
 } from "react-native";
 import { router } from "expo-router";
-import { Image } from "expo-image";
+import { RecipeImage } from "@/components/ui/RecipeImage";
 import {
   ChevronDown,
   Clock,
@@ -34,6 +34,8 @@ import { usePlannerStore } from "@/store/plannerStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { useRecipesStore } from "@/store/recipesStore";
 import { useGroceryStore } from "@/store/groceryStore";
+import { useEntitlementsStore } from "@/store/entitlementsStore";
+import { useUpsellStore } from "@/store/upsellStore";
 import {
   groupGroceryByCategory,
   splitGroceryList,
@@ -47,6 +49,7 @@ import {
   type Course,
 } from "@/features/recipes/recipeClassifier";
 import { MealPlan, WeeklyMode } from "@/types/domain";
+import { getRecipeImageSource } from "@/features/recipes/recipeImage";
 
 const MEAL_PLAN_ORDER: MealPlan[] = [
   "kahvalti",
@@ -205,7 +208,14 @@ export default function PlannerScreen() {
 
   const handleAIGenerate = () => {
     if (!household) return;
-    void generateFromPreferences(household.id);
+    void (async () => {
+      const ok = await useEntitlementsStore.getState().consume("weekly_plan");
+      if (!ok) {
+        useUpsellStore.getState().show("weekly_plan");
+        return;
+      }
+      await generateFromPreferences(household.id);
+    })();
   };
 
   const handleShuffle = () => {
@@ -489,9 +499,11 @@ export default function PlannerScreen() {
                               }
                               style={styles.dayMeal}
                             >
-                              <Image
-                                source={{ uri: recipe.imageUrl }}
+                              <RecipeImage
+                                source={getRecipeImageSource(recipe)}
                                 style={styles.dayImg}
+                                containerStyle={styles.dayImg}
+                                placeholderRadius={10}
                                 contentFit="cover"
                               />
                               <View style={{ flex: 1 }}>

@@ -32,10 +32,19 @@ function categoryOf(name: string): PantryCategory | null {
   return null;
 }
 
+// Ingredient names repeat heavily across the catalog, and the `categoryOf`
+// fallback scans the entire PANTRY_CATEGORY_INDEX (hundreds of keys) for any
+// unmatched name. Cache the per-name weight so ranking a deck doesn't redo
+// that scan for every duplicate ingredient string.
+const WEIGHT_CACHE = new Map<string, number>();
+
 function weightOf(name: string): number {
+  const cached = WEIGHT_CACHE.get(name);
+  if (cached !== undefined) return cached;
   const cat = categoryOf(name);
-  if (!cat) return 1;
-  return CATEGORY_WEIGHT[cat];
+  const w = cat ? CATEGORY_WEIGHT[cat] : 1;
+  WEIGHT_CACHE.set(name, w);
+  return w;
 }
 
 /**

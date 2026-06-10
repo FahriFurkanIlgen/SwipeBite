@@ -61,6 +61,12 @@ export const t = {
     firstSessionTitle: "Hadi ilk eşleşmeyi bulalım",
     firstSessionSubtitle: "Birkaç kart kaydır, gerisini biz hallederiz.",
     startSwiping: "Kaydırmaya başla",
+    barTitle: "Bar modu",
+    barSubtitle:
+      "Kokteyl tarifleri, bar dolabı önerileri ve alkollü içecek eşleştirmeleri. İstemezsen bu bölümü kapatabilirsin.",
+    barConsent: "18 yaşından büyüğüm ve alkollü içerikleri görmek istiyorum.",
+    barEnable: "Bar modunu aç",
+    barSkip: "Şimdilik kapalı kalsın",
   },
   spice: {
     none: "Hiç acı sevmem",
@@ -74,6 +80,7 @@ export const t = {
     plan: "Hafta",
     pantry: "Kiler",
     profile: "Profil",
+    bar: "Bar",
   },
   home: {
     greetingMorning: "Günaydın",
@@ -84,6 +91,7 @@ export const t = {
     quickWeekly: "Haftalık plan oluştur",
     quickImport: "Tarif içe aktar",
     quickSaved: "Kaydettiklerim",
+    quickInfluencer: "Fenomen Tarifler",
     activeSessionTitle: "Aktif oturum",
     waitingPartner: "Eşinin oyu bekleniyor",
     matchReady: "Bugünün eşleşmesi bulundu",
@@ -148,6 +156,9 @@ export const t = {
     empty: "Henüz malzeme eklenmedi.",
     addedCount: (n: number) => `${n} malzeme eklendi`,
     suggestCta: "Bunlarla ne yapsam?",
+    scanCta: "Fişten ekle",
+    scanReading: "Fiş okunuyor…",
+    scanEmpty: "Fişte malzeme bulamadım. Daha net bir fotoğraf dener misin?",
   },
   recipe: {
     ingredients: "Malzemeler",

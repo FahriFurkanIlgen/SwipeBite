@@ -13,6 +13,7 @@ export default function JoinScreen() {
   const { code } = useLocalSearchParams<{ code: string }>();
   const user = useAuthStore((s) => s.user);
   const setHousehold = useAuthStore((s) => s.setHousehold);
+  const refreshHousehold = useAuthStore((s) => s.refreshHousehold);
 
   const [state, setState] = React.useState<
     "loading" | "ok" | "error" | "needsAuth"
@@ -52,6 +53,10 @@ export default function JoinScreen() {
           return;
         }
         setHousehold(h);
+        // Re-fetch members in case the just-inserted membership row wasn't
+        // visible yet when the RPC returned (replication lag) — ensures the
+        // partner shows up on this first pairing without an app restart.
+        void refreshHousehold();
         setState("ok");
         setTimeout(() => router.replace("/(tabs)"), 700);
       } catch {
@@ -64,7 +69,7 @@ export default function JoinScreen() {
     return () => {
       cancelled = true;
     };
-  }, [code, user, setHousehold]);
+  }, [code, user, setHousehold, refreshHousehold]);
 
   return (
     <Screen background="bg">

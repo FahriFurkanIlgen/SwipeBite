@@ -452,10 +452,32 @@ export function recommendMealPlanForNow(now: Date = new Date()): MealPlan {
  * @param includeCourses Optional whitelist — only these courses are dealt.
  *   Defaults to all courses in the plan's composition.
  */
+/**
+ * Fraction (0–1) of a recipe's ingredients already present in the pantry.
+ * `pantryNames` must be lower-cased. Used to bias the deck towards recipes
+ * the household can mostly cook with what they already have.
+ */
+export function pantryMatchFraction(
+  recipe: Recipe,
+  pantryNames: string[],
+): number {
+  if (recipe.ingredients.length === 0 || pantryNames.length === 0) return 0;
+  const matched = recipe.ingredients.filter((i) => {
+    const name = i.name.toLocaleLowerCase("tr-TR");
+    return pantryNames.some((p) => name.includes(p) || p.includes(name));
+  });
+  return matched.length / recipe.ingredients.length;
+}
+
 export function buildDeckForMealPlan(
   plan: MealPlan,
   pool: Recipe[],
   includeCourses?: Course[],
+  /**
+   * When provided (lower-cased pantry item names), recipes are ordered within
+   * each course by how well they match the pantry instead of pure random.
+   */
+  pantryNames?: string[],
 ): Recipe[] {
   const composition = MEAL_PLAN_COMPOSITION[plan].filter(
     (slot) => !includeCourses || includeCourses.includes(slot.course),
@@ -466,8 +488,19 @@ export function buildDeckForMealPlan(
     if (!grouped.has(c)) grouped.set(c, []);
     grouped.get(c)!.push(r);
   }
+  const smart = !!pantryNames && pantryNames.length > 0;
   for (const arr of grouped.values()) {
-    arr.sort(() => Math.random() - 0.5);
+    if (smart) {
+      // Pantry-match desc, random tie-break so equal matches still vary.
+      arr.sort((a, b) => {
+        const diff =
+          pantryMatchFraction(b, pantryNames!) -
+          pantryMatchFraction(a, pantryNames!);
+        return diff !== 0 ? diff : Math.random() - 0.5;
+      });
+    } else {
+      arr.sort(() => Math.random() - 0.5);
+    }
   }
   const used = new Set<string>();
   const deck: Recipe[] = [];

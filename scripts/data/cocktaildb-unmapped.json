@@ -1,0 +1,240 @@
+{
+  "summary": {
+    "skippedCocktails": 7,
+    "uniqueUnmappedIngredients": 23
+  },
+  "topUnmapped": [
+    {
+      "name": "Anise",
+      "count": 2
+    },
+    {
+      "name": "Goldschlager",
+      "count": 1
+    },
+    {
+      "name": "Jägermeister",
+      "count": 1
+    },
+    {
+      "name": "Rumple Minze",
+      "count": 1
+    },
+    {
+      "name": "Kirschwasser",
+      "count": 1
+    },
+    {
+      "name": "Strawberry liqueur",
+      "count": 1
+    },
+    {
+      "name": "Strawberries",
+      "count": 1
+    },
+    {
+      "name": "Licorice root",
+      "count": 1
+    },
+    {
+      "name": "Wormwood",
+      "count": 1
+    },
+    {
+      "name": "Heavy cream",
+      "count": 1
+    },
+    {
+      "name": "Milk",
+      "count": 1
+    },
+    {
+      "name": "Egg White",
+      "count": 1
+    },
+    {
+      "name": "Apricot",
+      "count": 1
+    },
+    {
+      "name": "Almond flavoring",
+      "count": 1
+    },
+    {
+      "name": "Grain alcohol",
+      "count": 1
+    },
+    {
+      "name": "Glycerine",
+      "count": 1
+    },
+    {
+      "name": "Angelica root",
+      "count": 1
+    },
+    {
+      "name": "Almond",
+      "count": 1
+    },
+    {
+      "name": "Allspice",
+      "count": 1
+    },
+    {
+      "name": "Coriander",
+      "count": 1
+    },
+    {
+      "name": "Marjoram leaves",
+      "count": 1
+    },
+    {
+      "name": "Maui",
+      "count": 1
+    },
+    {
+      "name": "Mountain Dew",
+      "count": 1
+    }
+  ],
+  "byDrink": [
+    {
+      "drink": "24k nightmare",
+      "ingredients": [
+        {
+          "name": "Goldschlager",
+          "amount": "1/2 oz"
+        },
+        {
+          "name": "Jägermeister",
+          "amount": "1/2 oz"
+        },
+        {
+          "name": "Rumple Minze",
+          "amount": "1/2 oz"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "A midsummernight dream",
+      "ingredients": [
+        {
+          "name": "Kirschwasser",
+          "amount": "1 oz"
+        },
+        {
+          "name": "Strawberry liqueur",
+          "amount": "1 tsp"
+        },
+        {
+          "name": "Strawberries",
+          "amount": "5"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Absinthe #2",
+      "ingredients": [
+        {
+          "name": "Anise",
+          "amount": "50 ml pure"
+        },
+        {
+          "name": "Licorice root",
+          "amount": "1 tblsp"
+        },
+        {
+          "name": "Wormwood",
+          "amount": "1"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Ace",
+      "ingredients": [
+        {
+          "name": "Heavy cream",
+          "amount": "1/2 shot"
+        },
+        {
+          "name": "Milk",
+          "amount": "1/2 shot"
+        },
+        {
+          "name": "Egg White",
+          "amount": "1/2 Fresh"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Amaretto Liqueur",
+      "ingredients": [
+        {
+          "name": "Apricot",
+          "amount": "2"
+        },
+        {
+          "name": "Almond flavoring",
+          "amount": "1 tblsp"
+        },
+        {
+          "name": "Grain alcohol",
+          "amount": "1/2 cup pure"
+        },
+        {
+          "name": "Glycerine",
+          "amount": "1/2 tsp"
+        }
+      ],
+      "reason": "too-many-unmapped (4)"
+    },
+    {
+      "drink": "Angelica Liqueur",
+      "ingredients": [
+        {
+          "name": "Angelica root",
+          "amount": "3 tblsp chopped"
+        },
+        {
+          "name": "Almond",
+          "amount": "1 tblsp chopped"
+        },
+        {
+          "name": "Allspice",
+          "amount": "1 cracked"
+        },
+        {
+          "name": "Anise",
+          "amount": "3-6 crushed"
+        },
+        {
+          "name": "Coriander",
+          "amount": "1/8 tsp powdered"
+        },
+        {
+          "name": "Marjoram leaves",
+          "amount": "1 tblsp fresh chopped"
+        }
+      ],
+      "reason": "too-many-unmapped (6)"
+    },
+    {
+      "drink": "Arctic Mouthwash",
+      "ingredients": [
+        {
+          "name": "Maui",
+          "amount": "5 oz blue"
+        },
+        {
+          "name": "Mountain Dew",
+          "amount": "5 oz"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    }
+  ]
+}

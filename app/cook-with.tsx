@@ -7,7 +7,7 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { ChefHat, Search, Sparkles, X } from "lucide-react-native";
 
 import { Screen } from "@/components/ui/Screen";
@@ -81,13 +81,15 @@ const MODE_LABELS: Record<SearchMode, string> = {
 };
 
 export default function CookWithScreen() {
+  const params = useLocalSearchParams<{ pantry?: string }>();
+  const startWithPantry = params.pantry === "1";
   const recipes = useRecipesStore((s) => s.items);
   const pantry = usePantryStore((s) => s.items);
 
   const [selected, setSelected] = React.useState<Set<string>>(new Set());
   const [query, setQuery] = React.useState("");
   const [mode, setMode] = React.useState<SearchMode>("best");
-  const [usePantry, setUsePantry] = React.useState(false);
+  const [usePantry, setUsePantry] = React.useState(startWithPantry);
   // Snapshot of the selection that was "submitted" via the suggest button.
   // Results only render for this snapshot — changes to `selected` invalidate
   // it so the user explicitly re-runs the search.
@@ -145,6 +147,16 @@ export default function CookWithScreen() {
     }, 16);
   }, [selectedArr]);
 
+  // When opened from the pantry "AI Önerisi" CTA (pantry=1), run the search
+  // automatically once the pantry items have seeded the selection.
+  const autoRan = React.useRef(false);
+  React.useEffect(() => {
+    if (!startWithPantry || autoRan.current) return;
+    if (selectedArr.length === 0) return;
+    autoRan.current = true;
+    setCommitted(selectedArr);
+  }, [startWithPantry, selectedArr]);
+
   return (
     <Screen background="bg" padded={false}>
       {/* Header */}
@@ -160,7 +172,7 @@ export default function CookWithScreen() {
           <Text variant="overline" color={colors.dim}>
             Bu akşam ne yapsam?
           </Text>
-          <Text variant="title" weight="700">
+          <Text variant="h2" weight="700">
             Malzemelerden bul
           </Text>
         </View>
@@ -442,7 +454,7 @@ const styles = StyleSheet.create({
   closeBtn: {
     width: 36,
     height: 36,
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
     backgroundColor: colors.cream,
     alignItems: "center",
     justifyContent: "center",
@@ -468,7 +480,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.ink,
     paddingHorizontal: spacing.md,
     paddingVertical: 6,
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
   },
   pantryToggle: {
     alignSelf: "flex-start",
@@ -476,7 +488,7 @@ const styles = StyleSheet.create({
     marginTop: spacing.md,
     paddingHorizontal: spacing.md,
     paddingVertical: 8,
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
     borderWidth: 1,
   },
   section: {
@@ -495,7 +507,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 12,
     paddingVertical: 6,
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
     borderWidth: 1,
     borderColor: colors.border,
     backgroundColor: "transparent",
@@ -523,7 +535,7 @@ const styles = StyleSheet.create({
     minWidth: 48,
     paddingHorizontal: 8,
     paddingVertical: 6,
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
     backgroundColor: colors.primary,
     alignItems: "center",
   },

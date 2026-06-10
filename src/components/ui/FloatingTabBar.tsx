@@ -7,6 +7,7 @@ import {
   CalendarDays,
   Package,
   User,
+  Wine,
   type LucideIcon,
 } from "lucide-react-native";
 import Animated, {
@@ -25,6 +26,7 @@ const ICONS: Record<string, LucideIcon> = {
   swipe: Layers,
   planner: CalendarDays,
   pantry: Package,
+  bar: Wine,
   profile: User,
 };
 
@@ -41,13 +43,35 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
   const [tabWidth, setTabWidth] = React.useState(0);
   const x = useSharedValue(0);
 
+  // Filter out routes that are explicitly hidden via expo-router's
+  // `href: null` (e.g. the Bar tab when the user has declined alcohol
+  // content). The route stays mounted in the navigator for deep links,
+  // but should not appear in the visible tab bar.
+  const visibleRoutes = React.useMemo(
+    () =>
+      state.routes.filter((route) => {
+        const opts = descriptors[route.key]?.options as
+          | { href?: string | null }
+          | undefined;
+        return opts?.href !== null;
+      }),
+    [state.routes, descriptors],
+  );
+
+  // Map the navigator's active index to the index within visibleRoutes.
+  const activeRouteKey = state.routes[state.index]?.key;
+  const visibleActiveIndex = Math.max(
+    0,
+    visibleRoutes.findIndex((r) => r.key === activeRouteKey),
+  );
+
   React.useEffect(() => {
     if (tabWidth === 0) return;
-    x.value = withSpring(state.index * tabWidth, {
+    x.value = withSpring(visibleActiveIndex * tabWidth, {
       damping: 22,
       stiffness: 220,
     });
-  }, [state.index, tabWidth, x]);
+  }, [visibleActiveIndex, tabWidth, x]);
 
   const indicatorStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: x.value }],
@@ -66,7 +90,7 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
         <View
           style={styles.row}
           onLayout={(e) => {
-            const w = e.nativeEvent.layout.width / state.routes.length;
+            const w = e.nativeEvent.layout.width / visibleRoutes.length;
             if (Math.abs(w - tabWidth) > 0.5) setTabWidth(w);
           }}
         >
@@ -75,8 +99,8 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
               <View style={styles.indicatorInner} />
             </Animated.View>
           ) : null}
-          {state.routes.map((route, idx) => {
-            const isFocused = state.index === idx;
+          {visibleRoutes.map((route) => {
+            const isFocused = route.key === activeRouteKey;
             const opts = descriptors[route.key]?.options;
             const label = (opts?.title ?? route.name) as string;
             const Icon = ICONS[route.name] ?? HomeIcon;

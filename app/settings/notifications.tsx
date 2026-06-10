@@ -18,6 +18,9 @@ import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, spacing } from "@/constants/theme";
 import { pushService } from "@/features/notifications/pushService";
+import { findCookableRecipes } from "@/features/pantry/pantryMatcher";
+import { usePantryStore } from "@/store/pantryStore";
+import { useRecipesStore } from "@/store/recipesStore";
 
 const KIND_DINNER = "dinner_nudge";
 const KIND_PARTNER = "partner_waiting";
@@ -70,7 +73,14 @@ export default function NotificationsScreen() {
           );
           return;
         }
-        await pushService.scheduleDinnerNudge();
+        // scheduleDinnerNudge() is idempotent (cancels existing dinner
+        // nudges first) — safe to call without manual cleanup here.
+        const titles = findCookableRecipes(
+          usePantryStore.getState().items,
+          useRecipesStore.getState().items,
+          { minCoverage: 50, limit: 3 },
+        ).map((c) => c.recipe.title);
+        await pushService.scheduleDinnerNudge(titles);
       } else {
         const scheduled =
           await Notifications.getAllScheduledNotificationsAsync();
@@ -131,8 +141,8 @@ export default function NotificationsScreen() {
         <View style={styles.card}>
           <ToggleRow
             icon={Moon}
-            label="Akşam yemeği hatırlatıcısı"
-            sub="Her gün 18:00'de 'bugün ne yesek?' nudge'ı"
+            label="Kiler yemek önerileri"
+            sub="Her gün 17:00'de kilerindeki malzemelerle yapabileceğin yemekler"
             value={dinner}
             disabled={busy || permission === "denied"}
             onValueChange={toggleDinner}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Pressable, ScrollView, StyleSheet, View } from "react-native";
-import { router } from "expo-router";
+import { router, useFocusEffect } from "expo-router";
 import { Image } from "expo-image";
 import {
   Bell,
@@ -11,37 +11,74 @@ import {
   LogOut,
   Settings2,
   Shield,
+  Sparkles,
+  Wine,
   type LucideIcon,
 } from "lucide-react-native";
 
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { CoachMark } from "@/components/ui/CoachMark";
+import { AgeGateModal } from "@/features/bar/AgeGateModal";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { featureFlags } from "@/constants/featureFlags";
 import { useAuthStore } from "@/store/authStore";
 import { useRecipesStore } from "@/store/recipesStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { useStatsStore } from "@/store/statsStore";
 import { useTutorialStore } from "@/store/tutorialStore";
+import { useEntitlementsStore } from "@/store/entitlementsStore";
 
 export default function ProfileScreen() {
   const user = useAuthStore((s) => s.user);
   const profile = useAuthStore((s) => s.profile);
   const household = useAuthStore((s) => s.household);
   const signOut = useAuthStore((s) => s.signOut);
+  const refreshHousehold = useAuthStore((s) => s.refreshHousehold);
   const cookCounts = useStatsStore((s) => s.cookCounts);
   const favorites = useStatsStore((s) => s.favorites);
   const recipes = useRecipesStore((s) => s.items);
   const pantryItems = usePantryStore((s) => s.items);
   const session = useSessionStore((s) => s.session);
 
+  // Re-fetch household membership whenever the profile tab gains focus so a
+  // partner who joined via invite code shows up without an app restart (there
+  // is no realtime subscription on household_members).
+  useFocusEffect(
+    React.useCallback(() => {
+      void refreshHousehold();
+    }, [refreshHousehold]),
+  );
+
   const resetTutorials = useTutorialStore((s) => s.resetAll);
   const handleResetTutorial = React.useCallback(() => {
     void resetTutorials();
     router.push("/(onboarding)/tutorial");
   }, [resetTutorials]);
+
+  const setProfile = useAuthStore((s) => s.setProfile);
+  const alcoholFlag = profile?.alcoholContentEnabled;
+  const [barGateOpen, setBarGateOpen] = React.useState(false);
+
+  // Hidden developer toggle: long-press the footer to flip the Pro tier so we
+  // can test with/without AI quotas before a real paywall exists (Faz 2).
+  const tier = useEntitlementsStore((s) => s.tier);
+  const setTier = useEntitlementsStore((s) => s.setTier);
+  const handleTierToggle = React.useCallback(() => {
+    void setTier(tier === "pro" ? "free" : "pro");
+  }, [tier, setTier]);
+
+  const handleBarToggle = React.useCallback(() => {
+    if (alcoholFlag === true) {
+      // Disable Bar mode immediately — no extra prompt.
+      setProfile({ alcoholContentEnabled: false });
+    } else {
+      // Re-enable: require the 18+ confirmation again.
+      setBarGateOpen(true);
+    }
+  }, [alcoholFlag, setProfile]);
 
   const totalCooked = Object.values(cookCounts).reduce((a, b) => a + b, 0);
   const sessionsRun = session ? 1 : 0;
@@ -249,6 +286,32 @@ export default function ProfileScreen() {
           </View>
         ) : null}
 
+        {/* Pro */}
+        <Pressable
+          onPress={() => router.push("/paywall")}
+          style={[
+            styles.proCard,
+            tier === "pro" && { backgroundColor: colors.forestSoft },
+          ]}
+        >
+          <View style={styles.proIcon}>
+            <Sparkles size={18} strokeWidth={2} color={colors.ink} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text variant="bodyMedium" weight="700" color={colors.ink}>
+              {tier === "pro" ? "SwipeBite Pro · Aktif" : "SwipeBite Pro"}
+            </Text>
+            <Text variant="small" color={colors.slate}>
+              {tier === "pro"
+                ? "Tüm AI özellikleri sınırsız"
+                : "Sınırsız AI · reklamsız · tüm aile"}
+            </Text>
+          </View>
+          {tier !== "pro" ? (
+            <ChevronRight size={18} color={colors.slate} strokeWidth={2} />
+          ) : null}
+        </Pressable>
+
         {/* Settings */}
         <View style={styles.settingsCard}>
           <SettingsRow
@@ -264,6 +327,40 @@ export default function ProfileScreen() {
             border
             onPress={() => router.push("/settings/notifications")}
           />
+          {featureFlags.bar ? (
+            <SettingsRow
+              icon={Wine}
+              label="Bar modu"
+              sub={
+                alcoholFlag === true
+                  ? "Açık · kokteyl tarifleri görünür"
+                  : alcoholFlag === false
+                    ? "Kapalı · alkollü içerik gizli"
+                    : "Yaş onayı bekliyor"
+              }
+              border
+              trailing={
+                <View
+                  style={{
+                    paddingHorizontal: 10,
+                    paddingVertical: 4,
+                    borderRadius: 999,
+                    backgroundColor:
+                      alcoholFlag === true ? colors.primary : colors.cream,
+                  }}
+                >
+                  <Text
+                    variant="caption"
+                    weight="600"
+                    color={alcoholFlag === true ? colors.ink : colors.slate}
+                  >
+                    {alcoholFlag === true ? "Açık" : "Kapalı"}
+                  </Text>
+                </View>
+              }
+              onPress={handleBarToggle}
+            />
+          ) : null}
           <SettingsRow
             icon={Shield}
             label="Gizlilik"
@@ -306,12 +403,33 @@ export default function ProfileScreen() {
           </Pressable>
         </View>
 
+        <Pressable onLongPress={handleTierToggle} delayLongPress={600}>
+          <Text
+            variant="caption"
+            color={colors.dim}
+            style={{ textAlign: "center", marginTop: spacing.lg }}
+          >
+            SwipeBite{tier === "pro" ? " Pro" : ""}
+          </Text>
+        </Pressable>
+
         <View style={{ height: 100 }} />
       </ScrollView>
       <CoachMark
         storageKey="inviteCoach"
         title="Aile üyesini davet et"
         description="Profilinden 'Eve davet et' diyerek bir bağlantı paylaş. Eşin/ailen aynı ev hesabına katıldığında birlikte kaydırıp eşleşebilirsiniz."
+      />
+      <AgeGateModal
+        visible={featureFlags.bar && barGateOpen}
+        onConfirm={() => {
+          setProfile({ alcoholContentEnabled: true });
+          setBarGateOpen(false);
+        }}
+        onDecline={() => {
+          setProfile({ alcoholContentEnabled: false });
+          setBarGateOpen(false);
+        }}
       />
     </Screen>
   );
@@ -322,6 +440,8 @@ interface SettingsRowProps {
   label: string;
   sub: string;
   border?: boolean;
+  /** Optional element rendered on the right side instead of the chevron. */
+  trailing?: React.ReactNode;
   onPress?: () => void;
 }
 const SettingsRow: React.FC<SettingsRowProps> = ({
@@ -329,6 +449,7 @@ const SettingsRow: React.FC<SettingsRowProps> = ({
   label,
   sub,
   border,
+  trailing,
   onPress,
 }) => (
   <Pressable
@@ -349,7 +470,9 @@ const SettingsRow: React.FC<SettingsRowProps> = ({
         {sub}
       </Text>
     </View>
-    <ChevronRight size={14} color={colors.hairline} strokeWidth={1.5} />
+    {trailing ?? (
+      <ChevronRight size={14} color={colors.hairline} strokeWidth={1.5} />
+    )}
   </Pressable>
 );
 
@@ -489,6 +612,25 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border,
     overflow: "hidden",
+  },
+  proCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.lg,
+    marginBottom: spacing.lg,
+    borderRadius: 20,
+    backgroundColor: colors.primarySoft,
+    borderWidth: 1,
+    borderColor: colors.primary,
+  },
+  proIcon: {
+    width: 38,
+    height: 38,
+    borderRadius: 12,
+    backgroundColor: colors.card,
+    alignItems: "center",
+    justifyContent: "center",
   },
   settingsRow: {
     flexDirection: "row",

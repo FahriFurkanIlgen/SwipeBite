@@ -387,6 +387,7 @@ export async function generatePlanWithAI(
       catalog,
     }),
     temperature: 0.4,
+    feature: "weekly_plan",
   });
 
   if (!ai?.days?.length) return base;

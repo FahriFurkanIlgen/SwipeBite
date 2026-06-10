@@ -57,9 +57,9 @@ export default function HouseholdScreen() {
   return (
     <Screen background="bg">
       <View style={styles.header}>
-        <ProgressDots total={4} index={1} />
+        <ProgressDots total={5} index={1} />
         <Text variant="caption" color={colors.dim}>
-          {t.onboarding.step(2, 4)}
+          {t.onboarding.step(2, 5)}
         </Text>
       </View>
 

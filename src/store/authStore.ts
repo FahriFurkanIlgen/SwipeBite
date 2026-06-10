@@ -6,6 +6,10 @@ import { authService } from "@/features/auth/authService";
 import { supabase } from "@/lib/supabase";
 
 const ONBOARDED_KEY = "@swipebite/onboarded";
+// The household the user is actively paired with. Persisted so an invite-code
+// pairing survives app restarts (and wins over an older self-created house)
+// until the user explicitly leaves / signs out.
+const ACTIVE_HOUSEHOLD_KEY = "@swipebite/activeHousehold";
 
 interface AuthState {
   user: User | null;
@@ -21,6 +25,9 @@ interface AuthState {
   signInWithGoogle: () => Promise<void>;
   signInWithApple: () => Promise<void>;
   hydrateFromSession: () => Promise<void>;
+  /** Re-fetch the active household (e.g. after a partner joins) without a
+   *  full session hydrate, so new members show up immediately. */
+  refreshHousehold: () => Promise<void>;
   subscribeAuthChanges: () => () => void;
   signOut: () => Promise<void>;
   setProfile: (patch: Partial<Profile>) => void;
@@ -141,11 +148,15 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   hydrateFromSession: async () => {
     const user = await authService.getCurrentUser();
     if (!user) return;
-    const [profile, household, persistedOnboarded] = await Promise.all([
+    const [profile, activeHouseholdId, persistedOnboarded] = await Promise.all([
       authService.getProfile(user.id),
-      authService.getPrimaryHousehold(user.id),
+      AsyncStorage.getItem(ACTIVE_HOUSEHOLD_KEY).catch(() => null),
       AsyncStorage.getItem(ONBOARDED_KEY).catch(() => null),
     ]);
+    const household = await authService.getPrimaryHousehold(
+      user.id,
+      activeHouseholdId,
+    );
     set({
       user,
       profile: profile ?? emptyProfile(user.id),
@@ -154,11 +165,24 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       // OR they previously completed onboarding on this device.
       isOnboarded: !!profile || !!household || persistedOnboarded === "1",
     });
+    // Keep the persisted active id in sync with what we actually resolved.
+    if (household?.id) {
+      AsyncStorage.setItem(ACTIVE_HOUSEHOLD_KEY, household.id).catch(
+        () => undefined,
+      );
+    }
+  },
+  refreshHousehold: async () => {
+    const { user, household } = get();
+    if (!user) return;
+    const h = await authService.getPrimaryHousehold(user.id, household?.id);
+    if (h) set({ household: h });
   },
   subscribeAuthChanges: () => {
     if (!supabase) return () => undefined;
     const { data } = supabase.auth.onAuthStateChange((event) => {
       if (event === "SIGNED_OUT") {
+        AsyncStorage.removeItem(ACTIVE_HOUSEHOLD_KEY).catch(() => undefined);
         set({ user: null, profile: null, household: null, isOnboarded: false });
       } else if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED") {
         void get().hydrateFromSession();
@@ -168,6 +192,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
   signOut: async () => {
     await authService.signOut();
+    AsyncStorage.removeItem(ACTIVE_HOUSEHOLD_KEY).catch(() => undefined);
     set({ user: null, profile: null, household: null, isOnboarded: false });
   },
   setProfile: (patch) => {
@@ -178,7 +203,16 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     // Fire and forget — best effort sync.
     void authService.upsertProfile(next);
   },
-  setHousehold: (h) => set({ household: h }),
+  setHousehold: (h) => {
+    set({ household: h });
+    // Persist which household is active so it survives restarts and wins over
+    // an older self-created household during hydration.
+    if (h?.id) {
+      AsyncStorage.setItem(ACTIVE_HOUSEHOLD_KEY, h.id).catch(() => undefined);
+    } else {
+      AsyncStorage.removeItem(ACTIVE_HOUSEHOLD_KEY).catch(() => undefined);
+    }
+  },
   setOnboarded: (v) => {
     set({ isOnboarded: v });
     AsyncStorage.setItem(ONBOARDED_KEY, v ? "1" : "0").catch(() => undefined);
