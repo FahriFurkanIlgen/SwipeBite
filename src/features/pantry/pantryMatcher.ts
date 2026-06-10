@@ -19,6 +19,18 @@ const CATEGORY_WEIGHT: Record<PantryCategory, number> = {
   "Yağ & Sos": 0.5,
 };
 
+/**
+ * Categories whose items are "staples" that don't meaningfully run out after
+ * a single meal (spices, nuts, oil & sauce). We still surface them when
+ * tidying the pantry after cooking, but pre-select them as *not* used so the
+ * user doesn't accidentally delete their salt/olive oil.
+ */
+const STAPLE_CATEGORIES: ReadonlySet<PantryCategory> = new Set([
+  "Baharat",
+  "Kuruyemiş",
+  "Yağ & Sos",
+]);
+
 function categoryOf(name: string): PantryCategory | null {
   const key = name.toLocaleLowerCase("tr-TR").trim();
   if (!key) return null;
@@ -120,4 +132,37 @@ export function findCookableRecipes(
       return a.missingCount - b.missingCount;
     })
     .slice(0, limit);
+}
+
+export interface UsedPantryItem {
+  item: PantryItem;
+  /** True for spices/oil/nuts that shouldn't be auto-removed after one meal. */
+  staple: boolean;
+}
+
+/**
+ * Find the pantry items that a recipe most likely consumes, so we can offer to
+ * remove them after the meal is cooked. Uses the same loose name matching as
+ * {@link recipePantryCoverage} (substring either direction). Staple items
+ * (spices, oil, nuts) are flagged so the UI can pre-deselect them.
+ */
+export function pantryItemsUsedByRecipe(
+  recipe: Recipe,
+  pantry: PantryItem[],
+): UsedPantryItem[] {
+  const ingredientNames = recipe.ingredients.map((i) =>
+    i.name.toLocaleLowerCase("tr-TR").trim(),
+  );
+  const used: UsedPantryItem[] = [];
+  for (const item of pantry) {
+    const n = item.name.toLocaleLowerCase("tr-TR").trim();
+    if (!n) continue;
+    const isMatch = ingredientNames.some(
+      (ing) => ing && (ing.includes(n) || n.includes(ing)),
+    );
+    if (!isMatch) continue;
+    const cat = categoryOf(item.name);
+    used.push({ item, staple: cat ? STAPLE_CATEGORIES.has(cat) : false });
+  }
+  return used;
 }

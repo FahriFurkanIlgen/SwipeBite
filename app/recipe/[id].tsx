@@ -1,6 +1,14 @@
 import React from "react";
-import { Linking, Pressable, ScrollView, StyleSheet, View } from "react-native";
+import {
+  Linking,
+  Pressable,
+  ScrollView,
+  Share,
+  StyleSheet,
+  View,
+} from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
+import * as ExpoLinking from "expo-linking";
 import { RecipeImage } from "@/components/ui/RecipeImage";
 import { LinearGradient } from "expo-linear-gradient";
 import {
@@ -13,6 +21,7 @@ import {
   Heart,
   Package,
   Play,
+  Share2,
   Sparkles,
   Users,
 } from "lucide-react-native";
@@ -30,6 +39,7 @@ import { usePantryStore } from "@/store/pantryStore";
 import { useAuthStore } from "@/store/authStore";
 import { useStatsStore } from "@/store/statsStore";
 import { adaptRecipe, AdaptedRecipe } from "@/features/ai/recipeAdapter";
+import { PantryUsageSheet } from "@/features/pantry/PantryUsageSheet";
 import { useEntitlementsStore } from "@/store/entitlementsStore";
 import { useUpsellStore } from "@/store/upsellStore";
 
@@ -57,9 +67,11 @@ export default function RecipeScreen() {
     recipe ? s.favorites.includes(recipe.id) : false,
   );
   const toggleFavorite = useStatsStore((s) => s.toggleFavorite);
+  const markCooked = useStatsStore((s) => s.markCooked);
 
   const [adapted, setAdapted] = React.useState<AdaptedRecipe | null>(null);
   const [adapting, setAdapting] = React.useState(false);
+  const [cookedSheetOpen, setCookedSheetOpen] = React.useState(false);
 
   // Derived pantry coverage. Memoized so it doesn't recompute the O(n×m)
   // ingredient/pantry comparison on every unrelated re-render (favorite
@@ -132,6 +144,20 @@ export default function RecipeScreen() {
     }
   };
 
+  const handleShare = async () => {
+    // Deep link resolves to the recipe screen; the catalogue is hydrated on
+    // launch so the recipient lands directly on this recipe.
+    const url = ExpoLinking.createURL(`/recipe/${recipe.id}`);
+    try {
+      await Share.share({
+        message: `${recipe.title} — SwipeBite'ta bu tarife göz at:\n${url}`,
+        url,
+      });
+    } catch {
+      // User cancelled or share unavailable — nothing to do.
+    }
+  };
+
   return (
     <Screen background="bg" padded={false}>
       <ScrollView
@@ -158,18 +184,27 @@ export default function RecipeScreen() {
             >
               <ArrowLeft size={16} color={colors.bg} strokeWidth={2} />
             </Pressable>
-            <Pressable
-              hitSlop={12}
-              onPress={() => toggleFavorite(recipe.id)}
-              style={styles.iconBtn}
-            >
-              <Heart
-                size={16}
-                color={isFavorite ? colors.accent : colors.bg}
-                fill={isFavorite ? colors.accent : "transparent"}
-                strokeWidth={2}
-              />
-            </Pressable>
+            <View style={styles.heroActions}>
+              <Pressable
+                hitSlop={12}
+                onPress={handleShare}
+                style={styles.iconBtn}
+              >
+                <Share2 size={16} color={colors.bg} strokeWidth={2} />
+              </Pressable>
+              <Pressable
+                hitSlop={12}
+                onPress={() => toggleFavorite(recipe.id)}
+                style={styles.iconBtn}
+              >
+                <Heart
+                  size={16}
+                  color={isFavorite ? colors.accent : colors.bg}
+                  fill={isFavorite ? colors.accent : "transparent"}
+                  strokeWidth={2}
+                />
+              </Pressable>
+            </View>
           </View>
           <View style={styles.heroBody}>
             <View style={styles.tagsRow}>
@@ -403,6 +438,19 @@ export default function RecipeScreen() {
             <ChevronRight size={18} color={colors.ink} strokeWidth={2.5} />
           </Pressable>
 
+          <Pressable
+            onPress={() => {
+              markCooked(recipe.id);
+              setCookedSheetOpen(true);
+            }}
+            style={styles.cookedCta}
+          >
+            <Check size={16} color={colors.ink} strokeWidth={2.5} />
+            <Text variant="bodyMedium" weight="700" color={colors.ink}>
+              Bunu yaptım
+            </Text>
+          </Pressable>
+
           {recipe.videoUrl || recipe.sourceUrl ? (
             <View style={styles.sourceWrap}>
               {recipe.videoUrl ? (
@@ -451,6 +499,12 @@ export default function RecipeScreen() {
           ) : null}
         </View>
       </ScrollView>
+
+      <PantryUsageSheet
+        visible={cookedSheetOpen}
+        recipe={recipe}
+        onClose={() => setCookedSheetOpen(false)}
+      />
     </Screen>
   );
 }
@@ -490,6 +544,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: spacing.lg,
     paddingTop: spacing["3xl"],
+  },
+  heroActions: {
+    flexDirection: "row",
+    gap: spacing.sm,
   },
   iconBtn: {
     width: 36,
@@ -639,6 +697,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     gap: 6,
+    marginTop: spacing.sm,
+  },
+  cookedCta: {
+    height: 52,
+    borderRadius: 18,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
     marginTop: spacing.sm,
   },
   sourceWrap: {

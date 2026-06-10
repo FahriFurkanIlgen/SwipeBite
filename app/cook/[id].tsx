@@ -1,5 +1,11 @@
 import React from "react";
-import { Pressable, StyleSheet, Vibration, View } from "react-native";
+import {
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Vibration,
+  View,
+} from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import { RecipeImage } from "@/components/ui/RecipeImage";
 import { LinearGradient } from "expo-linear-gradient";
@@ -27,6 +33,8 @@ import { getRecipeImageSource } from "@/features/recipes/recipeImage";
 import { useRecipesStore } from "@/store/recipesStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { useStatsStore } from "@/store/statsStore";
+import { usePantryStore } from "@/store/pantryStore";
+import { pantryItemsUsedByRecipe } from "@/features/pantry/pantryMatcher";
 
 function formatTime(seconds: number) {
   const m = Math.floor(seconds / 60);
@@ -61,11 +69,55 @@ export default function CookScreen() {
     );
   }, [storeRecipe, customPool, candidates, id]);
   const markCooked = useStatsStore((s) => s.markCooked);
+  const pantry = usePantryStore((s) => s.items);
+  const removePantryItem = usePantryStore((s) => s.remove);
 
   const [stepIndex, setStepIndex] = React.useState(0);
   const [timerSeconds, setTimerSeconds] = React.useState(0);
   const [timerRunning, setTimerRunning] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
+  const [removing, setRemoving] = React.useState(false);
+
+  // Pantry items this recipe likely uses, offered for removal once cooked.
+  const usedPantryItems = React.useMemo(
+    () => (recipe ? pantryItemsUsedByRecipe(recipe, pantry) : []),
+    [recipe, pantry],
+  );
+  // Ids selected to be removed from the pantry. Initialised (once we reach the
+  // completion screen) with the non-staple items pre-checked.
+  const [removeIds, setRemoveIds] = React.useState<Set<string> | null>(null);
+  React.useEffect(() => {
+    if (completed && removeIds === null) {
+      setRemoveIds(
+        new Set(usedPantryItems.filter((u) => !u.staple).map((u) => u.item.id)),
+      );
+    }
+  }, [completed, removeIds, usedPantryItems]);
+
+  const toggleRemove = (itemId: string) => {
+    Haptics.selectionAsync();
+    setRemoveIds((prev) => {
+      const next = new Set(prev ?? []);
+      if (next.has(itemId)) next.delete(itemId);
+      else next.add(itemId);
+      return next;
+    });
+  };
+
+  const finishCooking = async () => {
+    const ids = removeIds ? [...removeIds] : [];
+    if (ids.length > 0) {
+      setRemoving(true);
+      try {
+        await Promise.all(
+          ids.map((rid) => removePantryItem(rid).catch(() => undefined)),
+        );
+      } finally {
+        setRemoving(false);
+      }
+    }
+    router.replace("/(tabs)");
+  };
 
   const currentStep = recipe?.steps[stepIndex] ?? "";
   const stepMinutes = extractMinutes(currentStep);
@@ -137,9 +189,13 @@ export default function CookScreen() {
   };
 
   if (completed) {
+    const removeCount = removeIds?.size ?? 0;
     return (
       <Screen background="bg">
-        <View style={styles.completeBody}>
+        <ScrollView
+          contentContainerStyle={styles.completeBody}
+          showsVerticalScrollIndicator={false}
+        >
           <Animated.Text
             entering={ZoomIn.duration(400)}
             style={{ fontSize: 56, marginBottom: spacing.lg }}
@@ -159,15 +215,69 @@ export default function CookScreen() {
               {recipe.title} hazır. Servis edin!
             </Text>
           </Animated.View>
+
+          {usedPantryItems.length > 0 ? (
+            <Animated.View
+              entering={FadeIn.delay(350).duration(400)}
+              style={styles.pantryCard}
+            >
+              <Text variant="bodyMedium" weight="700" color={colors.ink}>
+                Kileri güncelle
+              </Text>
+              <Text
+                variant="caption"
+                color={colors.slate}
+                style={{ marginTop: 2, marginBottom: spacing.md }}
+              >
+                Kullandığın malzemeleri kilerden düşelim.
+              </Text>
+              {usedPantryItems.map(({ item }) => {
+                const checked = removeIds?.has(item.id) ?? false;
+                return (
+                  <Pressable
+                    key={item.id}
+                    onPress={() => toggleRemove(item.id)}
+                    style={styles.pantryRow}
+                  >
+                    <View
+                      style={[styles.checkbox, checked && styles.checkboxOn]}
+                    >
+                      {checked ? (
+                        <Check size={13} color={colors.ink} strokeWidth={3} />
+                      ) : null}
+                    </View>
+                    <Text
+                      variant="bodyMedium"
+                      color={colors.ink}
+                      style={{ flex: 1 }}
+                    >
+                      {item.name}
+                    </Text>
+                    {item.quantity ? (
+                      <Text variant="caption" color={colors.dim}>
+                        {item.quantity}
+                      </Text>
+                    ) : null}
+                  </Pressable>
+                );
+              })}
+            </Animated.View>
+          ) : null}
+
           <Pressable
-            onPress={() => router.replace("/(tabs)")}
-            style={styles.completeCta}
+            onPress={finishCooking}
+            disabled={removing}
+            style={[styles.completeCta, removing && { opacity: 0.6 }]}
           >
             <Text variant="bodyMedium" weight="700" color={colors.ink}>
-              Ana Sayfaya Dön
+              {removing
+                ? "Güncelleniyor…"
+                : removeCount > 0
+                  ? `Kileri güncelle ve bitir (${removeCount})`
+                  : "Ana Sayfaya Dön"}
             </Text>
           </Pressable>
-        </View>
+        </ScrollView>
       </Screen>
     );
   }
@@ -417,11 +527,36 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   completeBody: {
-    flex: 1,
+    flexGrow: 1,
     alignItems: "center",
     justifyContent: "center",
     padding: spacing["2xl"],
     gap: spacing["2xl"],
+  },
+  pantryCard: {
+    width: "100%",
+    backgroundColor: colors.card,
+    borderRadius: radii.lg,
+    padding: spacing.lg,
+  },
+  pantryRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    paddingVertical: spacing.sm,
+  },
+  checkbox: {
+    width: 22,
+    height: 22,
+    borderRadius: 6,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  checkboxOn: {
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
   },
   completeCta: {
     paddingHorizontal: spacing["2xl"],

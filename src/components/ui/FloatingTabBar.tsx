@@ -20,6 +20,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, radii, shadows, spacing } from "@/constants/theme";
+import { featureFlags } from "@/constants/featureFlags";
 
 const ICONS: Record<string, LucideIcon> = {
   index: HomeIcon,
@@ -50,6 +51,12 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
   const visibleRoutes = React.useMemo(
     () =>
       state.routes.filter((route) => {
+        // Hard-hide tabs that are disabled via feature flags for the
+        // food-only launch. This does not rely on expo-router propagating
+        // `href: null` into the descriptor options, which is unreliable
+        // with a custom tab bar.
+        if (route.name === "bar" && !featureFlags.bar) return false;
+
         const opts = descriptors[route.key]?.options as
           | { href?: string | null }
           | undefined;
