@@ -91,6 +91,22 @@ const config: ExpoConfig = {
     "expo-font",
     "expo-apple-authentication",
     [
+      "expo-build-properties",
+      {
+        ios: {
+          // GoogleSignIn 9 pulls in AppCheckCore, a Swift pod that depends on
+          // GoogleUtilities and RecaptchaInterop. When building static
+          // libraries these need module maps, otherwise pod install fails with
+          // "cannot yet be integrated as static libraries". Force modular
+          // headers for the offending transitive pods.
+          extraPods: [
+            { name: "GoogleUtilities", modular_headers: true },
+            { name: "RecaptchaInterop", modular_headers: true },
+          ],
+        },
+      },
+    ],
+    [
       "expo-image-picker",
       {
         photosPermission:
