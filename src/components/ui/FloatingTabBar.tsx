@@ -21,6 +21,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, radii, shadows, spacing } from "@/constants/theme";
 import { featureFlags } from "@/constants/featureFlags";
+import { isBar } from "@/constants/appVariant";
 
 const ICONS: Record<string, LucideIcon> = {
   index: HomeIcon,
@@ -41,7 +42,7 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
   navigation,
 }) => {
   const insets = useSafeAreaInsets();
-  const [tabWidth, setTabWidth] = React.useState(0);
+  const [rowWidth, setRowWidth] = React.useState(0);
   const x = useSharedValue(0);
 
   // Filter out routes that are explicitly hidden via expo-router's
@@ -57,6 +58,12 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
         // with a custom tab bar.
         if (route.name === "bar" && !featureFlags.bar) return false;
 
+        // In the SwipeBar variant the food tabs (swipe/planner/pantry) are
+        // not part of the experience. Hard-hide them here instead of relying
+        // on expo-router propagating `href: null` into the descriptor.
+        if (isBar && ["swipe", "planner", "pantry"].includes(route.name))
+          return false;
+
         const opts = descriptors[route.key]?.options as
           | { href?: string | null }
           | undefined;
@@ -71,6 +78,13 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
     0,
     visibleRoutes.findIndex((r) => r.key === activeRouteKey),
   );
+
+  // Derive the per-tab width from the measured row width and the *current*
+  // number of visible tabs. Computing this on every render (rather than
+  // caching at onLayout time) keeps the active indicator aligned when the
+  // visible tab count changes between variants / Fast Refresh.
+  const tabWidth =
+    visibleRoutes.length > 0 ? rowWidth / visibleRoutes.length : 0;
 
   React.useEffect(() => {
     if (tabWidth === 0) return;
@@ -97,8 +111,8 @@ export const FloatingTabBar: React.FC<BottomTabBarProps> = ({
         <View
           style={styles.row}
           onLayout={(e) => {
-            const w = e.nativeEvent.layout.width / visibleRoutes.length;
-            if (Math.abs(w - tabWidth) > 0.5) setTabWidth(w);
+            const w = e.nativeEvent.layout.width;
+            if (Math.abs(w - rowWidth) > 0.5) setRowWidth(w);
           }}
         >
           {tabWidth > 0 ? (

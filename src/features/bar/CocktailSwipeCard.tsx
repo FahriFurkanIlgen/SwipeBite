@@ -252,10 +252,10 @@ export const CocktailSwipeCard: React.FC<CocktailSwipeCardProps> = ({
           />
           <Text variant="caption" weight="700" color={colors.ink}>
             {cookable
-              ? "Yapılabilir"
+              ? "Ready to make"
               : missingCount === 1
-                ? "1 eksik"
-                : `${missingCount} eksik`}
+                ? "1 missing"
+                : `${missingCount} missing`}
           </Text>
         </View>
 
@@ -266,7 +266,7 @@ export const CocktailSwipeCard: React.FC<CocktailSwipeCardProps> = ({
         >
           <Heart size={14} color={colors.bg} strokeWidth={2.5} />
           <Text variant="caption" weight="700" color={colors.bg}>
-            BEĞENDİM
+            LIKED
           </Text>
         </Animated.View>
         <Animated.View
@@ -275,7 +275,7 @@ export const CocktailSwipeCard: React.FC<CocktailSwipeCardProps> = ({
         >
           <X size={14} color={colors.bg} strokeWidth={2.5} />
           <Text variant="caption" weight="700" color={colors.bg}>
-            HAYIR
+            NOPE
           </Text>
         </Animated.View>
         <Animated.View
@@ -284,7 +284,7 @@ export const CocktailSwipeCard: React.FC<CocktailSwipeCardProps> = ({
         >
           <Sparkles size={12} color={colors.ink} strokeWidth={2} />
           <Text variant="caption" weight="700" color={colors.ink}>
-            BUGÜN BU
+            TODAY'S PICK
           </Text>
         </Animated.View>
 
@@ -319,7 +319,7 @@ export const CocktailSwipeCard: React.FC<CocktailSwipeCardProps> = ({
           </Text>
 
           <View style={styles.metaRow}>
-            <Meta label={`${cocktail.prepTimeMinutes} dk`} icon="clock" />
+            <Meta label={`${cocktail.prepTimeMinutes} min`} icon="clock" />
             <Meta
               label={COCKTAIL_TECHNIQUE_LABEL[cocktail.technique]}
               icon="tech"

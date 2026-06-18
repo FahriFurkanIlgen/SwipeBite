@@ -32,7 +32,7 @@ export interface ButtonProps extends Omit<PressableProps, "style"> {
 }
 
 const VARIANTS: Record<Variant, { bg: string; fg: string; border: string }> = {
-  primary: { bg: colors.primary, fg: colors.ink, border: colors.primary },
+  primary: { bg: colors.primary, fg: colors.onPrimary, border: colors.primary },
   dark: { bg: colors.ink, fg: colors.bg, border: colors.ink },
   outline: { bg: "transparent", fg: colors.ink, border: colors.border },
   ghost: { bg: "transparent", fg: colors.ink, border: "transparent" },

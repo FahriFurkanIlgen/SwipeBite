@@ -22,9 +22,9 @@ import type { BarSessionFilterMode, BarVoteType } from "@/types/bar";
 const VALID_MODES: BarSessionFilterMode[] = ["cookable", "close", "all"];
 
 const FILTER_LABEL: Record<BarSessionFilterMode, string> = {
-  cookable: "Yapılabilir",
-  close: "Yakın menzilde",
-  all: "Tüm kokteyller",
+  cookable: "Ready to make",
+  close: "Within reach",
+  all: "All cocktails",
 };
 
 export default function BarSessionScreen() {
@@ -183,7 +183,7 @@ export default function BarSessionScreen() {
       <Screen background="bg">
         <View style={styles.empty}>
           <Text variant="h2" weight="700" align="center">
-            Deste hazırlanıyor…
+            Building your deck…
           </Text>
         </View>
       </Screen>
@@ -207,7 +207,7 @@ export default function BarSessionScreen() {
           </View>
           <View style={styles.subRow}>
             <Text variant="caption" color={colors.dim}>
-              {index}/{candidates.length} kokteyl
+              {index}/{candidates.length} cocktails
             </Text>
             <View style={styles.modePill}>
               <Text variant="caption" weight="700" color={colors.ink}>

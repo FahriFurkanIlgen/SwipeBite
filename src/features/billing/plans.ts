@@ -9,6 +9,8 @@
  * `productId` must match the product identifiers you create in App Store
  * Connect / Google Play Console and attach to the RevenueCat "pro" entitlement.
  */
+import { isBar } from "@/constants/appVariant";
+
 export type PlanPeriod = "monthly" | "yearly";
 
 export interface SubscriptionPlan {
@@ -47,10 +49,18 @@ export const PRO_PLANS: SubscriptionPlan[] = [
 export const PRO_ENTITLEMENT_ID = "SwipeBite Pro";
 
 /** Pro feature bullets shown on the paywall. */
-export const PRO_BENEFITS: string[] = [
-  "Sınırsız fiş tarama ve AI ile kiler ekleme",
-  "Sınırsız haftalık AI yemek planı",
-  "Tarifleri diyet ve alerjilerine göre uyarla",
-  "Sınırsız ev üyesi — tüm aile aynı planda",
-  "Reklamsız, öncelikli yeni özellikler",
-];
+export const PRO_BENEFITS: string[] = isBar
+  ? [
+      "Unlimited recipe imports & AI cabinet adding",
+      "Unlimited weekly AI drink plans",
+      "Adapt cocktails to your taste and preferences",
+      "Unlimited group members — everyone on one plan",
+      "Ad-free, priority access to new features",
+    ]
+  : [
+      "Sınırsız fiş tarama ve AI ile kiler ekleme",
+      "Sınırsız haftalık AI yemek planı",
+      "Tarifleri diyet ve alerjilerine göre uyarla",
+      "Sınırsız ev üyesi — tüm aile aynı planda",
+      "Reklamsız, öncelikli yeni özellikler",
+    ];

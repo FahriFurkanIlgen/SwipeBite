@@ -8,6 +8,7 @@ import {
   Heart,
   Lock,
   Package,
+  Search,
   Sparkles,
   Wine,
 } from "lucide-react-native";
@@ -83,7 +84,7 @@ export default function BarTab() {
             color={colors.slate}
             style={{ marginTop: spacing.xs }}
           >
-            Kokteyl tarifleri ve ev halkıyla içecek eşleştirme
+            Cocktail recipes and drink matching with your crew
           </Text>
         </Animated.View>
 
@@ -150,12 +151,12 @@ const UnlockedContent: React.FC<{
         </View>
         <View style={{ flex: 1 }}>
           <Text variant="overline" color={colors.dim}>
-            Bar Dolabın
+            Your Bar Cabinet
           </Text>
           <Text variant="smallMedium" weight="600" style={{ marginTop: 2 }}>
             {ingredientIds.length === 0
-              ? "Henüz boş — başlamak için içkilerini ekle"
-              : `${ingredientIds.length} malzeme · ${cookable.length} kokteyl yapabilirsin`}
+              ? "Empty for now — add your bottles to get started"
+              : `${ingredientIds.length} ingredients · you can make ${cookable.length} cocktails`}
           </Text>
         </View>
         <ChevronRight size={16} color={colors.hairline} strokeWidth={1.8} />
@@ -175,19 +176,19 @@ const UnlockedContent: React.FC<{
         >
           <Sparkles size={22} strokeWidth={1.8} color={colors.primaryDeep} />
           <Text variant="h3" style={{ marginTop: spacing.sm }}>
-            Bar dolabını kurmaya başla
+            Start building your bar cabinet
           </Text>
           <Text
             variant="body"
             color={colors.slate}
             style={{ marginTop: spacing.xs, lineHeight: 22 }}
           >
-            Evdeki içkileri ve mikserleri seç, sana yapabileceğin kokteylleri
-            önerelim.
+            Pick the spirits and mixers you have at home and we'll suggest the
+            cocktails you can make.
           </Text>
           <View style={styles.emptyCta}>
             <Text variant="bodyMedium" weight="700" color={colors.ink}>
-              Dolabı kur
+              Set up cabinet
             </Text>
             <ChevronRight size={16} strokeWidth={2} color={colors.ink} />
           </View>
@@ -197,8 +198,8 @@ const UnlockedContent: React.FC<{
       {/* Cookable now */}
       {cookable.length > 0 ? (
         <Section
-          title="Şimdi yapabilirsin"
-          subtitle={`${cookable.length} kokteyl elinde`}
+          title="Ready to make now"
+          subtitle={`${cookable.length} cocktails in hand`}
         >
           <View style={{ gap: spacing.md }}>
             {cookable.map((m) => (
@@ -211,8 +212,8 @@ const UnlockedContent: React.FC<{
       {/* Suggestions to unlock more */}
       {suggestions.length > 0 ? (
         <Section
-          title="Bir adım uzakta"
-          subtitle="Ekle, yeni kokteyller açılsın"
+          title="One step away"
+          subtitle="Add these to unlock new cocktails"
         >
           <View style={styles.suggestRow}>
             {suggestions.map(({ ingredient, unlocks }) => (
@@ -227,7 +228,7 @@ const UnlockedContent: React.FC<{
                     {ingredient.name}
                   </Text>
                   <Text variant="caption" color={colors.dim}>
-                    +{unlocks} kokteyl açılır
+                    +{unlocks} cocktails unlocked
                   </Text>
                 </View>
                 <View style={styles.suggestPlus}>
@@ -245,30 +246,62 @@ const UnlockedContent: React.FC<{
         </Section>
       ) : null}
 
-      {/* Close-ones */}
+      {/* Close-ones — capped preview, full list lives on the browse screen */}
       {closeOnes.length > 0 ? (
-        <Section title="Az eksiğin var" subtitle="1-2 malzeme uzaklıkta">
+        <Section title="Almost there" subtitle="1-2 ingredients away">
           <View style={{ gap: spacing.md }}>
-            {closeOnes.map((m) => (
+            {closeOnes.slice(0, CLOSE_PREVIEW).map((m) => (
               <CocktailRow key={m.cocktail.id} match={m} />
             ))}
           </View>
+          {closeOnes.length > CLOSE_PREVIEW ? (
+            <Pressable
+              onPress={() => router.push("/bar/browse?filter=close")}
+              style={styles.seeAll}
+            >
+              <Text
+                variant="smallMedium"
+                weight="600"
+                color={colors.primaryDeep}
+              >
+                See all {closeOnes.length} almost-there
+              </Text>
+              <ChevronRight
+                size={16}
+                strokeWidth={2}
+                color={colors.primaryDeep}
+              />
+            </Pressable>
+          ) : null}
         </Section>
       ) : null}
 
-      {/* Everything else */}
+      {/* Everything else — a searchable browse entry instead of a huge list */}
       {everythingElse.length > 0 ? (
-        <Section title="Tüm kokteyller" subtitle="Klasiklere göz at">
-          <View style={{ gap: spacing.md }}>
-            {everythingElse.map((m) => (
-              <CocktailRow key={m.cocktail.id} match={m} />
-            ))}
+        <Pressable
+          onPress={() => router.push("/bar/browse")}
+          style={styles.browseCard}
+        >
+          <View style={styles.browseIcon}>
+            <Search size={20} strokeWidth={2} color={colors.primaryDeep} />
           </View>
-        </Section>
+          <View style={{ flex: 1 }}>
+            <Text variant="smallMedium" weight="700">
+              Browse all cocktails
+            </Text>
+            <Text variant="caption" color={colors.dim} style={{ marginTop: 2 }}>
+              Search {ranked.length} recipes by name or tag
+            </Text>
+          </View>
+          <ChevronRight size={16} color={colors.hairline} strokeWidth={1.8} />
+        </Pressable>
       ) : null}
     </View>
   );
 };
+
+/** How many "Almost there" rows to preview before linking to the browse screen. */
+const CLOSE_PREVIEW = 5;
 
 const Section: React.FC<{
   title: string;
@@ -305,7 +338,9 @@ const CocktailRow: React.FC<{ match: CocktailMatch }> = React.memo(
               resizeMode="cover"
             />
           ) : (
-            <Text style={{ fontSize: 28, fontFamily: fonts.sans }}>
+            <Text
+              style={{ fontSize: 28, lineHeight: 34, fontFamily: fonts.sans }}
+            >
               {cocktail.emoji}
             </Text>
           )}
@@ -329,7 +364,7 @@ const CocktailRow: React.FC<{ match: CocktailMatch }> = React.memo(
               weight="600"
               style={{ marginTop: 4 }}
             >
-              Eksik: {missingRequired.map((i) => i.name).join(", ")}
+              Missing: {missingRequired.map((i) => i.name).join(", ")}
             </Text>
           ) : null}
         </View>
@@ -349,15 +384,15 @@ const DecisionCta: React.FC<{
   // - Anything in cabinet → "close" (cookable + ≤2 missing) for variety
   const mode = cabinetEmpty ? "all" : "close";
   const headline = cabinetEmpty
-    ? "Bugün ne içsek?"
+    ? "What should we drink?"
     : cookableCount > 0
-      ? "Birlikte karar verin"
-      : "Yakın olanları keşfet";
+      ? "Decide together"
+      : "Explore what's close";
   const subtitle = cabinetEmpty
-    ? "12 klasik kokteyl arasından kaydırarak seç"
+    ? "Swipe through 12 classic cocktails"
     : cookableCount > 0
-      ? `${cookableCount} yapabildiğin + bir kaç fikir daha`
-      : "Az eksiğin olanları kaydırarak seç";
+      ? `${cookableCount} you can make + a few more ideas`
+      : "Swipe the ones you're almost there on";
 
   return (
     <Pressable
@@ -371,15 +406,24 @@ const DecisionCta: React.FC<{
         style={StyleSheet.absoluteFill}
       />
       <View style={styles.decisionIcon}>
-        <Heart size={18} color={colors.ink} fill={colors.ink} strokeWidth={2} />
+        <Heart
+          size={18}
+          color={colors.onPrimary}
+          fill={colors.onPrimary}
+          strokeWidth={2}
+        />
       </View>
       <View style={{ flex: 1 }}>
-        <Text variant="overline" color={colors.ink} style={{ opacity: 0.7 }}>
-          KARAR VERME ZAMANI
+        <Text
+          variant="overline"
+          color={colors.onPrimary}
+          style={{ opacity: 0.7 }}
+        >
+          TIME TO DECIDE
         </Text>
         <Text
           weight="700"
-          color={colors.ink}
+          color={colors.onPrimary}
           style={{
             fontFamily: fonts.serif,
             fontSize: 22,
@@ -391,14 +435,14 @@ const DecisionCta: React.FC<{
         </Text>
         <Text
           variant="small"
-          color={colors.ink}
+          color={colors.onPrimary}
           style={{ opacity: 0.75, marginTop: 4 }}
         >
           {subtitle}
         </Text>
       </View>
       <View style={styles.decisionArrow}>
-        <ChevronRight size={16} color={colors.ink} strokeWidth={2} />
+        <ChevronRight size={16} color={colors.onPrimary} strokeWidth={2} />
       </View>
     </Pressable>
   );
@@ -410,15 +454,14 @@ const LockedPlaceholder: React.FC = () => (
       <Lock size={20} strokeWidth={1.8} color={colors.slate} />
     </View>
     <Text variant="h3" style={{ marginTop: spacing.md }}>
-      Yaş onayı gerekli
+      Age confirmation required
     </Text>
     <Text
       variant="body"
       color={colors.slate}
       style={{ marginTop: spacing.xs, lineHeight: 22 }}
     >
-      Bar bölümünü kullanabilmek için 18 yaşından büyük olduğunu onaylaman
-      gerekiyor.
+      To use the bar section, you need to confirm that you're over 18.
     </Text>
   </View>
 );
@@ -431,22 +474,22 @@ const DeclinedPlaceholder: React.FC = () => {
         <Lock size={20} strokeWidth={1.8} color={colors.slate} />
       </View>
       <Text variant="h3" style={{ marginTop: spacing.md }}>
-        Bar modu kapalı
+        Bar mode is off
       </Text>
       <Text
         variant="body"
         color={colors.slate}
         style={{ marginTop: spacing.xs, lineHeight: 22 }}
       >
-        Bu bölümü tercih etmediğini söylemiştin. Fikrini değiştirdiysen Profil
-        &gt; Ayarlar üzerinden tekrar açabilir, ya da buradan da açabilirsin.
+        You said you'd rather skip this section. Changed your mind? You can turn
+        it back on from Profile &gt; Settings, or right here.
       </Text>
       <Pressable
         onPress={() => setProfile({ alcoholContentEnabled: undefined })}
         style={styles.cta}
       >
         <Text variant="bodyMedium" weight="700" color={colors.ink}>
-          Yaş onayını tekrar göster
+          Show age confirmation again
         </Text>
       </Pressable>
     </View>
@@ -605,6 +648,31 @@ const styles = StyleSheet.create({
     height: 28,
     borderRadius: 14,
     backgroundColor: colors.primary,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  seeAll: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 4,
+    paddingVertical: spacing.sm,
+  },
+  browseCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.lg,
+    backgroundColor: colors.card,
+    borderRadius: radii.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  browseIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: colors.primarySoft,
     alignItems: "center",
     justifyContent: "center",
   },

@@ -12,17 +12,15 @@ import {
   Settings2,
   Shield,
   Sparkles,
-  Wine,
   type LucideIcon,
 } from "lucide-react-native";
 
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { CoachMark } from "@/components/ui/CoachMark";
-import { AgeGateModal } from "@/features/bar/AgeGateModal";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
-import { featureFlags } from "@/constants/featureFlags";
+import { L } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { useRecipesStore } from "@/store/recipesStore";
 import { usePantryStore } from "@/store/pantryStore";
@@ -58,10 +56,6 @@ export default function ProfileScreen() {
     router.push("/(onboarding)/tutorial");
   }, [resetTutorials]);
 
-  const setProfile = useAuthStore((s) => s.setProfile);
-  const alcoholFlag = profile?.alcoholContentEnabled;
-  const [barGateOpen, setBarGateOpen] = React.useState(false);
-
   // Hidden developer toggle: long-press the footer to flip the Pro tier so we
   // can test with/without AI quotas before a real paywall exists (Faz 2).
   const tier = useEntitlementsStore((s) => s.tier);
@@ -69,16 +63,6 @@ export default function ProfileScreen() {
   const handleTierToggle = React.useCallback(() => {
     void setTier(tier === "pro" ? "free" : "pro");
   }, [tier, setTier]);
-
-  const handleBarToggle = React.useCallback(() => {
-    if (alcoholFlag === true) {
-      // Disable Bar mode immediately — no extra prompt.
-      setProfile({ alcoholContentEnabled: false });
-    } else {
-      // Re-enable: require the 18+ confirmation again.
-      setBarGateOpen(true);
-    }
-  }, [alcoholFlag, setProfile]);
 
   const totalCooked = Object.values(cookCounts).reduce((a, b) => a + b, 0);
   const sessionsRun = session ? 1 : 0;
@@ -111,11 +95,11 @@ export default function ProfileScreen() {
               </Text>
             </View>
             <View style={styles.avatarEdit}>
-              <Edit3 size={11} color={colors.ink} strokeWidth={2} />
+              <Edit3 size={11} color={colors.onPrimary} strokeWidth={2} />
             </View>
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="h3">{user?.name ?? "Misafir"}</Text>
+            <Text variant="h3">{user?.name ?? L("Misafir", "Guest")}</Text>
             <Text variant="small" color={colors.dim} style={{ marginTop: 2 }}>
               {user?.email ?? "—"}
             </Text>
@@ -135,7 +119,7 @@ export default function ProfileScreen() {
           <View style={styles.card}>
             <View style={styles.cardHeader}>
               <Text variant="overline" color={colors.dim}>
-                Ev Halkı
+                {L("Ev Halkı", "Your Bar")}
               </Text>
               <Pressable onPress={() => router.push("/invite")}>
                 <Text
@@ -143,7 +127,7 @@ export default function ProfileScreen() {
                   weight="600"
                   color={colors.primaryDeep}
                 >
-                  + Davet et
+                  {L("+ Davet et", "+ Invite")}
                 </Text>
               </Pressable>
             </View>
@@ -155,7 +139,7 @@ export default function ProfileScreen() {
                       style={{
                         fontFamily: fonts.sans,
                         fontWeight: "700",
-                        color: colors.ink,
+                        color: colors.onPrimary,
                       }}
                     >
                       {(user?.name ?? "S").charAt(0).toUpperCase()}
@@ -164,7 +148,7 @@ export default function ProfileScreen() {
                   <View style={styles.onlineDot} />
                 </View>
                 <Text variant="caption" weight="500">
-                  {user?.name ?? "Sen"}
+                  {user?.name ?? L("Sen", "You")}
                 </Text>
                 <View style={[styles.rolePill, styles.rolePillMe]}>
                   <Text
@@ -172,7 +156,7 @@ export default function ProfileScreen() {
                     weight="600"
                     color={colors.primaryDeep}
                   >
-                    Sen
+                    {L("Sen", "You")}
                   </Text>
                 </View>
               </View>
@@ -202,7 +186,7 @@ export default function ProfileScreen() {
                   </Text>
                   <View style={[styles.rolePill, styles.rolePillOther]}>
                     <Text variant="caption" weight="600" color={colors.dim}>
-                      Eş
+                      {L("Eş", "Friend")}
                     </Text>
                   </View>
                 </View>
@@ -215,7 +199,7 @@ export default function ProfileScreen() {
         <View>
           <View style={styles.sectionHeader}>
             <Text variant="overline" color={colors.dim}>
-              Tercihlerim
+              {L("Tercihlerim", "My preferences")}
             </Text>
             <Pressable onPress={() => router.push("/(onboarding)/preferences")}>
               <Text
@@ -223,7 +207,7 @@ export default function ProfileScreen() {
                 weight="600"
                 color={colors.primaryDeep}
               >
-                Düzenle
+                {L("Düzenle", "Edit")}
               </Text>
             </Pressable>
           </View>
@@ -254,14 +238,17 @@ export default function ProfileScreen() {
           <View>
             <View style={styles.sectionHeader}>
               <Text variant="overline" color={colors.dim}>
-                Kaydedilenler
+                {L("Kaydedilenler", "Saved")}
               </Text>
               <Text
                 variant="smallMedium"
                 weight="600"
                 color={colors.primaryDeep}
               >
-                {savedRecipes.length} tarif
+                {L(
+                  `${savedRecipes.length} tarif`,
+                  `${savedRecipes.length} recipes`,
+                )}
               </Text>
             </View>
             <ScrollView
@@ -299,12 +286,17 @@ export default function ProfileScreen() {
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="bodyMedium" weight="700" color={colors.ink}>
-              {tier === "pro" ? "SwipeBite Pro · Aktif" : "SwipeBite Pro"}
+              {tier === "pro"
+                ? L("SwipeBite Pro · Aktif", "SwipeBar Pro · Active")
+                : L("SwipeBite Pro", "SwipeBar Pro")}
             </Text>
             <Text variant="small" color={colors.slate}>
               {tier === "pro"
-                ? "Tüm AI özellikleri sınırsız"
-                : "Sınırsız AI · reklamsız · tüm aile"}
+                ? L("Tüm AI özellikleri sınırsız", "All AI features unlimited")
+                : L(
+                    "Sınırsız AI · reklamsız · tüm aile",
+                    "Unlimited AI · ad-free · whole crew",
+                  )}
             </Text>
           </View>
           {tier !== "pro" ? (
@@ -316,69 +308,38 @@ export default function ProfileScreen() {
         <View style={styles.settingsCard}>
           <SettingsRow
             icon={Settings2}
-            label="Aile Tercihleri"
-            sub="Haftalık plan için detaylı ayarlar"
+            label={L("Aile Tercihleri", "Group Preferences")}
+            sub={L(
+              "Haftalık plan için detaylı ayarlar",
+              "Detailed settings for the weekly plan",
+            )}
             onPress={() => router.push("/settings/preferences")}
           />
           <SettingsRow
             icon={Bell}
-            label="Bildirimler"
-            sub="Eşleşme bildirimleri"
+            label={L("Bildirimler", "Notifications")}
+            sub={L("Eşleşme bildirimleri", "Match notifications")}
             border
             onPress={() => router.push("/settings/notifications")}
           />
-          {featureFlags.bar ? (
-            <SettingsRow
-              icon={Wine}
-              label="Bar modu"
-              sub={
-                alcoholFlag === true
-                  ? "Açık · kokteyl tarifleri görünür"
-                  : alcoholFlag === false
-                    ? "Kapalı · alkollü içerik gizli"
-                    : "Yaş onayı bekliyor"
-              }
-              border
-              trailing={
-                <View
-                  style={{
-                    paddingHorizontal: 10,
-                    paddingVertical: 4,
-                    borderRadius: 999,
-                    backgroundColor:
-                      alcoholFlag === true ? colors.primary : colors.cream,
-                  }}
-                >
-                  <Text
-                    variant="caption"
-                    weight="600"
-                    color={alcoholFlag === true ? colors.ink : colors.slate}
-                  >
-                    {alcoholFlag === true ? "Açık" : "Kapalı"}
-                  </Text>
-                </View>
-              }
-              onPress={handleBarToggle}
-            />
-          ) : null}
           <SettingsRow
             icon={Shield}
-            label="Gizlilik"
-            sub="Verileriniz"
+            label={L("Gizlilik", "Privacy")}
+            sub={L("Verileriniz", "Your data")}
             border
             onPress={() => router.push("/settings/privacy")}
           />
           <SettingsRow
             icon={HelpCircle}
-            label="Yardım"
-            sub="SSS ve destek"
+            label={L("Yardım", "Help")}
+            sub={L("SSS ve destek", "FAQ and support")}
             border
             onPress={() => router.push("/settings/help")}
           />
           <SettingsRow
             icon={Lightbulb}
-            label="Tanıtımı tekrar göster"
-            sub="Uygulama turunu yeniden başlat"
+            label={L("Tanıtımı tekrar göster", "Show the intro again")}
+            sub={L("Uygulama turunu yeniden başlat", "Restart the app tour")}
             border
             onPress={handleResetTutorial}
           />
@@ -409,7 +370,8 @@ export default function ProfileScreen() {
             color={colors.dim}
             style={{ textAlign: "center", marginTop: spacing.lg }}
           >
-            SwipeBite{tier === "pro" ? " Pro" : ""}
+            {L("SwipeBite", "SwipeBar")}
+            {tier === "pro" ? " Pro" : ""}
           </Text>
         </Pressable>
 
@@ -417,19 +379,11 @@ export default function ProfileScreen() {
       </ScrollView>
       <CoachMark
         storageKey="inviteCoach"
-        title="Aile üyesini davet et"
-        description="Profilinden 'Eve davet et' diyerek bir bağlantı paylaş. Eşin/ailen aynı ev hesabına katıldığında birlikte kaydırıp eşleşebilirsiniz."
-      />
-      <AgeGateModal
-        visible={featureFlags.bar && barGateOpen}
-        onConfirm={() => {
-          setProfile({ alcoholContentEnabled: true });
-          setBarGateOpen(false);
-        }}
-        onDecline={() => {
-          setProfile({ alcoholContentEnabled: false });
-          setBarGateOpen(false);
-        }}
+        title={L("Aile üyesini davet et", "Invite a friend")}
+        description={L(
+          "Profilinden 'Eve davet et' diyerek bir bağlantı paylaş. Eşin/ailen aynı ev hesabına katıldığında birlikte kaydırıp eşleşebilirsiniz.",
+          "Share a link with 'Invite' from your profile. Once your friends join the same account, you can swipe and match together.",
+        )}
       />
     </Screen>
   );

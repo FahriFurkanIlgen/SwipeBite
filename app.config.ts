@@ -2,26 +2,74 @@ import { ExpoConfig } from "expo/config";
 
 const googleIosUrlScheme = process.env.EXPO_PUBLIC_GOOGLE_IOS_URL_SCHEME;
 
+/**
+ * App variant selector. The same codebase ships two App Store apps:
+ *   - APP_VARIANT unset / "food" → SwipeBite (default, unchanged)
+ *   - APP_VARIANT="bar"          → SwipeBar (cocktail/bar experience)
+ * EAS sets APP_VARIANT via the build profile env (see eas.json). The variant
+ * is also exposed at runtime through `extra.appVariant`.
+ */
+const APP_VARIANT = (process.env.APP_VARIANT ?? "food").toLowerCase();
+const IS_BAR = APP_VARIANT === "bar";
+
+const variantConfig = IS_BAR
+  ? {
+      name: "SwipeBar",
+      slug: "swipebar",
+      scheme: "swipebar",
+      // SwipeBar artwork (deep blue #41639C). Save the attached icon as
+      // ./assets/icon-bar.png (1024×1024); it's reused for splash + adaptive.
+      icon: "./assets/icon-bar.png",
+      splashImage: "./assets/icon-bar.png",
+      splashBackground: "#41639C",
+      bundleIdentifier: "app.swipebar",
+      androidPackage: "app.swipebar",
+      adaptiveIcon: "./assets/icon-bar.png",
+      adaptiveBackground: "#41639C",
+      // SwipeBar uses its own EAS project + EAS Update channel. Values come
+      // from `eas init` (project 22adc23f-…); env vars override for CI.
+      easProjectId:
+        process.env.EAS_PROJECT_ID_BAR ??
+        "22adc23f-64e9-4595-8040-204a17839086",
+      updatesUrl:
+        process.env.EAS_UPDATE_URL_BAR ??
+        "https://u.expo.dev/22adc23f-64e9-4595-8040-204a17839086",
+    }
+  : {
+      name: "SwipeBite",
+      slug: "swipebite",
+      scheme: "swipebite",
+      icon: "./assets/icon.png",
+      splashImage: "./assets/splash-icon.png",
+      splashBackground: "#FAF7F2",
+      bundleIdentifier: "app.swipebite",
+      androidPackage: "app.swipebite",
+      adaptiveIcon: "./assets/adaptive-icon.png",
+      adaptiveBackground: "#F3801F",
+      easProjectId: "e0ff18b9-1a5a-4ca1-8876-978212ef5d62",
+      updatesUrl: "https://u.expo.dev/e0ff18b9-1a5a-4ca1-8876-978212ef5d62",
+    };
+
 const config: ExpoConfig = {
-  name: "SwipeBite",
-  slug: "swipebite",
-  scheme: "swipebite",
+  name: variantConfig.name,
+  slug: variantConfig.slug,
+  scheme: variantConfig.scheme,
   version: "1.0.0",
   orientation: "portrait",
   userInterfaceStyle: "light",
-  icon: "./assets/icon.png",
+  icon: variantConfig.icon,
   splash: {
-    image: "./assets/splash-icon.png",
+    image: variantConfig.splashImage,
     resizeMode: "contain",
-    backgroundColor: "#FAF7F2",
+    backgroundColor: variantConfig.splashBackground,
   },
   runtimeVersion: { policy: "appVersion" },
-  updates: {
-    url: "https://u.expo.dev/e0ff18b9-1a5a-4ca1-8876-978212ef5d62",
-  },
+  ...(variantConfig.updatesUrl
+    ? { updates: { url: variantConfig.updatesUrl } }
+    : {}),
   ios: {
     supportsTablet: false,
-    bundleIdentifier: "app.swipebite",
+    bundleIdentifier: variantConfig.bundleIdentifier,
     appleTeamId: "23CWBG7W63",
     usesAppleSignIn: true,
     infoPlist: {
@@ -29,14 +77,14 @@ const config: ExpoConfig = {
     },
   },
   android: {
-    package: "app.swipebite",
+    package: variantConfig.androidPackage,
     adaptiveIcon: {
-      foregroundImage: "./assets/adaptive-icon.png",
-      backgroundColor: "#F3801F",
+      foregroundImage: variantConfig.adaptiveIcon,
+      backgroundColor: variantConfig.adaptiveBackground,
     },
     // Note: expo-share-intent plugin auto-injects the SEND/text intent-filter.
-    // The `scheme: "swipebite"` at the root also auto-generates the VIEW filter
-    // for deep links, so no manual intentFilters block is needed here.
+    // The root `scheme` also auto-generates the VIEW filter for deep links,
+    // so no manual intentFilters block is needed here.
   },
   plugins: [
     "expo-router",
@@ -74,6 +122,7 @@ const config: ExpoConfig = {
       : []),
   ],
   extra: {
+    appVariant: APP_VARIANT,
     supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,
     supabaseAnonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
     openaiApiKey: process.env.EXPO_PUBLIC_OPENAI_API_KEY,
@@ -85,7 +134,7 @@ const config: ExpoConfig = {
     revenueCatTestKey: process.env.EXPO_PUBLIC_REVENUECAT_TEST_KEY,
     useMockData: process.env.EXPO_PUBLIC_USE_MOCK_DATA ?? "true",
     eas: {
-      projectId: "e0ff18b9-1a5a-4ca1-8876-978212ef5d62",
+      projectId: variantConfig.easProjectId,
     },
   },
 };

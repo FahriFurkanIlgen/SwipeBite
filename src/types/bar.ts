@@ -6,16 +6,30 @@
  * using the same schema.
  */
 
-/** Logical groupings for the user's bar cabinet picker. */
+/**
+ * Logical groupings for the user's bar cabinet picker.
+ *
+ * Codes are stable slugs; human-readable labels live in
+ * `BAR_CATEGORY_LABEL` (barCatalog.ts). Imported from the English content
+ * workbook (`cocktail_app_content_english_500.xlsx`).
+ */
 export type BarIngredientCategory =
-  | "distile" // Distile / sert içkiler (vodka, gin, rum, whisky, tequila, brandy)
-  | "liqueur" // Likörler (campari, aperol, triple sec, vermouth, amaro, etc.)
-  | "wine" // Şarap & köpüklü (prosecco, champagne, dry/sweet wine)
-  | "mixer" // Mikserler (tonic, soda, ginger beer, cola)
-  | "citrus" // Sitrüs (limon, misket limonu, portakal)
-  | "sweetener" // Tatlandırıcılar (basit şurup, agave, bal)
-  | "bitter" // Bitter (Angostura, orange bitters)
-  | "garnish"; // Süslemeler (zeytin, tuz, biberiye, nane, vişne)
+  | "spirits" // Spirits (vodka, gin, rum, whisky, tequila, brandy)
+  | "liqueur-vermouth" // Liqueurs & Vermouth
+  | "amaro-bitters" // Amaro & Bitters (amari, bitter liqueurs)
+  | "wine-sparkling" // Wine & Sparkling
+  | "mixer" // Mixers (tonic, soda, ginger beer, cola)
+  | "citrus-juice" // Citrus & Juices
+  | "sweetener-syrup" // Sweeteners & Syrups
+  | "bitter" // Bitters (dashing aromatic bitters)
+  | "additive" // Additives (salt rims, foamers, etc.)
+  | "fruit-produce" // Fruit & Produce
+  | "garnish" // Garnishes
+  | "savory" // Savory Add-ins
+  | "tea-infusion" // Tea & Infusions
+  | "flavor-water" // Flavor Waters
+  | "zero-proof-spirit" // Zero-Proof Spirits
+  | "bar-tool"; // Bar Tools / Effects
 
 export interface BarIngredient {
   id: string;
@@ -49,9 +63,22 @@ export type CocktailGlass =
   | "flute" // Şampanya kadehi
   | "wine" // Şarap kadehi
   | "copper-mug" // Bakır kupa (Moscow Mule)
-  | "hurricane"; // Hurricane bardağı
+  | "hurricane" // Hurricane bardağı
+  | "tiki" // Tiki mug
+  | "julep-cup" // Julep cup
+  | "mug"; // Mug (hot drinks)
 
-export type CocktailDifficulty = "kolay" | "orta" | "zor";
+/**
+ * Difficulty supports both the English content codes (`easy`/`medium`/`hard`)
+ * and the legacy Turkish codes used by the hand-curated classics.
+ */
+export type CocktailDifficulty =
+  | "easy"
+  | "medium"
+  | "hard"
+  | "kolay"
+  | "orta"
+  | "zor";
 
 export interface CocktailIngredientRef {
   /** Reference to a `BarIngredient.id` from the catalog. */
@@ -88,10 +115,19 @@ export interface Cocktail {
   /** Free-form tags used for filtering (e.g. "klasik", "yaz", "amaro"). */
   tags: string[];
   /**
-   * Curated origin source. Use this to distinguish hand-curated classics
-   * from scraped Instagram tarifleri once Faz 4 lands.
+   * Curated origin source. `classic`/`modern-classic`/`new-gen`/`low-abv`/
+   * `zero-proof` come from the English content workbook; `influencer` is
+   * reserved for scraped Instagram tarifleri.
    */
-  source: "classic" | "influencer";
+  source:
+    | "classic"
+    | "modern-classic"
+    | "new-gen"
+    | "low-abv"
+    | "zero-proof"
+    | "influencer";
+  /** Optional reference / attribution URL (e.g. IBA page). */
+  referenceUrl?: string;
   /** Optional reel URL for influencer-sourced cocktails. */
   sourceUrl?: string;
 }

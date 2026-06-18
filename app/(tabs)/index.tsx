@@ -18,9 +18,11 @@ import {
   ChevronRight,
   Clock,
   Flame,
+  Heart,
   Package,
   Sparkles,
   UtensilsCrossed,
+  Wine,
   type LucideIcon,
 } from "lucide-react-native";
 
@@ -30,6 +32,7 @@ import { AISuggestionBubble } from "@/components/ai/AISuggestionBubble";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { featureFlags } from "@/constants/featureFlags";
+import { isBar } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { usePantryStore } from "@/store/pantryStore";
@@ -37,6 +40,13 @@ import { usePlannerStore } from "@/store/plannerStore";
 import { useRecipesStore } from "@/store/recipesStore";
 import { useStatsStore } from "@/store/statsStore";
 import { usePromoStore } from "@/store/promoStore";
+import { useBarCabinetStore } from "@/store/barCabinetStore";
+import { ALL_COCKTAILS } from "@/constants/allCocktails";
+import {
+  rankCocktails,
+  suggestNextIngredients,
+} from "@/features/bar/cocktailMatcher";
+import { resolveCocktailImage } from "@/features/bar/cocktailImage";
 import { buildHomeSuggestions } from "@/features/ai/suggestionFeed";
 import { findCookableRecipes } from "@/features/pantry/pantryMatcher";
 import { INFLUENCER_RECIPES } from "@/constants/influencerRecipes";
@@ -79,6 +89,13 @@ const tagFor = (id: string) => {
 };
 
 export default function HomeScreen() {
+  // In the SwipeBar variant the food home doesn't apply — render the
+  // bar-specific landing instead of the food dashboard.
+  if (isBar) return <HomeScreenBar />;
+  return <HomeScreenFood />;
+}
+
+function HomeScreenFood() {
   const user = useAuthStore((s) => s.user);
   const household = useAuthStore((s) => s.household);
   const session = useSessionStore((s) => s.session);
@@ -278,10 +295,18 @@ export default function HomeScreen() {
                 </Text>
               </View>
               <View style={styles.heroCta}>
-                <Text variant="smallMedium" weight="700" color={colors.ink}>
+                <Text
+                  variant="smallMedium"
+                  weight="700"
+                  color={colors.onPrimary}
+                >
                   Kaydırmaya başla
                 </Text>
-                <ChevronRight size={14} strokeWidth={2.5} color={colors.ink} />
+                <ChevronRight
+                  size={14}
+                  strokeWidth={2.5}
+                  color={colors.onPrimary}
+                />
               </View>
             </View>
           </Pressable>
@@ -577,7 +602,7 @@ export default function HomeScreen() {
                         <View style={styles.pantryBadge}>
                           <Package
                             size={10}
-                            color={colors.ink}
+                            color={colors.onPrimary}
                             strokeWidth={2}
                           />
                           <Text
@@ -752,6 +777,426 @@ const QuickAction: React.FC<QuickActionProps> = ({
     </Text>
   </Pressable>
 );
+
+// ───────────────────────── SwipeBar home ─────────────────────────
+
+const BAR_HERO =
+  "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=900&h=520&fit=crop&auto=format";
+
+const BAR_DATE_FMT = new Intl.DateTimeFormat("en-US", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+});
+
+const greetBar = () => {
+  const h = new Date().getHours();
+  if (h < 11) return t.home.greetingMorning;
+  if (h < 18) return t.home.greetingDay;
+  return t.home.greetingEvening;
+};
+
+function HomeScreenBar() {
+  const user = useAuthStore((s) => s.user);
+  const profile = useAuthStore((s) => s.profile);
+  const alcoholFlag = profile?.alcoholContentEnabled;
+
+  const ingredientIds = useBarCabinetStore((s) => s.ingredientIds);
+  const hydrated = useBarCabinetStore((s) => s.hydrated);
+  const hydrate = useBarCabinetStore((s) => s.hydrate);
+
+  // Hydrate the cabinet only once bar mode is actually unlocked.
+  React.useEffect(() => {
+    if (alcoholFlag === true && !hydrated) void hydrate();
+  }, [alcoholFlag, hydrated, hydrate]);
+
+  const ownedSet = React.useMemo(() => new Set(ingredientIds), [ingredientIds]);
+  const ranked = React.useMemo(
+    () => rankCocktails(ownedSet, ALL_COCKTAILS),
+    [ownedSet],
+  );
+  const cookable = React.useMemo(
+    () => ranked.filter((m) => m.cookable),
+    [ranked],
+  );
+  const suggestions = React.useMemo(
+    () => suggestNextIngredients(ownedSet, ALL_COCKTAILS, 3),
+    [ownedSet],
+  );
+  // Featured rail: prefer ready-to-make, otherwise show the closest classics.
+  const featured = React.useMemo(
+    () => (cookable.length > 0 ? cookable : ranked).slice(0, 6),
+    [cookable, ranked],
+  );
+
+  const cabinetEmpty = ingredientIds.length === 0;
+  const heroMode = cabinetEmpty ? "all" : "close";
+
+  return (
+    <Screen background="bg" padded={false}>
+      <ScrollView
+        contentContainerStyle={barStyles.scroll}
+        showsVerticalScrollIndicator={false}
+      >
+        {/* Greeting */}
+        <Animated.View
+          entering={FadeInDown.duration(420)}
+          style={barStyles.header}
+        >
+          <View style={{ flex: 1 }}>
+            <Text variant="overline" color={colors.dim}>
+              {BAR_DATE_FMT.format(new Date())}
+            </Text>
+            <Text variant="h1" style={{ marginTop: 2 }}>
+              {greetBar()}
+              {user?.name ? `, ${user.name}` : ""}
+            </Text>
+          </View>
+          <View style={barStyles.brandBadge}>
+            <Wine size={22} strokeWidth={1.8} color={colors.ink} />
+          </View>
+        </Animated.View>
+
+        {/* Hero — start tonight's match */}
+        <Animated.View entering={FadeInDown.delay(80).duration(420)}>
+          <Pressable
+            onPress={() => router.push(`/bar/session?mode=${heroMode}`)}
+            style={barStyles.hero}
+          >
+            <Image
+              source={{ uri: BAR_HERO }}
+              style={StyleSheet.absoluteFill}
+              contentFit="cover"
+              transition={250}
+            />
+            <LinearGradient
+              colors={["rgba(26,23,20,0.15)", "rgba(26,23,20,0.78)"]}
+              style={StyleSheet.absoluteFill}
+            />
+            <View style={barStyles.heroContent}>
+              <View style={barStyles.heroTag}>
+                <Sparkles
+                  size={13}
+                  color={colors.onPrimary}
+                  strokeWidth={2.2}
+                />
+                <Text variant="caption" weight="700" color={colors.onPrimary}>
+                  TONIGHT
+                </Text>
+              </View>
+              <View>
+                <Text
+                  weight="700"
+                  color="#FFFFFF"
+                  style={{
+                    fontFamily: fonts.serif,
+                    fontSize: 27,
+                    letterSpacing: -0.4,
+                  }}
+                >
+                  What should we drink?
+                </Text>
+                <View style={barStyles.heroCta}>
+                  <Heart
+                    size={15}
+                    color={colors.onPrimary}
+                    fill={colors.onPrimary}
+                    strokeWidth={2}
+                  />
+                  <Text
+                    variant="smallMedium"
+                    weight="700"
+                    color={colors.onPrimary}
+                  >
+                    {t.home.primaryCta}
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </Pressable>
+        </Animated.View>
+
+        {/* Cabinet snapshot */}
+        <Animated.View entering={FadeInDown.delay(140).duration(420)}>
+          <Pressable
+            onPress={() => router.push("/bar/cabinet")}
+            style={barStyles.cabinetCard}
+          >
+            <View style={barStyles.cabinetIcon}>
+              <Package size={20} strokeWidth={1.8} color={colors.ink} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text variant="overline" color={colors.dim}>
+                YOUR BAR CABINET
+              </Text>
+              <Text variant="smallMedium" weight="600" style={{ marginTop: 2 }}>
+                {cabinetEmpty
+                  ? "Empty for now — add your bottles to get started"
+                  : `${ingredientIds.length} ingredients · ${cookable.length} cocktails ready`}
+              </Text>
+            </View>
+            <ChevronRight size={16} color={colors.hairline} strokeWidth={1.8} />
+          </Pressable>
+        </Animated.View>
+
+        {/* Ready-to-make rail or empty state */}
+        {cabinetEmpty ? (
+          <Pressable
+            onPress={() => router.push("/bar/cabinet")}
+            style={barStyles.emptyCard}
+          >
+            <Sparkles size={22} strokeWidth={1.8} color={colors.primaryDeep} />
+            <Text variant="h3" style={{ marginTop: spacing.sm }}>
+              Build your bar cabinet
+            </Text>
+            <Text
+              variant="body"
+              color={colors.slate}
+              style={{ marginTop: spacing.xs, lineHeight: 22 }}
+            >
+              Tell us which spirits and mixers you keep at home and we'll show
+              the cocktails you can make right now.
+            </Text>
+            <View style={barStyles.emptyCta}>
+              <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
+                Set up cabinet
+              </Text>
+              <ChevronRight
+                size={16}
+                strokeWidth={2}
+                color={colors.onPrimary}
+              />
+            </View>
+          </Pressable>
+        ) : (
+          <View style={{ gap: spacing.md }}>
+            <View style={barStyles.sectionHead}>
+              <Text variant="h3">
+                {cookable.length > 0 ? "Ready to make now" : "Closest to ready"}
+              </Text>
+              <Pressable onPress={() => router.push("/(tabs)/bar")} hitSlop={8}>
+                <Text
+                  variant="smallMedium"
+                  weight="600"
+                  color={colors.primaryDeep}
+                >
+                  See all
+                </Text>
+              </Pressable>
+            </View>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={barStyles.rail}
+            >
+              {featured.map((m) => {
+                const img = resolveCocktailImage(
+                  m.cocktail.imageUrl,
+                  m.cocktail.id,
+                );
+                return (
+                  <Pressable
+                    key={m.cocktail.id}
+                    onPress={() => router.push(`/bar/${m.cocktail.id}`)}
+                    style={barStyles.featCard}
+                  >
+                    <View style={barStyles.featThumb}>
+                      {img ? (
+                        <Image
+                          source={img}
+                          style={StyleSheet.absoluteFill}
+                          contentFit="cover"
+                          transition={200}
+                        />
+                      ) : (
+                        <Text style={{ fontSize: 34 }}>{m.cocktail.emoji}</Text>
+                      )}
+                    </View>
+                    <Text
+                      variant="smallMedium"
+                      weight="600"
+                      numberOfLines={1}
+                      style={{ marginTop: spacing.sm }}
+                    >
+                      {m.cocktail.name}
+                    </Text>
+                    <Text
+                      variant="caption"
+                      weight="600"
+                      color={m.cookable ? colors.forest : colors.accent}
+                      style={{ marginTop: 2 }}
+                    >
+                      {m.cookable
+                        ? "Ready to make"
+                        : m.missingRequired.length === 1
+                          ? "1 missing"
+                          : `${m.missingRequired.length} missing`}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
+          </View>
+        )}
+
+        {/* One step away — ingredient nudges */}
+        {!cabinetEmpty && suggestions.length > 0 ? (
+          <View style={{ gap: spacing.md }}>
+            <Text variant="h3">One step away</Text>
+            <View style={{ gap: spacing.md }}>
+              {suggestions.map(({ ingredient, unlocks }) => (
+                <Pressable
+                  key={ingredient.id}
+                  onPress={() => router.push("/bar/cabinet")}
+                  style={barStyles.suggestRow}
+                >
+                  <Text style={{ fontSize: 24 }}>{ingredient.emoji}</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text variant="smallMedium" weight="600">
+                      {ingredient.name}
+                    </Text>
+                    <Text variant="caption" color={colors.dim}>
+                      Unlocks {unlocks} more cocktails
+                    </Text>
+                  </View>
+                  <ChevronRight
+                    size={16}
+                    color={colors.hairline}
+                    strokeWidth={1.8}
+                  />
+                </Pressable>
+              ))}
+            </View>
+          </View>
+        ) : null}
+
+        <View style={{ height: 120 }} />
+      </ScrollView>
+    </Screen>
+  );
+}
+
+const barStyles = StyleSheet.create({
+  scroll: {
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing["3xl"],
+    gap: spacing["2xl"],
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+  },
+  brandBadge: {
+    width: 48,
+    height: 48,
+    borderRadius: 16,
+    backgroundColor: colors.primarySoft,
+    borderWidth: 1,
+    borderColor: colors.border,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  hero: {
+    height: 220,
+    borderRadius: radii.hero,
+    overflow: "hidden",
+    justifyContent: "flex-end",
+  },
+  heroContent: {
+    flex: 1,
+    padding: spacing.xl,
+    justifyContent: "space-between",
+  },
+  heroTag: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    paddingHorizontal: spacing.md,
+    paddingVertical: 5,
+    borderRadius: radii.pill,
+    backgroundColor: colors.primary,
+  },
+  heroCta: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginTop: spacing.md,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+    borderRadius: radii.pill,
+    backgroundColor: colors.primary,
+  },
+  cabinetCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.lg,
+    borderRadius: 20,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  cabinetIcon: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: colors.primarySoft,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  emptyCard: {
+    padding: spacing.xl,
+    borderRadius: radii.hero,
+    backgroundColor: colors.primarySoft,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  emptyCta: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    marginTop: spacing.lg,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+    borderRadius: radii.pill,
+    backgroundColor: colors.primary,
+  },
+  sectionHead: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  rail: {
+    gap: spacing.md,
+    paddingRight: spacing.xl,
+  },
+  featCard: {
+    width: 140,
+  },
+  featThumb: {
+    width: 140,
+    height: 140,
+    borderRadius: radii.lg,
+    overflow: "hidden",
+    backgroundColor: colors.cream,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  suggestRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md,
+    padding: spacing.lg,
+    borderRadius: 18,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+});
 
 const styles = StyleSheet.create({
   scroll: {

@@ -1,4 +1,5 @@
 import { Platform } from "react-native";
+import Constants from "expo-constants";
 
 import { env, hasBilling, revenueCatUsableTestKey } from "@/lib/env";
 import { track } from "@/features/analytics/analyticsService";
@@ -56,9 +57,17 @@ let initialized = false;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 let Purchases: any = null;
 
+/**
+ * Expo Go can't run the native RevenueCat SDK — it falls back to a "browser"
+ * build whose `configure` rejects asynchronously (outside our try/catch) with
+ * "Invalid API key". Treat Expo Go exactly like mock mode so the paywall flow
+ * stays testable without crashing the app.
+ */
+const isExpoGo = Constants.appOwnership === "expo";
+
 /** Lazily load the native SDK. Returns null in mock mode or if unavailable. */
 function getPurchases(): typeof Purchases {
-  if (!hasBilling) return null;
+  if (!hasBilling || isExpoGo) return null;
   if (!Purchases) {
     try {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -89,7 +98,7 @@ async function currentPackages(rc: typeof Purchases): Promise<RcPackage[]> {
 export const billingService = {
   /** True when a RevenueCat key is present (real purchases possible). */
   isConfigured(): boolean {
-    return hasBilling;
+    return hasBilling && !isExpoGo;
   },
 
   /** Idempotent SDK init. No-op in mock mode. */

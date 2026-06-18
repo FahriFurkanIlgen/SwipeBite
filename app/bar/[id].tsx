@@ -35,12 +35,12 @@ export default function CocktailDetailScreen() {
   if (!cocktail) {
     return (
       <Screen background="bg">
-        <Stack.Screen options={{ title: "Kokteyl" }} />
+        <Stack.Screen options={{ title: "Cocktail" }} />
         <View style={styles.notFound}>
-          <Text variant="h3">Tarif bulunamadı</Text>
+          <Text variant="h3">Recipe not found</Text>
           <Pressable onPress={() => router.back()} style={styles.cta}>
-            <Text variant="bodyMedium" weight="700" color={colors.ink}>
-              Geri dön
+            <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
+              Go back
             </Text>
           </Pressable>
         </View>
@@ -97,7 +97,7 @@ export default function CocktailDetailScreen() {
         <View style={styles.metaRow}>
           <MetaPill
             icon={<Clock size={14} color={colors.slate} strokeWidth={1.8} />}
-            label={`${cocktail.prepTimeMinutes} dk`}
+            label={`${cocktail.prepTimeMinutes} min`}
           />
           <MetaPill
             icon={<Wine size={14} color={colors.slate} strokeWidth={1.8} />}
@@ -122,7 +122,7 @@ export default function CocktailDetailScreen() {
             variant="overline"
             color={match.cookable ? colors.forest : colors.accent}
           >
-            {match.cookable ? "Hazırsın" : "Eksik malzeme var"}
+            {match.cookable ? "You're ready" : "Missing ingredients"}
           </Text>
           <Text
             variant="smallMedium"
@@ -130,15 +130,15 @@ export default function CocktailDetailScreen() {
             style={{ marginTop: 4, lineHeight: 20 }}
           >
             {match.cookable
-              ? "Bu kokteyl için ihtiyacın olan her şey bar dolabında."
-              : `${match.missingRequired.length} malzeme eksik. Aşağıdan dolabına ekleyebilirsin.`}
+              ? "You have everything you need for this cocktail in your bar cabinet."
+              : `${match.missingRequired.length} ingredient(s) missing. Add them to your cabinet below.`}
           </Text>
         </View>
 
         {/* Ingredients */}
         <View style={styles.section}>
           <Text variant="overline" color={colors.dim}>
-            Malzemeler
+            Ingredients
           </Text>
           <View style={{ gap: spacing.sm, marginTop: spacing.sm }}>
             {cocktail.ingredients.map((ref) => {
@@ -159,7 +159,7 @@ export default function CocktailDetailScreen() {
                       {ing.name}
                       {ref.optional ? (
                         <Text variant="caption" color={colors.dim} weight="400">
-                          {"  "}· isteğe bağlı
+                          {"  "}· optional
                         </Text>
                       ) : null}
                     </Text>
@@ -169,7 +169,11 @@ export default function CocktailDetailScreen() {
                   </View>
                   {owned ? (
                     <View style={styles.ownedBadge}>
-                      <Check size={12} strokeWidth={2.6} color={colors.ink} />
+                      <Check
+                        size={12}
+                        strokeWidth={2.6}
+                        color={colors.onPrimary}
+                      />
                     </View>
                   ) : (
                     <Pressable
@@ -177,9 +181,17 @@ export default function CocktailDetailScreen() {
                       hitSlop={8}
                       style={styles.addBtn}
                     >
-                      <Plus size={14} strokeWidth={2.4} color={colors.ink} />
-                      <Text variant="caption" weight="600" color={colors.ink}>
-                        Ekle
+                      <Plus
+                        size={14}
+                        strokeWidth={2.4}
+                        color={colors.onPrimary}
+                      />
+                      <Text
+                        variant="caption"
+                        weight="600"
+                        color={colors.onPrimary}
+                      >
+                        Add
                       </Text>
                     </Pressable>
                   )}
@@ -192,7 +204,7 @@ export default function CocktailDetailScreen() {
         {/* Steps */}
         <View style={styles.section}>
           <Text variant="overline" color={colors.dim}>
-            Hazırlanışı
+            Method
           </Text>
           <View style={{ gap: spacing.md, marginTop: spacing.sm }}>
             {cocktail.steps.map((step, idx) => (

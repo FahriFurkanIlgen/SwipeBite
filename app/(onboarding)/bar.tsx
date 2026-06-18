@@ -20,11 +20,6 @@ export default function BarOnboardingScreen() {
     router.push("/(onboarding)/finish");
   };
 
-  const handleSkip = () => {
-    setProfile({ alcoholContentEnabled: false });
-    router.push("/(onboarding)/finish");
-  };
-
   return (
     <Screen background="bg">
       <View style={styles.header}>
@@ -55,18 +50,18 @@ export default function BarOnboardingScreen() {
         >
           <FeatureRow
             emoji="🍸"
-            title="Fenomen kokteyl tarifleri"
-            sub="Instagram'dan derlenmiş bartender tarifleri"
+            title="Trending cocktail recipes"
+            sub="Bartender recipes curated from Instagram"
           />
           <FeatureRow
             emoji="🥃"
-            title="Bar dolabı"
-            sub="Evindeki içkilerle yapılabilen kokteyller"
+            title="Bar cabinet"
+            sub="Cocktails you can make with what you have at home"
           />
           <FeatureRow
             emoji="🤝"
-            title="Ev halkıyla eşleşme"
-            sub="Akşam içeceğine birlikte karar verin"
+            title="Match with friends"
+            sub="Decide on tonight's drink together"
           />
         </Animated.View>
 
@@ -77,7 +72,7 @@ export default function BarOnboardingScreen() {
         >
           <View style={[styles.checkbox, checked && styles.checkboxOn]}>
             {checked ? (
-              <Check size={14} strokeWidth={2.6} color={colors.ink} />
+              <Check size={14} strokeWidth={2.6} color={colors.onPrimary} />
             ) : null}
           </View>
           <Text
@@ -99,20 +94,15 @@ export default function BarOnboardingScreen() {
           <Text
             variant="bodyMedium"
             weight="700"
-            color={checked ? colors.ink : colors.dim}
+            color={checked ? colors.onPrimary : colors.dim}
           >
             {t.onboarding.barEnable}
           </Text>
           <ChevronRight
             size={18}
             strokeWidth={2.5}
-            color={checked ? colors.ink : colors.dim}
+            color={checked ? colors.onPrimary : colors.dim}
           />
-        </Pressable>
-        <Pressable onPress={handleSkip} style={styles.skip} hitSlop={10}>
-          <Text variant="smallMedium" color={colors.dim}>
-            {t.onboarding.barSkip}
-          </Text>
         </Pressable>
       </View>
     </Screen>
@@ -212,9 +202,5 @@ const styles = StyleSheet.create({
   },
   ctaDisabled: {
     backgroundColor: colors.muted,
-  },
-  skip: {
-    alignItems: "center",
-    paddingVertical: spacing.sm,
   },
 });

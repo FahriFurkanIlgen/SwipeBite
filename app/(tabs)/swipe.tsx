@@ -217,8 +217,12 @@ export default function SwipeTab() {
                 onPress={() => router.push(`/session/${activeSession.id}`)}
                 style={styles.resumeBtn}
               >
-                <RefreshCw size={15} color={colors.ink} strokeWidth={2} />
-                <Text variant="bodyMedium" weight="700" color={colors.ink}>
+                <RefreshCw size={15} color={colors.onPrimary} strokeWidth={2} />
+                <Text
+                  variant="bodyMedium"
+                  weight="700"
+                  color={colors.onPrimary}
+                >
                   Devam Et
                 </Text>
               </Pressable>

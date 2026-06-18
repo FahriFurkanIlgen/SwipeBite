@@ -23,6 +23,7 @@ import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { useTutorialStore } from "@/store/tutorialStore";
+import { isBar, L } from "@/constants/appVariant";
 
 const { width: SCREEN_W } = Dimensions.get("window");
 
@@ -37,7 +38,7 @@ type Slide = {
   desc: string;
 };
 
-const SLIDES: Slide[] = [
+const FOOD_SLIDES: Slide[] = [
   {
     icon: Flame,
     iconBg: colors.primary,
@@ -63,6 +64,35 @@ const SLIDES: Slide[] = [
     desc: "Önce birkaç kart kaydır, kilerini doldur ve eşini davet et. Mutfak artık çok daha kolay.",
   },
 ];
+
+const BAR_SLIDES: Slide[] = [
+  {
+    icon: Flame,
+    iconBg: colors.primary,
+    title: "Swipe, like, discover",
+    desc: "Swipe the cards: right to like, left to pass. SwipeBar learns your taste and serves sharper suggestions every time.",
+  },
+  {
+    icon: Package,
+    iconBg: colors.primaryDeep,
+    title: "Mix with what you have",
+    desc: "Add the bottles in your cabinet and we'll suggest only the cocktails you can make right now — no extra shopping.",
+  },
+  {
+    icon: Heart,
+    iconBg: colors.accent,
+    title: "Match with friends",
+    desc: "Share your invite code. When you both like the same drink it's an instant match — no more 'what should we drink?' debates.",
+  },
+  {
+    icon: UtensilsCrossed,
+    iconBg: colors.primary,
+    title: "Let's get started",
+    desc: "Swipe a few cards, stock your cabinet, and invite a friend. Deciding what to mix just got easy.",
+  },
+];
+
+const SLIDES: Slide[] = isBar ? BAR_SLIDES : FOOD_SLIDES;
 
 export default function TutorialScreen() {
   const markSeen = useTutorialStore((s) => s.markSeen);
@@ -96,7 +126,7 @@ export default function TutorialScreen() {
       <View style={styles.skipRow}>
         <Pressable onPress={handleFinish} hitSlop={10}>
           <Text variant="bodyMedium" color={colors.slate}>
-            Geç
+            {L("Geç", "Skip")}
           </Text>
         </Pressable>
       </View>
@@ -139,10 +169,12 @@ export default function TutorialScreen() {
       <View style={styles.footer}>
         <ProgressDots total={SLIDES.length} index={index} />
         <Pressable onPress={handleNext} style={styles.cta}>
-          <Text variant="bodyMedium" weight="700" color={colors.ink}>
-            {index === SLIDES.length - 1 ? "Hadi başlayalım" : "İleri"}
+          <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
+            {index === SLIDES.length - 1
+              ? L("Hadi başlayalım", "Let's start")
+              : L("İleri", "Next")}
           </Text>
-          <ChevronRight size={18} strokeWidth={2.5} color={colors.ink} />
+          <ChevronRight size={18} strokeWidth={2.5} color={colors.onPrimary} />
         </Pressable>
       </View>
     </Screen>

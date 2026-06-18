@@ -17,6 +17,7 @@ import type { LucideIcon } from "lucide-react-native";
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, spacing } from "@/constants/theme";
+import { L } from "@/constants/appVariant";
 import { pushService } from "@/features/notifications/pushService";
 import { findCookableRecipes } from "@/features/pantry/pantryMatcher";
 import { usePantryStore } from "@/store/pantryStore";
@@ -64,11 +65,17 @@ export default function NotificationsScreen() {
         const ok = await pushService.requestPermission();
         if (!ok) {
           Alert.alert(
-            "İzin gerekli",
-            "Bildirim izni vermek için sistem ayarlarını açmak ister misin?",
+            L("İzin gerekli", "Permission required"),
+            L(
+              "Bildirim izni vermek için sistem ayarlarını açmak ister misin?",
+              "Open system settings to grant notification permission?",
+            ),
             [
-              { text: "Vazgeç", style: "cancel" },
-              { text: "Ayarları aç", onPress: () => Linking.openSettings() },
+              { text: L("Vazgeç", "Cancel"), style: "cancel" },
+              {
+                text: L("Ayarları aç", "Open settings"),
+                onPress: () => Linking.openSettings(),
+              },
             ],
           );
           return;
@@ -112,10 +119,10 @@ export default function NotificationsScreen() {
               letterSpacing: -0.4,
             }}
           >
-            Bildirimler
+            {L("Bildirimler", "Notifications")}
           </Text>
           <Text variant="caption" color={colors.dim}>
-            Ne zaman duyalım, ne zaman susalım
+            {L("Ne zaman duyalım, ne zaman susalım", "When to ping you, when to stay quiet")}
           </Text>
         </View>
       </View>
@@ -130,10 +137,13 @@ export default function NotificationsScreen() {
             style={styles.permissionCard}
           >
             <Text variant="smallMedium" weight="600" color={colors.accent}>
-              Bildirim izni kapalı
+              {L("Bildirim izni kapalı", "Notifications are off")}
             </Text>
             <Text variant="caption" color={colors.dim} style={{ marginTop: 4 }}>
-              Sistem ayarlarından SwipeBite için bildirimleri aç.
+              {L(
+                "Sistem ayarlarından SwipeBite için bildirimleri aç.",
+                "Enable notifications for SwipeBar in system settings.",
+              )}
             </Text>
           </Pressable>
         ) : null}
@@ -141,16 +151,22 @@ export default function NotificationsScreen() {
         <View style={styles.card}>
           <ToggleRow
             icon={Moon}
-            label="Kiler yemek önerileri"
-            sub="Her gün 17:00'de kilerindeki malzemelerle yapabileceğin yemekler"
+            label={L("Kiler yemek önerileri", "Cabinet drink ideas")}
+            sub={L(
+              "Her gün 17:00'de kilerindeki malzemelerle yapabileceğin yemekler",
+              "Daily at 5pm: drinks you can make with what's in your cabinet",
+            )}
             value={dinner}
             disabled={busy || permission === "denied"}
             onValueChange={toggleDinner}
           />
           <ToggleRow
             icon={Users}
-            label="Eşin bekliyor"
-            sub="Oturum başlayınca diğer kişiye haber"
+            label={L("Eşin bekliyor", "Your friend is waiting")}
+            sub={L(
+              "Oturum başlayınca diğer kişiye haber",
+              "Notify the other person when a session starts",
+            )}
             value={partner}
             disabled
             onValueChange={setPartner}
@@ -158,8 +174,11 @@ export default function NotificationsScreen() {
           />
           <ToggleRow
             icon={Bell}
-            label="Eşleşme bildirimi"
-            sub="Yeni bir tarifte buluştuğunuzda"
+            label={L("Eşleşme bildirimi", "Match notification")}
+            sub={L(
+              "Yeni bir tarifte buluştuğunuzda",
+              "When you both land on the same drink",
+            )}
             value={match}
             disabled
             onValueChange={setMatch}
@@ -172,10 +191,15 @@ export default function NotificationsScreen() {
           color={colors.dim}
           style={{ marginTop: spacing.md, paddingHorizontal: spacing.sm }}
         >
-          Eşin bekliyor ve eşleşme bildirimleri otomatik gönderilir;
-          oturum/eşleşme olduğunda devreye girer.
+          {L(
+            "Eşin bekliyor ve eşleşme bildirimleri otomatik gönderilir; oturum/eşleşme olduğunda devreye girer.",
+            "Waiting and match notifications are sent automatically when a session or match happens.",
+          )}
           {Platform.OS === "ios"
-            ? " iOS'ta gerçek cihaz gerekir; simülatörde bildirim çalışmaz."
+            ? L(
+                " iOS'ta gerçek cihaz gerekir; simülatörde bildirim çalışmaz.",
+                " iOS needs a real device; notifications don't work in the simulator.",
+              )
             : ""}
         </Text>
 

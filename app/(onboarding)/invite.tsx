@@ -9,6 +9,7 @@ import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { L } from "@/constants/appVariant";
 import { featureFlags } from "@/constants/featureFlags";
 import { useAuthStore } from "@/store/authStore";
 
@@ -37,8 +38,10 @@ export default function InviteOnboardingScreen() {
           color={colors.slate}
           style={{ marginTop: spacing.sm }}
         >
-          Ev halkınızı davet edin. Onlar da kendi tercihlerini ekleyebilir ve
-          birlikte eşleşebilirsiniz.
+          {L(
+            "Ev halkınızı davet edin. Onlar da kendi tercihlerini ekleyebilir ve birlikte eşleşebilirsiniz.",
+            "Invite your friends. They can add their own preferences and you can match together.",
+          )}
         </Text>
       </Animated.View>
 
@@ -46,9 +49,9 @@ export default function InviteOnboardingScreen() {
         <InviteRow
           icon={Share2}
           iconBg={colors.primary}
-          iconColor={colors.ink}
+          iconColor={colors.onPrimary}
           title={t.onboarding.inviteViaLink}
-          subtitle={`swipebite.app/join/${code}`}
+          subtitle={`${L("swipebite.app", "swipebar.app")}/join/${code}`}
           onPress={() => router.push(nextStep)}
         />
         <InviteRow
@@ -56,7 +59,10 @@ export default function InviteOnboardingScreen() {
           iconBg={colors.muted}
           iconColor={colors.slate}
           title={t.onboarding.inviteViaQr}
-          subtitle="Yanındakileri hemen davet et"
+          subtitle={L(
+            "Yanındakileri hemen davet et",
+            "Invite people nearby instantly",
+          )}
           onPress={() => router.push("/invite")}
         />
         <InviteRow
@@ -64,7 +70,7 @@ export default function InviteOnboardingScreen() {
           iconBg={colors.muted}
           iconColor={colors.slate}
           title={t.onboarding.inviteLater}
-          subtitle="Şimdilik tek başına kullan"
+          subtitle={L("Şimdilik tek başına kullan", "Use it solo for now")}
           onPress={() => router.push(nextStep)}
         />
       </View>

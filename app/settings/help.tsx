@@ -14,8 +14,11 @@ import type { LucideIcon } from "lucide-react-native";
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, spacing } from "@/constants/theme";
+import { isBar, L } from "@/constants/appVariant";
 
-const FAQ: { q: string; a: string }[] = [
+const SUPPORT_EMAIL = isBar ? "support@swipebar.app" : "destek@swipebite.app";
+
+const FOOD_FAQ: { q: string; a: string }[] = [
   {
     q: "Bir oturum nasıl başlatılır?",
     a: "Ana sayfa veya Eşleş sekmesinden 'Yeni oturum başlat'a dokun. Hane üyelerin davet kodu/link ile katılır, sonra tarif kartlarını kaydırırsınız.",
@@ -46,6 +49,39 @@ const FAQ: { q: string; a: string }[] = [
   },
 ];
 
+const BAR_FAQ: { q: string; a: string }[] = [
+  {
+    q: "How do I start a session?",
+    a: "Tap 'Start a drink match' from the Bar tab. Your friends join with an invite code/link, then you swipe through cocktail cards.",
+  },
+  {
+    q: "How does matching work?",
+    a: "When you both swipe right on the same cocktail, it's an instant match and a pop-up appears.",
+  },
+  {
+    q: "How do I invite friends?",
+    a: "Use Profile → Bar → 'Invite' to share an invite code/link. They join automatically when they open the link.",
+  },
+  {
+    q: "How does the cabinet work?",
+    a: "Add the bottles and mixers you have in the Cabinet. The 'ready to make' badge on each cocktail is calculated from your cabinet.",
+  },
+  {
+    q: "What is the weekly plan for?",
+    a: "The Week tab builds a 7-day drink plan. Suggestions change by mode and you can refresh individual days.",
+  },
+  {
+    q: "Where do the suggestions come from?",
+    a: "A local cocktail catalog + optional OpenAI suggestions. If no OpenAI key is set, it runs fully offline.",
+  },
+  {
+    q: "Is my data safe?",
+    a: "Supabase RLS means only your own rows are readable. See Profile → Privacy for details.",
+  },
+];
+
+const FAQ = isBar ? BAR_FAQ : FOOD_FAQ;
+
 export default function HelpScreen() {
   const [open, setOpen] = React.useState<number | null>(0);
 
@@ -64,10 +100,10 @@ export default function HelpScreen() {
               letterSpacing: -0.4,
             }}
           >
-            Yardım
+            {L("Yardım", "Help")}
           </Text>
           <Text variant="caption" color={colors.dim}>
-            SSS ve destek kanalları
+            {L("SSS ve destek kanalları", "FAQ and support channels")}
           </Text>
         </View>
       </View>
@@ -82,15 +118,17 @@ export default function HelpScreen() {
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="smallMedium" weight="600">
-              Hoş geldin!
+              {L("Hoş geldin!", "Welcome!")}
             </Text>
             <Text
               variant="caption"
               color={colors.dim}
               style={{ marginTop: 4, lineHeight: 18 }}
             >
-              Aşağıda en sık sorulan sorular var. Cevabını bulamazsan en altta
-              bizimle iletişime geçebilirsin.
+              {L(
+                "Aşağıda en sık sorulan sorular var. Cevabını bulamazsan en altta bizimle iletişime geçebilirsin.",
+                "Below are the most common questions. Can't find your answer? Reach us at the bottom.",
+              )}
             </Text>
           </View>
         </View>
@@ -117,27 +155,27 @@ export default function HelpScreen() {
             paddingHorizontal: spacing.sm,
           }}
         >
-          İletişim
+          {L("İletişim", "Contact")}
         </Text>
         <View style={styles.card}>
           <ContactRow
             icon={Mail}
-            label="E-posta ile yaz"
-            sub="destek@swipebite.app"
+            label={L("E-posta ile yaz", "Email us")}
+            sub={SUPPORT_EMAIL}
             onPress={() =>
               Linking.openURL(
-                "mailto:destek@swipebite.app?subject=SwipeBite%20destek",
+                `mailto:${SUPPORT_EMAIL}?subject=${L("SwipeBite%20destek", "SwipeBar%20support")}`,
               )
             }
           />
           <ContactRow
             icon={MessageCircle}
-            label="Geri bildirim gönder"
-            sub="Önerini, hatayı, isteğini paylaş"
+            label={L("Geri bildirim gönder", "Send feedback")}
+            sub={L("Önerini, hatayı, isteğini paylaş", "Share an idea, bug, or request")}
             border
             onPress={() =>
               Linking.openURL(
-                "mailto:destek@swipebite.app?subject=SwipeBite%20geri%20bildirim",
+                `mailto:${SUPPORT_EMAIL}?subject=${L("SwipeBite%20geri%20bildirim", "SwipeBar%20feedback")}`,
               )
             }
           />

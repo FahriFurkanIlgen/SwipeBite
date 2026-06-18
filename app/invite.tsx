@@ -27,6 +27,7 @@ import Animated, { FadeIn, FadeInDown } from "react-native-reanimated";
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
+import { L } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { authService } from "@/features/auth/authService";
@@ -67,8 +68,8 @@ export default function InviteScreen() {
     await Haptics.selectionAsync();
     try {
       await Share.share({
-        title: "SwipeBite oturumu",
-        message: `Birlikte tarif seçelim: ${sessionUrl}`,
+        title: L("SwipeBite oturumu", "SwipeBar session"),
+        message: `${L("Birlikte tarif seçelim", "Let's pick together")}: ${sessionUrl}`,
       });
     } catch {
       /* cancelled */
@@ -86,8 +87,11 @@ export default function InviteScreen() {
     await Haptics.selectionAsync();
     try {
       await Share.share({
-        title: "SwipeBite davet",
-        message: `${household.name} hanesine katıl: ${inviteUrl}\nKod: ${inviteCode}`,
+        title: L("SwipeBite davet", "SwipeBar invite"),
+        message: L(
+          `${household.name} hanesine katıl: ${inviteUrl}\nKod: ${inviteCode}`,
+          `Join ${household.name}: ${inviteUrl}\nCode: ${inviteCode}`,
+        ),
       });
     } catch {
       /* cancelled */
@@ -98,7 +102,7 @@ export default function InviteScreen() {
     if (!user) return;
     const trimmed = code.trim().toUpperCase();
     if (trimmed.length < 4) {
-      setError("Geçerli bir davet kodu gir.");
+      setError(L("Geçerli bir davet kodu gir.", "Enter a valid invite code."));
       return;
     }
     setJoining(true);
@@ -109,7 +113,7 @@ export default function InviteScreen() {
         if (!authService.isConfigured()) {
           setHousehold({
             id: trimmed,
-            name: `${trimmed} Hanesi`,
+            name: `${trimmed} ${L("Hanesi", "Group")}`,
             createdBy: user.id,
             memberIds: [user.id],
             createdAt: new Date().toISOString(),
@@ -118,7 +122,7 @@ export default function InviteScreen() {
           router.back();
           return;
         }
-        setError("Kod bulunamadı.");
+        setError(L("Kod bulunamadı.", "Code not found."));
         return;
       }
       setHousehold(h);
@@ -127,7 +131,9 @@ export default function InviteScreen() {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
       router.back();
     } catch {
-      setError("Katılım başarısız. Tekrar dene.");
+      setError(
+        L("Katılım başarısız. Tekrar dene.", "Couldn't join. Try again."),
+      );
     } finally {
       setJoining(false);
     }
@@ -150,10 +156,15 @@ export default function InviteScreen() {
               includeFontPadding: false,
             }}
           >
-            Davet Et
+            {L("Davet Et", "Invite")}
           </Text>
           <Text variant="caption" color={colors.dim}>
-            {household ? `${household.name}'e katılım daveti` : "Hane daveti"}
+            {household
+              ? L(
+                  `${household.name}'e katılım daveti`,
+                  `Invite to join ${household.name}`,
+                )
+              : L("Hane daveti", "Group invite")}
           </Text>
         </View>
       </View>
@@ -192,7 +203,9 @@ export default function InviteScreen() {
                   lineHeight: 26,
                 }}
               >
-                "Birlikte kaydırın,{"\n"}birlikte yiyin."
+                {L('"Birlikte kaydırın,', '"Swipe together,')}
+                {"\n"}
+                {L('birlikte yiyin."', 'decide together."')}
               </Text>
             </View>
           </Animated.View>
@@ -206,7 +219,7 @@ export default function InviteScreen() {
                   color={colors.dim}
                   style={{ marginBottom: 12 }}
                 >
-                  Davet Kodu
+                  {L("Davet Kodu", "Invite Code")}
                 </Text>
                 <View style={styles.codeBox}>
                   <Text
@@ -235,7 +248,11 @@ export default function InviteScreen() {
                     {copied ? (
                       <Check size={16} color="#FFFFFF" strokeWidth={2.5} />
                     ) : (
-                      <Copy size={15} color={colors.ink} strokeWidth={2} />
+                      <Copy
+                        size={15}
+                        color={colors.onPrimary}
+                        strokeWidth={2}
+                      />
                     )}
                   </Pressable>
                 </View>
@@ -244,8 +261,10 @@ export default function InviteScreen() {
                   color={colors.dim}
                   style={{ marginTop: 12 }}
                 >
-                  Kodu arkadaşınıza gönderin ya da aşağıdaki bağlantıyı
-                  paylaşın.
+                  {L(
+                    "Kodu arkadaşınıza gönderin ya da aşağıdaki bağlantıyı paylaşın.",
+                    "Send the code to a friend or share the link below.",
+                  )}
                 </Text>
               </View>
 
@@ -258,11 +277,15 @@ export default function InviteScreen() {
                       { backgroundColor: colors.primary },
                     ]}
                   >
-                    <Share2 size={18} color={colors.ink} strokeWidth={1.5} />
+                    <Share2
+                      size={18}
+                      color={colors.onPrimary}
+                      strokeWidth={1.5}
+                    />
                   </View>
                   <View>
                     <Text variant="smallMedium" weight="600" color={colors.bg}>
-                      Bağlantıyı Paylaş
+                      {L("Bağlantıyı Paylaş", "Share Link")}
                     </Text>
                     <Text
                       variant="caption"
@@ -289,10 +312,13 @@ export default function InviteScreen() {
                   </View>
                   <View>
                     <Text variant="smallMedium" weight="600">
-                      QR Kod Göster
+                      {L("QR Kod Göster", "Show QR Code")}
                     </Text>
                     <Text variant="caption" color={colors.dim}>
-                      Yanındakileri anında davet et
+                      {L(
+                        "Yanındakileri anında davet et",
+                        "Invite people nearby instantly",
+                      )}
                     </Text>
                   </View>
                 </Pressable>
@@ -324,7 +350,10 @@ export default function InviteScreen() {
                     {inviteCode}
                   </Text>
                   <Text variant="caption" color={colors.dim} align="center">
-                    Kamerayı koda doğrultun
+                    {L(
+                      "Kamerayı koda doğrultun",
+                      "Point your camera at the code",
+                    )}
                   </Text>
                 </Animated.View>
               ) : null}
@@ -338,14 +367,17 @@ export default function InviteScreen() {
               weight="700"
               style={{ marginBottom: 4 }}
             >
-              Mevcut bir haneye katıl
+              {L("Mevcut bir haneye katıl", "Join an existing group")}
             </Text>
             <Text
               variant="caption"
               color={colors.dim}
               style={{ marginBottom: spacing.md }}
             >
-              Davet kodu girerek mevcut bir haneye katılabilirsin.
+              {L(
+                "Davet kodu girerek mevcut bir haneye katılabilirsin.",
+                "Enter an invite code to join an existing group.",
+              )}
             </Text>
             <TextInput
               placeholder="AB12CD"
@@ -372,8 +404,10 @@ export default function InviteScreen() {
               disabled={joining}
               style={[styles.joinBtn, { opacity: joining ? 0.6 : 1 }]}
             >
-              <Text variant="smallMedium" weight="700" color={colors.ink}>
-                {joining ? "Katılıyor…" : "Haneye katıl"}
+              <Text variant="smallMedium" weight="700" color={colors.onPrimary}>
+                {joining
+                  ? L("Katılıyor…", "Joining…")
+                  : L("Haneye katıl", "Join group")}
               </Text>
             </Pressable>
           </View>
@@ -385,14 +419,17 @@ export default function InviteScreen() {
                 weight="700"
                 style={{ marginBottom: 4 }}
               >
-                Aktif kaydırma oturumu
+                {L("Aktif kaydırma oturumu", "Active swipe session")}
               </Text>
               <Text
                 variant="caption"
                 color={colors.dim}
                 style={{ marginBottom: spacing.md }}
               >
-                Birlikte tarif seçmek için oturum bağlantısını paylaş.
+                {L(
+                  "Birlikte tarif seçmek için oturum bağlantısını paylaş.",
+                  "Share the session link to pick together.",
+                )}
               </Text>
               <Pressable onPress={onShareSession} style={styles.shareDark}>
                 <View
@@ -401,11 +438,15 @@ export default function InviteScreen() {
                     { backgroundColor: colors.primary },
                   ]}
                 >
-                  <Share2 size={18} color={colors.ink} strokeWidth={1.5} />
+                  <Share2
+                    size={18}
+                    color={colors.onPrimary}
+                    strokeWidth={1.5}
+                  />
                 </View>
                 <View style={{ flex: 1 }}>
                   <Text variant="smallMedium" weight="600" color={colors.bg}>
-                    Oturumu paylaş
+                    {L("Oturumu paylaş", "Share session")}
                   </Text>
                   <Text
                     variant="caption"
@@ -420,8 +461,12 @@ export default function InviteScreen() {
                 onPress={() => router.replace(`/lobby/${session.id}`)}
                 style={styles.startSwipeBtn}
               >
-                <Text variant="smallMedium" weight="700" color={colors.ink}>
-                  Kaydırmaya başla
+                <Text
+                  variant="smallMedium"
+                  weight="700"
+                  color={colors.onPrimary}
+                >
+                  {L("Kaydırmaya başla", "Start swiping")}
                 </Text>
               </Pressable>
             </View>

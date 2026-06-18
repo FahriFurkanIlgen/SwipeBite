@@ -4,6 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { colors } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { featureFlags } from "@/constants/featureFlags";
+import { isBar } from "@/constants/appVariant";
 import { FloatingTabBar } from "@/components/ui/FloatingTabBar";
 import { useAuthStore } from "@/store/authStore";
 
@@ -17,6 +18,10 @@ export default function TabsLayout() {
   // For the food-only launch the entire bar tab is hidden via the feature
   // flag, regardless of the per-user alcohol preference.
   const barHidden = !featureFlags.bar || alcoholDeclined;
+  // In the SwipeBar variant the food tabs (swipe/planner/pantry) are hidden
+  // entirely — the bar experience is the whole app. The Home tab stays
+  // visible but renders a bar-specific landing (see (tabs)/index.tsx).
+  const foodHidden = isBar;
 
   return (
     <Tabs
@@ -40,6 +45,7 @@ export default function TabsLayout() {
         name="swipe"
         options={{
           title: t.tabs.swipe,
+          href: foodHidden ? null : undefined,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="flame" size={size} color={color} />
           ),
@@ -49,6 +55,7 @@ export default function TabsLayout() {
         name="planner"
         options={{
           title: t.tabs.plan,
+          href: foodHidden ? null : undefined,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="calendar" size={size} color={color} />
           ),
@@ -58,6 +65,7 @@ export default function TabsLayout() {
         name="pantry"
         options={{
           title: t.tabs.pantry,
+          href: foodHidden ? null : undefined,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="basket" size={size} color={color} />
           ),

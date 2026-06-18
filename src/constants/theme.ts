@@ -1,8 +1,28 @@
 /**
  * SwipeBite design tokens — Cream Canvas system.
  * Warm, editorial, sophisticated. Cream backdrop + mustard accent + terracotta highlight.
+ * SwipeBar variant overrides the brand palette with deep blue (#41639C).
  * Serif (Fraunces) for display/headings, sans (Inter) for body/UI.
  */
+import { isBar } from "./appVariant";
+
+// Variant-aware brand palette. SwipeBite = mustard/terracotta; SwipeBar = blue.
+const brand = isBar
+  ? {
+      primary: "#41639C",
+      primaryDeep: "#33507D",
+      primarySoft: "#EAF0F8",
+      accent: "#41639C",
+      accentSoft: "#DDE6F3",
+    }
+  : {
+      primary: "#F0B429",
+      primaryDeep: "#D4A017",
+      primarySoft: "#FFF8E7",
+      accent: "#E07A5F",
+      accentSoft: "#FBE6DE",
+    };
+
 export const colors = {
   // Surfaces
   bg: "#FAF7F2",
@@ -18,12 +38,11 @@ export const colors = {
   dim: "#9E9890",
   hairline: "#C8C0B8",
 
-  // Brand & accents
-  primary: "#F0B429",
-  primaryDeep: "#D4A017",
-  primarySoft: "#FFF8E7",
-  accent: "#E07A5F",
-  accentSoft: "#FBE6DE",
+  // Brand & accents (variant-aware)
+  ...brand,
+  // Foreground (text/icon) color to sit on a brand-colored background.
+  // SwipeBar = white on blue; SwipeBite = dark ink on mustard.
+  onPrimary: isBar ? "#FFFFFF" : "#1A1714",
   forest: "#4A7A50",
   forestSoft: "#EEF4EE",
 
@@ -39,7 +58,7 @@ export const colors = {
   snow: "#FFFFFF",
   cloud: "#F0EBE3",
   canvas: "#FAF7F2",
-  amber: "#F0B429",
+  amber: brand.primary,
   stone: "#3D3530",
 } as const;
 

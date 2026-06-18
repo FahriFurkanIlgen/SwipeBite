@@ -163,7 +163,7 @@ export default function CookScreen() {
         <View style={styles.empty}>
           <Text variant="h2">Tarif bulunamadı</Text>
           <Pressable onPress={() => router.back()} style={styles.cta}>
-            <Text variant="bodyMedium" weight="700" color={colors.ink}>
+            <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
               Geri
             </Text>
           </Pressable>
@@ -243,7 +243,11 @@ export default function CookScreen() {
                       style={[styles.checkbox, checked && styles.checkboxOn]}
                     >
                       {checked ? (
-                        <Check size={13} color={colors.ink} strokeWidth={3} />
+                        <Check
+                          size={13}
+                          color={colors.onPrimary}
+                          strokeWidth={3}
+                        />
                       ) : null}
                     </View>
                     <Text
@@ -269,7 +273,7 @@ export default function CookScreen() {
             disabled={removing}
             style={[styles.completeCta, removing && { opacity: 0.6 }]}
           >
-            <Text variant="bodyMedium" weight="700" color={colors.ink}>
+            <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
               {removing
                 ? "Güncelleniyor…"
                 : removeCount > 0
@@ -341,7 +345,7 @@ export default function CookScreen() {
               style={{
                 fontFamily: fonts.serif,
                 fontSize: 14,
-                color: colors.ink,
+                color: colors.onPrimary,
               }}
             >
               {stepIndex + 1}
@@ -375,7 +379,7 @@ export default function CookScreen() {
                 },
               ]}
             >
-              <Timer size={20} color={colors.ink} strokeWidth={1.5} />
+              <Timer size={20} color={colors.onPrimary} strokeWidth={1.5} />
             </Pressable>
             <View style={{ flex: 1 }}>
               <Text

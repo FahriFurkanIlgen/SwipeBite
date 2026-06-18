@@ -124,10 +124,10 @@ export default function BarMatchScreen() {
       <Screen background="bg">
         <View style={styles.empty}>
           <Text variant="h2" weight="700" align="center">
-            Eşleşme bulunamadı
+            No match found
           </Text>
           <Text variant="body" color={colors.slate} align="center">
-            Görünüşe göre bu turda ortak bir karar çıkmadı.
+            Looks like there was no shared pick this round.
           </Text>
           <Pressable
             onPress={() => {
@@ -136,8 +136,8 @@ export default function BarMatchScreen() {
             }}
             style={styles.emptyBtn}
           >
-            <Text variant="bodyMedium" weight="700" color={colors.ink}>
-              Bar'a dön
+            <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
+              Back to Bar
             </Text>
           </Pressable>
         </View>
@@ -228,14 +228,14 @@ export default function BarMatchScreen() {
             style={[styles.matchBadge, badgeStyleAnim]}
             pointerEvents="none"
           >
-            <Heart size={12} color={colors.ink} fill={colors.ink} />
+            <Heart size={12} color={colors.onPrimary} fill={colors.onPrimary} />
             <Text
               variant="caption"
               weight="700"
-              color={colors.ink}
+              color={colors.onPrimary}
               style={{ letterSpacing: 1.2 }}
             >
-              EŞLEŞME!
+              MATCH!
             </Text>
           </Animated.View>
 
@@ -264,7 +264,7 @@ export default function BarMatchScreen() {
               color={colors.primary}
               style={{ marginBottom: 4 }}
             >
-              Bu akşamın içkisi
+              Tonight's drink
             </Text>
             <Text style={styles.heroTitle}>{cocktail.name}</Text>
             {cocktail.altName ? (
@@ -280,7 +280,7 @@ export default function BarMatchScreen() {
                   strokeWidth={1.5}
                 />
                 <Text variant="small" color="rgba(250,247,242,0.75)">
-                  {cocktail.prepTimeMinutes} dk
+                  {cocktail.prepTimeMinutes} min
                 </Text>
               </View>
               <View style={styles.metaItem}>
@@ -304,8 +304,8 @@ export default function BarMatchScreen() {
                 </Text>
               </View>
               <View style={styles.matchPill}>
-                <Text variant="caption" weight="700" color={colors.ink}>
-                  {matchResult.likeCount}/{matchResult.participantCount} sevdi
+                <Text variant="caption" weight="700" color={colors.onPrimary}>
+                  {matchResult.likeCount}/{matchResult.participantCount} liked
                 </Text>
               </View>
             </View>
@@ -324,7 +324,7 @@ export default function BarMatchScreen() {
               color={colors.dim}
               style={{ marginBottom: 10 }}
             >
-              SEVENLER
+              LIKED BY
             </Text>
             <View style={styles.likedRow}>
               {likedAvatars.map((a) => (
@@ -358,17 +358,19 @@ export default function BarMatchScreen() {
               color={colors.dim}
               style={{ marginBottom: 10 }}
             >
-              {cocktailMatch.cookable ? "BARDA HAZIR" : "EKSİK MALZEMELERİN"}
+              {cocktailMatch.cookable
+                ? "READY AT YOUR BAR"
+                : "YOUR MISSING ITEMS"}
             </Text>
             {cocktailMatch.cookable ? (
               <Text variant="body" color={colors.slate}>
-                Bardaki tüm malzemelerin var. Hadi başla!
+                You have everything at your bar. Let's go!
               </Text>
             ) : (
               <View style={{ gap: 8 }}>
                 <Text variant="body" color={colors.slate}>
-                  {cocktailMatch.missingRequired.length} malzeme almakla
-                  yapabilirsin:
+                  Grab {cocktailMatch.missingRequired.length} more ingredient(s)
+                  to make it:
                 </Text>
                 <View style={styles.missingRow}>
                   {cocktailMatch.missingRequired.map((ing) => (
@@ -392,7 +394,7 @@ export default function BarMatchScreen() {
                 color={colors.dim}
                 style={{ marginBottom: 10 }}
               >
-                FİNALİSTLER
+                FINALISTS
               </Text>
               <View style={{ gap: 8 }}>
                 {runnerUps.map((c) => (
@@ -402,7 +404,20 @@ export default function BarMatchScreen() {
                     style={styles.altRow}
                   >
                     <View style={styles.altEmojiBox}>
-                      <Text style={{ fontSize: 26 }}>{c.emoji}</Text>
+                      {(() => {
+                        const src = resolveCocktailImage(c.imageUrl, c.id);
+                        return src ? (
+                          <Image
+                            source={src}
+                            style={styles.altThumb}
+                            resizeMode="cover"
+                          />
+                        ) : (
+                          <Text style={{ fontSize: 26, lineHeight: 32 }}>
+                            {c.emoji}
+                          </Text>
+                        );
+                      })()}
                     </View>
                     <View style={{ flex: 1 }}>
                       <Text variant="smallMedium" weight="600">
@@ -413,7 +428,7 @@ export default function BarMatchScreen() {
                         color={colors.dim}
                         style={{ marginTop: 1 }}
                       >
-                        {c.prepTimeMinutes} dk ·{" "}
+                        {c.prepTimeMinutes} min ·{" "}
                         {COCKTAIL_TECHNIQUE_LABEL[c.technique]}
                       </Text>
                     </View>
@@ -441,17 +456,21 @@ export default function BarMatchScreen() {
               style={styles.ctaSecondary}
             >
               <Text variant="smallMedium" weight="600" color={colors.ink}>
-                Yeni tur
+                New round
               </Text>
             </Pressable>
             <Pressable
               onPress={() => router.push(`/bar/${cocktail.id}`)}
               style={styles.ctaPrimary}
             >
-              <Text variant="smallMedium" weight="700" color={colors.ink}>
-                Tarifi aç
+              <Text variant="smallMedium" weight="700" color={colors.onPrimary}>
+                Open recipe
               </Text>
-              <ChevronRight size={14} color={colors.ink} strokeWidth={2} />
+              <ChevronRight
+                size={14}
+                color={colors.onPrimary}
+                strokeWidth={2}
+              />
             </Pressable>
           </Animated.View>
         </View>
@@ -621,6 +640,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.cream,
     alignItems: "center",
     justifyContent: "center",
+    overflow: "hidden",
+  },
+  altThumb: {
+    width: "100%",
+    height: "100%",
   },
   ctaRow: {
     flexDirection: "row",
