@@ -1,6 +1,8 @@
 import type { ImageSourcePropType } from "react-native";
 
 import { COCKTAILDB_IMAGES } from "@/constants/cocktailDbImages";
+import { CONTENT_COCKTAIL_IMAGES } from "@/constants/contentCocktailImages";
+import { getStyleImage } from "@/constants/cocktailStyleImages";
 import { FAMOUS_COCKTAIL_IMAGES } from "@/constants/famousCocktailImages";
 
 /**
@@ -19,19 +21,24 @@ export function resolveCocktailImage(
   if (FAMOUS_COCKTAIL_IMAGES[cocktailId]) {
     return FAMOUS_COCKTAIL_IMAGES[cocktailId];
   }
+  // İçerik havuzu (COCKTAIL_CONTENT_EN) için TheCocktailDB'den indirilen görseller.
+  if (CONTENT_COCKTAIL_IMAGES[cocktailId]) {
+    return CONTENT_COCKTAIL_IMAGES[cocktailId];
+  }
   if (!imageUrl) {
     // imageUrl set edilmemişse ama id `cdb-` ile başlıyorsa map'ten dene
     if (cocktailId.startsWith("cdb-") && COCKTAILDB_IMAGES[cocktailId]) {
       return COCKTAILDB_IMAGES[cocktailId];
     }
-    return null;
+    // Kendi fotoğrafı olmayan craft kokteyller için stile göre temsili görsel.
+    return getStyleImage(cocktailId);
   }
   if (imageUrl.startsWith("cocktaildb:")) {
     const id = `cdb-${imageUrl.slice("cocktaildb:".length)}`;
-    return COCKTAILDB_IMAGES[id] ?? null;
+    return COCKTAILDB_IMAGES[id] ?? getStyleImage(cocktailId);
   }
   if (/^https?:\/\//.test(imageUrl)) {
     return { uri: imageUrl };
   }
-  return null;
+  return getStyleImage(cocktailId);
 }
