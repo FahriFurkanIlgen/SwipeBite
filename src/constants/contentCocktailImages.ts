@@ -132,6 +132,5 @@ export const CONTENT_COCKTAIL_IMAGES: Record<string, ImageSourcePropType> = {
   "cocktail-white-lady": require("../../assets/cocktails/content/white-lady.jpg"),
   "cocktail-white-negroni": require("../../assets/cocktails/content/white-negroni.jpg"),
   "cocktail-white-russian": require("../../assets/cocktails/content/white-russian.jpg"),
-  "cocktail-widow-s-kiss": require("../../assets/cocktails/content/widow-s-kiss.jpg"),
   "cocktail-zombie": require("../../assets/cocktails/content/zombie.jpg"),
 };
