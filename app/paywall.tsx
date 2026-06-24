@@ -2,6 +2,7 @@ import React from "react";
 import {
   ActivityIndicator,
   Alert,
+  Linking,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -14,6 +15,7 @@ import { Check, Sparkles, X } from "lucide-react-native";
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, radii, spacing } from "@/constants/theme";
+import { PRIVACY_URL, TERMS_URL } from "@/constants/legal";
 import { track } from "@/features/analytics/analyticsService";
 import {
   billingService,
@@ -220,9 +222,35 @@ export default function PaywallScreen() {
           color={colors.dim}
           style={{ textAlign: "center", marginTop: spacing.xs, lineHeight: 18 }}
         >
-          Abonelik dönem sonunda otomatik yenilenir. İstediğin zaman mağaza
-          hesabından iptal edebilirsin.
+          SwipeBite Pro, seçtiğin döneme (aylık veya yıllık) göre ücretlendirilir
+          ve dönem sonunda otomatik yenilenir. Ödeme, satın alma onayında Apple
+          Kimliği hesabından tahsil edilir. Abonelik, mevcut dönem bitmeden en az
+          24 saat önce iptal edilmezse otomatik yenilenir. Aboneliği istediğin
+          zaman cihazının Ayarlar → Apple Kimliği → Abonelikler bölümünden
+          yönetebilir veya iptal edebilirsin.
         </Text>
+
+        <View style={styles.legalRow}>
+          <Pressable
+            onPress={() => Linking.openURL(TERMS_URL).catch(() => undefined)}
+            hitSlop={8}
+          >
+            <Text variant="caption" color={colors.slate} style={styles.legalLink}>
+              Kullanım Koşulları (EULA)
+            </Text>
+          </Pressable>
+          <Text variant="caption" color={colors.dim}>
+            ·
+          </Text>
+          <Pressable
+            onPress={() => Linking.openURL(PRIVACY_URL).catch(() => undefined)}
+            hitSlop={8}
+          >
+            <Text variant="caption" color={colors.slate} style={styles.legalLink}>
+              Gizlilik Politikası
+            </Text>
+          </Pressable>
+        </View>
       </ScrollView>
     </Screen>
   );
@@ -327,5 +355,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: spacing.md,
     marginTop: spacing.sm,
+  },
+  legalRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: spacing.sm,
+    marginTop: spacing.md,
+  },
+  legalLink: {
+    textDecorationLine: "underline",
   },
 });

@@ -4,6 +4,12902 @@ import type { Cocktail } from "@/types/bar";
 
 export const COCKTAILDB_RECIPES: Cocktail[] = [
   {
+    "id": "cdb-b-52",
+    "name": "B-52",
+    "description": "B-52 — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1/3"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/3"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1/4"
+      }
+    ],
+    "steps": [
+      "Layer ingredients into a shot glass.",
+      "Serve with a stirrer."
+    ],
+    "tags": [
+      "shot",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:b-52"
+  },
+  {
+    "id": "cdb-b-53",
+    "name": "B-53",
+    "description": "B-53 — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1/3 shot"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/3 shot"
+      }
+    ],
+    "steps": [
+      "Layer the Kahlua, Sambucca and Grand Marnier into a shot glas in that order.",
+      "Better than B-52."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:b-53"
+  },
+  {
+    "id": "cdb-bijou",
+    "name": "Bijou",
+    "description": "Bijou — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "1 dash",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Stir in mixing glass with ice and strain."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:bijou"
+  },
+  {
+    "id": "cdb-boxcar",
+    "name": "Boxcar",
+    "description": "Boxcar — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1/2 tsp"
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine all of the ingredients.",
+      "Shake well.",
+      "Strain into a sour glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:boxcar"
+  },
+  {
+    "id": "cdb-big-red",
+    "name": "Big Red",
+    "description": "Big Red — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Pour ingredients into 1 ounce shot glass."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:big-red"
+  },
+  {
+    "id": "cdb-bellini",
+    "name": "Bellini",
+    "description": "Bellini — klasik kokteyl.",
+    "emoji": "🥂",
+    "technique": "stir",
+    "glass": "flute",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "wine-champagne",
+        "amount": "6 oz"
+      },
+      {
+        "ingredientId": "liqueur-peach",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Pour peach purée into chilled flute, add sparkling wine.",
+      "Stir gently."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:bellini"
+  },
+  {
+    "id": "cdb-bramble",
+    "name": "Bramble",
+    "description": "Bramble — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "4 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1.5 cl"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 cl"
+      }
+    ],
+    "steps": [
+      "Fill glass with crushed ice.",
+      "Build gin, lemon juice and simple syrup over.",
+      "Stir, and then pour blackberry liqueur over in a circular fashion to create marbling effect.",
+      "Garnish with two blackberries and lemon slice."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:bramble"
+  },
+  {
+    "id": "cdb-balmoral",
+    "name": "Balmoral",
+    "description": "Balmoral — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In a mixing glass half-filled with ice cubes, combine all of the ingredients.",
+      "Stir well.",
+      "Strain into a cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:balmoral"
+  },
+  {
+    "id": "cdb-bluebird",
+    "name": "Bluebird",
+    "description": "Bluebird — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "In a mixing glass half-filled with crushed ice, combine the gin, triple sec, Curacao, and bitters.",
+      "Stir well.",
+      "Strain into a cocktail glass and garnish with the lemon twist and the cherry."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:bluebird"
+  },
+  {
+    "id": "cdb-brooklyn",
+    "name": "Brooklyn",
+    "description": "Brooklyn — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rye",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1/4 oz",
+        "optional": true
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "3 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Combine ingredients with ice and stir until well-chilled.",
+      "Strain into a chilled cocktail glass."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:brooklyn"
+  },
+  {
+    "id": "cdb-boomerang",
+    "name": "Boomerang",
+    "description": "Boomerang — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1/2 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In a mixing glass half-filled with ice cubes, combine the gin, vermouth, bitters, and maraschino liqueur.",
+      "Stir well.",
+      "Strain into a cocktail glass and garnish with the cherry."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:boomerang"
+  },
+  {
+    "id": "cdb-barracuda",
+    "name": "Barracuda",
+    "description": "Barracuda — klasik kokteyl.",
+    "emoji": "🥂",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "4.5 cl"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "6 cl"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 dash"
+      },
+      {
+        "ingredientId": "wine-prosecco",
+        "amount": "top up"
+      }
+    ],
+    "steps": [
+      "Shake pour ingredients with ice.",
+      "Strain into glass, top with Sparkling wine."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:barracuda"
+  },
+  {
+    "id": "cdb-brigadier",
+    "name": "Brigadier",
+    "description": "Brigadier — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1 oz",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Mix ingredients in a warmed mug and stir."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:brigadier"
+  },
+  {
+    "id": "cdb-broadside",
+    "name": "Broadside",
+    "description": "Broadside — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1/2 shot"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "3 drops",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Half fill the glass with ice cubes.",
+      "Crush the wormwood and add to ice.",
+      "Pour rum, scotch and butters, then serve!."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:broadside"
+  },
+  {
+    "id": "cdb-buccaneer",
+    "name": "Buccaneer",
+    "description": "Buccaneer — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 shot"
+      }
+    ],
+    "steps": [
+      "Pour the corona into an 18oz beer glass pour the bacardi limon into the beer stir very gently."
+    ],
+    "tags": [
+      "beer",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:buccaneer"
+  },
+  {
+    "id": "cdb-blackthorn",
+    "name": "Blackthorn",
+    "description": "Blackthorn — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "Stir sloe gin and vermouth with ice and strain into a cocktail glass.",
+      "Add the twist of lemon peel and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:blackthorn"
+  },
+  {
+    "id": "cdb-bob-marley",
+    "name": "Bob Marley",
+    "description": "Bob Marley — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-melon",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Layer in a 2 oz shot glass or pony glass."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:bob-marley"
+  },
+  {
+    "id": "cdb-bible-belt",
+    "name": "Bible Belt",
+    "description": "Bible Belt — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "2 wedges"
+      }
+    ],
+    "steps": [
+      "Mix all ingredients, and pour over ice."
+    ],
+    "tags": [
+      "other / unknown",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:bible-belt"
+  },
+  {
+    "id": "cdb-bubble-gum",
+    "name": "Bubble Gum",
+    "description": "Bubble Gum — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1/4"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1/4"
+      },
+      {
+        "ingredientId": "liqueur-peach",
+        "amount": "1/4"
+      }
+    ],
+    "steps": [
+      "Layer in order into a shot glass."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:bubble-gum"
+  },
+  {
+    "id": "cdb-bumble-bee",
+    "name": "Bumble Bee",
+    "description": "Bumble Bee — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1/3 oz"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1/3 oz"
+      }
+    ],
+    "steps": [
+      "This is a layered shot.",
+      "First pour the Bailey's into the shot glass.",
+      "Then take an upside down spoon and touch it to the inside wall of the glass.",
+      "Carefully add the Kahlua.",
+      "Repeat this process for the Sambuca.",
+      "If done properly, the alcohol will stay separated and resemble a bumble bee.",
+      "Enjoy!!!."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:bumble-bee"
+  },
+  {
+    "id": "cdb-baby-eskimo",
+    "name": "Baby Eskimo",
+    "description": "Baby Eskimo — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "2 oz"
+      }
+    ],
+    "steps": [
+      "Leave ice-cream out for about 10 minutes.",
+      "Add ingredients in order, stir with chopstick (butter knife or spoon works too).",
+      "Consume immediately and often.",
+      "Nice and light, great for following a heavy drink."
+    ],
+    "tags": [
+      "shake",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:baby-eskimo"
+  },
+  {
+    "id": "cdb-boston-sour",
+    "name": "Boston Sour",
+    "description": "Boston Sour — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "blend",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake juice of lemon, powdered sugar, blended whiskey, and egg white with cracked ice and strain into a whiskey sour glass.",
+      "Add the slice of lemon, top with the cherry, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:boston-sour"
+  },
+  {
+    "id": "cdb-bahama-mama",
+    "name": "Bahama Mama",
+    "description": "Bahama Mama — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 3,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "3 parts"
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "2 parts"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "2 parts"
+      }
+    ],
+    "steps": [
+      "Add 2 parts club soda or more or less to taste.",
+      "Mix it all together and pour over a bunch of ice.",
+      "Drink with a straw."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:bahama-mama"
+  },
+  {
+    "id": "cdb-a1",
+    "name": "A1",
+    "description": "Tatlı ve yoğun bir karışım, serinletici bir içecek deneyimi sunar.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 3/4 shot"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 Shot"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1/4 Shot"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1/8 Shot"
+      }
+    ],
+    "steps": [
+      "1. Tüm malzemeleri bir kokteyl shaker'ına dökün, karıştırın ve soğutulmuş bir bardağa buz ile servis edin."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:a1"
+  },
+  {
+    "id": "cdb-abc",
+    "name": "ABC",
+    "description": "Tatlı ve yoğun bir shot, katmanlı sunumu ile dikkat çeker.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1/3"
+      },
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1/3"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1/3"
+      }
+    ],
+    "steps": [
+      "1. Shot bardağında katmanlı olarak hazırlayın."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:abc"
+  },
+  {
+    "id": "cdb-acid",
+    "name": "ACID",
+    "description": "Ateşli ve yoğun bir içecek, cesur tatlar arayanlar için.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 oz Bacardi"
+      },
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "1. Önce 151'i, ardından 101'i dökün ve bir Coke veya Dr Pepper ile servis edin."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:acid"
+  },
+  {
+    "id": "cdb-at-t",
+    "name": "AT&T",
+    "description": "AT&T — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-tonic",
+        "amount": "4 oz"
+      }
+    ],
+    "steps": [
+      "Pour Vodka and Gin over ice, add Tonic and Stir."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:at-t"
+  },
+  {
+    "id": "cdb-adam",
+    "name": "Adam",
+    "description": "Tatlı ve dengeli bir kokteyl, klasik bir lezzet.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tsp"
+      }
+    ],
+    "steps": [
+      "1. Buz dolu bir shaker'a tüm malzemeleri ekleyin.",
+      "2. İyice çalkalayın.",
+      "3. Bir kokteyl bardağına süzün."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:adam"
+  },
+  {
+    "id": "cdb-a-j",
+    "name": "A. J.",
+    "description": "Hafif ve ferahlatıcı bir kokteyl, klasik bir seçim.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-grapefruit",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "1. Malzemeleri buz ile çalkalayın, kokteyl bardağına süzün ve servis edin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:a-j"
+  },
+  {
+    "id": "cdb-affair",
+    "name": "Affair",
+    "description": "Tatlı ve meyvemsi bir karışım, ferahlatıcı bir içecek.",
+    "emoji": "💗",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "1. Schnapps, portakal suyu ve kızılcık suyunu bir yüksekball bardağına buz üzerine dökün.",
+      "2. Kulüp sodası ile tamamlayın ve servis edin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:affair"
+  },
+  {
+    "id": "cdb-avalon",
+    "name": "Avalon",
+    "description": "Avalon — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "3 parts"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 1/2 part"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Fill a tall glass with ice.",
+      "Layer the Finlandia Vodka, lemon and apple juices, Pisang Ambon, and top up with lemonade.",
+      "Stir slightly and garnish with a spiralled cucumber skin and a red cherry.",
+      "The cucumber provides zest and looks attractive.",
+      "This drink, created by Timo Haimi, took first prize in the 1991 Finlandia Vodka Long Drink Competition."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:avalon"
+  },
+  {
+    "id": "cdb-almeria",
+    "name": "Almeria",
+    "description": "Tatlı ve kremsi bir içecek, keyifli bir deneyim sağlar.",
+    "emoji": "☕",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "1. Buz dolu bir shaker'a tüm malzemeleri ekleyin.",
+      "2. İyice çalkalayın.",
+      "3. Kokteyl bardağına süzün."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:almeria"
+  },
+  {
+    "id": "cdb-abilene",
+    "name": "Abilene",
+    "description": "Ferahlatıcı ve hafif bir içecek, buz ile dolu bir bardakta servis edilir.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "3 oz"
+      }
+    ],
+    "steps": [
+      "1. Tüm malzemeleri neredeyse buz dolu bir highball bardağına dökün.",
+      "2. İyice karıştırın."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:abilene"
+  },
+  {
+    "id": "cdb-addison",
+    "name": "Addison",
+    "description": "Hafif ve dengeli bir tat sunan, klasik bir kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "martini",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 shot"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 1/2 shot"
+      }
+    ],
+    "steps": [
+      "1. Tüm malzemeleri karıştırın ve soğuk bir bardağa süzün."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:addison"
+  },
+  {
+    "id": "cdb-aviation",
+    "name": "Aviation",
+    "description": "Aviation — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "4.5 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1.5 cl"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1.5 cl",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Add all ingredients into cocktail shaker filled with ice.",
+      "Shake well and strain into cocktail glass.",
+      "Garnish with a cherry."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:aviation"
+  },
+  {
+    "id": "cdb-applecar",
+    "name": "Applecar",
+    "description": "Tatlı ve ferahlatıcı, elma aromalı bir kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "1. Tüm malzemeleri buz ile çalkalayın, bir kokteyl bardağına süzün ve servis edin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:applecar"
+  },
+  {
+    "id": "cdb-affinity",
+    "name": "Affinity",
+    "description": "Affinity, dengeli ve hafif acı bir tat profiline sahip zarif bir kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "2 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "1. Buz dolu bir karıştırma bardağında tüm malzemeleri birleştirin.",
+      "2. İyice karıştırın.",
+      "3. Kokteyl bardağına süzün."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:affinity"
+  },
+  {
+    "id": "cdb-acapulco",
+    "name": "Acapulco",
+    "description": "Taze nane ile ferahlatıcı bir tropikal kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 1/2 tsp"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 tblsp"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "1. Tüm malzemeleri (nane hariç) buz ile birleştirip çalkalayın ve bir eski moda bardağa süzün.",
+      "2. Nane dalını ekleyin ve servis edin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:acapulco"
+  },
+  {
+    "id": "cdb-alexander",
+    "name": "Alexander",
+    "description": "Zengin ve kremsi bir tat profiline sahip, hafif baharatlı bir kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "1/2 oz white"
+      }
+    ],
+    "steps": [
+      "1. Tüm malzemeleri buzla çalkalayın ve bir kokteyl bardağına süzün.",
+      "2. Üzerine muskat serpin ve servis edin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:alexander"
+  },
+  {
+    "id": "cdb-avalanche",
+    "name": "Avalanche",
+    "description": "Avalanche — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 shot"
+      }
+    ],
+    "steps": [
+      "Mix in highball glass over ice, shake well."
+    ],
+    "tags": [
+      "shake",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:avalanche"
+  },
+  {
+    "id": "cdb-allegheny",
+    "name": "Allegheny",
+    "description": "Yoğun ve aromatik bir tat profili, limon kabuğuyla ferahlatır.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 1/2 tsp"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 1/2 tsp"
+      }
+    ],
+    "steps": [
+      "1. Tüm malzemeleri (limon kabuğu hariç) buzla çalkalayın ve bir kokteyl bardağına süzün.",
+      "2. Limon kabuğu ile süsleyin ve servis edin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:allegheny"
+  },
+  {
+    "id": "cdb-americano",
+    "name": "Americano",
+    "description": "Acı ve tatlı notalarla dengeli bir aperitif.",
+    "emoji": "🟥",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-campari",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 oz red"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Twist of"
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "Twist of",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "1. Campari ve vermutu buz üzerine dökün, soda suyu ekleyin ve portakal dilimi ile süsleyin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:americano"
+  },
+  {
+    "id": "cdb-algonquin",
+    "name": "Algonquin",
+    "description": "Hafif ekşi ve tatlı bir dengeye sahip, ferahlatıcı bir kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "1. Tüm malzemeleri buzla birleştirip çalkalayın, kokteyl bardağına süzün ve servis edin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:algonquin"
+  },
+  {
+    "id": "cdb-artillery",
+    "name": "Artillery",
+    "description": "Artillery — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 1/2 tsp"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Stir all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:artillery"
+  },
+  {
+    "id": "cdb-addington",
+    "name": "Addington",
+    "description": "Hafif ve ferahlatıcı bir kokteyl, vermutların uyumunu sunar.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "2 shots"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "Top up with"
+      }
+    ],
+    "steps": [
+      "1. İki vermutu bir şakere karıştırın ve soğuk bir bardağa süzün.",
+      "2. Soda suyu ile tamamlayın."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:addington"
+  },
+  {
+    "id": "cdb-derby",
+    "name": "Derby",
+    "description": "Derby — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "6 cl"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "2 Fresh leaves",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into a mixing glass with ice.",
+      "Stir.",
+      "Strain into a cocktail glass.",
+      "Garnish with a sprig of fresh mint in the drink."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:derby"
+  },
+  {
+    "id": "cdb-daiquiri",
+    "name": "Daiquiri",
+    "description": "Daiquiri — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into shaker with ice cubes.",
+      "Shake well.",
+      "Strain in chilled cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:daiquiri"
+  },
+  {
+    "id": "cdb-danbooka",
+    "name": "Danbooka",
+    "description": "Danbooka — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "3 parts"
+      }
+    ],
+    "steps": [
+      "pour it in and mix it."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:danbooka"
+  },
+  {
+    "id": "cdb-downshift",
+    "name": "Downshift",
+    "description": "Downshift — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "build",
+    "glass": "hurricane",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "2 shots"
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "Float Bacardi"
+      }
+    ],
+    "steps": [
+      "Start with the Sprite.",
+      "Next comes the tequila.",
+      "After that, add the Minute Maid Fruit Punch, then float the 151.",
+      "Rocks optional."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:downshift"
+  },
+  {
+    "id": "cdb-dragonfly",
+    "name": "Dragonfly",
+    "description": "Dragonfly — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "In a highball glass almost filled with ice cubes, combine the gin and ginger ale.",
+      "Stir well.",
+      "Garnish with the lime wedge."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:dragonfly"
+  },
+  {
+    "id": "cdb-dry-martini",
+    "name": "Dry Martini",
+    "description": "Dry Martini — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 2/3 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1/3 oz"
+      },
+      {
+        "ingredientId": "garnish-olive",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Straight: Pour all ingredients into mixing glass with ice cubes.",
+      "Stir well.",
+      "Strain in chilled martini cocktail glass.",
+      "Squeeze oil from lemon peel onto the drink, or garnish with olive."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:dry-martini"
+  },
+  {
+    "id": "cdb-dry-rob-roy",
+    "name": "Dry Rob Roy",
+    "description": "Dry Rob Roy — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "2 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 1/2 tsp"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "In a mixing glass half-filled with ice cubes, combine the Scotch and vermouth.",
+      "Stir well.",
+      "Strain into a cocktail glass.",
+      "Garnish with the lemon twist."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:dry-rob-roy"
+  },
+  {
+    "id": "cdb-dirty-nipple",
+    "name": "Dirty Nipple",
+    "description": "Dirty Nipple — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "This is a layered shot - the Bailey's must be on top."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:dirty-nipple"
+  },
+  {
+    "id": "cdb-dirty-martini",
+    "name": "Dirty Martini",
+    "description": "Dirty Martini — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "70ml/2fl oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 tbsp"
+      },
+      {
+        "ingredientId": "garnish-olive",
+        "amount": "2 tbsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 wedge"
+      }
+    ],
+    "steps": [
+      "Pour the vodka, dry vermouth and olive brine into a cocktail shaker with a handful of ice and shake well.",
+      "Rub the rim of a martini glass with the wedge of lemon.",
+      "Strain the contents of the cocktail shaker into the glass and add the olive.",
+      "A dirty Martini contains a splash of olive brine or olive juice and is typically garnished with an olive."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:dirty-martini"
+  },
+  {
+    "id": "cdb-darkwood-sling",
+    "name": "Darkwood Sling",
+    "description": "Darkwood Sling — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1 part",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 part"
+      }
+    ],
+    "steps": [
+      "There are many good cherry liqueurs you can use, but I prefere Heering.",
+      "Add one share of the liqueur.",
+      "Then you add one share of Soda.",
+      "For a sour sling use Tonic (most people prefer the drink without Tonic).",
+      "Afterwards you fill the glass with Orange Juice and ice cubes."
+    ],
+    "tags": [
+      "soft drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:darkwood-sling"
+  },
+  {
+    "id": "cdb-dark-and-stormy",
+    "name": "Dark and Stormy",
+    "description": "Dark and Stormy — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "5 cl"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "10 cl"
+      }
+    ],
+    "steps": [
+      "In a highball glass filled with ice add 6cl dark rum and top with ginger beer.",
+      "Garnish with lime wedge."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:dark-and-stormy"
+  },
+  {
+    "id": "cdb-dark-caipirinha",
+    "name": "Dark Caipirinha",
+    "description": "Dark Caipirinha — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "muddle",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "Muddle the sugar into the lime wedges in an old-fashioned glass.",
+      "Fill the glass with ice cubes.",
+      "Pour the cachaca into the glass.",
+      "Stir well."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:dark-caipirinha"
+  },
+  {
+    "id": "cdb-duchamp-s-punch",
+    "name": "Duchamp's Punch",
+    "description": "Duchamp's Punch — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "5 cl"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "2.5 cl"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "2.5 cl"
+      },
+      {
+        "ingredientId": "liqueur-elderflower",
+        "amount": "1.5 cl"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 Dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake all ingredients.",
+      "Double strain in a chilled double old fashioned glass with abig ice cube.",
+      "Garnish with a couple of lavender sprigs."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:duchamp-s-punch"
+  },
+  {
+    "id": "cdb-damned-if-you-do",
+    "name": "Damned if you do",
+    "description": "Damned if you do — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "0.75 oz"
+      }
+    ],
+    "steps": [
+      "Pour into shot glass.",
+      "Put in mouth.",
+      "Repeat as deemed necessary."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:damned-if-you-do"
+  },
+  {
+    "id": "cdb-dubonnet-cocktail",
+    "name": "Dubonnet Cocktail",
+    "description": "Dubonnet Cocktail — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "1 dash",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "Stir all ingredients (except lemon peel) with ice and strain into a cocktail glass.",
+      "Add the twist of lemon peel and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:dubonnet-cocktail"
+  },
+  {
+    "id": "cdb-death-in-the-afternoon",
+    "name": "Death in the Afternoon",
+    "description": "Death in the Afternoon — klasik kokteyl.",
+    "emoji": "🥂",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "wine-champagne",
+        "amount": "Top"
+      }
+    ],
+    "steps": [
+      "Easy as you like, pour the absinthe into a chilled glass, top with champagne.",
+      "Must be drunk mid afternoon for the optimum effect."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:death-in-the-afternoon"
+  },
+  {
+    "id": "cdb-casino",
+    "name": "Casino",
+    "description": "Casino — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1/4 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1/4 tsp"
+      },
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "2 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into shaker with ice cubes.",
+      "Shake well.",
+      "Strain into chilled cocktail glass.",
+      "Garnish with a lemon twist and a maraschino cherry.",
+      "Serve without a straw."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:casino"
+  },
+  {
+    "id": "cdb-cafe-savoy",
+    "name": "Cafe Savoy",
+    "description": "Cafe Savoy — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Fill mug almost to top with coffee.Add milk, triple sec and brandy.",
+      "Stir."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:cafe-savoy"
+  },
+  {
+    "id": "cdb-caipirinha",
+    "name": "Caipirinha",
+    "description": "Caipirinha — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "muddle",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "Place lime and sugar into old fashioned glass and muddle (mash the two ingredients together using a muddler or a wooden spoon).",
+      "Fill the glass with ice and add the Cachaça."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:caipirinha"
+  },
+  {
+    "id": "cdb-cream-soda",
+    "name": "Cream Soda",
+    "description": "Cream Soda — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Pour 1oz of Spiced Rum into a highball glass with ice.",
+      "Fill with Ginger Ale."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:cream-soda"
+  },
+  {
+    "id": "cdb-cuba-libra",
+    "name": "Cuba Libra",
+    "description": "Cuba Libra — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1-2 shot"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Squeeze"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "Fill with"
+      }
+    ],
+    "steps": [
+      "Fill tall glass with ice cubes.",
+      "Add rum.",
+      "Rub cut edge of lime on rim of glass then squeeze juice into glass.",
+      "Fill with Coca-Cola.",
+      "Garnish with lime slice.",
+      "Enjoy!."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:cuba-libra"
+  },
+  {
+    "id": "cdb-cherry-rum",
+    "name": "Cherry Rum",
+    "description": "Cherry Rum — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/4 oz"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 1/2 tsp"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:cherry-rum"
+  },
+  {
+    "id": "cdb-cuba-libre",
+    "name": "Cuba Libre",
+    "description": "Cuba Libre — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Build all ingredients in a Collins glass filled with ice.",
+      "Garnish with lime wedge."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:cuba-libre"
+  },
+  {
+    "id": "cdb-corn-n-oil",
+    "name": "Corn n Oil",
+    "description": "Corn n Oil — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "muddle",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1/2"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Cut the half lime in half again.",
+      "Add the lime, falernum, and bitters to a rocks glass.",
+      "Muddle.",
+      "Add the rum.",
+      "(Aged Barbados rum such as Plantation 5 Year is recommended).",
+      "Add ice and stir.",
+      "Float the blackstrap rum on top.",
+      "Serve with a straw."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:corn-n-oil"
+  },
+  {
+    "id": "cdb-citrus-coke",
+    "name": "Citrus Coke",
+    "description": "Citrus Coke — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "2 parts"
+      }
+    ],
+    "steps": [
+      "Pour half of coke in a glass.",
+      "Then add Bacardi and top it off with the remaining coke.",
+      "Stir and drink up!."
+    ],
+    "tags": [
+      "soft drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:citrus-coke"
+  },
+  {
+    "id": "cdb-casa-blanca",
+    "name": "Casa Blanca",
+    "description": "Casa Blanca — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 1/2 tsp"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 1/2 tsp"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1 1/2 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:casa-blanca"
+  },
+  {
+    "id": "cdb-clover-club",
+    "name": "Clover Club",
+    "description": "Clover Club — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "2 tsp"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      }
+    ],
+    "steps": [
+      "Dry shake ingredients to emulsify, add ice, shake and served straight up."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:clover-club"
+  },
+  {
+    "id": "cdb-caipirissima",
+    "name": "Caipirissima",
+    "description": "Caipirissima — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 tblsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2-3 oz"
+      }
+    ],
+    "steps": [
+      "Same as Caipirinha but instead of cachaca you add WHITE RUM.",
+      "It's great!!!!!!!!."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:caipirissima"
+  },
+  {
+    "id": "cdb-city-slicker",
+    "name": "City Slicker",
+    "description": "City Slicker — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 tblsp"
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine all of the ingredients.",
+      "Shake well.",
+      "Strain into a cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:city-slicker"
+  },
+  {
+    "id": "cdb-campari-beer",
+    "name": "Campari Beer",
+    "description": "Campari Beer — klasik kokteyl.",
+    "emoji": "🟥",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-campari",
+        "amount": "1 1/2 cl"
+      }
+    ],
+    "steps": [
+      "Use a 15 oz glass.",
+      "Add Campari first.",
+      "Fill with beer."
+    ],
+    "tags": [
+      "beer",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:campari-beer"
+  },
+  {
+    "id": "cdb-chicago-fizz",
+    "name": "Chicago Fizz",
+    "description": "Chicago Fizz — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes.",
+      "Fill with carbonated water, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:chicago-fizz"
+  },
+  {
+    "id": "cdb-cosmopolitan",
+    "name": "Cosmopolitan",
+    "description": "Cosmopolitan — klasik kokteyl.",
+    "emoji": "💗",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/4 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1/4 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/4 oz"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "1/4 cup"
+      }
+    ],
+    "steps": [
+      "Add all ingredients into cocktail shaker filled with ice.",
+      "Shake well and double strain into large cocktail glass.",
+      "Garnish with lime wheel."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:cosmopolitan"
+  },
+  {
+    "id": "cdb-coffee-vodka",
+    "name": "Coffee-Vodka",
+    "description": "Coffee-Vodka — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 cups white",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "1/2 cup instant"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 cup"
+      }
+    ],
+    "steps": [
+      "Boil water and sugar until dissolved.",
+      "Turn off heat.",
+      "Slowly add dry instant coffee and continue stirring.",
+      "Add a chopped vanilla bean to the vodka, then combine the cooled sugar syrup and coffee solution with the vodka.",
+      "Cover tightly and shake vigorously each day for 3 weeks.",
+      "Strain and filter.",
+      "Its also best to let the sugar mixture cool completely so the vodka won't evaporate when its added.",
+      "If you like a smoother feel to the liqueur you can add about 1 teaspoon of glycerine to the finished product."
+    ],
+    "tags": [
+      "homemade liqueur",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:coffee-vodka"
+  },
+  {
+    "id": "cdb-casino-royale",
+    "name": "Casino Royale",
+    "description": "Casino Royale — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "1 dash",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine all of the ingredients.",
+      "Shake well.",
+      "Strain into a sour glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:casino-royale"
+  },
+  {
+    "id": "cdb-corpse-reviver",
+    "name": "Corpse Reviver",
+    "description": "Corpse Reviver — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "3/4 oz"
+      }
+    ],
+    "steps": [
+      "Shake, strain, straight up, cocktail glass rinsed with absinthe."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:corpse-reviver"
+  },
+  {
+    "id": "cdb-chocolate-milk",
+    "name": "Chocolate Milk",
+    "description": "Chocolate Milk — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "1/2 shot"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1 dash"
+      }
+    ],
+    "steps": [
+      "Put the milk in the bottom, pour the Liquer on top and add the dash of amaretto.",
+      "Do not mix.",
+      "SLAM IT!."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:chocolate-milk"
+  },
+  {
+    "id": "cdb-clove-cocktail",
+    "name": "Clove Cocktail",
+    "description": "Clove Cocktail — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Stir all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:clove-cocktail"
+  },
+  {
+    "id": "cdb-coffee-liqueur",
+    "name": "Coffee Liqueur",
+    "description": "Coffee Liqueur — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "10 tblsp instant"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 1/2 cups",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 qt"
+      }
+    ],
+    "steps": [
+      "Combine coffee, sugar and water.",
+      "Simmer 1 hour and let cool.",
+      "Add vanilla and vodka.",
+      "Age in sealed jar 2 to 3 weeks."
+    ],
+    "tags": [
+      "homemade liqueur",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:coffee-liqueur"
+  },
+  {
+    "id": "cdb-english-highball",
+    "name": "English Highball",
+    "description": "English Highball — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Pour brandy, gin, and sweet vermouth into a highball glass over ice cubes.",
+      "Fill with carbonated water.",
+      "Add the twist of lemon peel, stir, and serve.",
+      "(Ginger ale may be substituted for carbonated water, if preferred.)."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:english-highball"
+  },
+  {
+    "id": "cdb-espresso-martini",
+    "name": "Espresso Martini",
+    "description": "Espresso Martini — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "5 cl"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 cl"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 dash"
+      }
+    ],
+    "steps": [
+      "Pour ingredients into shaker filled with ice, shake vigorously, and strain into chilled martini glass."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:espresso-martini"
+  },
+  {
+    "id": "cdb-espresso-rumtini",
+    "name": "Espresso Rumtini",
+    "description": "Espresso Rumtini — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1/2 shot"
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "1 shot"
+      }
+    ],
+    "steps": [
+      "Mix together in a cocktail glass.",
+      "Garnish with some choclate powder and coffee beans."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:espresso-rumtini"
+  },
+  {
+    "id": "cdb-english-rose-cocktail",
+    "name": "English Rose Cocktail",
+    "description": "English Rose Cocktail — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "zor",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1/4 tsp"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Rub rim of cocktail glass with lemon juice and dip rim of glass in powdered sugar.",
+      "Shake all ingredients (except cherry) with ice and strain into sugar-rimmed glass.",
+      "Top with the cherry and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:english-rose-cocktail"
+  },
+  {
+    "id": "cdb-elderflower-caipirinha",
+    "name": "Elderflower Caipirinha",
+    "description": "Elderflower Caipirinha — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "muddle",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "Take the glass and muddle the lime in it.",
+      "Fill the glass with crushed ice and add the Cachaca.",
+      "Stir well and top with some more crushed ice.",
+      "Garnish with lime and enjoy!."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:elderflower-caipirinha"
+  },
+  {
+    "id": "cdb-empellon-cocina-s-fat-washed-mezcal",
+    "name": "Empellón Cocina's Fat-Washed Mezcal",
+    "description": "Empellón Cocina's Fat-Washed Mezcal — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "To ensure that your pork fat is just as delicious as theirs, here’s their adobo marinade and what to do with it (you’ll also need a rack of ribs):\r\n\r\n4 ancho chiles, 8 guajillo chiles and 4 chipotle chiles, plus 4 cloves roasted garlic, half a cup of cider vinegar, a quarter teaspoon of Mexican oregano, 1 teaspoon of ground black pepper, a whole clove, a quarter teaspoon of ground cinnamon and a half teaspoon of ground cumin.",
+      "Toast the dried chiles and soak in water for at least an hour until they are rehydrated.",
+      "Drain and discard the soaking liquid.",
+      "Combine the soaked chiles with the remaining ingredients and purée until smooth.",
+      "Cold smoke a rack of baby back pork ribs by taking a large hotel pan with woodchips on one side and charcoal on the other.",
+      "Place another, smaller, pan with pork ribs, above the charcoal/woodchip pan.",
+      "Ignite the charcoal, being careful to not ignite the woodchips.",
+      "Cover both pans with foil and allow to smoke for 10-15 minutes, until desired level of smoke is achieved, then coat with adobo marinade and wrap in tin foil prior to placing ribs in a 300 degree oven for 7 hours.",
+      "When the ribs have cooled, strain off the fat and use for the infusion.",
+      "If you’re having a hard time coming up to the same kind of volume of fat, make up the balance with pork lard from a butcher.",
+      "To get the same depth of flavor without the ribs, heat up the fat in a pot with a few spoons of the marinade.",
+      "Once you’ve got your tub of seasoned pork fat in cooled liquid form, pour equal amounts of Ilegal Joven mezcal and fat into a sealable container.",
+      "Seal the container and give it a really good shake, then put it in the freezer overnight.",
+      "When the whole thing is separated and congealed, pour it through a fine mesh chinoise.",
+      "If you don’t have a chinoise, try a fine mesh strainer, or if you don’t have one of those, try spooning off most of the fat.",
+      "There will be some beads of orange fat left in the strained mezcal: run that through a few layers of cheesecloth (or coffee filters in a pinch) to get rid of the last of it.",
+      "The mezcal is now ready for drinking, straight-up or in a cocktail.",
+      "Habanero tincture\r\n\r\nSlice habaneros and add 2 ounces Ilegal Joven mezcal.",
+      "Allow to sit overnight or until desired level of heat is achieved.",
+      "Cocktail\r\n\r\nCombine mezcal and chocolate liqueur in a mixing glass with ice and stir for 45 seconds.",
+      "Strain into chilled coupe.",
+      "Carefully \"sink\" the coffee liqueur down the inside of the coupe over a spoon.",
+      "Garnish with 5 drops habanero tincture."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:empellon-cocina-s-fat-washed-mezcal"
+  },
+  {
+    "id": "cdb-frose",
+    "name": "Frosé",
+    "description": "Frosé — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "blend",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 cup",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "2-3 oz"
+      }
+    ],
+    "steps": [
+      "Step 1\nPour rosé into a 13x9\" pan and freeze until almost solid (it won't completely solidify due to the alcohol), at least 6 hours.",
+      "Step 2\nMeanwhile, bring sugar and ½ cup water to a boil in a medium saucepan; cook, stirring constantly, until sugar dissolves, about 3 minutes.",
+      "Add strawberries, remove from heat, and let sit 30 minutes to infuse syrup with strawberry flavor.",
+      "Strain through a fine-mesh sieve into a small bowl (do not press on solids); cover and chill until cold, about 30 minutes.",
+      "Step 3\nScrape rosé into a blender.",
+      "Add lemon juice, 3½ ounces strawberry syrup, and 1 cup crushed ice and purée until smooth.",
+      "Transfer blender jar to freezer and freeze until frosé is thickened (aim for milkshake consistency), 25–35 minutes.",
+      "Step 4\nBlend again until frosé is slushy.",
+      "Divide among glasses.",
+      "Step 5\nDo Ahead: Rosé can be frozen 1 week ahead."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:frose"
+  },
+  {
+    "id": "cdb-foxy-lady",
+    "name": "Foxy Lady",
+    "description": "Foxy Lady — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a chilled cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:foxy-lady"
+  },
+  {
+    "id": "cdb-french-75",
+    "name": "French 75",
+    "description": "French 75 — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "zor",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 tsp superfine",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "wine-champagne",
+        "amount": "4 oz Chilled"
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Combine gin, sugar, and lemon juice in a cocktail shaker filled with ice.",
+      "Shake vigorously and strain into a chilled champagne glass.",
+      "Top up with Champagne.",
+      "Stir gently."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:french-75"
+  },
+  {
+    "id": "cdb-figgy-thyme",
+    "name": "Figgy Thyme",
+    "description": "Figgy Thyme — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "muddle",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "sweet-honey",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-tonic",
+        "amount": "Top"
+      }
+    ],
+    "steps": [
+      "In a lewis bag, crush up some ice like a baller/maniac (@glacioice).",
+      "Pour your precious ice into a collins glass.",
+      "In a cocktail shaker, muddle the figs and thyme together.",
+      "Add honey vodka, lemon juice, and a large ice cube (@glacioice).",
+      "Shake until well chilled, and strain into glass.",
+      "Add tonic water and finally 2 dashes of angostura bitters.",
+      "Garnish with sliced figs and thyme."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:figgy-thyme"
+  },
+  {
+    "id": "cdb-frisco-sour",
+    "name": "Frisco Sour",
+    "description": "Frisco Sour — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/4"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Juice of 1/2"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except slices of lemon and lime) with ice and strain into a whiskey sour glass.",
+      "Decorate with the slices of lemon and lime and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:frisco-sour"
+  },
+  {
+    "id": "cdb-freddy-kruger",
+    "name": "Freddy Kruger",
+    "description": "Freddy Kruger — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "make it an ample size shot!!."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:freddy-kruger"
+  },
+  {
+    "id": "cdb-funk-and-soul",
+    "name": "Funk and Soul",
+    "description": "Funk and Soul — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 shots"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "Top"
+      }
+    ],
+    "steps": [
+      "Mix all ingredients together and strain into a Collins glass.",
+      "Use Jamaican rum where possible for a more authentic taste."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:funk-and-soul"
+  },
+  {
+    "id": "cdb-fuzzy-asshole",
+    "name": "Fuzzy Asshole",
+    "description": "Fuzzy Asshole — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "1/2"
+      },
+      {
+        "ingredientId": "liqueur-peach",
+        "amount": "1/2"
+      }
+    ],
+    "steps": [
+      "fill coffe mug half full of coffee.",
+      "Fill the other half full of Peach Schnapps.",
+      "Stir and drink while hot."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:fuzzy-asshole"
+  },
+  {
+    "id": "cdb-french-martini",
+    "name": "French Martini",
+    "description": "French Martini — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "4.5 cl"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1.5 cl"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into shaker with ice cubes.",
+      "Shake well and strain into a chilled cocktail glass.",
+      "Squeeze oil from lemon peel onto the drink."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:french-martini"
+  },
+  {
+    "id": "cdb-french-negroni",
+    "name": "French Negroni",
+    "description": "French Negroni — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "martini",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Add ice to a shaker and pour in all ingredients.",
+      "Using a bar spoon, stir 40 to 45 revolutions or until thoroughly chilled.",
+      "Strain into a martini glass or over ice into a rocks glass.",
+      "Garnish with orange twist."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:french-negroni"
+  },
+  {
+    "id": "cdb-flying-dutchman",
+    "name": "Flying Dutchman",
+    "description": "Flying Dutchman — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "In an old-fashioned glass almost filled with ice cubes, combine the gin and triple sec.",
+      "Stir well."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:flying-dutchman"
+  },
+  {
+    "id": "cdb-frozen-daiquiri",
+    "name": "Frozen Daiquiri",
+    "description": "Frozen Daiquiri — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "blend",
+    "glass": "flute",
+    "difficulty": "orta",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 tblsp"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Combine all ingredients (except for the cherry) in an electric blender and blend at a low speed for five seconds, then blend at a high speed until firm.",
+      "Pour contents into a champagne flute, top with the cherry, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:frozen-daiquiri"
+  },
+  {
+    "id": "cdb-flying-scotchman",
+    "name": "Flying Scotchman",
+    "description": "Flying Scotchman — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "1 dash",
+        "optional": true
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1/4 tsp"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:flying-scotchman"
+  },
+  {
+    "id": "cdb-french-connection",
+    "name": "French Connection",
+    "description": "French Connection — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "3/4 oz"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients directly into old fashioned glass filled with ice cubes.",
+      "Stir gently."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:french-connection"
+  },
+  {
+    "id": "cdb-flaming-dr-pepper",
+    "name": "Flaming Dr. Pepper",
+    "description": "Flaming Dr. Pepper — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 oz Bacardi"
+      }
+    ],
+    "steps": [
+      "Add Amaretto, Bacardi, and vodka.",
+      "Mix in the Dr.",
+      "Pepper and beer."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:flaming-dr-pepper"
+  },
+  {
+    "id": "cdb-flaming-lamborghini",
+    "name": "Flaming Lamborghini",
+    "description": "Flaming Lamborghini — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "build",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Pour the Sambuca and Kahlua into the Cocktail Glass and give the drinker a straw.",
+      "Pour the Baileys and Blue Curacao into two sepsrate shot glasses either side of the cocktail glass.",
+      "Set light the concotion in the cocktail glass and start to drink through the straw (this drink should be drunk in one) , as the bottom of the glass is reached put out the fire by pouring the Baileys and Blue Curacao into the cocktail glass and keep drinking till it's all gone!!."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:flaming-lamborghini"
+  },
+  {
+    "id": "cdb-frozen-mint-daiquiri",
+    "name": "Frozen Mint Daiquiri",
+    "description": "Frozen Mint Daiquiri — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "blend",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 tblsp"
+      },
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "6",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Combine all ingredients with 1 cup of crushed ice in an electric blender.",
+      "Blend at a low speed for a short length of time.",
+      "Pour into an old-fashioned glass and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:frozen-mint-daiquiri"
+  },
+  {
+    "id": "cdb-frozen-pineapple-daiquiri",
+    "name": "Frozen Pineapple Daiquiri",
+    "description": "Frozen Pineapple Daiquiri — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "blend",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "4 chunks"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 tblsp"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Combine all ingredients with 1 cup of crushed ice in an electric blender.",
+      "Blend at a low speed for a short length of time.",
+      "Pour into a cocktail glass and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:frozen-pineapple-daiquiri"
+  },
+  {
+    "id": "cdb-h-d",
+    "name": "H.D.",
+    "description": "H.D. — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "4 cl"
+      },
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "8 cl"
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Mix the whisky and Baileys Cream in a beer-glass (at least 50 cl).",
+      "Fill the rest of the glass with coffee."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:h-d"
+  },
+  {
+    "id": "cdb-honey-bee",
+    "name": "Honey Bee",
+    "description": "Honey Bee — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "6 cl"
+      },
+      {
+        "ingredientId": "sweet-honey",
+        "amount": "2 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "2 cl"
+      }
+    ],
+    "steps": [
+      "Shake ingredients with crushed ice."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:honey-bee"
+  },
+  {
+    "id": "cdb-hot-toddy",
+    "name": "Hot Toddy",
+    "description": "Hot Toddy — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "50 ml"
+      },
+      {
+        "ingredientId": "sweet-honey",
+        "amount": "15 ml"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "STEP 1\r\nWhisk the whisky and honey together and split between 2 heatproof glasses.",
+      "Add half of the cinnamon stick to each, then top up with 200ml boiling water.",
+      "STEP 2\r\nAdd a splash of lemon juice to each, then taste and add more to your preference.",
+      "Finish each with a slice of lemon, studded with a clove, and serve immediately."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:hot-toddy"
+  },
+  {
+    "id": "cdb-horse-s-neck",
+    "name": "Horse's Neck",
+    "description": "Horse's Neck — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 long strip"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "5 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Pour brandy and ginger ale directly into highball glass with ice cubes.",
+      "Stir gently.",
+      "Garnish with lemon zest.",
+      "If desired, add dashes of Angostura Bitter."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:horse-s-neck"
+  },
+  {
+    "id": "cdb-happy-skipper",
+    "name": "Happy Skipper",
+    "description": "Happy Skipper — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 1/2 cl"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Pour Captain Morgan's Spiced Rum over ice, fill glass to top with Ginger Ale.",
+      "Garnish with lime.",
+      "Tastes like a cream soda.",
+      "Named for the Gilligan's Island reference (\"The Captain\" *in* \"Ginger\" is a Happy Skipper!)."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:happy-skipper"
+  },
+  {
+    "id": "cdb-hunter-s-moon",
+    "name": "Hunter's Moon",
+    "description": "Hunter's Moon — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "25 ml"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "15 ml",
+        "optional": true
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "10 ml"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "100 ml"
+      }
+    ],
+    "steps": [
+      "Put the Bombay Sapphire, Martini Bianco, sugar syrup & blackberries in a cocktail shaker with lots of ice and shake vigorously before pouring into a balloon glass, topping up with lemonade and garnishing with a wedge of orange."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:hunter-s-moon"
+  },
+  {
+    "id": "cdb-havana-cocktail",
+    "name": "Havana Cocktail",
+    "description": "Havana Cocktail — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 tsp"
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine all of the ingredients.",
+      "Shake well.",
+      "Strain into a cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:havana-cocktail"
+  },
+  {
+    "id": "cdb-homemade-kahlua",
+    "name": "Homemade Kahlua",
+    "description": "Homemade Kahlua — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 1/2 cups",
+        "optional": true
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 cup"
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "1 1/2 oz instant"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 fifth"
+      }
+    ],
+    "steps": [
+      "Dissolve sugar in 2 cups of boiling water and add corn syrup.",
+      "Dissolve the instant coffee in the remaining water.",
+      "Pour syrup and coffee in a gallon jug.",
+      "Let it cool.",
+      "Add vodka and vanilla when cold.",
+      "For the best result, let the mixture \"mature\" for 4-5 weeks."
+    ],
+    "tags": [
+      "homemade liqueur",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:homemade-kahlua"
+  },
+  {
+    "id": "cdb-hot-creamy-bush",
+    "name": "Hot Creamy Bush",
+    "description": "Hot Creamy Bush — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rye",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "3/4 shot"
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "6 oz hot"
+      }
+    ],
+    "steps": [
+      "Combine all ingredients in glass."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:hot-creamy-bush"
+  },
+  {
+    "id": "cdb-harvey-wallbanger",
+    "name": "Harvey Wallbanger",
+    "description": "Harvey Wallbanger — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "4 oz"
+      }
+    ],
+    "steps": [
+      "Stir the vodka and orange juice with ice in the glass, then float the Galliano on top.",
+      "Garnish and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:harvey-wallbanger"
+  },
+  {
+    "id": "cdb-hawaiian-cocktail",
+    "name": "Hawaiian Cocktail",
+    "description": "Hawaiian Cocktail — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 tblsp"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:hawaiian-cocktail"
+  },
+  {
+    "id": "cdb-hemingway-special",
+    "name": "Hemingway Special",
+    "description": "Hemingway Special — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "12 parts"
+      },
+      {
+        "ingredientId": "citrus-grapefruit",
+        "amount": "8 parts"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "3 parts",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "3 parts"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into a shaker with ice.",
+      "Shake."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:hemingway-special"
+  },
+  {
+    "id": "cdb-highland-fling-cocktail",
+    "name": "Highland Fling Cocktail",
+    "description": "Highland Fling Cocktail — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-olive",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Stir all ingredients (except olive) with ice and strain into a cocktail glass.",
+      "Add the olive and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:highland-fling-cocktail"
+  },
+  {
+    "id": "cdb-gimlet",
+    "name": "Gimlet",
+    "description": "Gimlet — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "martini",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Add all the ingredients to a shaker and fill with ice.",
+      "Shake, and strain into a chilled cocktail glass or an Old Fashioned glass filled with fresh ice.",
+      "Garnish with a lime wheel."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gimlet"
+  },
+  {
+    "id": "cdb-godchild",
+    "name": "Godchild",
+    "description": "Godchild — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "flute",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients well with cracked ice, strain into a champagne flute, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:godchild"
+  },
+  {
+    "id": "cdb-gin-fizz",
+    "name": "Gin Fizz",
+    "description": "Gin Fizz — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice cubes, except soda water.",
+      "Pour into glass.",
+      "Top with soda water."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-fizz"
+  },
+  {
+    "id": "cdb-gin-sour",
+    "name": "Gin Sour",
+    "description": "Gin Sour — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 tsp superfine",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine the gin, lemon juice, and sugar.",
+      "Shake well.",
+      "Strain into a sour glass and garnish with the orange slice and the cherry."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-sour"
+  },
+  {
+    "id": "cdb-gagliardo",
+    "name": "Gagliardo",
+    "description": "Gagliardo — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "5 parts"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "3 parts"
+      }
+    ],
+    "steps": [
+      "Shake well and serve in a cocktail glass.",
+      "This is a home cocktail of American/Internet Bar del Pozzo, Pavia, Italy."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gagliardo"
+  },
+  {
+    "id": "cdb-godmother",
+    "name": "Godmother",
+    "description": "Godmother — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "3/4 oz"
+      }
+    ],
+    "steps": [
+      "Pour vodka and amaretto into an old-fashioned glass over ice and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:godmother"
+  },
+  {
+    "id": "cdb-godfather",
+    "name": "Godfather",
+    "description": "Godfather — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "3/4 oz"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients directly into old fashioned glass filled with ice cubes.",
+      "Stir gently."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:godfather"
+  },
+  {
+    "id": "cdb-gin-tonic",
+    "name": "Gin Tonic",
+    "description": "Gin Tonic — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "4 cl"
+      },
+      {
+        "ingredientId": "mixer-tonic",
+        "amount": "10 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 Slice"
+      }
+    ],
+    "steps": [
+      "Fill a highball glass with ice, pour the gin, top with tonic water and squeeze a lemon wedge and garnish with a lemon wedge."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-tonic"
+  },
+  {
+    "id": "cdb-gin-toddy",
+    "name": "Gin Toddy",
+    "description": "Gin Toddy — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "Mix powdered sugar and water in an old-fashioned glass.",
+      "Add gin and one ice cube.",
+      "Stir, add the twist of lemon peel, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-toddy"
+  },
+  {
+    "id": "cdb-gin-smash",
+    "name": "Gin Smash",
+    "description": "Gin Smash — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "muddle",
+    "glass": "rocks",
+    "difficulty": "zor",
+    "prepTimeMinutes": 7,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 cube",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "4",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1 slice",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Muddle sugar with carbonated water and mint sprigs in an old-fashioned glass.",
+      "Add gin and 1 ice cube.",
+      "Stir, add the orange slice and the cherry, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-smash"
+  },
+  {
+    "id": "cdb-gin-daisy",
+    "name": "Gin Daisy",
+    "description": "Gin Daisy — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "zor",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 tsp superfine",
+        "optional": true
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1/2 tsp"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine the gin, lemon juice, sugar, and grenadine.",
+      "Shake well.",
+      "Pour into an old-fashioned glass and garnish with the cherry and the orange slice."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-daisy"
+  },
+  {
+    "id": "cdb-gin-lemon",
+    "name": "Gin Lemon",
+    "description": "Gin Lemon — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "6 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "8 cl"
+      }
+    ],
+    "steps": [
+      "For the preparation of the gin lemon you will not need the shaker.",
+      "Fill the tumbler with ice, pour the gin and lemonade over it.",
+      "Gently mix and decorate with a slice of lemon.",
+      "Those who prefer can also add a few mint leaves.",
+      "Your gin lemon is ready to be served."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-lemon"
+  },
+  {
+    "id": "cdb-gin-sling",
+    "name": "Gin Sling",
+    "description": "Gin Sling — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "Twist of",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Dissolve powdered sugar in mixture of water and juice of lemon.",
+      "Add gin.",
+      "Pour into an old-fashioned glass over ice cubes and stir.",
+      "Add the twist of orange peel and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-sling"
+  },
+  {
+    "id": "cdb-greyhound",
+    "name": "Greyhound",
+    "description": "Greyhound — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-grapefruit",
+        "amount": "3 oz"
+      }
+    ],
+    "steps": [
+      "Add the vodka to a Collins glass filled with ice.",
+      "Top with grapefruit juice and stir."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:greyhound"
+  },
+  {
+    "id": "cdb-gin-rickey",
+    "name": "Gin Rickey",
+    "description": "Gin Rickey — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 3,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "Top up with"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Garnish"
+      }
+    ],
+    "steps": [
+      "Half-fill a tall glass with ice.",
+      "Mix the gin and Grenadine together and pour over the ice.",
+      "Add the lime or lemon juice and top off with soda water.",
+      "Decorate the glass with lime and/or lemon slices."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-rickey"
+  },
+  {
+    "id": "cdb-gin-squirt",
+    "name": "Gin Squirt",
+    "description": "Gin Squirt — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tblsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "3 chunks"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Stir gin, grenadine, and powdered sugar with ice and strain into a highball glass over ice cubes.",
+      "Fill with carbonated water and stir.",
+      "Decorate with the pineapple chunks and the strawberries and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-squirt"
+  },
+  {
+    "id": "cdb-grand-blue",
+    "name": "Grand Blue",
+    "description": "Grand Blue — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coconut",
+        "amount": "1 1/2 cl"
+      },
+      {
+        "ingredientId": "liqueur-peach",
+        "amount": "1 1/2 cl"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 1/2 cl"
+      }
+    ],
+    "steps": [
+      "Serve in an old fashioned glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:grand-blue"
+  },
+  {
+    "id": "cdb-gin-cooler",
+    "name": "Gin Cooler",
+    "description": "Gin Cooler — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "tatlandırıcı",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "tatlandırıcı",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Stir powdered sugar and 2 oz.",
+      "carbonated water in a collins glass.",
+      "Fill glass with ice and add gin.",
+      "Fill with carbonated water and stir.",
+      "Add the lemon peel and the orange spiral so that the end of the orange spiral dangles over rim of glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-cooler"
+  },
+  {
+    "id": "cdb-gin-swizzle",
+    "name": "Gin Swizzle",
+    "description": "Gin Swizzle — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp superfine",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "1 dash",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "3 oz"
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine the lime juice, sugar, gin, and bitters.",
+      "Shake well.",
+      "Almost fill a colling glass with ice cubes.",
+      "Stir until the glass is frosted.",
+      "Strain the mixture in the shaker into the glass and add the club soda."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-swizzle"
+  },
+  {
+    "id": "cdb-grass-skirt",
+    "name": "Grass Skirt",
+    "description": "Grass Skirt — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1/2 tsp"
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine the gin, triple sec, pineapple juice, and grenadine.",
+      "Shake well.",
+      "Pour into an old-fashioned glass and garnish with the pineapple slice."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:grass-skirt"
+  },
+  {
+    "id": "cdb-grasshopper",
+    "name": "Grasshopper",
+    "description": "Grasshopper — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "3/4 oz"
+      }
+    ],
+    "steps": [
+      "Pour ingredients into a cocktail shaker with ice.",
+      "Shake briskly and then strain into a chilled cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:grasshopper"
+  },
+  {
+    "id": "cdb-grim-reaper",
+    "name": "Grim Reaper",
+    "description": "Grim Reaper — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 oz Bacardi"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 dash"
+      }
+    ],
+    "steps": [
+      "Mix Kahlua and 151 in glass.",
+      "Quickly add ice and pour grenadine over ice to give ice red tint."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:grim-reaper"
+  },
+  {
+    "id": "cdb-gin-and-soda",
+    "name": "Gin and Soda",
+    "description": "Gin and Soda — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "5 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1/4"
+      }
+    ],
+    "steps": [
+      "Pour the Gin and Soda water into a highball glass almost filled with ice cubes.",
+      "Stir well.",
+      "Garnish with the lime wedge."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:gin-and-soda"
+  },
+  {
+    "id": "cdb-ice-pick",
+    "name": "Ice Pick",
+    "description": "Ice Pick — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "to taste"
+      }
+    ],
+    "steps": [
+      "Put Vodka in glass fill with iced tea.",
+      "Stir in lemon to taste."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:ice-pick"
+  },
+  {
+    "id": "cdb-irish-cream",
+    "name": "Irish Cream",
+    "description": "Irish Cream — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 cup"
+      },
+      {
+        "ingredientId": "liqueur-coconut",
+        "amount": "3 drops"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 tblsp"
+      }
+    ],
+    "steps": [
+      "Mix scotch and milk.",
+      "Add half-and-half.",
+      "Add rest."
+    ],
+    "tags": [
+      "homemade liqueur",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:irish-cream"
+  },
+  {
+    "id": "cdb-irish-coffee",
+    "name": "Irish Coffee",
+    "description": "Irish Coffee — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rye",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "8 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Heat the coffee, whiskey and sugar; do not boil.",
+      "Pour into glass and top with cream; serve hot."
+    ],
+    "tags": [
+      "coffee / tea",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:irish-coffee"
+  },
+  {
+    "id": "cdb-irish-spring",
+    "name": "Irish Spring",
+    "description": "Irish Spring — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 3,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rye",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-peach",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1 slice",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Pour all ingredients (except orange slice and cherry) into a collins glass over ice cubes.",
+      "Garnish with the slice of orange, add the cherry on top, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:irish-spring"
+  },
+  {
+    "id": "cdb-imperial-fizz",
+    "name": "Imperial Fizz",
+    "description": "Imperial Fizz — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes.",
+      "Fill with carbonated water, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:imperial-fizz"
+  },
+  {
+    "id": "cdb-irish-russian",
+    "name": "Irish Russian",
+    "description": "Irish Russian — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "1 dash"
+      }
+    ],
+    "steps": [
+      "Add the ingredients in the order listed in the recipe.",
+      "Care must be taken when adding the Guinness to prevent an excess of foam.",
+      "Do Not add ice."
+    ],
+    "tags": [
+      "beer",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:irish-russian"
+  },
+  {
+    "id": "cdb-imperial-cocktail",
+    "name": "Imperial Cocktail",
+    "description": "Imperial Cocktail — klasik kokteyl.",
+    "emoji": "🧡",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "4 cl"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 cl"
+      },
+      {
+        "ingredientId": "liqueur-aperol",
+        "amount": "4 cl"
+      }
+    ],
+    "steps": [
+      "Shake with ice and strain into cocktail glass."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:imperial-cocktail"
+  },
+  {
+    "id": "cdb-iced-coffee-fillip",
+    "name": "Iced Coffee Fillip",
+    "description": "Iced Coffee Fillip — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "2 tsp"
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "Strong cold"
+      }
+    ],
+    "steps": [
+      "Mix together in a coffee mug and chill before serving."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:iced-coffee-fillip"
+  },
+  {
+    "id": "cdb-irish-curdling-cow",
+    "name": "Irish Curdling Cow",
+    "description": "Irish Curdling Cow — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "2-3 oz"
+      }
+    ],
+    "steps": [
+      "Pour Irish Cream, Vodka, and Bourbon in a glass.",
+      "Add some ice and mix in the orange juice."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:irish-curdling-cow"
+  },
+  {
+    "id": "cdb-jam-donut",
+    "name": "Jam Donut",
+    "description": "Jam Donut — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "2/3 oz"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 pinches",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Coat the rim of a shot glass with sugar using sugar syrup to stick.",
+      "Add the Chambord raspberry liqueur to the shot glass, and carefully layer the Baileys Irish Cream on top.",
+      "Serve."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jam-donut"
+  },
+  {
+    "id": "cdb-jitterbug",
+    "name": "Jitterbug",
+    "description": "Jitterbug — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "build",
+    "glass": "coupe",
+    "difficulty": "zor",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 jiggers"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 jigger"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "3 dashes"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "Around rim put 1 pinch",
+        "optional": true
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "3 dashes"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "Fill to top with"
+      }
+    ],
+    "steps": [
+      "Wet glass, dip rim in sugar.",
+      "Then add Ice.",
+      "Then add everything else.",
+      "It's that simple!."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jitterbug"
+  },
+  {
+    "id": "cdb-jackhammer",
+    "name": "Jackhammer",
+    "description": "Jackhammer — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Serve over ice- Warning,Deadly!."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jackhammer"
+  },
+  {
+    "id": "cdb-jelly-bean",
+    "name": "Jelly Bean",
+    "description": "Jelly Bean — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "mix equal parts in pony glass-tastes just like a jelly bean!."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jelly-bean"
+  },
+  {
+    "id": "cdb-jello-shots",
+    "name": "Jello shots",
+    "description": "Jello shots — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 cups"
+      }
+    ],
+    "steps": [
+      "Boil 3 cups of water then add jello.",
+      "Mix jello and water until jello is completely disolved.",
+      "Add the two cups of vodka and mix together.",
+      "Pour mixture into plastic shot glasses and chill until firm.",
+      "Then, eat away.."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jello-shots"
+  },
+  {
+    "id": "cdb-jamaica-kiss",
+    "name": "Jamaica Kiss",
+    "description": "Jamaica Kiss — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "blend",
+    "glass": "hurricane",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 shot Jamaican"
+      }
+    ],
+    "steps": [
+      "Fill a tumbler with ice cubes.",
+      "Add a shot of Tia Maria and a shot of Jamaican light rum.",
+      "Fill the tumbler with milk.",
+      "Blend until smooth and serve immediately."
+    ],
+    "tags": [
+      "shake",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jamaica-kiss"
+  },
+  {
+    "id": "cdb-john-collins",
+    "name": "John Collins",
+    "description": "John Collins — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "zor",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp superfine",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "3 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Pour all ingredients directly into highball glass filled with ice.",
+      "Stir gently.",
+      "Garnish.",
+      "Add a dash of Angostura bitters."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:john-collins"
+  },
+  {
+    "id": "cdb-japanese-fizz",
+    "name": "Japanese Fizz",
+    "description": "Japanese Fizz — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes.",
+      "Fill with carbonated water, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:japanese-fizz"
+  },
+  {
+    "id": "cdb-jamaican-coffee",
+    "name": "Jamaican Coffee",
+    "description": "Jamaican Coffee — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "flute",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1/6 glass"
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "1/6 glass strong black"
+      }
+    ],
+    "steps": [
+      "Stir the rum, coffee and water together.",
+      "Top with the whipped cream.",
+      "Sprinkle with a pinch of well ground coffee and drink with a straw."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jamaican-coffee"
+  },
+  {
+    "id": "cdb-jewel-of-the-nile",
+    "name": "Jewel Of The Nile",
+    "description": "Jewel Of The Nile — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      }
+    ],
+    "steps": [
+      "In a mixing glass half-filled with ice cubes, combine all of the ingredients.",
+      "Stir well.",
+      "Strain into a cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jewel-of-the-nile"
+  },
+  {
+    "id": "cdb-jack-rose-cocktail",
+    "name": "Jack Rose Cocktail",
+    "description": "Jack Rose Cocktail — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Juice of 1/2"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jack-rose-cocktail"
+  },
+  {
+    "id": "cdb-jack-s-vanilla-coke",
+    "name": "Jack's Vanilla Coke",
+    "description": "Jack's Vanilla Coke — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "10-12 oz"
+      }
+    ],
+    "steps": [
+      "After pouring in your ingredients, and adding 3-5 ice cubes, according to taste.",
+      "Stir the drink with a stirrer to get the Vanilla off the bottom."
+    ],
+    "tags": [
+      "other / unknown",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:jack-s-vanilla-coke"
+  },
+  {
+    "id": "cdb-lunch-box",
+    "name": "Lunch Box",
+    "description": "Lunch Box — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Fill a pint glass almost full with beer.",
+      "Then fill the rest with orange juice (careful not to fill it to the top).",
+      "Then take the shot of Amaretto and drop it in."
+    ],
+    "tags": [
+      "beer",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:lunch-box"
+  },
+  {
+    "id": "cdb-lemon-drop",
+    "name": "Lemon Drop",
+    "description": "Lemon Drop — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 shot"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 1/2 shot"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1 wedge"
+      }
+    ],
+    "steps": [
+      "Shake and strain into a chilled cocktail glass rimmed with sugar."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:lemon-drop"
+  },
+  {
+    "id": "cdb-lemon-shot",
+    "name": "Lemon Shot",
+    "description": "Lemon Shot — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "wedge"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "Bacardi",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Mix Galliano and Absolut Citron in a shot glass, lay lemon wedge sprinkled with sugar over glass and pour a rum over wedge and glass.",
+      "light rum with a lighter and let burn for a second.",
+      "Do shot quickly and suck on lemon.",
+      "If it is done correctly, this will taste like a shot of sweet lemonade."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:lemon-shot"
+  },
+  {
+    "id": "cdb-long-vodka",
+    "name": "Long vodka",
+    "description": "Long vodka — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "5 cl"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1/2"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "4 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-tonic",
+        "amount": "1 dl Schweppes"
+      }
+    ],
+    "steps": [
+      "Shake a tall glass with ice cubes and Angostura, coating the inside of the glass.",
+      "Por the vodka onto this, add 1 slice of lime and squeeze juice out of remainder, mix with tonic, stir and voila you have a Long Vodka."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:long-vodka"
+  },
+  {
+    "id": "cdb-loch-lomond",
+    "name": "Loch Lomond",
+    "description": "Loch Lomond — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "In a mixing glass half-filled with ice cubes, combine the Scotch, Drambuie, and vermouth.",
+      "Stir well.",
+      "Strain into a cocktail glass.",
+      "Garnish with the lemon twist."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:loch-lomond"
+  },
+  {
+    "id": "cdb-london-town",
+    "name": "London Town",
+    "description": "London Town — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1/2 oz",
+        "optional": true
+      },
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "2 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In a mixing glass half-filled with ice cubes, combine all of the ingredients.",
+      "Stir well.",
+      "Strain into a cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:london-town"
+  },
+  {
+    "id": "cdb-limona-corona",
+    "name": "Limona Corona",
+    "description": "Limona Corona — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Open the Corona.",
+      "Fill the empty space in the neck in the bottle with the rum.",
+      "The bottle should be filled to the top.",
+      "Plug the bottle with your thumb or the palm of your hand.",
+      "Turn the bottle upside-down so the rum and beer mix.",
+      "Turn the bottle rightside-up, unplug, and drink."
+    ],
+    "tags": [
+      "beer",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:limona-corona"
+  },
+  {
+    "id": "cdb-lord-and-lady",
+    "name": "Lord And Lady",
+    "description": "Lord And Lady — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Pour the rum and Tia Maria into an old-fashioned glass almost filled with ice cubes.",
+      "Stir well."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:lord-and-lady"
+  },
+  {
+    "id": "cdb-lady-love-fizz",
+    "name": "Lady Love Fizz",
+    "description": "Lady Love Fizz — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except carbonated water) with ice and strain into a cocktail glass over two ice cubes.",
+      "Fill with carbonated water, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:lady-love-fizz"
+  },
+  {
+    "id": "cdb-long-island-tea",
+    "name": "Long Island Tea",
+    "description": "Long Island Tea — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "zor",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "1 splash"
+      }
+    ],
+    "steps": [
+      "Combine all ingredients (except cola) and pour over ice in a highball glass.",
+      "Add the splash of cola for color.",
+      "Decorate with a slice of lemon and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:long-island-tea"
+  },
+  {
+    "id": "cdb-lone-tree-cooler",
+    "name": "Lone Tree Cooler",
+    "description": "Lone Tree Cooler — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "zor",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "tatlandırıcı",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "tatlandırıcı",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Stir powdered sugar and 2 oz.",
+      "carbonated water in a collins glass.",
+      "Fill glass with ice, add gin and vermouth, and stir.",
+      "Fill with carbonated water and stir again.",
+      "Add the twist of lemon peel and the orange spiral so that the end dangles over rim of glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:lone-tree-cooler"
+  },
+  {
+    "id": "cdb-lone-tree-cocktail",
+    "name": "Lone Tree Cocktail",
+    "description": "Lone Tree Cocktail — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      }
+    ],
+    "steps": [
+      "Stir ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:lone-tree-cocktail"
+  },
+  {
+    "id": "cdb-lazy-coconut-paloma",
+    "name": "Lazy Coconut Paloma",
+    "description": "Lazy Coconut Paloma — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coconut",
+        "amount": "30 ml"
+      },
+      {
+        "ingredientId": "citrus-grapefruit",
+        "amount": "75 ml"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "Top"
+      }
+    ],
+    "steps": [
+      "Mix the coconut liqueur (preferably tequila) with the grapefruit juice and top with soda water.",
+      "Garnish with a large grapefruit slice against the inside of the glass."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:lazy-coconut-paloma"
+  },
+  {
+    "id": "cdb-long-island-iced-tea",
+    "name": "Long Island Iced Tea",
+    "description": "Long Island Iced Tea — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "zor",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "1 dash"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Twist of"
+      }
+    ],
+    "steps": [
+      "Mix all contents in a highball glass and sitr gently.",
+      "Add dash of Coca-Cola for the coloring and garnish with lemon or lime twist."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:long-island-iced-tea"
+  },
+  {
+    "id": "cdb-lemon-elderflower-spritzer",
+    "name": "Lemon Elderflower Spritzer",
+    "description": "Lemon Elderflower Spritzer — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "1/3 cup"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Top"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients over ice, stir and enjoy!."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:lemon-elderflower-spritzer"
+  },
+  {
+    "id": "cdb-kir",
+    "name": "Kir",
+    "description": "Kir — klasik kokteyl.",
+    "emoji": "🥂",
+    "technique": "build",
+    "glass": "wine",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "wine-champagne",
+        "amount": "5 parts"
+      }
+    ],
+    "steps": [
+      "Add the crème de cassis to the bottom of the glass, then top up with wine."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kir"
+  },
+  {
+    "id": "cdb-karsk",
+    "name": "Karsk",
+    "description": "Karsk — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "1 part"
+      }
+    ],
+    "steps": [
+      "Put a copper coin in a coffe-cup and fill up with coffee until you no longer see the coin, then add alcohol until you see the coin.",
+      "Norwegian speciality."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:karsk"
+  },
+  {
+    "id": "cdb-kamikaze",
+    "name": "Kamikaze",
+    "description": "Kamikaze — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients together with ice.",
+      "Strain into glass, garnish and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kamikaze"
+  },
+  {
+    "id": "cdb-kir-royale",
+    "name": "Kir Royale",
+    "description": "Kir Royale — klasik kokteyl.",
+    "emoji": "🥂",
+    "technique": "build",
+    "glass": "flute",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "wine-champagne",
+        "amount": "5 parts"
+      }
+    ],
+    "steps": [
+      "Pour Creme de cassis in glass, gently pour champagne on top."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kir-royale"
+  },
+  {
+    "id": "cdb-kiwi-lemon",
+    "name": "Kiwi Lemon",
+    "description": "Kiwi Lemon — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "2 parts"
+      }
+    ],
+    "steps": [
+      "Mix in highball glass.",
+      "Stirr.",
+      "Garnish with slice of kiwi."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kiwi-lemon"
+  },
+  {
+    "id": "cdb-kurant-tea",
+    "name": "Kurant Tea",
+    "description": "Kurant Tea — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "flute",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "(if needed)",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Pour Absolut Kurant into a comfortably big tea-cup.",
+      "Add the not too hot(!) apple tea and, if you like, some sugar.",
+      "Enjoy!."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kurant-tea"
+  },
+  {
+    "id": "cdb-kioki-coffee",
+    "name": "Kioki Coffee",
+    "description": "Kioki Coffee — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Stir.",
+      "Add whipped cream to the top."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kioki-coffee"
+  },
+  {
+    "id": "cdb-kiwi-martini",
+    "name": "Kiwi Martini",
+    "description": "Kiwi Martini — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "muddle",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 oz"
+      }
+    ],
+    "steps": [
+      "The kiwi martini is a very fun vodka cocktail and it is one of the best drinks that makes use of fresh fruit.",
+      "Though there are a few recipes floating around, this is one of the easiest and it is an absolutely delightful green martini to drink.",
+      "For this recipe, you'll simply muddle slices of kiwi with simple syrup, then shake it with vodka.",
+      "It's a drink that anyone can mix up in minutes and a perfect cocktail to show off your favorite vodka."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kiwi-martini"
+  },
+  {
+    "id": "cdb-kiss-me-quick",
+    "name": "Kiss me Quick",
+    "description": "Kiss me Quick — klasik kokteyl.",
+    "emoji": "💗",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "4 cl"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "7 cl"
+      }
+    ],
+    "steps": [
+      "mix in the glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kiss-me-quick"
+  },
+  {
+    "id": "cdb-kool-aid-shot",
+    "name": "Kool-Aid Shot",
+    "description": "Kool-Aid Shot — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Pour into a large glass with ice and stir.",
+      "Add a little cranberry juice to taste."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kool-aid-shot"
+  },
+  {
+    "id": "cdb-kool-first-aid",
+    "name": "Kool First Aid",
+    "description": "Kool First Aid — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "2 oz light"
+      }
+    ],
+    "steps": [
+      "Add Kool Aid to a double shot glass, and top with rum.",
+      "Slam and shoot."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kool-first-aid"
+  },
+  {
+    "id": "cdb-kentucky-b-and-b",
+    "name": "Kentucky B And B",
+    "description": "Kentucky B And B — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 oz"
+      }
+    ],
+    "steps": [
+      "Pour the bourbon and Benedictine into a brandy snifter."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kentucky-b-and-b"
+  },
+  {
+    "id": "cdb-kentucky-colonel",
+    "name": "Kentucky Colonel",
+    "description": "Kentucky Colonel — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "3 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes combine the courbon and Benedictine.",
+      "Shake and strain into a cocktail glass.",
+      "Garnish with the lemon twist."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kentucky-colonel"
+  },
+  {
+    "id": "cdb-kool-aid-slammer",
+    "name": "Kool-Aid Slammer",
+    "description": "Kool-Aid Slammer — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Fill half the shot glass with the kool-aid first.",
+      "Then put a paper towel over the top of the glass and slowly pour in the vodka.",
+      "If you do it right, you should be able to see that the two liquids are separated, with the vodka on top.",
+      "Now slam it! The last thing you'll taste is the kool-aid."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:kool-aid-slammer"
+  },
+  {
+    "id": "cdb-negroni",
+    "name": "Negroni",
+    "description": "Negroni — klasik kokteyl.",
+    "emoji": "🟥",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-campari",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Stir into glass over ice, garnish and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:negroni"
+  },
+  {
+    "id": "cdb-new-york-sour",
+    "name": "New York Sour",
+    "description": "New York Sour — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "blend",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "tatlandırıcı",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake blended whiskey, juice of lemon, and powdered sugar with ice and strain into a whiskey sour glass.",
+      "Float claret on top.",
+      "Decorate with the half-slice of lemon and the cherry and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:new-york-sour"
+  },
+  {
+    "id": "cdb-nutty-irishman",
+    "name": "Nutty Irishman",
+    "description": "Nutty Irishman — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1 part"
+      }
+    ],
+    "steps": [
+      "Serve over ice."
+    ],
+    "tags": [
+      "shake",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:nutty-irishman"
+  },
+  {
+    "id": "cdb-national-aquarium",
+    "name": "National Aquarium",
+    "description": "National Aquarium — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "1 splash"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into a shaker of ice.",
+      "Shake well.",
+      "Serve on the rocks."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:national-aquarium"
+  },
+  {
+    "id": "cdb-new-york-lemonade",
+    "name": "New York Lemonade",
+    "description": "New York Lemonade — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "2 oz sweetened"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Serve in a chilled cocktail glass.",
+      "Lemon and sugar the rim.",
+      "Stir and Strain."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:new-york-lemonade"
+  },
+  {
+    "id": "cdb-mojito",
+    "name": "Mojito",
+    "description": "Mojito — klasik kokteyl.",
+    "emoji": "🍃",
+    "technique": "muddle",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2-3 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Juice of 1"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "2-4",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Muddle mint leaves with sugar and lime juice.",
+      "Add a splash of soda water and fill the glass with cracked ice.",
+      "Pour the rum and top with soda water.",
+      "Garnish and serve with straw."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mojito"
+  },
+  {
+    "id": "cdb-mimosa",
+    "name": "Mimosa",
+    "description": "Mimosa — klasik kokteyl.",
+    "emoji": "🥂",
+    "technique": "build",
+    "glass": "flute",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "wine-champagne",
+        "amount": "Chilled"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "2 oz"
+      }
+    ],
+    "steps": [
+      "Ensure both ingredients are well chilled, then mix into the glass.",
+      "Serve cold."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mimosa"
+  },
+  {
+    "id": "cdb-mai-tai",
+    "name": "Mai Tai",
+    "description": "Mai Tai — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice.",
+      "Strain into glass.",
+      "Garnish and serve with straw."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mai-tai"
+  },
+  {
+    "id": "cdb-martini",
+    "name": "Martini",
+    "description": "Martini — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 2/3 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1/3 oz"
+      },
+      {
+        "ingredientId": "garnish-olive",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Straight: Pour all ingredients into mixing glass with ice cubes.",
+      "Stir well.",
+      "Strain in chilled martini cocktail glass.",
+      "Squeeze oil from lemon peel onto the drink, or garnish with olive."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:martini"
+  },
+  {
+    "id": "cdb-manhattan",
+    "name": "Manhattan",
+    "description": "Manhattan — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 1/2 oz Blended"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "dash",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1 twist of",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Stirred over ice, strained into a chilled glass, garnished, and served up."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:manhattan"
+  },
+  {
+    "id": "cdb-margarita",
+    "name": "Margarita",
+    "description": "Margarita — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-salt",
+        "amount": "tatlandırıcı",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Rub the rim of the glass with the lime slice to make the salt stick to it.",
+      "Take care to moisten only the outer rim and sprinkle the salt on it.",
+      "The salt should present to the lips of the imbiber and never mix into the cocktail.",
+      "Shake the other ingredients with ice, then carefully pour into the glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:margarita"
+  },
+  {
+    "id": "cdb-mauresque",
+    "name": "Mauresque",
+    "description": "Mauresque — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 cl"
+      }
+    ],
+    "steps": [
+      "1 - Pour the Ricard (or pastis)\n2 - Pour the orgeat syrup\n3 - Finally pour the water and add ice cubes at your convenience.",
+      "Add the ice cubes at the end, otherwise the syrup and pastis do not mix well."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mauresque"
+  },
+  {
+    "id": "cdb-mint-julep",
+    "name": "Mint Julep",
+    "description": "Mint Julep — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "muddle",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "4 fresh",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In a highball glass gently muddle the mint, sugar and water.",
+      "Fill the glass with cracked ice, add Bourbon and stir well until the glass is well frosted.",
+      "Garnish with a mint sprig."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mint-julep"
+  },
+  {
+    "id": "cdb-mudslinger",
+    "name": "Mudslinger",
+    "description": "Mudslinger — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 L"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "750 ml"
+      }
+    ],
+    "steps": [
+      "Add all contents to a large jug or punch bowl.",
+      "Stir well!."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mudslinger"
+  },
+  {
+    "id": "cdb-martinez-2",
+    "name": "Martinez 2",
+    "description": "Martinez 2 — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Add all ingredients to a mixing glass and fill with ice.",
+      "Stir until chilled, and strain into a chilled coupe glass."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:martinez-2"
+  },
+  {
+    "id": "cdb-moranguito",
+    "name": "Moranguito",
+    "description": "Moranguito — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "2/5"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1/5"
+      }
+    ],
+    "steps": [
+      "first you put rhe absinthe, then put tequila, then put the Granadine syrup."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:moranguito"
+  },
+  {
+    "id": "cdb-miami-vice",
+    "name": "Miami Vice",
+    "description": "Miami Vice — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "5 oz Bacardi"
+      }
+    ],
+    "steps": [
+      "First: Mix pina colada with 2.5 oz.",
+      "of rum with ice(set aside).",
+      "Second: Mix daiquiri with 2.5 oz.",
+      "of rum with ice.",
+      "Third: While frozen, add pina colda mix then daiquiri mix in glass (Making sure they do not get mixed together)."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:miami-vice"
+  },
+  {
+    "id": "cdb-moscow-mule",
+    "name": "Moscow Mule",
+    "description": "Moscow Mule — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "copper-mug",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "8 oz"
+      }
+    ],
+    "steps": [
+      "Combine vodka and ginger beer in a highball glass filled with ice.",
+      "Add lime juice.",
+      "Stir gently.",
+      "Garnish."
+    ],
+    "tags": [
+      "punch / party drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:moscow-mule"
+  },
+  {
+    "id": "cdb-mulled-wine",
+    "name": "Mulled Wine",
+    "description": "Mulled Wine — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 cup",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1/4 cup"
+      }
+    ],
+    "steps": [
+      "Simmer 3 cups water with, sugar, cloves, cinnamon sticks, and lemon peel in a stainless steel pot for 10 minutes.",
+      "Add wine heat to a \"coffee temperature\" (DO NOT BOIL) then add the brandy."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mulled-wine"
+  },
+  {
+    "id": "cdb-munich-mule",
+    "name": "Munich Mule",
+    "description": "Munich Mule — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "5 cl"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "2 cl"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "10 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Chopped"
+      }
+    ],
+    "steps": [
+      "Fill glass with ice\r\nPour Gin and Lime Juice\r\nFill glass with Ginger Beer\r\nGarnish with Cucumer and Lime slice."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:munich-mule"
+  },
+  {
+    "id": "cdb-mango-mojito",
+    "name": "Mango Mojito",
+    "description": "Mango Mojito — klasik kokteyl.",
+    "emoji": "🍃",
+    "technique": "muddle",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "3"
+      },
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "Sprig",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "200 ml"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "Top"
+      }
+    ],
+    "steps": [
+      "Squeeze the juice from 1½ limes and blend with the mango to give a smooth purée.",
+      "Cut the rest of the limes into quarters, and then cut each wedge in half again.",
+      "Put 2 pieces of lime in a highball glass for each person and add 1 teaspoon of caster sugar and 5-6 mint leaves to each glass.",
+      "Squish everything together with a muddler or the end of a rolling pin to release all the flavours from the lime and mint.",
+      "Divide the mango purée between the glasses and add 30ml white rum and a handful of crushed ice to each one, stirring well to mix everything together.",
+      "Top up with soda water to serve and garnish with extra mint, if you like."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mango-mojito"
+  },
+  {
+    "id": "cdb-mojito-extra",
+    "name": "Mojito Extra",
+    "description": "Mojito Extra — klasik kokteyl.",
+    "emoji": "🍃",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 3,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "1/2 handful",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "3 cl"
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1/8 L Jamaican"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "1/8 L"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "8 drops",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Put mint with lemon juice in a glas, mash the mint with a spoon, ice, rum & fill up with club soda.",
+      "Top it with Angostura."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mojito-extra"
+  },
+  {
+    "id": "cdb-monkey-gland",
+    "name": "Monkey Gland",
+    "description": "Monkey Gland — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Shake well over ice cubes in a shaker, strain into a chilled cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:monkey-gland"
+  },
+  {
+    "id": "cdb-midnight-mint",
+    "name": "Midnight Mint",
+    "description": "Midnight Mint — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "3/4 oz"
+      }
+    ],
+    "steps": [
+      "If available, rim cocktail (Martini) glass with sugar syrup then dip into chocolate flakes or powder.",
+      "Add ingredients into shaker with ice.",
+      "Shake well then strain into cocktail glass."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:midnight-mint"
+  },
+  {
+    "id": "cdb-mary-pickford",
+    "name": "Mary Pickford",
+    "description": "Mary Pickford — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1/2 tsp"
+      }
+    ],
+    "steps": [
+      "Shake and strain into a chilled large cocktail glass."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:mary-pickford"
+  },
+  {
+    "id": "cdb-monkey-wrench",
+    "name": "Monkey Wrench",
+    "description": "Monkey Wrench — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-grapefruit",
+        "amount": "3 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "1 dash",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Pour all of the ingredients into an old-fashioned glass almost filled with ice cubes.",
+      "Stir well."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:monkey-wrench"
+  },
+  {
+    "id": "cdb-orgasm",
+    "name": "Orgasm",
+    "description": "Orgasm — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "1/2 oz white"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a chilled cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:orgasm"
+  },
+  {
+    "id": "cdb-old-pal",
+    "name": "Old Pal",
+    "description": "Old Pal — klasik kokteyl.",
+    "emoji": "🟥",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rye",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-campari",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Chill cocktail glass.",
+      "Add ingredients to a mixing glass, and fill 2/3 full with ice.",
+      "Stir about 20 seconds.",
+      "Empty cocktail glass and strain into the glass.",
+      "Garnish with a twist of lemon peel."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:old-pal"
+  },
+  {
+    "id": "cdb-old-cuban",
+    "name": "Old Cuban",
+    "description": "Old Cuban — klasik kokteyl.",
+    "emoji": "🥂",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "wine-prosecco",
+        "amount": "2 oz"
+      }
+    ],
+    "steps": [
+      "Shake a handful of mint, 2oz white rum, 1oz of sugar syrup, 1oz lime juice and 2 dashes angostura bitters with ice.",
+      "Double strain into a glass and top with 2oz of prosecco."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:old-cuban"
+  },
+  {
+    "id": "cdb-orange-whip",
+    "name": "Orange Whip",
+    "description": "Orange Whip — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Pour ingredients over ice and stir."
+    ],
+    "tags": [
+      "other / unknown",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:orange-whip"
+  },
+  {
+    "id": "cdb-orange-crush",
+    "name": "Orange Crush",
+    "description": "Orange Crush — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Add all ingredients to tumbler-Pour as shot."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:orange-crush"
+  },
+  {
+    "id": "cdb-orange-oasis",
+    "name": "Orange Oasis",
+    "description": "Orange Oasis — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Shake brandy, gin, and orange juice with ice and strain into a highball glass over ice cubes.",
+      "Fill with ginger ale, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:orange-oasis"
+  },
+  {
+    "id": "cdb-old-fashioned",
+    "name": "Old Fashioned",
+    "description": "Old Fashioned — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "muddle",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "4.5 cL"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 cube",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Place sugar cube in old fashioned glass and saturate with bitters, add a dash of plain water.",
+      "Muddle until dissolved.",
+      "Fill the glass with ice cubes and add whiskey.",
+      "Garnish with orange twist, and a cocktail cherry."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:old-fashioned"
+  },
+  {
+    "id": "cdb-oreo-mudslide",
+    "name": "Oreo Mudslide",
+    "description": "Oreo Mudslide — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "blend",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Blend Vodka, Kahlua, Bailey's, ice-cream and the Oreo well in a blender.",
+      "Pour into a large frosted glass.",
+      "Garnish with whipped cream and a cherry."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:oreo-mudslide"
+  },
+  {
+    "id": "cdb-orange-push-up",
+    "name": "Orange Push-up",
+    "description": "Orange Push-up — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "blend",
+    "glass": "hurricane",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1.5 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "0.5 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "4 oz"
+      }
+    ],
+    "steps": [
+      "Combine liquors in a blender.",
+      "Add a half scoop of ice and blend.",
+      "Garnish with an orange and cherry flag.",
+      "So good it will melt in your mouth!!!."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:orange-push-up"
+  },
+  {
+    "id": "cdb-orange-rosemary-collins",
+    "name": "Orange Rosemary Collins",
+    "description": "Orange Rosemary Collins — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "zor",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "Top"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Top"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "25 ml"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "Top"
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "Garnish with",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Add the spirits to the bottom of the glass and top equally with the mixer drinks.",
+      "Garnish with orange slices inside the glass as well as some rosemary on top."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:orange-rosemary-collins"
+  },
+  {
+    "id": "cdb-owen-s-grandmother-s-revenge",
+    "name": "Owen's Grandmother's Revenge",
+    "description": "Owen's Grandmother's Revenge — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "blend",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "12 oz"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "12 oz frozen"
+      }
+    ],
+    "steps": [
+      "Add ingredients and mix in blender."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:owen-s-grandmother-s-revenge"
+  },
+  {
+    "id": "cdb-paloma",
+    "name": "Paloma",
+    "description": "Paloma — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "1 1/2 oz"
+      }
+    ],
+    "steps": [
+      "Stir together and serve over ice."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:paloma"
+  },
+  {
+    "id": "cdb-paradise",
+    "name": "Paradise",
+    "description": "Paradise — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "7 parts"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "4 parts"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "3 parts"
+      }
+    ],
+    "steps": [
+      "Shake together over ice.",
+      "Strain into cocktail glass and serve chilled."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:paradise"
+  },
+  {
+    "id": "cdb-pink-gin",
+    "name": "Pink Gin",
+    "description": "Pink Gin — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "wine",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "3 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      }
+    ],
+    "steps": [
+      "Pour the bitters into a wine glass.",
+      "Swirl the glass to coat the inside with the bitters, shake out the excess.",
+      "Pour the gin into the glass.",
+      "Do not add ice."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pink-gin"
+  },
+  {
+    "id": "cdb-pegu-club",
+    "name": "Pegu Club",
+    "description": "Pegu Club — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "1 dash",
+        "optional": true
+      },
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "1 dash",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake, strain, up, cocktail glass."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pegu-club"
+  },
+  {
+    "id": "cdb-pink-lady",
+    "name": "Pink Lady",
+    "description": "Pink Lady — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pink-lady"
+  },
+  {
+    "id": "cdb-pink-moon",
+    "name": "Pink Moon",
+    "description": "Pink Moon — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "liqueur-coconut",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "30 ml"
+      }
+    ],
+    "steps": [
+      "Slowly shake in a shaker with ice, strain into a square whiskey glass.",
+      "Top with fresh ice.",
+      "Add the blackberries to garnish.",
+      "Add flowers and a green leaf for a special look!."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pink-moon"
+  },
+  {
+    "id": "cdb-penicillin",
+    "name": "Penicillin",
+    "description": "Penicillin — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "blend",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "sweet-honey",
+        "amount": "2 tsp"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "2 tsp"
+      }
+    ],
+    "steps": [
+      "Shake blended Scotch, lemon juice, honey syrup and ginger syrup with ice.",
+      "Strain over large ice in chilled rocks glass.",
+      "Float smoky Scotch on top (be sure to use a smoky Scotch such as an Islay single malt).",
+      "Garnish with candied ginger."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:penicillin"
+  },
+  {
+    "id": "cdb-pisco-sour",
+    "name": "Pisco Sour",
+    "description": "Pisco Sour — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1-2 tblsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Vigorously shake and strain contents in a cocktail shaker with ice cubes, then pour into glass and garnish with bitters."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pisco-sour"
+  },
+  {
+    "id": "cdb-porto-flip",
+    "name": "Porto flip",
+    "description": "Porto flip — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "3 parts"
+      }
+    ],
+    "steps": [
+      "Shake ingredients together in a mixer with ice.",
+      "Strain into glass, garnish and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:porto-flip"
+  },
+  {
+    "id": "cdb-pina-colada",
+    "name": "Pina Colada",
+    "description": "Pina Colada — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "blend",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "3 oz"
+      },
+      {
+        "ingredientId": "liqueur-coconut",
+        "amount": "3 tblsp"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "3 tblsp"
+      }
+    ],
+    "steps": [
+      "Mix with crushed ice in blender until smooth.",
+      "Pour into chilled glass, garnish and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pina-colada"
+  },
+  {
+    "id": "cdb-pink-penocha",
+    "name": "Pink Penocha",
+    "description": "Pink Penocha — klasik kokteyl.",
+    "emoji": "💗",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1750 ml"
+      },
+      {
+        "ingredientId": "liqueur-peach",
+        "amount": "1750 ml"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 gal"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "1 gal"
+      }
+    ],
+    "steps": [
+      "mix all ingredients into bowl keep iced stir frequently."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pink-penocha"
+  },
+  {
+    "id": "cdb-pure-passion",
+    "name": "Pure Passion",
+    "description": "Pure Passion — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "40 ml"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "30 ml"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "15 ml"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "Dash",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "Garnish with",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Mix up all ingredients with a cocktail stirrer and serve with crushed ice with mint and edible flour if available."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pure-passion"
+  },
+  {
+    "id": "cdb-popped-cherry",
+    "name": "Popped cherry",
+    "description": "Popped cherry — klasik kokteyl.",
+    "emoji": "💗",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "2 oz",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "4 oz"
+      }
+    ],
+    "steps": [
+      "Served over ice in a tall glass with a popped cherry (can add more popped cherries if in the mood)!."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:popped-cherry"
+  },
+  {
+    "id": "cdb-poppy-cocktail",
+    "name": "Poppy Cocktail",
+    "description": "Poppy Cocktail — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "3/4 oz white"
+      }
+    ],
+    "steps": [
+      "Shake ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:poppy-cocktail"
+  },
+  {
+    "id": "cdb-planter-s-punch",
+    "name": "Planter's Punch",
+    "description": "Planter's Punch — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1/2 part"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "2 parts"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 part"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients, except the bitters, into shaker filled with ice.",
+      "Shake well.",
+      "Pour into large glass, filled with ice.",
+      "Add Angostura bitters, \"on top\".",
+      "Garnish with cocktail cherry and pineapple."
+    ],
+    "tags": [
+      "punch / party drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:planter-s-punch"
+  },
+  {
+    "id": "cdb-pineapple-paloma",
+    "name": "Pineapple Paloma",
+    "description": "Pineapple Paloma — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "citrus-grapefruit",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "8 oz"
+      }
+    ],
+    "steps": [
+      "Rub the rim of each glass with lime slice and dip into salt.",
+      "Add ice, tequila, grapefruit juice, lime juice and top with pineapple soda.",
+      "Give it a quick stir.",
+      "Garnish with fresh pineapple or lime."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pineapple-paloma"
+  },
+  {
+    "id": "cdb-pornstar-martini",
+    "name": "Pornstar Martini",
+    "description": "Pornstar Martini — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "3 cl"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 cl"
+      },
+      {
+        "ingredientId": "wine-prosecco",
+        "amount": "1 shot"
+      }
+    ],
+    "steps": [
+      "Straight: Pour all ingredients into mixing glass with ice cubes.",
+      "Shake well.",
+      "Strain in chilled martini cocktail glass.",
+      "Cut passion fruit in half and use as garnish.",
+      "Pour prosecco into a chilled shot glass and serve alongside the martini."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pornstar-martini"
+  },
+  {
+    "id": "cdb-port-and-starboard",
+    "name": "Port And Starboard",
+    "description": "Port And Starboard — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tblsp"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Pour carefully into a pousse-cafe glass, so that creme de menthe floats on grenadine.",
+      "Serve without mixing."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:port-and-starboard"
+  },
+  {
+    "id": "cdb-port-wine-cocktail",
+    "name": "Port Wine Cocktail",
+    "description": "Port Wine Cocktail — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1/2 tsp"
+      }
+    ],
+    "steps": [
+      "Stir ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:port-wine-cocktail"
+  },
+  {
+    "id": "cdb-pink-panty-pulldowns",
+    "name": "Pink Panty Pulldowns",
+    "description": "Pink Panty Pulldowns — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "1 L"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 cups"
+      }
+    ],
+    "steps": [
+      "Shake well."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:pink-panty-pulldowns"
+  },
+  {
+    "id": "cdb-passion-fruit-martini",
+    "name": "Passion Fruit Martini",
+    "description": "Passion Fruit Martini — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1/2 shot"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into a glass and stir.",
+      "Garnish with half a passion fruit piece."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:passion-fruit-martini"
+  },
+  {
+    "id": "cdb-quentin",
+    "name": "Quentin",
+    "description": "Quentin — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine the rum, Kahlua, and cream.",
+      "Shake well.",
+      "Strain into a cocktail glass and garnish with the nutmeg."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:quentin"
+  },
+  {
+    "id": "cdb-queen-bee",
+    "name": "Queen Bee",
+    "description": "Queen Bee — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 oz"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:queen-bee"
+  },
+  {
+    "id": "cdb-quick-f-k",
+    "name": "Quick F**K",
+    "description": "Quick F**K — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "liqueur-melon",
+        "amount": "1 part"
+      },
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1 part"
+      }
+    ],
+    "steps": [
+      "In a shot glass add 1/3 Kahlua first.",
+      "Then 1/3 Miduri, topping it off with a 1/3 bailey's irish cream."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:quick-f-k"
+  },
+  {
+    "id": "cdb-quick-sand",
+    "name": "Quick-sand",
+    "description": "Quick-sand — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "Add 250 ml"
+      }
+    ],
+    "steps": [
+      "Simply add the orange juice, quite a quick pour in order to mix the sambucca with the orange juice.",
+      "The juice MUST have fruit pulp!."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:quick-sand"
+  },
+  {
+    "id": "cdb-queen-charlotte",
+    "name": "Queen Charlotte",
+    "description": "Queen Charlotte — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Pour red wine and grenadine into a collins glass over ice cubes.",
+      "Fill with lemon-lime soda, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:queen-charlotte"
+  },
+  {
+    "id": "cdb-queen-elizabeth",
+    "name": "Queen Elizabeth",
+    "description": "Queen Elizabeth — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      }
+    ],
+    "steps": [
+      "Stir all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:queen-elizabeth"
+  },
+  {
+    "id": "cdb-quaker-s-cocktail",
+    "name": "Quaker's Cocktail",
+    "description": "Quaker's Cocktail — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/4"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "2 tsp"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:quaker-s-cocktail"
+  },
+  {
+    "id": "cdb-quarter-deck-cocktail",
+    "name": "Quarter Deck Cocktail",
+    "description": "Quarter Deck Cocktail — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Juice of 1/2"
+      }
+    ],
+    "steps": [
+      "Stir all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:quarter-deck-cocktail"
+  },
+  {
+    "id": "cdb-rose",
+    "name": "Rose",
+    "description": "Rose — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "zor",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1/2 tsp"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "tatlandırıcı",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake together in a cocktail shaker, then strain into chilled glass.",
+      "Garnish and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rose"
+  },
+  {
+    "id": "cdb-radler",
+    "name": "Radler",
+    "description": "Radler — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "12 oz"
+      }
+    ],
+    "steps": [
+      "Pour beer into large mug, slowly add the 7-up (or Sprite)."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:radler"
+  },
+  {
+    "id": "cdb-rum-sour",
+    "name": "Rum Sour",
+    "description": "Rum Sour — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 tsp superfine",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine the rum, lemon juice, and sugar.",
+      "Shake well.",
+      "Strain into a sour glass and garnish with the orange slice and the cherry."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rum-sour"
+  },
+  {
+    "id": "cdb-rum-punch",
+    "name": "Rum Punch",
+    "description": "Rum Punch — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "mikey bottle"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "large bottle"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "355 ml frozen"
+      }
+    ],
+    "steps": [
+      "Mix all ingredients in a punch bowl and serve."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rum-punch"
+  },
+  {
+    "id": "cdb-rum-toddy",
+    "name": "Rum Toddy",
+    "description": "Rum Toddy — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz light or dark"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "2 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "Dissolve powdered sugar in water in an old-fashioned glass.",
+      "Add rum and one ice cube and stir.",
+      "Add the twist of lemon peel and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rum-toddy"
+  },
+  {
+    "id": "cdb-royal-fizz",
+    "name": "Royal Fizz",
+    "description": "Royal Fizz — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except cola) with ice and strain into a chilled collins glass.",
+      "Fill with cola and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:royal-fizz"
+  },
+  {
+    "id": "cdb-rum-cooler",
+    "name": "Rum Cooler",
+    "description": "Rum Cooler — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz light or dark"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1"
+      }
+    ],
+    "steps": [
+      "Pour the rum and soda into a collins glass almost filled with ice cubes.",
+      "Stir well and garnish with the lemon wedge."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rum-cooler"
+  },
+  {
+    "id": "cdb-rum-runner",
+    "name": "Rum Runner",
+    "description": "Rum Runner — klasik kokteyl.",
+    "emoji": "💗",
+    "technique": "build",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 3,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coconut",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "3-4 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "3-4 oz"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "3-4 oz"
+      }
+    ],
+    "steps": [
+      "Mix all ingredients in glass & add ice."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rum-runner"
+  },
+  {
+    "id": "cdb-rusty-nail",
+    "name": "Rusty Nail",
+    "description": "Rusty Nail — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "Pour the Scotch and Drambuie into an old-fashioned glass almost filled with ice cubes.",
+      "Stir well.",
+      "Garnish with the lemon twist."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rusty-nail"
+  },
+  {
+    "id": "cdb-red-snapper",
+    "name": "Red Snapper",
+    "description": "Red Snapper — klasik kokteyl.",
+    "emoji": "💗",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "1 shot"
+      }
+    ],
+    "steps": [
+      "One shot each, shake n shoot."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:red-snapper"
+  },
+  {
+    "id": "cdb-royal-flush",
+    "name": "Royal Flush",
+    "description": "Royal Flush — klasik kokteyl.",
+    "emoji": "💗",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-peach",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Pour all the ingredients into tumbler over ice.",
+      "Strain into glass."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:royal-flush"
+  },
+  {
+    "id": "cdb-rum-cobbler",
+    "name": "Rum Cobbler",
+    "description": "Rum Cobbler — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "zor",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp superfine",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "3 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1"
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In an old-fashioned glass, dissolve the sugar in the club soda.",
+      "Add crushed ice until the glass is almost full.",
+      "Add the rum.",
+      "Stir well.",
+      "Garnish with the cherry and the orange and lemon slices."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rum-cobbler"
+  },
+  {
+    "id": "cdb-ruby-tuesday",
+    "name": "Ruby Tuesday",
+    "description": "Ruby Tuesday — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "5 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "2 splashes"
+      }
+    ],
+    "steps": [
+      "Pour gin and cranberry into a highball filled with ice cubes.",
+      "Add grenadine and stir."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:ruby-tuesday"
+  },
+  {
+    "id": "cdb-rosemary-blue",
+    "name": "Rosemary Blue",
+    "description": "Rosemary Blue — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "50 ml"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "15 ml"
+      },
+      {
+        "ingredientId": "mixer-tonic",
+        "amount": "100 ml"
+      }
+    ],
+    "steps": [
+      "1) Add the Bombay Sapphire, Blue Curacao, rosemary sprig and gently squeezed lemon wedge to a balloon glass.",
+      "Swirl well to combine.",
+      "2) Fill with cubed ice and top with the Fever-Tree Light Tonic Water.",
+      "3) Gently fold with a bar spoon to mix."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rosemary-blue"
+  },
+  {
+    "id": "cdb-royal-gin-fizz",
+    "name": "Royal Gin Fizz",
+    "description": "Royal Gin Fizz — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except carbonated water) with ice and strain into a highball glass over two ice cubes.",
+      "Fill with carbonated water, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:royal-gin-fizz"
+  },
+  {
+    "id": "cdb-rum-milk-punch",
+    "name": "Rum Milk Punch",
+    "description": "Rum Milk Punch — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except nutmeg) with ice and strain into a collins glass.",
+      "Sprinkle nutmeg on top and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rum-milk-punch"
+  },
+  {
+    "id": "cdb-raspberry-julep",
+    "name": "Raspberry Julep",
+    "description": "Raspberry Julep — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "muddle",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "8",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Softly muddle the mint leaves and raspberry syrup in the bottom of the cup.",
+      "Add crushed ice and Bourbon to the cup and then stir.",
+      "Top with more ice, garnish with a mint sprig."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:raspberry-julep"
+  },
+  {
+    "id": "cdb-rum-screwdriver",
+    "name": "Rum Screwdriver",
+    "description": "Rum Screwdriver — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "5 oz"
+      }
+    ],
+    "steps": [
+      "Pour rum into a highball glass over ice cubes.",
+      "Add orange juice, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rum-screwdriver"
+  },
+  {
+    "id": "cdb-raspberry-cooler",
+    "name": "Raspberry Cooler",
+    "description": "Raspberry Cooler — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "4 oz"
+      }
+    ],
+    "steps": [
+      "Pour the raspberry vodka and soda into a highball glass almost filled with ice cubes.",
+      "Stir well."
+    ],
+    "tags": [
+      "other / unknown",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:raspberry-cooler"
+  },
+  {
+    "id": "cdb-rum-old-fashioned",
+    "name": "Rum Old-fashioned",
+    "description": "Rum Old-fashioned — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "1 dash",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Twist of"
+      }
+    ],
+    "steps": [
+      "Stir powdered sugar, water, and bitters in an old-fashioned glass.",
+      "When sugar has dissolved add ice cubes and light rum.",
+      "Add the twist of lime peel, float 151 proof rum on top, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:rum-old-fashioned"
+  },
+  {
+    "id": "cdb-russian-spring-punch",
+    "name": "Russian Spring Punch",
+    "description": "Russian Spring Punch — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2.5 cl"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "1.5 cl"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "2.5 cl"
+      }
+    ],
+    "steps": [
+      "Pour the ingredients into an highball glass, top with Sparkling wine."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:russian-spring-punch"
+  },
+  {
+    "id": "cdb-radioactive-long-island-iced-tea",
+    "name": "Radioactive Long Island Iced Tea",
+    "description": "Radioactive Long Island Iced Tea — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "zor",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-melon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-coconut",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients over ice in a very tall glass.",
+      "Sip cautiously."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:radioactive-long-island-iced-tea"
+  },
+  {
+    "id": "cdb-smut",
+    "name": "Smut",
+    "description": "Smut — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-peach",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "1/3 part"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1/3 part"
+      }
+    ],
+    "steps": [
+      "Throw it all together and serve real cold."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:smut"
+  },
+  {
+    "id": "cdb-spritz",
+    "name": "Spritz",
+    "description": "Spritz — klasik kokteyl.",
+    "emoji": "🟥",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "wine-prosecco",
+        "amount": "6 cl"
+      },
+      {
+        "ingredientId": "liqueur-campari",
+        "amount": "4 cl"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "splash"
+      }
+    ],
+    "steps": [
+      "Build into glass over ice, garnish and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:spritz"
+  },
+  {
+    "id": "cdb-scooter",
+    "name": "Scooter",
+    "description": "Scooter — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients well with cracked ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:scooter"
+  },
+  {
+    "id": "cdb-sangria",
+    "name": "Sangria",
+    "description": "Sangria — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 cup",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 cup"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 cup"
+      }
+    ],
+    "steps": [
+      "Mix all together in a pitcher and refrigerate.",
+      "Add cloves and cinnamon sticks to taste.",
+      "Serve in wine glasses."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:sangria"
+  },
+  {
+    "id": "cdb-stinger",
+    "name": "Stinger",
+    "description": "Stinger — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Pour in a mixing glass with ice, stir and strain into a cocktail glass.",
+      "May also be served on rocks in a rocks glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:stinger"
+  },
+  {
+    "id": "cdb-sazerac",
+    "name": "Sazerac",
+    "description": "Sazerac — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 tsp superfine",
+        "optional": true
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "Rinse a chilled old-fashioned glass with the absinthe, add crushed ice, and set it aside.",
+      "Stir the remaining ingredients over ice and set it aside.",
+      "Discard the ice and any excess absinthe from the prepared glass, and strain the drink into the glass.",
+      "Add the lemon peel for garnish."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:sazerac"
+  },
+  {
+    "id": "cdb-sidecar",
+    "name": "Sidecar",
+    "description": "Sidecar — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Pour all ingredients into cocktail shaker filled with ice.",
+      "Shake well and strain into cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:sidecar"
+  },
+  {
+    "id": "cdb-snowday",
+    "name": "Snowday",
+    "description": "Snowday — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "Dash",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Stir all ingredients with ice.",
+      "Strain into a chilled rocks glass over fresh ice.",
+      "Express orange peel over drink and garnish."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:snowday"
+  },
+  {
+    "id": "cdb-spice-75",
+    "name": "Spice 75",
+    "description": "Spice 75 — klasik kokteyl.",
+    "emoji": "🥂",
+    "technique": "shake",
+    "glass": "wine",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "60 ml",
+        "optional": true
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "20 cl"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "90 ml"
+      },
+      {
+        "ingredientId": "wine-champagne",
+        "amount": "6 cl"
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "Garnish with",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Gently warm 60g golden caster sugar in a pan with 30ml water and 1 tbsp allspice.",
+      "Cook gently until the sugar has dissolved, then leave the mixture to cool.",
+      "Strain through a sieve lined with a coffee filter (or a double layer of kitchen paper).",
+      "Pour 60ml of the spiced syrup into a cocktail shaker along with 200ml rum and 90ml lime juice.",
+      "Shake with ice and strain between six flute glasses.",
+      "Top up with 600ml champagne and garnish each with an orange twist."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:spice-75"
+  },
+  {
+    "id": "cdb-snowball",
+    "name": "Snowball",
+    "description": "Snowball — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "8-10 oz cold"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 slice"
+      }
+    ],
+    "steps": [
+      "Place one ice cube in the glass and add 1 1/2 oz of Advocaat.",
+      "Fill up the glass with lemonade and decorate with a slice of lemon.",
+      "Serve at once."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:snowball"
+  },
+  {
+    "id": "cdb-shot-gun",
+    "name": "Shot-gun",
+    "description": "Shot-gun — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "1 part"
+      }
+    ],
+    "steps": [
+      "Pour one part Jack Daneils and one part Jim Beam into shot glass then float Wild Turkey on top."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:shot-gun"
+  },
+  {
+    "id": "cdb-salty-dog",
+    "name": "Salty Dog",
+    "description": "Salty Dog — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-grapefruit",
+        "amount": "5 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-salt",
+        "amount": "1/4 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Pour all ingredients over ice cubes in a highball glass.",
+      "Stir well and serve.",
+      "(Vodka may be substituted for gin, if preferred.)."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:salty-dog"
+  },
+  {
+    "id": "cdb-stone-sour",
+    "name": "Stone Sour",
+    "description": "Stone Sour — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a chilled whiskey sour glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:stone-sour"
+  },
+  {
+    "id": "cdb-sea-breeze",
+    "name": "Sea breeze",
+    "description": "Sea breeze — klasik kokteyl.",
+    "emoji": "💗",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "citrus-grapefruit",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Build all ingredients in a highball glass filled with ice.",
+      "Garnish with lime wedge."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:sea-breeze"
+  },
+  {
+    "id": "cdb-scotch-sour",
+    "name": "Scotch Sour",
+    "description": "Scotch Sour — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1/2 slice"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake scotch, juice of lime, and powdered sugar with ice and strain into a whiskey sour glass.",
+      "Decorate with 1/2 slice lemon, top with the cherry, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:scotch-sour"
+  },
+  {
+    "id": "cdb-sweet-tooth",
+    "name": "Sweet Tooth",
+    "description": "Sweet Tooth — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "2 shots"
+      }
+    ],
+    "steps": [
+      "Put 2 shots Godiva Liquour into a glass, add as much or as little milk as you would like."
+    ],
+    "tags": [
+      "shake",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:sweet-tooth"
+  },
+  {
+    "id": "cdb-screwdriver",
+    "name": "Screwdriver",
+    "description": "Screwdriver — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Mix in a highball glass with ice.",
+      "Garnish and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:screwdriver"
+  },
+  {
+    "id": "cdb-sol-y-sombra",
+    "name": "Sol Y Sombra",
+    "description": "Sol Y Sombra — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 1/2 oz"
+      }
+    ],
+    "steps": [
+      "Shake ingredients with ice, strain into a brandy snifter, and serve.",
+      "(The English translation of the name of this drink is \"Sun and Shade\", and after sampling this drink, you'll understand why.",
+      "Thanks, Kirby.)."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:sol-y-sombra"
+  },
+  {
+    "id": "cdb-shark-attack",
+    "name": "Shark Attack",
+    "description": "Shark Attack — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "1 can"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 cup"
+      }
+    ],
+    "steps": [
+      "Mix lemonade and water according to instructions on back of can.",
+      "If the instructions say to add 4 1/3 cans of water do so.",
+      "Mix into pitcher.",
+      "Add 1 1/2 cup of Vodka (Absolut).",
+      "Mix well.",
+      "Pour into glass of crushed ice.",
+      "Excellent!."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:shark-attack"
+  },
+  {
+    "id": "cdb-san-francisco",
+    "name": "San Francisco",
+    "description": "San Francisco — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 cl"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Take a tall glass and put in a few ice cubes, fill the vodka over it and fill with juice then the \"creme\", to end fill in the grenadine but very carefully at the side of the glass so it will lay down in the bottom.",
+      "garnish with orange and strawberry."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:san-francisco"
+  },
+  {
+    "id": "cdb-space-odyssey",
+    "name": "Space Odyssey",
+    "description": "Space Odyssey — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 3,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 shot Bacardi"
+      },
+      {
+        "ingredientId": "liqueur-coconut",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Fill glass with ice and add shots of Bacardi and Malibu.",
+      "Add splash of pineapple juice and top with orange juice.",
+      "Add grenadine for color and garnish with cherries."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:space-odyssey"
+  },
+  {
+    "id": "cdb-thriller",
+    "name": "Thriller",
+    "description": "Thriller — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine all of the ingredients.",
+      "Shake well.",
+      "Strain into a cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:thriller"
+  },
+  {
+    "id": "cdb-the-galah",
+    "name": "The Galah",
+    "description": "The Galah — klasik kokteyl.",
+    "emoji": "🟥",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "liqueur-campari",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "Top"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Top"
+      }
+    ],
+    "steps": [
+      "Mix together the alcoholic portions and top with Pineapple and Lime juice."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:the-galah"
+  },
+  {
+    "id": "cdb-tia-maria",
+    "name": "Tia-Maria",
+    "description": "Tia-Maria — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "3/4-1 cup",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "4 tsp"
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 cup"
+      }
+    ],
+    "steps": [
+      "Boil water, sugar and coffe for 10 mins and let cool.",
+      "Add rum and vanilla.",
+      "Put in clean bottle(s) and leave for 1 week before using."
+    ],
+    "tags": [
+      "homemade liqueur",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tia-maria"
+  },
+  {
+    "id": "cdb-tipperary",
+    "name": "Tipperary",
+    "description": "Tipperary — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rye",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Stir over ice.",
+      "Strain into chilled glass.",
+      "Cut a wide swath of orange peel, and express the orange oils over the drink.",
+      "Discard orange twist."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tipperary"
+  },
+  {
+    "id": "cdb-turkeyball",
+    "name": "Turkeyball",
+    "description": "Turkeyball — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 splash"
+      }
+    ],
+    "steps": [
+      "Shake with ice and strain into a shot glass."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:turkeyball"
+  },
+  {
+    "id": "cdb-texas-sling",
+    "name": "Texas Sling",
+    "description": "Texas Sling — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "blend",
+    "glass": "wine",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1/2 oz Bacardi"
+      }
+    ],
+    "steps": [
+      "Blend with Ice until smooth.",
+      "Serve in a tulip glass, top with whip cream."
+    ],
+    "tags": [
+      "shake",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:texas-sling"
+  },
+  {
+    "id": "cdb-tom-collins",
+    "name": "Tom Collins",
+    "description": "Tom Collins — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "zor",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp superfine",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "3 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "In a shaker half-filled with ice cubes, combine the gin, lemon juice, and sugar.",
+      "Shake well.",
+      "Strain into a collins glass alomst filled with ice cubes.",
+      "Add the club soda.",
+      "Stir and garnish with the cherry and the orange slice."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tom-collins"
+  },
+  {
+    "id": "cdb-talos-coffee",
+    "name": "Talos Coffee",
+    "description": "Talos Coffee — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "3 parts"
+      },
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "1 part"
+      }
+    ],
+    "steps": [
+      "Add your GM and then add your coffee."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:talos-coffee"
+  },
+  {
+    "id": "cdb-tennesee-mud",
+    "name": "Tennesee Mud",
+    "description": "Tennesee Mud — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-espresso",
+        "amount": "8 oz"
+      },
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "4 oz"
+      }
+    ],
+    "steps": [
+      "Mix Coffee, Jack Daniels and Amaretto.",
+      "Add Cream on top."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tennesee-mud"
+  },
+  {
+    "id": "cdb-tequila-fizz",
+    "name": "Tequila Fizz",
+    "description": "Tequila Fizz — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 tblsp"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except ginger ale) with ice and strain into a collins glass over ice cubes.",
+      "Fill with ginger ale, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tequila-fizz"
+  },
+  {
+    "id": "cdb-tequila-sour",
+    "name": "Tequila Sour",
+    "description": "Tequila Sour — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake tequila, juice of lemon, and powdered sugar with ice and strain into a whiskey sour glass.",
+      "Add the half-slice of lemon, top with the cherry, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tequila-sour"
+  },
+  {
+    "id": "cdb-the-last-word",
+    "name": "The Last Word",
+    "description": "The Last Word — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1 oz",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Shake with ice and strain into a cocktail glass."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:the-last-word"
+  },
+  {
+    "id": "cdb-turf-cocktail",
+    "name": "Turf Cocktail",
+    "description": "Turf Cocktail — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "2 dashes",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "Twist of",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Stir all ingredients (except orange peel) with ice and strain into a cocktail glass.",
+      "Add the twist of orange peel and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:turf-cocktail"
+  },
+  {
+    "id": "cdb-the-laverstoke",
+    "name": "The Laverstoke",
+    "description": "The Laverstoke — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "50 ml"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "15 ml"
+      },
+      {
+        "ingredientId": "mixer-tonic",
+        "amount": "75 ml"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "2 Wedges"
+      },
+      {
+        "ingredientId": "garnish-mint",
+        "amount": "1 Large Sprig",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "1) Squeeze two lime wedges into a balloon glass then add the cordial, Bombay Sapphire and MARTINI Rosso Vermouth, swirl to mix.",
+      "2) Fully fill the glass with cubed ice and stir to chill.",
+      "3) Top with Fever-Tree Ginger Ale and gently stir again to combine.",
+      "4) Garnish with a snapped ginger slice and an awoken mint sprig."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:the-laverstoke"
+  },
+  {
+    "id": "cdb-tequila-slammer",
+    "name": "Tequila Slammer",
+    "description": "Tequila Slammer — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "build",
+    "glass": "hurricane",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "1 part"
+      }
+    ],
+    "steps": [
+      "Mix carefully to avoid releasing the dissolved CO2."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tequila-slammer"
+  },
+  {
+    "id": "cdb-tequila-sunrise",
+    "name": "Tequila Sunrise",
+    "description": "Tequila Sunrise — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "2 measures"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Pour the tequila and orange juice into glass over ice.",
+      "Add the grenadine, which will sink to the bottom.",
+      "Stir gently to create the sunrise effect.",
+      "Garnish and serve."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tequila-sunrise"
+  },
+  {
+    "id": "cdb-the-philosopher",
+    "name": "The Philosopher",
+    "description": "The Philosopher — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "liqueur-melon",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "1 dash",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 dash"
+      },
+      {
+        "ingredientId": "wine-prosecco",
+        "amount": "Top"
+      }
+    ],
+    "steps": [
+      "Add all the spirits in a shaker (best to use Hendricks gin) as well as the orange bitters and lemon juice.",
+      "Strain into a Margarita glass, top with Prosecco."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:the-philosopher"
+  },
+  {
+    "id": "cdb-tuxedo-cocktail",
+    "name": "Tuxedo Cocktail",
+    "description": "Tuxedo Cocktail — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1/4 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "2 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Stir all ingredients with ice and strain into a cocktail glass.",
+      "Garnish with a cherry and a twist of lemon zest."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tuxedo-cocktail"
+  },
+  {
+    "id": "cdb-tequila-surprise",
+    "name": "Tequila Surprise",
+    "description": "Tequila Surprise — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "full glass"
+      }
+    ],
+    "steps": [
+      "Fill shot glass with Tequila.",
+      "Add drops of Tobasco sauce."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:tequila-surprise"
+  },
+  {
+    "id": "cdb-the-jimmy-conway",
+    "name": "The Jimmy Conway",
+    "description": "The Jimmy Conway — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rye",
+        "amount": "50 ml"
+      },
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "50 ml"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "4 oz"
+      }
+    ],
+    "steps": [
+      "Fill glass with ice\nPour in The Irishman and Disaronno\nFill to the top with Cranberry Juice\nGarnish with a slice of lemon…Enjoy!."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:the-jimmy-conway"
+  },
+  {
+    "id": "cdb-vesper",
+    "name": "Vesper",
+    "description": "Vesper — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "6 cl"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1.5 cl"
+      }
+    ],
+    "steps": [
+      "Shake over ice until well chilled, then strain into a deep goblet and garnish with a thin slice of lemon peel."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vesper"
+  },
+  {
+    "id": "cdb-victor",
+    "name": "Victor",
+    "description": "Victor — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:victor"
+  },
+  {
+    "id": "cdb-vampiro",
+    "name": "Vampiro",
+    "description": "Vampiro — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "blend",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "6 cl"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "3 cl"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1.5 cl"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 dash"
+      },
+      {
+        "ingredientId": "garnish-salt",
+        "amount": "1 pinch",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Vampiros may be made in a tall glass or an old fashioned glass.",
+      "Bartenders may first \"rim\" the glass with Kosher Salt, which is done by placing a layer of Kosher Salt on a chopping board, moistening the glass' rim with lime juice or water, and then placing the upside down glass rim onto the Kosher Salt, so that the salt sticks to the moistened rim.",
+      "The second step is to fill half the glass with ice and add one or two shooter glasses full of high quality Tequila.",
+      "The next stage is to add the flavouring elements.",
+      "This is done by squeezing a fresh lime into the glass, adding a few grains of salt, adding citrus-flavoured soda pop, until the glass is 4/5 full, and then adding spicy Viuda de Sanchez (or orange juice, lime juice and pico de gallo).",
+      "The final step is to stir the ingredients so that the flavours are properly blended."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vampiro"
+  },
+  {
+    "id": "cdb-vesuvio",
+    "name": "Vesuvio",
+    "description": "Vesuvio — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into an old-fashioned glass over ice cubes, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vesuvio"
+  },
+  {
+    "id": "cdb-veteran",
+    "name": "Veteran",
+    "description": "Veteran — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1/2 oz"
+      }
+    ],
+    "steps": [
+      "Pour the rum and cherry brandy into an old-fashioned glass almost filled with ice cubes.",
+      "Stir well."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:veteran"
+  },
+  {
+    "id": "cdb-van-vleet",
+    "name": "Van Vleet",
+    "description": "Van Vleet — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "3 oz"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into an old-fashioned glass over ice cubes, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:van-vleet"
+  },
+  {
+    "id": "cdb-vodka-fizz",
+    "name": "Vodka Fizz",
+    "description": "Vodka Fizz — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "blend",
+    "glass": "wine",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      }
+    ],
+    "steps": [
+      "Blend all ingredients, save nutmeg.",
+      "Pour into large white wine glass and sprinkle nutmeg on top."
+    ],
+    "tags": [
+      "other / unknown",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vodka-fizz"
+  },
+  {
+    "id": "cdb-vodka-lemon",
+    "name": "Vodka Lemon",
+    "description": "Vodka Lemon — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "5 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "7 cl"
+      }
+    ],
+    "steps": [
+      "The vodka lemon is prepared directly in a highball glass or in a large tumbler: put 6-7 ice cubes in the glass, pour the vodka, lemonade and mix with a bar spoon.",
+      "Finally decorate with a slice of lemon and, if you prefer, add a few mint leaves.",
+      "Your vodka lemon is ready to be served."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vodka-lemon"
+  },
+  {
+    "id": "cdb-vodka-slime",
+    "name": "Vodka Slime",
+    "description": "Vodka Slime — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "1 cup"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1/2 shot"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 shot"
+      }
+    ],
+    "steps": [
+      "Fill glass with ice.",
+      "Add vodka, 7-up then finish with the lime juice."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vodka-slime"
+  },
+  {
+    "id": "cdb-vodka-tonic",
+    "name": "Vodka Tonic",
+    "description": "Vodka Tonic — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "4 cl"
+      },
+      {
+        "ingredientId": "mixer-tonic",
+        "amount": "10 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 Slice"
+      }
+    ],
+    "steps": [
+      "Wash and cut 1 wedge and 1 slice of lime or lemon.",
+      "Fill a tumbler with fresh ice.",
+      "Pour the desired dose of vodka and top up with the tonic.",
+      "Squeeze the lime wedge into the glass and decorate with the slice.",
+      "That's all, very simple: it's just the recipe for happiness!."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vodka-tonic"
+  },
+  {
+    "id": "cdb-vodka-martini",
+    "name": "Vodka Martini",
+    "description": "Vodka Martini — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "garnish-olive",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake the vodka and vermouth together with a number of ice cubes, strain into a cocktail glass, add the olive and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vodka-martini"
+  },
+  {
+    "id": "cdb-vodka-russian",
+    "name": "Vodka Russian",
+    "description": "Vodka Russian — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Mix it as a ordinary drink."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vodka-russian"
+  },
+  {
+    "id": "cdb-vermouth-cassis",
+    "name": "Vermouth Cassis",
+    "description": "Vermouth Cassis — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-dry",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Stir vermouth and creme de cassis in a highball glass with ice cubes.",
+      "Fill with carbonated water, stir again, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vermouth-cassis"
+  },
+  {
+    "id": "cdb-victory-collins",
+    "name": "Victory Collins",
+    "description": "Victory Collins — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "3 oz"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "1 slice",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake all ingredients (except orange slice) with ice and strain into a collins glass over ice cubes.",
+      "Add the slice of orange and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:victory-collins"
+  },
+  {
+    "id": "cdb-vodka-and-tonic",
+    "name": "Vodka And Tonic",
+    "description": "Vodka And Tonic — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-tonic",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "Pour vodka into a highball glass over ice cubes.",
+      "Fill with tonic water, stir, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:vodka-and-tonic"
+  },
+  {
+    "id": "cdb-valencia-cocktail",
+    "name": "Valencia Cocktail",
+    "description": "Valencia Cocktail — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 tblsp"
+      },
+      {
+        "ingredientId": "bitter-orange",
+        "amount": "2 dashes",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:valencia-cocktail"
+  },
+  {
+    "id": "cdb-whisky-mac",
+    "name": "Whisky Mac",
+    "description": "Whisky Mac — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-scotch",
+        "amount": "1 1/2 oz"
+      }
+    ],
+    "steps": [
+      "Pour both of the ingredients into a wine goblet with no ice."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:whisky-mac"
+  },
+  {
+    "id": "cdb-white-lady",
+    "name": "White Lady",
+    "description": "White Lady — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "4cl"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "3cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "2cl"
+      }
+    ],
+    "steps": [
+      "Add all ingredients into cocktail shaker filled with ice.",
+      "Shake well and strain into large cocktail glass."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:white-lady"
+  },
+  {
+    "id": "cdb-wine-punch",
+    "name": "Wine Punch",
+    "description": "Wine Punch — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "2"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 cup"
+      },
+      {
+        "ingredientId": "citrus-orange",
+        "amount": "3",
+        "optional": true
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 cup"
+      }
+    ],
+    "steps": [
+      "Combine all of the ingredients and pour over a block of ice."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:wine-punch"
+  },
+  {
+    "id": "cdb-winter-rita",
+    "name": "Winter Rita",
+    "description": "Winter Rita — klasik kokteyl.",
+    "emoji": "🟥",
+    "technique": "shake",
+    "glass": "highball",
+    "difficulty": "zor",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "1 2/3 oz"
+      },
+      {
+        "ingredientId": "liqueur-campari",
+        "amount": "1/4 oz"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "sweet-simple-syrup",
+        "amount": "1/2 oz"
+      },
+      {
+        "ingredientId": "garnish-salt",
+        "amount": "Dash",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Salt rim.",
+      "Combine all ingredients, shake with ice, and strain over fresh ice.⠀."
+    ],
+    "tags": [
+      "beer",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:winter-rita"
+  },
+  {
+    "id": "cdb-whiskey-sour",
+    "name": "Whiskey Sour",
+    "description": "Whiskey Sour — klasik kokteyl.",
+    "emoji": "🥃",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-bourbon",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "Juice of 1/2"
+      },
+      {
+        "ingredientId": "garnish-sugar",
+        "amount": "1/2 tsp",
+        "optional": true
+      },
+      {
+        "ingredientId": "garnish-cherry",
+        "amount": "1",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Shake with ice.",
+      "Strain into chilled glass, garnish and serve.",
+      "If served 'On the rocks', strain ingredients into old-fashioned glass filled with ice."
+    ],
+    "tags": [
+      "ordinary drink",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:whiskey-sour"
+  },
+  {
+    "id": "cdb-white-russian",
+    "name": "White Russian",
+    "description": "White Russian — klasik kokteyl.",
+    "emoji": "☕",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-coffee",
+        "amount": "1 oz"
+      }
+    ],
+    "steps": [
+      "Pour vodka and coffee liqueur over ice cubes in an old-fashioned glass.",
+      "Fill with light cream and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:white-russian"
+  },
+  {
+    "id": "cdb-winter-paloma",
+    "name": "Winter Paloma",
+    "description": "Winter Paloma — klasik kokteyl.",
+    "emoji": "🌵",
+    "technique": "blend",
+    "glass": "highball",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "2 shots"
+      },
+      {
+        "ingredientId": "citrus-grapefruit",
+        "amount": "Top"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "Juice of 1"
+      },
+      {
+        "ingredientId": "sweet-agave",
+        "amount": "1 tsp"
+      }
+    ],
+    "steps": [
+      "Everyone’s favourite Paloma gets a delicious Indian makeover.",
+      "Tequila reposado infused with “Timur Pepper” which has citrusy & grapefruit notes and is grown at the foothills of Himalaya.",
+      "It also produces a slightly numbing and tingling sensation on your lip when consumed.",
+      "We have also spiced up the fresh grapefruit juice with the warming spice blend from Himalaya.",
+      "The combination of all these interesting elements has allowed us to elevate your Paloma sipping experience."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:winter-paloma"
+  },
+  {
+    "id": "cdb-whitecap-margarita",
+    "name": "Whitecap Margarita",
+    "description": "Whitecap Margarita — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "blend",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-tequila",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "liqueur-coconut",
+        "amount": "1/4 cup"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "3 tblsp fresh"
+      }
+    ],
+    "steps": [
+      "Place all ingredients in a blender and blend until smooth.",
+      "This makes one drink."
+    ],
+    "tags": [
+      "other / unknown",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:whitecap-margarita"
+  },
+  {
+    "id": "cdb-waikiki-beachcomber",
+    "name": "Waikiki Beachcomber",
+    "description": "Waikiki Beachcomber — klasik kokteyl.",
+    "emoji": "🌿",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "spirit-gin",
+        "amount": "3/4 oz"
+      },
+      {
+        "ingredientId": "mixer-pineapple",
+        "amount": "1 tblsp"
+      }
+    ],
+    "steps": [
+      "Shake all ingredients with ice, strain into a cocktail glass, and serve."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:waikiki-beachcomber"
+  },
+  {
+    "id": "cdb-yellow-bird",
+    "name": "Yellow Bird",
+    "description": "Yellow Bird — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "3 cl"
+      },
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "1.5 cl"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1.5 cl"
+      }
+    ],
+    "steps": [
+      "Shake and strain into a chilled cocktail glass."
+    ],
+    "tags": [
+      "cocktail",
+      "iba"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:yellow-bird"
+  },
+  {
+    "id": "cdb-zorro",
+    "name": "Zorro",
+    "description": "Zorro — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-baileys",
+        "amount": "2 cl"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "2 cl"
+      }
+    ],
+    "steps": [
+      "add all and pour black coffee and add whipped cream on top."
+    ],
+    "tags": [
+      "coffee / tea",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:zorro"
+  },
+  {
+    "id": "cdb-zoksel",
+    "name": "Zoksel",
+    "description": "Zoksel — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "mixer-cola",
+        "amount": "slice"
+      },
+      {
+        "ingredientId": "liqueur-creme-de-cacao",
+        "amount": "tatlandırıcı"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "tatlandırıcı"
+      }
+    ],
+    "steps": [
+      "No specific mixing instructions, just poor every ingredient in one glass.",
+      "The lemon goes with it."
+    ],
+    "tags": [
+      "soft drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:zoksel"
+  },
+  {
+    "id": "cdb-zombie",
+    "name": "Zombie",
+    "description": "Zombie — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "blend",
+    "glass": "hurricane",
+    "difficulty": "orta",
+    "prepTimeMinutes": 6,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 1/2 oz"
+      },
+      {
+        "ingredientId": "sweet-grenadine",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "citrus-lime",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredientId": "bitter-angostura",
+        "amount": "1 drop",
+        "optional": true
+      }
+    ],
+    "steps": [
+      "Blend at high speed for no more than 5 seconds.",
+      "Pour into a glass, add ice cubes to fill, then add the garnish.",
+      "*Donn’s mix: Bring 3 crushed cinnamon sticks, 1 cup of sugar and 1 cup of water to a boil, stirring until the sugar is dissolved.",
+      "Simmer for 2 minutes, then remove from the heat and let sit for at least 2 hours before straining into a clean glass bottle.",
+      "Then add 1 part of the syrup and 2 parts of fresh grapefruit juice together."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:zombie"
+  },
+  {
+    "id": "cdb-zorbatini",
+    "name": "Zorbatini",
+    "description": "Zorbatini — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 1/4 oz Stoli"
+      }
+    ],
+    "steps": [
+      "Prepare like a Martini.",
+      "Garnish with a green olive."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:zorbatini"
+  },
+  {
+    "id": "cdb-zipperhead",
+    "name": "Zipperhead",
+    "description": "Zipperhead — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-soda",
+        "amount": "Fill with"
+      }
+    ],
+    "steps": [
+      "Fill glass with rocks, add straw before putting in liquor.",
+      "Then add the ingredients in order, trying to keep layered as much as possible (i.e.",
+      "Chambord on bottom, then Vodka, Then soda on top)."
+    ],
+    "tags": [
+      "shot",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:zipperhead"
+  },
+  {
+    "id": "cdb-zizi-coin-coin",
+    "name": "Zizi Coin-coin",
+    "description": "Zizi Coin-coin — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-triple-sec",
+        "amount": "5 cl"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "2 cl"
+      }
+    ],
+    "steps": [
+      "Pour 5cl of Cointreau on ice, add 2cl of fresh lemon (or lime) juice, stir gently, and finally add slices of lemon/lime in glass."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:zizi-coin-coin"
+  },
+  {
+    "id": "cdb-zimadori-zinger",
+    "name": "Zimadori Zinger",
+    "description": "Zimadori Zinger — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-melon",
+        "amount": "1.5 oz"
+      }
+    ],
+    "steps": [
+      "Pour Zima in a collins glass over ice and then pour the shot of Midori.",
+      "Don't stir.",
+      "Garnish with a cherry."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:zimadori-zinger"
+  },
+  {
+    "id": "cdb-zippy-s-revenge",
+    "name": "Zippy's Revenge",
+    "description": "Zippy's Revenge — klasik kokteyl.",
+    "emoji": "🍹",
+    "technique": "shake",
+    "glass": "rocks",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz"
+      }
+    ],
+    "steps": [
+      "Mix Kool-Aid to taste then add Rum and ammaretto.",
+      "shake well to disolve the sugar in the Kool-Aid..",
+      "serve cold."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:zippy-s-revenge"
+  },
+  {
+    "id": "cdb-ziemes-martini-apfelsaft",
+    "name": "Ziemes Martini Apfelsaft",
+    "description": "Ziemes Martini Apfelsaft — klasik kokteyl.",
+    "emoji": "🍸",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-vermouth-sweet",
+        "amount": "4 cl"
+      }
+    ],
+    "steps": [
+      "Serve without ice.",
+      "At least the juice shold have room temperature."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:ziemes-martini-apfelsaft"
+  },
+  {
+    "id": "cdb-155-belmont",
+    "name": "155 Belmont",
+    "description": "Ferahlık veren bir içecek, havuç ile sunumu zenginleştirir.",
+    "emoji": "🍹",
+    "technique": "blend",
+    "glass": "wine",
+    "difficulty": "orta",
+    "prepTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-dark",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 shots"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 shot"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1 shot"
+      }
+    ],
+    "steps": [
+      "1. Buz ile karıştırın.",
+      "2. Şarap kadehinde servis edin.",
+      "3. Havuç ile süsleyin."
+    ],
+    "tags": [
+      "cocktail",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:155-belmont"
+  },
+  {
     "id": "cdb-110-in-the-shade",
     "name": "110 in the shade",
     "description": "Bira ile hafif ve ferah bir içecek, keyifli bir atıştırmalık.",
@@ -73,46 +12969,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:151-florida-bushwacker"
-  },
-  {
-    "id": "cdb-155-belmont",
-    "name": "155 Belmont",
-    "description": "Ferahlık veren bir içecek, havuç ile sunumu zenginleştirir.",
-    "emoji": "🍹",
-    "technique": "blend",
-    "glass": "wine",
-    "difficulty": "orta",
-    "prepTimeMinutes": 5,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-rum-dark",
-        "amount": "1 shot"
-      },
-      {
-        "ingredientId": "spirit-rum-white",
-        "amount": "2 shots"
-      },
-      {
-        "ingredientId": "spirit-vodka",
-        "amount": "1 shot"
-      },
-      {
-        "ingredientId": "mixer-orange-juice",
-        "amount": "1 shot"
-      }
-    ],
-    "steps": [
-      "1. Buz ile karıştırın.",
-      "2. Şarap kadehinde servis edin.",
-      "3. Havuç ile süsleyin."
-    ],
-    "tags": [
-      "cocktail",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:155-belmont"
   },
   {
     "id": "cdb-252",
@@ -505,6 +13361,42 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:9-1-2-weeks"
   },
   {
+    "id": "cdb-a-furlong-too-late",
+    "name": "A Furlong Too Late",
+    "description": "A Furlong Too Late, baharatlı ve ferah bir içecek, limon twist ile süslenir.",
+    "emoji": "🍹",
+    "technique": "stir",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-rum-white",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "citrus-lemon",
+        "amount": "1 twist of"
+      }
+    ],
+    "steps": [
+      "1. Rom ve zencefilli birayı neredeyse buz dolu bir yüksek bardağa dökün.",
+      "2. İyi karıştırın.",
+      "3. Limon twist ile süsleyin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:a-furlong-too-late"
+  },
+  {
     "id": "cdb-a-day-at-the-beach",
     "name": "A Day at the Beach",
     "description": "A Day at the Beach, tropikal ve tatlı bir içecek, ananas ve çilek ile süslenir.",
@@ -545,42 +13437,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:a-day-at-the-beach"
   },
   {
-    "id": "cdb-a-furlong-too-late",
-    "name": "A Furlong Too Late",
-    "description": "A Furlong Too Late, baharatlı ve ferah bir içecek, limon twist ile süslenir.",
-    "emoji": "🍹",
-    "technique": "stir",
-    "glass": "highball",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-rum-white",
-        "amount": "2 oz"
-      },
-      {
-        "ingredientId": "mixer-ginger-beer",
-        "amount": "4 oz"
-      },
-      {
-        "ingredientId": "citrus-lemon",
-        "amount": "1 twist of"
-      }
-    ],
-    "steps": [
-      "1. Rom ve zencefilli birayı neredeyse buz dolu bir yüksek bardağa dökün.",
-      "2. İyi karıştırın.",
-      "3. Limon twist ile süsleyin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:a-furlong-too-late"
-  },
-  {
     "id": "cdb-a-gilligan-s-island",
     "name": "A Gilligan's Island",
     "description": "Ferah ve hafif bir içecek, yaz akşamları için ideal.",
@@ -617,6 +13473,34 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:a-gilligan-s-island"
+  },
+  {
+    "id": "cdb-a-piece-of-ass",
+    "name": "A Piece of Ass",
+    "description": "Tatlı ve ekşi bir karışım, hızlı bir içim için ideal.",
+    "emoji": "🍹",
+    "technique": "build",
+    "glass": "highball",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 2,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "liqueur-amaretto",
+        "amount": "1 shot"
+      }
+    ],
+    "steps": [
+      "1. Bardağa buz koyun.",
+      "2. Shotları dökün.",
+      "3. Ekşi karışım ile doldurun."
+    ],
+    "tags": [
+      "other / unknown",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:a-piece-of-ass"
   },
   {
     "id": "cdb-a-night-in-old-mandalay",
@@ -659,34 +13543,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:a-night-in-old-mandalay"
-  },
-  {
-    "id": "cdb-a-piece-of-ass",
-    "name": "A Piece of Ass",
-    "description": "Tatlı ve ekşi bir karışım, hızlı bir içim için ideal.",
-    "emoji": "🍹",
-    "technique": "build",
-    "glass": "highball",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 2,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "liqueur-amaretto",
-        "amount": "1 shot"
-      }
-    ],
-    "steps": [
-      "1. Bardağa buz koyun.",
-      "2. Shotları dökün.",
-      "3. Ekşi karışım ile doldurun."
-    ],
-    "tags": [
-      "other / unknown",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:a-piece-of-ass"
   },
   {
     "id": "cdb-a-splash-of-nash",
@@ -762,32 +13618,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:a-true-amaretto-sour"
   },
   {
-    "id": "cdb-a-j",
-    "name": "A. J.",
-    "description": "Hafif ve ferahlatıcı bir kokteyl, klasik bir seçim.",
-    "emoji": "🍹",
-    "technique": "shake",
-    "glass": "coupe",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "citrus-grapefruit",
-        "amount": "1 oz"
-      }
-    ],
-    "steps": [
-      "1. Malzemeleri buz ile çalkalayın, kokteyl bardağına süzün ve servis edin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:a-j"
-  },
-  {
     "id": "cdb-a-d-m-after-dinner-mint",
     "name": "A.D.M. (After Dinner Mint)",
     "description": "Ferahlık veren bir içecek, akşam yemeklerinden sonra ideal.",
@@ -816,44 +13646,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:a-d-m-after-dinner-mint"
-  },
-  {
-    "id": "cdb-a1",
-    "name": "A1",
-    "description": "Tatlı ve yoğun bir karışım, serinletici bir içecek deneyimi sunar.",
-    "emoji": "🌿",
-    "technique": "shake",
-    "glass": "coupe",
-    "difficulty": "orta",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-gin",
-        "amount": "1 3/4 shot"
-      },
-      {
-        "ingredientId": "liqueur-triple-sec",
-        "amount": "1 Shot"
-      },
-      {
-        "ingredientId": "citrus-lemon",
-        "amount": "1/4 Shot"
-      },
-      {
-        "ingredientId": "sweet-grenadine",
-        "amount": "1/8 Shot"
-      }
-    ],
-    "steps": [
-      "1. Tüm malzemeleri bir kokteyl shaker'ına dökün, karıştırın ve soğutulmuş bir bardağa buz ile servis edin."
-    ],
-    "tags": [
-      "cocktail",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:a1"
   },
   {
     "id": "cdb-abbey-cocktail",
@@ -935,71 +13727,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:abbey-martini"
-  },
-  {
-    "id": "cdb-abc",
-    "name": "ABC",
-    "description": "Tatlı ve yoğun bir shot, katmanlı sunumu ile dikkat çeker.",
-    "emoji": "🍹",
-    "technique": "build",
-    "glass": "rocks",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 2,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "liqueur-amaretto",
-        "amount": "1/3"
-      },
-      {
-        "ingredientId": "liqueur-baileys",
-        "amount": "1/3"
-      },
-      {
-        "ingredientId": "spirit-cognac",
-        "amount": "1/3"
-      }
-    ],
-    "steps": [
-      "1. Shot bardağında katmanlı olarak hazırlayın."
-    ],
-    "tags": [
-      "shot",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:abc"
-  },
-  {
-    "id": "cdb-abilene",
-    "name": "Abilene",
-    "description": "Ferahlatıcı ve hafif bir içecek, buz ile dolu bir bardakta servis edilir.",
-    "emoji": "🍹",
-    "technique": "stir",
-    "glass": "highball",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-rum-dark",
-        "amount": "1 1/2 oz"
-      },
-      {
-        "ingredientId": "mixer-orange-juice",
-        "amount": "3 oz"
-      }
-    ],
-    "steps": [
-      "1. Tüm malzemeleri neredeyse buz dolu bir highball bardağına dökün.",
-      "2. İyice karıştırın."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:abilene"
   },
   {
     "id": "cdb-absolut-evergreen",
@@ -1146,6 +13873,41 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:absolut-stress-2"
   },
   {
+    "id": "cdb-absolutely-cranberry-smash",
+    "name": "Absolutely Cranberry Smash",
+    "description": "Tatlı ve ekşi bir karışım, ferahlatıcı bir içecek.",
+    "emoji": "💗",
+    "technique": "stir",
+    "glass": "coupe",
+    "difficulty": "kolay",
+    "prepTimeMinutes": 4,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "2 oz"
+      },
+      {
+        "ingredientId": "mixer-cranberry",
+        "amount": "4 oz"
+      },
+      {
+        "ingredientId": "mixer-ginger-beer",
+        "amount": "2 oz"
+      }
+    ],
+    "steps": [
+      "1. Malzemeleri bir arada karıştırın.",
+      "2. Buz üzerinde servis edin."
+    ],
+    "tags": [
+      "ordinary drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:absolutely-cranberry-smash"
+  },
+  {
     "id": "cdb-absolut-summertime",
     "name": "Absolut Summertime",
     "description": "Ferah ve tatlı bir yaz kokteyli, limon ile dengelenmiş.",
@@ -1185,41 +13947,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:absolut-summertime"
-  },
-  {
-    "id": "cdb-absolutely-cranberry-smash",
-    "name": "Absolutely Cranberry Smash",
-    "description": "Tatlı ve ekşi bir karışım, ferahlatıcı bir içecek.",
-    "emoji": "💗",
-    "technique": "stir",
-    "glass": "coupe",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-vodka",
-        "amount": "2 oz"
-      },
-      {
-        "ingredientId": "mixer-cranberry",
-        "amount": "4 oz"
-      },
-      {
-        "ingredientId": "mixer-ginger-beer",
-        "amount": "2 oz"
-      }
-    ],
-    "steps": [
-      "1. Malzemeleri bir arada karıştırın.",
-      "2. Buz üzerinde servis edin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:absolutely-cranberry-smash"
   },
   {
     "id": "cdb-absolutely-fabulous",
@@ -1294,117 +14021,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:absolutly-screwed-up"
-  },
-  {
-    "id": "cdb-acapulco",
-    "name": "Acapulco",
-    "description": "Taze nane ile ferahlatıcı bir tropikal kokteyl.",
-    "emoji": "🍹",
-    "technique": "shake",
-    "glass": "rocks",
-    "difficulty": "orta",
-    "prepTimeMinutes": 5,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-rum-white",
-        "amount": "1 1/2 oz"
-      },
-      {
-        "ingredientId": "liqueur-triple-sec",
-        "amount": "1 1/2 tsp"
-      },
-      {
-        "ingredientId": "citrus-lime",
-        "amount": "1 tblsp"
-      },
-      {
-        "ingredientId": "garnish-sugar",
-        "amount": "1 tsp",
-        "optional": true
-      },
-      {
-        "ingredientId": "garnish-mint",
-        "amount": "1",
-        "optional": true
-      }
-    ],
-    "steps": [
-      "1. Tüm malzemeleri (nane hariç) buz ile birleştirip çalkalayın ve bir eski moda bardağa süzün.",
-      "2. Nane dalını ekleyin ve servis edin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:acapulco"
-  },
-  {
-    "id": "cdb-acid",
-    "name": "ACID",
-    "description": "Ateşli ve yoğun bir içecek, cesur tatlar arayanlar için.",
-    "emoji": "🥃",
-    "technique": "build",
-    "glass": "rocks",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 2,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-rum-dark",
-        "amount": "1 oz Bacardi"
-      },
-      {
-        "ingredientId": "spirit-bourbon",
-        "amount": "1 oz"
-      }
-    ],
-    "steps": [
-      "1. Önce 151'i, ardından 101'i dökün ve bir Coke veya Dr Pepper ile servis edin."
-    ],
-    "tags": [
-      "shot",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:acid"
-  },
-  {
-    "id": "cdb-adam",
-    "name": "Adam",
-    "description": "Tatlı ve dengeli bir kokteyl, klasik bir lezzet.",
-    "emoji": "🍹",
-    "technique": "shake",
-    "glass": "coupe",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-rum-dark",
-        "amount": "2 oz"
-      },
-      {
-        "ingredientId": "citrus-lemon",
-        "amount": "1 oz"
-      },
-      {
-        "ingredientId": "sweet-grenadine",
-        "amount": "1 tsp"
-      }
-    ],
-    "steps": [
-      "1. Buz dolu bir shaker'a tüm malzemeleri ekleyin.",
-      "2. İyice çalkalayın.",
-      "3. Bir kokteyl bardağına süzün."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:adam"
   },
   {
     "id": "cdb-adam-eve",
@@ -1528,71 +14144,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:adam-sunrise"
   },
   {
-    "id": "cdb-addington",
-    "name": "Addington",
-    "description": "Hafif ve ferahlatıcı bir kokteyl, vermutların uyumunu sunar.",
-    "emoji": "🍹",
-    "technique": "shake",
-    "glass": "coupe",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "liqueur-vermouth-sweet",
-        "amount": "2 shots"
-      },
-      {
-        "ingredientId": "liqueur-vermouth-dry",
-        "amount": "1 shot"
-      },
-      {
-        "ingredientId": "mixer-soda",
-        "amount": "Top up with"
-      }
-    ],
-    "steps": [
-      "1. İki vermutu bir şakere karıştırın ve soğuk bir bardağa süzün.",
-      "2. Soda suyu ile tamamlayın."
-    ],
-    "tags": [
-      "cocktail",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:addington"
-  },
-  {
-    "id": "cdb-addison",
-    "name": "Addison",
-    "description": "Hafif ve dengeli bir tat sunan, klasik bir kokteyl.",
-    "emoji": "🌿",
-    "technique": "shake",
-    "glass": "martini",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-gin",
-        "amount": "1 1/2 shot"
-      },
-      {
-        "ingredientId": "liqueur-vermouth-sweet",
-        "amount": "1 1/2 shot"
-      }
-    ],
-    "steps": [
-      "1. Tüm malzemeleri karıştırın ve soğuk bir bardağa süzün."
-    ],
-    "tags": [
-      "cocktail",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:addison"
-  },
-  {
     "id": "cdb-addison-special",
     "name": "Addison Special",
     "description": "Tatlı ve meyvemsi bir lezzet sunan, özel bir kokteyl.",
@@ -1704,82 +14255,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:adonis-cocktail"
-  },
-  {
-    "id": "cdb-affair",
-    "name": "Affair",
-    "description": "Tatlı ve meyvemsi bir karışım, ferahlatıcı bir içecek.",
-    "emoji": "💗",
-    "technique": "build",
-    "glass": "highball",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 2,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "mixer-orange-juice",
-        "amount": "2 oz"
-      },
-      {
-        "ingredientId": "mixer-cranberry",
-        "amount": "2 oz"
-      },
-      {
-        "ingredientId": "mixer-soda",
-        "amount": "tatlandırıcı"
-      }
-    ],
-    "steps": [
-      "1. Schnapps, portakal suyu ve kızılcık suyunu bir yüksekball bardağına buz üzerine dökün.",
-      "2. Kulüp sodası ile tamamlayın ve servis edin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:affair"
-  },
-  {
-    "id": "cdb-affinity",
-    "name": "Affinity",
-    "description": "Affinity, dengeli ve hafif acı bir tat profiline sahip zarif bir kokteyl.",
-    "emoji": "🥃",
-    "technique": "stir",
-    "glass": "coupe",
-    "difficulty": "orta",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-scotch",
-        "amount": "1 1/2 oz"
-      },
-      {
-        "ingredientId": "liqueur-vermouth-sweet",
-        "amount": "1 oz"
-      },
-      {
-        "ingredientId": "liqueur-vermouth-dry",
-        "amount": "1 oz"
-      },
-      {
-        "ingredientId": "bitter-orange",
-        "amount": "2 dashes",
-        "optional": true
-      }
-    ],
-    "steps": [
-      "1. Buz dolu bir karıştırma bardağında tüm malzemeleri birleştirin.",
-      "2. İyice karıştırın.",
-      "3. Kokteyl bardağına süzün."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:affinity"
   },
   {
     "id": "cdb-after-dinner-cocktail",
@@ -2022,37 +14497,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:alaska-cocktail"
   },
   {
-    "id": "cdb-alexander",
-    "name": "Alexander",
-    "description": "Zengin ve kremsi bir tat profiline sahip, hafif baharatlı bir kokteyl.",
-    "emoji": "🌿",
-    "technique": "shake",
-    "glass": "coupe",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-gin",
-        "amount": "1/2 oz"
-      },
-      {
-        "ingredientId": "liqueur-creme-de-cacao",
-        "amount": "1/2 oz white"
-      }
-    ],
-    "steps": [
-      "1. Tüm malzemeleri buzla çalkalayın ve bir kokteyl bardağına süzün.",
-      "2. Üzerine muskat serpin ve servis edin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "iba"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:alexander"
-  },
-  {
     "id": "cdb-alfie-cocktail",
     "name": "Alfie Cocktail",
     "description": "Tatlı ve ferah bir içecek, dengeli bir lezzet sunar.",
@@ -2087,40 +14531,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:alfie-cocktail"
   },
   {
-    "id": "cdb-algonquin",
-    "name": "Algonquin",
-    "description": "Hafif ekşi ve tatlı bir dengeye sahip, ferahlatıcı bir kokteyl.",
-    "emoji": "🥃",
-    "technique": "shake",
-    "glass": "coupe",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-bourbon",
-        "amount": "1 1/2 oz"
-      },
-      {
-        "ingredientId": "liqueur-vermouth-dry",
-        "amount": "1 oz"
-      },
-      {
-        "ingredientId": "mixer-pineapple",
-        "amount": "1 oz"
-      }
-    ],
-    "steps": [
-      "1. Tüm malzemeleri buzla birleştirip çalkalayın, kokteyl bardağına süzün ve servis edin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:algonquin"
-  },
-  {
     "id": "cdb-alice-in-wonderland",
     "name": "Alice in Wonderland",
     "description": "Tatlı ve renkli bir içecek, eğlenceli bir deneyim sunar.",
@@ -2151,45 +14561,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:alice-in-wonderland"
   },
   {
-    "id": "cdb-allegheny",
-    "name": "Allegheny",
-    "description": "Yoğun ve aromatik bir tat profili, limon kabuğuyla ferahlatır.",
-    "emoji": "🥃",
-    "technique": "shake",
-    "glass": "coupe",
-    "difficulty": "orta",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "liqueur-vermouth-dry",
-        "amount": "1 oz"
-      },
-      {
-        "ingredientId": "spirit-bourbon",
-        "amount": "1 oz"
-      },
-      {
-        "ingredientId": "spirit-cognac",
-        "amount": "1 1/2 tsp"
-      },
-      {
-        "ingredientId": "citrus-lemon",
-        "amount": "1 1/2 tsp"
-      }
-    ],
-    "steps": [
-      "1. Tüm malzemeleri (limon kabuğu hariç) buzla çalkalayın ve bir kokteyl bardağına süzün.",
-      "2. Limon kabuğu ile süsleyin ve servis edin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:allegheny"
-  },
-  {
     "id": "cdb-allies-cocktail",
     "name": "Allies Cocktail",
     "description": "Hafif acı ve tatlı bir denge sunan, klasik bir kokteyl.",
@@ -2218,38 +14589,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:allies-cocktail"
-  },
-  {
-    "id": "cdb-almeria",
-    "name": "Almeria",
-    "description": "Tatlı ve kremsi bir içecek, keyifli bir deneyim sağlar.",
-    "emoji": "☕",
-    "technique": "shake",
-    "glass": "coupe",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-rum-dark",
-        "amount": "2 oz"
-      },
-      {
-        "ingredientId": "liqueur-coffee",
-        "amount": "1 oz"
-      }
-    ],
-    "steps": [
-      "1. Buz dolu bir shaker'a tüm malzemeleri ekleyin.",
-      "2. İyice çalkalayın.",
-      "3. Kokteyl bardağına süzün."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:almeria"
   },
   {
     "id": "cdb-almond-chocolate-coffee",
@@ -2732,45 +15071,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:amaretto-tea"
   },
   {
-    "id": "cdb-americano",
-    "name": "Americano",
-    "description": "Acı ve tatlı notalarla dengeli bir aperitif.",
-    "emoji": "🟥",
-    "technique": "build",
-    "glass": "highball",
-    "difficulty": "orta",
-    "prepTimeMinutes": 2,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "liqueur-campari",
-        "amount": "1 oz"
-      },
-      {
-        "ingredientId": "liqueur-vermouth-sweet",
-        "amount": "1 oz red"
-      },
-      {
-        "ingredientId": "citrus-lemon",
-        "amount": "Twist of"
-      },
-      {
-        "ingredientId": "citrus-orange",
-        "amount": "Twist of",
-        "optional": true
-      }
-    ],
-    "steps": [
-      "1. Campari ve vermutu buz üzerine dökün, soda suyu ekleyin ve portakal dilimi ile süsleyin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "iba"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:americano"
-  },
-  {
     "id": "cdb-angel-face",
     "name": "Angel Face",
     "description": "Tatlı ve meyvemsi bir karışım, hafif ve zarif.",
@@ -2947,36 +15247,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     "imageUrl": "cocktaildb:apple-slammer"
   },
   {
-    "id": "cdb-applecar",
-    "name": "Applecar",
-    "description": "Tatlı ve ferahlatıcı, elma aromalı bir kokteyl.",
-    "emoji": "🍹",
-    "technique": "shake",
-    "glass": "coupe",
-    "difficulty": "kolay",
-    "prepTimeMinutes": 4,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "liqueur-triple-sec",
-        "amount": "1 oz"
-      },
-      {
-        "ingredientId": "citrus-lemon",
-        "amount": "1 oz"
-      }
-    ],
-    "steps": [
-      "1. Tüm malzemeleri buz ile çalkalayın, bir kokteyl bardağına süzün ve servis edin."
-    ],
-    "tags": [
-      "ordinary drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:applecar"
-  },
-  {
     "id": "cdb-applejack",
     "name": "Applejack",
     "description": "Tatlı ve yoğun bir elma tadı sunan klasik bir kokteyl.",
@@ -3005,6 +15275,49 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:applejack"
+  },
+  {
+    "id": "cdb-apricot-punch",
+    "name": "Apricot punch",
+    "description": "Tatlı ve meyvemsi bir punch, ferahlatıcı bir yaz içeceği.",
+    "emoji": "🥂",
+    "technique": "build",
+    "glass": "rocks",
+    "difficulty": "orta",
+    "prepTimeMinutes": 3,
+    "servings": 1,
+    "ingredients": [
+      {
+        "ingredientId": "spirit-cognac",
+        "amount": "1 qt"
+      },
+      {
+        "ingredientId": "wine-champagne",
+        "amount": "4 fifth"
+      },
+      {
+        "ingredientId": "spirit-vodka",
+        "amount": "1 fifth"
+      },
+      {
+        "ingredientId": "mixer-lemon-lime-soda",
+        "amount": "4 L"
+      },
+      {
+        "ingredientId": "mixer-orange-juice",
+        "amount": "1/2 gal"
+      }
+    ],
+    "steps": [
+      "1. Tüm malzemeleri büyük bir punch kasesine dökün.",
+      "2. Buz ve soyulmuş, dilimlenmiş 4 portakal ekleyin."
+    ],
+    "tags": [
+      "punch / party drink",
+      "klasik"
+    ],
+    "source": "classic",
+    "imageUrl": "cocktaildb:apricot-punch"
   },
   {
     "id": "cdb-apricot-lady",
@@ -3051,49 +15364,6 @@ export const COCKTAILDB_RECIPES: Cocktail[] = [
     ],
     "source": "classic",
     "imageUrl": "cocktaildb:apricot-lady"
-  },
-  {
-    "id": "cdb-apricot-punch",
-    "name": "Apricot punch",
-    "description": "Tatlı ve meyvemsi bir punch, ferahlatıcı bir yaz içeceği.",
-    "emoji": "🥂",
-    "technique": "build",
-    "glass": "rocks",
-    "difficulty": "orta",
-    "prepTimeMinutes": 3,
-    "servings": 1,
-    "ingredients": [
-      {
-        "ingredientId": "spirit-cognac",
-        "amount": "1 qt"
-      },
-      {
-        "ingredientId": "wine-champagne",
-        "amount": "4 fifth"
-      },
-      {
-        "ingredientId": "spirit-vodka",
-        "amount": "1 fifth"
-      },
-      {
-        "ingredientId": "mixer-lemon-lime-soda",
-        "amount": "4 L"
-      },
-      {
-        "ingredientId": "mixer-orange-juice",
-        "amount": "1/2 gal"
-      }
-    ],
-    "steps": [
-      "1. Tüm malzemeleri büyük bir punch kasesine dökün.",
-      "2. Buz ve soyulmuş, dilimlenmiş 4 portakal ekleyin."
-    ],
-    "tags": [
-      "punch / party drink",
-      "klasik"
-    ],
-    "source": "classic",
-    "imageUrl": "cocktaildb:apricot-punch"
   },
   {
     "id": "cdb-aquamarine",

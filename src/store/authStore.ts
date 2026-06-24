@@ -4,6 +4,11 @@ import { Household, Profile, SpiceLevel, User } from "@/types/domain";
 import { uid } from "@/utils/id";
 import { authService } from "@/features/auth/authService";
 import { supabase } from "@/lib/supabase";
+import {
+  REVIEW_DEMO_CODE,
+  isReviewDemoEmail,
+} from "@/constants/reviewDemo";
+import { useEntitlementsStore } from "@/store/entitlementsStore";
 
 const ONBOARDED_KEY = "@swipebite/onboarded";
 // The household the user is actively paired with. Persisted so an invite-code
@@ -18,6 +23,8 @@ interface AuthState {
   isOnboarded: boolean;
   authLoading: boolean;
   signInMock: (name?: string) => void;
+  /** Hidden App Review demo session: full app + Pro, no backend. */
+  signInReviewDemo: () => void;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string, name: string) => Promise<void>;
   requestEmailOtp: (email: string) => Promise<boolean>;
@@ -53,10 +60,37 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     const u: User = {
       id: uid("user"),
       name,
-      email: "demo@swipebite.app",
+      email: "demo@swapbite.com.tr",
       createdAt: new Date().toISOString(),
     };
     set({ user: u, profile: emptyProfile(u.id) });
+  },
+  signInReviewDemo: () => {
+    const now = new Date().toISOString();
+    const u: User = {
+      id: uid("user"),
+      name: "App Review",
+      email: "review@swapbite.com.tr",
+      createdAt: now,
+    };
+    const household: Household = {
+      id: uid("house"),
+      name: "Demo Mutfak",
+      createdBy: u.id,
+      memberIds: [u.id],
+      createdAt: now,
+      inviteCode: "DEMO",
+    };
+    // Mark onboarded so the reviewer lands straight in the app, and unlock Pro
+    // so no AI feature is gated behind the paywall.
+    AsyncStorage.setItem(ONBOARDED_KEY, "1").catch(() => undefined);
+    void useEntitlementsStore.getState().setTier("pro");
+    set({
+      user: u,
+      profile: emptyProfile(u.id),
+      household,
+      isOnboarded: true,
+    });
   },
   signIn: async (email, password) => {
     set({ authLoading: true });
@@ -90,6 +124,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     }
   },
   requestEmailOtp: async (email) => {
+    // App Review demo account: never hit the backend (no real code is sent).
+    if (isReviewDemoEmail(email)) return true;
     set({ authLoading: true });
     try {
       const ok = await authService.sendEmailOtp(email);
@@ -104,6 +140,15 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     }
   },
   verifyEmailOtp: async (email, code) => {
+    // App Review demo account: accept only the fixed code and unlock a full
+    // local demo session (Pro enabled) without touching the backend.
+    if (isReviewDemoEmail(email)) {
+      if (code.trim() !== REVIEW_DEMO_CODE) {
+        throw new Error("Kod hatalı.");
+      }
+      get().signInReviewDemo();
+      return;
+    }
     set({ authLoading: true });
     try {
       const result = await authService.verifyEmailOtp(email, code);

@@ -8,6 +8,9 @@
  *   # Full pipeline
  *   npx tsx scripts/import-cocktaildb.ts
  *
+ *   # FULL catalog (merges a–z search + filter.php → ~460 cocktails)
+ *   npx tsx scripts/import-cocktaildb.ts --full --no-translate
+ *
  *   # Limited count, full pipeline
  *   npx tsx scripts/import-cocktaildb.ts --limit 30
  *
@@ -40,6 +43,18 @@ import {
 } from "./cocktaildb/mapping";
 import type { Cocktail, CocktailIngredientRef } from "../src/types/bar";
 
+// Existing catalog — used to preserve already-translated descriptions/steps
+// when re-importing with --no-translate so we don't regress the Turkish copy.
+let EXISTING_RECIPES: Cocktail[] = [];
+try {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  EXISTING_RECIPES = require("../src/constants/cocktailDbRecipes")
+    .COCKTAILDB_RECIPES as Cocktail[];
+} catch {
+  EXISTING_RECIPES = [];
+}
+const GENERIC_DESC_RE = /— klasik kokteyl\.$/;
+
 // ─── CLI args ─────────────────────────────────────────────────────────
 const argv = process.argv.slice(2);
 const LIMIT = (() => {
@@ -50,6 +65,7 @@ const LIMIT = (() => {
 const DRY = argv.includes("--dry");
 const SKIP_TRANSLATE = argv.includes("--no-translate") || DRY;
 const SKIP_IMAGES = argv.includes("--no-images") || DRY;
+const FULL = argv.includes("--full");
 
 // ─── Env loader (minimal .env reader) ─────────────────────────────────
 function loadDotEnv() {
@@ -121,6 +137,45 @@ async function fetchAlcoholicList(): Promise<DBListItem[]> {
     `${COCKTAILDB_BASE}/filter.php?a=Alcoholic`,
   );
   return data.drinks ?? [];
+}
+
+/**
+ * Fetches the FULL cocktail database by iterating the a–z / 0–9 search
+ * endpoint (`search.php?f=<letter>`), which returns complete detail objects
+ * and is not capped at 100 like `filter.php?a=Alcoholic`. Deduped by idDrink
+ * and filtered to alcoholic drinks only.
+ *
+ * NOTE: the public API's `search.php?f=` and `filter.php?a=Alcoholic` return
+ * partially DISJOINT sets, so we also merge in the filter list (via lookups)
+ * to maximise coverage and avoid dropping previously-imported cocktails.
+ */
+async function fetchFullAlcoholicDetails(): Promise<DBDetail[]> {
+  const byId = new Map<string, DBDetail>();
+
+  // Source A: a–z / 0–9 full-text letter search (returns full details).
+  const letters = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
+  await pool(letters, 2, async (letter) => {
+    const data = await fetchJson<{ drinks: DBDetail[] | null }>(
+      `${COCKTAILDB_BASE}/search.php?f=${letter}`,
+    );
+    for (const d of data.drinks ?? []) {
+      if (d.strAlcoholic === "Alcoholic") byId.set(d.idDrink, d);
+    }
+    await sleep(150);
+  });
+  console.log(`  a–z search yielded: ${byId.size}`);
+
+  // Source B: filter.php?a=Alcoholic (different limited set) → lookup details.
+  const filterList = await fetchAlcoholicList();
+  const missing = filterList.filter((it) => !byId.has(it.idDrink));
+  await pool(missing, 2, async (item) => {
+    const d = await fetchDetail(item.idDrink);
+    if (d && d.strAlcoholic === "Alcoholic") byId.set(d.idDrink, d);
+    await sleep(150);
+  });
+  console.log(`  + filter.php merged: ${byId.size} total`);
+
+  return [...byId.values()];
 }
 
 async function fetchDetail(id: string): Promise<DBDetail | null> {
@@ -507,23 +562,32 @@ async function main() {
     process.exit(1);
   }
 
-  // 1. Fetch list
-  console.log("• fetching alcoholic list…");
-  const list = await fetchAlcoholicList();
-  console.log(`  total alcoholic cocktails: ${list.length}`);
+  // 1. Fetch list + details
+  let details: (DBDetail | null)[];
+  if (FULL) {
+    console.log("• fetching FULL catalog via a–z search…");
+    const full = await fetchFullAlcoholicDetails();
+    console.log(`  total alcoholic cocktails: ${full.length}`);
+    details = full.slice(0, Math.min(LIMIT, full.length));
+    console.log(`  importing: ${details.length}\n`);
+  } else {
+    console.log("• fetching alcoholic list…");
+    const list = await fetchAlcoholicList();
+    console.log(`  total alcoholic cocktails: ${list.length}`);
 
-  const subset = list.slice(0, Math.min(LIMIT, list.length));
-  console.log(`  importing: ${subset.length}\n`);
+    const subset = list.slice(0, Math.min(LIMIT, list.length));
+    console.log(`  importing: ${subset.length}\n`);
 
-  // 2. Fetch detail (concurrency=2, with retry on 429)
-  console.log("• fetching details…");
-  const details = await pool(subset, 2, async (item, i) => {
-    if (i % 10 === 0) process.stdout.write(`  [${i}/${subset.length}]\r`);
-    const d = await fetchDetail(item.idDrink);
-    await sleep(150); // gentle pacing for the public test key
-    return d;
-  });
-  console.log(`  fetched: ${details.filter(Boolean).length}\n`);
+    // 2. Fetch detail (concurrency=2, with retry on 429)
+    console.log("• fetching details…");
+    details = await pool(subset, 2, async (item, i) => {
+      if (i % 10 === 0) process.stdout.write(`  [${i}/${subset.length}]\r`);
+      const d = await fetchDetail(item.idDrink);
+      await sleep(150); // gentle pacing for the public test key
+      return d;
+    });
+    console.log(`  fetched: ${details.filter(Boolean).length}\n`);
+  }
 
   // 3. Build local cocktails + collect unmapped
   const built: BuiltCocktail[] = [];
@@ -534,7 +598,17 @@ async function main() {
     built.push(b);
   }
   const skipped = built.filter((b) => b.skipReason !== null);
-  const accepted = built.filter((b) => b.skipReason === null);
+  // Dedupe accepted by cocktail.id — different drink names can slugify to the
+  // same id (e.g. straight vs. curly apostrophe), which would create duplicate
+  // recipe entries and colliding image files. First one wins.
+  const acceptedSeen = new Set<string>();
+  const accepted = built
+    .filter((b) => b.skipReason === null)
+    .filter((b) => {
+      if (acceptedSeen.has(b.cocktail.id)) return false;
+      acceptedSeen.add(b.cocktail.id);
+      return true;
+    });
   console.log(
     `• mapped: ${accepted.length} accepted, ${skipped.length} skipped`,
   );
@@ -588,6 +662,25 @@ async function main() {
     }
   }
 
+  // Preserve already-translated Turkish copy for cocktails we imported before.
+  const existingById = new Map(EXISTING_RECIPES.map((r) => [r.id, r]));
+  let preserved = 0;
+  for (const b of accepted) {
+    const prev = existingById.get(b.cocktail.id);
+    if (
+      prev &&
+      prev.description &&
+      !GENERIC_DESC_RE.test(prev.description)
+    ) {
+      b.cocktail.description = prev.description;
+      if (prev.steps?.length) b.cocktail.steps = prev.steps;
+      preserved++;
+    }
+  }
+  if (preserved > 0) {
+    console.log(`  ↺ preserved ${preserved} existing translations`);
+  }
+
   // 6. Image download
   const slugsWithImage: string[] = [];
   if (!SKIP_IMAGES) {
@@ -613,6 +706,13 @@ async function main() {
   }
 
   // 7. Write output files
+  if (DRY) {
+    console.log(
+      `\n(dry-run) would write ${accepted.length} recipes; no files changed.`,
+    );
+    console.log(`\n✅ done (dry). ${accepted.length} cocktails mapped.`);
+    return;
+  }
   console.log("\n• writing output…");
   writeRecipesFile(accepted.map((b) => b.cocktail));
   if (slugsWithImage.length > 0) {

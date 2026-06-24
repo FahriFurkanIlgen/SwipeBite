@@ -1,43 +1,71 @@
 {
   "summary": {
-    "skippedCocktails": 7,
-    "uniqueUnmappedIngredients": 23
+    "skippedCocktails": 28,
+    "uniqueUnmappedIngredients": 66
   },
   "topUnmapped": [
+    {
+      "name": "Egg",
+      "count": 3
+    },
+    {
+      "name": "Mountain Dew",
+      "count": 2
+    },
+    {
+      "name": "Surge",
+      "count": 2
+    },
+    {
+      "name": "Milk",
+      "count": 2
+    },
+    {
+      "name": "Egg White",
+      "count": 2
+    },
+    {
+      "name": "Sambuca",
+      "count": 2
+    },
+    {
+      "name": "Chambord raspberry liqueur",
+      "count": 2
+    },
+    {
+      "name": "Goldschlager",
+      "count": 2
+    },
+    {
+      "name": "Light cream",
+      "count": 2
+    },
+    {
+      "name": "Sherry",
+      "count": 2
+    },
+    {
+      "name": "Apple",
+      "count": 2
+    },
+    {
+      "name": "Strawberries",
+      "count": 2
+    },
+    {
+      "name": "Root beer",
+      "count": 2
+    },
+    {
+      "name": "Jägermeister",
+      "count": 2
+    },
     {
       "name": "Anise",
       "count": 2
     },
     {
-      "name": "Goldschlager",
-      "count": 1
-    },
-    {
-      "name": "Jägermeister",
-      "count": 1
-    },
-    {
-      "name": "Rumple Minze",
-      "count": 1
-    },
-    {
-      "name": "Kirschwasser",
-      "count": 1
-    },
-    {
-      "name": "Strawberry liqueur",
-      "count": 1
-    },
-    {
-      "name": "Strawberries",
-      "count": 1
-    },
-    {
-      "name": "Licorice root",
-      "count": 1
-    },
-    {
-      "name": "Wormwood",
+      "name": "Everclear",
       "count": 1
     },
     {
@@ -45,59 +73,515 @@
       "count": 1
     },
     {
-      "name": "Milk",
+      "name": "Lager",
       "count": 1
     },
     {
-      "name": "Egg White",
+      "name": "Cider",
       "count": 1
     },
     {
-      "name": "Apricot",
+      "name": "Blackcurrant cordial",
       "count": 1
     },
     {
-      "name": "Almond flavoring",
+      "name": "Firewater",
       "count": 1
     },
     {
-      "name": "Grain alcohol",
+      "name": "Absolut Peppar",
       "count": 1
     },
     {
-      "name": "Glycerine",
+      "name": "Tabasco sauce",
       "count": 1
     },
     {
-      "name": "Angelica root",
+      "name": "Sarsaparilla",
       "count": 1
     },
     {
-      "name": "Almond",
+      "name": "Hot Damn",
       "count": 1
     },
     {
-      "name": "Allspice",
+      "name": "Tea",
       "count": 1
     },
     {
-      "name": "Coriander",
+      "name": "Red Chili Flakes",
       "count": 1
     },
     {
-      "name": "Marjoram leaves",
+      "name": "Cloves",
       "count": 1
     },
     {
-      "name": "Maui",
+      "name": "Ginger",
       "count": 1
     },
     {
-      "name": "Mountain Dew",
+      "name": "Beer",
+      "count": 1
+    },
+    {
+      "name": "Tomato Juice",
+      "count": 1
+    },
+    {
+      "name": "Hot Sauce",
+      "count": 1
+    },
+    {
+      "name": "Worcestershire Sauce",
+      "count": 1
+    },
+    {
+      "name": "Soy Sauce",
+      "count": 1
+    },
+    {
+      "name": "Cocoa powder",
+      "count": 1
+    },
+    {
+      "name": "Whipped cream",
+      "count": 1
+    },
+    {
+      "name": "Butterscotch schnapps",
+      "count": 1
+    },
+    {
+      "name": "Jagermeister",
+      "count": 1
+    },
+    {
+      "name": "Port",
+      "count": 1
+    },
+    {
+      "name": "Frangelico",
+      "count": 1
+    },
+    {
+      "name": "Crown Royal",
+      "count": 1
+    },
+    {
+      "name": "Cream",
+      "count": 1
+    },
+    {
+      "name": "Vanilla extract",
+      "count": 1
+    },
+    {
+      "name": "Red wine",
+      "count": 1
+    },
+    {
+      "name": "Fresca",
+      "count": 1
+    },
+    {
+      "name": "Yukon Jack",
+      "count": 1
+    },
+    {
+      "name": "Southern Comfort",
+      "count": 1
+    },
+    {
+      "name": "Sweet and sour",
+      "count": 1
+    },
+    {
+      "name": "White Wine",
+      "count": 1
+    },
+    {
+      "name": "Peachtree schnapps",
       "count": 1
     }
   ],
   "byDrink": [
+    {
+      "drink": "Brain Fart",
+      "ingredients": [
+        {
+          "name": "Everclear",
+          "amount": "1 fifth"
+        },
+        {
+          "name": "Mountain Dew",
+          "amount": "2 L"
+        },
+        {
+          "name": "Surge",
+          "amount": "2 L"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Ace",
+      "ingredients": [
+        {
+          "name": "Heavy cream",
+          "amount": "1/2 shot"
+        },
+        {
+          "name": "Milk",
+          "amount": "1/2 shot"
+        },
+        {
+          "name": "Egg White",
+          "amount": "1/2 Fresh"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Diesel",
+      "ingredients": [
+        {
+          "name": "Lager",
+          "amount": "1/2 pint"
+        },
+        {
+          "name": "Cider",
+          "amount": "1/2 pint"
+        },
+        {
+          "name": "Blackcurrant cordial",
+          "amount": "1 dash"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    },
+    {
+      "drink": "Fahrenheit 5000",
+      "ingredients": [
+        {
+          "name": "Firewater",
+          "amount": "1/2 oz"
+        },
+        {
+          "name": "Absolut Peppar",
+          "amount": "1/2 oz"
+        },
+        {
+          "name": "Tabasco sauce",
+          "amount": "1 dash"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    },
+    {
+      "drink": "Flander's Flake-Out",
+      "ingredients": [
+        {
+          "name": "Sambuca",
+          "amount": "1/4 glass"
+        },
+        {
+          "name": "Sarsaparilla",
+          "amount": "3/4 glass"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    },
+    {
+      "drink": "Herbal flame",
+      "ingredients": [
+        {
+          "name": "Hot Damn",
+          "amount": "5 shots"
+        },
+        {
+          "name": "Tea",
+          "amount": "very sweet"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    },
+    {
+      "drink": "Halloween Punch",
+      "ingredients": [
+        {
+          "name": "Red Chili Flakes",
+          "amount": "1"
+        },
+        {
+          "name": "Cloves",
+          "amount": "10"
+        },
+        {
+          "name": "Ginger",
+          "amount": "6"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Michelada",
+      "ingredients": [
+        {
+          "name": "Beer",
+          "amount": "4 oz"
+        },
+        {
+          "name": "Tomato Juice",
+          "amount": "4 oz"
+        },
+        {
+          "name": "Hot Sauce",
+          "amount": "Dash"
+        },
+        {
+          "name": "Worcestershire Sauce",
+          "amount": "Dash"
+        },
+        {
+          "name": "Soy Sauce",
+          "amount": "Dash"
+        }
+      ],
+      "reason": "too-many-unmapped (5)"
+    },
+    {
+      "drink": "Mocha-Berry",
+      "ingredients": [
+        {
+          "name": "Chambord raspberry liqueur",
+          "amount": "2 oz"
+        },
+        {
+          "name": "Cocoa powder",
+          "amount": "2 tblsp"
+        },
+        {
+          "name": "Whipped cream",
+          "amount": "tatlandırıcı"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Oatmeal Cookie",
+      "ingredients": [
+        {
+          "name": "Butterscotch schnapps",
+          "amount": "4 parts"
+        },
+        {
+          "name": "Jagermeister",
+          "amount": "1 part"
+        },
+        {
+          "name": "Goldschlager",
+          "amount": "1/2 part"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Port Wine Flip",
+      "ingredients": [
+        {
+          "name": "Port",
+          "amount": "1 1/2 oz"
+        },
+        {
+          "name": "Light cream",
+          "amount": "2 tsp"
+        },
+        {
+          "name": "Egg",
+          "amount": "1 whole"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Royal Bitch",
+      "ingredients": [
+        {
+          "name": "Frangelico",
+          "amount": "1 part"
+        },
+        {
+          "name": "Crown Royal",
+          "amount": "1 part"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    },
+    {
+      "drink": "Ramos Gin Fizz",
+      "ingredients": [
+        {
+          "name": "Cream",
+          "amount": "6 cl"
+        },
+        {
+          "name": "Egg White",
+          "amount": "1"
+        },
+        {
+          "name": "Vanilla extract",
+          "amount": "2 drop"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Sherry Flip",
+      "ingredients": [
+        {
+          "name": "Sherry",
+          "amount": "1 1/2 oz cream"
+        },
+        {
+          "name": "Light cream",
+          "amount": "2 tsp"
+        },
+        {
+          "name": "Egg",
+          "amount": "1 whole"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Sherry Eggnog",
+      "ingredients": [
+        {
+          "name": "Sherry",
+          "amount": "2 oz cream"
+        },
+        {
+          "name": "Egg",
+          "amount": "1 whole"
+        },
+        {
+          "name": "Milk",
+          "amount": "tatlandırıcı"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Sweet Sangria",
+      "ingredients": [
+        {
+          "name": "Red wine",
+          "amount": "2 bottles"
+        },
+        {
+          "name": "Apple",
+          "amount": "1 cup"
+        },
+        {
+          "name": "Fresca",
+          "amount": "tatlandırıcı"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Texas Rattlesnake",
+      "ingredients": [
+        {
+          "name": "Yukon Jack",
+          "amount": "1 part"
+        },
+        {
+          "name": "Southern Comfort",
+          "amount": "1 part"
+        },
+        {
+          "name": "Sweet and sour",
+          "amount": "1 splash"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "White Wine Sangria",
+      "ingredients": [
+        {
+          "name": "White Wine",
+          "amount": "750 ml"
+        },
+        {
+          "name": "Strawberries",
+          "amount": "1 cup"
+        },
+        {
+          "name": "Apple",
+          "amount": "1 cup"
+        }
+      ],
+      "reason": "too-many-unmapped (3)"
+    },
+    {
+      "drink": "Zinger",
+      "ingredients": [
+        {
+          "name": "Peachtree schnapps",
+          "amount": "4 shots"
+        },
+        {
+          "name": "Surge",
+          "amount": "4 shots"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    },
+    {
+      "drink": "Zambeer",
+      "ingredients": [
+        {
+          "name": "Sambuca",
+          "amount": "1 1/2 oz"
+        },
+        {
+          "name": "Root beer",
+          "amount": "Add 10 oz"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    },
+    {
+      "drink": "Zenmeister",
+      "ingredients": [
+        {
+          "name": "Jägermeister",
+          "amount": "1/2 oz"
+        },
+        {
+          "name": "Root beer",
+          "amount": "1/2 oz"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    },
+    {
+      "drink": "Zima Blaster",
+      "ingredients": [
+        {
+          "name": "Zima",
+          "amount": "12 oz"
+        },
+        {
+          "name": "Chambord raspberry liqueur",
+          "amount": "3 oz"
+        }
+      ],
+      "reason": "no-mapped-ingredients"
+    },
     {
       "drink": "24k nightmare",
       "ingredients": [
@@ -148,24 +632,6 @@
         {
           "name": "Wormwood",
           "amount": "1"
-        }
-      ],
-      "reason": "too-many-unmapped (3)"
-    },
-    {
-      "drink": "Ace",
-      "ingredients": [
-        {
-          "name": "Heavy cream",
-          "amount": "1/2 shot"
-        },
-        {
-          "name": "Milk",
-          "amount": "1/2 shot"
-        },
-        {
-          "name": "Egg White",
-          "amount": "1/2 Fresh"
         }
       ],
       "reason": "too-many-unmapped (3)"

@@ -72,6 +72,10 @@ const config: ExpoConfig = {
           ] as [string, { iosUrlScheme: string }],
         ]
       : []),
+    // Re-injects `:modular_headers => true` for GoogleUtilities/RecaptchaInterop
+    // into the EAS-generated Podfile so AppCheckCore (GoogleSignIn 9.x) can be
+    // built as a static library. Without this, EAS `pod install` fails.
+    "./plugins/withGoogleSignInModularHeaders",
   ],
   extra: {
     supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,

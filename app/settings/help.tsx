@@ -123,10 +123,10 @@ export default function HelpScreen() {
           <ContactRow
             icon={Mail}
             label="E-posta ile yaz"
-            sub="destek@swipebite.app"
+            sub="destek@swapbite.com.tr"
             onPress={() =>
               Linking.openURL(
-                "mailto:destek@swipebite.app?subject=SwipeBite%20destek",
+                "mailto:destek@swapbite.com.tr?subject=SwipeBite%20destek",
               )
             }
           />
@@ -137,7 +137,7 @@ export default function HelpScreen() {
             border
             onPress={() =>
               Linking.openURL(
-                "mailto:destek@swipebite.app?subject=SwipeBite%20geri%20bildirim",
+                "mailto:destek@swapbite.com.tr?subject=SwipeBite%20geri%20bildirim",
               )
             }
           />

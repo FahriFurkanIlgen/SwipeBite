@@ -21,6 +21,7 @@ import type { LucideIcon } from "lucide-react-native";
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, spacing } from "@/constants/theme";
+import { PRIVACY_URL, TERMS_URL } from "@/constants/legal";
 import { useAuthStore } from "@/store/authStore";
 import { usePantryStore } from "@/store/pantryStore";
 import { usePlannerStore } from "@/store/plannerStore";
@@ -64,14 +65,14 @@ export default function PrivacyScreen() {
   const deleteAccount = () => {
     Alert.alert(
       "Hesabımı sil",
-      "Hesabını silmek için lütfen destek ile iletişime geç: destek@swipebite.app",
+      "Hesabını silmek için lütfen destek ile iletişime geç: destek@swapbite.com.tr",
       [
         { text: "Vazgeç", style: "cancel" },
         {
           text: "E-posta gönder",
           onPress: () =>
             Linking.openURL(
-              "mailto:destek@swipebite.app?subject=Hesap%20silme%20talebi",
+              "mailto:destek@swapbite.com.tr?subject=Hesap%20silme%20talebi",
             ),
         },
         {
@@ -154,12 +155,32 @@ export default function PrivacyScreen() {
           />
         </View>
 
+        <View style={[styles.card, { marginTop: spacing.lg }]}>
+          <ActionRow
+            icon={FileText}
+            label="Gizlilik Politikası"
+            sub="Verilerin nasıl işlendiğini tam metinle oku"
+            danger={false}
+            onPress={() =>
+              Linking.openURL(PRIVACY_URL).catch(() => undefined)
+            }
+          />
+          <ActionRow
+            icon={FileText}
+            label="Kullanım Koşulları (EULA)"
+            sub="Abonelik ve kullanım şartları"
+            danger={false}
+            border
+            onPress={() => Linking.openURL(TERMS_URL).catch(() => undefined)}
+          />
+        </View>
+
         <Text
           variant="caption"
           color={colors.dim}
           style={{ marginTop: spacing.lg, paddingHorizontal: spacing.sm }}
         >
-          Sorun bildirmek için: destek@swipebite.app
+          Sorun bildirmek için: destek@swapbite.com.tr
         </Text>
 
         <View style={{ height: 100 }} />
