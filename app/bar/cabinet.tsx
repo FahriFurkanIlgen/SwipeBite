@@ -48,7 +48,7 @@ export default function BarCabinetScreen() {
 
   return (
     <Screen background="bg" padded={false}>
-      <Stack.Screen options={{ title: "Bar Dolabı" }} />
+      <Stack.Screen options={{ title: "Bar Cabinet" }} />
 
       <View style={styles.header}>
         <Pressable
@@ -59,9 +59,9 @@ export default function BarCabinetScreen() {
           <ArrowLeft size={18} strokeWidth={2} color={colors.ink} />
         </Pressable>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">Bar Dolabın</Text>
+          <Text variant="h2">Your Bar Cabinet</Text>
           <Text variant="caption" color={colors.dim}>
-            Evde olan içkileri ve malzemeleri seç
+            Pick the spirits and mixers you have at home
           </Text>
         </View>
         {ingredientIds.length > 0 ? (
@@ -72,7 +72,7 @@ export default function BarCabinetScreen() {
           >
             <RotateCcw size={14} strokeWidth={2} color={colors.slate} />
             <Text variant="caption" color={colors.slate}>
-              Sıfırla
+              Reset
             </Text>
           </Pressable>
         ) : null}
@@ -82,7 +82,7 @@ export default function BarCabinetScreen() {
         <View style={styles.summaryItem}>
           <Text style={styles.summaryNum}>{ingredientIds.length}</Text>
           <Text variant="caption" color={colors.dim}>
-            seçili malzeme
+            selected ingredients
           </Text>
         </View>
         <View style={styles.summaryDivider} />
@@ -91,7 +91,7 @@ export default function BarCabinetScreen() {
             {cookableCount}
           </Text>
           <Text variant="caption" color={colors.dim}>
-            yapabileceğin kokteyl
+            cocktails you can make
           </Text>
         </View>
       </View>

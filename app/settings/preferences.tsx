@@ -13,6 +13,7 @@ import { ChevronLeft, ChevronRight, Plus, X } from "lucide-react-native";
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
+import { isBar, L } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { usePreferencesStore } from "@/store/preferencesStore";
 import {
@@ -23,29 +24,52 @@ import {
   WeekDay,
 } from "@/types/domain";
 
-const DAY_LABEL: Record<WeekDay, string> = {
-  mon: "Pzt",
-  tue: "Sal",
-  wed: "Çar",
-  thu: "Per",
-  fri: "Cum",
-  sat: "Cmt",
-  sun: "Paz",
-};
+const DAY_LABEL: Record<WeekDay, string> = isBar
+  ? {
+      mon: "Mon",
+      tue: "Tue",
+      wed: "Wed",
+      thu: "Thu",
+      fri: "Fri",
+      sat: "Sat",
+      sun: "Sun",
+    }
+  : {
+      mon: "Pzt",
+      tue: "Sal",
+      wed: "Çar",
+      thu: "Per",
+      fri: "Cum",
+      sat: "Cmt",
+      sun: "Paz",
+    };
 const DAYS: WeekDay[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-const STEPS = [
-  "Aile",
-  "Alerji",
-  "Kapsam",
-  "Zaman",
-  "Protein",
-  "Damak",
-  "Eşleştirme",
-  "Mevsim",
-  "Alışveriş",
-  "Dil",
-];
+const STEPS = isBar
+  ? [
+      "Family",
+      "Allergies",
+      "Scope",
+      "Time",
+      "Protein",
+      "Tastes",
+      "Pairing",
+      "Season",
+      "Shopping",
+      "Language",
+    ]
+  : [
+      "Aile",
+      "Alerji",
+      "Kapsam",
+      "Zaman",
+      "Protein",
+      "Damak",
+      "Eşleştirme",
+      "Mevsim",
+      "Alışveriş",
+      "Dil",
+    ];
 
 export default function PreferencesWizard() {
   const household = useAuthStore((s) => s.household);
@@ -72,18 +96,24 @@ export default function PreferencesWizard() {
       return;
     }
     if (!household) {
-      Alert.alert("Hata", "Önce bir hane oluştur.");
+      Alert.alert(L("Hata", "Error"), L("Önce bir hane oluştur.", "Create a group first."));
       return;
     }
     try {
       await save(household.id, draft);
       Alert.alert(
-        "Kaydedildi",
-        "Tercihlerin güncellendi. Planner'dan 'Yeni hafta planı' ile dene.",
-        [{ text: "Tamam", onPress: () => router.back() }],
+        L("Kaydedildi", "Saved"),
+        L(
+          "Tercihlerin güncellendi. Planner'dan 'Yeni hafta planı' ile dene.",
+          "Your preferences are updated. Try 'New week plan' from the planner.",
+        ),
+        [{ text: L("Tamam", "OK"), onPress: () => router.back() }],
       );
     } catch (e) {
-      Alert.alert("Hata", e instanceof Error ? e.message : "Kaydedilemedi");
+      Alert.alert(
+        L("Hata", "Error"),
+        e instanceof Error ? e.message : L("Kaydedilemedi", "Couldn't save"),
+      );
     }
   };
 
@@ -94,7 +124,7 @@ export default function PreferencesWizard() {
 
   return (
     <Screen background="bg" padded={false}>
-      <Stack.Screen options={{ title: "Aile Tercihleri" }} />
+      <Stack.Screen options={{ title: L("Aile Tercihleri", "Group Preferences") }} />
       <View style={styles.header}>
         <Pressable onPress={back} hitSlop={10}>
           <ChevronLeft size={22} color={colors.ink} />
@@ -145,7 +175,7 @@ export default function PreferencesWizard() {
       <View style={styles.footer}>
         <Pressable onPress={next} style={styles.cta}>
           <Text variant="bodyMedium" weight="700" color={colors.ink}>
-            {step === STEPS.length - 1 ? "Kaydet" : "Devam"}
+            {step === STEPS.length - 1 ? L("Kaydet", "Save") : L("Devam", "Continue")}
           </Text>
           <ChevronRight size={18} strokeWidth={2.5} color={colors.ink} />
         </Pressable>
@@ -168,21 +198,21 @@ function StepFamily({ draft, update }: StepProps) {
   const f = draft.family;
   return (
     <>
-      <Title>Aile</Title>
-      <Hint>Kaç kişisiniz, çocuk var mı?</Hint>
+      <Title>{L("Aile", "Family")}</Title>
+      <Hint>{L("Kaç kişisiniz, çocuk var mı?", "How many of you, any kids?")}</Hint>
       <NumberRow
-        label="Yetişkin sayısı"
+        label={L("Yetişkin sayısı", "Number of adults")}
         value={f.adults}
         onChange={(adults) => update("family", { ...f, adults })}
         min={1}
         max={10}
       />
-      <Label>Çocuklar</Label>
+      <Label>{L("Çocuklar", "Children")}</Label>
       {f.children.map((c, i) => (
         <View key={i} style={styles.row}>
           <Text variant="smallMedium" style={{ flex: 1 }}>
-            Yaş {c.age}
-            {c.picky ? " · seçici" : ""}
+            {L("Yaş", "Age")} {c.age}
+            {c.picky ? L(" · seçici", " · picky") : ""}
           </Text>
           <Pressable
             onPress={() =>
@@ -205,7 +235,7 @@ function StepFamily({ draft, update }: StepProps) {
               variant="caption"
               color={c.picky ? colors.accent : colors.slate}
             >
-              Seçici
+              {L("Seçici", "Picky")}
             </Text>
           </Pressable>
           <Pressable
@@ -232,12 +262,12 @@ function StepFamily({ draft, update }: StepProps) {
       >
         <Plus size={14} color={colors.slate} />
         <Text variant="smallMedium" color={colors.slate}>
-          Çocuk ekle
+          {L("Çocuk ekle", "Add child")}
         </Text>
       </Pressable>
       {f.children.length > 0 ? (
         <NumberRow
-          label="Son eklenen çocuğun yaşı"
+          label={L("Son eklenen çocuğun yaşı", "Age of the last added child")}
           value={f.children[f.children.length - 1]!.age}
           onChange={(age) =>
             update("family", {
@@ -251,12 +281,12 @@ function StepFamily({ draft, update }: StepProps) {
           max={18}
         />
       ) : null}
-      <Label>Misafir sıklığı</Label>
+      <Label>{L("Misafir sıklığı", "Guest frequency")}</Label>
       <SegmentRow
         options={[
-          { value: "asla", label: "Asla" },
-          { value: "nadiren", label: "Nadiren" },
-          { value: "sik", label: "Sık" },
+          { value: "asla", label: L("Asla", "Never") },
+          { value: "nadiren", label: L("Nadiren", "Rarely") },
+          { value: "sik", label: L("Sık", "Often") },
         ]}
         value={f.guestsFrequency}
         onChange={(guestsFrequency) =>
@@ -274,16 +304,16 @@ function StepAllergies({ draft, update }: StepProps) {
   const a = draft.allergies;
   return (
     <>
-      <Title>Alerji & Diyet</Title>
-      <Hint>Kritik — bu öğeler asla plana eklenmez.</Hint>
-      <Label>Tıbbi alerjiler</Label>
+      <Title>{L("Alerji & Diyet", "Allergies & Diet")}</Title>
+      <Hint>{L("Kritik — bu öğeler asla plana eklenmez.", "Critical — these are never added to the plan.")}</Hint>
+      <Label>{L("Tıbbi alerjiler", "Medical allergies")}</Label>
       <TagInput
         items={a.allergies}
-        placeholder="örn. fıstık, deniz ürünü"
+        placeholder={L("örn. fıstık, deniz ürünü", "e.g. peanut, seafood")}
         onChange={(allergies) => update("allergies", { ...a, allergies })}
         accent
       />
-      <Label>Diyet kuralları</Label>
+      <Label>{L("Diyet kuralları", "Dietary rules")}</Label>
       <ChipMulti
         options={[
           "vejetaryen",
@@ -297,10 +327,10 @@ function StepAllergies({ draft, update }: StepProps) {
         selected={a.dietaryRules}
         onChange={(dietaryRules) => update("allergies", { ...a, dietaryRules })}
       />
-      <Label>Tercihen asla yemiyoruz</Label>
+      <Label>{L("Tercihen asla yemiyoruz", "Prefer to never eat")}</Label>
       <TagInput
         items={a.neverEat}
-        placeholder="örn. karaciğer, bamya"
+        placeholder={L("örn. karaciğer, bamya", "e.g. liver, okra")}
         onChange={(neverEat) => update("allergies", { ...a, neverEat })}
       />
     </>
@@ -311,22 +341,22 @@ function StepScope({ draft, update }: StepProps) {
   const s = draft.scope;
   return (
     <>
-      <Title>Kapsam</Title>
-      <Hint>Hangi günler ve günde kaç öğün planlansın?</Hint>
-      <Label>Planlanacak günler</Label>
+      <Title>{L("Kapsam", "Scope")}</Title>
+      <Hint>{L("Hangi günler ve günde kaç öğün planlansın?", "Which days and how many meals per day?")}</Hint>
+      <Label>{L("Planlanacak günler", "Days to plan")}</Label>
       <DayPicker
         selected={s.days}
         onChange={(days) => update("scope", { ...s, days })}
       />
       <NumberRow
-        label="Günde kaç öğün"
+        label={L("Günde kaç öğün", "Meals per day")}
         value={s.mealsPerDay}
         onChange={(mealsPerDay) => update("scope", { ...s, mealsPerDay })}
         min={1}
         max={3}
       />
       <ToggleRow
-        label="Hafta sonu farklı plan"
+        label={L("Hafta sonu farklı plan", "Different plan on weekends")}
         value={s.weekendDifferent}
         onChange={(weekendDifferent) =>
           update("scope", { ...s, weekendDifferent })
@@ -340,28 +370,28 @@ function StepTime({ draft, update }: StepProps) {
   const tm = draft.time;
   return (
     <>
-      <Title>Zaman</Title>
-      <Hint>Pişirmeye ne kadar vaktin var?</Hint>
+      <Title>{L("Zaman", "Time")}</Title>
+      <Hint>{L("Pişirmeye ne kadar vaktin var?", "How much time do you have to cook?")}</Hint>
       <NumberRow
-        label="Maks pişirme süresi (dk)"
+        label={L("Maks pişirme süresi (dk)", "Max cook time (min)")}
         value={tm.maxCookMinutes}
         onChange={(maxCookMinutes) => update("time", { ...tm, maxCookMinutes })}
         min={15}
         max={180}
         step={5}
       />
-      <Label>Hızlı günler (≤25 dk)</Label>
+      <Label>{L("Hızlı günler (≤25 dk)", "Quick days (≤25 min)")}</Label>
       <DayPicker
         selected={tm.quickDays}
         onChange={(quickDays) => update("time", { ...tm, quickDays })}
       />
-      <Label>Uzun pişirme günleri</Label>
+      <Label>{L("Uzun pişirme günleri", "Long-cook days")}</Label>
       <DayPicker
         selected={tm.longDays}
         onChange={(longDays) => update("time", { ...tm, longDays })}
       />
       <ToggleRow
-        label="Meal prep (tek seferde haftaya hazırlık)"
+        label={L("Meal prep (tek seferde haftaya hazırlık)", "Meal prep (cook for the week at once)")}
         value={tm.mealPrep}
         onChange={(mealPrep) => update("time", { ...tm, mealPrep })}
       />
@@ -373,10 +403,10 @@ function StepProtein({ draft, update }: StepProps) {
   const p = draft.protein;
   return (
     <>
-      <Title>Protein</Title>
-      <Hint>Haftada protein dağılımı.</Hint>
+      <Title>{L("Protein", "Protein")}</Title>
+      <Hint>{L("Haftada protein dağılımı.", "Weekly protein distribution.")}</Hint>
       <NumberRow
-        label="Kırmızı et (gün/hafta)"
+        label={L("Kırmızı et (gün/hafta)", "Red meat (days/week)")}
         value={p.redMeatPerWeek}
         onChange={(redMeatPerWeek) =>
           update("protein", { ...p, redMeatPerWeek })
@@ -385,20 +415,20 @@ function StepProtein({ draft, update }: StepProps) {
         max={7}
       />
       <NumberRow
-        label="Balık (gün/hafta)"
+        label={L("Balık (gün/hafta)", "Fish (days/week)")}
         value={p.fishPerWeek}
         onChange={(fishPerWeek) => update("protein", { ...p, fishPerWeek })}
         min={0}
         max={7}
       />
-      <Label>Tercih edilen balıklar</Label>
+      <Label>{L("Tercih edilen balıklar", "Preferred fish")}</Label>
       <TagInput
         items={p.fishTypes}
-        placeholder="örn. somon, hamsi"
+        placeholder={L("örn. somon, hamsi", "e.g. salmon, anchovy")}
         onChange={(fishTypes) => update("protein", { ...p, fishTypes })}
       />
       <NumberRow
-        label="Tavuk / hindi (gün/hafta)"
+        label={L("Tavuk / hindi (gün/hafta)", "Chicken / turkey (days/week)")}
         value={p.poultryPerWeek}
         onChange={(poultryPerWeek) =>
           update("protein", { ...p, poultryPerWeek })
@@ -407,7 +437,7 @@ function StepProtein({ draft, update }: StepProps) {
         max={7}
       />
       <NumberRow
-        label="Baklagil (gün/hafta)"
+        label={L("Baklagil (gün/hafta)", "Legumes (days/week)")}
         value={p.legumesPerWeek}
         onChange={(legumesPerWeek) =>
           update("protein", { ...p, legumesPerWeek })
@@ -415,7 +445,7 @@ function StepProtein({ draft, update }: StepProps) {
         min={0}
         max={7}
       />
-      <Label>Sabit günler (ör. Cuma = balık)</Label>
+      <Label>{L("Sabit günler (ör. Cuma = balık)", "Fixed days (e.g. Friday = fish)")}</Label>
       {p.fixedDays.map((fd, i) => (
         <View key={i} style={styles.row}>
           <Text variant="smallMedium" style={{ flex: 1 }}>
@@ -447,25 +477,25 @@ function StepTastes({ draft, update }: StepProps) {
   const tt = draft.tastes;
   return (
     <>
-      <Title>Damak</Title>
-      <Hint>Sevdiğiniz ve sevmediğiniz yemekler.</Hint>
-      <Label>Sevdiğimiz (10-15 yemek)</Label>
+      <Title>{L("Damak", "Tastes")}</Title>
+      <Hint>{L("Sevdiğiniz ve sevmediğiniz yemekler.", "Dishes you love and dislike.")}</Hint>
+      <Label>{L("Sevdiğimiz (10-15 yemek)", "Loved (10-15 dishes)")}</Label>
       <TagInput
         items={tt.lovedDishes}
-        placeholder="örn. mantı, mercimek çorbası"
+        placeholder={L("örn. mantı, mercimek çorbası", "e.g. lasagna, lentil soup")}
         onChange={(lovedDishes) => update("tastes", { ...tt, lovedDishes })}
       />
-      <Label>Sevmediğimiz</Label>
+      <Label>{L("Sevmediğimiz", "Disliked")}</Label>
       <TagInput
         items={tt.dislikedDishes}
-        placeholder="örn. brokoli, kereviz"
+        placeholder={L("örn. brokoli, kereviz", "e.g. broccoli, celery")}
         onChange={(dislikedDishes) =>
           update("tastes", { ...tt, dislikedDishes })
         }
         accent
       />
       <NumberRow
-        label="Haftada yeni tarif sayısı"
+        label={L("Haftada yeni tarif sayısı", "New recipes per week")}
         value={tt.newRecipesPerWeek}
         onChange={(newRecipesPerWeek) =>
           update("tastes", { ...tt, newRecipesPerWeek })
@@ -481,15 +511,15 @@ function StepPairing({ draft, update }: StepProps) {
   const pr = draft.pairing;
   return (
     <>
-      <Title>Eşleştirme Kuralları</Title>
-      <Hint>Yan yemekler ve yapılmayacak eşleşmeler.</Hint>
-      <Label>Sık tüketilen yan yemekler</Label>
+      <Title>{L("Eşleştirme Kuralları", "Pairing Rules")}</Title>
+      <Hint>{L("Yan yemekler ve yapılmayacak eşleşmeler.", "Side dishes and pairings to avoid.")}</Hint>
+      <Label>{L("Sık tüketilen yan yemekler", "Frequent side dishes")}</Label>
       <TagInput
         items={pr.sides}
-        placeholder="örn. pilav, salata, cacık"
+        placeholder={L("örn. pilav, salata, cacık", "e.g. rice, salad, yogurt dip")}
         onChange={(sides) => update("pairing", { ...pr, sides })}
       />
-      <Label>Yapılmayacak eşleşmeler (ana + yan)</Label>
+      <Label>{L("Yapılmayacak eşleşmeler (ana + yan)", "Forbidden pairings (main + side)")}</Label>
       {pr.forbiddenPairs.map((fp, i) => (
         <View key={i} style={styles.row}>
           <Text variant="smallMedium" style={{ flex: 1 }}>
@@ -517,7 +547,7 @@ function StepPairing({ draft, update }: StepProps) {
           })
         }
       />
-      <Label>Günden güne taşıma (ör. tavuk → tavuklu çorba)</Label>
+      <Label>{L("Günden güne taşıma (ör. tavuk → tavuklu çorba)", "Day-to-day carryover (e.g. chicken → chicken soup)")}</Label>
       {pr.dayCarryover.map((c, i) => (
         <View key={i} style={styles.row}>
           <Text variant="smallMedium" style={{ flex: 1 }}>
@@ -544,10 +574,10 @@ function StepPairing({ draft, update }: StepProps) {
           })
         }
       />
-      <Label>Sadece yan sayılanlar (ana olarak kullanma)</Label>
+      <Label>{L("Sadece yan sayılanlar (ana olarak kullanma)", "Side-only (don't use as a main)")}</Label>
       <TagInput
         items={pr.sidesOnly}
-        placeholder="örn. yoğurt, turşu"
+        placeholder={L("örn. yoğurt, turşu", "e.g. yogurt, pickles")}
         onChange={(sidesOnly) => update("pairing", { ...pr, sidesOnly })}
       />
     </>
@@ -558,22 +588,22 @@ function StepSeason({ draft, update }: StepProps) {
   const s = draft.season;
   return (
     <>
-      <Title>Mevsim</Title>
-      <Hint>Yıl boyu mu, mevsimine göre mi?</Hint>
+      <Title>{L("Mevsim", "Season")}</Title>
+      <Hint>{L("Yıl boyu mu, mevsimine göre mi?", "All year round or seasonal?")}</Hint>
       <ToggleRow
-        label="Yıl boyu (mevsim önemsiz)"
+        label={L("Yıl boyu (mevsim önemsiz)", "All year (season doesn't matter)")}
         value={s.yearRound}
         onChange={(yearRound) => update("season", { ...s, yearRound })}
       />
       {!s.yearRound ? (
         <>
-          <Label>Şu anki mevsim</Label>
+          <Label>{L("Şu anki mevsim", "Current season")}</Label>
           <SegmentRow
             options={[
-              { value: "ilkbahar", label: "İlkbahar" },
-              { value: "yaz", label: "Yaz" },
-              { value: "sonbahar", label: "Sonbahar" },
-              { value: "kis", label: "Kış" },
+              { value: "ilkbahar", label: L("İlkbahar", "Spring") },
+              { value: "yaz", label: L("Yaz", "Summer") },
+              { value: "sonbahar", label: L("Sonbahar", "Autumn") },
+              { value: "kis", label: L("Kış", "Winter") },
             ]}
             value={s.currentSeason}
             onChange={(currentSeason) =>
@@ -593,9 +623,9 @@ function StepShopping({ draft, update }: StepProps) {
   const sh = draft.shopping;
   return (
     <>
-      <Title>Alışveriş</Title>
-      <Hint>Listeyi nasıl alıyorsun?</Hint>
-      <Label>Alışveriş günü</Label>
+      <Title>{L("Alışveriş", "Shopping")}</Title>
+      <Hint>{L("Listeyi nasıl alıyorsun?", "How do you shop the list?")}</Hint>
+      <Label>{L("Alışveriş günü", "Shopping day")}</Label>
       <DayPicker
         selected={[sh.day]}
         single
@@ -603,12 +633,12 @@ function StepShopping({ draft, update }: StepProps) {
           update("shopping", { ...sh, day: days[0] ?? sh.day })
         }
       />
-      <Label>Kanal</Label>
+      <Label>{L("Kanal", "Channel")}</Label>
       <SegmentRow
         options={[
-          { value: "market", label: "Market" },
-          { value: "online", label: "Online" },
-          { value: "ikisi", label: "İkisi" },
+          { value: "market", label: L("Market", "Store") },
+          { value: "online", label: L("Online", "Online") },
+          { value: "ikisi", label: L("İkisi", "Both") },
         ]}
         value={sh.channel}
         onChange={(channel) =>
@@ -616,16 +646,16 @@ function StepShopping({ draft, update }: StepProps) {
         }
       />
       <ToggleRow
-        label="Listeyi kategoriye göre grupla"
+        label={L("Listeyi kategoriye göre grupla", "Group list by category")}
         value={sh.groupByCategory}
         onChange={(groupByCategory) =>
           update("shopping", { ...sh, groupByCategory })
         }
       />
-      <Label>Dolapta sürekli olanlar</Label>
+      <Label>{L("Dolapta sürekli olanlar", "Pantry staples")}</Label>
       <TagInput
         items={sh.stocked}
-        placeholder="örn. zeytinyağı, tuz, makarna"
+        placeholder={L("örn. zeytinyağı, tuz, makarna", "e.g. olive oil, salt, pasta")}
         onChange={(stocked) => update("shopping", { ...sh, stocked })}
       />
     </>
@@ -635,8 +665,8 @@ function StepShopping({ draft, update }: StepProps) {
 function StepLanguage({ draft, update }: StepProps) {
   return (
     <>
-      <Title>Dil</Title>
-      <Hint>Plan ve tarifler hangi dilde olsun?</Hint>
+      <Title>{L("Dil", "Language")}</Title>
+      <Hint>{L("Plan ve tarifler hangi dilde olsun?", "Which language for the plan and recipes?")}</Hint>
       <SegmentRow
         options={[
           { value: "tr", label: "Türkçe" },
@@ -754,7 +784,7 @@ function ToggleRow({
         weight="600"
         color={value ? colors.accent : colors.dim}
       >
-        {value ? "Açık" : "Kapalı"}
+        {value ? L("Açık", "On") : L("Kapalı", "Off")}
       </Text>
     </Pressable>
   );
@@ -983,7 +1013,7 @@ function AddFixedDay({
       />
       <View style={styles.tagInputRow}>
         <TextInput
-          placeholder="örn. balık"
+          placeholder={L("örn. balık", "e.g. fish")}
           placeholderTextColor={colors.dim}
           value={protein}
           onChangeText={setProtein}
@@ -1016,14 +1046,14 @@ function AddPair({
     <View style={styles.addCard}>
       <View style={styles.tagInputRow}>
         <TextInput
-          placeholder="ana (örn. balık)"
+          placeholder={L("ana (örn. balık)", "main (e.g. fish)")}
           placeholderTextColor={colors.dim}
           value={main}
           onChangeText={setMain}
           style={[styles.tagInput, { flex: 1 }]}
         />
         <TextInput
-          placeholder="yan (örn. cacık)"
+          placeholder={L("yan (örn. cacık)", "side (e.g. dip)")}
           placeholderTextColor={colors.dim}
           value={side}
           onChangeText={setSide}
@@ -1060,14 +1090,14 @@ function AddCarryover({
     <View style={styles.addCard}>
       <View style={styles.tagInputRow}>
         <TextInput
-          placeholder="kalan (örn. tavuk)"
+          placeholder={L("kalan (örn. tavuk)", "leftover (e.g. chicken)")}
           placeholderTextColor={colors.dim}
           value={from}
           onChangeText={setFrom}
           style={[styles.tagInput, { flex: 1 }]}
         />
         <TextInput
-          placeholder="dönüşür (örn. çorba)"
+          placeholder={L("dönüşür (örn. çorba)", "becomes (e.g. soup)")}
           placeholderTextColor={colors.dim}
           value={to}
           onChangeText={setTo}

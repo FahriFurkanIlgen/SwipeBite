@@ -334,20 +334,23 @@ export const FAMOUS_COCKTAIL_INDEX: Record<string, Cocktail> =
   Object.fromEntries(FAMOUS_COCKTAILS.map((c) => [c.id, c]));
 
 export const COCKTAIL_TECHNIQUE_LABEL: Record<CocktailTechnique, string> = {
-  shake: "Çalkala",
-  stir: "Karıştır",
-  build: "Bardakta",
-  blend: "Blender",
-  muddle: "Ezerek",
+  shake: "Shake",
+  stir: "Stir",
+  build: "Build",
+  blend: "Blend",
+  muddle: "Muddle",
 };
 
 export const COCKTAIL_GLASS_LABEL: Record<CocktailGlass, string> = {
-  rocks: "Rocks bardağı",
-  highball: "Highball bardağı",
-  coupe: "Coupe kadehi",
-  martini: "Martini kadehi",
-  flute: "Şampanya flütü",
-  wine: "Şarap kadehi",
-  "copper-mug": "Bakır kupa",
-  hurricane: "Hurricane bardağı",
+  rocks: "Rocks glass",
+  highball: "Highball glass",
+  coupe: "Coupe",
+  martini: "Martini glass",
+  flute: "Champagne flute",
+  wine: "Wine glass",
+  "copper-mug": "Copper mug",
+  hurricane: "Hurricane glass",
+  tiki: "Tiki mug",
+  "julep-cup": "Julep cup",
+  mug: "Mug",
 };

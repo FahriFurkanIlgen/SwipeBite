@@ -15,6 +15,7 @@ import { Check, Sparkles, X } from "lucide-react-native";
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, radii, spacing } from "@/constants/theme";
+import { L } from "@/constants/appVariant";
 import { PRIVACY_URL, TERMS_URL } from "@/constants/legal";
 import { track } from "@/features/analytics/analyticsService";
 import {
@@ -46,7 +47,13 @@ export default function PaywallScreen() {
 
   const unlockPro = async () => {
     await setTier("pro");
-    Alert.alert("SwipeBite Pro aktif", "Artık tüm AI özellikleri sınırsız.");
+    Alert.alert(
+      L("SwipeBite Pro aktif", "SwipeBar Pro active"),
+      L(
+        "Artık tüm AI özellikleri sınırsız.",
+        "All AI features are now unlimited.",
+      ),
+    );
     router.back();
   };
 
@@ -58,7 +65,7 @@ export default function PaywallScreen() {
       if (res.entitled) {
         await unlockPro();
       } else if (!res.cancelled && res.error) {
-        Alert.alert("Satın alma", res.error);
+        Alert.alert(L("Satın alma", "Purchase"), res.error);
       }
     } finally {
       setBusy(false);
@@ -74,8 +81,11 @@ export default function PaywallScreen() {
         await unlockPro();
       } else {
         Alert.alert(
-          "Geri yükleme",
-          "Bu hesapta aktif bir Pro aboneliği bulunamadı.",
+          L("Geri yükleme", "Restore"),
+          L(
+            "Bu hesapta aktif bir Pro aboneliği bulunamadı.",
+            "No active Pro subscription found on this account.",
+          ),
         );
       }
     } finally {
@@ -100,10 +110,10 @@ export default function PaywallScreen() {
             <Sparkles size={26} strokeWidth={2} color={colors.ink} />
           </View>
           <Text variant="overline" color={colors.dim}>
-            SwipeBite Pro
+            {L("SwipeBite Pro", "SwipeBar Pro")}
           </Text>
           <Text variant="h1" style={{ marginTop: 4, textAlign: "center" }}>
-            Mutfakta sınırsız yardım
+            {L("Mutfakta sınırsız yardım", "Unlimited help at the bar")}
           </Text>
           <Text
             variant="body"
@@ -114,8 +124,10 @@ export default function PaywallScreen() {
               lineHeight: 22,
             }}
           >
-            Eksik malzemeyi sana göre tarife çevir, haftalık planını AI kursun —
-            limit yok.
+            {L(
+              "Eksik malzemeyi sana göre tarife çevir, haftalık planını AI kursun — limit yok.",
+              "Adapt recipes to what you have and let AI build your weekly plan — no limits.",
+            )}
           </Text>
         </View>
 
@@ -196,7 +208,7 @@ export default function PaywallScreen() {
             <ActivityIndicator color={colors.ink} />
           ) : (
             <Text variant="bodyMedium" weight="700" color={colors.ink}>
-              Pro'ya geç
+              {L("Pro'ya geç", "Go Pro")}
             </Text>
           )}
         </Pressable>
@@ -207,13 +219,13 @@ export default function PaywallScreen() {
             color={colors.dim}
             style={{ textAlign: "center", marginTop: spacing.sm }}
           >
-            Test modu — gerçek ödeme alınmaz.
+            {L("Test modu — gerçek ödeme alınmaz.", "Test mode — no real charge.")}
           </Text>
         ) : null}
 
         <Pressable onPress={handleRestore} hitSlop={8} style={styles.restore}>
           <Text variant="small" color={colors.dim}>
-            Satın alımları geri yükle
+            {L("Satın alımları geri yükle", "Restore purchases")}
           </Text>
         </Pressable>
 
@@ -222,12 +234,10 @@ export default function PaywallScreen() {
           color={colors.dim}
           style={{ textAlign: "center", marginTop: spacing.xs, lineHeight: 18 }}
         >
-          SwipeBite Pro, seçtiğin döneme (aylık veya yıllık) göre ücretlendirilir
-          ve dönem sonunda otomatik yenilenir. Ödeme, satın alma onayında Apple
-          Kimliği hesabından tahsil edilir. Abonelik, mevcut dönem bitmeden en az
-          24 saat önce iptal edilmezse otomatik yenilenir. Aboneliği istediğin
-          zaman cihazının Ayarlar → Apple Kimliği → Abonelikler bölümünden
-          yönetebilir veya iptal edebilirsin.
+          {L(
+            "SwipeBite Pro, seçtiğin döneme (aylık veya yıllık) göre ücretlendirilir ve dönem sonunda otomatik yenilenir. Ödeme, satın alma onayında Apple Kimliği hesabından tahsil edilir. Abonelik, mevcut dönem bitmeden en az 24 saat önce iptal edilmezse otomatik yenilenir. Aboneliği istediğin zaman cihazının Ayarlar → Apple Kimliği → Abonelikler bölümünden yönetebilir veya iptal edebilirsin.",
+            "SwipeBar Pro is billed for your selected period (monthly or yearly) and renews automatically at the end of the period. Payment is charged to your Apple ID account at confirmation of purchase. The subscription renews automatically unless canceled at least 24 hours before the end of the current period. You can manage or cancel your subscription anytime in your device's Settings → Apple ID → Subscriptions.",
+          )}
         </Text>
 
         <View style={styles.legalRow}>

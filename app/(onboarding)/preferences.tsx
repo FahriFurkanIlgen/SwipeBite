@@ -9,28 +9,42 @@ import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { isBar, L } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { SpiceLevel } from "@/types/domain";
 
-const ALLERGIES = [
-  "Süt",
-  "Yumurta",
-  "Gluten",
-  "Yer fıstığı",
-  "Kabuklu yemiş",
-  "Deniz ürünleri",
-  "Soya",
-];
-const CUISINES = [
-  "Türk",
-  "İtalyan",
-  "Akdeniz",
-  "Asya",
-  "Meksika",
-  "Hint",
-  "Orta Doğu",
-  "Fransız",
-];
+const ALLERGIES = isBar
+  ? ["Dairy", "Egg", "Gluten", "Peanut", "Tree nuts", "Seafood", "Soy"]
+  : [
+      "Süt",
+      "Yumurta",
+      "Gluten",
+      "Yer fıstığı",
+      "Kabuklu yemiş",
+      "Deniz ürünleri",
+      "Soya",
+    ];
+const CUISINES = isBar
+  ? [
+      "Classic",
+      "Tropical",
+      "Refreshing",
+      "Spirit-forward",
+      "Sour",
+      "Sparkling",
+      "Bitter",
+      "Sweet",
+    ]
+  : [
+      "Türk",
+      "İtalyan",
+      "Akdeniz",
+      "Asya",
+      "Meksika",
+      "Hint",
+      "Orta Doğu",
+      "Fransız",
+    ];
 const SPICES: { value: SpiceLevel; label: string; emoji: string }[] = [
   { value: "none", label: t.spice.none, emoji: "😌" },
   { value: "mild", label: t.spice.mild, emoji: "🌶" },
@@ -61,7 +75,10 @@ export default function PreferencesScreen() {
           color={colors.slate}
           style={{ marginTop: spacing.sm }}
         >
-          Size en uygun önerileri sunabilmemiz için
+          {L(
+            "Size en uygun önerileri sunabilmemiz için",
+            "So we can tailor the best suggestions for you",
+          )}
         </Text>
       </Animated.View>
 
@@ -70,7 +87,7 @@ export default function PreferencesScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        <Section label="Sevdiğiniz Mutfaklar">
+        <Section label={L("Sevdiğiniz Mutfaklar", "Styles you enjoy")}>
           <ChipGroup
             options={CUISINES}
             selected={profile?.favoriteCuisines ?? []}
@@ -78,7 +95,7 @@ export default function PreferencesScreen() {
           />
         </Section>
 
-        <Section label="Acı Seviyesi">
+        <Section label={L("Acı Seviyesi", "Strength tolerance")}>
           <View style={styles.spiceRow}>
             {SPICES.map((s) => {
               const active = profile?.spiceTolerance === s.value;
@@ -102,7 +119,7 @@ export default function PreferencesScreen() {
           </View>
         </Section>
 
-        <Section label="Alerjiler / İstemiyorum">
+        <Section label={L("Alerjiler / İstemiyorum", "Allergies / Avoid")}>
           <ChipGroup
             options={ALLERGIES}
             selected={profile?.allergies ?? []}
@@ -117,10 +134,10 @@ export default function PreferencesScreen() {
           onPress={() => router.push("/(onboarding)/household")}
           style={styles.cta}
         >
-          <Text variant="bodyMedium" weight="700" color={colors.ink}>
+          <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
             {t.common.continue}
           </Text>
-          <ChevronRight size={18} strokeWidth={2.5} color={colors.ink} />
+          <ChevronRight size={18} strokeWidth={2.5} color={colors.onPrimary} />
         </Pressable>
       </View>
     </Screen>
@@ -152,7 +169,8 @@ const ChipGroup: React.FC<{
         variant === "accent" ? colors.accentSoft : colors.primary;
       const activeBorder =
         variant === "accent" ? colors.accent : colors.primary;
-      const activeColor = variant === "accent" ? colors.accent : colors.ink;
+      const activeColor =
+        variant === "accent" ? colors.accent : colors.onPrimary;
       return (
         <Pressable
           key={o}

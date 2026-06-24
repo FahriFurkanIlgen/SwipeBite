@@ -246,13 +246,13 @@ export default function ImportScreen() {
               disabled={!canSubmit}
               style={[styles.cta, { opacity: !canSubmit ? 0.4 : 1 }]}
             >
-              <Sparkles size={16} color={colors.ink} strokeWidth={1.5} />
+              <Sparkles size={16} color={colors.onPrimary} strokeWidth={1.5} />
               <Text
                 style={{
                   fontFamily: fonts.sans,
                   fontWeight: "700",
                   fontSize: 15,
-                  color: colors.ink,
+                  color: colors.onPrimary,
                 }}
               >
                 AI ile Ayrıştır

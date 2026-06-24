@@ -9,6 +9,7 @@ import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { L } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { authService } from "@/features/auth/authService";
 import { uuidV4 } from "@/utils/id";
@@ -27,7 +28,7 @@ export default function HouseholdScreen() {
       router.push("/(onboarding)/invite");
       return;
     }
-    const trimmed = name.trim() || "Bizim Ev";
+    const trimmed = name.trim() || L("Bizim Ev", "Our Bar");
     setSaving(true);
     try {
       if (authService.isConfigured()) {
@@ -47,8 +48,11 @@ export default function HouseholdScreen() {
       });
       router.push("/(onboarding)/invite");
     } catch (err) {
-      const msg = err instanceof Error ? err.message : "Hane oluşturulamadı.";
-      Alert.alert("Hata", msg);
+      const msg =
+        err instanceof Error
+          ? err.message
+          : L("Hane oluşturulamadı.", "Couldn't create your group.");
+      Alert.alert(L("Hata", "Error"), msg);
     } finally {
       setSaving(false);
     }
@@ -70,8 +74,10 @@ export default function HouseholdScreen() {
           color={colors.slate}
           style={{ marginTop: spacing.sm }}
         >
-          Ev halkınıza bir isim verin. Bu isim paylaşım bağlantılarında ve
-          bildirimlerinde görünecek.
+          {L(
+            "Ev halkınıza bir isim verin. Bu isim paylaşım bağlantılarında ve bildirimlerinde görünecek.",
+            "Give your group a name. It shows up in invite links and notifications.",
+          )}
         </Text>
       </Animated.View>
 
@@ -88,8 +94,11 @@ export default function HouseholdScreen() {
         />
         <View style={styles.tip}>
           <Text variant="smallMedium" color="#6B5000">
-            💡 Evinize sonradan isim değiştirebilirsiniz. Şimdilik istediğiniz
-            herhangi bir ismi kullanabilirsiniz.
+            💡{" "}
+            {L(
+              "Evinize sonradan isim değiştirebilirsiniz. Şimdilik istediğiniz herhangi bir ismi kullanabilirsiniz.",
+              "You can rename it later. For now, use any name you like.",
+            )}
           </Text>
         </View>
       </View>
@@ -100,10 +109,10 @@ export default function HouseholdScreen() {
           disabled={saving}
           style={[styles.cta, saving && { opacity: 0.94 }]}
         >
-          <Text variant="bodyMedium" weight="700" color={colors.ink}>
+          <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
             {saving ? t.common.loading : t.common.continue}
           </Text>
-          <ChevronRight size={18} strokeWidth={2.5} color={colors.ink} />
+          <ChevronRight size={18} strokeWidth={2.5} color={colors.onPrimary} />
         </Pressable>
       </View>
     </Screen>

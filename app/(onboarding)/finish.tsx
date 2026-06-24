@@ -10,6 +10,7 @@ import { ProgressDots } from "@/components/ui/ProgressDots";
 import { Confetti } from "@/components/ui/Confetti";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { L } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { useTutorialStore } from "@/store/tutorialStore";
 
@@ -20,11 +21,14 @@ export default function FinishScreen() {
   const handleStart = () => {
     setOnboarded(true);
     Alert.alert(
-      "Uygulama turu",
-      "Sana SwipeBite'ı tanıtan kısa bir tur yapalım mı? (4 sayfa + ekran içi ipuçları)",
+      L("App tour", "App tour"),
+      L(
+        "Sana SwipeBite'ı tanıtan kısa bir tur yapalım mı? (4 sayfa + ekran içi ipuçları)",
+        "Want a quick tour of SwipeBar? (4 pages + in-app tips)",
+      ),
       [
         {
-          text: "Hayır, atla",
+          text: L("Hayır, atla", "No, skip"),
           style: "cancel",
           onPress: () => {
             skipAllTutorials();
@@ -32,7 +36,7 @@ export default function FinishScreen() {
           },
         },
         {
-          text: "Evet, göster",
+          text: L("Evet, göster", "Yes, show me"),
           style: "default",
           onPress: () => router.replace("/(onboarding)/tutorial"),
         },
@@ -57,12 +61,12 @@ export default function FinishScreen() {
           entering={ZoomIn.duration(400)}
           style={styles.checkCircle}
         >
-          <Check size={36} strokeWidth={2.5} color={colors.ink} />
+          <Check size={36} strokeWidth={2.5} color={colors.onPrimary} />
         </Animated.View>
 
         <Animated.View entering={FadeInDown.delay(150).duration(500)}>
           <Text variant="h1" align="center">
-            Her şey hazır!
+            {L("Her şey hazır!", "You're all set!")}
           </Text>
           <Text
             variant="body"
@@ -79,20 +83,23 @@ export default function FinishScreen() {
           style={styles.quoteCard}
         >
           <Text variant="overline" color={colors.dim}>
-            Bugün ne yesek?
+            {L("Bugün ne yesek?", "What should we drink?")}
           </Text>
           <Text style={styles.quote}>
-            "Ailecek kaydırın, AI sizin için en iyi eşleşmeyi bulsun."
+            {L(
+              '"Ailecek kaydırın, AI sizin için en iyi eşleşmeyi bulsun."',
+              '"Swipe together and let AI find your perfect match."',
+            )}
           </Text>
         </Animated.View>
       </View>
 
       <View style={styles.footer}>
         <Pressable onPress={handleStart} style={styles.cta}>
-          <Text variant="bodyMedium" weight="700" color={colors.ink}>
+          <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
             {t.onboarding.startSwiping}
           </Text>
-          <ChevronRight size={18} strokeWidth={2.5} color={colors.ink} />
+          <ChevronRight size={18} strokeWidth={2.5} color={colors.onPrimary} />
         </Pressable>
       </View>
     </Screen>

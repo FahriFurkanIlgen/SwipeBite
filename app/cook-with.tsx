@@ -328,7 +328,7 @@ export default function CookWithScreen() {
                     <Text
                       variant="smallMedium"
                       weight={isActive ? "600" : "400"}
-                      color={isActive ? colors.ink : colors.slate}
+                      color={isActive ? colors.onPrimary : colors.slate}
                     >
                       {MODE_LABELS[m]}
                     </Text>
@@ -386,7 +386,11 @@ export default function CookWithScreen() {
                     )}
                   </View>
                   <View style={styles.scoreBadge}>
-                    <Text variant="smallMedium" weight="700" color={colors.ink}>
+                    <Text
+                      variant="smallMedium"
+                      weight="700"
+                      color={colors.onPrimary}
+                    >
                       {Math.round((r.matchedCount / r.selectedCount) * 100)}%
                     </Text>
                   </View>

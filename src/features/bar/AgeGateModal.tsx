@@ -28,7 +28,7 @@ export const AgeGateModal: React.FC<AgeGateModalProps> = ({
   visible,
   onConfirm,
   onDecline,
-  title = "Bar moduna giriyorsun",
+  title = "You're entering bar mode",
 }) => {
   const [checked, setChecked] = React.useState(false);
 
@@ -55,7 +55,7 @@ export const AgeGateModal: React.FC<AgeGateModalProps> = ({
               <Wine size={20} strokeWidth={2} color={colors.ink} />
             </View>
             <Text variant="overline" color={colors.dim} style={{ flex: 1 }}>
-              18+ İçerik
+              18+ Content
             </Text>
             <Pressable onPress={onDecline} hitSlop={10}>
               <X size={18} strokeWidth={2} color={colors.slate} />
@@ -70,9 +70,9 @@ export const AgeGateModal: React.FC<AgeGateModalProps> = ({
             color={colors.slate}
             style={{ marginTop: spacing.xs, lineHeight: 22 }}
           >
-            Bu bölümde alkollü kokteyl tarifleri, bar dolabı önerileri ve
-            alkollü içecek eşleştirmeleri bulunur. 18 yaş altı için uygun
-            değildir.
+            This section contains alcoholic cocktail recipes, bar cabinet
+            suggestions, and alcoholic drink matching. It is not suitable for
+            those under 18.
           </Text>
 
           <Pressable
@@ -90,7 +90,7 @@ export const AgeGateModal: React.FC<AgeGateModalProps> = ({
               color={colors.ink}
               style={{ flex: 1, lineHeight: 20 }}
             >
-              18 yaşından büyüğüm ve alkollü içerikleri görmek istiyorum.
+              I'm over 18 and want to see alcohol-related content.
             </Text>
           </Pressable>
 
@@ -104,13 +104,13 @@ export const AgeGateModal: React.FC<AgeGateModalProps> = ({
               weight="700"
               color={checked ? colors.ink : colors.dim}
             >
-              Bar modunu aç
+              Turn on bar mode
             </Text>
           </Pressable>
 
           <Pressable onPress={onDecline} hitSlop={10} style={styles.decline}>
             <Text variant="small" color={colors.dim}>
-              Hayır, ilgilenmiyorum
+              No, I'm not interested
             </Text>
           </Pressable>
         </Animated.View>

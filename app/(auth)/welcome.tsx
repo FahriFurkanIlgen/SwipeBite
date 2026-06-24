@@ -22,9 +22,11 @@ import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
 import { useAuthStore } from "@/store/authStore";
 import { authService } from "@/features/auth/authService";
+import { isBar } from "@/constants/appVariant";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1647772809798-f34d785c981c?w=900&h=1400&fit=crop&auto=format";
+const HERO_IMAGE = isBar
+  ? "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=900&h=1400&fit=crop&auto=format"
+  : "https://images.unsplash.com/photo-1647772809798-f34d785c981c?w=900&h=1400&fit=crop&auto=format";
 
 function GoogleMark() {
   return (
@@ -237,7 +239,7 @@ export default function Welcome() {
                 color={colors.primary}
                 style={{ letterSpacing: 2.2 }}
               >
-                Ev halkı için
+                {t.auth.brandOverline}
               </Text>
             </Animated.View>
 
@@ -246,8 +248,8 @@ export default function Welcome() {
               style={{ marginBottom: 8 }}
             >
               <View style={styles.brandRow}>
-                <Text style={styles.brandLight}>Swipe</Text>
-                <Text style={styles.brandAccent}>Bite</Text>
+                <Text style={styles.brandLight}>{t.app.name.slice(0, 5)}</Text>
+                <Text style={styles.brandAccent}>{t.app.name.slice(5)}</Text>
               </View>
             </Animated.View>
 
@@ -341,7 +343,7 @@ export default function Welcome() {
                     <View style={styles.dividerRow}>
                       <View style={styles.dividerLine} />
                       <Text variant="caption" color="rgba(250,247,242,0.4)">
-                        VEYA
+                        {t.auth.divider}
                       </Text>
                       <View style={styles.dividerLine} />
                     </View>
@@ -418,7 +420,7 @@ export default function Welcome() {
                             <Text
                               variant="bodyMedium"
                               weight="600"
-                              color={colors.ink}
+                              color={colors.onPrimary}
                               style={styles.btnLabel}
                             >
                               {busy ? t.common.loading : t.auth.sendCode}
@@ -426,7 +428,7 @@ export default function Welcome() {
                             <ChevronRight
                               size={16}
                               strokeWidth={2}
-                              color={colors.ink}
+                              color={colors.onPrimary}
                             />
                           </View>
                         </Pressable>
@@ -471,7 +473,7 @@ export default function Welcome() {
                             <Text
                               variant="bodyMedium"
                               weight="600"
-                              color={colors.ink}
+                              color={colors.onPrimary}
                               style={styles.btnLabel}
                             >
                               {busy ? t.common.loading : t.auth.verifyCode}
@@ -479,7 +481,7 @@ export default function Welcome() {
                             <ChevronRight
                               size={16}
                               strokeWidth={2}
-                              color={colors.ink}
+                              color={colors.onPrimary}
                             />
                           </View>
                         </Pressable>

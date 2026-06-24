@@ -340,17 +340,20 @@ export const authService = {
     // households.created_by FK would fail.
     const { data: authData } = await supabase.auth.getUser();
     const authed = authData.user;
-    if (authed) {
-      const { error: userErr } = await supabase.from("users").upsert({
-        id: authed.id,
-        name:
-          (authed.user_metadata?.name as string | undefined) ??
-          authed.email?.split("@")[0] ??
-          "Sen",
-        email: authed.email,
-      });
-      if (userErr) throw userErr;
-    }
+    // No Supabase session (e.g. mock sign-in in Expo Go). We can't create a
+    // server-side household — RLS would reject the insert (auth.uid() is null)
+    // and the FK on created_by would fail. Return null so the caller falls
+    // back to a local, device-only household.
+    if (!authed) return null;
+    const { error: userErr } = await supabase.from("users").upsert({
+      id: authed.id,
+      name:
+        (authed.user_metadata?.name as string | undefined) ??
+        authed.email?.split("@")[0] ??
+        "Sen",
+      email: authed.email,
+    });
+    if (userErr) throw userErr;
     const inviteCode = Math.random().toString(36).slice(2, 8).toUpperCase();
     const { data: h, error } = await supabase
       .from("households")

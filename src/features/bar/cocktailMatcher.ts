@@ -14,9 +14,10 @@ import type {
  * citrus or garnishes. Everything else is weighted 1×.
  */
 const ALCOHOL_CATEGORIES: ReadonlySet<BarIngredientCategory> = new Set([
-  "distile",
-  "liqueur",
-  "wine",
+  "spirits",
+  "liqueur-vermouth",
+  "amaro-bitters",
+  "wine-sparkling",
 ]);
 
 function matchWeight(ing: BarIngredient): number {
@@ -74,6 +75,34 @@ export function rankCocktails(
   ownedIds: ReadonlySet<string>,
   pool: Cocktail[] = ALL_COCKTAILS,
 ): CocktailMatch[] {
+  // The full-catalogue ranking is the hot path: both the Home and Bar
+  // screens request it on every cabinet change, and each `new Set(...)`
+  // they pass is a fresh reference, so per-component `useMemo` can't share
+  // the work. Cache the last full-pool result keyed by the cabinet's
+  // *contents* so repeated calls with the same bottles reuse one pass over
+  // all ~500 cocktails instead of recomputing it several times per render.
+  if (pool !== ALL_COCKTAILS) return computeRanked(ownedIds, pool);
+
+  const key = ownedSignature(ownedIds);
+  if (key === rankCacheKey && rankCache) return rankCache;
+  const ranked = computeRanked(ownedIds, pool);
+  rankCacheKey = key;
+  rankCache = ranked;
+  return ranked;
+}
+
+let rankCacheKey: string | null = null;
+let rankCache: CocktailMatch[] | null = null;
+
+/** Stable signature of a cabinet's contents, order-independent. */
+function ownedSignature(ownedIds: ReadonlySet<string>): string {
+  return Array.from(ownedIds).sort().join("|");
+}
+
+function computeRanked(
+  ownedIds: ReadonlySet<string>,
+  pool: Cocktail[],
+): CocktailMatch[] {
   return pool
     .map((c) => matchCocktail(c, ownedIds))
     .sort((a, b) => {
@@ -103,9 +132,11 @@ export function suggestNextIngredients(
   pool: Cocktail[] = ALL_COCKTAILS,
   limit = 5,
 ): { ingredient: BarIngredient; unlocks: number }[] {
+  // Reuse the (cached) ranking instead of running `matchCocktail` over the
+  // whole catalogue a second time.
+  const matches = rankCocktails(ownedIds, pool);
   const counts = new Map<string, number>();
-  for (const cocktail of pool) {
-    const match = matchCocktail(cocktail, ownedIds);
+  for (const match of matches) {
     if (match.cookable) continue;
     // Only count cocktails that are 1 ingredient away from being cookable.
     if (match.missingRequired.length !== 1) continue;

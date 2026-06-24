@@ -1,7 +1,16 @@
 /**
- * Centralized Turkish UI copy. Keep tone warm, conversational, family-friendly.
+ * Centralized UI copy.
+ *
+ * The app ships two variants from one codebase:
+ *   - SwipeBite (food) → Turkish copy (`tr`)
+ *   - SwipeBar  (bar)  → English copy (`en`)
+ *
+ * `t` resolves to the right set at runtime based on the build variant, so all
+ * call sites keep using `t.section.key` unchanged.
  */
-export const t = {
+import { isBar } from "./appVariant";
+
+const tr = {
   app: {
     name: "SwipeBite",
     tagline: "Kaydır. Eşleş. Pişir.",
@@ -19,6 +28,8 @@ export const t = {
     error: "Bir şeyler ters gitti",
   },
   auth: {
+    brandOverline: "Ev halkı için",
+    divider: "VEYA",
     welcomeTitle: "Bugün ne yesek?",
     welcomeSubtitle:
       "Ev halkıyla birlikte yemek kararını saniyeler içinde verin.",
@@ -190,6 +201,201 @@ export const t = {
     screenshot: "Ekran görüntüsü yükle (yakında)",
     importCta: "İçe aktar",
   },
-} as const;
+};
 
-export type Copy = typeof t;
+export type Copy = typeof tr;
+
+const en: Copy = {
+  app: {
+    name: "SwipeBar",
+    tagline: "Swipe. Match. Mix.",
+  },
+  common: {
+    continue: "Continue",
+    skip: "Skip",
+    save: "Save",
+    cancel: "Cancel",
+    done: "Done",
+    back: "Back",
+    next: "Next",
+    retry: "Try again",
+    loading: "Loading…",
+    error: "Something went wrong",
+  },
+  auth: {
+    brandOverline: "For your crew",
+    divider: "OR",
+    welcomeTitle: "What should we drink?",
+    welcomeSubtitle:
+      "Decide what to mix together with your friends in seconds.",
+    continueWithEmail: "Continue with email",
+    continueWithGoogle: "Continue with Google",
+    continueWithApple: "Continue with Apple",
+    legal: "By continuing, you agree to the Terms of Use and Privacy Policy.",
+    emailPlaceholder: "Your email",
+    namePlaceholder: "Your name",
+    otpTitle: "Verification code",
+    otpSubtitle: (email: string) => `We sent a 6-digit code to ${email}.`,
+    otpPlaceholder: "6-digit code",
+    sendCode: "Send code",
+    verifyCode: "Verify",
+    resendCode: "Resend code",
+    codeSent: "Code sent. Check your inbox.",
+    invalidCode: "The code is incorrect or has expired.",
+    invalidEmail: "Enter a valid email.",
+  },
+  onboarding: {
+    step: (i: number, n: number) => `Step ${i} / ${n}`,
+    allergiesTitle: "Any allergies?",
+    allergiesSubtitle: "So we never suggest the wrong thing.",
+    dislikesTitle: "Anything you dislike?",
+    dislikesSubtitle: "Pick what you'd rather not see in your glass.",
+    spiceTitle: "Do you like it strong?",
+    spiceSubtitle: "Set your strength preference and we'll match it.",
+    cuisinesTitle: "Which styles do you enjoy?",
+    cuisinesSubtitle: "You can pick more than one.",
+    householdTitle: "Name your bar",
+    householdSubtitle: "This is where you'll decide what to mix together.",
+    householdPlaceholder: "e.g. Our Bar",
+    invitePartnerTitle: "Invite a friend",
+    invitePartnerSubtitle: "Swipe together, decide faster.",
+    inviteViaLink: "Share invite link",
+    inviteViaQr: "Invite via QR code",
+    inviteLater: "I'll do it later",
+    firstSessionTitle: "Let's find your first match",
+    firstSessionSubtitle: "Swipe a few cards, we'll handle the rest.",
+    startSwiping: "Start swiping",
+    barTitle: "Bar mode",
+    barSubtitle:
+      "Cocktail recipes, bar cabinet suggestions, and drink matching. You can turn this section off if you prefer.",
+    barConsent: "I'm over 18 and want to see alcohol-related content.",
+    barEnable: "Turn on bar mode",
+    barSkip: "Keep it off for now",
+  },
+  spice: {
+    none: "No spice",
+    mild: "Mild",
+    medium: "Medium",
+    hot: "Extra hot",
+  },
+  tabs: {
+    home: "Home",
+    swipe: "Match",
+    plan: "Week",
+    pantry: "Cabinet",
+    profile: "Profile",
+    bar: "Bar",
+  },
+  home: {
+    greetingMorning: "Good morning",
+    greetingDay: "Hello",
+    greetingEvening: "Good evening",
+    primaryCta: "Start a drink match",
+    quickFromPantry: "Suggest from my cabinet",
+    quickWeekly: "Create a weekly plan",
+    quickImport: "Import a recipe",
+    quickSaved: "Saved",
+    quickInfluencer: "Trending Recipes",
+    activeSessionTitle: "Active session",
+    waitingPartner: "Waiting for your friend's vote",
+    matchReady: "Today's match is ready",
+    aiBubbleBusyWeek:
+      "Looks like a busy week. Want me to suggest quick drinks?",
+    aiBubbleNoSoup:
+      "You haven't had a classic in a while. Fancy an Old Fashioned?",
+    aiBubblePantry: "You can make 4 drinks with what's in your cabinet.",
+  },
+  swipe: {
+    sessionTitle: "Drink match",
+    swipeHint: "Swipe right to like, left to pass",
+    compatibility: "Bar match",
+    pantryMatch: "Cabinet match",
+    prepTime: (m: number) => `${m} min`,
+    superlike: "Super like",
+    explain: "Why this suggestion?",
+    emptyTitle: "That's it for now",
+    emptySubtitle:
+      "Come back a little later for new suggestions or update your cabinet.",
+    refresh: "Refresh",
+  },
+  match: {
+    title: "It's a match",
+    subtitle: "Today's shared pick for your bar:",
+    whyMatched: "Why it matched",
+    likedBy: "Liked by",
+    alternativesTitle: "Alternatives",
+    alternativeFaster: "A faster option",
+    alternativeLighter: "A lighter option",
+    alternativeBudget: "A cheaper option",
+    cookCta: "Let's make this one",
+    swipeAgain: "Swipe again",
+    missingIngredients: "Missing ingredients",
+  },
+  planner: {
+    title: "Weekly plan",
+    subtitle: "Pick a mode, let AI build your week.",
+    modeBusy: "Busy week",
+    modeHealthy: "Light week",
+    modeBudget: "Budget week",
+    modeComfort: "Classics",
+    modeKids: "Crowd-pleasers",
+    generate: "Create plan",
+    regenerateDay: "Refresh this day",
+    groceryList: "Shopping list",
+    days: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    dayLong: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+  },
+  pantry: {
+    title: "Cabinet",
+    subtitle: "List what you have, let AI sort it out.",
+    inputPlaceholder: "gin vodka lime tonic mint…",
+    parse: "Parse and add",
+    empty: "No ingredients added yet.",
+    addedCount: (n: number) => `${n} ingredients added`,
+    suggestCta: "What can I make?",
+    scanCta: "Add from receipt",
+    scanReading: "Reading receipt…",
+    scanEmpty:
+      "I couldn't find ingredients on the receipt. Try a clearer photo?",
+  },
+  recipe: {
+    ingredients: "Ingredients",
+    steps: "Method",
+    prep: "Prep",
+    difficulty: "Difficulty",
+    tags: "Tags",
+    cookCta: "Start mixing",
+    saveCta: "Save",
+    explainCta: "Adapt for me",
+  },
+  profile: {
+    title: "Profile",
+    household: "Bar",
+    members: "Members",
+    preferences: "Preferences",
+    allergies: "Allergies",
+    dislikes: "Dislikes",
+    spice: "Strength tolerance",
+    cuisines: "Favorite styles",
+    signOut: "Sign out",
+    invite: "Invite a friend",
+  },
+  import: {
+    title: "Import a recipe",
+    subtitle: "Paste an Instagram link or add a caption.",
+    linkPlaceholder: "https://instagram.com/p/…",
+    captionPlaceholder: "Paste the caption text…",
+    screenshot: "Upload a screenshot (coming soon)",
+    importCta: "Import",
+  },
+};
+
+export const t: Copy = isBar ? en : tr;

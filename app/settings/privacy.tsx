@@ -21,6 +21,7 @@ import type { LucideIcon } from "lucide-react-native";
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
 import { colors, fonts, spacing } from "@/constants/theme";
+import { isBar, L } from "@/constants/appVariant";
 import { PRIVACY_URL, TERMS_URL } from "@/constants/legal";
 import { useAuthStore } from "@/store/authStore";
 import { usePantryStore } from "@/store/pantryStore";
@@ -28,17 +29,22 @@ import { usePlannerStore } from "@/store/plannerStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { useStatsStore } from "@/store/statsStore";
 
+const SUPPORT_EMAIL = isBar ? "support@swipebar.app" : "destek@swapbite.com.tr";
+
 export default function PrivacyScreen() {
   const signOut = useAuthStore((s) => s.signOut);
 
   const clearLocalData = () => {
     Alert.alert(
-      "Yerel verileri sil",
-      "Kiler, haftalık plan, beğeniler ve pişirme sayıları cihazdan silinecek. Devam edilsin mi?",
+      L("Yerel verileri sil", "Clear local data"),
+      L(
+        "Kiler, haftalık plan, beğeniler ve pişirme sayıları cihazdan silinecek. Devam edilsin mi?",
+        "Your cabinet, weekly plan, likes, and counts will be removed from this device. Continue?",
+      ),
       [
-        { text: "Vazgeç", style: "cancel" },
+        { text: L("Vazgeç", "Cancel"), style: "cancel" },
         {
-          text: "Sil",
+          text: L("Sil", "Delete"),
           style: "destructive",
           onPress: () => {
             void (async () => {
@@ -54,7 +60,7 @@ export default function PrivacyScreen() {
               }
               useSessionStore.getState().reset();
               useStatsStore.getState().reset();
-              Alert.alert("Tamam", "Yerel veriler temizlendi.");
+              Alert.alert(L("Tamam", "Done"), L("Yerel veriler temizlendi.", "Local data cleared."));
             })();
           },
         },
@@ -64,19 +70,22 @@ export default function PrivacyScreen() {
 
   const deleteAccount = () => {
     Alert.alert(
-      "Hesabımı sil",
-      "Hesabını silmek için lütfen destek ile iletişime geç: destek@swapbite.com.tr",
+      L("Hesabımı sil", "Delete my account"),
+      L(
+        `Hesabını silmek için lütfen destek ile iletişime geç: ${SUPPORT_EMAIL}`,
+        `To delete your account, please contact support: ${SUPPORT_EMAIL}`,
+      ),
       [
-        { text: "Vazgeç", style: "cancel" },
+        { text: L("Vazgeç", "Cancel"), style: "cancel" },
         {
-          text: "E-posta gönder",
+          text: L("E-posta gönder", "Send email"),
           onPress: () =>
             Linking.openURL(
-              "mailto:destek@swapbite.com.tr?subject=Hesap%20silme%20talebi",
+              `mailto:${SUPPORT_EMAIL}?subject=${L("Hesap%20silme%20talebi", "Account%20deletion%20request")}`,
             ),
         },
         {
-          text: "Çıkış yap",
+          text: L("Çıkış yap", "Sign out"),
           style: "destructive",
           onPress: () => void signOut(),
         },
@@ -99,10 +108,10 @@ export default function PrivacyScreen() {
               letterSpacing: -0.4,
             }}
           >
-            Gizlilik
+            {L("Gizlilik", "Privacy")}
           </Text>
           <Text variant="caption" color={colors.dim}>
-            Verilerin nerede, ne için tutuluyor
+            {L("Verilerin nerede, ne için tutuluyor", "Where and why your data is kept")}
           </Text>
         </View>
       </View>
@@ -114,25 +123,37 @@ export default function PrivacyScreen() {
         <View style={styles.card}>
           <InfoRow
             icon={Database}
-            title="Hangi veriler tutuluyor?"
-            body="Ad, e-posta, hane üyelikleri, tarif beğenileri, kiler içeriği ve haftalık planın. Tarif kaynakları cihazda mock olarak gelir; gerçek hesabınla eşleşmez."
+            title={L("Hangi veriler tutuluyor?", "What data is stored?")}
+            body={L(
+              "Ad, e-posta, hane üyelikleri, tarif beğenileri, kiler içeriği ve haftalık planın. Tarif kaynakları cihazda mock olarak gelir; gerçek hesabınla eşleşmez.",
+              "Your name, email, group memberships, recipe likes, cabinet contents, and weekly plan. Recipe sources are mocked on-device and aren't tied to your real account.",
+            )}
           />
           <InfoRow
             icon={Eye}
-            title="Kim görebilir?"
-            body="Hane üyelerin senin beğenilerini ve kileri görebilir. Diğer haneler veya kullanıcılar göremez. Hesap dışı kimseyle paylaşılmaz."
+            title={L("Kim görebilir?", "Who can see it?")}
+            body={L(
+              "Hane üyelerin senin beğenilerini ve kileri görebilir. Diğer haneler veya kullanıcılar göremez. Hesap dışı kimseyle paylaşılmaz.",
+              "Your group members can see your likes and cabinet. Other groups or users cannot. Nothing is shared outside your account.",
+            )}
             border
           />
           <InfoRow
             icon={Lock}
-            title="Güvenlik"
-            body="Tüm istekler HTTPS üzerinden Supabase'e gider. Satır-düzeyi güvenlik (RLS) ile yalnızca senin haneye ait satırlar dönülür."
+            title={L("Güvenlik", "Security")}
+            body={L(
+              "Tüm istekler HTTPS üzerinden Supabase'e gider. Satır-düzeyi güvenlik (RLS) ile yalnızca senin haneye ait satırlar dönülür.",
+              "All requests go to Supabase over HTTPS. Row-level security (RLS) returns only rows that belong to your group.",
+            )}
             border
           />
           <InfoRow
             icon={FileText}
-            title="Üçüncü taraflar"
-            body="Bildirimler için Expo Notifications, tarif önerileri için (opsiyonel) OpenAI API. OpenAI'a yalnızca anonim metin gönderilir."
+            title={L("Üçüncü taraflar", "Third parties")}
+            body={L(
+              "Bildirimler için Expo Notifications, tarif önerileri için (opsiyonel) OpenAI API. OpenAI'a yalnızca anonim metin gönderilir.",
+              "Expo Notifications for push, and (optional) OpenAI API for suggestions. Only anonymous text is sent to OpenAI.",
+            )}
             border
           />
         </View>
@@ -140,15 +161,15 @@ export default function PrivacyScreen() {
         <View style={[styles.card, { marginTop: spacing.lg }]}>
           <ActionRow
             icon={Trash2}
-            label="Yerel verileri sil"
-            sub="Kiler, plan, beğeniler — sadece bu cihazdan"
+            label={L("Yerel verileri sil", "Clear local data")}
+            sub={L("Kiler, plan, beğeniler — sadece bu cihazdan", "Cabinet, plan, likes — this device only")}
             danger={false}
             onPress={clearLocalData}
           />
           <ActionRow
             icon={Trash2}
-            label="Hesabımı sil"
-            sub="Tüm verilerin kalıcı olarak silinmesini talep et"
+            label={L("Hesabımı sil", "Delete my account")}
+            sub={L("Tüm verilerin kalıcı olarak silinmesini talep et", "Request permanent deletion of all your data")}
             danger
             border
             onPress={deleteAccount}
@@ -180,7 +201,7 @@ export default function PrivacyScreen() {
           color={colors.dim}
           style={{ marginTop: spacing.lg, paddingHorizontal: spacing.sm }}
         >
-          Sorun bildirmek için: destek@swapbite.com.tr
+          {L(`Sorun bildirmek için: ${SUPPORT_EMAIL}`, `To report an issue: ${SUPPORT_EMAIL}`)}
         </Text>
 
         <View style={{ height: 100 }} />
