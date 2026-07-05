@@ -60,7 +60,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     const u: User = {
       id: uid("user"),
       name,
-      email: "demo@swapbite.com.tr",
+      email: "demo@swipebite.com.tr",
       createdAt: new Date().toISOString(),
     };
     set({ user: u, profile: emptyProfile(u.id) });
@@ -70,7 +70,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     const u: User = {
       id: uid("user"),
       name: "App Review",
-      email: "review@swapbite.com.tr",
+      email: "review@swipebite.com.tr",
       createdAt: now,
     };
     const household: Household = {

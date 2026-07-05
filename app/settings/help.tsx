@@ -16,7 +16,7 @@ import { Text } from "@/components/ui/Text";
 import { colors, fonts, spacing } from "@/constants/theme";
 import { isBar, L } from "@/constants/appVariant";
 
-const SUPPORT_EMAIL = isBar ? "support@swipebar.app" : "destek@swapbite.com.tr";
+const SUPPORT_EMAIL = isBar ? "support@swipebar.app" : "destek@swipebite.com.tr";
 
 const FOOD_FAQ: { q: string; a: string }[] = [
   {

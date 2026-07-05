@@ -10,7 +10,7 @@
  * This is a deliberate, documented review affordance — it only ever triggers
  * for this one e-mail address and never sends/accepts real user data.
  */
-export const REVIEW_DEMO_EMAIL = "review@swapbite.com.tr";
+export const REVIEW_DEMO_EMAIL = "review@swipebite.com.tr";
 
 /** Fixed code the reviewer enters on the OTP screen. */
 export const REVIEW_DEMO_CODE = "000000";

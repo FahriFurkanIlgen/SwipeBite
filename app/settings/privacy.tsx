@@ -29,7 +29,7 @@ import { usePlannerStore } from "@/store/plannerStore";
 import { useSessionStore } from "@/store/sessionStore";
 import { useStatsStore } from "@/store/statsStore";
 
-const SUPPORT_EMAIL = isBar ? "support@swipebar.app" : "destek@swapbite.com.tr";
+const SUPPORT_EMAIL = isBar ? "support@swipebar.app" : "destek@swipebite.com.tr";
 
 export default function PrivacyScreen() {
   const signOut = useAuthStore((s) => s.signOut);
