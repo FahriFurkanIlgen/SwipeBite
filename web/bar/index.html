@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SwipeBar — Swipe. Match. Sip.</title>
+    <meta
+      name="description"
+      content="SwipeBar turns picking tonight's drink into a game. Swipe cocktail cards, match with friends, and mix what you have at home."
+    />
+    <meta property="og:title" content="SwipeBar — Swipe. Match. Sip." />
+    <meta
+      property="og:description"
+      content="Swipe cocktail cards, match with friends, and mix what you have at home."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B8%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Inter:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="drink-rain" aria-hidden="true">
+      <span style="--x: 8%; --d: 0s; --r: -12deg; --s: 1.1">🍸</span>
+      <span style="--x: 22%; --d: 2.4s; --r: 18deg; --s: 0.9">🍹</span>
+      <span style="--x: 38%; --d: 4.8s; --r: -8deg; --s: 1.2">🥃</span>
+      <span style="--x: 54%; --d: 1.6s; --r: 22deg; --s: 1">🍷</span>
+      <span style="--x: 68%; --d: 5.4s; --r: -16deg; --s: 1.15">🍾</span>
+      <span style="--x: 82%; --d: 3.9s; --r: 14deg; --s: 0.95">🧉</span>
+      <span style="--x: 92%; --d: 7.2s; --r: -22deg; --s: 1.05">🍸</span>
+      <span style="--x: 14%; --d: 8s; --r: 10deg; --s: 1">🍋</span>
+      <span style="--x: 46%; --d: 9.2s; --r: -18deg; --s: 1.1">🫒</span>
+      <span style="--x: 74%; --d: 10.1s; --r: 6deg; --s: 0.9">🍒</span>
+    </div>
+
+    <header class="topbar">
+      <a href="#" class="brand">
+        <span class="brand__mark">🍸</span>
+        <span>SwipeBar</span>
+      </a>
+      <nav class="topbar__links">
+        <a href="#play">Play</a>
+        <a href="#how">How it works</a>
+        <a href="#menu">Cocktails</a>
+        <a href="#get">Get it</a>
+      </nav>
+      <a href="#get" class="btn btn--sm">Get started 👋</a>
+    </header>
+
+    <section class="hero" id="play">
+      <div class="hero__copy">
+        <span class="ribbon">
+          <span>🎉</span> Tonight's drink? <b>Start swiping!</b>
+        </span>
+
+        <h1 class="title">
+          Swipe. Match.
+          <span class="accent">
+            Sip!
+            <svg class="underline" viewBox="0 0 220 20" aria-hidden="true">
+              <path
+                d="M2 14 Q 55 -2 110 10 T 218 8"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+        </h1>
+
+        <p class="lead">
+          Stop scrolling endless recipes. Swipe right to like a cocktail, left
+          to pass — when your friends like the same one, tonight's drink is
+          decided. 🍹
+        </p>
+
+        <div class="hero__actions">
+          <a href="#get" class="btn">Download free 🚀</a>
+          <a href="#how" class="textlink">How it works →</a>
+        </div>
+
+        <div class="proof">
+          <div class="avatars" aria-hidden="true">
+            <span>🧑</span><span>👩</span><span>🧑‍🦱</span><span>👩‍🦰</span
+            ><span>+</span>
+          </div>
+          <p><b>Bars &amp; friends</b> decide their round in seconds</p>
+        </div>
+      </div>
+
+      <div class="deck-wrap">
+        <div class="deck" id="deck"></div>
+        <div class="deck__hint">
+          <span class="key">←</span>
+          <span>Swipe</span>
+          <span class="key">→</span>
+        </div>
+        <div class="deck__buttons">
+          <button class="circle circle--no" data-action="no" aria-label="Pass">
+            ✕
+          </button>
+          <button
+            class="circle circle--yes"
+            data-action="yes"
+            aria-label="Like"
+          >
+            ♥
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>🍸 Martini</span><span>🍹 Margarita</span><span>🥃 Old Fashioned</span>
+        <span>🍷 Negroni</span><span>🌿 Mojito</span><span>🍋 Whiskey Sour</span>
+        <span>🍾 Spritz</span><span>🫒 Gin &amp; Tonic</span><span>🍒 Manhattan</span>
+        <span>🥂 Daiquiri</span><span>🍸 Cosmopolitan</span>
+        <span>🍸 Martini</span><span>🍹 Margarita</span><span>🥃 Old Fashioned</span>
+        <span>🍷 Negroni</span><span>🌿 Mojito</span><span>🍋 Whiskey Sour</span>
+        <span>🍾 Spritz</span><span>🫒 Gin &amp; Tonic</span><span>🍒 Manhattan</span>
+        <span>🥂 Daiquiri</span><span>🍸 Cosmopolitan</span>
+      </div>
+    </div>
+
+    <section class="section" id="how">
+      <div class="section__head">
+        <span class="ribbon ribbon--gold"><span>⚡</span> Super simple</span>
+        <h2 class="title title--md">Get it in 3 seconds.</h2>
+      </div>
+      <div class="steps">
+        <div class="bubble">
+          <div class="bubble__num">1</div>
+          <div class="bubble__emoji">👆</div>
+          <h3>Cards come to you</h3>
+          <p>
+            Smart suggestions based on the bottles in your cabinet and your
+            taste.
+          </p>
+        </div>
+        <div class="bubble">
+          <div class="bubble__num">2</div>
+          <div class="bubble__emoji">💙</div>
+          <h3>Swipe away</h3>
+          <p>Right if you're into it, left if you're not. No debating.</p>
+        </div>
+        <div class="bubble">
+          <div class="bubble__num">3</div>
+          <div class="bubble__emoji">🥂</div>
+          <h3>You matched!</h3>
+          <p>When everyone likes the same drink — cheers, the round is set.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="section__head">
+        <span class="ribbon ribbon--soft"><span>🍸</span> Full bar</span>
+        <h2 class="title title--md">Hundreds of cocktails. Never stuck.</h2>
+        <p class="lead lead--center">
+          From timeless classics to modern twists — plus what you can mix right
+          now with the bottles you already have.
+        </p>
+      </div>
+
+      <div class="chips">
+        <button class="chip chip--active">All</button>
+        <button class="chip">🥃 Classics</button>
+        <button class="chip">🍹 Refreshing</button>
+        <button class="chip">🔥 Strong</button>
+        <button class="chip">🍾 Bubbly</button>
+        <button class="chip">🌿 Herbal</button>
+        <button class="chip">🍋 Sour</button>
+      </div>
+
+      <div class="drinks">
+        <article class="drink">
+          <div class="drink__emoji">🍸</div>
+          <div class="drink__tag">2 min</div>
+          <h4>Classic Martini</h4>
+          <p>Gin · dry vermouth · olive</p>
+          <div class="drink__rating">★ 4.9</div>
+        </article>
+        <article class="drink">
+          <div class="drink__emoji">🍹</div>
+          <div class="drink__tag">3 min</div>
+          <h4>Margarita</h4>
+          <p>Tequila · lime · triple sec</p>
+          <div class="drink__rating">★ 4.8</div>
+        </article>
+        <article class="drink">
+          <div class="drink__emoji">🥃</div>
+          <div class="drink__tag">3 min</div>
+          <h4>Old Fashioned</h4>
+          <p>Bourbon · bitters · sugar</p>
+          <div class="drink__rating">★ 4.9</div>
+        </article>
+        <article class="drink">
+          <div class="drink__emoji">🌿</div>
+          <div class="drink__tag">4 min</div>
+          <h4>Mojito</h4>
+          <p>Rum · mint · lime · soda</p>
+          <div class="drink__rating">★ 4.7</div>
+        </article>
+        <article class="drink">
+          <div class="drink__emoji">🍷</div>
+          <div class="drink__tag">2 min</div>
+          <h4>Negroni</h4>
+          <p>Gin · Campari · vermouth</p>
+          <div class="drink__rating">★ 4.8</div>
+        </article>
+        <article class="drink">
+          <div class="drink__emoji">🍾</div>
+          <div class="drink__tag">2 min</div>
+          <h4>Aperol Spritz</h4>
+          <p>Aperol · prosecco · soda</p>
+          <div class="drink__rating">★ 4.7</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__head">
+        <span class="ribbon ribbon--soft"><span>💬</span> People</span>
+        <h2 class="title title--md">"No more 'what should we drink?'"</h2>
+      </div>
+      <div class="chat-grid">
+        <div class="chat">
+          <div class="chat__avatar">🧑</div>
+          <div class="chat__bubble">
+            <p>Our group used to argue for 20 minutes. Now it's 2. 🍸</p>
+            <span class="chat__name">— Alex</span>
+          </div>
+        </div>
+        <div class="chat chat--right">
+          <div class="chat__bubble">
+            <p>Loaded up my cabinet and it told me exactly what I could make.</p>
+            <span class="chat__name">— Priya</span>
+          </div>
+          <div class="chat__avatar">👩</div>
+        </div>
+        <div class="chat">
+          <div class="chat__avatar">🧑‍🦱</div>
+          <div class="chat__bubble">
+            <p>Great for date nights — we swipe together and pick one. 💙</p>
+            <span class="chat__name">— Marco</span>
+          </div>
+        </div>
+        <div class="chat chat--right">
+          <div class="chat__bubble">
+            <p>Finally learned to use that bottle of Campari. 😂</p>
+            <span class="chat__name">— Sam</span>
+          </div>
+          <div class="chat__avatar">👩‍🦰</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="join" id="get">
+      <div class="join__card">
+        <h2 class="title title--md">Tonight, <span class="accent">no debating</span>.</h2>
+        <p class="lead">Download free. Swipe with friends. Sip.</p>
+        <div class="join__buttons">
+          <a href="#" class="store">
+            <span>📱</span>
+            <em><small>Download on the</small>App Store</em>
+          </a>
+        </div>
+        <div class="age">
+          <b>17+</b>
+          <span>Please drink responsibly. For ages 17 and over.</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot__brand">
+        <span>🍸 SwipeBar</span>
+        <small>© 2026 SwipeBar · Sip responsibly</small>
+      </div>
+      <div class="foot__links">
+        <a href="./privacy.html">Privacy</a>
+        <a href="./support.html">Support</a>
+        <a href="mailto:support@swipebar.app">Contact</a>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
