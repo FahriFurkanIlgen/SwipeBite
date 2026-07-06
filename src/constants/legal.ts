@@ -9,9 +9,12 @@
  * App Store Connect (Support URL + Privacy Policy field) so branding stays
  * consistent (avoids the 4.3 "spam / mismatched metadata" signal).
  */
+import { isBar } from "./appVariant";
 
 /** Primary product domain — must match App Store Connect metadata. */
-export const SITE_BASE = "https://swipebite.com.tr";
+export const SITE_BASE = isBar
+  ? "https://swipebar.com.tr"
+  : "https://swipebite.com.tr";
 
 /** Privacy policy — also set this exact URL in App Store Connect → Privacy Policy. */
 export const PRIVACY_URL = `${SITE_BASE}/privacy.html`;
@@ -28,4 +31,6 @@ export const TERMS_URL =
   "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
 /** Support contact e-mail used across settings + help screens. */
-export const SUPPORT_EMAIL = "destek@swipebite.com.tr";
+export const SUPPORT_EMAIL = isBar
+  ? "support@swipebar.com.tr"
+  : "destek@swipebite.com.tr";

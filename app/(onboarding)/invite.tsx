@@ -51,7 +51,7 @@ export default function InviteOnboardingScreen() {
           iconBg={colors.primary}
           iconColor={colors.onPrimary}
           title={t.onboarding.inviteViaLink}
-          subtitle={`${L("swipebite.com.tr", "swipebar.app")}/join/${code}`}
+          subtitle={`${L("swipebite.com.tr", "swipebar.com.tr")}/join/${code}`}
           onPress={() => router.push(nextStep)}
         />
         <InviteRow
