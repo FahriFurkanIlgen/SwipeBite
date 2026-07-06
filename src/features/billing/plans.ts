@@ -28,25 +28,45 @@ export interface SubscriptionPlan {
   badge?: string;
 }
 
-export const PRO_PLANS: SubscriptionPlan[] = [
-  {
-    id: "yearly",
-    productId: "swipebite_pro_yearly",
-    label: "Yıllık",
-    fallbackPrice: "₺399 / yıl",
-    fallbackSubline: "ayda yaklaşık ₺33",
-    badge: "En avantajlı",
-  },
-  {
-    id: "monthly",
-    productId: "swipebite_pro_monthly",
-    label: "Aylık",
-    fallbackPrice: "₺59 / ay",
-  },
-];
+export const PRO_PLANS: SubscriptionPlan[] = isBar
+  ? [
+      {
+        id: "yearly",
+        productId: "swipebar_pro_yearly",
+        label: "Yearly",
+        fallbackPrice: "$39.99 / year",
+        fallbackSubline: "about $3.33 / month",
+        badge: "Best value",
+      },
+      {
+        id: "monthly",
+        productId: "swipebar_pro_monthly",
+        label: "Monthly",
+        fallbackPrice: "$4.99 / month",
+      },
+    ]
+  : [
+      {
+        id: "yearly",
+        productId: "swipebite_pro_yearly",
+        label: "Yıllık",
+        fallbackPrice: "₺399 / yıl",
+        fallbackSubline: "ayda yaklaşık ₺33",
+        badge: "En avantajlı",
+      },
+      {
+        id: "monthly",
+        productId: "swipebite_pro_monthly",
+        label: "Aylık",
+        fallbackPrice: "₺59 / ay",
+      },
+    ];
 
-/** RevenueCat entitlement identifier that unlocks Pro. */
-export const PRO_ENTITLEMENT_ID = "SwipeBite Pro";
+/**
+ * RevenueCat entitlement identifier that unlocks Pro. Variant-aware so each
+ * app checks its own entitlement (name it exactly like this in RevenueCat).
+ */
+export const PRO_ENTITLEMENT_ID = isBar ? "SwipeBar Pro" : "SwipeBite Pro";
 
 /** Pro feature bullets shown on the paywall. */
 export const PRO_BENEFITS: string[] = isBar
