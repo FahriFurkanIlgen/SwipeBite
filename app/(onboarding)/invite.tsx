@@ -9,7 +9,7 @@ import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
-import { L } from "@/constants/appVariant";
+import { L, onboardingStepCount } from "@/constants/appVariant";
 import { featureFlags } from "@/constants/featureFlags";
 import { useAuthStore } from "@/store/authStore";
 
@@ -25,9 +25,9 @@ export default function InviteOnboardingScreen() {
   return (
     <Screen background="bg">
       <View style={styles.header}>
-        <ProgressDots total={5} index={2} />
+        <ProgressDots total={onboardingStepCount} index={2} />
         <Text variant="caption" color={colors.dim}>
-          {t.onboarding.step(3, 5)}
+          {t.onboarding.step(3, onboardingStepCount)}
         </Text>
       </View>
 

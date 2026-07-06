@@ -10,7 +10,7 @@ import { ProgressDots } from "@/components/ui/ProgressDots";
 import { Confetti } from "@/components/ui/Confetti";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
-import { L } from "@/constants/appVariant";
+import { L, onboardingStepCount } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { useTutorialStore } from "@/store/tutorialStore";
 
@@ -48,9 +48,12 @@ export default function FinishScreen() {
   return (
     <Screen background="bg">
       <View style={styles.header}>
-        <ProgressDots total={5} index={4} />
+        <ProgressDots
+          total={onboardingStepCount}
+          index={onboardingStepCount - 1}
+        />
         <Text variant="caption" color={colors.dim}>
-          {t.onboarding.step(5, 5)}
+          {t.onboarding.step(onboardingStepCount, onboardingStepCount)}
         </Text>
       </View>
 

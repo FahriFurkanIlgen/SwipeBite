@@ -9,6 +9,7 @@ import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
+import { onboardingStepCount } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 
 export default function BarOnboardingScreen() {
@@ -17,15 +18,15 @@ export default function BarOnboardingScreen() {
 
   const handleEnable = () => {
     setProfile({ alcoholContentEnabled: true });
-    router.push("/(onboarding)/finish");
+    router.push("/(onboarding)/cabinet");
   };
 
   return (
     <Screen background="bg">
       <View style={styles.header}>
-        <ProgressDots total={5} index={3} />
+        <ProgressDots total={onboardingStepCount} index={3} />
         <Text variant="caption" color={colors.dim}>
-          {t.onboarding.step(4, 5)}
+          {t.onboarding.step(4, onboardingStepCount)}
         </Text>
       </View>
 

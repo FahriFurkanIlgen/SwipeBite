@@ -20,7 +20,10 @@ const variantConfig = IS_BAR
       // SwipeBar artwork (deep blue #41639C). Save the attached icon as
       // ./assets/icon-bar.png (1024×1024); it's reused for splash + adaptive.
       icon: "./assets/icon-bar.png",
-      splashImage: "./assets/icon-bar.png",
+      // Dedicated splash mark: the white "S" glyph on a transparent canvas so
+      // it sits cleanly on the deep-blue background (the full app icon has
+      // opaque white corners that looked like a box on the splash).
+      splashImage: "./assets/splash-bar.png",
       splashBackground: "#41639C",
       bundleIdentifier: "app.swipebar",
       androidPackage: "app.swipebar",

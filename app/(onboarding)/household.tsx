@@ -9,7 +9,7 @@ import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
-import { L } from "@/constants/appVariant";
+import { L, onboardingStepCount } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { authService } from "@/features/auth/authService";
 import { uuidV4 } from "@/utils/id";
@@ -61,9 +61,9 @@ export default function HouseholdScreen() {
   return (
     <Screen background="bg">
       <View style={styles.header}>
-        <ProgressDots total={5} index={1} />
+        <ProgressDots total={onboardingStepCount} index={1} />
         <Text variant="caption" color={colors.dim}>
-          {t.onboarding.step(2, 5)}
+          {t.onboarding.step(2, onboardingStepCount)}
         </Text>
       </View>
 

@@ -9,7 +9,7 @@ import { Text } from "@/components/ui/Text";
 import { ProgressDots } from "@/components/ui/ProgressDots";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { t } from "@/constants/copy";
-import { isBar, L } from "@/constants/appVariant";
+import { isBar, L, onboardingStepCount } from "@/constants/appVariant";
 import { useAuthStore } from "@/store/authStore";
 import { SpiceLevel } from "@/types/domain";
 
@@ -62,9 +62,9 @@ export default function PreferencesScreen() {
   return (
     <Screen background="bg">
       <View style={styles.header}>
-        <ProgressDots total={5} index={0} />
+        <ProgressDots total={onboardingStepCount} index={0} />
         <Text variant="caption" color={colors.dim}>
-          {t.onboarding.step(1, 5)}
+          {t.onboarding.step(1, onboardingStepCount)}
         </Text>
       </View>
 

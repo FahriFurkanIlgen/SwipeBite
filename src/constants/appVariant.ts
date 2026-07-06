@@ -21,6 +21,13 @@ export const isBar = appVariant === "bar";
 export const isFood = appVariant === "food";
 
 /**
+ * Total number of onboarding steps shown in the progress indicator. The bar
+ * variant adds a "stock your cabinet" step between the age gate and finish, so
+ * it has one more step than the food variant.
+ */
+export const onboardingStepCount = isBar ? 6 : 5;
+
+/**
  * Pick a localized string by variant: SwipeBite (food) ships Turkish, SwipeBar
  * (bar) ships English. Use for inline copy in screens shared by both variants.
  */
