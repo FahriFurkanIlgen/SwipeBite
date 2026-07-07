@@ -3,6 +3,7 @@ import Constants from "expo-constants";
 
 import { env, hasBilling, revenueCatUsableTestKey } from "@/lib/env";
 import { track } from "@/features/analytics/analyticsService";
+import { L } from "@/constants/appVariant";
 import {
   PRO_ENTITLEMENT_ID,
   PRO_PLANS,
@@ -155,13 +156,13 @@ export const billingService = {
     }
 
     const plan = PRO_PLANS.find((p) => p.id === planId);
-    if (!plan) return { entitled: false, error: "Plan bulunamadı." };
+    if (!plan) return { entitled: false, error: L("Plan bulunamadı.", "Plan not found.") };
 
     try {
       const packages = await currentPackages(rc);
       const pkg = packages.find((k) => k.product.identifier === plan.productId);
       if (!pkg) {
-        return { entitled: false, error: "Bu plan mağazada bulunamadı." };
+        return { entitled: false, error: L("Bu plan mağazada bulunamadı.", "This plan isn't available in the store.") };
       }
       const { customerInfo } = await rc.purchasePackage(pkg);
       const entitled = hasProEntitlement(customerInfo as RcCustomerInfo);
@@ -172,7 +173,7 @@ export const billingService = {
       if (err.userCancelled) return { entitled: false, cancelled: true };
       return {
         entitled: false,
-        error: err.message ?? "Satın alma tamamlanamadı.",
+        error: err.message ?? L("Satın alma tamamlanamadı.", "Purchase couldn't be completed."),
       };
     }
   },

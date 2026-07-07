@@ -8,6 +8,7 @@ import { Text } from "@/components/ui/Text";
 import { colors, fonts, radii, spacing } from "@/constants/theme";
 import { useAuthStore } from "@/store/authStore";
 import { authService } from "@/features/auth/authService";
+import { L } from "@/constants/appVariant";
 
 export default function JoinScreen() {
   const { code } = useLocalSearchParams<{ code: string }>();
@@ -25,7 +26,7 @@ export default function JoinScreen() {
     (async () => {
       if (!code) {
         setState("error");
-        setError("Geçersiz davet kodu.");
+        setError(L("Geçersiz davet kodu.", "Invalid invite code."));
         return;
       }
       if (!user) {
@@ -39,7 +40,7 @@ export default function JoinScreen() {
           if (!authService.isConfigured()) {
             setHousehold({
               id: code,
-              name: `${code} Hanesi`,
+              name: L(`${code} Hanesi`, `${code} Bar`),
               createdBy: user.id,
               memberIds: [user.id],
               createdAt: new Date().toISOString(),
@@ -49,7 +50,7 @@ export default function JoinScreen() {
             return;
           }
           setState("error");
-          setError("Kod bulunamadı.");
+          setError(L("Kod bulunamadı.", "Code not found."));
           return;
         }
         setHousehold(h);
@@ -62,7 +63,7 @@ export default function JoinScreen() {
       } catch {
         if (!cancelled) {
           setState("error");
-          setError("Katılım başarısız.");
+          setError(L("Katılım başarısız.", "Couldn't join."));
         }
       }
     })();
@@ -78,9 +79,11 @@ export default function JoinScreen() {
           {state === "loading" ? (
             <>
               <View style={styles.spinner} />
-              <Text style={styles.title}>Haneye katılınıyor…</Text>
+              <Text style={styles.title}>
+                {L("Haneye katılınıyor…", "Joining…")}
+              </Text>
               <Text variant="small" color={colors.dim}>
-                Kod: {code}
+                {L("Kod", "Code")}: {code}
               </Text>
             </>
           ) : state === "ok" ? (
@@ -91,29 +94,34 @@ export default function JoinScreen() {
               <View style={styles.checkCircle}>
                 <Text style={{ fontSize: 32 }}>🎉</Text>
               </View>
-              <Text style={styles.title}>Hoş geldin!</Text>
+              <Text style={styles.title}>{L("Hoş geldin!", "Welcome!")}</Text>
               <Text variant="small" color={colors.dim} align="center">
-                Yönlendiriliyorsun…
+                {L("Yönlendiriliyorsun…", "Redirecting…")}
               </Text>
             </Animated.View>
           ) : state === "needsAuth" ? (
             <>
-              <Text style={styles.title}>Önce giriş yap</Text>
+              <Text style={styles.title}>{L("Önce giriş yap", "Sign in first")}</Text>
               <Text variant="small" color={colors.dim} align="center">
-                {code} kodlu haneye katılmak için hesabını oluştur.
+                {L(
+                  `${code} kodlu haneye katılmak için hesabını oluştur.`,
+                  `Create your account to join with code ${code}.`,
+                )}
               </Text>
               <Pressable
                 onPress={() => router.replace("/(auth)/welcome")}
                 style={styles.cta}
               >
                 <Text variant="smallMedium" weight="700" color={colors.ink}>
-                  Devam et
+                  {L("Devam et", "Continue")}
                 </Text>
               </Pressable>
             </>
           ) : (
             <>
-              <Text style={styles.title}>Katılım başarısız</Text>
+              <Text style={styles.title}>
+                {L("Katılım başarısız", "Couldn't join")}
+              </Text>
               <Text variant="small" color={colors.dim} align="center">
                 {error}
               </Text>
@@ -122,7 +130,7 @@ export default function JoinScreen() {
                 style={styles.cta}
               >
                 <Text variant="smallMedium" weight="700" color={colors.ink}>
-                  Ana sayfa
+                  {L("Ana sayfa", "Home")}
                 </Text>
               </Pressable>
             </>

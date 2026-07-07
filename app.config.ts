@@ -112,10 +112,12 @@ const config: ExpoConfig = {
     [
       "expo-image-picker",
       {
-        photosPermission:
-          "Fişten ve kiler fotoğrafından malzeme eklemek için fotoğraflarına erişim gerekiyor.",
-        cameraPermission:
-          "Fiş fotoğrafı çekip malzemeleri otomatik eklemek için kamera erişimi gerekiyor.",
+        photosPermission: IS_BAR
+          ? "Allow photo access to add and update pictures in SwipeBar."
+          : "Fişten ve kiler fotoğrafından malzeme eklemek için fotoğraflarına erişim gerekiyor.",
+        cameraPermission: IS_BAR
+          ? "Allow camera access to take and add photos in SwipeBar."
+          : "Fiş fotoğrafı çekip malzemeleri otomatik eklemek için kamera erişimi gerekiyor.",
       },
     ],
     [
