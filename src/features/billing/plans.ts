@@ -42,7 +42,7 @@ export const PRO_PLANS: SubscriptionPlan[] = isBar
         id: "monthly",
         productId: "swipebar_pro_monthly",
         label: "Monthly",
-        fallbackPrice: "$4.99 / month",
+        fallbackPrice: "$3.99 / month",
       },
     ]
   : [
