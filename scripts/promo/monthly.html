@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1024px; height: 1024px; }
+      .stage {
+        width: 1024px;
+        height: 1024px;
+        position: relative;
+        overflow: hidden;
+        font-family: "Georgia", "Times New Roman", serif;
+        background:
+          radial-gradient(90% 70% at 82% 88%, #4f74b4 0%, rgba(79,116,180,0) 58%),
+          linear-gradient(325deg, #34527f 0%, #41639c 52%, #4a6cab 100%);
+      }
+      .rings {
+        position: absolute; inset: 0;
+        background:
+          radial-gradient(circle at 50% 44%, rgba(255,255,255,0.10) 0 2px, rgba(255,255,255,0) 3px),
+          radial-gradient(circle at 50% 44%, rgba(255,255,255,0) 236px, rgba(255,255,255,0.08) 238px, rgba(255,255,255,0) 242px),
+          radial-gradient(circle at 50% 44%, rgba(255,255,255,0) 306px, rgba(255,255,255,0.06) 308px, rgba(255,255,255,0) 312px);
+      }
+      .badge {
+        position: absolute;
+        top: 96px; left: 50%; transform: translateX(-50%);
+        width: 132px; height: 132px;
+        border-radius: 34px;
+        background: linear-gradient(160deg, #ffffff 0%, #eef2fa 100%);
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 18px 44px rgba(20,36,68,0.38);
+      }
+      .badge span {
+        font-weight: 700; font-size: 92px; color: #41639c; line-height: 1;
+        margin-top: 4px;
+      }
+      .art { position: absolute; top: 286px; left: 50%; transform: translateX(-50%); }
+      .titlewrap {
+        position: absolute; left: 0; right: 0; bottom: 118px; text-align: center;
+      }
+      .brand {
+        font-size: 74px; color: #ffffff; letter-spacing: 0.5px; font-weight: 700;
+        text-shadow: 0 4px 18px rgba(16,30,58,0.35);
+      }
+      .pill {
+        display: inline-flex; align-items: center; gap: 14px;
+        margin-top: 26px; padding: 16px 34px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.14);
+        border: 1.5px solid rgba(255,255,255,0.4);
+        font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+      }
+      .pill .plan { font-size: 34px; color: #fff; font-weight: 700; letter-spacing: 0.3px; }
+      .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #7fd1a8; }
+      .pill .tag { font-size: 30px; color: #b8e6cd; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <div class="rings"></div>
+      <div class="badge"><span>S</span></div>
+      <svg class="art" width="420" height="430" viewBox="0 0 420 430" fill="none">
+        <defs>
+          <linearGradient id="drink" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f2c14e" />
+            <stop offset="1" stop-color="#e07a3e" />
+          </linearGradient>
+          <linearGradient id="tumbler" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff" stop-opacity="0.95" />
+            <stop offset="1" stop-color="#d7e3f5" stop-opacity="0.85" />
+          </linearGradient>
+        </defs>
+        <!-- straw -->
+        <line x1="250" y1="20" x2="214" y2="150" stroke="#7fd1a8" stroke-width="12" stroke-linecap="round" />
+        <line x1="214" y1="150" x2="206" y2="330" stroke="#7fd1a8" stroke-width="12" stroke-linecap="round" />
+        <!-- drink fill -->
+        <path d="M132 176 L288 176 L276 356 Q210 384 144 356 Z" fill="url(#drink)" />
+        <!-- ice cubes -->
+        <rect x="160" y="196" width="52" height="52" rx="10" fill="#ffffff" opacity="0.55" transform="rotate(-12 186 222)" />
+        <rect x="214" y="238" width="46" height="46" rx="10" fill="#ffffff" opacity="0.45" transform="rotate(14 237 261)" />
+        <!-- glass outline -->
+        <path d="M120 150 L300 150 L280 372 Q210 404 140 372 Z" stroke="url(#tumbler)" stroke-width="9" fill="none" stroke-linejoin="round" />
+        <!-- rim -->
+        <ellipse cx="210" cy="150" rx="90" ry="15" stroke="url(#tumbler)" stroke-width="9" fill="none" />
+        <!-- lime wedge on rim -->
+        <path d="M300 150 a48 48 0 0 1 48 -20 l-6 44 Z" fill="#8bc34a" stroke="#6fa53a" stroke-width="4" stroke-linejoin="round" />
+        <path d="M304 146 a40 40 0 0 1 40 -16" stroke="#e8f5d9" stroke-width="5" fill="none" />
+      </svg>
+      <div class="titlewrap">
+        <div class="brand">SwipeBar&nbsp;Pro</div>
+        <div class="pill">
+          <span class="plan">Monthly</span>
+          <span class="dot"></span>
+          <span class="tag">Cancel anytime</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

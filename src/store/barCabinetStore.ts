@@ -18,6 +18,9 @@ interface BarCabinetState {
   has: (id: string) => boolean;
   toggle: (id: string) => Promise<void>;
   add: (id: string) => Promise<void>;
+  /** Bulk-add ids (e.g. from an AI photo scan). Returns the ids that were
+   *  actually new so the caller can report / preview them. */
+  addMany: (ids: string[]) => Promise<string[]>;
   remove: (id: string) => Promise<void>;
   /** Replace the entire selection. Used when the user resets / bulk-edits. */
   setAll: (ids: string[]) => Promise<void>;
@@ -75,6 +78,19 @@ export const useBarCabinetStore = create<BarCabinetState>((set, get) => ({
     const next = [...current, id];
     set({ ingredientIds: next });
     await persist(next);
+  },
+
+  addMany: async (ids) => {
+    const current = get().ingredientIds;
+    const owned = new Set(current);
+    const fresh = ids.filter(
+      (id) => BAR_INGREDIENT_INDEX[id] !== undefined && !owned.has(id),
+    );
+    if (fresh.length === 0) return [];
+    const next = [...current, ...fresh];
+    set({ ingredientIds: next });
+    await persist(next);
+    return fresh;
   },
 
   remove: async (id) => {

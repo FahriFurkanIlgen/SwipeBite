@@ -1,6 +1,7 @@
 import * as Notifications from "expo-notifications";
 import * as Device from "expo-device";
 import { Platform } from "react-native";
+import { isBar, L } from "@/constants/appVariant";
 
 /**
  * Thin wrapper around expo-notifications used for in-app reminders.
@@ -40,7 +41,7 @@ export const pushService = {
   async ensureAndroidChannel(): Promise<void> {
     if (Platform.OS !== "android") return;
     await Notifications.setNotificationChannelAsync("default", {
-      name: "Genel",
+      name: L("Genel", "General"),
       importance: Notifications.AndroidImportance.DEFAULT,
       vibrationPattern: [0, 250, 200, 250],
     });
@@ -91,8 +92,11 @@ export const pushService = {
   /** "Partner is waiting" reminder after a session goes idle. */
   async notifyPartnerWaiting(partnerName: string): Promise<void> {
     await this.scheduleAt({
-      title: "Eşin bekliyor",
-      body: `${partnerName} bu akşamki seçim için kart kaydırıyor — sen de katıl!`,
+      title: L("Eşin bekliyor", "Your partner's waiting"),
+      body: L(
+        `${partnerName} bu akşamki seçim için kart kaydırıyor — sen de katıl!`,
+        `${partnerName} is swiping for tonight's drinks — jump in!`,
+      ),
       triggerSeconds: 1,
       data: { kind: "partner_waiting" },
     });
@@ -101,8 +105,11 @@ export const pushService = {
   /** Match found pop-up. */
   async notifyMatchFound(recipeTitle: string): Promise<void> {
     await this.scheduleAt({
-      title: "Eşleşme! 🎉",
-      body: `Bu akşam ${recipeTitle} yapıyorsunuz.`,
+      title: L("Eşleşme! 🎉", "It's a match! 🎉"),
+      body: L(
+        `Bu akşam ${recipeTitle} yapıyorsunuz.`,
+        `Tonight you're making ${recipeTitle}.`,
+      ),
       triggerSeconds: 1,
       data: { kind: "match_found" },
     });
@@ -126,9 +133,9 @@ export const pushService = {
     }
   },
 
-  /** Daily 17:00 pantry-based meal suggestion nudge — scheduled as a delay
-   *  from now. Lists a few recipes the household can cook right now with the
-   *  ingredients already in their pantry (no swiping required).
+  /** Daily pantry/cabinet-based suggestion nudge — scheduled as a delay from
+   *  now (SwipeBar at 22:00, SwipeBite at 17:00). Lists a few recipes the
+   *  household can make right now with what they already have (no swiping).
    *  Idempotent: cancels any previously scheduled dinner nudge first so
    *  repeated calls (e.g. on every auth/hydrate cycle) don't stack up. */
   async scheduleDinnerNudge(recipeTitles: string[] = []): Promise<void> {
@@ -136,7 +143,8 @@ export const pushService = {
     await this.cancelByKind("dinner_nudge");
     const now = new Date();
     const target = new Date();
-    target.setHours(17, 0, 0, 0);
+    // SwipeBar nudges at 22:00 (evening bar hour); SwipeBite at 17:00 (dinner prep).
+    target.setHours(isBar ? 22 : 17, 0, 0, 0);
     if (target.getTime() <= now.getTime()) {
       target.setDate(target.getDate() + 1);
     }
@@ -147,10 +155,16 @@ export const pushService = {
       .slice(0, 3);
     const body =
       list.length > 0
-        ? `Bugün kilerindeki malzemelerle şunları yapabilirsin: ${list.join(", ")}.`
-        : "Kilerindeki malzemelere bir göz at — bugün ne pişirebileceğini görelim.";
+        ? L(
+            `Bugün kilerindeki malzemelerle şunları yapabilirsin: ${list.join(", ")}.`,
+            `With what's in your cabinet you could make: ${list.join(", ")}.`,
+          )
+        : L(
+            "Kilerindeki malzemelere bir göz at — bugün ne pişirebileceğini görelim.",
+            "Take a look at your cabinet — let's see what you can mix today.",
+          );
     await this.scheduleAt({
-      title: "Kilerinle bugün ne yapsak?",
+      title: L("Kilerinle bugün ne yapsak?", "What can you mix tonight?"),
       body,
       triggerSeconds: seconds,
       data: { kind: "dinner_nudge" },

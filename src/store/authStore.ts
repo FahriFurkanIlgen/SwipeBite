@@ -6,6 +6,7 @@ import { authService } from "@/features/auth/authService";
 import { supabase } from "@/lib/supabase";
 import {
   REVIEW_DEMO_CODE,
+  REVIEW_DEMO_EMAIL,
   isReviewDemoEmail,
 } from "@/constants/reviewDemo";
 import { useEntitlementsStore } from "@/store/entitlementsStore";
@@ -70,7 +71,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     const u: User = {
       id: uid("user"),
       name: "App Review",
-      email: "review@swipebite.com.tr",
+      email: REVIEW_DEMO_EMAIL,
       createdAt: now,
     };
     const household: Household = {

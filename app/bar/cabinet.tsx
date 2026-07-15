@@ -1,8 +1,16 @@
 import React from "react";
-import { Pressable, ScrollView, StyleSheet, View } from "react-native";
+import {
+  ActivityIndicator,
+  Alert,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 import { router, Stack } from "expo-router";
 import Animated, { FadeInDown } from "react-native-reanimated";
-import { ArrowLeft, Check, RotateCcw } from "lucide-react-native";
+import * as ImagePicker from "expo-image-picker";
+import { ArrowLeft, Camera, Check, RotateCcw } from "lucide-react-native";
 
 import { Screen } from "@/components/ui/Screen";
 import { Text } from "@/components/ui/Text";
@@ -15,6 +23,13 @@ import {
 import { useBarCabinetStore } from "@/store/barCabinetStore";
 import { ALL_COCKTAILS } from "@/constants/allCocktails";
 import { rankCocktails } from "@/features/bar/cocktailMatcher";
+import {
+  cocktailsForCabinet,
+  scanBarCabinetImage,
+} from "@/features/ai/barCabinetVision";
+import { useEntitlementsStore } from "@/store/entitlementsStore";
+import { useUpsellStore } from "@/store/upsellStore";
+import { track } from "@/features/analytics/analyticsService";
 import type { BarIngredient, BarIngredientCategory } from "@/types/bar";
 
 const INGREDIENTS_BY_CATEGORY: Record<BarIngredientCategory, BarIngredient[]> =
@@ -34,6 +49,9 @@ export default function BarCabinetScreen() {
   const hydrate = useBarCabinetStore((s) => s.hydrate);
   const toggle = useBarCabinetStore((s) => s.toggle);
   const clear = useBarCabinetStore((s) => s.clear);
+  const addMany = useBarCabinetStore((s) => s.addMany);
+
+  const [scanning, setScanning] = React.useState(false);
 
   React.useEffect(() => {
     if (!hydrated) void hydrate();
@@ -45,6 +63,98 @@ export default function BarCabinetScreen() {
       rankCocktails(ownedSet, ALL_COCKTAILS).filter((m) => m.cookable).length,
     [ownedSet],
   );
+
+  // AI scan: photograph the bar, map bottles to catalogue ids, bulk-add them
+  // and surface the cocktails that just became makeable. Pro-gated.
+  const handleScan = async () => {
+    if (scanning) return;
+    try {
+      const perm = await ImagePicker.requestCameraPermissionsAsync();
+      const result = perm.granted
+        ? await ImagePicker.launchCameraAsync({
+            base64: true,
+            quality: 0.5,
+            allowsEditing: false,
+          })
+        : await ImagePicker.launchImageLibraryAsync({
+            base64: true,
+            quality: 0.5,
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+          });
+      if (result.canceled) return;
+      const asset = result.assets?.[0];
+      if (!asset?.base64) return;
+
+      // Meter usage only once we have a real photo to process. When the free
+      // quota is spent we route to the paywall instead of running the scan.
+      const ok = await useEntitlementsStore
+        .getState()
+        .consume("bar_cabinet_scan");
+      if (!ok) {
+        useUpsellStore.getState().show("bar_cabinet_scan");
+        return;
+      }
+
+      setScanning(true);
+      const scan = await scanBarCabinetImage(
+        asset.base64,
+        asset.mimeType ?? "image/jpeg",
+      );
+      if (scan.ingredientIds.length === 0) {
+        Alert.alert(
+          "Nothing found",
+          "I couldn't recognise any bottles. Try a clearer, well-lit photo of the labels.",
+        );
+        return;
+      }
+      const added = await addMany(scan.ingredientIds);
+      const cocktails = cocktailsForCabinet(
+        useBarCabinetStore.getState().ingredientIds,
+      );
+      track("bar_cabinet_scan_added", {
+        detected: scan.ingredientIds.length,
+        added: added.length,
+      });
+
+      const detectedNames = scan.ingredients
+        .slice(0, 6)
+        .map((i) => i.name)
+        .join(", ");
+      const cocktailPreview = cocktails
+        .slice(0, 3)
+        .map((c) => c.name)
+        .join(", ");
+      const body =
+        `Found: ${detectedNames}${scan.ingredients.length > 6 ? "…" : ""}.\n\n` +
+        (cocktails.length > 0
+          ? `You can now make ${cocktails.length} cocktail${
+              cocktails.length === 1 ? "" : "s"
+            }${cocktailPreview ? ` — e.g. ${cocktailPreview}.` : "."}`
+          : "Add a couple more bottles to unlock your first cocktails.");
+      Alert.alert(
+        added.length > 0
+          ? `Added ${added.length} ingredient${added.length === 1 ? "" : "s"}`
+          : "Already in your cabinet",
+        body,
+        cocktails.length > 0
+          ? [
+              {
+                text: "See cocktails",
+                onPress: () => router.push("/bar/browse"),
+              },
+              { text: "Done", style: "cancel" },
+            ]
+          : [{ text: "OK" }],
+      );
+    } catch (err) {
+      Alert.alert(
+        "Scan failed",
+        err instanceof Error ? err.message : "Something went wrong.",
+      );
+    } finally {
+      setScanning(false);
+    }
+  };
 
   return (
     <Screen background="bg" padded={false}>
@@ -95,6 +205,28 @@ export default function BarCabinetScreen() {
           </Text>
         </View>
       </View>
+
+      <Pressable
+        onPress={() => void handleScan()}
+        disabled={scanning}
+        style={({ pressed }) => [
+          styles.scanBtn,
+          pressed && { opacity: 0.9 },
+          scanning && { opacity: 0.7 },
+        ]}
+      >
+        {scanning ? (
+          <ActivityIndicator size="small" color={colors.onPrimary} />
+        ) : (
+          <Camera size={18} strokeWidth={2} color={colors.onPrimary} />
+        )}
+        <Text variant="bodyMedium" weight="700" color={colors.onPrimary}>
+          {scanning ? "Reading your bar…" : "Scan my bar with camera"}
+        </Text>
+      </Pressable>
+      <Text variant="caption" color={colors.dim} style={styles.scanHint}>
+        Snap your bottles and AI adds them, then shows what you can mix.
+      </Text>
 
       <ScrollView
         contentContainerStyle={styles.scroll}
@@ -193,6 +325,22 @@ const styles = StyleSheet.create({
   },
   summaryItem: { flex: 1, alignItems: "center", gap: 4 },
   summaryDivider: { width: 1, backgroundColor: colors.border },
+  scanBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: spacing.sm,
+    height: 52,
+    marginHorizontal: spacing.xl,
+    borderRadius: radii.md,
+    backgroundColor: colors.primary,
+  },
+  scanHint: {
+    marginHorizontal: spacing.xl,
+    marginTop: 8,
+    marginBottom: spacing.md,
+    textAlign: "center",
+  },
   summaryNum: {
     fontFamily: fonts.serif,
     fontSize: 28,

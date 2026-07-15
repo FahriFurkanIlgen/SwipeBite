@@ -19,7 +19,8 @@ export type GatedFeature =
   | "receipt_scan" // pantry OCR from a receipt / shelf photo
   | "ai_pantry_parse" // free-text → structured pantry items
   | "weekly_plan" // AI weekly meal plan
-  | "recipe_adapt"; // adapt a recipe to diet / allergies / pantry
+  | "recipe_adapt" // adapt a recipe to diet / allergies / pantry
+  | "bar_cabinet_scan"; // SwipeBar: photo → bottles → cabinet + cocktail ideas
 
 /**
  * Master switch. While false (Faz 0) quotas are tracked but never enforced —
@@ -50,6 +51,7 @@ export const FREE_MONTHLY_QUOTAS: Record<GatedFeature, number> = {
   ai_pantry_parse: 20,
   weekly_plan: 1,
   recipe_adapt: 3,
+  bar_cabinet_scan: 2,
 };
 
 /** Pro tier removes all limits. */
@@ -58,6 +60,7 @@ export const PRO_MONTHLY_QUOTAS: Record<GatedFeature, number> = {
   ai_pantry_parse: Infinity,
   weekly_plan: Infinity,
   recipe_adapt: Infinity,
+  bar_cabinet_scan: Infinity,
 };
 
 export function quotaFor(tier: PlanTier, feature: GatedFeature): number {
@@ -70,4 +73,5 @@ export const FEATURE_LABELS: Record<GatedFeature, string> = {
   ai_pantry_parse: "AI ile ayrıştır",
   weekly_plan: "Haftalık plan",
   recipe_adapt: "Tarifi uyarla",
+  bar_cabinet_scan: "Fotoğrafla dolap tara",
 };
